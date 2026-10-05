@@ -16,8 +16,8 @@ export function useResolvedDark(pref: ThemePreference): boolean {
  * pre-paint script in index.html).
  */
 export const CHROME_COLOR = {
-  light: { stage: '#F9F7F2', canvas: '#F4F1E9' },
-  dark: { stage: '#0D141E', canvas: '#090E15' },
+  light: { stage: '#FAFAF7', canvas: '#FAFAF7' },
+  dark: { stage: '#111215', canvas: '#111215' },
 } as const
 
 /** Apply the theme class, browser chrome colour and native status bar style. */

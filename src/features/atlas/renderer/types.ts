@@ -6,7 +6,8 @@ import type { Place, PlaceKind } from '@/atlas/types'
 import type { MasteryLevel } from '../style'
 import type { Transform } from '../labels'
 export type Plate = 'physical' | 'political'
-export type Tone = 'day' | 'night' | 'antique'
+/** `dusk` is the physical plate for the dark theme: the same relief, dimmed, with light lettering. */
+export type Tone = 'day' | 'dusk' | 'night' | 'antique'
 
 export type MapTarget =
   | { type: 'place'; id: string }

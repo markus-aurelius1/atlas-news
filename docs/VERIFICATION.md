@@ -1,4 +1,22 @@
-# Local verification — 2026-10-05
+# Interface rebuild verification — 2026-10-05
+
+The shell, Atlas instruments, News reading list and Settings were rebuilt on the foundation below. Data, storage and the News cache/gateway were not changed: no file under `public/`, `src/data`, `src/atlas` (except the question-table border colour in `pyq/blocks.css`), `src/current-affairs`, `functions/` or `tools/atlas-build` was edited, and `useFeeds.ts`, `useArchive.ts` and `usePersonalState.ts` are untouched. Map rendering changes are styling only: line weights and colours in `renderer/tilePainter.ts` and `renderer/palette.ts`, a `dusk` tone (the same relief raster, dimmed at paint time, for the dark theme), and sparser symbol thresholds in `AtlasMap.tsx`.
+
+| Check | Result |
+| --- | --- |
+| `npm run typecheck` | Passed |
+| `npm run lint` | Passed: 0 errors, 118 warnings (170 before the rebuild) |
+| `npm test` | Passed: 227 tests in 31 files, including topic-group anchor selection |
+| `npm run test:pipeline` | 45 tests: 39 passed, 0 failed, 6 skipped (the frozen canonical ZIP was not supplied on this machine) |
+| `npm run build` | Passed; asset hashes verified by the build; 158 PWA precache entries, 8,434 KiB |
+| `npm run test:browser` | Passed (production build, local stock Chrome): smoke 36; cold starts 6; label/marker paint order 90; Atlas interaction 21; canonical questions and offline pack 104 light + 104 dark; News 268 (re-run after topic groups and thumbnails; the other suites were last run before that change, which touched only News); recall integration passed |
+| Map pan/zoom frame times | Development build, 1440×900, headless Chrome: pan 16.7 ms average, 0 frames over 32 ms; six wheel notches, 2 frames over 32 ms |
+
+Browser checks were adapted to the new controls where a selector or an interaction changed; the behaviours they assert were kept, with two deliberate differences: closing the place inspector now clears the selection (there is no collapsed state), and a read headline is distinguished by ink rather than weight. News groups stories that share a PYQ concept, and every publisher's article on one story, under a single anchor article (Indian Express or The Hindu when either covers it); the rest stay reachable in the collapsed group.
+
+Not run here: `tools/audit-foundation.mjs` (needs ripgrep, which is not installed on this machine), Capacitor sync, Android/iOS builds, any Cloudflare deployment, and live publisher availability beyond the local development gateway.
+
+# Local verification — 2026-10-05 (foundation)
 
 The source baseline and selectively imported files are pinned in `FOUNDATION.md`. The original repository remains unchanged. The physical Atlas was visually inspected in a 1366px production screenshot; terrain, relief, rivers and regional lettering remain intact.
 

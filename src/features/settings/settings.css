@@ -1,0 +1,99 @@
+/* Settings: one quiet column of grouped rows. */
+.settings {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: calc(var(--safe-top) + 20px) 20px 48px;
+}
+.settings-head h1 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.settings-group {
+  margin-top: 30px;
+}
+.settings-group > h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+}
+.settings-group > h2 span {
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-3);
+}
+.settings-rows > * + * {
+  border-top: 1px solid var(--line);
+}
+.settings-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  min-height: 56px;
+  padding: 12px 0;
+}
+.settings-label {
+  min-width: 0;
+  flex: 1 1 200px;
+}
+.settings-label b {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 550;
+}
+.settings-label small {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+.settings-action {
+  padding: 10px 0;
+  border-radius: 0;
+}
+.settings-foot {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  color: var(--ink-3);
+}
+.settings-foot svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.settings-foot p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+@media (max-width: 599px) {
+  .settings {
+    padding-inline: 16px;
+  }
+  .settings-head h1 {
+    font-size: 26px;
+  }
+}
+.settings-offline {
+  padding: 14px 0;
+}
+.settings-offline h3 {
+  font-size: 14.5px;
+  font-weight: 550;
+}
+.settings-offline p {
+  margin-top: 3px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}

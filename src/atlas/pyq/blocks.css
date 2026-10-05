@@ -8,7 +8,7 @@
 .pyq-matching-lists h4 { margin: 0; font-size: 1em; }
 .pyq-table-scroll { max-width: 100%; overflow-x: auto; margin: 1rem 0; }
 .pyq-table { border-collapse: collapse; width: 100%; text-align: left; }
-.pyq-table th, .pyq-table td { border: 1px solid #b9b5ab; padding: .65rem; vertical-align: top; min-width: 6rem; white-space: pre-wrap; }
+.pyq-table th, .pyq-table td { border: 1px solid var(--line-strong); padding: .65rem; vertical-align: top; min-width: 6rem; white-space: pre-wrap; }
 .pyq-table .pyq-ordinal { min-width: 1.5rem; width: 1.5rem; }
 .pyq-code-labels { display: block; font-weight: 600; white-space: pre; }
 @media (max-width: 480px) { .pyq-matching-lists { grid-template-columns: 1fr; } }

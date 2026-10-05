@@ -1,14 +1,12 @@
 /** The Atlas side panel: explorer rank, reviews, recall challenges, regions and map styles. */
 import { motion } from 'motion/react'
-import { Check, GraduationCap, Lock, Map as MapIcon, Trophy } from 'lucide-react'
+import { Check, GraduationCap, Map as MapIcon, Trophy } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { atlasActivity } from '@/atlas/activity'
 import type { Exploration } from '@/atlas/useExploration'
 import { db } from '@/data/db'
 import { useClaims, useRecalls, useSettings } from '@/data/hooks'
 import { dailyChallenges, weeklyChallenges, type ChallengeInstance } from '@/game/challenges'
-import { MAP_STYLES, RANKS } from '@/game/progression'
-import { cn } from '@/lib/cn'
 import { addDaysKey, startOfWeekKey } from '@/lib/time'
 import { haptics } from '@/services/haptics'
 import { Button } from '@/ui/controls'
@@ -65,7 +63,6 @@ export function AtlasPanel({ ex, actions, hideExplorer }: { ex: Exploration; act
 
       <Regions ex={ex} onPick={actions.pickState} />
 
-      <MapStyles ex={ex} />
     </div>
   )
 }
@@ -157,24 +154,6 @@ function Regions({ ex, onPick }: { ex: Exploration; onPick: (id: string) => void
         ))}
       </ul>
       <p className="mt-2 text-[12px] text-ink-3">{rows.length} of 36 states and UTs explored</p>
-    </Section>
-  )
-}
-
-function MapStyles({ ex }: { ex: Exploration }) {
-  return (<Section title="Map styles">
-      <ul className="mt-1.5 space-y-1">
-        {MAP_STYLES.map((s) => {
-          const open = s.minRank <= ex.level.rankIndex
-          return (
-            <li key={s.id} className={cn('flex items-center gap-2 text-[13px]', !open && 'text-ink-3')}>
-              {open ? <Check className="size-3.5 text-success" /> : <Lock className="size-3.5" />}
-              <span className="font-semibold">{s.name}</span>
-              {!open && <span>· {RANKS[s.minRank].title}</span>}
-            </li>
-          )
-        })}
-      </ul>
     </Section>
   )
 }

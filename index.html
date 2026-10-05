@@ -6,7 +6,7 @@
     <title>Tars — Atlas & News</title>
     <meta name="description" content="Tars brings an offline Atlas and source-linked Current Affairs reading together." />
     <meta name="application-name" content="Tars" />
-    <meta name="theme-color" content="#090E15" />
+    <meta name="theme-color" content="#111215" />
     <meta name="color-scheme" content="light dark" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,8 +37,7 @@
           var dark = pref === 'dark' || (pref === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
           if (dark) document.documentElement.classList.add('dark')
           // The stage on a phone, the canvas around it in the window (twins of app/theme.ts).
-          var framed = matchMedia('(min-width: 768px)').matches
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? (framed ? '#090E15' : '#0D141E') : framed ? '#F4F1E9' : '#F9F7F2')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#111215' : '#FAFAF7')
           if (localStorage.getItem('tars.sidebar.collapsed') === '1') document.documentElement.dataset.sidebar = 'collapsed'
           // Motion: the person's choice (Settings) over the system's (twin of lib/motion.ts). CSS and scripts read data-motion.
           var motion = localStorage.getItem('tars.motion')

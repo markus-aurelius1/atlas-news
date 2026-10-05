@@ -11,8 +11,7 @@ import { holdToast, releaseToast, useToasts, type Toast } from './toast'
 import { useMediaQuery } from './useMedia'
 
 /**
- * Above mobile navigation with the zoom controls left clear, below the product
- * bar on wider screens. A toast waits while the pointer or focus is on it,
+ * Above the navigation, with the map's zoom controls left clear on a phone. A toast waits while the pointer or focus is on it,
  * and can be swept away sideways.
  */
 export function Toaster() {
@@ -23,13 +22,14 @@ export function Toaster() {
     <div
       className={cn(
         'layer-toast pointer-events-none fixed inset-x-0 flex items-center gap-2 px-4',
-        compact ? 'bottom-[calc(var(--nav-bottom)+12px)] flex-col-reverse pl-16' : 'top-[calc(var(--shell-top)+12px)] flex-col',
+        // Always from the bottom: the top of the stage belongs to the map's instruments and the reading header.
+        compact ? 'bottom-[calc(var(--nav-bottom)+12px)] flex-col-reverse pl-16' : 'bottom-4 flex-col-reverse',
       )}
       aria-live="polite"
     >
       <AnimatePresence initial={false}>
         {toasts.map((t) => (
-          <ToastCard key={t.id} toast={t} from={compact ? 1 : -1} />
+          <ToastCard key={t.id} toast={t} from={1} />
         ))}
       </AnimatePresence>
     </div>,

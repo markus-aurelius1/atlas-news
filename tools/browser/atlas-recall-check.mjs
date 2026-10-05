@@ -24,7 +24,7 @@ try {
     return { prompt: question.prompt, labels: (question.order ?? [question.answer]).map(id => question.options.find(option => option.id === id).label), order: !!question.order }
   })
   await page.getByRole('button', { name: 'Test me', exact: true }).click()
-  const dialog = page.getByRole('dialog', { name: 'Test me', exact: true })
+  const dialog = page.getByRole('dialog', { name: 'Recall', exact: true })
   await dialog.getByRole('heading', { name: answer.prompt, exact: true }).waitFor()
   await page.evaluate(() => { Date.now = window.qaNow; delete window.qaNow })
   for (const label of answer.labels) await dialog.getByRole('group', { name: 'Recall answer' }).getByRole(answer.order ? 'button' : 'radio', { name: label, exact: answer.order }).click()

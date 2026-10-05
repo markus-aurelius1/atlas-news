@@ -61,8 +61,8 @@ export default defineConfig({
         display_override: ['window-controls-overlay', 'standalone'],
         orientation: 'any',
         // Night's stage colour (--bg in index.css): the splash a launched app fades in from.
-        background_color: '#0c0e16',
-        theme_color: '#0c0e16',
+        background_color: '#111215',
+        theme_color: '#111215',
         categories: ['education', 'productivity'],
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },

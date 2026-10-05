@@ -1,19 +1,18 @@
 /** Freely accessible place knowledge; recall establishes mastery. */
-import { ChevronRight, Crosshair, GraduationCap } from 'lucide-react'
-import { PlaceSources } from './PlaceSources'
+import { GraduationCap, LocateFixed } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { placeSubtitle } from '@/atlas/data'
 import { MASTERY_LABEL, type PlaceMastery } from '@/atlas/mastery'
 import type { Place, PlaceRelations } from '@/atlas/types'
 import type { Exploration } from '@/atlas/useExploration'
-import { todayKey, relativeDayLabel } from '@/lib/time'
-import { cn } from '@/lib/cn'
+import { relativeDayLabel, todayKey } from '@/lib/time'
 import { Button } from '@/ui/controls'
+import type { MapTarget } from './AtlasMap'
 import { PlaceQuestions } from './PlaceQuestions'
-import { MASTERY_COLOUR, MASTERY_TEXT_COLOUR } from './style'
+import { PlaceSources } from './PlaceSources'
+import { MASTERY_COLOUR } from './style'
 import { KIND_NAME } from './symbols'
 import { breadcrumb, masteryFn, PlaceIcon, TAG_LABEL } from './util'
-import type { MapTarget } from './AtlasMap'
 
 const REL_LABEL: Record<keyof PlaceRelations, string> = {
   tributaryOf: 'Tributary of',
@@ -22,17 +21,17 @@ const REL_LABEL: Record<keyof PlaceRelations, string> = {
   flowsInto: 'Flows into',
   onRiver: 'On the river',
   range: 'Range',
-  border: 'Border with',
+  border: 'Borders',
   connects: 'Connects',
   source: 'Source',
   within: 'Within',
   near: 'Near',
-  famousFor: 'Famous for',
+  famousFor: 'Known for',
 }
 const BACK_LABEL: Partial<Record<keyof PlaceRelations, string>> = {
   tributaryOf: 'Tributaries',
   distributaryOf: 'Distributaries',
-  onRiver: 'Along its banks',
+  onRiver: 'On its banks',
   range: 'In this range',
   source: 'Rises here',
   within: 'Contains',
@@ -45,7 +44,7 @@ export function PlaceDetails({ ex, place: p, onSelect, onTest, onShow, onPyq }: 
   const { atlas } = ex
   const level = masteryFn(ex)(p.id)
   const m = ex.mastery.get(p.id)
-  const crumbs = breadcrumb(atlas, p)
+  const crumbs = breadcrumb(atlas, p).filter((c) => c.target)
   // Designations first (Ramsar, tiger reserve…), then study tags; the capital star is already the symbol.
   const tags = (p.tags ?? []).filter((t) => TAG_LABEL[t] && t !== 'national')
 
@@ -58,9 +57,8 @@ export function PlaceDetails({ ex, place: p, onSelect, onTest, onShow, onPyq }: 
       label,
       items: ids.map((id) => {
         const target = atlas.byId.get(id)
-        if (target) return <LinkChip key={id} place={target} ex={ex} onClick={() => onSelect({ type: 'place', id })} />
-        const c = atlas.country(id)
-        return <span key={id} className="rounded-full border border-line px-2.5 py-1 text-[13px] font-semibold">{c?.name ?? id}</span>
+        if (target) return <PlaceLink key={id} place={target} onClick={() => onSelect({ type: 'place', id })} />
+        return <span key={id} className="place-plain">{atlas.country(id)?.name ?? id}</span>
       }),
     })
   }
@@ -71,99 +69,100 @@ export function PlaceDetails({ ex, place: p, onSelect, onTest, onShow, onPyq }: 
     if (!back.has(label)) back.set(label, [])
     if (!back.get(label)!.includes(r.place)) back.get(label)!.push(r.place)
   }
-  for (const [label, list] of back) rels.push({ label, items: list.map((q) => <LinkChip key={q.id} place={q} ex={ex} onClick={() => onSelect({ type: 'place', id: q.id })} />) })
+  for (const [label, list] of back) rels.push({ label, items: list.map((q) => <PlaceLink key={q.id} place={q} onClick={() => onSelect({ type: 'place', id: q.id })} />) })
 
   return (
-    <div className="place-knowledge">
-      <div className="flex items-start gap-3">
-        <span className="mt-1 flex size-10 items-center justify-center rounded-lg bg-knowledge-soft text-knowledge">
-          <PlaceIcon kind={p.kind} tags={p.tags} size={24} />
-        </span>
-        <div className="min-w-0 flex-1">
-          <h2 className="font-display text-[26px] leading-tight font-medium tracking-tight">{p.name}</h2>
-          <p className="mt-0.5 text-[13px] font-semibold text-ink-2">{placeSubtitle(p, atlas, KIND_NAME[p.kind])}</p>
-          {p.aka?.length ? <p className="mt-0.5 text-[13px] text-ink-3 italic">Also {p.aka.join(', ')}</p> : null}
-        </div>
+    <article className="place" key={p.id}>
+      <header className="place-head">
+        <p className="eyebrow place-kind">
+          <PlaceIcon kind={p.kind} tags={p.tags} size={16} />
+          {KIND_NAME[p.kind]}
+        </p>
+        <h2 className="place-name">{p.name}</h2>
+        <p className="place-sub">{placeSubtitle(p, atlas, KIND_NAME[p.kind])}</p>
+        {p.aka?.length ? <p className="place-aka">Also {p.aka.join(', ')}</p> : null}
+        {(crumbs.length > 0 || tags.length > 0) && (
+          <ul className="place-tags" aria-label="Where and designations">
+            {crumbs.map((c) => (
+              <li key={c.label}>
+                <button type="button" className="place-breadcrumb place-tag place-tag-link" onClick={() => onSelect(c.target!)}>
+                  {c.label}
+                </button>
+              </li>
+            ))}
+            {tags.map((t) => (
+              <li key={t} className="place-tag" data-signal={t === 'current-affairs' || t === 'strategic' || undefined}>
+                {TAG_LABEL[t]}
+              </li>
+            ))}
+          </ul>
+        )}
+      </header>
+
+      <div className="place-actions">
+        <Button variant="primary" size="sm" icon={<GraduationCap className="size-4" />} onClick={() => onTest(p.id)}>
+          Test me
+        </Button>
+        {onShow && (
+          <Button variant="ghost" size="sm" icon={<LocateFixed className="size-4" />} onClick={() => onShow(p)}>
+            Show on the map
+          </Button>
+        )}
+        <Mastery level={level} m={m} />
       </div>
 
-      {tags.length > 0 && (
-        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Designations">
-          {tags.map((t) => (
-            <li key={t} className={cn('rounded-full px-2.5 py-0.5 text-[12px] font-bold', t === 'current-affairs' || t === 'strategic' ? 'bg-accent-soft text-accent' : 'bg-surface-2 text-ink-2')}>
-              {TAG_LABEL[t]}
-            </li>
+      {p.facts.length > 0 && (
+        <ul className="place-facts">
+          {p.facts.map((f, i) => (
+            <li key={i}>{f}</li>
           ))}
         </ul>
       )}
 
-      <nav aria-label="Where" className="mt-3 flex flex-wrap items-center gap-1 text-[12px] font-semibold text-ink-3">
-        {crumbs.map((c, i) => (
-          <span key={i} className="flex items-center gap-1">
-            {i > 0 && <ChevronRight className="size-3" />}
-            {c.target ? (
-              <button type="button" className="place-breadcrumb rounded px-0.5 text-ink-2 underline-offset-2 hover:underline" onClick={() => onSelect(c.target!)}>
-                {c.label}
-              </button>
-            ) : (
-              <span>{c.label}</span>
-            )}
-          </span>
-        ))}
-      </nav>
-
-      {(
-        <>
-          <ul className="mt-4 space-y-2">
-            {p.facts.map((f, i) => (
-              <li key={i} className="flex gap-2.5 text-[15px] leading-relaxed">
-                <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-knowledge" />
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-          {rels.length > 0 && (
-            <div className="mt-5 space-y-2.5">
-              {rels.map((r, i) => (
-                <div key={i}>
-                  <p className="t-label text-[12px] text-ink-3">{r.label}</p>
-                  <div className="mt-1.5 flex flex-wrap gap-1.5">{r.items}</div>
-                </div>
-              ))}
+      {rels.length > 0 && (
+        <dl className="place-rels">
+          {rels.map((r, i) => (
+            <div key={i}>
+              <dt>{r.label}</dt>
+              <dd>{r.items}</dd>
             </div>
-          )}
-          <PlaceQuestions placeId={p.id} onOpen={onPyq} />
-          <MasteryRow level={level} m={m} />
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Button variant="primary" icon={<GraduationCap className="size-4" />} onClick={() => onTest(p.id)}>
-              Test me
-            </Button>
-            {onShow && (
-              <Button className="col-span-2" variant="ghost" icon={<Crosshair className="size-4" />} onClick={() => onShow(p)}>
-                Show on the map
-              </Button>
-            )}
-          </div>
-        </>
+          ))}
+        </dl>
       )}
 
+      <PlaceQuestions placeId={p.id} onOpen={onPyq} />
+      <MasteryRow level={level} m={m} />
       <PlaceSources place={p} />
-    </div>
+    </article>
   )
 }
 
-function LinkChip({ place, ex, onClick }: { place: Place; ex: Exploration; onClick: () => void }) {
-  const known = ex.state.discovered.has(place.id)
+function PlaceLink({ place, onClick }: { place: Place; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className={cn('flex min-h-11 items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[13px] font-semibold transition-colors hover:bg-surface-2', known ? 'border-line-strong' : 'border-dashed border-line text-ink-2')}>
-      <PlaceIcon kind={place.kind} tags={place.tags} size={16} />
+    <button type="button" onClick={onClick} className="place-link">
+      <PlaceIcon kind={place.kind} tags={place.tags} size={14} />
       {place.name}
     </button>
   )
 }
 
-export function MasteryRow({ level, m }: { level: ReturnType<ReturnType<typeof masteryFn>>; m?: PlaceMastery }) {
-  const steps = ['familiar', 'strong', 'mastered'] as const
-  const idx = steps.indexOf(level as (typeof steps)[number])
+type Level = ReturnType<ReturnType<typeof masteryFn>>
+const STEPS = ['familiar', 'strong', 'mastered'] as const
+const levelName = (level: Level, m?: PlaceMastery) => (level === 'unknown' || level === 'discovered' ? (m?.attempts ? 'Recall started' : 'Not yet tested') : MASTERY_LABEL[level])
+
+/** Three pips beside the actions: where recall of this place stands, at a glance. */
+function Mastery({ level, m }: { level: Level; m?: PlaceMastery }) {
+  const idx = STEPS.indexOf(level as (typeof STEPS)[number])
+  return (
+    <span className="place-pips" title={levelName(level, m)} aria-label={`Recall: ${levelName(level, m)}`}>
+      {STEPS.map((s, i) => (
+        <span key={s} style={i <= idx ? { background: MASTERY_COLOUR[s] } : undefined} />
+      ))}
+    </span>
+  )
+}
+
+export function MasteryRow({ level, m }: { level: Level; m?: PlaceMastery }) {
   let hint = 'Answer one question to make it Familiar.'
   if (m) {
     if (m.level === 'familiar') hint = `For Strong: 3 correct answers (${m.correct}), 2 question types (${m.types.size}), on 2 days.`
@@ -171,19 +170,13 @@ export function MasteryRow({ level, m }: { level: ReturnType<ReturnType<typeof m
     else if (m.level === 'mastered') hint = 'Mastered – keep it fresh with spaced reviews.'
   }
   return (
-    <div className="place-mastery mt-4 bg-surface-2 p-3.5">
-      <div className="flex items-center justify-between">
-        <span className="text-[13px] font-bold" style={{ color: MASTERY_TEXT_COLOUR[level] }}>
-          {level === 'unknown' || level === 'discovered' ? m?.attempts ? 'Recall started' : 'Not yet tested' : MASTERY_LABEL[level]}
-        </span>
-        {m?.due && <span className="text-[12px] font-semibold text-ink-3">Review {m.due <= todayKey() ? 'due now' : relativeDayLabel(m.due).toLowerCase()}</span>}
-      </div>
-      <div className="mt-2 flex gap-1" aria-hidden="true">
-        {steps.map((s, i) => (
-          <span key={s} className="h-1.5 flex-1 rounded-full" style={{ background: i <= idx ? MASTERY_COLOUR[s] : 'var(--line)' }} />
-        ))}
-      </div>
-      <p className="mt-2 text-[12px] leading-snug text-ink-2">{hint}</p>
-    </div>
+    <section className="place-section place-mastery" aria-label="Recall">
+      <h3 className="eyebrow">Recall</h3>
+      <p className="place-mastery-level">
+        <b>{levelName(level, m)}</b>
+        {m?.due && <span>Review {m.due <= todayKey() ? 'due now' : relativeDayLabel(m.due).toLowerCase()}</span>}
+      </p>
+      <p className="place-hint">{hint}</p>
+    </section>
   )
 }

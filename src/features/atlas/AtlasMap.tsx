@@ -231,7 +231,7 @@ export const AtlasMap = memo(
       const z = layoutT.k / kFit.current
       const { w, h, o } = layoutT
       const kinds = props.kinds
-      const minZ = (p: Place) => (p.kind === 'capital' ? (p.tags?.includes('national') || p.level === 1 ? 0 : 1.4) : p.level === 1 ? 1.3 : p.level === 2 ? 2 : 2.9)
+      const minZ = (p: Place) => (p.kind === 'capital' ? (p.level === 1 ? 0 : p.tags?.includes('national') ? (p.level === 2 ? 1.2 : 1.8) : 1.5) : p.level === 1 ? 1.5 : p.level === 2 ? 2.4 : 3.4)
       const prio = (p: Place) =>
         (p.id === props.selectedId ? 1000 : 0) +
         (props.pyqPlaceIds?.has(p.id) ? 80 : 0) +
@@ -253,10 +253,12 @@ export const AtlasMap = memo(
         .map((p) => ({ p, sx: p.x * layoutT.k + layoutT.x, sy: p.y * layoutT.k + layoutT.y }))
         .filter(({ sx, sy }) => sx > -20 - o && sx < w + 20 + o && sy > -20 - o && sy < h + 20 + o)
         .sort((a, b) => prio(b.p) - prio(a.p))
+      // Fewer, calmer symbols when zoomed out; the spacing tightens as there is room for them.
+      const gap = z < 1.2 ? 40 : z < 1.8 ? 30 : z < 3 ? 24 : z < 4.5 ? 19 : 15
       const taken: Array<[number, number]> = []
       const out: Place[] = []
       for (const c of cand) {
-        if (taken.some(([x, y]) => Math.abs(x - c.sx) < 13 && Math.abs(y - c.sy) < 13) && c.p.id !== props.selectedId) continue
+        if (taken.some(([x, y]) => Math.abs(x - c.sx) < gap && Math.abs(y - c.sy) < gap) && c.p.id !== props.selectedId) continue
         taken.push([c.sx, c.sy])
         out.push(c.p)
       }

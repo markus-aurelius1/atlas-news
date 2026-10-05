@@ -1,6 +1,5 @@
 import { Download, FileJson, HardDrive, Info, Smartphone, Trash2, Upload } from 'lucide-react'
 import { useEffect, useState, type ReactNode } from 'react'
-import { Workspace } from '@/app/Workspace'
 import { backupCounts, BackupError, createBackup, eraseEverything, parseBackup, restoreBackup, type BackupFile } from '@/data/backup'
 import { updateSettings, useSettings } from '@/data/hooks'
 import { useXp } from '@/atlas/useExploration'
@@ -12,11 +11,12 @@ import { pickTextFile, saveTextFile, stamp } from '@/services/files'
 import { promptInstall, useInstall } from '@/services/install'
 import { Button, ListRow, SegmentedControl, Select, SwitchRow } from '@/ui/controls'
 import { confirmDialog } from '@/ui/feedback'
-import { Wordmark } from '@/ui/Logo'
+import { LogoMark } from '@/ui/Logo'
 import { Sheet, SheetActions } from '@/ui/Sheet'
 import { toast } from '@/ui/toast'
-import { navigate } from '@/app/router'
 import { motionChoice, setMotionChoice, type MotionChoice } from '@/lib/motion'
+import { OfflineAtlas } from '@/features/atlas/OfflineAtlas'
+import './settings.css'
 
 
 function AtlasSettings() {
@@ -43,8 +43,10 @@ export default function SettingsScreen() {
   const [motion, setMotion] = useState<MotionChoice>(motionChoice)
 
   return (
-    <Workspace title="Settings" back width="sm">
-      <div className="pt-2" />
+    <div className="settings">
+      <header className="settings-head">
+        <h1>Settings</h1>
+      </header>
       <Group title="Appearance">
         <Line label="Theme">
           <SegmentedControl<ThemePreference>
@@ -79,41 +81,46 @@ export default function SettingsScreen() {
 
       <AtlasSettings />
 
-      <Group title="News"><p className="px-4 py-3 text-sm leading-relaxed text-ink-2">Publisher links open externally. Read and Saved stay on this device. Retained feed metadata remains available offline.</p><Button variant="ghost" className="mx-4 mb-3" onClick={() => navigate('#/current-affairs')}>Open News ↗</Button></Group>
       <Group title="General">
-        <SwitchRow className="px-4 py-3" title="Haptics" description="Gentle vibrations on supported devices." checked={settings.haptics} onChange={(v) => void updateSettings({ haptics: v })} />
+        <SwitchRow className="settings-line" title="Haptics" description="Gentle vibrations on supported devices." checked={settings.haptics} onChange={(v) => void updateSettings({ haptics: v })} />
       </Group>
 
       <DataGroup />
 
       <InstallGroup />
 
-      <div className="mt-8 flex flex-col items-center gap-2 text-center">
-        <Wordmark />
-        <p className="max-w-sm text-xs leading-relaxed text-ink-3">
-          Version {__APP_VERSION__} · Local-first: your data lives on this device and never leaves it unless you export it. Works offline.
+      <Group title="Offline">
+        <OfflineAtlas />
+      </Group>
+
+      <footer className="settings-foot">
+        <LogoMark className="size-5" />
+        <p>
+          Tars {__APP_VERSION__} · Local-first: your data lives on this device and never leaves it unless you export it. News opens on the publisher’s site; Read and Saved stay here. Works offline.
         </p>
-      </div>
-    </Workspace>
+      </footer>
+    </div>
   )
 }
 
 function Group({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
   return (
-    <section className="settings-group mb-8">
-      <h2 className="t-label mb-2 px-1">{title}</h2>
-      {hint && <p className="t-meta -mt-1 mb-2 px-1">{hint}</p>}
-      <div className="divide-y divide-line border-y border-line">{children}</div>
+    <section className="settings-group">
+      <h2 className="eyebrow">
+        {title}
+        {hint && <span>{hint}</span>}
+      </h2>
+      <div className="settings-rows">{children}</div>
     </section>
   )
 }
 
 function Line({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
   return (
-    <div className="settings-line flex flex-wrap items-center justify-between gap-4 px-4 py-4">
-      <span className="min-w-0">
-        <span className="block text-[15px] font-semibold">{label}</span>
-        {hint && <span className="block text-[13px] leading-snug text-ink-2">{hint}</span>}
+    <div className="settings-line">
+      <span className="settings-label">
+        <b>{label}</b>
+        {hint && <small>{hint}</small>}
       </span>
       <span className="shrink-0">{children}</span>
     </div>
@@ -123,8 +130,8 @@ function Line({ label, hint, children }: { label: string; hint?: string; childre
 function ActionRow({ icon, title, body, onClick, danger }: { icon: ReactNode; title: string; body: string; onClick: () => void; danger?: boolean }) {
   return (
     <ListRow
-      className="px-4 py-3"
-      leading={<span className={`flex size-9 shrink-0 items-center justify-center rounded-field ${danger ? 'bg-danger/10 text-danger' : 'bg-surface-2 text-ink-2'}`}>{icon}</span>}
+      className="settings-action"
+      leading={<span className={`flex size-8 shrink-0 items-center justify-center rounded-lg ${danger ? 'bg-danger/10 text-danger' : 'bg-surface-2 text-ink-2'}`}>{icon}</span>}
       title={<span className={danger ? 'text-danger' : undefined}>{title}</span>}
       meta={body}
       onClick={onClick}

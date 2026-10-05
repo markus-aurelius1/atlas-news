@@ -26,6 +26,8 @@ interface TonePalette {
   dispute: string
   political?: string[]
   imageFilter?: string
+  /** Multiplied over the relief after it is drawn (works without canvas filters, so it is identical in every engine). */
+  reliefDim?: string
   text: { state: string; stateMuted: string; country: string; water: string; physical: string; place: string }
 }
 
@@ -40,9 +42,9 @@ const DAY: TonePalette = {
   lakeStroke: WATER,
   coast: '#2c5f8c',
   indiaCoast: '#2a6292',
-  border: '#2a2a2a',
-  indiaBorder: '#111',
-  stateBorder: '#3b3b3b',
+  border: '#3d3833',
+  indiaBorder: '#231f1b',
+  stateBorder: '#4d4740',
   halo: '#fff',
   graticule: '#3f6f96',
   park: '#3f8f46',
@@ -53,6 +55,26 @@ const DAY: TonePalette = {
 
 export const TONES: Record<Tone, TonePalette> = {
   day: DAY,
+  dusk: {
+    ...DAY,
+    paper: '#111215',
+    neatline: '#3b3e46',
+    reliefDim: '#666c7a',
+    river: '#5f9fdc',
+    lake: '#2f5f90',
+    lakeStroke: '#6aa8e0',
+    coast: '#8fb4d6',
+    indiaCoast: '#a9c8e4',
+    border: '#d8d2c6',
+    indiaBorder: '#f1ece0',
+    stateBorder: '#c9c3b6',
+    halo: '#0d0e11',
+    graticule: '#8fb4d6',
+    park: '#5fae68',
+    parkLine: '#8fd097',
+    dispute: '#e58aa3',
+    text: { state: '#f2efe6', stateMuted: '#9a978e', country: '#cfccc3', water: '#a5d0f7', physical: '#ebc8a2', place: '#f6f3ec' },
+  },
   night: {
     ...DAY,
     paper: '#070d19',

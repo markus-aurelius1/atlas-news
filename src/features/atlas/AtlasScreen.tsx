@@ -1,74 +1,54 @@
-/** The offline Atlas: freely accessible places, canonical PYQs and recall-based mastery. */
-import { useHotspots } from '@/atlas/useHotspots'
+/** The offline Atlas: a full-bleed physical map with a thin layer of floating instruments over it. */
 import { AnimatePresence, motion } from 'motion/react'
-import { BookOpen, Check, ChevronUp, Crosshair, GraduationCap, Info, Lock, Maximize2, Minimize2, Minus, MoreHorizontal, PanelRightClose, PanelRightOpen, Plus, Search } from 'lucide-react'
+import { BookOpenText, GraduationCap, Layers, Maximize2, Minimize2, Minus, Plus, Scan, X } from 'lucide-react'
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react'
 import { consumeParams, currentRoute, useRoute, type Route } from '@/app/router'
+import { onRouteReset, useRouteState } from '@/app/routeState'
+import { useScreenActive } from '@/app/screenActive'
 import { isTyping } from '@/app/shortcuts'
+import { useResolvedDark } from '@/app/theme'
 import { useUi } from '@/app/ui-store'
+import type { PyqFilter } from '@/atlas/pyq/browse'
 import { useSheet, type Sheet as MapSheet } from '@/atlas/sheet'
-import { livingWorld } from '@/atlas/living'
 import type { Place, SheetId } from '@/atlas/types'
 import { useExploration, type Exploration } from '@/atlas/useExploration'
+import { useHotspots } from '@/atlas/useHotspots'
 import { updateSettings, useSettings } from '@/data/hooks'
 import { DEFAULT_SETTINGS } from '@/data/seed'
 import type { AtlasLayers } from '@/data/types'
-import { MAP_STYLES, RANKS } from '@/game/progression'
-import { cn } from '@/lib/cn'
 import { prefersReducedMotion } from '@/lib/motion'
-import { KEYS, migrateLegacyKeys } from '@/lib/storage'
 import { enterFullscreen, exitFullscreen, isFullscreen, onFullscreenExit } from '@/services/fullscreen'
 import { haptics } from '@/services/haptics'
-import { Button, Chip, IconButton, Segmented, Toggle } from '@/ui/controls'
+import { useTarsSelection } from '@/tars/selection'
 import { anyLayerOpen, Sheet } from '@/ui/Sheet'
-import { useIsDesktop } from '@/ui/useMedia'
-import { AtlasMap, type AtlasMapHandle, type Highlight, type MapInsets, type MapTarget, setAtlasMapAwake } from './AtlasMap'
-import { AtlasPanel } from './AtlasPanel'
-import { FieldReviewSheet, type ReviewRequest } from './FieldReview'
-import { GazetteerSheet } from './Gazetteer'
-import { kindsFor, PLACE_GROUPS } from './groups'
-import { LegendSheet } from './Legend'
-import { PyqBrowser } from './PyqBrowser'
-import { OfflineAtlas } from './OfflineAtlas'
 import { BottomSheet } from '@/ui/surface/BottomSheet'
 import { useSurface } from '@/ui/surface/core'
-import './presentation.css'
-import type { PyqFilter } from '@/atlas/pyq/browse'
-import { useTarsSelection } from '@/tars/selection'
+import { useIsDesktop } from '@/ui/useMedia'
+import { AtlasMap, setAtlasMapAwake, type AtlasMapHandle, type Highlight, type MapInsets, type MapTarget, type Tone } from './AtlasMap'
+import { AtlasPanel } from './AtlasPanel'
 import { CanonicalQuiz } from './CanonicalQuiz'
+import { FieldReviewSheet, type ReviewRequest } from './FieldReview'
+import { kindsFor, PLACE_GROUPS } from './groups'
+import { LegendSheet } from './Legend'
+import { MapOptions } from './MapOptions'
+import { Omnibar, type OmnibarHandle } from './Omnibar'
 import { PlaceDetails } from './PlaceDetails'
+import { PyqBrowser } from './PyqBrowser'
 import { UnitDetails } from './UnitDetails'
 import { masteryFn, viewFor } from './util'
-import { onRouteReset, useRouteState } from '@/app/routeState'
-import { useScreenActive } from '@/app/screenActive'
+import './atlas.css'
 
 type Selection = { type: 'place'; id: string } | { type: 'state'; id: string } | { type: 'country'; id: string }
-type Panel = 'gazetteer' | 'legend' | 'more' | null
+type Panel = 'legend' | 'recall' | null
 
-const VISIT_KEY = KEYS.atlasVisit
-const readVisit = () => {
-  migrateLegacyKeys()
-  try {
-    return Number(localStorage.getItem(VISIT_KEY)) || 0
-  } catch {
-    return 0
-  }
-}
-const writeVisit = (t: number) => {
-  try {
-    localStorage.setItem(VISIT_KEY, String(t))
-  } catch {
-    /* storage unavailable */
-  }
-}
-
-/** The desktop inspector: its width plus the gaps either side, kept clear when a place is brought into view. */
-const INSPECTOR_W = 432
-const INSPECTOR_CLEAR = INSPECTOR_W + 48
+/** The desktop inspector's width plus its margins, kept clear when a place is brought into view. */
+const INSPECTOR_CLEAR = 380 + 36
+const HUD_TOP = 64
 
 /** How close to fly in for a place: big features stay wide, points come close. */
 const WIDE = new Set(['sea', 'gulf', 'desert', 'plateau', 'plain', 'region', 'range', 'coast', 'grassland'])
 const zoomFor = (p: Place) => (WIDE.has(p.kind) ? 1.4 : p.kind === 'river' || p.kind === 'canal' || p.kind === 'strait' || p.kind === 'delta' ? 1.8 : p.shape === 'area' ? 2.6 : 3)
+const NO_IDS: Set<string> = new Set()
 
 export default function AtlasScreen() {
   const ex = useExploration()
@@ -76,19 +56,18 @@ export default function AtlasScreen() {
   return <Atlas ex={ex} />
 }
 
-/** The Atlas fills the stage: the page minus the tab bar on a phone, the whole stage in the window (and all of the screen in full screen, when the chrome steps aside). */
-const MAP_HEIGHT = 'h-full'
-
 function MapLoading({ error }: { error?: boolean }) {
   return (
-    <div className={cn('flex items-center justify-center bg-[#c6e1f2]', MAP_HEIGHT)}>
-      <p className="rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-[#1f3a64] shadow-soft">{error ? 'The bundled map couldn’t load. Reload Atlas and try again.' : 'Unrolling the map…'}</p>
+    <div className="atlas-loading" role="status">
+      <span className="atlas-loading-mark" aria-hidden="true" />
+      <p>{error ? 'The bundled map couldn’t load. Reload and try again.' : 'Opening the Atlas'}</p>
     </div>
   )
 }
 
 function Atlas({ ex }: { ex: Exploration }) {
   const settings = useSettings()
+  const dark = useResolvedDark(settings.theme)
   const desktop = useIsDesktop()
   // Kept for the session (app/routeState.ts): on devices where the Atlas is not kept alive, returning still opens the same sheet.
   const [sheetId, setSheetId] = useRouteState<SheetId>('atlas:sheet', () => (currentRoute().params.get('sheet') === 'world' ? 'world' : 'india'))
@@ -102,6 +81,7 @@ function Atlas({ ex }: { ex: Exploration }) {
   const setMap = useCallback((h: AtlasMapHandle | null) => {
     if (h) map.current = h
   }, [])
+  const search = useRef<OmnibarHandle>(null)
   const [sel, setSel] = useState<Selection | null>(null)
   const [inspectorOpen, setInspectorOpen] = useState(false)
   const [detent, setDetent] = useState(1)
@@ -109,11 +89,9 @@ function Atlas({ ex }: { ex: Exploration }) {
   const [browserFilter, setBrowserFilter] = useState<PyqFilter | null>(null)
   const [showHotspots, setShowHotspots] = useState(false)
   const hotspotIds = useHotspots(showHotspots)
-  const [searchQuery, setSearchQuery] = useState('')
   const [pyqId, setPyqId] = useState<string | null>(null)
   const [panel, setPanel] = useState<Panel>(null)
   const [review, setReview] = useState<ReviewRequest | null>(null)
-  const [lastVisit] = useState(readVisit)
   const pendingFly = useRef<Place | null>(null)
   const pendingInsets = useRef<MapInsets | undefined>(undefined)
   const layers: AtlasLayers = settings.atlasLayers ?? DEFAULT_SETTINGS.atlasLayers!
@@ -131,7 +109,6 @@ function Atlas({ ex }: { ex: Exploration }) {
     front.current = false
     // Behind another screen the map ignores new props (theme, progress); see setAtlasMapAwake.
     setAtlasMapAwake(false)
-    writeVisit(Date.now())
     // Anything modal is closed, or it would be left without its backdrop and focus handling.
     setReview(null)
     setPanel(null)
@@ -150,20 +127,15 @@ function Atlas({ ex }: { ex: Exploration }) {
       }),
     [],
   )
-  // Place knowledge and recall are freely accessible.
 
+  // The physical and political plates follow the theme; the two earned styles keep their own look.
   const view = viewFor(settings.atlasStyle, ex.level.rankIndex)
+  const tone: Tone = view.style === 'physical' && dark ? 'dusk' : view.style === 'political' && dark ? 'night' : view.tone
   const mastery = useMemo(() => masteryFn(ex), [ex])
   const shownId: SheetId = sheet?.id ?? sheetId
 
   const places = ex.atlas.bySheet[shownId]
   const discovered = ex.state.discovered
-  const newIds = useMemo(() => {
-    if (!lastVisit) return new Set<string>()
-    const fresh = places.filter((p) => (discovered.get(p.id)?.at ?? 0) > lastVisit)
-    fresh.sort((a, b) => (discovered.get(b.id)?.at ?? 0) - (discovered.get(a.id)?.at ?? 0))
-    return new Set(fresh.slice(0, 12).map((p) => p.id))
-  }, [places, discovered, lastVisit])
   const { muted, linked, features } = useMemo(() => {
     const muted = new Set<string>()
     const linked = new Map<string, string>()
@@ -183,12 +155,13 @@ function Atlas({ ex }: { ex: Exploration }) {
   const explored = useMemo(() => (shownId === 'world' ? new Set([...ex.state.explored].map((u) => u.toLowerCase())) : ex.state.explored), [ex, shownId])
   const kinds = useMemo(() => kindsFor(layers.groups), [layers.groups])
 
-  const living = useMemo(() => livingWorld(ex, shownId), [ex, shownId])
   const selectedPlace = sel?.type === 'place' ? ex.atlas.byId.get(sel.id) : undefined
   // What is selected is context for Tars only while the Atlas is the screen in front.
   const selection = useRef({ place: selectedPlace?.id ?? null, pyq: pyqId })
   selection.current = { place: selectedPlace?.id ?? null, pyq: pyqId }
-  useEffect(() => { if (front.current) useTarsSelection.getState().set(selectedPlace?.id ?? null, pyqId) }, [selectedPlace?.id, pyqId])
+  useEffect(() => {
+    if (front.current) useTarsSelection.getState().set(selectedPlace?.id ?? null, pyqId)
+  }, [selectedPlace?.id, pyqId])
   const onFront = useCallback(() => {
     setAtlasMapAwake(true)
     // Back in front: one render so the map takes up whatever changed while it was behind.
@@ -218,22 +191,36 @@ function Atlas({ ex }: { ex: Exploration }) {
       }
       map.current?.flyTo(p.x, p.y, zoomFor(p), insets)
     },
-    [shownId, sheet, desktop],
+    [shownId, sheet, desktop, setSheetId],
   )
   useEffect(() => {
     if (!sheet || !pendingFly.current || pendingFly.current.sheet !== shownId) return
     const p = pendingFly.current
     pendingFly.current = null
     // Let the new sheet fit and paint first, then travel from the overview.
-    const id = setTimeout(() => {
-      map.current?.flyTo(p.x, p.y, zoomFor(p), pendingInsets.current)
-    }, prefersReducedMotion() ? 0 : 280)
+    const id = setTimeout(
+      () => {
+        map.current?.flyTo(p.x, p.y, zoomFor(p), pendingInsets.current)
+      },
+      prefersReducedMotion() ? 0 : 280,
+    )
     return () => clearTimeout(id)
   }, [sheet, shownId])
 
+  const open = useCallback((t: Selection) => {
+    setSel(t)
+    setDetent(1)
+    setInspectorOpen(true)
+  }, [])
+
   const select = useCallback(
     (t: MapTarget) => {
-      if (t.type === 'point' || t.type === 'pin') return setSel(null)
+      if (t.type === 'point' || t.type === 'pin') {
+        setSel(null)
+        setInspectorOpen(false)
+        return
+      }
+      if (t.type === 'country' && shownId === 'india' && t.id === 'ind') return
       haptics.tap()
       if (t.type === 'place') {
         const p = ex.atlas.byId.get(t.id)
@@ -241,22 +228,30 @@ function Atlas({ ex }: { ex: Exploration }) {
         // The card is about to cover part of the map: make sure it doesn't cover the place itself.
         else if (p) map.current?.reveal(p.x, p.y, coveredBy(desktop, true))
       }
-      if (t.type === 'country' && shownId === 'india' && t.id === 'ind') return
-      setSel(t)
-      setDetent(1)
-      setInspectorOpen(true)
+      open(t)
     },
-    [ex, shownId, flyToPlace, desktop],
+    [ex, shownId, flyToPlace, desktop, open],
   )
 
-  /** From a card (a related place, a place listed in a state): select it and bring it into view. */
+  /** From a card or a search result: select it and bring it into view. */
   const selectAndShow = useCallback(
     (t: MapTarget) => {
       select(t)
       const p = t.type === 'place' ? ex.atlas.byId.get(t.id) : undefined
       if (p) flyToPlace(p, { sheetOpen: true })
     },
-    [select, ex, shownId, flyToPlace],
+    [select, ex, flyToPlace],
+  )
+
+  const switchSheet = useCallback(
+    (id: SheetId) => {
+      if (id === sheetId) return
+      haptics.tap()
+      setSel(null)
+      setInspectorOpen(false)
+      setSheetId(id)
+    },
+    [sheetId, setSheetId],
   )
 
   // Deep links: #/atlas?place=…, ?review=1. Called by <AtlasPresence> with each address the Atlas is opened on.
@@ -267,12 +262,11 @@ function Atlas({ ex }: { ex: Exploration }) {
     const id = route.params.get('place')
     if (id && ex.atlas.byId.get(id)) {
       const p = ex.atlas.byId.get(id)!
-      setSel({ type: 'place', id })
-      setInspectorOpen(true)
+      open({ type: 'place', id })
       flyToPlace(p, { sheetOpen: true })
     }
     if (route.params.get('review') && ex.due.length) setReview({ placeIds: ex.due.slice(0, 8).map((d) => d.id), source: 'review' })
-    if (route.params.get('search')) { setSearchQuery(route.params.get('search')!); setPanel('gazetteer') }
+    if (route.params.get('search')) search.current?.open(route.params.get('search')!)
     if (route.params.get('test') && ex.atlas.byId.has(route.params.get('test')!)) setReview({ placeIds: [route.params.get('test')!], source: 'card' })
     if (route.params.get('questions')) setBrowserFilter({ placeId: route.params.get('placeId') ?? undefined, family: route.params.get('family') ?? undefined, year: route.params.get('year') ? Number(route.params.get('year')) : undefined, kind: route.params.get('kind') ?? undefined, mode: route.params.get('mode') ?? undefined })
     if (route.params.get('pyq')) setPyqId(route.params.get('pyq'))
@@ -281,16 +275,24 @@ function Atlas({ ex }: { ex: Exploration }) {
 
   const startReview = () => {
     const ids = ex.due.slice(0, 8).map((d) => d.id)
-    if (ids.length) setReview({ placeIds: ids, source: 'review' })
+    if (ids.length) {
+      setPanel(null)
+      setReview({ placeIds: ids, source: 'review' })
+    }
   }
   const actions = {
     startReview,
     pickState: (id: string) => {
       setPanel(null)
       if (sheetId !== 'india') setSheetId('india')
-      setSel({ type: 'state', id })
+      open({ type: 'state', id })
     },
   }
+
+  const closeInspector = useCallback(() => {
+    setInspectorOpen(false)
+    setSel(null)
+  }, [])
 
   const details = sel ? (
     sel.type === 'place' && selectedPlace ? (
@@ -299,10 +301,10 @@ function Atlas({ ex }: { ex: Exploration }) {
         place={selectedPlace}
         onPyq={setPyqId}
         onSelect={selectAndShow}
-        onTest={(id) => setReview({ placeIds: [id], source: 'card', title: 'Test me' })}
+        onTest={(id) => setReview({ placeIds: [id], source: 'card', title: 'Recall' })}
         onShow={(p) => {
-          if (!desktop) setInspectorOpen(false)
-          flyToPlace(p)
+          if (!desktop) setDetent(0)
+          flyToPlace(p, { sheetOpen: desktop })
         }}
       />
     ) : sel.type !== 'place' ? (
@@ -311,21 +313,25 @@ function Atlas({ ex }: { ex: Exploration }) {
   ) : null
 
   // Stable while nothing about it changes, so the (memoised) map is not re-rendered by the screen around it.
-  const mapInsets = useMemo<MapInsets>(() => (desktop ? { top: 60, bottom: 0, right: inspectorOpen && sel ? INSPECTOR_CLEAR : 0 } : { top: 60, bottom: sheetHeight || 24 }), [desktop, inspectorOpen, sel, sheetHeight])
+  const showInspector = !!details && inspectorOpen
+  const mapInsets = useMemo<MapInsets>(() => (desktop ? { top: HUD_TOP, bottom: 0, right: showInspector ? INSPECTOR_CLEAR : 0 } : { top: HUD_TOP, bottom: sheetHeight || 24 }), [desktop, showInspector, sheetHeight])
   const setLayers = (patch: Partial<AtlasLayers>) => void updateSettings({ atlasLayers: { ...layers, ...patch } })
+  const activeGroups = PLACE_GROUPS.filter((g) => layers.groups.includes(g.id))
+  const due = Math.min(ex.due.length, 99)
+  const busy = !!pyqId || !!review
 
   return (
-    <div data-atlas-surface className={cn('relative flex', MAP_HEIGHT)}>
-      <AtlasPresence onFront={onFront} onLeave={onLeave} onLink={onLink} toggleFullscreen={full.toggle} />
-      <div className="relative min-w-0 flex-1 overflow-hidden">
+    <div data-atlas-surface className="atlas-screen">
+      <AtlasPresence onFront={onFront} onLeave={onLeave} onLink={onLink} toggleFullscreen={full.toggle} focusSearch={() => search.current?.open()} />
+      <div className="atlas-stage">
         {sheet ? (
           <AnimatePresence initial={false}>
-            <motion.div key={sheet.id} className="absolute inset-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: prefersReducedMotion() ? 0 : 0.26, ease: 'easeOut' }}>
+            <motion.div key={sheet.id} className="absolute inset-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: prefersReducedMotion() ? 0 : 0.28, ease: 'easeOut' }}>
               <AtlasMap
                 ref={setMap}
                 sheet={sheet}
                 plate={view.plate}
-                tone={view.tone}
+                tone={tone}
                 explored={explored}
                 places={places}
                 discovered={discovered}
@@ -334,13 +340,13 @@ function Atlas({ ex }: { ex: Exploration }) {
                 showAreas={layers.areas}
                 featurePlaces={features}
                 mastery={mastery}
-                newIds={newIds}
+                newIds={NO_IDS}
                 pyqPlaceIds={hotspotIds}
                 selectedId={sel?.type === 'place' ? sel.id : undefined}
                 highlights={highlights}
                 mutedLabels={muted}
                 linkedLabels={linked}
-                living={living}
+                living={null}
                 onSelect={select}
                 instantSelect={desktop}
                 insets={mapInsets}
@@ -351,60 +357,91 @@ function Atlas({ ex }: { ex: Exploration }) {
           <MapLoading error={!!error} />
         )}
 
-        <div data-map-ui className="atlas-top-controls">
-          <Segmented label="Map region" value={sheetId} onChange={v => { setSel(null); setInspectorOpen(false); setSheetId(v) }} options={[{ value: 'world', label: 'World' }, { value: 'india', label: 'India' }]} className="atlas-region" />
-          <button type="button" className="atlas-search press" aria-label="Search places" title="Search places" onClick={() => { setSearchQuery(''); setPanel('gazetteer') }}><Search className="size-[18px]" /></button>
-          <LayersMenu current={view.style} rankIndex={ex.level.rankIndex} layers={layers} onLayers={setLayers} actions={[
-            { label: 'Fit the map', icon: <Crosshair className="size-4" />, run: () => map.current?.fitFocus() },
-            { label: 'Legend', icon: <Info className="size-4" />, run: () => setPanel('legend') },
-            { label: 'PYQ hotspots', icon: <BookOpen className="size-4" />, pressed: showHotspots, run: () => setShowHotspots(v => !v) },
-            { label: full.on ? 'Exit full screen (Esc)' : 'Full-screen map (Shift+F)', icon: <Maximize2 className="size-4" />, run: full.toggle },
-            { label: `Review${ex.due.length ? ' · ' + Math.min(ex.due.length, 99) : ''}`, icon: <GraduationCap className="size-4" />, disabled: !ex.due.length, run: startReview },
-            { label: 'Atlas tools', icon: <BookOpen className="size-4" />, run: () => setPanel('more') },
-          ]} />
-          {full.on && <MapButton label="Exit full screen (Esc)" onClick={full.toggle}><Minimize2 className="size-[18px]" /></MapButton>}
-        </div>
-        {(
-          <div data-map-ui className={cn('absolute flex-col', TOOLBAR, desktop ? 'atlas-zoom' : 'atlas-zoom-mobile')}>
-            <MapButton label="Zoom in" onClick={() => map.current?.zoomBy(1.6)}>
-              <Plus className="size-[18px]" />
-            </MapButton>
-            <MapButton label="Zoom out" onClick={() => map.current?.zoomBy(1 / 1.6)}>
-              <Minus className="size-[18px]" />
-            </MapButton>
+        <div data-map-ui className="hud hud-top">
+          <Omnibar ref={search} ex={ex} sheet={sheetId} onSheet={switchSheet} groups={layers.groups} onGroups={(groups) => setLayers({ groups })} onPick={(id) => selectAndShow({ type: 'place', id })} />
+          <div className="hud-tools" role="toolbar" aria-label="Atlas tools">
+            <MapOptions
+              current={view.style}
+              rankIndex={ex.level.rankIndex}
+              layers={layers}
+              onLayers={setLayers}
+              hotspots={showHotspots}
+              onHotspots={setShowHotspots}
+              onLegend={() => setPanel('legend')}
+              trigger={(props) => (
+                <button type="button" className="tool" aria-label="Map layers" title="Map layers" {...props}>
+                  <Layers />
+                </button>
+              )}
+            />
+            <button type="button" className="tool" aria-label="Previous questions" title="Previous questions" onClick={() => setBrowserFilter({})}>
+              <BookOpenText />
+            </button>
+            <button type="button" className="tool" aria-label={due ? `Recall – ${due} due` : 'Recall'} title="Recall" onClick={() => setPanel('recall')}>
+              <GraduationCap />
+              {due > 0 && <span className="hud-count type-numeric">{due}</span>}
+            </button>
           </div>
-        )}
+          {activeGroups.length > 0 && (
+            <div className="hud-filters" aria-label="Active place filters">
+              {activeGroups.map((g) => (
+                <button key={g.id} type="button" className="hud-filter" onClick={() => setLayers({ groups: layers.groups.filter((id) => id !== g.id) })} aria-label={`Remove filter: ${g.label}`}>
+                  {g.label}
+                  <X aria-hidden="true" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
+        <div data-map-ui className="hud hud-zoom" role="group" aria-label="Map view">
+          <button type="button" className="tool hud-zoom-step" aria-label="Zoom in" title="Zoom in" onClick={() => map.current?.zoomBy(1.6)}>
+            <Plus />
+          </button>
+          <button type="button" className="tool hud-zoom-step" aria-label="Zoom out" title="Zoom out" onClick={() => map.current?.zoomBy(1 / 1.6)}>
+            <Minus />
+          </button>
+          <button type="button" className="tool" aria-label="Fit the map" title="Fit the map" onClick={() => map.current?.fitFocus()}>
+            <Scan />
+          </button>
+          <button type="button" className="tool" aria-label={full.on ? 'Exit full screen' : 'Full-screen map'} title={full.on ? 'Exit full screen (Esc)' : 'Full-screen map (Shift+F)'} aria-pressed={full.on} onClick={full.toggle}>
+            {full.on ? <Minimize2 /> : <Maximize2 />}
+          </button>
+        </div>
+
+        <Inspector open={desktop && showInspector && !busy} onClose={closeInspector} label={selectedPlace?.name ?? 'Place details'}>
+          {details}
+        </Inspector>
       </div>
-      <PlaceInspector open={desktop && !!details && inspectorOpen && !pyqId && !review} onClose={() => setInspectorOpen(false)}>
-        <div className="atlas-inspector-head"><p className="t-label">Place knowledge</p><IconButton label="Collapse Atlas inspector" onClick={() => setInspectorOpen(false)}><PanelRightClose className="size-4" /></IconButton></div>
-        {details}
-      </PlaceInspector>
-      {details && !inspectorOpen && <button data-map-ui type="button" className="atlas-reopen press" onClick={() => setInspectorOpen(true)} aria-label={desktop ? 'Open Atlas inspector' : 'Reopen place inspector'}><PanelRightOpen className="size-4" />Place details</button>}
-      {!desktop && <BottomSheet open={!!details && inspectorOpen && !browserFilter && !pyqId && !review && !panel} onClose={() => setInspectorOpen(false)} label={selectedPlace?.name ?? 'Atlas details'} title="Place knowledge" detents={[144, 420, 1]} detent={detent} onDetentChange={setDetent} onHeight={setSheetHeight} modal={false} dismissible size="lg" className="atlas-place-sheet" headerAction={<button type="button" className="atlas-detent-control" aria-label={detent === 2 ? 'Peek place details' : 'Expand place details'} onClick={() => setDetent(v => v === 2 ? 0 : v + 1)}><ChevronUp className="size-4" /><span>{detent === 2 ? 'Peek' : detent === 0 ? 'Details' : 'Full'}</span></button>}>{details}</BottomSheet>}
-      <PyqBrowser filter={browserFilter} atlas={ex.atlas} onClose={() => setBrowserFilter(null)} onOpen={(id) => { setBrowserFilter(null); setPyqId(id) }} onPlace={(id) => { setBrowserFilter(null); selectAndShow({ type: 'place', id }) }} />
-      <CanonicalQuiz id={pyqId} atlas={ex.atlas} onClose={() => setPyqId(null)} onPlace={(id) => { setPyqId(null); selectAndShow({ type: 'place', id }); setInspectorOpen(true) }} />
-      {(
-        <Sheet open={panel === 'more'} onClose={() => setPanel(null)} title="Atlas" size="md">
-          <Button onClick={() => { setPanel(null); setBrowserFilter({}) }}>Browse previous questions</Button>
-          <AtlasPanel ex={ex} actions={actions} /><OfflineAtlas />
-        </Sheet>
+
+      {!desktop && (
+        <BottomSheet
+          open={showInspector && !browserFilter && !busy && !panel}
+          onClose={closeInspector}
+          label={selectedPlace?.name ?? 'Place details'}
+          detents={[132, 0.52, 1]}
+          detent={detent}
+          onDetentChange={setDetent}
+          onHeight={setSheetHeight}
+          modal={false}
+          dismissible
+          size="lg"
+          bare
+          className="atlas-place-sheet"
+        >
+          <div className="inspector-body">
+            <button type="button" className="tool inspector-close" aria-label="Close place details" onClick={closeInspector}>
+              <X />
+            </button>
+            {details}
+          </div>
+        </BottomSheet>
       )}
-      <GazetteerSheet
-        ex={ex}
-        sheet={sheetId}
-        initialQuery={searchQuery}
-        open={panel === 'gazetteer'}
-        onClose={() => setPanel(null)}
-        onPick={(id) => {
-          setPanel(null)
-          const p = ex.atlas.byId.get(id)
-          setSel({ type: 'place', id })
-          setInspectorOpen(true)
-          setDetent(1)
-          if (p) flyToPlace(p, { sheetOpen: true })
-        }}
-      />
+      <PyqBrowser filter={browserFilter} atlas={ex.atlas} onClose={() => setBrowserFilter(null)} onOpen={(id) => { setBrowserFilter(null); setPyqId(id) }} onPlace={(id) => { setBrowserFilter(null); selectAndShow({ type: 'place', id }) }} />
+      <CanonicalQuiz id={pyqId} atlas={ex.atlas} onClose={() => setPyqId(null)} onPlace={(id) => { setPyqId(null); selectAndShow({ type: 'place', id }) }} />
+      <Sheet open={panel === 'recall'} onClose={() => setPanel(null)} title="Recall" size="md">
+        <AtlasPanel ex={ex} actions={actions} />
+      </Sheet>
       <LegendSheet open={panel === 'legend'} onClose={() => setPanel(null)} />
       <FieldReviewSheet request={review} onClose={() => setReview(null)} />
     </div>
@@ -412,56 +449,41 @@ function Atlas({ ex }: { ex: Exploration }) {
 }
 
 /** Non-modal inspection shares Escape/Back ownership while leaving the map usable. */
-function PlaceInspector({ open, onClose, children }: { open: boolean; onClose: () => void; children: ReactNode }) {
+function Inspector({ open, onClose, label, children }: { open: boolean; onClose: () => void; label: string; children: ReactNode }) {
   const id = useId()
   const panel = useRef<HTMLElement>(null)
   const active = useScreenActive()
   useSurface({ open: open && active, onClose, id, panel, modal: false, focusOnOpen: false, history: false })
-  return open ? <aside ref={panel} data-inspector className="atlas-inspector scrollbar-thin" aria-label="Atlas inspector">{children}</aside> : null
+  if (!open) return null
+  return (
+    <aside ref={panel} data-inspector className="inspector" aria-label={label}>
+      <button type="button" className="tool inspector-close" aria-label="Close place details" title="Close (Esc)" onClick={onClose}>
+        <X />
+      </button>
+      <div className="inspector-body scrollbar-thin">{children}</div>
+    </aside>
+  )
 }
 
 /** What a place card covers once it is open: the inspector's side on desktop, the lower part of the screen on a phone. */
 function coveredBy(desktop: boolean, cardOpen: boolean): MapInsets | undefined {
   if (!cardOpen) return undefined
-  return desktop ? { right: INSPECTOR_CLEAR } : { bottom: Math.round(window.innerHeight * 0.55) }
+  return desktop ? { top: HUD_TOP, right: INSPECTOR_CLEAR } : { top: HUD_TOP, bottom: Math.round(window.innerHeight * 0.52) }
 }
 
-/** A group of map controls: one raised capsule floating over the map. */
-const TOOLBAR = 'atlas-toolbar'
-
-function MapButton({ label, onClick, children, active, pressed }: { label: string; onClick: () => void; children: React.ReactNode; active?: boolean; pressed?: boolean }) {
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      title={label}
-      aria-expanded={active}
-      aria-pressed={pressed}
-      onClick={onClick}
-      className={cn('press atlas-map-button', (active || pressed) && 'bg-accent-soft text-accent hover:bg-accent-soft hover:text-accent')}
-    >
-      {children}
-    </button>
-  )
-}
-
-/**
- * Full-screen map: the app's chrome slides away (ShellSync sets data-chrome on
- * <html>) and, where the Fullscreen API exists, the browser goes full screen too.
- * Escape, the browser's own exit and leaving the Atlas all come back out; on
- * phones without the API (iPhone) it still fills the window.
- */
 /**
  * Everything about the Atlas that depends on its being the screen in front, or
- * on the address: leaving and returning, deep links, the full-screen keys. A
- * component of its own, rendering nothing, so that these changes re-render it
- * and not the screen.
+ * on the address: leaving and returning, deep links, the keyboard. A component
+ * of its own, rendering nothing, so that these changes re-render it and not the
+ * screen.
  */
-function AtlasPresence({ onFront, onLeave, onLink, toggleFullscreen }: { onFront: () => void; onLeave: () => void; onLink: (route: Route) => void; toggleFullscreen: () => void }) {
+function AtlasPresence({ onFront, onLeave, onLink, toggleFullscreen, focusSearch }: { onFront: () => void; onLeave: () => void; onLink: (route: Route) => void; toggleFullscreen: () => void; focusSearch: () => void }) {
   const active = useScreenActive()
   const route = useRoute()
   const link = useRef(onLink)
   link.current = onLink
+  const focus = useRef(focusSearch)
+  focus.current = focusSearch
   useEffect(() => {
     if (!active) return
     onFront()
@@ -477,7 +499,10 @@ function AtlasPresence({ onFront, onLeave, onLink, toggleFullscreen }: { onFront
     const off = onFullscreenExit(() => useUi.getState().set({ atlasFullscreen: false }))
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || isTyping(e.target) || anyLayerOpen()) return
-      if (e.key === 'F' && e.shiftKey) {
+      if (e.key === '/') {
+        e.preventDefault()
+        focus.current()
+      } else if (e.key === 'F' && e.shiftKey) {
         e.preventDefault()
         toggleFullscreen()
       } else if (e.key === 'Escape' && useUi.getState().atlasFullscreen && !isFullscreen()) {
@@ -502,6 +527,10 @@ function AtlasPresence({ onFront, onLeave, onLink, toggleFullscreen }: { onFront
   return null
 }
 
+/**
+ * Full-screen map: the app's chrome slides away (ShellSync sets data-chrome on
+ * <html>) and, where the Fullscreen API exists, the browser goes full screen too.
+ */
 function useAtlasFullscreen() {
   const on = useUi((s) => s.atlasFullscreen)
   const toggle = useCallback(() => {
@@ -515,89 +544,5 @@ function useAtlasFullscreen() {
       void enterFullscreen()
     }
   }, [])
-
   return { on, toggle }
-}
-
-/** Map style, what to show, and which kinds of place – one menu. */
-function LayersMenu({ current, rankIndex, layers, onLayers, actions }: {
-  current: string; rankIndex: number; layers: AtlasLayers; onLayers: (patch: Partial<AtlasLayers>) => void
-  actions: { label: string; icon: ReactNode; run: () => void; pressed?: boolean; disabled?: boolean }[]
-}) {
-  const [open, setOpen] = useState(false)
-  const box = useRef<HTMLDivElement>(null)
-  const panel = useRef<HTMLDivElement>(null)
-  const id = useId()
-  useSurface({ open, onClose: () => setOpen(false), id, panel, anchor: box, modal: false, focusOnOpen: true, history: false, dismissOnOutsidePress: true })
-  const active = useScreenActive()
-  useEffect(() => {
-    if (!active) setOpen(false)
-  }, [active])
-  const toggleGroup = (id: string) => onLayers({ groups: layers.groups.includes(id) ? layers.groups.filter((g) => g !== id) : [...layers.groups, id] })
-  return (
-    <div className="relative atlas-layers" ref={box}>
-      <MapButton label="Map options" onClick={() => setOpen((o) => !o)} active={open}>
-        <MoreHorizontal className="size-[18px]" />
-      </MapButton>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            ref={panel}
-            role="dialog"
-            aria-label="Map options"
-            initial={{ opacity: 0, y: -4, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.14 }}
-            className="scrollbar-thin absolute top-full right-0 z-40 mt-2 max-h-[min(70dvh,560px)] w-[min(18.5rem,calc(100vw-1.5rem))] origin-top-right overflow-y-auto rounded-2xl bg-surface p-1.5 shadow-[0_0_0_1px_var(--line),var(--shadow-lift-value)]"
-          >
-            <div className="atlas-menu-actions">{actions.map(action => <button key={action.label} type="button" aria-pressed={action.pressed} disabled={action.disabled} onClick={() => { setOpen(false); action.run() }} className="press">{action.icon}<span>{action.label}</span>{action.pressed && <Check className="size-4 text-accent" />}</button>)}</div>
-            <div className="my-1.5 border-t border-line" />
-            <p className="px-3 pt-2 pb-1 t-label text-[12px] text-ink-3">Study map style</p>
-            <div role="group" aria-label="Study map style">{MAP_STYLES.map((s) => {
-              const locked = s.minRank > rankIndex
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  aria-pressed={current === s.id}
-                  disabled={locked}
-                  onClick={() => void updateSettings({ atlasStyle: s.id })}
-                  className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left hover:bg-surface-2 disabled:opacity-60"
-                >
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-semibold">{s.name}</span>
-                    <span className="block text-[12px] text-ink-2">{locked ? `Unlocks at ${RANKS[s.minRank].title}` : s.description}</span>
-                  </span>
-                  {locked ? <Lock className="size-4 text-ink-3" /> : current === s.id && <Check className="size-4 text-accent" />}
-                </button>
-              )
-            })}</div>
-            <div className="my-1.5 border-t border-line" />
-            <p className="px-3 pt-1 pb-1 t-label text-[12px] text-ink-3">Show</p>
-            <p className="px-3 py-2 text-xs text-ink-3">Every place is accessible. Recall builds familiarity and mastery.</p>
-            <label className="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-surface-2">
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold">Protected areas &amp; disputed regions</span>
-                <span className="block text-[12px] text-ink-2">Park outlines appear as you zoom in</span>
-              </span>
-              <Toggle checked={layers.areas} onChange={(v) => onLayers({ areas: v })} label="Protected areas and disputed regions" />
-            </label>
-            <div className="my-1.5 border-t border-line" />
-            <p className="px-3 pt-1 pb-1 t-label text-[12px] text-ink-3">Places</p>
-            <div className="flex flex-wrap gap-1.5 px-3 pt-1 pb-2.5">
-              <Chip active={!layers.groups.length} onClick={() => onLayers({ groups: [] })}>
-                All
-              </Chip>
-              {PLACE_GROUPS.map((g) => (
-                <Chip key={g.id} active={layers.groups.includes(g.id)} onClick={() => toggleGroup(g.id)}>
-                  {g.label}
-                </Chip>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
 }

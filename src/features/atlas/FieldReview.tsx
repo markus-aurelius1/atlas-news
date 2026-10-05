@@ -10,6 +10,8 @@ import { useSheet } from '@/atlas/sheet'
 import { isCorrect, makeQuestion, TYPE_LABEL, type Question } from '@/atlas/questions'
 import { MASTERY_LABEL, MASTERY_ORDER, type MasteryLevel } from '@/atlas/mastery'
 import { useExploration, type Exploration } from '@/atlas/useExploration'
+import { useResolvedDark } from '@/app/theme'
+import { useSettings } from '@/data/hooks'
 import type { RecallSource } from '@/data/types'
 import { RECALL_XP_DAILY_CAP } from '@/game/progression'
 import { cn } from '@/lib/cn'
@@ -108,7 +110,7 @@ export function Review({ ex, request, onClose, compact }: { ex: Exploration; req
       <div className="flex items-center gap-3">
         <div className="flex flex-1 gap-1" aria-label={`Question ${index + 1} of ${questions.length}`}>
           {questions.map((_, i) => (
-            <span key={i} className={cn('h-1.5 flex-1 rounded-full transition-colors', i < results.length ? (results[i].correct ? 'bg-success' : 'bg-danger') : i === index ? 'bg-ink-2' : 'bg-line')} />
+            <span key={i} className={cn('h-1 flex-1 rounded-full transition-colors', i < results.length ? (results[i].correct ? 'bg-success' : 'bg-danger') : i === index ? 'bg-ink' : 'bg-surface-3')} />
           ))}
         </div>
         {!compact && (
@@ -117,12 +119,12 @@ export function Review({ ex, request, onClose, compact }: { ex: Exploration; req
           </button>
         )}
       </div>
-      <p className="mt-4 t-label text-[12px] text-ink-3">
+      <p className="eyebrow mt-5">
         {request.title ?? 'Field review'} · {TYPE_LABEL[q.type]}
       </p>
       <AnimatePresence mode="wait">
         <motion.div key={q.key} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} transition={{ duration: 0.18 }}>
-          <h3 className="mt-1.5 font-display text-[22px] leading-snug font-medium tracking-tight">{q.prompt}</h3>
+          <h3 className="mt-2 font-display text-[23px] leading-snug font-medium tracking-tight">{q.prompt}</h3>
           {q.clue && <p className="mt-2 rounded-2xl bg-surface-2 px-4 py-3 text-[15px] leading-relaxed italic">“{q.clue}”</p>}
           <fieldset disabled={saving} className="min-w-0" aria-label="Recall answer">
             {q.map && <QuestionMap ex={ex} q={q} result={answered} onPin={answer} />}
@@ -206,6 +208,7 @@ function OrderInput({ q, result, onSubmit }: { q: Question; result?: Result; onS
 
 function QuestionMap({ ex, q, result, onPin }: { ex: Exploration; q: Question; result?: Result; onPin: (id: string) => void }) {
   const { sheet } = useSheet(q.map!.sheet)
+  const dark = useResolvedDark(useSettings().theme)
   const hidden = useMemo(() => {
     // Don't let the map's own names give the answer away.
     const ids = [q.placeId, ...q.options.map((o) => o.id)]
@@ -222,12 +225,13 @@ function QuestionMap({ ex, q, result, onPin }: { ex: Exploration; q: Question; r
     tone: !result ? 'accent' : p.id === q.answer ? 'correct' : p.id === result.given ? 'wrong' : 'muted',
   }))
   return (
-    <div className="mt-3 h-[230px] overflow-hidden rounded-2xl border border-line sm:h-[300px]">
+    <div className="mt-4 h-[230px] overflow-hidden rounded-xl sm:h-[300px]" style={{ boxShadow: '0 0 0 1px var(--hud-line)' }}>
       {sheet ? (
         <AtlasMap
           key={q.key}
           sheet={sheet}
           plate="physical"
+          tone={dark ? 'dusk' : 'day'}
           explored={null}
           places={[]}
           showPlaces={false}
@@ -250,8 +254,8 @@ function Summary({ ex, results, before, onClose }: { ex: Exploration; results: R
     .filter((c) => MASTERY_ORDER.indexOf(c.to) > MASTERY_ORDER.indexOf(c.from))
   return (
     <div className="px-6 pt-4 pb-6 text-center sm:pt-8">
-      <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mx-auto flex size-16 items-center justify-center rounded-full bg-accent-soft text-accent">
-        <Sparkles className="size-7" />
+      <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mx-auto flex size-14 items-center justify-center rounded-full bg-surface-2 text-ink">
+        <Sparkles className="size-6" />
       </motion.div>
       <h2 className="mt-4 font-display text-2xl font-medium tracking-tight">
         {right} of {results.length} correct

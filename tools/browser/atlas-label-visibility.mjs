@@ -75,7 +75,7 @@ try {
     await inspect('initial India')
     for (const sheet of ['India', 'World']) {
       if (sheet === 'World') {
-        await page.getByRole('tab', { name: 'World', exact: true }).click()
+        await page.getByRole('radio', { name: 'World', exact: true }).click()
         await page.getByRole('application', { name: /^World map/ }).waitFor()
         await settle()
         await inspect('initial World')
@@ -93,11 +93,10 @@ try {
       await page.getByRole('heading', { name: names.get(marker.id), exact: true }).waitFor()
       checks.push(`${tag}: ${sheet} marker selects its place`)
       console.log('PASS', checks.at(-1))
-      if (width >= 1024) await page.getByRole('button', { name: 'Collapse Atlas inspector' }).click()
-      else await page.keyboard.press('Escape')
+      await page.getByRole('button', { name: 'Close place details' }).click()
       await settle()
     }
-    await page.getByRole('tab', { name: 'India', exact: true }).click()
+    await page.getByRole('radio', { name: 'India', exact: true }).click()
     await page.getByRole('application', { name: /^India map/ }).waitFor()
     await settle()
     await inspect('return to India')

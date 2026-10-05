@@ -6,7 +6,7 @@ import type { RouteName } from './router'
 const LAZY: Partial<Record<RouteName, Preloadable<ComponentType<object>>>> = {
   atlas: lazyScreen(() => import('@/features/atlas/AtlasScreen')),
   settings: lazyScreen(() => import('@/features/settings/SettingsScreen')),
-  'current-affairs': lazyScreen(() => import('@/features/current-affairs/CurrentAffairsScreen')),
+  'current-affairs': lazyScreen(() => import('@/features/current-affairs/NewsScreen')),
 }
 
 

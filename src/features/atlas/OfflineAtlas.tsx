@@ -39,5 +39,5 @@ export function OfflineAtlas() {
     if (worker) void worker.ready.then(() => { if (live) refresh() }).catch(() => {})
     return () => { live = false; generation++; stop(); worker?.removeEventListener('controllerchange', refresh) }
   }, [])
-  return <section className="space-y-2 py-4"><h3 className="text-sm font-bold">Offline Atlas</h3><p className="text-sm text-ink-2">World context, India detail, every place and all 149 curated questions are bundled.</p>{status&&<p className="text-xs text-ink-2">{(status.bytes/1024/1024).toFixed(2)} MiB · {status.installed}/{status.total} assets saved offline{status.installed<status.total?' · allow the initial download to finish':''}</p>}<p className="text-xs text-ink-3">Regional detail packs are not yet published. No online map cache is used.</p></section>
+  return <section className="settings-offline"><h3>Offline Atlas</h3><p>World context, India detail, every place and all 149 curated questions are bundled.</p>{status&&<p>{(status.bytes/1024/1024).toFixed(2)} MiB · {status.installed}/{status.total} assets saved offline{status.installed<status.total?' · allow the initial download to finish':''}</p>}<p>Regional detail packs are not yet published. No online map cache is used.</p></section>
 }

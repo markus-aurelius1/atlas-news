@@ -106,6 +106,12 @@ export class TilePainter {
         ctx.filter = palette.imageFilter ?? 'none'
         ctx.drawImage(this.relief, 0, 0, sheet.width, sheet.height)
         ctx.filter = 'none'
+        if (palette.reliefDim) {
+          ctx.globalCompositeOperation = 'multiply'
+          ctx.fillStyle = palette.reliefDim
+          ctx.fillRect(0, 0, sheet.width, sheet.height)
+          ctx.globalCompositeOperation = 'source-over'
+        }
       } else {
         ctx.fillStyle = palette.sea
         ctx.fillRect(0, 0, sheet.width, sheet.height)
@@ -122,7 +128,7 @@ export class TilePainter {
         ctx.globalCompositeOperation = 'source-over'
         ctx.globalAlpha = 1
       }
-      for (const r of sheet.rivers) stroke('rivers:' + r.id, palette.river, ({ 1: 2.2, 2: 1.6, 3: 1.2, 4: 0.85 } as Record<number, number>)[r.rank] ?? 0.85, [], 1, true)
+      for (const r of sheet.rivers) stroke('rivers:' + r.id, palette.river, ({ 1: 2, 2: 1.4, 3: 1, 4: 0.7 } as Record<number, number>)[r.rank] ?? 0.7, [], 1, true)
       for (const f of sheet.lakes) {
         fill('lakes:' + f.id, palette.lake)
         if (Math.max(f.bbox[2] - f.bbox[0], f.bbox[3] - f.bbox[1]) > (india ? 10 : 6)) stroke('lakes:' + f.id, palette.lakeStroke, 0.7)
@@ -141,12 +147,12 @@ export class TilePainter {
     }
     for (const f of studied) fill((india ? 'states:' : 'countries:') + f.id, palette.studied, physical ? 0.07 : 0.1)
     {
-      stroke('graticule', palette.graticule, 0.6, [], 0.45)
-      stroke('coasts', palette.coast, 0.9)
+      stroke('graticule', palette.graticule, 0.5, [], 0.2)
+      stroke('coasts', palette.coast, 0.7, [], 0.8)
       if (india) {
-        stroke('indiaCoast', palette.indiaCoast, 1)
-        stroke('stateBorders', palette.halo, 2.6, [], 0.55)
-        stroke('stateBorders', palette.stateBorder, 1.15, [5, 2.5])
+        stroke('indiaCoast', palette.indiaCoast, 0.8, [], 0.9)
+        stroke('stateBorders', palette.halo, 2, [], 0.32)
+        stroke('stateBorders', palette.stateBorder, 0.8, [4, 2.5], 0.8)
       }
     }
     for (const f of studied) stroke((india ? 'states:' : 'countries:') + f.id, palette.studied, 1.7, [], 0.8, true)
@@ -156,15 +162,15 @@ export class TilePainter {
           fill('areas:' + f.id, palette.dispute, 0.07)
           stroke('areas:' + f.id, palette.dispute, 1.1, [5, 3])
         }
-      stroke('intlBorders', palette.halo, india ? 3.6 : 2.4, [], 0.7)
-      stroke('intlBorders', palette.border, india ? 1.6 : 0.9, india ? [8, 2.5, 2, 2.5] : [4, 2])
+      stroke('intlBorders', palette.halo, india ? 2.6 : 2, [], 0.45)
+      stroke('intlBorders', palette.border, india ? 1.1 : 0.75, india ? [7, 2.5, 1.5, 2.5] : [4, 2], 0.9)
       if (india) {
-        stroke('indiaBorder', palette.halo, 4.6, [], 0.75)
-        stroke('indiaBorder', palette.indiaBorder, 2.2, [9, 3, 2.5, 3])
+        stroke('indiaBorder', palette.halo, 3.4, [], 0.55)
+        stroke('indiaBorder', palette.indiaBorder, 1.5, [9, 3, 2, 3])
       }
       ctx.globalAlpha = 1
       ctx.strokeStyle = palette.neatline
-      ctx.lineWidth = 1.2 / inkK
+      ctx.lineWidth = 0.8 / inkK
       ctx.setLineDash([])
       ctx.strokeRect(0, 0, sheet.width, sheet.height)
     }

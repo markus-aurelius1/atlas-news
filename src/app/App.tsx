@@ -24,7 +24,7 @@ import { onRouteReset, rememberScroll, scrollFor } from './routeState'
 import { ScreenActive } from './screenActive'
 import { shiftStage } from './shellShift'
 import { preloadRoute, preloadRoutesWhenIdle, SCREENS } from './screens'
-import { TopBar } from './Shell'
+import { Nav } from './Shell'
 import { useGlobalShortcuts } from './shortcuts'
 import { useApplyTheme } from './theme'
 import { useUi } from './ui-store'
@@ -65,7 +65,7 @@ export function App() {
   if (boot === 'error') {
     return (
       <div className="flex min-h-dvh flex-col items-center justify-center gap-3 p-8 text-center">
-        <LogoMark className="size-10 text-accent" />
+        <LogoMark className="size-10 text-ink-3" />
         <p className="font-display text-xl">Tars couldn’t open its local database.</p>
         <p className="max-w-sm text-sm text-ink-2">Private browsing modes sometimes block storage. Try a normal window, or check that site data is allowed.</p>
       </div>
@@ -219,12 +219,6 @@ function Main({ ready }: { ready: boolean }) {
     }
   }, [ready])
   const scroll = stageScroll(shown)
-  // Scrolling workspaces reserve room for their scrollbar.
-  useLayoutEffect(() => {
-    const el = stage.current
-    if (!el || scroll !== 'page') return
-    document.documentElement.style.setProperty('--stage-gutter', `${el.offsetWidth - el.clientWidth}px`)
-  }, [scroll, ready])
   return (
     <>
       {ready && (
@@ -235,7 +229,7 @@ function Main({ ready }: { ready: boolean }) {
         </>
       )}
       <ShellSync route={route.name} />
-      <TopBar route={route.name} />
+      <Nav route={route.name} />
       <div className="app-frame">
         <main className="stage" aria-busy={!ready || undefined}>
           {atlasKept && (
@@ -270,7 +264,7 @@ function Main({ ready }: { ready: boolean }) {
               </>
             ) : (
               <div className="flex min-h-[60dvh] items-center justify-center md:h-full">
-                <LogoMark className="size-9 animate-breathe text-accent" />
+                <LogoMark className="size-8 animate-breathe text-ink-3" />
               </div>
             )}
           </div>

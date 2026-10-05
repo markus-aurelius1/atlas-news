@@ -22,6 +22,7 @@ export const SHORTCUTS: ShortcutGroup[] = [
     title: 'Anywhere',
     items: [
       { keys: [`${modKey}K`], label: 'Search and commands' },
+      { keys: ['/'], label: 'Search places or articles' },
       { keys: ['?'], label: 'Show keyboard shortcuts' },
       { keys: ['Esc'], label: 'Close a dialog' },
     ],
