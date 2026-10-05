@@ -1,0 +1,4 @@
+# Pages serves Vite assets and invokes only the same-origin News gateway.
+name = "tars-atlas-news"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-04"

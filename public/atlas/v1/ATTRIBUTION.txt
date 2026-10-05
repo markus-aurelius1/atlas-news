@@ -1,0 +1,37 @@
+Tars Atlas data (version 1)
+
+Countries, rivers, lakes, glaciers, physical regions and seas (and, in the
+overlay, further river courses, lakes and regions matched by Wikidata id):
+  Natural Earth (naturalearthdata.com) – public domain. India is drawn from
+  Natural Earth's India point-of-view boundaries (ne_10m_admin_0_countries_ind).
+
+States and Union Territories of India:
+  DataMeet, "maps" repository (github.com/datameet/maps) – CC BY 4.0.
+
+Relief, hillshade and traced river courses:
+  Derived from AWS Terrain Tiles (registry.opendata.aws/terrain-tiles), which
+  combine SRTM, GMTED2010, ETOPO1 and other public elevation sources.
+
+Protected-area, wetland and disputed-region outlines, and river courses that
+Natural Earth does not have (the overlay files):
+  © OpenStreetMap contributors (openstreetmap.org/copyright), available under
+  the Open Database License (ODbL). Each place lists its OpenStreetMap element.
+
+Places and facts:
+  Compiled for Tars from public reference sources. Every place links to
+  its Wikipedia article (CC BY-SA 4.0) and Wikidata item (CC0); places added in
+  data version 2 take their position from Wikidata and their facts verbatim
+  from the article's lead. Designated sites follow the official lists: Ramsar
+  Sites Information Service, National Tiger Conservation Authority, MoEFCC /
+  UNESCO Man and the Biosphere; national capitals follow Natural Earth.
+  Places added from previous-year papers take their position and facts from
+  Wikipedia (CC BY-SA 4.0) and, where noted, coordinates from Wikidata (CC0);
+  each such place lists its pages under "sources".
+
+Previous-year question history:
+  Transcribed from UPPSC question papers and the UPSC CSE sections of a PYQ
+  workbook; every ledger entry cites its paper and page (tools/atlas-build/content/pyq).
+
+The Atlas is a learning aid and not an authoritative map. External boundaries
+of India follow the Government of India's depiction as closely as the source
+data allows.

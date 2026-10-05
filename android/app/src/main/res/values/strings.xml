@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tars</string>
+    <string name="title_activity_main">Tars</string>
+    <string name="package_name">app.lodestar.study</string>
+    <string name="custom_url_scheme">tars</string>
+    <string name="shortcut_atlas">Atlas</string>
+    <string name="shortcut_news">News</string>
+</resources>

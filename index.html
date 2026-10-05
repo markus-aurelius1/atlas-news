@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Tars — Atlas & News</title>
+    <meta name="description" content="Tars brings an offline Atlas and source-linked Current Affairs reading together." />
+    <meta name="application-name" content="Tars" />
+    <meta name="theme-color" content="#090E15" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tars" />
+    <!-- %SITE_URL% is the deployment's production URL, filled in at build time (vite.config.ts). -->
+    <link rel="canonical" href="%SITE_URL%/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tars" />
+    <meta property="og:title" content="Tars — Atlas & News" />
+    <meta property="og:description" content="An offline Atlas and source-linked Current Affairs reading workspace." />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Tars logo – four slabs forming a T – beside the words Atlas and News." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tars — Atlas & News" />
+    <meta name="twitter:description" content="An offline Atlas and source-linked Current Affairs reading workspace." />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash (reads the pre-rename key once).
+      ;(function () {
+        try {
+          var pref = localStorage.getItem('tars.theme') || localStorage.getItem('lodestar.theme') || 'system'
+          var dark = pref === 'dark' || (pref === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
+          if (dark) document.documentElement.classList.add('dark')
+          // The stage on a phone, the canvas around it in the window (twins of app/theme.ts).
+          var framed = matchMedia('(min-width: 768px)').matches
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? (framed ? '#090E15' : '#0D141E') : framed ? '#F4F1E9' : '#F9F7F2')
+          if (localStorage.getItem('tars.sidebar.collapsed') === '1') document.documentElement.dataset.sidebar = 'collapsed'
+          // Motion: the person's choice (Settings) over the system's (twin of lib/motion.ts). CSS and scripts read data-motion.
+          var motion = localStorage.getItem('tars.motion')
+          document.documentElement.dataset.motion = motion === 'reduced' || motion === 'full' ? motion : matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduced' : 'full'
+          // Density follows the pointer, not the width: a touch laptop gets touch sizes.
+          document.documentElement.dataset.density = matchMedia('(pointer: coarse)').matches ? 'touch' : 'pointer'
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Tars needs JavaScript to run.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

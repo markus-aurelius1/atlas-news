@@ -1,0 +1,25 @@
+{
+  "name": "tars-atlas-build",
+  "private": true,
+  "type": "module",
+  "description": "Builds the offline Atlas data (vector layers + relief rasters) into public/atlas. Not part of the app bundle.",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "places": "node build.mjs --places-only",
+    "pyq:canonical": "node canonical-pyq.mjs",
+    "soi:import": "node import-soi-boundary.mjs"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "d3-geo-projection": "^4.0.0",
+    "mapshaper": "^0.7.66",
+    "pngjs": "^7.0.0",
+    "polylabel": "^2.1.0",
+    "shapefile": "^0.6.6",
+    "sharp": "^0.35.4",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3"
+  }
+}

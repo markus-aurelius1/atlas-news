@@ -1,0 +1,102 @@
+{
+ "list": "Biosphere reserves of India",
+ "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India",
+ "owner": "MoEFCC; UNESCO Man and the Biosphere Programme",
+ "items": [
+  {
+   "title": "Nilgiri Biosphere Reserve",
+   "name": "Nilgiri Biosphere Reserve",
+   "unesco": "2000",
+   "fauna": "Lion Tailed Macaque (EN), Nilgiri Tahr (EN), Malabar Giant Squirrel (LC), Nilgiri Langur (VU)"
+  },
+  {
+   "title": "Nanda Devi National Park",
+   "name": "Nanda Devi",
+   "fauna": "Snow Leopard (VU), Musk Deer (EN), Bharal Or Blue Sheep (LC)"
+  },
+  {
+   "title": "Nokrek National Park",
+   "name": "Nokrek",
+   "fauna": "Red Panda (EN), Hoolock Gibbons (EN), Red Giant Flying Squirrel (LC)"
+  },
+  {
+   "title": "Great Nicobar Biosphere Reserve",
+   "name": "Great Nicobar",
+   "unesco": "2013",
+   "fauna": "Dugong (VU), Saltwater Crocodile (LC)"
+  },
+  {
+   "title": "Gulf of Mannar Marine National Park",
+   "name": "Gulf of Mannar",
+   "fauna": "Dugong (VU), Olive Ridley turtles (VU)"
+  },
+  {
+   "title": "Manas National Park",
+   "name": "Manas",
+   "fauna": "Assam Roofed Turtle (EN), Hispid Hare (EN), Golden Langur (EN), Pygmy Hog (EN), Wild Water Buffalo (EN), Bengal florican (CR)"
+  },
+  {
+   "title": "Sundarbans National Park",
+   "name": "Sunderbans",
+   "fauna": "Royal Bengal Tiger (EN)"
+  },
+  {
+   "title": "Simlipal National Park",
+   "name": "Simlipal",
+   "fauna": "Royal Bengal Tigers , Wild Elephants (EN), Gaurs (VU – Indian Bison ), Chausingha (VU)"
+  },
+  {
+   "title": "Dibru-Saikhowa National Park",
+   "name": "Dibru-Saikhowa",
+   "fauna": "Bengal Tiger , Clouded Leopard (VU), Gangetic Dolphin (EN)"
+  },
+  {
+   "title": "Dihang-Dibang Biosphere Reserve",
+   "name": "Dehang-Debang",
+   "fauna": "Takin (VU), Red Panda (EN)"
+  },
+  {
+   "title": "Pachmarhi",
+   "name": "Pachmarhi",
+   "fauna": "Tiger , Gaur , Indian Giant Flying Squirrels (LC)"
+  },
+  {
+   "title": "Khangchendzonga National Park",
+   "name": "Khangchendzonga",
+   "unesco": "2018",
+   "fauna": "Red Panda (EN), Snow Leopard (VU), Musk Deer (EN), Great Tibetan Sheep (Argali – NT)"
+  },
+  {
+   "title": "Agasthyamala Biosphere Reserve",
+   "name": "Agasthyamalai",
+   "fauna": "Nilgiri Tahr (EN)"
+  },
+  {
+   "title": "Achanakmar-Amarkantak Biosphere Reserve",
+   "name": "Achanakamar - Amarkantak",
+   "unesco": "2012",
+   "fauna": "Four Horned Antelope ( Chausingha (VU)), Indian Wild Dog (VU)"
+  },
+  {
+   "title": "Great Rann of Kutch",
+   "name": "Great Rann of Kutch (Kachchh)",
+   "fauna": "Great Indian Bustard (CR), Indian Wild Ass (NT)"
+  },
+  {
+   "title": "Cold Desert (biosphere reserve)",
+   "name": "Cold Desert",
+   "unesco": "2025",
+   "fauna": "Snow Leopard (VU), Himalayan Ibex (also referred to as Siberian Ibex – LC)"
+  },
+  {
+   "title": "Seshachalam Hills",
+   "name": "Seshachalam Hills",
+   "fauna": "Red Sanders (NT), Golden Gecko (LC – Endemic To Tirumala Hills)"
+  },
+  {
+   "title": "Panna National Park",
+   "name": "Panna",
+   "fauna": "Tiger (EN), Chital (LC), Chinkara (LC), Sambar (VU)"
+  }
+ ]
+}

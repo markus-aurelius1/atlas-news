@@ -1,0 +1,7 @@
+* text=auto eol=lf
+# Runtime integrity checks hash exact shipped bytes. Never convert generated packs or map assets on checkout.
+public/** -text
+*.png -text
+*.webp -text
+*.woff2 -text
+*.jar -text

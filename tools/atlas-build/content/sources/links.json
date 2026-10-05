@@ -1,0 +1,6946 @@
+{
+ "in.river.indus": {
+  "title": "Indus River",
+  "qid": "Q7348",
+  "dist": 1498,
+  "how": "guess"
+ },
+ "in.river.zanskar": {
+  "title": "Zanskar River",
+  "qid": "Q147014",
+  "dist": 20.8,
+  "how": "guess"
+ },
+ "in.river.shyok": {
+  "title": "Shyok River",
+  "qid": "Q1587234",
+  "dist": 190,
+  "how": "guess"
+ },
+ "in.river.jhelum": {
+  "title": "Jhelum River",
+  "qid": "Q214874",
+  "dist": 391.3,
+  "how": "guess"
+ },
+ "in.river.kishanganga": {
+  "title": "Neelum River",
+  "qid": "Q3696512",
+  "dist": 35.7,
+  "how": "guess"
+ },
+ "in.river.chenab": {
+  "title": "Chenab River",
+  "qid": "Q216875",
+  "dist": 627.3,
+  "how": "guess"
+ },
+ "in.river.ravi": {
+  "title": "Ravi River",
+  "qid": "Q317899",
+  "dist": 458.4,
+  "how": "guess"
+ },
+ "in.river.beas": {
+  "title": "Beas River",
+  "qid": "Q319590",
+  "dist": 206.9,
+  "how": "guess"
+ },
+ "in.river.sutlej": {
+  "title": "Sutlej",
+  "qid": "Q171675",
+  "dist": 671.8,
+  "how": "guess"
+ },
+ "in.river.ghaggar": {
+  "title": "Ghaggar-Hakra River",
+  "qid": "Q798422",
+  "dist": 98,
+  "how": "guess"
+ },
+ "in.river.luni": {
+  "title": "Luni River",
+  "qid": "Q289273",
+  "dist": 184,
+  "how": "guess"
+ },
+ "in.river.sabarmati": {
+  "title": "Sabarmati River",
+  "qid": "Q630397",
+  "dist": 141.4,
+  "how": "guess"
+ },
+ "in.river.mahi": {
+  "title": "Mahi River",
+  "qid": "Q542539",
+  "dist": 148.7,
+  "how": "guess"
+ },
+ "in.river.ganga": {
+  "title": "Ganges",
+  "qid": "Q5089",
+  "dist": 883.1,
+  "how": "guess"
+ },
+ "in.river.bhagirathi": {
+  "title": "Bhagirathi River",
+  "qid": "Q170218",
+  "how": "guess"
+ },
+ "in.river.alaknanda": {
+  "title": "Alaknanda River",
+  "qid": "Q1419768",
+  "dist": 53.3,
+  "how": "guess"
+ },
+ "in.river.yamuna": {
+  "title": "Yamuna",
+  "qid": "Q132726",
+  "dist": 432.2,
+  "how": "guess"
+ },
+ "in.river.hindon": {
+  "title": "Hindon River",
+  "qid": "Q2723150",
+  "dist": 54.3,
+  "how": "guess"
+ },
+ "in.river.chambal": {
+  "title": "Chambal River",
+  "qid": "Q1060631",
+  "dist": 369.4,
+  "how": "guess"
+ },
+ "in.river.banas": {
+  "title": "Banas River",
+  "qid": "Q2722701",
+  "dist": 138.6,
+  "how": "guess"
+ },
+ "in.river.parbati": {
+  "title": "Parvati",
+  "qid": "Q170485",
+  "how": "guess"
+ },
+ "in.river.betwa": {
+  "title": "Betwa River",
+  "qid": "Q1334522",
+  "dist": 175.7,
+  "how": "guess"
+ },
+ "in.river.ken": {
+  "title": "Ken River",
+  "qid": "Q3322395",
+  "dist": 122.4,
+  "how": "guess"
+ },
+ "in.river.son": {
+  "title": "Sone River",
+  "qid": "Q1418174",
+  "dist": 235.7,
+  "how": "guess"
+ },
+ "in.river.gomti": {
+  "title": "Gomti River",
+  "qid": "Q477676",
+  "dist": 267.1,
+  "how": "guess"
+ },
+ "in.river.ramganga": {
+  "title": "Ramganga",
+  "qid": "Q1850806",
+  "dist": 230.1,
+  "how": "guess"
+ },
+ "in.river.sharda": {
+  "title": "Sharda River",
+  "qid": "Q2095324",
+  "dist": 173.2,
+  "how": "guess"
+ },
+ "in.river.ghaghara": {
+  "title": "Ghaghara",
+  "qid": "Q390232",
+  "dist": 272.1,
+  "how": "guess"
+ },
+ "in.river.rapti": {
+  "title": "West Rapti River",
+  "qid": "Q2869013",
+  "dist": 65.1,
+  "how": "title"
+ },
+ "in.river.gandak": {
+  "title": "Gandaki River",
+  "qid": "Q849494",
+  "dist": 171.7,
+  "how": "guess"
+ },
+ "in.river.kosi": {
+  "title": "Kosi River",
+  "qid": "Q695610",
+  "how": "guess"
+ },
+ "in.river.damodar": {
+  "title": "Damodar River",
+  "qid": "Q1971511",
+  "dist": 193.3,
+  "how": "guess"
+ },
+ "in.river.hooghly": {
+  "title": "Hooghly River",
+  "qid": "Q739687",
+  "dist": 108.2,
+  "how": "guess"
+ },
+ "in.river.subarnarekha": {
+  "title": "Subarnarekha River",
+  "qid": "Q3822918",
+  "dist": 121.5,
+  "how": "guess"
+ },
+ "in.river.narmada": {
+  "title": "Narmada River",
+  "qid": "Q234004",
+  "dist": 517.1,
+  "how": "guess"
+ },
+ "in.river.tapi": {
+  "title": "Tapti River",
+  "qid": "Q707056",
+  "dist": 261.8,
+  "how": "guess"
+ },
+ "in.river.mandovi": {
+  "title": "Mandovi River",
+  "qid": "Q2587169",
+  "dist": 20.3,
+  "how": "guess"
+ },
+ "in.river.sharavathi": {
+  "title": "Sharavati",
+  "qid": "Q3519817",
+  "dist": 36.9,
+  "how": "guess"
+ },
+ "in.river.netravati": {
+  "title": "Netravati River",
+  "qid": "Q3520928",
+  "dist": 30.8,
+  "how": "guess"
+ },
+ "in.river.periyar": {
+  "title": "Periyar River",
+  "qid": "Q2634049",
+  "dist": 74.2,
+  "how": "guess"
+ },
+ "in.river.bharathapuzha": {
+  "title": "Bharathappuzha",
+  "qid": "Q854841",
+  "dist": 42.5,
+  "how": "guess"
+ },
+ "in.river.mahanadi": {
+  "title": "Mahanadi",
+  "qid": "Q271044",
+  "dist": 319,
+  "how": "guess"
+ },
+ "in.river.brahmani": {
+  "title": "Brahmani River",
+  "qid": "Q2639171",
+  "how": "guess"
+ },
+ "in.river.baitarani": {
+  "title": "Baitarani River",
+  "qid": "Q3773157",
+  "dist": 95,
+  "how": "guess"
+ },
+ "in.river.godavari": {
+  "title": "Godavari River",
+  "qid": "Q191314",
+  "dist": 529.9,
+  "how": "guess"
+ },
+ "in.river.manjra": {
+  "title": "Manjira River",
+  "qid": "Q3695675",
+  "dist": 423.9,
+  "how": "guess"
+ },
+ "in.river.wardha": {
+  "title": "Wardha River",
+  "qid": "Q2723656",
+  "dist": 105.8,
+  "how": "guess"
+ },
+ "in.river.wainganga": {
+  "title": "Wainganga River",
+  "qid": "Q3132789",
+  "dist": 190.2,
+  "how": "guess"
+ },
+ "in.river.indravati": {
+  "title": "Indravati River",
+  "qid": "Q1661830",
+  "dist": 116,
+  "how": "guess"
+ },
+ "in.river.sabari": {
+  "title": "Sabari River",
+  "qid": "Q7395907",
+  "dist": 46.8,
+  "how": "guess"
+ },
+ "in.river.krishna": {
+  "title": "Krishna River",
+  "qid": "Q193499",
+  "dist": 204.8,
+  "how": "guess"
+ },
+ "in.river.koyna": {
+  "title": "Koyna River",
+  "qid": "Q1134765",
+  "dist": 47.3,
+  "how": "guess"
+ },
+ "in.river.ghataprabha": {
+  "title": "Ghataprabha River",
+  "qid": "Q7377670",
+  "how": "guess"
+ },
+ "in.river.malaprabha": {
+  "title": "Malaprabha River",
+  "qid": "Q6741320",
+  "how": "guess"
+ },
+ "in.river.bhima": {
+  "title": "Bhima River",
+  "qid": "Q854999",
+  "dist": 244.7,
+  "how": "guess"
+ },
+ "in.river.tungabhadra": {
+  "title": "Tungabhadra River",
+  "qid": "Q949183",
+  "dist": 189.9,
+  "how": "guess"
+ },
+ "in.river.musi": {
+  "title": "Musi River (India)",
+  "qid": "Q185720",
+  "dist": 49.6,
+  "how": "guess"
+ },
+ "in.river.penner": {
+  "title": "Penna River",
+  "qid": "Q1877489",
+  "dist": 128.7,
+  "how": "guess"
+ },
+ "in.river.palar": {
+  "title": "Palar River",
+  "qid": "Q609625",
+  "dist": 87.7,
+  "how": "guess"
+ },
+ "in.river.kaveri": {
+  "title": "Kaveri",
+  "qid": "Q216239",
+  "how": "guess"
+ },
+ "in.river.kolidam": {
+  "title": "Kollidam River",
+  "qid": "Q3523794",
+  "dist": 40.1,
+  "how": "guess"
+ },
+ "in.river.kabini": {
+  "title": "Kabini River",
+  "qid": "Q3536422",
+  "dist": 62.9,
+  "how": "guess"
+ },
+ "in.river.bhavani": {
+  "title": "Bhavani River",
+  "qid": "Q2900667",
+  "dist": 42.8,
+  "how": "guess"
+ },
+ "in.river.vaigai": {
+  "title": "Vaigai River",
+  "qid": "Q2744225",
+  "dist": 116,
+  "how": "guess"
+ },
+ "in.river.tamirabarani": {
+  "title": "Thamirabarani River",
+  "qid": "Q3429232",
+  "dist": 36.6,
+  "how": "title"
+ },
+ "in.river.brahmaputra": {
+  "title": "Brahmaputra River",
+  "qid": "Q45403",
+  "how": "guess"
+ },
+ "in.river.siang": {
+  "title": "Brahmaputra River",
+  "qid": "Q45403",
+  "how": "guess"
+ },
+ "in.river.dibang": {
+  "title": "Dibang River",
+  "qid": "Q4161089",
+  "dist": 52.6,
+  "how": "guess"
+ },
+ "in.river.lohit": {
+  "title": "Lohit River",
+  "qid": "Q1083286",
+  "dist": 82.7,
+  "how": "guess"
+ },
+ "in.river.subansiri": {
+  "title": "Subansiri River",
+  "qid": "Q1709162",
+  "how": "guess"
+ },
+ "in.river.kameng": {
+  "title": "Kameng River",
+  "qid": "Q3652914",
+  "dist": 81.2,
+  "how": "guess"
+ },
+ "in.river.manas": {
+  "title": "Manas River",
+  "qid": "Q2015702",
+  "dist": 53,
+  "how": "guess"
+ },
+ "in.river.dhansiri": {
+  "title": "Dhansiri River",
+  "qid": "Q1755951",
+  "dist": 42,
+  "how": "guess"
+ },
+ "in.river.teesta": {
+  "title": "Teesta River",
+  "qid": "Q907883",
+  "dist": 221.3,
+  "how": "guess"
+ },
+ "in.river.barak": {
+  "title": "Barak River",
+  "qid": "Q1709169",
+  "dist": 31.7,
+  "how": "guess"
+ },
+ "in.river.kaladan": {
+  "title": "Kaladan River",
+  "qid": "Q3182712",
+  "dist": 255.8,
+  "how": "guess"
+ },
+ "in.range.karakoram": {
+  "title": "Karakoram",
+  "qid": "Q5469",
+  "dist": 77.2,
+  "how": "guess"
+ },
+ "in.range.ladakh-range": {
+  "title": "Ladakh Range",
+  "qid": "Q2578947",
+  "dist": 105.5,
+  "how": "guess"
+ },
+ "in.range.zanskar-range": {
+  "title": "Zanskar Range",
+  "qid": "Q3310042",
+  "dist": 56.4,
+  "how": "guess"
+ },
+ "in.range.great-himalaya": {
+  "title": "Great Himalayas",
+  "qid": "Q4281536",
+  "how": "guess"
+ },
+ "in.range.pir-panjal": {
+  "title": "Pir Panjal Range",
+  "qid": "Q2352081",
+  "dist": 53.9,
+  "how": "guess"
+ },
+ "in.range.dhauladhar": {
+  "title": "Dhauladhar",
+  "qid": "Q2629995",
+  "dist": 47.3,
+  "how": "guess"
+ },
+ "in.range.shiwalik": {
+  "title": "Sivalik Hills",
+  "qid": "Q613624",
+  "dist": 541.3,
+  "how": "guess"
+ },
+ "in.range.patkai": {
+  "title": "Patkai",
+  "qid": "Q1969254",
+  "dist": 41.2,
+  "how": "guess"
+ },
+ "in.range.mishmi-hills": {
+  "title": "Mishmi Hills",
+  "qid": "Q6875597",
+  "dist": 95.9,
+  "how": "guess"
+ },
+ "in.range.naga-hills": {
+  "title": "Naga Hills",
+  "qid": "Q3109835",
+  "dist": 55.3,
+  "how": "guess"
+ },
+ "in.range.mizo-hills": {
+  "title": "Lushai Hills",
+  "qid": "Q3317337",
+  "dist": 14.9,
+  "how": "guess"
+ },
+ "in.range.garo-hills": {
+  "title": "Garo Hills",
+  "qid": "Q3036349",
+  "dist": 11.2,
+  "how": "guess"
+ },
+ "in.range.khasi-hills": {
+  "title": "Khasi and Jaintia Hills",
+  "qid": "Q11929778",
+  "how": "title"
+ },
+ "in.range.jaintia-hills": {
+  "title": "Khasi and Jaintia Hills",
+  "qid": "Q11929778",
+  "how": "title"
+ },
+ "in.range.karbi-anglong-hills": {
+  "title": "Mikir Hills",
+  "qid": "Q3313744",
+  "dist": 16.7,
+  "how": "guess"
+ },
+ "in.range.aravalli": {
+  "title": "Aravalli Range",
+  "qid": "Q626690",
+  "dist": 46,
+  "how": "guess"
+ },
+ "in.range.vindhya": {
+  "title": "Vindhya Range",
+  "qid": "Q271435",
+  "dist": 177.5,
+  "how": "guess"
+ },
+ "in.range.kaimur": {
+  "title": "Kaimur Range",
+  "qid": "Q1721454",
+  "dist": 74.2,
+  "how": "guess"
+ },
+ "in.range.satpura": {
+  "title": "Satpura Range",
+  "qid": "Q1145416",
+  "dist": 209.7,
+  "how": "guess"
+ },
+ "in.range.mahadeo-hills": {
+  "title": "Mahadeo Hills",
+  "qid": "Q36205",
+  "dist": 19.3,
+  "how": "title"
+ },
+ "in.range.maikal-range": {
+  "title": "Maikal Hills",
+  "qid": "Q6735630",
+  "dist": 38,
+  "how": "guess"
+ },
+ "in.range.rajmahal-hills": {
+  "title": "Rajmahal hills",
+  "qid": "Q17085724",
+  "dist": 25.9,
+  "how": "guess"
+ },
+ "in.range.western-ghats": {
+  "title": "Western Ghats",
+  "qid": "Q4527",
+  "dist": 634.4,
+  "how": "guess"
+ },
+ "in.range.eastern-ghats": {
+  "title": "Eastern Ghats",
+  "qid": "Q465055",
+  "dist": 37,
+  "how": "guess"
+ },
+ "in.range.nilgiri-hills": {
+  "title": "Nilgiri Mountains",
+  "qid": "Q10094",
+  "dist": 2.9,
+  "how": "guess"
+ },
+ "in.range.anaimalai-hills": {
+  "title": "Anaimalai Hills",
+  "qid": "Q3519511",
+  "dist": 21.1,
+  "how": "guess"
+ },
+ "in.range.cardamom-hills": {
+  "title": "Cardamom Hills",
+  "qid": "Q1729075",
+  "dist": 19.3,
+  "how": "guess"
+ },
+ "in.range.palani-hills": {
+  "title": "Palani Hills",
+  "qid": "Q1501836",
+  "dist": 5.9,
+  "how": "guess"
+ },
+ "in.range.nallamala-hills": {
+  "title": "Nallamala Hills",
+  "qid": "Q1579454",
+  "dist": 13.6,
+  "how": "guess"
+ },
+ "in.range.javadi-hills": {
+  "title": "Javadhu Hills",
+  "qid": "Q6165130",
+  "dist": 2.6,
+  "how": "title"
+ },
+ "in.range.shevaroy-hills": {
+  "title": "Servarayan Hills",
+  "qid": "Q3523808",
+  "dist": 8.1,
+  "how": "guess"
+ },
+ "in.peak.k2": {
+  "title": "K2",
+  "qid": "Q43512",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.peak.kangchenjunga": {
+  "title": "Kangchenjunga",
+  "qid": "Q82019",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.nanda-devi": {
+  "title": "Nanda Devi",
+  "qid": "Q213262",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.peak.kamet": {
+  "title": "Kamet",
+  "qid": "Q1141272",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.peak.saltoro-kangri": {
+  "title": "Saltoro Kangri",
+  "qid": "Q728639",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.trisul": {
+  "title": "Trisul",
+  "qid": "Q1233570",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.nun": {
+  "title": "Nun",
+  "qid": "Q191808",
+  "how": "guess"
+ },
+ "in.peak.reo-purgyil": {
+  "title": "Reo Purgyil",
+  "qid": "Q17020614",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.peak.kangto": {
+  "title": "Kangto",
+  "qid": "Q6362901",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.peak.saramati": {
+  "title": "Saramati",
+  "qid": "Q7423034",
+  "how": "guess"
+ },
+ "in.peak.sandakphu": {
+  "title": "Sandakphu",
+  "qid": "Q2981161",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.phawngpui": {
+  "title": "Phawngpui",
+  "qid": "Q3334379",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.peak.anamudi": {
+  "title": "Anamudi",
+  "qid": "Q485550",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.doddabetta": {
+  "title": "Doddabetta",
+  "qid": "Q336749",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.mullayanagiri": {
+  "title": "Mullayyanagiri",
+  "qid": "Q3695181",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.peak.kalsubai": {
+  "title": "Kalsubai",
+  "qid": "Q3629166",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.peak.guru-shikhar": {
+  "title": "Guru Shikhar",
+  "qid": "Q3533921",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.peak.dhupgarh": {
+  "title": "Dhupgarh",
+  "qid": "Q5269900",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.peak.parasnath": {
+  "title": "Parasnath",
+  "qid": "Q21099460",
+  "dist": 0.2,
+  "how": "title"
+ },
+ "in.peak.mahendragiri": {
+  "title": "Mahendragiri (Odisha)",
+  "qid": "Q6733785",
+  "dist": 0,
+  "how": "search"
+ },
+ "in.peak.saddle-peak": {
+  "title": "Saddle Peak (Andaman Islands)",
+  "qid": "Q7397709",
+  "dist": 0.5,
+  "how": "search"
+ },
+ "in.volcano.barren-island": {
+  "title": "Barren Island (Andaman Islands)",
+  "qid": "Q248212",
+  "dist": 0.3,
+  "how": "search"
+ },
+ "in.volcano.narcondam": {
+  "title": "Narcondam Island",
+  "qid": "Q1965316",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.peak.mount-everest": {
+  "title": "Mount Everest",
+  "qid": "Q513",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.peak.makalu": {
+  "title": "Makalu",
+  "qid": "Q169986",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.dhaulagiri": {
+  "title": "Dhaulagiri",
+  "qid": "Q165440",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.peak.annapurna": {
+  "title": "Annapurna",
+  "qid": "Q16466024",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.peak.nanga-parbat": {
+  "title": "Nanga Parbat",
+  "qid": "Q130736",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.namcha-barwa": {
+  "title": "Namcha Barwa",
+  "qid": "Q1050238",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.peak.mount-kailash": {
+  "title": "Mount Kailash",
+  "qid": "Q229107",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.karakoram-pass": {
+  "title": "Karakoram Pass",
+  "qid": "Q784798",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.khardung-la": {
+  "title": "Khardung La",
+  "qid": "Q866388",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.pass.chang-la": {
+  "title": "Chang La",
+  "qid": "Q866534",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.pass.tanglang-la": {
+  "title": "Taglang La",
+  "qid": "Q729667",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.pass.zoji-la": {
+  "title": "Zoji La",
+  "qid": "Q867075",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.pass.banihal-pass": {
+  "title": "Banihal Pass",
+  "qid": "Q4855766",
+  "dist": 3.6,
+  "how": "guess"
+ },
+ "in.pass.pir-panjal-pass": {
+  "title": "Pir Panjal Pass",
+  "qid": "Q26780857",
+  "dist": 1.4,
+  "how": "guess"
+ },
+ "in.pass.burzil-pass": {
+  "title": "Burzil Pass",
+  "qid": "Q5001153",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.pass.rohtang-pass": {
+  "title": "Rohtang Pass",
+  "qid": "Q633415",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.baralacha-la": {
+  "title": "Bara-lacha la",
+  "qid": "Q807246",
+  "dist": 0.1,
+  "how": "search"
+ },
+ "in.pass.kunzum-pass": {
+  "title": "Kunzum Pass",
+  "qid": "Q6445192",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.pass.shipki-la": {
+  "title": "Shipki La",
+  "qid": "Q547332",
+  "dist": 2,
+  "how": "guess"
+ },
+ "in.pass.mana-pass": {
+  "title": "Mana Pass",
+  "qid": "Q3260542",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.pass.niti-pass": {
+  "title": "Niti Valley",
+  "qid": "Q97657166",
+  "dist": 21.7,
+  "how": "guess"
+ },
+ "in.pass.lipulekh-pass": {
+  "title": "Lipulekh Pass",
+  "qid": "Q6557246",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.pass.nathu-la": {
+  "title": "Nathu La",
+  "qid": "Q499714",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.jelep-la": {
+  "title": "Jelep La",
+  "qid": "Q3243601",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.bum-la": {
+  "title": "Bum La Pass",
+  "qid": "Q16849017",
+  "dist": 3,
+  "how": "guess"
+ },
+ "in.pass.sela-pass": {
+  "title": "Sela Pass",
+  "qid": "Q7447387",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.pass.diphu-pass": {
+  "title": "Diphu Pass",
+  "qid": "Q5279783",
+  "dist": 2.8,
+  "how": "guess"
+ },
+ "in.pass.pangsau-pass": {
+  "title": "Pangsau Pass",
+  "qid": "Q2654826",
+  "dist": 5.9,
+  "how": "guess"
+ },
+ "in.pass.palghat-gap": {
+  "title": "Palakkad Gap",
+  "qid": "Q3245982",
+  "dist": 23.1,
+  "how": "guess"
+ },
+ "in.pass.thal-ghat": {
+  "title": "Thal Ghat",
+  "qid": "Q6374022",
+  "dist": 5.7,
+  "how": "guess"
+ },
+ "in.pass.bhor-ghat": {
+  "title": "Bhor Ghat",
+  "qid": "Q4902044",
+  "how": "guess"
+ },
+ "in.pass.khyber-pass": {
+  "title": "Khyber Pass",
+  "qid": "Q191333",
+  "how": "guess"
+ },
+ "in.pass.bolan-pass": {
+  "title": "Bolan Pass",
+  "qid": "Q891257",
+  "dist": 12.1,
+  "how": "guess"
+ },
+ "in.pass.khunjerab-pass": {
+  "title": "Khunjerab Pass",
+  "qid": "Q1137017",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.glacier.siachen-glacier": {
+  "title": "Siachen Glacier",
+  "qid": "Q333946",
+  "dist": 30.7,
+  "how": "guess"
+ },
+ "in.glacier.gangotri-glacier": {
+  "title": "Gangotri Glacier",
+  "qid": "Q691557",
+  "dist": 10.3,
+  "how": "guess"
+ },
+ "in.glacier.yamunotri-glacier": {
+  "title": "Yamunotri",
+  "qid": "Q976328",
+  "dist": 1.5,
+  "how": "search"
+ },
+ "in.glacier.satopanth-glacier": {
+  "title": "Satopanth Glacier",
+  "qid": "Q7426366",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.glacier.pindari-glacier": {
+  "title": "Pindari Glacier",
+  "qid": "Q3776662",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.glacier.milam-glacier": {
+  "title": "Milam Glacier",
+  "qid": "Q6850469",
+  "dist": 4.4,
+  "how": "guess"
+ },
+ "in.glacier.zemu-glacier": {
+  "title": "Zemu Glacier",
+  "qid": "Q2594853",
+  "dist": 3.7,
+  "how": "guess"
+ },
+ "in.glacier.bara-shigri-glacier": {
+  "title": "Bara Shigri Glacier",
+  "qid": "Q4858051",
+  "dist": 2.5,
+  "how": "guess"
+ },
+ "in.glacier.baltoro-glacier": {
+  "title": "Baltoro Glacier",
+  "qid": "Q805806",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.range.lesser-himalaya": {
+  "title": "Lower Himalayan Range",
+  "qid": "Q2544588",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.garhwal-himalaya": {
+  "title": "Garhwal Himalayas",
+  "qid": "Q4180735",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.assam-himalaya": {
+  "title": "Assam Himalaya",
+  "qid": "Q738861",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.trans-himalaya": {
+  "title": "Transhimalaya",
+  "qid": "Q593003",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.satmala-hills": {
+  "title": "Satmala Range",
+  "qid": "Q24932181",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.balaghat-range": {
+  "title": "Balaghat Range",
+  "qid": "Q26802860",
+  "how": "title"
+ },
+ "in.range.harishchandra-range": {
+  "title": "Harishchandra Range",
+  "qid": "Q5657932",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.garhjat-hills": {
+  "title": "Garhjat Hills",
+  "qid": "Q5523249",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.kolli-hills": {
+  "title": "Kolli Hills",
+  "qid": "Q3521516",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.dalma-hills": {
+  "title": "Dalma Hills",
+  "qid": "Q41458908",
+  "how": "title"
+ },
+ "in.range.sirumalai": {
+  "title": "Sirumalai",
+  "qid": "Q7530678",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.chin-hills": {
+  "title": "Chin Hills",
+  "qid": "Q2597340",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.arakan-yoma": {
+  "title": "Arakan Mountains",
+  "qid": "Q625425",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.biligirirangan-hills": {
+  "title": "Biligiriranga Hills",
+  "qid": "Q3631211",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.nandi-hills": {
+  "title": "Nandi Hills, India",
+  "qid": "Q3518367",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.range.seshachalam-hills": {
+  "title": "Seshachalam Hills",
+  "qid": "Q7456043",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.peak.cho-oyu": {
+  "title": "Cho Oyu",
+  "qid": "Q170089",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.peak.lhotse": {
+  "title": "Lhotse",
+  "qid": "Q168702",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.peak.shishapangma": {
+  "title": "Shishapangma",
+  "qid": "Q105124",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.peak.gurla-mandhata": {
+  "title": "Gurla Mandhata",
+  "qid": "Q1555230",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.peak.bandarpunch": {
+  "title": "Bandarpunch",
+  "qid": "Q4854459",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.pass.debsa-pass": {
+  "title": "Debsa Pass",
+  "qid": "Q5248576",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.glacier.chorabari-glacier": {
+  "title": "Chorabari Lake",
+  "qid": "Q103842802",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.glacier.biafo-glacier": {
+  "title": "Biafo Glacier",
+  "qid": "Q855226",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.glacier.hispar-glacier": {
+  "title": "Hispar Glacier",
+  "qid": "Q1567905",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.glacier.chogo-lungma-glacier": {
+  "title": "Chogo Lungma Glacier",
+  "qid": "Q34833220",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.glacier.rupal-glacier": {
+  "title": "Rupal Glacier",
+  "qid": "Q3108349",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.plateau.deccan-plateau": {
+  "title": "Deccan Plateau",
+  "qid": "Q169966",
+  "dist": 278.8,
+  "how": "guess"
+ },
+ "in.plateau.malwa-plateau": {
+  "title": "Malwa",
+  "qid": "Q550691",
+  "dist": 64,
+  "how": "guess"
+ },
+ "in.plateau.chota-nagpur-plateau": {
+  "title": "Chota Nagpur Plateau",
+  "qid": "Q1881042",
+  "dist": 6.5,
+  "how": "guess"
+ },
+ "in.plateau.meghalaya-plateau": {
+  "title": "Shillong Plateau",
+  "qid": "Q4364597",
+  "dist": 60.8,
+  "how": "guess"
+ },
+ "in.plateau.bundelkhand": {
+  "title": "Bundelkhand",
+  "qid": "Q851955",
+  "dist": 78.1,
+  "how": "guess"
+ },
+ "in.plateau.baghelkhand": {
+  "title": "Baghelkhand",
+  "qid": "Q3628827",
+  "dist": 37.6,
+  "how": "guess"
+ },
+ "in.plateau.karnataka-plateau": {
+  "title": "Mysore plateau",
+  "qid": "Q6948715",
+  "dist": 157.2,
+  "how": "guess"
+ },
+ "in.plateau.dandakaranya": {
+  "title": "Dandakaranya",
+  "qid": "Q3595545",
+  "how": "guess"
+ },
+ "in.plateau.changthang": {
+  "title": "Changtang",
+  "qid": "Q1062139",
+  "dist": 1115.4,
+  "how": "guess"
+ },
+ "in.desert.thar-desert": {
+  "title": "Thar Desert",
+  "qid": "Q172691",
+  "dist": 19.8,
+  "how": "guess"
+ },
+ "in.desert.rann-of-kutch": {
+  "title": "Rann of Kutch",
+  "qid": "Q4026866",
+  "dist": 49.1,
+  "how": "guess"
+ },
+ "in.plain.indo-gangetic-plain": {
+  "title": "Indo-Gangetic Plain",
+  "qid": "Q192305",
+  "dist": 155.4,
+  "how": "guess"
+ },
+ "in.plain.ganga-yamuna-doab": {
+  "title": "Doab",
+  "qid": "Q1233094",
+  "how": "title"
+ },
+ "in.plain.terai": {
+  "title": "Terai",
+  "qid": "Q1133636",
+  "how": "guess"
+ },
+ "in.plain.bhabar": {
+  "title": "Bhabar",
+  "qid": "Q2838877",
+  "how": "guess"
+ },
+ "in.plain.punjab-plains": {
+  "title": "Punjab Plain",
+  "qid": "Q3347433",
+  "how": "guess"
+ },
+ "in.valley.brahmaputra-valley": {
+  "title": "Brahmaputra Valley",
+  "qid": "Q4955590",
+  "dist": 34.7,
+  "how": "guess"
+ },
+ "in.valley.barak-valley": {
+  "title": "Barak Valley",
+  "qid": "Q1581002",
+  "dist": 11.5,
+  "how": "guess"
+ },
+ "in.valley.kashmir-valley": {
+  "title": "Kashmir Valley",
+  "qid": "Q2361576",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.valley.kullu-valley": {
+  "title": "Kullu Valley",
+  "qid": "Q42564069",
+  "dist": 4.8,
+  "how": "guess"
+ },
+ "in.valley.kangra-valley": {
+  "title": "Kangra Valley",
+  "qid": "Q6362863",
+  "dist": 4.6,
+  "how": "guess"
+ },
+ "in.valley.lahaul-valley": {
+  "title": "Lahaul and Spiti district",
+  "qid": "Q837595",
+  "dist": 54,
+  "how": "title"
+ },
+ "in.valley.spiti-valley": {
+  "title": "Spiti",
+  "qid": "Q2682249",
+  "dist": 2.1,
+  "how": "guess"
+ },
+ "in.valley.nubra-valley": {
+  "title": "Nubra",
+  "qid": "Q2004108",
+  "dist": 13.7,
+  "how": "guess"
+ },
+ "in.valley.galwan-valley": {
+  "title": "Galwan River",
+  "qid": "Q13507935",
+  "dist": 3.1,
+  "how": "guess"
+ },
+ "in.valley.doon-valley": {
+  "title": "Doon Valley",
+  "qid": "Q5297155",
+  "dist": 4.6,
+  "how": "guess"
+ },
+ "in.valley.narmada-valley": {
+  "title": "Narmada River",
+  "qid": "Q234004",
+  "dist": 449.6,
+  "how": "guess"
+ },
+ "in.valley.imphal-valley": {
+  "title": "Imphal Valley",
+  "qid": "Q104856883",
+  "how": "guess"
+ },
+ "in.valley.araku-valley": {
+  "title": "Araku",
+  "qid": "Q105948061",
+  "how": "search"
+ },
+ "in.valley.chumbi-valley": {
+  "title": "Chumbi Valley",
+  "qid": "Q2578921",
+  "dist": 6.2,
+  "how": "guess"
+ },
+ "in.coast.konkan-coast": {
+  "title": "Konkan",
+  "qid": "Q1142402",
+  "dist": 230,
+  "how": "guess"
+ },
+ "in.coast.kanara-coast": {
+  "title": "Kanara",
+  "qid": "Q3010684",
+  "how": "guess"
+ },
+ "in.coast.malabar-coast": {
+  "title": "Malabar Coast",
+  "qid": "Q473181",
+  "dist": 138.7,
+  "how": "guess"
+ },
+ "in.coast.coromandel-coast": {
+  "title": "Coromandel Coast",
+  "qid": "Q182561",
+  "dist": 110.4,
+  "how": "guess"
+ },
+ "in.coast.northern-circars": {
+  "title": "Northern Circars",
+  "qid": "Q15147029",
+  "dist": 59.4,
+  "how": "guess"
+ },
+ "in.region.kathiawar-peninsula": {
+  "title": "Kathiawar",
+  "qid": "Q1408929",
+  "dist": 24.5,
+  "how": "guess"
+ },
+ "in.delta.sundarbans-delta": {
+  "title": "Sundarbans",
+  "qid": "Q4526",
+  "dist": 31.8,
+  "how": "search"
+ },
+ "in.delta.mahanadi-delta": {
+  "title": "Mahanadi",
+  "qid": "Q271044",
+  "dist": 42.8,
+  "how": "search"
+ },
+ "in.delta.godavari-delta": {
+  "title": "Godavari River",
+  "qid": "Q191314",
+  "dist": 47.1,
+  "how": "guess"
+ },
+ "in.delta.krishna-delta": {
+  "title": "Krishna River",
+  "qid": "Q193499",
+  "dist": 25.4,
+  "how": "search"
+ },
+ "in.delta.kaveri-delta": {
+  "title": "Kaveri",
+  "qid": "Q216239",
+  "how": "search"
+ },
+ "in.island.majuli": {
+  "title": "Majuli",
+  "qid": "Q277552",
+  "dist": 7.2,
+  "how": "guess"
+ },
+ "in.island.umananda": {
+  "title": "Umananda Island",
+  "qid": "Q7881087",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.island.andaman-islands": {
+  "title": "Andaman Islands",
+  "qid": "Q186233",
+  "dist": 22.9,
+  "how": "guess"
+ },
+ "in.island.nicobar-islands": {
+  "title": "Nicobar Islands",
+  "qid": "Q157286",
+  "dist": 128.5,
+  "how": "guess"
+ },
+ "in.island.great-nicobar": {
+  "title": "Great Nicobar Island",
+  "qid": "Q219774",
+  "dist": 6.4,
+  "how": "guess"
+ },
+ "in.island.swaraj-dweep": {
+  "title": "Havelock Island",
+  "qid": "Q1591501",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.island.shaheed-dweep": {
+  "title": "Neil Island",
+  "qid": "Q6988773",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.island.netaji-subhas-chandra-bose-dweep": {
+  "title": "Ross Island, South Andaman district",
+  "qid": "Q3521265",
+  "dist": 0.6,
+  "how": "search"
+ },
+ "in.island.north-sentinel-island": {
+  "title": "North Sentinel Island",
+  "qid": "Q1260331",
+  "dist": 3.1,
+  "how": "guess"
+ },
+ "in.island.lakshadweep-islands": {
+  "title": "Lakshadweep",
+  "qid": "Q26927",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.island.minicoy": {
+  "title": "Minicoy",
+  "qid": "Q162448",
+  "how": "guess"
+ },
+ "in.island.rameswaram": {
+  "title": "Rameswaram",
+  "qid": "Q1435144",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.island.sriharikota": {
+  "title": "Sriharikota",
+  "qid": "Q1816821",
+  "dist": 3.9,
+  "how": "guess"
+ },
+ "in.island.abdul-kalam-island": {
+  "title": "Abdul Kalam Island",
+  "qid": "Q2699953",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.island.elephanta-island": {
+  "title": "Elephanta Island",
+  "qid": "Q175304",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.island.diu": {
+  "title": "Diu Island",
+  "qid": "Q5283744",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.island.katchatheevu": {
+  "title": "Katchatheevu",
+  "qid": "Q1720887",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.cape.kanyakumari": {
+  "title": "Kanyakumari",
+  "qid": "Q222267",
+  "dist": 1.7,
+  "how": "title"
+ },
+ "in.cape.indira-point": {
+  "title": "Indira Point",
+  "qid": "Q2341925",
+  "dist": 3.7,
+  "how": "title"
+ },
+ "in.cape.point-calimere": {
+  "title": "Point Calimere",
+  "qid": "Q7207977",
+  "dist": 4,
+  "how": "guess"
+ },
+ "in.cape.dhanushkodi": {
+  "title": "Dhanushkodi",
+  "qid": "Q1207562",
+  "dist": 0.7,
+  "how": "title"
+ },
+ "in.region.adams-bridge": {
+  "title": "Adam's Bridge",
+  "qid": "Q201743",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.sea.arabian-sea": {
+  "title": "Arabian Sea",
+  "qid": "Q58705",
+  "dist": 154.8,
+  "how": "guess"
+ },
+ "in.sea.bay-of-bengal": {
+  "title": "Bay of Bengal",
+  "qid": "Q38684",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.sea.andaman-sea": {
+  "title": "Andaman Sea",
+  "qid": "Q47632",
+  "dist": 111.2,
+  "how": "guess"
+ },
+ "in.sea.lakshadweep-sea": {
+  "title": "Laccadive Sea",
+  "qid": "Q544914",
+  "dist": 166.8,
+  "how": "guess"
+ },
+ "in.gulf.gulf-of-kutch": {
+  "title": "Gulf of Kutch",
+  "qid": "Q844917",
+  "dist": 10.3,
+  "how": "guess"
+ },
+ "in.gulf.gulf-of-khambhat": {
+  "title": "Gulf of Khambhāt",
+  "qid": "Q654010",
+  "dist": 11.1,
+  "how": "guess"
+ },
+ "in.gulf.gulf-of-mannar": {
+  "title": "Gulf of Mannar",
+  "qid": "Q622811",
+  "dist": 47.9,
+  "how": "guess"
+ },
+ "in.gulf.palk-bay": {
+  "title": "Palk Bay",
+  "qid": "Q27441240",
+  "dist": 22.9,
+  "how": "guess"
+ },
+ "in.strait.palk-strait": {
+  "title": "Palk Strait",
+  "qid": "Q186299",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.strait.ten-degree-channel": {
+  "title": "Ten Degree Channel",
+  "qid": "Q1317698",
+  "dist": 29.3,
+  "how": "guess"
+ },
+ "in.strait.nine-degree-channel": {
+  "title": "Nine Degree Channel",
+  "qid": "Q2383579",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.strait.eight-degree-channel": {
+  "title": "Maliku Kandu",
+  "qid": "Q2632950",
+  "dist": 31.3,
+  "how": "guess"
+ },
+ "in.strait.duncan-passage": {
+  "title": "Duncan Passage",
+  "qid": "Q2669820",
+  "how": "guess"
+ },
+ "in.strait.coco-channel": {
+  "title": "Coco Islands",
+  "qid": "Q1518043",
+  "dist": 42.9,
+  "how": "guess"
+ },
+ "in.region.sir-creek": {
+  "title": "Sir Creek",
+  "qid": "Q973945",
+  "dist": 35,
+  "how": "guess"
+ },
+ "in.region.siliguri-corridor": {
+  "title": "Siliguri Corridor",
+  "qid": "Q2666467",
+  "dist": 19.8,
+  "how": "guess"
+ },
+ "in.region.doklam": {
+  "title": "Doklam",
+  "qid": "Q32744297",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.region.aksai-chin": {
+  "title": "Aksai Chin",
+  "qid": "Q230830",
+  "dist": 18.2,
+  "how": "guess"
+ },
+ "in.region.kalapani": {
+  "title": "Kalapani territory",
+  "qid": "Q6350651",
+  "dist": 0.6,
+  "how": "title"
+ },
+ "in.region.shaksgam-valley": {
+  "title": "Shaksgam River",
+  "qid": "Q925110",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.nelang-valley": {
+  "title": "Nelang",
+  "qid": "Q14010547",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.markha-valley": {
+  "title": "Markha River (India)",
+  "qid": "Q1579720",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.dzukou-valley": {
+  "title": "Dzukou Valley",
+  "qid": "Q5320060",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.sangla-valley": {
+  "title": "Sangla, India",
+  "qid": "Q7418032",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.yumthang-valley": {
+  "title": "Yumthang Valley of Flowers",
+  "qid": "Q8061162",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.valley.gandikota-canyon": {
+  "title": "Gandikota",
+  "qid": "Q3764632",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.region.kuttanad": {
+  "title": "Kuttanad",
+  "qid": "Q1435109",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.region.malnad": {
+  "title": "Malenadu",
+  "qid": "Q3536896",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.region.kori-creek": {
+  "title": "Kori Creek",
+  "qid": "Q2722907",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.grassland.banni-grasslands": {
+  "title": "Banni Grasslands Reserve",
+  "qid": "Q1747332",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.salsette-island": {
+  "title": "Salsette Island",
+  "qid": "Q117196",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.car-nicobar": {
+  "title": "Car Nicobar",
+  "qid": "Q1035273",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.middle-andaman": {
+  "title": "Middle Andaman Island",
+  "qid": "Q222853",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.little-andaman": {
+  "title": "Little Andaman",
+  "qid": "Q1579619",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.north-andaman": {
+  "title": "North Andaman Island",
+  "qid": "Q2000510",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.island.piram-island": {
+  "title": "Piram Island",
+  "qid": "Q2764638",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.lake.wular-lake": {
+  "title": "Wular Lake",
+  "qid": "Q744741",
+  "dist": 3.9,
+  "how": "guess"
+ },
+ "in.lake.dal-lake": {
+  "title": "Dal Lake",
+  "qid": "Q325391",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.lake.pangong-tso": {
+  "title": "Pangong Tso",
+  "qid": "Q1032254",
+  "dist": 22.2,
+  "how": "guess"
+ },
+ "in.lake.tso-moriri": {
+  "title": "Tso Moriri",
+  "qid": "Q2087758",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.lake.tso-kar": {
+  "title": "Tso Kar",
+  "qid": "Q1030718",
+  "dist": 1.5,
+  "how": "guess"
+ },
+ "in.lake.chandra-taal": {
+  "title": "Chandra Taal",
+  "qid": "Q5071315",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.lake.renuka-lake": {
+  "title": "Renuka Lake",
+  "qid": "Q7313585",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.lake.nainital": {
+  "title": "Nainital Lake",
+  "qid": "Q7353282",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.lake.loktak-lake": {
+  "title": "Loktak Lake",
+  "qid": "Q2995601",
+  "dist": 1.7,
+  "how": "guess"
+ },
+ "in.lake.chilika-lake": {
+  "title": "Chilika Lake",
+  "qid": "Q2047322",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.lake.pulicat-lake": {
+  "title": "Pulicat Lake",
+  "qid": "Q708366",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "in.lake.kolleru-lake": {
+  "title": "Kolleru Lake",
+  "qid": "Q3764964",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "in.lake.vembanad-lake": {
+  "title": "Vembanad",
+  "qid": "Q2641899",
+  "dist": 28.3,
+  "how": "guess"
+ },
+ "in.lake.ashtamudi-lake": {
+  "title": "Ashtamudi Lake",
+  "qid": "Q2605009",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.lake.sasthamkotta-lake": {
+  "title": "Sasthamcotta Lake",
+  "qid": "Q75254",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.lake.sambhar-lake": {
+  "title": "Sambhar Salt Lake",
+  "qid": "Q1141317",
+  "dist": 2.1,
+  "how": "guess"
+ },
+ "in.lake.pushkar-lake": {
+  "title": "Pushkar Lake",
+  "qid": "Q7261801",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.lake.lonar-lake": {
+  "title": "Lonar Lake",
+  "qid": "Q2572189",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.lake.hussain-sagar": {
+  "title": "Hussain Sagar",
+  "qid": "Q3275994",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.lake.sukhna-lake": {
+  "title": "Sukhna Lake",
+  "qid": "Q7333197",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.lake.gurudongmar-lake": {
+  "title": "Gurudongmar Lake",
+  "qid": "Q2264090",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.lake.tsomgo-lake": {
+  "title": "Lake Tsomgo",
+  "qid": "Q542864",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.lake.manasarovar": {
+  "title": "Lake Manasarovar",
+  "qid": "Q233627",
+  "dist": 2.9,
+  "how": "guess"
+ },
+ "in.lake.rakshastal": {
+  "title": "Lake Rakshastal",
+  "qid": "Q628327",
+  "dist": 5.6,
+  "how": "guess"
+ },
+ "in.wetland.harike-wetland": {
+  "title": "Harike Wetland",
+  "qid": "Q5657472",
+  "dist": 3.6,
+  "how": "guess"
+ },
+ "in.wetland.deepor-beel": {
+  "title": "Dipor Bil",
+  "qid": "Q986842",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.wetland.kanwar-taal": {
+  "title": "Kanwar Lake Bird Sanctuary",
+  "qid": "Q6365748",
+  "dist": 1.5,
+  "how": "guess"
+ },
+ "in.wetland.east-kolkata-wetlands": {
+  "title": "East Calcutta Wetlands",
+  "qid": "Q3348702",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.wetland.rudrasagar-lake": {
+  "title": "Rudrasagar Lake",
+  "qid": "Q7377525",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.wetland.nal-sarovar": {
+  "title": "Nal Sarovar Bird Sanctuary",
+  "qid": "Q2723560",
+  "dist": 3.8,
+  "how": "guess"
+ },
+ "in.wetland.hokersar": {
+  "title": "Hokersar",
+  "qid": "Q101251280",
+  "dist": 1.3,
+  "how": "guess"
+ },
+ "in.wetland.nawabganj-bird-sanctuary": {
+  "title": "Nawabganj Bird Sanctuary",
+  "qid": "Q6982793",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.wetland.sur-sarovar": {
+  "title": "Keetham Lake",
+  "qid": "Q6383337",
+  "dist": 2.6,
+  "how": "guess"
+ },
+ "in.wetland.sultanpur-national-park": {
+  "title": "Sultanpur National Park",
+  "qid": "Q2985097",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.confluence.devprayag": {
+  "title": "Devprayag",
+  "qid": "Q27832",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.confluence.rudraprayag": {
+  "title": "Rudraprayag",
+  "qid": "Q2087566",
+  "dist": 0.6,
+  "how": "title"
+ },
+ "in.confluence.karnaprayag": {
+  "title": "Karnaprayag",
+  "qid": "Q2314414",
+  "dist": 0.5,
+  "how": "title"
+ },
+ "in.confluence.nandprayag": {
+  "title": "Nandaprayag",
+  "qid": "Q2450927",
+  "dist": 0.4,
+  "how": "title"
+ },
+ "in.confluence.vishnuprayag": {
+  "title": "Vishnuprayag",
+  "qid": "Q2773350",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.confluence.triveni-sangam": {
+  "title": "Triveni Sangam",
+  "qid": "Q2654257",
+  "how": "guess"
+ },
+ "in.confluence.nimmu": {
+  "title": "Nimo, Ladakh",
+  "qid": "Q7037798",
+  "dist": 0.8,
+  "how": "title"
+ },
+ "in.confluence.sadiya": {
+  "title": "Sadiya",
+  "qid": "Q7397977",
+  "dist": 2,
+  "how": "title"
+ },
+ "in.confluence.kaleshwaram": {
+  "title": "Kaleshwaram",
+  "qid": "Q6352173",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.confluence.koodli": {
+  "title": "Koodli",
+  "qid": "Q6430526",
+  "dist": 15.9,
+  "how": "title"
+ },
+ "in.confluence.pachnada": {
+  "title": "Pachnada",
+  "qid": "Q7122047",
+  "how": "guess"
+ },
+ "in.waterfall.jog-falls": {
+  "title": "Jog Falls",
+  "qid": "Q672241",
+  "how": "guess"
+ },
+ "in.waterfall.kunchikal-falls": {
+  "title": "Kunchikal Falls",
+  "qid": "Q38816",
+  "dist": 18.6,
+  "how": "guess"
+ },
+ "in.waterfall.nohkalikai-falls": {
+  "title": "Nohkalikai Falls",
+  "qid": "Q3631209",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.waterfall.dudhsagar-falls": {
+  "title": "Dudhsagar Falls",
+  "qid": "Q37545",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.waterfall.athirappilly-falls": {
+  "title": "Athirappilly Falls",
+  "qid": "Q37563",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.waterfall.chitrakote-falls": {
+  "title": "Chitrakote Falls",
+  "qid": "Q38372",
+  "how": "guess"
+ },
+ "in.waterfall.dhuandhar-falls": {
+  "title": "Dhuandhar Falls",
+  "qid": "Q38177",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.waterfall.hundru-falls": {
+  "title": "Hundru Falls",
+  "qid": "Q3694612",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.waterfall.shivanasamudra-falls": {
+  "title": "Shivanasamudra Falls",
+  "qid": "Q38397",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.waterfall.hogenakkal-falls": {
+  "title": "Hogenakkal Falls",
+  "qid": "Q37729",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.waterfall.gokak-falls": {
+  "title": "Gokak Falls",
+  "qid": "Q1708121",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.dam.bhakra-nangal-dam": {
+  "title": "Bhakra Dam",
+  "qid": "Q83436",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.pong-dam": {
+  "title": "Pong Dam",
+  "qid": "Q7227766",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.dam.ranjit-sagar-dam": {
+  "title": "Ranjit Sagar Dam",
+  "qid": "Q2131032",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.salal-dam": {
+  "title": "Salal Dam",
+  "qid": "Q7403509",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.baglihar-dam": {
+  "title": "Baglihar Dam",
+  "qid": "Q460350",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.tehri-dam": {
+  "title": "Tehri Dam",
+  "qid": "Q69091",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.farakka-barrage": {
+  "title": "Farakka Barrage",
+  "qid": "Q2638941",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.dam.rihand-dam": {
+  "title": "Rihand Dam",
+  "qid": "Q1735166",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.matatila-dam": {
+  "title": "Matatila Dam",
+  "qid": "Q6786153",
+  "how": "guess"
+ },
+ "in.dam.gandhi-sagar-dam": {
+  "title": "Gandhi Sagar Dam",
+  "qid": "Q1493374",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.dam.indira-sagar-dam": {
+  "title": "Indirasagar Dam",
+  "qid": "Q1815211",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.dam.sardar-sarovar-dam": {
+  "title": "Sardar Sarovar Dam",
+  "qid": "Q2120392",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.ukai-dam": {
+  "title": "Ukai Dam",
+  "qid": "Q5264888",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.dam.hirakud-dam": {
+  "title": "Hirakud Dam",
+  "qid": "Q1940209",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.dam.maithon-dam": {
+  "title": "Maithon Dam",
+  "qid": "Q3445863",
+  "dist": 8.1,
+  "how": "guess"
+ },
+ "in.dam.koyna-dam": {
+  "title": "Koyna Dam",
+  "qid": "Q1785742",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.dam.almatti-dam": {
+  "title": "Almatti Dam",
+  "qid": "Q3444765",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.dam.tungabhadra-dam": {
+  "title": "Tungabhadra Dam",
+  "qid": "Q7853026",
+  "dist": 3.4,
+  "how": "guess"
+ },
+ "in.dam.srisailam-dam": {
+  "title": "Srisailam Dam",
+  "qid": "Q1552235",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.dam.nagarjuna-sagar-dam": {
+  "title": "Nagarjuna Sagar Dam",
+  "qid": "Q1112896",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.dam.polavaram-project": {
+  "title": "Polavaram Project",
+  "qid": "Q7209206",
+  "dist": 4.4,
+  "how": "guess"
+ },
+ "in.dam.krishna-raja-sagara": {
+  "title": "Krishna Raja Sagara",
+  "qid": "Q3536528",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.dam.mettur-dam": {
+  "title": "Mettur Dam",
+  "qid": "Q14772349",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.dam.grand-anicut": {
+  "title": "Kallanai Dam",
+  "qid": "Q3534498",
+  "how": "guess"
+ },
+ "in.dam.idukki-dam": {
+  "title": "Idukki Dam",
+  "qid": "Q1656950",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.dam.mullaperiyar-dam": {
+  "title": "Mullaperiyar Dam",
+  "qid": "Q2723522",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.lake.kaliveli-lake": {
+  "title": "Kaliveli Lake",
+  "qid": "Q6353269",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.lake.fulhar-lake": {
+  "title": "Phulhar Lake",
+  "qid": "Q122978985",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.lake.nakki-lake": {
+  "title": "Nakki Lake",
+  "qid": "Q7334956",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.lake.hamirsar-lake": {
+  "title": "Hamirsar Lake",
+  "qid": "Q5645334",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.lake.roopkund": {
+  "title": "Roopkund",
+  "qid": "Q1112110",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.samaspur-bird-sanctuary": {
+  "title": "Samaspur Bird Sanctuary",
+  "qid": "Q7408881",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.suraha-tal": {
+  "title": "Surha Tal",
+  "qid": "Q17394587",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.surinsar-mansar-lakes": {
+  "title": "Mansar Lake",
+  "qid": "Q15245380",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.pichavaram-mangroves": {
+  "title": "Pichavaram",
+  "qid": "Q7190627",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.coringa": {
+  "title": "Coringa Wildlife Sanctuary",
+  "qid": "Q5170559",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.waterfall.duduma-falls": {
+  "title": "Duduma Waterfalls",
+  "qid": "Q5312103",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.waterfall.khandadhar-falls": {
+  "title": "Khandadhar Falls (Sundargarh)",
+  "qid": "Q38183",
+  "how": "title"
+ },
+ "in.dam.rana-pratap-sagar-dam": {
+  "title": "Rana Pratap Sagar Dam",
+  "qid": "Q7290656",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.jawahar-sagar-dam": {
+  "title": "Jawahar Sagar Dam",
+  "qid": "Q6165952",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.sriram-sagar-dam": {
+  "title": "Sriram Sagar Project",
+  "qid": "Q7586496",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.panchet-dam": {
+  "title": "Panchet Dam",
+  "qid": "Q7130315",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.tilaiya-dam": {
+  "title": "Tilaiya Dam",
+  "qid": "Q7802028",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.parichha-dam": {
+  "title": "Parichha",
+  "qid": "Q2718662",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.pandoh-dam": {
+  "title": "Pandoh Dam",
+  "qid": "Q7130687",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.bhadra-dam": {
+  "title": "Bhadra Dam",
+  "qid": "Q4900535",
+  "how": "title"
+ },
+ "in.dam.bhavanisagar-dam": {
+  "title": "Bhavanisagar Dam",
+  "qid": "Q4901532",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.malampuzha-dam": {
+  "title": "Malampuzha Dam",
+  "qid": "Q3530977",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.aliyar-dam": {
+  "title": "Aliyar Reservoir",
+  "qid": "Q4727542",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.dam.isapur": {
+  "title": "Isapur Dam",
+  "qid": "Q6078930",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.wetland.marakkanam": {
+  "title": "Marakkanam",
+  "qid": "Q2554778",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.capital.new-delhi": {
+  "title": "New Delhi",
+  "qid": "Q987",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.amaravati": {
+  "title": "Amaravati",
+  "qid": "Q19881964",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.itanagar": {
+  "title": "Itanagar",
+  "qid": "Q41128",
+  "dist": 2.3,
+  "how": "guess"
+ },
+ "in.capital.dispur": {
+  "title": "Dispur",
+  "qid": "Q271911",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.capital.patna": {
+  "title": "Patna",
+  "qid": "Q80484",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.raipur": {
+  "title": "Raipur",
+  "qid": "Q372773",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.capital.panaji": {
+  "title": "Panaji",
+  "qid": "Q214681",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.capital.gandhinagar": {
+  "title": "Gandhinagar",
+  "qid": "Q11910",
+  "dist": 1.6,
+  "how": "guess"
+ },
+ "in.capital.chandigarh": {
+  "title": "Chandigarh",
+  "qid": "Q43433",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.shimla": {
+  "title": "Shimla",
+  "qid": "Q83786",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.capital.ranchi": {
+  "title": "Ranchi",
+  "qid": "Q174461",
+  "dist": 2.7,
+  "how": "guess"
+ },
+ "in.capital.bengaluru": {
+  "title": "Bengaluru",
+  "qid": "Q1355",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.capital.thiruvananthapuram": {
+  "title": "Thiruvananthapuram",
+  "qid": "Q167715",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.bhopal": {
+  "title": "Bhopal",
+  "qid": "Q80989",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.capital.mumbai": {
+  "title": "Mumbai",
+  "qid": "Q1156",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.imphal": {
+  "title": "Imphal",
+  "qid": "Q208097",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.capital.shillong": {
+  "title": "Shillong",
+  "qid": "Q207752",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.capital.aizawl": {
+  "title": "Aizawl",
+  "qid": "Q192379",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.capital.kohima": {
+  "title": "Kohima",
+  "qid": "Q234056",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.capital.bhubaneswar": {
+  "title": "Bhubaneswar",
+  "qid": "Q171771",
+  "dist": 3.3,
+  "how": "guess"
+ },
+ "in.capital.jaipur": {
+  "title": "Jaipur",
+  "qid": "Q66485",
+  "dist": 3.3,
+  "how": "guess"
+ },
+ "in.capital.gangtok": {
+  "title": "Gangtok",
+  "qid": "Q186141",
+  "dist": 1.7,
+  "how": "guess"
+ },
+ "in.capital.chennai": {
+  "title": "Chennai",
+  "qid": "Q1352",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.capital.hyderabad": {
+  "title": "Hyderabad",
+  "qid": "Q1361",
+  "dist": 2.9,
+  "how": "guess"
+ },
+ "in.capital.agartala": {
+  "title": "Agartala",
+  "qid": "Q170454",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.lucknow": {
+  "title": "Lucknow",
+  "qid": "Q47916",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.capital.dehradun": {
+  "title": "Dehradun",
+  "qid": "Q199528",
+  "dist": 3.2,
+  "how": "guess"
+ },
+ "in.capital.kolkata": {
+  "title": "Kolkata",
+  "qid": "Q1348",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.capital.sri-vijaya-puram": {
+  "title": "Port Blair",
+  "qid": "Q203476",
+  "dist": 5.1,
+  "how": "guess"
+ },
+ "in.capital.daman": {
+  "title": "Daman, India",
+  "qid": "Q463252",
+  "dist": 3.1,
+  "how": "guess"
+ },
+ "in.capital.srinagar": {
+  "title": "Srinagar",
+  "qid": "Q170115",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.capital.jammu": {
+  "title": "Jammu",
+  "qid": "Q255455",
+  "dist": 1.3,
+  "how": "guess"
+ },
+ "in.capital.leh": {
+  "title": "Leh",
+  "qid": "Q230818",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.capital.kavaratti": {
+  "title": "Kavaratti",
+  "qid": "Q271287",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.capital.puducherry": {
+  "title": "Pondicherry",
+  "qid": "Q639421",
+  "dist": 2.9,
+  "how": "guess"
+ },
+ "in.capital.islamabad": {
+  "title": "Islamabad",
+  "qid": "Q1362",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "in.capital.kabul": {
+  "title": "Kabul",
+  "qid": "Q5838",
+  "dist": 4.3,
+  "how": "guess"
+ },
+ "in.capital.kathmandu": {
+  "title": "Kathmandu",
+  "qid": "Q3037",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.capital.thimphu": {
+  "title": "Thimphu",
+  "qid": "Q9270",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.capital.dhaka": {
+  "title": "Dhaka",
+  "qid": "Q1354",
+  "dist": 5.6,
+  "how": "guess"
+ },
+ "in.capital.naypyidaw": {
+  "title": "Naypyidaw",
+  "qid": "Q37400",
+  "dist": 4.2,
+  "how": "guess"
+ },
+ "in.capital.sri-jayawardenepura-kotte": {
+  "title": "Sri Jayawardenepura Kotte",
+  "qid": "Q41963",
+  "dist": 4.3,
+  "how": "guess"
+ },
+ "in.city.varanasi": {
+  "title": "Varanasi",
+  "qid": "Q79980",
+  "dist": 3.9,
+  "how": "guess"
+ },
+ "in.city.prayagraj": {
+  "title": "Prayagraj",
+  "qid": "Q162442",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.agra": {
+  "title": "Agra",
+  "qid": "Q42941",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.city.kanpur": {
+  "title": "Kanpur",
+  "qid": "Q66568",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.ayodhya": {
+  "title": "Ayodhya",
+  "qid": "Q186040",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.city.gorakhpur": {
+  "title": "Gorakhpur",
+  "qid": "Q5584396",
+  "dist": 3.1,
+  "how": "guess"
+ },
+ "in.city.jhansi": {
+  "title": "Jhansi",
+  "qid": "Q242995",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.city.mathura": {
+  "title": "Mathura",
+  "qid": "Q200311",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.meerut": {
+  "title": "Meerut",
+  "qid": "Q200237",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.city.bareilly": {
+  "title": "Bareilly",
+  "qid": "Q213026",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.ahmedabad": {
+  "title": "Ahmedabad",
+  "qid": "Q1070",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.surat": {
+  "title": "Surat",
+  "qid": "Q4629",
+  "dist": 4,
+  "how": "guess"
+ },
+ "in.city.bhuj": {
+  "title": "Bhuj",
+  "qid": "Q798382",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "in.city.pune": {
+  "title": "Pune",
+  "qid": "Q1538",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.city.nagpur": {
+  "title": "Nagpur",
+  "qid": "Q1513",
+  "how": "guess"
+ },
+ "in.city.nashik": {
+  "title": "Nashik",
+  "qid": "Q200235",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.indore": {
+  "title": "Indore",
+  "qid": "Q66616",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.city.ujjain": {
+  "title": "Ujjain",
+  "qid": "Q200119",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.city.jabalpur": {
+  "title": "Jabalpur",
+  "qid": "Q200878",
+  "dist": 5.7,
+  "how": "guess"
+ },
+ "in.city.kota": {
+  "title": "Kota, Rajasthan",
+  "qid": "Q330531",
+  "dist": 5.1,
+  "how": "guess"
+ },
+ "in.city.jodhpur": {
+  "title": "Jodhpur",
+  "qid": "Q200019",
+  "dist": 4.6,
+  "how": "guess"
+ },
+ "in.city.jaisalmer": {
+  "title": "Jaisalmer",
+  "qid": "Q242898",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.city.udaipur": {
+  "title": "Udaipur",
+  "qid": "Q200340",
+  "dist": 3.3,
+  "how": "guess"
+ },
+ "in.city.amritsar": {
+  "title": "Amritsar",
+  "qid": "Q48403",
+  "dist": 1.3,
+  "how": "guess"
+ },
+ "in.city.haridwar": {
+  "title": "Haridwar",
+  "qid": "Q273030",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.city.madurai": {
+  "title": "Madurai",
+  "qid": "Q228405",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.coimbatore": {
+  "title": "Coimbatore",
+  "qid": "Q9885",
+  "dist": 2,
+  "how": "guess"
+ },
+ "in.city.mysuru": {
+  "title": "Mysore",
+  "qid": "Q10086",
+  "dist": 2.1,
+  "how": "guess"
+ },
+ "in.city.kochi": {
+  "title": "Kochi",
+  "qid": "Q1800",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.kozhikode": {
+  "title": "Kozhikode",
+  "qid": "Q28729",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.city.visakhapatnam": {
+  "title": "Visakhapatnam",
+  "qid": "Q200016",
+  "dist": 7.8,
+  "how": "guess"
+ },
+ "in.city.vijayawada": {
+  "title": "Vijayawada",
+  "qid": "Q200017",
+  "dist": 3.2,
+  "how": "guess"
+ },
+ "in.city.guwahati": {
+  "title": "Guwahati",
+  "qid": "Q199605",
+  "dist": 3.2,
+  "how": "guess"
+ },
+ "in.city.dibrugarh": {
+  "title": "Dibrugarh",
+  "qid": "Q1266637",
+  "dist": 8.7,
+  "how": "guess"
+ },
+ "in.city.silchar": {
+  "title": "Silchar",
+  "qid": "Q944769",
+  "dist": 2.6,
+  "how": "guess"
+ },
+ "in.city.tawang": {
+  "title": "Tawang",
+  "qid": "Q1006270",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.city.darjeeling": {
+  "title": "Darjeeling",
+  "qid": "Q169997",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.city.siliguri": {
+  "title": "Siliguri",
+  "qid": "Q5087",
+  "dist": 3.9,
+  "how": "guess"
+ },
+ "in.city.sohra": {
+  "title": "Cherrapunji",
+  "qid": "Q211030",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.city.mawsynram": {
+  "title": "Mawsynram",
+  "qid": "Q2708616",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.city.dras": {
+  "title": "Dras",
+  "qid": "Q4167739",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.city.kargil": {
+  "title": "Kargil",
+  "qid": "Q2088176",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.city.manali": {
+  "title": "Manali, Himachal Pradesh",
+  "qid": "Q83443",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.city.jamshedpur": {
+  "title": "Jamshedpur",
+  "qid": "Q200054",
+  "dist": 2.3,
+  "how": "guess"
+ },
+ "in.city.dhanbad": {
+  "title": "Dhanbad",
+  "qid": "Q244159",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.city.bhilai": {
+  "title": "Bhilai",
+  "qid": "Q242144",
+  "dist": 3.5,
+  "how": "guess"
+ },
+ "in.city.rourkela": {
+  "title": "Rourkela",
+  "qid": "Q1012706",
+  "dist": 3.3,
+  "how": "guess"
+ },
+ "in.city.durgapur": {
+  "title": "Durgapur",
+  "qid": "Q5088",
+  "dist": 3.3,
+  "how": "guess"
+ },
+ "in.city.puri": {
+  "title": "Puri (city)",
+  "qid": "Q207799",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.city.lhasa": {
+  "title": "Lhasa",
+  "qid": "Q1026100",
+  "dist": 5.3,
+  "how": "guess"
+ },
+ "in.city.noida": {
+  "title": "Noida",
+  "qid": "Q278204",
+  "dist": 7.9,
+  "how": "guess"
+ },
+ "in.city.moradabad": {
+  "title": "Moradabad",
+  "qid": "Q330643",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.city.firozabad": {
+  "title": "Firozabad",
+  "qid": "Q1452991",
+  "dist": 2.6,
+  "how": "guess"
+ },
+ "in.city.aligarh": {
+  "title": "Aligarh",
+  "qid": "Q201832",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "in.city.kannauj": {
+  "title": "Kannauj",
+  "qid": "Q614890",
+  "dist": 2.1,
+  "how": "guess"
+ },
+ "in.city.mirzapur": {
+  "title": "Mirzapur",
+  "qid": "Q888908",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.city.bhadohi": {
+  "title": "Bhadohi",
+  "qid": "Q759217",
+  "dist": 2.7,
+  "how": "guess"
+ },
+ "in.city.saharanpur": {
+  "title": "Saharanpur",
+  "qid": "Q242895",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.city.chitrakoot": {
+  "title": "Chitrakoot, Madhya Pradesh",
+  "qid": "Q1192410",
+  "dist": 23.3,
+  "how": "search"
+ },
+ "in.city.sonbhadra": {
+  "title": "Robertsganj",
+  "qid": "Q1709323",
+  "dist": 1.3,
+  "how": "title"
+ },
+ "in.city.etawah": {
+  "title": "Etawah",
+  "qid": "Q878237",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.monument.agra-fort": {
+  "title": "Agra Fort",
+  "qid": "Q171857",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.kalinjar-fort": {
+  "title": "Kalinjar Fort",
+  "qid": "Q3630997",
+  "how": "guess"
+ },
+ "in.monument.chunar-fort": {
+  "title": "Chunar Fort",
+  "qid": "Q5116225",
+  "how": "guess"
+ },
+ "in.monument.deogarh": {
+  "title": "Deogarh, Uttar Pradesh",
+  "qid": "Q955652",
+  "dist": 0.4,
+  "how": "search"
+ },
+ "in.monument.shravasti": {
+  "title": "Shravasti",
+  "qid": "Q2594448",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.humayuns-tomb": {
+  "title": "Humayun's tomb",
+  "qid": "Q189648",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.region.awadh": {
+  "title": "Awadh",
+  "qid": "Q248705",
+  "dist": 60.6,
+  "how": "guess"
+ },
+ "in.region.rohilkhand": {
+  "title": "Rohilkhand",
+  "qid": "Q2512323",
+  "how": "guess"
+ },
+ "in.region.braj": {
+  "title": "Braj",
+  "qid": "Q4095666",
+  "how": "guess"
+ },
+ "in.park.hastinapur-wildlife-sanctuary": {
+  "title": "Hastinapur Wildlife Sanctuary",
+  "qid": "Q5680205",
+  "dist": 8,
+  "how": "guess"
+ },
+ "in.park.chandra-prabha-wildlife-sanctuary": {
+  "title": "Chandra Prabha Wildlife Sanctuary",
+  "qid": "Q5071304",
+  "dist": 69,
+  "how": "guess"
+ },
+ "in.park.okhla-bird-sanctuary": {
+  "title": "Okhla Sanctuary",
+  "qid": "Q7081968",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "in.wetland.sandi-bird-sanctuary": {
+  "title": "Sandi Bird Sanctuary",
+  "qid": "Q7416307",
+  "dist": 6.5,
+  "how": "guess"
+ },
+ "in.wetland.parvati-arga": {
+  "title": "Parvati Arga Bird Sanctuary",
+  "qid": "Q48729855",
+  "dist": 8,
+  "how": "guess"
+ },
+ "in.wetland.sarsai-nawar": {
+  "title": "Sarsai Nawar Wetland",
+  "qid": "Q56277554",
+  "dist": 9.1,
+  "how": "guess"
+ },
+ "in.wetland.bakhira-wildlife-sanctuary": {
+  "title": "Bakhira Sanctuary",
+  "qid": "Q4251269",
+  "dist": 10.4,
+  "how": "guess"
+ },
+ "in.wetland.haiderpur-wetland": {
+  "title": "Haiderpur Wetland",
+  "qid": "Q108087878",
+  "dist": 1.7,
+  "how": "guess"
+ },
+ "in.dam.rajghat-dam": {
+  "title": "Rajghat Dam",
+  "qid": "Q7286120",
+  "how": "guess"
+ },
+ "in.port.deendayal-port": {
+  "title": "Kandla Port",
+  "qid": "Q64859173",
+  "dist": 3.7,
+  "how": "guess"
+ },
+ "in.port.mundra-port": {
+  "title": "Mundra Port",
+  "qid": "Q20650238",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.port.mumbai-port": {
+  "title": "Mumbai Port",
+  "qid": "Q15260223",
+  "how": "guess"
+ },
+ "in.port.jawaharlal-nehru-port": {
+  "title": "Jawaharlal Nehru Port",
+  "qid": "Q1984452",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.port.mormugao-port": {
+  "title": "Mormugao Port",
+  "qid": "Q60296757",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.port.new-mangalore-port": {
+  "title": "New Mangalore Port",
+  "qid": "Q23585035",
+  "how": "guess"
+ },
+ "in.port.cochin-port": {
+  "title": "Cochin Port",
+  "qid": "Q5139316",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.port.vizhinjam-port": {
+  "title": "Vizhinjam Port",
+  "qid": "Q132797998",
+  "how": "guess"
+ },
+ "in.port.tuticorin": {
+  "title": "Thoothukudi",
+  "qid": "Q41562",
+  "dist": 7.9,
+  "how": "guess"
+ },
+ "in.port.chennai-port": {
+  "title": "Chennai Port",
+  "qid": "Q3524002",
+  "dist": 2,
+  "how": "guess"
+ },
+ "in.port.kamarajar-port": {
+  "title": "Kamarajar Port",
+  "qid": "Q10986919",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.port.visakhapatnam-port": {
+  "title": "Visakhapatnam Port",
+  "qid": "Q7935583",
+  "how": "guess"
+ },
+ "in.port.paradip-port": {
+  "title": "Paradip Port",
+  "qid": "Q7134171",
+  "how": "guess"
+ },
+ "in.port.kolkata-port": {
+  "title": "Port of Kolkata",
+  "qid": "Q7231171",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.port.haldia": {
+  "title": "Haldia Dock Complex",
+  "qid": "Q29053931",
+  "how": "guess"
+ },
+ "in.port.gwadar": {
+  "title": "Gwadar Port",
+  "qid": "Q4122132",
+  "dist": 2.9,
+  "how": "guess"
+ },
+ "in.port.chittagong": {
+  "title": "Port of Chittagong",
+  "qid": "Q3348944",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.port.sittwe": {
+  "title": "Sittwe Port",
+  "qid": "Q7532118",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.port.hambantota": {
+  "title": "Hambantota International Port",
+  "qid": "Q6729657",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.park.jim-corbett-national-park": {
+  "title": "Jim Corbett National Park",
+  "qid": "Q949297",
+  "dist": 16.1,
+  "how": "guess"
+ },
+ "in.park.rajaji-national-park": {
+  "title": "Rajaji National Park",
+  "qid": "Q181933",
+  "dist": 7,
+  "how": "guess"
+ },
+ "in.park.valley-of-flowers": {
+  "title": "Valley of Flowers National Park",
+  "qid": "Q605897",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "in.park.nanda-devi-national-park": {
+  "title": "Nanda Devi National Park",
+  "qid": "Q1648266",
+  "dist": 2,
+  "how": "guess"
+ },
+ "in.park.great-himalayan-national-park": {
+  "title": "Great Himalayan National Park",
+  "qid": "Q1544213",
+  "dist": 1.9,
+  "how": "guess"
+ },
+ "in.park.pin-valley-national-park": {
+  "title": "Pin Valley National Park",
+  "qid": "Q14229383",
+  "dist": 12.6,
+  "how": "guess"
+ },
+ "in.park.hemis-national-park": {
+  "title": "Hemis National Park",
+  "qid": "Q1604804",
+  "dist": 12,
+  "how": "guess"
+ },
+ "in.park.dachigam-national-park": {
+  "title": "Dachigam National Park",
+  "qid": "Q1156717",
+  "dist": 1.4,
+  "how": "guess"
+ },
+ "in.park.dudhwa-national-park": {
+  "title": "Dudhwa National Park",
+  "qid": "Q253455",
+  "dist": 3.1,
+  "how": "guess"
+ },
+ "in.park.pilibhit-tiger-reserve": {
+  "title": "Pilibhit Tiger Reserve",
+  "qid": "Q7193996",
+  "how": "guess"
+ },
+ "in.park.amangarh-tiger-reserve": {
+  "title": "Amangarh Tiger Reserve",
+  "qid": "Q19881905",
+  "dist": 8.1,
+  "how": "guess"
+ },
+ "in.park.ranipur-tiger-reserve": {
+  "title": "Ranipur Wildlife Sanctuary",
+  "qid": "Q7293072",
+  "dist": 28.2,
+  "how": "title"
+ },
+ "in.park.katarniaghat-wildlife-sanctuary": {
+  "title": "Katarniaghat Wildlife Sanctuary",
+  "qid": "Q6375178",
+  "dist": 7.9,
+  "how": "guess"
+ },
+ "in.park.national-chambal-sanctuary": {
+  "title": "National Chambal Sanctuary",
+  "qid": "Q6971439",
+  "dist": 19.2,
+  "how": "guess"
+ },
+ "in.park.valmiki-tiger-reserve": {
+  "title": "Valmiki National Park",
+  "qid": "Q2428291",
+  "dist": 6.5,
+  "how": "guess"
+ },
+ "in.park.kaziranga-national-park": {
+  "title": "Kaziranga National Park",
+  "qid": "Q192764",
+  "dist": 20.3,
+  "how": "guess"
+ },
+ "in.park.manas-national-park": {
+  "title": "Manas National Park",
+  "qid": "Q506511",
+  "dist": 6.6,
+  "how": "guess"
+ },
+ "in.park.nameri-national-park": {
+  "title": "Nameri National Park",
+  "qid": "Q2989157",
+  "dist": 8.9,
+  "how": "guess"
+ },
+ "in.park.dibru-saikhowa-national-park": {
+  "title": "Dibru-Saikhowa National Park",
+  "qid": "Q1209353",
+  "dist": 2.5,
+  "how": "guess"
+ },
+ "in.park.pakke-tiger-reserve": {
+  "title": "Pakke Tiger Reserve",
+  "qid": "Q7125480",
+  "dist": 9.8,
+  "how": "guess"
+ },
+ "in.park.namdapha-national-park": {
+  "title": "Namdapha National Park",
+  "qid": "Q1815612",
+  "dist": 2.5,
+  "how": "guess"
+ },
+ "in.park.keibul-lamjao-national-park": {
+  "title": "Keibul Lamjao National Park",
+  "qid": "Q1737898",
+  "dist": 6.4,
+  "how": "guess"
+ },
+ "in.park.nokrek-national-park": {
+  "title": "Nokrek National Park",
+  "qid": "Q3174875",
+  "dist": 23.9,
+  "how": "guess"
+ },
+ "in.park.khangchendzonga-national-park": {
+  "title": "Khangchendzonga National Park",
+  "qid": "Q2605019",
+  "dist": 1.4,
+  "how": "guess"
+ },
+ "in.park.singalila-national-park": {
+  "title": "Singalila National Park",
+  "qid": "Q2985193",
+  "dist": 5,
+  "how": "guess"
+ },
+ "in.park.buxa-tiger-reserve": {
+  "title": "Buxa Tiger Reserve",
+  "qid": "Q2340037",
+  "dist": 2,
+  "how": "guess"
+ },
+ "in.park.sundarbans-national-park": {
+  "title": "Sundarbans National Park",
+  "qid": "Q532440",
+  "dist": 12.5,
+  "how": "guess"
+ },
+ "in.park.similipal-national-park": {
+  "title": "Simlipal National Park",
+  "qid": "Q61529",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.park.bhitarkanika-national-park": {
+  "title": "Bhitarkanika National Park",
+  "qid": "Q2580141",
+  "dist": 11.8,
+  "how": "guess"
+ },
+ "in.park.gahirmatha-marine-sanctuary": {
+  "title": "Gahirmatha Marine Sanctuary",
+  "qid": "Q22031428",
+  "dist": 22,
+  "how": "guess"
+ },
+ "in.park.palamau-tiger-reserve": {
+  "title": "Palamau Tiger Reserve",
+  "qid": "Q7126657",
+  "dist": 16.7,
+  "how": "guess"
+ },
+ "in.park.kanha-national-park": {
+  "title": "Kanha Tiger Reserve",
+  "qid": "Q1480481",
+  "dist": 12,
+  "how": "guess"
+ },
+ "in.park.bandhavgarh-national-park": {
+  "title": "Bandhavgarh National Park",
+  "qid": "Q806310",
+  "dist": 3.9,
+  "how": "guess"
+ },
+ "in.park.pench-national-park": {
+  "title": "Pench National Park",
+  "qid": "Q2720864",
+  "dist": 3.2,
+  "how": "guess"
+ },
+ "in.park.panna-national-park": {
+  "title": "Panna National Park",
+  "qid": "Q1858071",
+  "how": "guess"
+ },
+ "in.park.satpura-national-park": {
+  "title": "Satpura Tiger Reserve",
+  "qid": "Q733659",
+  "dist": 7.1,
+  "how": "guess"
+ },
+ "in.park.kuno-national-park": {
+  "title": "Kuno National Park",
+  "qid": "Q1143016",
+  "dist": 15.3,
+  "how": "guess"
+ },
+ "in.park.tadoba-andhari-tiger-reserve": {
+  "title": "Tadoba Andhari Tiger Reserve",
+  "qid": "Q2639563",
+  "dist": 5.5,
+  "how": "guess"
+ },
+ "in.park.melghat-tiger-reserve": {
+  "title": "Melghat",
+  "qid": "Q2429161",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.park.sanjay-gandhi-national-park": {
+  "title": "Sanjay Gandhi National Park",
+  "qid": "Q648907",
+  "dist": 3.4,
+  "how": "guess"
+ },
+ "in.park.ranthambore-national-park": {
+  "title": "Ranthambore National Park",
+  "qid": "Q1466242",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.park.sariska-tiger-reserve": {
+  "title": "Sariska Tiger Reserve",
+  "qid": "Q2572177",
+  "dist": 4.1,
+  "how": "guess"
+ },
+ "in.park.keoladeo-national-park": {
+  "title": "Keoladeo National Park",
+  "qid": "Q235878",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.park.desert-national-park": {
+  "title": "Desert National Park",
+  "qid": "Q3058213",
+  "dist": 56.5,
+  "how": "guess"
+ },
+ "in.park.gir-national-park": {
+  "title": "Gir National Park",
+  "qid": "Q337028",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.park.gulf-of-kutch-marine": {
+  "title": "Marine National Park, Gulf of Kutch",
+  "qid": "Q2724481",
+  "how": "title"
+ },
+ "in.park.wild-ass-sanctuary": {
+  "title": "Indian Wild Ass Sanctuary",
+  "qid": "Q1207543",
+  "how": "guess"
+ },
+ "in.park.velavadar-blackbuck-national-park": {
+  "title": "Blackbuck National Park, Velavadar",
+  "qid": "Q880724",
+  "dist": 2.1,
+  "how": "title"
+ },
+ "in.park.nagarjunasagar-srisailam-tiger-reserve": {
+  "title": "Nagarjunsagar-Srisailam Tiger Reserve",
+  "qid": "Q3895706",
+  "dist": 24,
+  "how": "title"
+ },
+ "in.park.indravati-national-park": {
+  "title": "Indravati National Park",
+  "qid": "Q1427976",
+  "dist": 41.6,
+  "how": "guess"
+ },
+ "in.park.achanakmar-tiger-reserve": {
+  "title": "Achanakmar Wildlife Sanctuary",
+  "qid": "Q4673468",
+  "dist": 9.1,
+  "how": "guess"
+ },
+ "in.park.nagarhole-national-park": {
+  "title": "Nagarhole National Park",
+  "qid": "Q1520200",
+  "dist": 1.1,
+  "how": "guess"
+ },
+ "in.park.bandipur-national-park": {
+  "title": "Bandipur National Park",
+  "qid": "Q665110",
+  "dist": 1,
+  "how": "guess"
+ },
+ "in.park.kudremukh-national-park": {
+  "title": "Kudremukh National Park",
+  "qid": "Q123439915",
+  "dist": 15627.2,
+  "how": "title"
+ },
+ "in.park.mudumalai-national-park": {
+  "title": "Mudumalai National Park",
+  "qid": "Q2372700",
+  "dist": 6.4,
+  "how": "guess"
+ },
+ "in.park.nilgiri-biosphere-reserve": {
+  "title": "Nilgiri Biosphere Reserve",
+  "qid": "Q3530830",
+  "dist": 13.8,
+  "how": "guess"
+ },
+ "in.park.anamalai-tiger-reserve": {
+  "title": "Anamalai Tiger Reserve",
+  "qid": "Q1661434",
+  "dist": 6.5,
+  "how": "guess"
+ },
+ "in.park.gulf-of-mannar-biosphere-reserve": {
+  "title": "Gulf of Mannar Marine National Park",
+  "qid": "Q5617576",
+  "dist": 29.9,
+  "how": "guess"
+ },
+ "in.park.kalakkad-mundanthurai-tiger-reserve": {
+  "title": "Kalakkad Mundanthurai Tiger Reserve",
+  "qid": "Q3936889",
+  "dist": 10,
+  "how": "search"
+ },
+ "in.park.periyar-tiger-reserve": {
+  "title": "Periyar National Park",
+  "qid": "Q548153",
+  "dist": 8.9,
+  "how": "guess"
+ },
+ "in.park.silent-valley-national-park": {
+  "title": "Silent Valley National Park",
+  "qid": "Q176792",
+  "dist": 7.2,
+  "how": "guess"
+ },
+ "in.park.eravikulam-national-park": {
+  "title": "Eravikulam National Park",
+  "qid": "Q1194252",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "in.park.mahatma-gandhi-marine-national-park": {
+  "title": "Mahatma Gandhi Marine National Park",
+  "qid": "Q3364527",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "in.monument.taj-mahal": {
+  "title": "Taj Mahal",
+  "qid": "Q9141",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.fatehpur-sikri": {
+  "title": "Fatehpur Sikri",
+  "qid": "Q179046",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "in.monument.sarnath": {
+  "title": "Sarnath",
+  "qid": "Q324394",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.monument.kushinagar": {
+  "title": "Kushinagar",
+  "qid": "Q825673",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.red-fort": {
+  "title": "Red Fort",
+  "qid": "Q45957",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.qutub-minar": {
+  "title": "Qutb Minar",
+  "qid": "Q187635",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.khajuraho": {
+  "title": "Khajuraho",
+  "qid": "Q178948",
+  "dist": 2.1,
+  "how": "guess"
+ },
+ "in.monument.sanchi-stupa": {
+  "title": "Sanchi Stupa",
+  "qid": "Q181123",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.bhimbetka": {
+  "title": "Bhimbetka rock shelters",
+  "qid": "Q331603",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.ajanta-caves": {
+  "title": "Ajanta Caves",
+  "qid": "Q184427",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.monument.ellora-caves": {
+  "title": "Ellora Caves",
+  "qid": "Q189616",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.chhatrapati-shivaji-terminus": {
+  "title": "Chhatrapati Shivaji Terminus",
+  "qid": "Q235884",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.raigad-fort": {
+  "title": "Raigad Fort",
+  "qid": "Q3626515",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.hampi": {
+  "title": "Hampi",
+  "qid": "Q26732",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "in.monument.pattadakal": {
+  "title": "Pattadakal",
+  "qid": "Q817250",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "in.monument.belur": {
+  "title": "Belur, Karnataka",
+  "qid": "Q760603",
+  "dist": 0.9,
+  "how": "search"
+ },
+ "in.monument.konark-sun-temple": {
+  "title": "Konark Sun Temple",
+  "qid": "Q752091",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.mahabalipuram": {
+  "title": "Mamallapuram",
+  "qid": "Q208000",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.brihadisvara-temple": {
+  "title": "Brihadisvara Temple",
+  "qid": "Q916943",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.ramappa-temple": {
+  "title": "Ramappa Temple",
+  "qid": "Q3380656",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.rani-ki-vav": {
+  "title": "Rani ki Vav",
+  "qid": "Q7293002",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.dholavira": {
+  "title": "Dholavira",
+  "qid": "Q9468",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.lothal": {
+  "title": "Lothal",
+  "qid": "Q9443",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.monument.rakhigarhi": {
+  "title": "Rakhigarhi",
+  "qid": "Q3418050",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "in.monument.kalibangan": {
+  "title": "Kalibangan",
+  "qid": "Q1722226",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "in.monument.chittorgarh-fort": {
+  "title": "Chittor Fort",
+  "qid": "Q3695769",
+  "how": "guess"
+ },
+ "in.monument.jantar-mantar": {
+  "title": "Jantar Mantar",
+  "qid": "Q12816495",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.mahabodhi-temple": {
+  "title": "Mahabodhi Temple",
+  "qid": "Q4513",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.nalanda": {
+  "title": "Nalanda mahavihara",
+  "qid": "Q216243",
+  "how": "guess"
+ },
+ "in.monument.santiniketan": {
+  "title": "Santiniketan",
+  "qid": "Q1026431",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.monument.moidams-of-charaideo": {
+  "title": "Moidam",
+  "qid": "Q6735332",
+  "how": "title"
+ },
+ "in.monument.churches-of-goa": {
+  "title": "Churches and convents of Goa",
+  "qid": "Q15726428",
+  "dist": 0.1,
+  "how": "title"
+ },
+ "in.monument.statue-of-unity": {
+  "title": "Statue of Unity",
+  "qid": "Q7604504",
+  "dist": 0,
+  "how": "guess"
+ },
+ "in.monument.kedarnath": {
+  "title": "Kedarnath",
+  "qid": "Q740167",
+  "dist": 0.6,
+  "how": "guess"
+ },
+ "in.monument.badrinath": {
+  "title": "Badrinath",
+  "qid": "Q588804",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "in.city.bomdila": {
+  "title": "Bomdila",
+  "qid": "Q859141",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.park.kishanpur-wildlife-sanctuary": {
+  "title": "Kishanpur Wildlife Sanctuary",
+  "qid": "Q6416552",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.park.mahavir-swami-wildlife-sanctuary": {
+  "title": "Mahavir Swami Wildlife Sanctuary",
+  "qid": "Q6733577",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.kakinada": {
+  "title": "Kakinada Port",
+  "qid": "Q6349454",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.porbandar": {
+  "title": "Porbandar",
+  "qid": "Q6419912",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.okha": {
+  "title": "Okha, India",
+  "qid": "Q2726034",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.veraval": {
+  "title": "Veraval",
+  "qid": "Q518791",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.karaikal": {
+  "title": "Karaikal",
+  "qid": "Q277258",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.dahej": {
+  "title": "Dahej Port",
+  "qid": "Q7231119",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.port.karwar": {
+  "title": "Karwar",
+  "qid": "Q2727978",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.khurja": {
+  "title": "Khurja",
+  "qid": "Q2235607",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.narora": {
+  "title": "Narora",
+  "qid": "Q2441434",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.ludhiana": {
+  "title": "Ludhiana",
+  "qid": "Q200123",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.chhatrapati-sambhajinagar": {
+  "title": "Aurangabad",
+  "qid": "Q200713",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.karnal": {
+  "title": "Karnal",
+  "qid": "Q256194",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.gopalpur-on-sea": {
+  "title": "Gopalpur, Odisha",
+  "qid": "Q1747725",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.chandipur-on-sea": {
+  "title": "Chandipur, Odisha",
+  "qid": "Q3631650",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.thumba": {
+  "title": "Thumba Equatorial Rocket Launching Station",
+  "qid": "Q7798824",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.auroville": {
+  "title": "Auroville",
+  "qid": "Q590361",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.dwarka": {
+  "title": "Dwarka",
+  "qid": "Q817247",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.mahabaleshwar": {
+  "title": "Mahabaleshwar",
+  "qid": "Q463273",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.kodaikanal": {
+  "title": "Kodaikanal",
+  "qid": "Q253851",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.udhagamandalam": {
+  "title": "Ooty",
+  "qid": "Q9888",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.kundapura": {
+  "title": "Kundapur",
+  "qid": "Q721359",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.srirangapatna": {
+  "title": "Srirangapatna",
+  "qid": "Q653988",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.srirangam": {
+  "title": "Srirangam",
+  "qid": "Q2304639",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.tiruchirappalli": {
+  "title": "Tiruchirappalli",
+  "qid": "Q207754",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.pandharpur": {
+  "title": "Pandharpur",
+  "qid": "Q1779418",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.omkareshwar": {
+  "title": "Omkareshwar Temple",
+  "qid": "Q1093334",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.srisailam": {
+  "title": "Srisailam",
+  "qid": "Q2269015",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.gilgit": {
+  "title": "Gilgit",
+  "qid": "Q609024",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.bhavnagar": {
+  "title": "Bhavnagar",
+  "qid": "Q242992",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.nagapattinam": {
+  "title": "Nagapattinam",
+  "qid": "Q695585",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.kottayam": {
+  "title": "Kottayam",
+  "qid": "Q659887",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.jagdalpur": {
+  "title": "Jagdalpur",
+  "qid": "Q1006363",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.vadodara": {
+  "title": "Vadodara",
+  "qid": "Q11909",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.ajmer": {
+  "title": "Ajmer",
+  "qid": "Q200049",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.salem": {
+  "title": "Salem, Tamil Nadu",
+  "qid": "Q9863",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.moreh": {
+  "title": "Moreh, India",
+  "qid": "Q3523096",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.kancheepuram": {
+  "title": "Kanchipuram",
+  "qid": "Q212332",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.mahe": {
+  "title": "Mahé, India",
+  "qid": "Q277480",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.yanam": {
+  "title": "Yanam",
+  "qid": "Q277322",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.chanderi": {
+  "title": "Chanderi",
+  "qid": "Q860192",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.bhadrachalam": {
+  "title": "Bhadrachalam",
+  "qid": "Q759204",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.betul": {
+  "title": "Betul, Madhya Pradesh",
+  "qid": "Q2087749",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.bheemunipatnam": {
+  "title": "Bheemunipatnam",
+  "qid": "Q2483868",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.city.diamond-harbour": {
+  "title": "Diamond Harbour, India",
+  "qid": "Q1264213",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.murud-janjira": {
+  "title": "Murud-Janjira",
+  "qid": "Q301996",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.champaner-pavagadh": {
+  "title": "Champaner-Pavagadh Archaeological Park",
+  "qid": "Q844427",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.alamgirpur": {
+  "title": "Alamgirpur",
+  "qid": "Q4705914",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.kaushambi": {
+  "title": "Kosambi",
+  "qid": "Q1194868",
+  "dist": 0,
+  "how": "title"
+ },
+ "in.monument.sankisa": {
+  "title": "Sankissa",
+  "qid": "Q864810",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.pacific-ocean": {
+  "title": "Pacific Ocean",
+  "qid": "Q98",
+  "dist": 1241.9,
+  "how": "guess"
+ },
+ "w.sea.atlantic-ocean": {
+  "title": "Atlantic Ocean",
+  "qid": "Q97",
+  "dist": 2345.2,
+  "how": "guess"
+ },
+ "w.sea.indian-ocean": {
+  "title": "Indian Ocean",
+  "qid": "Q1239",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.sea.mediterranean-sea": {
+  "title": "Mediterranean Sea",
+  "qid": "Q4918",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.sea.red-sea": {
+  "title": "Red Sea",
+  "qid": "Q23406",
+  "dist": 228.4,
+  "how": "guess"
+ },
+ "w.sea.black-sea": {
+  "title": "Black Sea",
+  "qid": "Q166",
+  "dist": 120,
+  "how": "guess"
+ },
+ "w.sea.south-china-sea": {
+  "title": "South China Sea",
+  "qid": "Q37660",
+  "dist": 108.8,
+  "how": "guess"
+ },
+ "w.sea.caribbean-sea": {
+  "title": "Caribbean Sea",
+  "qid": "Q1247",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.sea.north-sea": {
+  "title": "North Sea",
+  "qid": "Q1693",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.sea.baltic-sea": {
+  "title": "Baltic Sea",
+  "qid": "Q545",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.sea.sargasso-sea": {
+  "title": "Sargasso Sea",
+  "qid": "Q169274",
+  "dist": 624.3,
+  "how": "guess"
+ },
+ "w.sea.mariana-trench": {
+  "title": "Mariana Trench",
+  "qid": "Q510",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.gulf.persian-gulf": {
+  "title": "Persian Gulf",
+  "qid": "Q34675",
+  "dist": 149.2,
+  "how": "guess"
+ },
+ "w.gulf.gulf-of-aden": {
+  "title": "Gulf of Aden",
+  "qid": "Q41837",
+  "dist": 55.6,
+  "how": "guess"
+ },
+ "w.gulf.gulf-of-mexico": {
+  "title": "Gulf of Mexico",
+  "qid": "Q12630",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.gulf.gulf-of-guinea": {
+  "title": "Gulf of Guinea",
+  "qid": "Q41430",
+  "dist": 497.2,
+  "how": "guess"
+ },
+ "w.gulf.hudson-bay": {
+  "title": "Hudson Bay",
+  "qid": "Q3040",
+  "dist": 55.6,
+  "how": "guess"
+ },
+ "w.gulf.gulf-of-oman": {
+  "title": "Gulf of Oman",
+  "qid": "Q79948",
+  "dist": 75.1,
+  "how": "guess"
+ },
+ "w.gulf.gulf-of-thailand": {
+  "title": "Gulf of Thailand",
+  "qid": "Q131217",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.gulf.bay-of-biscay": {
+  "title": "Bay of Biscay",
+  "qid": "Q41573",
+  "dist": 63.8,
+  "how": "guess"
+ },
+ "w.strait.strait-of-hormuz": {
+  "title": "Strait of Hormuz",
+  "qid": "Q79883",
+  "dist": 25.1,
+  "how": "guess"
+ },
+ "w.strait.strait-of-malacca": {
+  "title": "Strait of Malacca",
+  "qid": "Q48359",
+  "how": "guess"
+ },
+ "w.strait.bab-el-mandeb": {
+  "title": "Bab al-Mandab Strait",
+  "qid": "Q83318",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "w.strait.strait-of-gibraltar": {
+  "title": "Strait of Gibraltar",
+  "qid": "Q36124",
+  "dist": 9,
+  "how": "guess"
+ },
+ "w.strait.bosporus": {
+  "title": "Bosporus",
+  "qid": "Q35958",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.strait.dardanelles": {
+  "title": "Dardanelles",
+  "qid": "Q6514",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.strait.bering-strait": {
+  "title": "Bering Strait",
+  "qid": "Q11769",
+  "dist": 3.5,
+  "how": "guess"
+ },
+ "w.strait.strait-of-dover": {
+  "title": "Strait of Dover",
+  "qid": "Q159898",
+  "dist": 3.5,
+  "how": "guess"
+ },
+ "w.strait.sunda-strait": {
+  "title": "Sunda Strait",
+  "qid": "Q192790",
+  "dist": 12.5,
+  "how": "guess"
+ },
+ "w.strait.lombok-strait": {
+  "title": "Lombok Strait",
+  "qid": "Q745025",
+  "dist": 30.5,
+  "how": "guess"
+ },
+ "w.strait.taiwan-strait": {
+  "title": "Taiwan Strait",
+  "qid": "Q127031",
+  "dist": 55.4,
+  "how": "guess"
+ },
+ "w.strait.strait-of-magellan": {
+  "title": "Strait of Magellan",
+  "qid": "Q48365",
+  "dist": 57.1,
+  "how": "guess"
+ },
+ "w.strait.drake-passage": {
+  "title": "Drake Passage",
+  "qid": "Q143650",
+  "dist": 83.5,
+  "how": "guess"
+ },
+ "w.strait.mozambique-channel": {
+  "title": "Mozambique Channel",
+  "qid": "Q165100",
+  "dist": 52.9,
+  "how": "guess"
+ },
+ "w.strait.cook-strait": {
+  "title": "Cook Strait",
+  "qid": "Q5023",
+  "dist": 3.6,
+  "how": "guess"
+ },
+ "w.strait.bass-strait": {
+  "title": "Bass Strait",
+  "qid": "Q171846",
+  "dist": 55.6,
+  "how": "guess"
+ },
+ "w.canal.suez-canal": {
+  "title": "Suez Canal",
+  "qid": "Q899",
+  "dist": 11.8,
+  "how": "guess"
+ },
+ "w.canal.panama-canal": {
+  "title": "Panama Canal",
+  "qid": "Q7350",
+  "dist": 8.9,
+  "how": "guess"
+ },
+ "w.canal.kiel-canal": {
+  "title": "Kiel Canal",
+  "qid": "Q144825",
+  "dist": 46.6,
+  "how": "guess"
+ },
+ "w.range.himalaya": {
+  "title": "Himalayas",
+  "qid": "Q5451",
+  "dist": 291.4,
+  "how": "guess"
+ },
+ "w.range.alps": {
+  "title": "Alps",
+  "qid": "Q1286",
+  "dist": 105.9,
+  "how": "guess"
+ },
+ "w.range.andes": {
+  "title": "Andes",
+  "qid": "Q5456",
+  "dist": 1367.4,
+  "how": "guess"
+ },
+ "w.range.rocky-mountains": {
+  "title": "Rocky Mountains",
+  "qid": "Q5463",
+  "dist": 171.1,
+  "how": "guess"
+ },
+ "w.range.atlas-mountains": {
+  "title": "Atlas Mountains",
+  "qid": "Q130135",
+  "dist": 188.5,
+  "how": "guess"
+ },
+ "w.range.ural-mountains": {
+  "title": "Ural Mountains",
+  "qid": "Q35600",
+  "dist": 27.8,
+  "how": "guess"
+ },
+ "w.range.caucasus": {
+  "title": "Caucasus",
+  "qid": "Q18869",
+  "dist": 27.8,
+  "how": "guess"
+ },
+ "w.range.appalachian-mountains": {
+  "title": "Appalachian Mountains",
+  "qid": "Q93332",
+  "how": "guess"
+ },
+ "w.range.great-dividing-range": {
+  "title": "Great Dividing Range",
+  "qid": "Q192583",
+  "dist": 100.8,
+  "how": "guess"
+ },
+ "w.range.drakensberg": {
+  "title": "Drakensberg",
+  "qid": "Q183295",
+  "dist": 13.8,
+  "how": "guess"
+ },
+ "w.range.hindu-kush": {
+  "title": "Hindu Kush",
+  "qid": "Q5472",
+  "dist": 71.8,
+  "how": "guess"
+ },
+ "w.range.tian-shan": {
+  "title": "Tian Shan",
+  "qid": "Q5474",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.range.kunlun-mountains": {
+  "title": "Kunlun Mountains",
+  "qid": "Q187871",
+  "dist": 90,
+  "how": "guess"
+ },
+ "w.range.pamir": {
+  "title": "Pamir Mountains",
+  "qid": "Q161750",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.range.pyrenees": {
+  "title": "Pyrenees",
+  "qid": "Q12431",
+  "dist": 8.2,
+  "how": "guess"
+ },
+ "w.range.zagros-mountains": {
+  "title": "Zagros Mountains",
+  "qid": "Q167021",
+  "dist": 336,
+  "how": "guess"
+ },
+ "w.range.carpathian-mountains": {
+  "title": "Carpathian Mountains",
+  "qid": "Q1288",
+  "dist": 67.2,
+  "how": "guess"
+ },
+ "w.peak.aconcagua": {
+  "title": "Aconcagua",
+  "qid": "Q39739",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.peak.denali": {
+  "title": "Denali",
+  "qid": "Q130018",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.peak.kilimanjaro": {
+  "title": "Mount Kilimanjaro",
+  "qid": "Q7296",
+  "how": "guess"
+ },
+ "w.peak.mount-elbrus": {
+  "title": "Mount Elbrus",
+  "qid": "Q43105",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.peak.mont-blanc": {
+  "title": "Mont Blanc",
+  "qid": "Q583",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.peak.puncak-jaya": {
+  "title": "Puncak Jaya",
+  "qid": "Q1045888",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.peak.mount-kosciuszko": {
+  "title": "Mount Kosciuszko",
+  "qid": "Q178167",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.peak.mount-kenya": {
+  "title": "Mount Kenya",
+  "qid": "Q172070",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.peak.chimborazo": {
+  "title": "Chimborazo",
+  "qid": "Q14081",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.volcano.mount-fuji": {
+  "title": "Mount Fuji",
+  "qid": "Q39231",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.volcano.mount-etna": {
+  "title": "Mount Etna",
+  "qid": "Q16990",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "w.volcano.mount-vesuvius": {
+  "title": "Mount Vesuvius",
+  "qid": "Q524",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.volcano.krakatoa": {
+  "title": "Krakatoa",
+  "qid": "Q82613",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.volcano.mauna-loa": {
+  "title": "Mauna Loa",
+  "qid": "Q159762",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "w.volcano.cotopaxi": {
+  "title": "Cotopaxi",
+  "qid": "Q181476",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.river.nile": {
+  "title": "Nile",
+  "qid": "Q3392",
+  "dist": 1582.9,
+  "how": "guess"
+ },
+ "w.river.amazon": {
+  "title": "Amazon River",
+  "qid": "Q3783",
+  "dist": 1858.4,
+  "how": "guess"
+ },
+ "w.river.yangtze": {
+  "title": "Yangtze",
+  "qid": "Q5413",
+  "dist": 956.9,
+  "how": "guess"
+ },
+ "w.river.huang-he": {
+  "title": "Yellow River",
+  "qid": "Q7355",
+  "dist": 794.6,
+  "how": "guess"
+ },
+ "w.river.mississippi": {
+  "title": "Mississippi River",
+  "qid": "Q1497",
+  "dist": 654.2,
+  "how": "guess"
+ },
+ "w.river.congo": {
+  "title": "Congo River",
+  "qid": "Q3503",
+  "dist": 798.6,
+  "how": "guess"
+ },
+ "w.river.niger": {
+  "title": "Niger River",
+  "qid": "Q3542",
+  "dist": 1498.4,
+  "how": "guess"
+ },
+ "w.river.zambezi": {
+  "title": "Zambezi",
+  "qid": "Q43106",
+  "dist": 893.1,
+  "how": "guess"
+ },
+ "w.river.mekong": {
+  "title": "Mekong",
+  "qid": "Q41179",
+  "dist": 673.2,
+  "how": "guess"
+ },
+ "w.river.danube": {
+  "title": "Danube",
+  "qid": "Q1653",
+  "dist": 450.9,
+  "how": "guess"
+ },
+ "w.river.rhine": {
+  "title": "Rhine",
+  "qid": "Q584",
+  "dist": 295.2,
+  "how": "guess"
+ },
+ "w.river.volga": {
+  "title": "Volga",
+  "qid": "Q626",
+  "dist": 812.3,
+  "how": "guess"
+ },
+ "w.river.ob": {
+  "title": "Ob",
+  "qid": "Q973",
+  "dist": 729.8,
+  "how": "guess"
+ },
+ "w.river.yenisei": {
+  "title": "Yenisei",
+  "qid": "Q78707",
+  "dist": 1126.3,
+  "how": "guess"
+ },
+ "w.river.lena": {
+  "title": "Lena River",
+  "qid": "Q46841",
+  "dist": 935.1,
+  "how": "guess"
+ },
+ "w.river.amur": {
+  "title": "Amur",
+  "qid": "Q6862",
+  "dist": 809.5,
+  "how": "guess"
+ },
+ "w.river.tigris": {
+  "title": "Tigris",
+  "qid": "Q35591",
+  "dist": 529.2,
+  "how": "guess"
+ },
+ "w.river.euphrates": {
+  "title": "Euphrates",
+  "qid": "Q34589",
+  "dist": 773,
+  "how": "guess"
+ },
+ "w.river.murray": {
+  "title": "Murray River",
+  "qid": "Q183078",
+  "dist": 317,
+  "how": "guess"
+ },
+ "w.river.orinoco": {
+  "title": "Orinoco",
+  "qid": "Q131792",
+  "dist": 327.2,
+  "how": "guess"
+ },
+ "w.river.parana": {
+  "title": "Paraná River",
+  "qid": "Q127892",
+  "how": "guess"
+ },
+ "w.river.st-lawrence": {
+  "title": "St. Lawrence River",
+  "qid": "Q134750",
+  "dist": 580.4,
+  "how": "guess"
+ },
+ "w.river.colorado": {
+  "title": "Colorado River",
+  "qid": "Q1265",
+  "dist": 537.6,
+  "how": "guess"
+ },
+ "w.river.mackenzie": {
+  "title": "Mackenzie River",
+  "qid": "Q3411",
+  "dist": 768,
+  "how": "guess"
+ },
+ "w.river.limpopo": {
+  "title": "Limpopo River",
+  "qid": "Q173017",
+  "dist": 399.7,
+  "how": "guess"
+ },
+ "w.river.jordan": {
+  "title": "Jordan River",
+  "qid": "Q40059",
+  "dist": 132.2,
+  "how": "guess"
+ },
+ "w.lake.caspian-sea": {
+  "title": "Caspian Sea",
+  "qid": "Q5484",
+  "dist": 55.6,
+  "how": "guess"
+ },
+ "w.lake.lake-superior": {
+  "title": "Lake Superior",
+  "qid": "Q1066",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.lake-baikal": {
+  "title": "Lake Baikal",
+  "qid": "Q5513",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.lake-victoria": {
+  "title": "Lake Victoria",
+  "qid": "Q5505",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.lake-tanganyika": {
+  "title": "Lake Tanganyika",
+  "qid": "Q5511",
+  "dist": 11.1,
+  "how": "guess"
+ },
+ "w.lake.lake-malawi": {
+  "title": "Lake Malawi",
+  "qid": "Q5532",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.lake-titicaca": {
+  "title": "Lake Titicaca",
+  "qid": "Q35342",
+  "dist": 8.8,
+  "how": "guess"
+ },
+ "w.lake.aral-sea": {
+  "title": "Aral Sea",
+  "qid": "Q35883",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.dead-sea": {
+  "title": "Dead Sea",
+  "qid": "Q23883",
+  "how": "guess"
+ },
+ "w.lake.great-salt-lake": {
+  "title": "Great Salt Lake",
+  "qid": "Q178741",
+  "dist": 7.9,
+  "how": "guess"
+ },
+ "w.lake.lake-chad": {
+  "title": "Lake Chad",
+  "qid": "Q125309",
+  "dist": 51.9,
+  "how": "guess"
+ },
+ "w.lake.lake-ladoga": {
+  "title": "Lake Ladoga",
+  "qid": "Q15288",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.lake.lake-balkhash": {
+  "title": "Lake Balkhash",
+  "qid": "Q134485",
+  "dist": 39.2,
+  "how": "guess"
+ },
+ "w.lake.lake-eyre": {
+  "title": "Kati Thanda–Lake Eyre",
+  "qid": "Q179970",
+  "dist": 29.8,
+  "how": "guess"
+ },
+ "w.desert.sahara": {
+  "title": "Sahara",
+  "qid": "Q6583",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.desert.arabian-desert": {
+  "title": "Arabian Desert",
+  "qid": "Q208299",
+  "how": "guess"
+ },
+ "w.desert.gobi-desert": {
+  "title": "Gobi Desert",
+  "qid": "Q42070",
+  "dist": 136,
+  "how": "guess"
+ },
+ "w.desert.kalahari-desert": {
+  "title": "Kalahari Desert",
+  "qid": "Q47700",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.desert.namib-desert": {
+  "title": "Namib",
+  "qid": "Q131377",
+  "dist": 84,
+  "how": "guess"
+ },
+ "w.desert.atacama-desert": {
+  "title": "Atacama Desert",
+  "qid": "Q47141",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.desert.great-victoria-desert": {
+  "title": "Great Victoria Desert",
+  "qid": "Q145165",
+  "dist": 231.7,
+  "how": "guess"
+ },
+ "w.desert.taklamakan-desert": {
+  "title": "Taklamakan Desert",
+  "qid": "Q132956",
+  "dist": 17.3,
+  "how": "guess"
+ },
+ "w.desert.patagonian-desert": {
+  "title": "Patagonian Desert",
+  "qid": "Q1061324",
+  "dist": 410,
+  "how": "guess"
+ },
+ "w.plateau.tibetan-plateau": {
+  "title": "Tibetan Plateau",
+  "qid": "Q179842",
+  "dist": 111.2,
+  "how": "guess"
+ },
+ "w.plateau.ethiopian-highlands": {
+  "title": "Ethiopian Highlands",
+  "qid": "Q319288",
+  "dist": 148.3,
+  "how": "guess"
+ },
+ "w.plateau.altiplano": {
+  "title": "Altiplano",
+  "qid": "Q118574",
+  "dist": 123.1,
+  "how": "guess"
+ },
+ "w.plateau.anatolian-plateau": {
+  "title": "Anatolian plateau",
+  "qid": "Q1046643",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.plateau.colorado-plateau": {
+  "title": "Colorado Plateau",
+  "qid": "Q925906",
+  "dist": 44.4,
+  "how": "guess"
+ },
+ "w.plateau.brazilian-highlands": {
+  "title": "Brazilian Highlands",
+  "qid": "Q118899",
+  "how": "guess"
+ },
+ "w.grassland.prairies": {
+  "title": "Prairie",
+  "qid": "Q194281",
+  "how": "guess"
+ },
+ "w.grassland.pampas": {
+  "title": "Pampas",
+  "qid": "Q184382",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.grassland.steppes": {
+  "title": "Eurasian Steppe",
+  "qid": "Q77120",
+  "how": "title"
+ },
+ "w.grassland.veld": {
+  "title": "Veld",
+  "qid": "Q1433901",
+  "how": "guess"
+ },
+ "w.grassland.llanos": {
+  "title": "Llanos",
+  "qid": "Q141501",
+  "dist": 150.4,
+  "how": "guess"
+ },
+ "w.grassland.serengeti": {
+  "title": "Serengeti",
+  "qid": "Q4991540",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.valley.great-rift-valley": {
+  "title": "Great Rift Valley",
+  "qid": "Q81591",
+  "how": "guess"
+ },
+ "w.valley.grand-canyon": {
+  "title": "Grand Canyon",
+  "qid": "Q118841",
+  "dist": 62.4,
+  "how": "guess"
+ },
+ "w.valley.death-valley": {
+  "title": "Death Valley",
+  "qid": "Q118388",
+  "dist": 32.6,
+  "how": "guess"
+ },
+ "w.region.great-barrier-reef": {
+  "title": "Great Barrier Reef",
+  "qid": "Q7343",
+  "dist": 292.1,
+  "how": "guess"
+ },
+ "w.region.amazon-rainforest": {
+  "title": "Amazon rainforest",
+  "qid": "Q177567",
+  "how": "guess"
+ },
+ "w.region.sahel": {
+  "title": "Sahel",
+  "qid": "Q66065",
+  "how": "guess"
+ },
+ "w.region.horn-of-africa": {
+  "title": "Horn of Africa",
+  "qid": "Q40556",
+  "dist": 156.4,
+  "how": "guess"
+ },
+ "w.region.golden-triangle": {
+  "title": "Golden Triangle (Southeast Asia)",
+  "qid": "Q815470",
+  "dist": 0.6,
+  "how": "search"
+ },
+ "w.region.golden-crescent": {
+  "title": "Golden Crescent",
+  "qid": "Q1140225",
+  "how": "guess"
+ },
+ "w.region.congo-basin": {
+  "title": "Congo Basin",
+  "qid": "Q932289",
+  "dist": 111.2,
+  "how": "guess"
+ },
+ "w.island.greenland": {
+  "title": "Greenland",
+  "qid": "Q223",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.new-guinea": {
+  "title": "New Guinea",
+  "qid": "Q40285",
+  "dist": 123.8,
+  "how": "guess"
+ },
+ "w.island.borneo": {
+  "title": "Borneo",
+  "qid": "Q36117",
+  "dist": 55.6,
+  "how": "guess"
+ },
+ "w.island.madagascar": {
+  "title": "Madagascar",
+  "qid": "Q1019",
+  "dist": 115.6,
+  "how": "guess"
+ },
+ "w.island.sumatra": {
+  "title": "Sumatra",
+  "qid": "Q3492",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.island.honshu": {
+  "title": "Honshu",
+  "qid": "Q13989",
+  "dist": 45,
+  "how": "guess"
+ },
+ "w.island.great-britain": {
+  "title": "Great Britain",
+  "qid": "Q23666",
+  "dist": 116,
+  "how": "guess"
+ },
+ "w.island.sri-lanka": {
+  "title": "Sri Lanka",
+  "qid": "Q854",
+  "dist": 94.9,
+  "how": "guess"
+ },
+ "w.island.iceland": {
+  "title": "Iceland",
+  "qid": "Q189",
+  "dist": 30.4,
+  "how": "guess"
+ },
+ "w.island.hawaii": {
+  "title": "Hawaiʻi (island)",
+  "qid": "Q68740",
+  "dist": 35,
+  "how": "title"
+ },
+ "w.island.galapagos": {
+  "title": "Galápagos Islands",
+  "qid": "Q38095",
+  "dist": 64.8,
+  "how": "guess"
+ },
+ "w.island.maldives": {
+  "title": "Maldives",
+  "qid": "Q826",
+  "dist": 114.3,
+  "how": "guess"
+ },
+ "w.island.mauritius": {
+  "title": "Mauritius",
+  "qid": "Q1027",
+  "dist": 15.2,
+  "how": "guess"
+ },
+ "w.island.diego-garcia": {
+  "title": "Diego Garcia",
+  "qid": "Q184851",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "w.island.socotra": {
+  "title": "Socotra",
+  "qid": "Q82859",
+  "dist": 2.4,
+  "how": "guess"
+ },
+ "w.island.svalbard": {
+  "title": "Svalbard",
+  "qid": "Q25231",
+  "dist": 25.7,
+  "how": "guess"
+ },
+ "w.island.tasmania": {
+  "title": "Tasmania",
+  "qid": "Q34366",
+  "dist": 33.1,
+  "how": "title"
+ },
+ "w.cape.cape-of-good-hope": {
+  "title": "Cape of Good Hope",
+  "qid": "Q4092",
+  "dist": 0.2,
+  "how": "guess"
+ },
+ "w.cape.cape-agulhas": {
+  "title": "Cape Agulhas",
+  "qid": "Q4085",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.cape.cape-horn": {
+  "title": "Cape Horn",
+  "qid": "Q4078",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "w.cape.cape-verde": {
+  "title": "Cap-Vert",
+  "qid": "Q216889",
+  "dist": 2.9,
+  "how": "title"
+ },
+ "w.cape.cabo-da-roca": {
+  "title": "Cabo da Roca",
+  "qid": "Q169175",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.cape.cape-york": {
+  "title": "Cape York (Queensland)",
+  "qid": "Q1728345",
+  "dist": 0.2,
+  "how": "search"
+ },
+ "w.waterfall.angel-falls": {
+  "title": "Angel Falls",
+  "qid": "Q80299",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.waterfall.victoria-falls": {
+  "title": "Victoria Falls",
+  "qid": "Q43278",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.waterfall.niagara-falls": {
+  "title": "Niagara Falls",
+  "qid": "Q34221",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.waterfall.iguazu-falls": {
+  "title": "Iguazu Falls",
+  "qid": "Q36332",
+  "dist": 1.2,
+  "how": "guess"
+ },
+ "w.capital.washington": {
+  "title": "Washington, D.C.",
+  "qid": "Q61",
+  "dist": 1.8,
+  "how": "guess"
+ },
+ "w.capital.ottawa": {
+  "title": "Ottawa",
+  "qid": "Q1930",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.capital.mexico-city": {
+  "title": "Mexico City",
+  "qid": "Q1489",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.capital.brasilia": {
+  "title": "Brasília",
+  "qid": "Q2844",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.buenos-aires": {
+  "title": "Buenos Aires",
+  "qid": "Q1486",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.lima": {
+  "title": "Lima",
+  "qid": "Q2868",
+  "dist": 1.6,
+  "how": "guess"
+ },
+ "w.capital.bogota": {
+  "title": "Bogotá",
+  "qid": "Q2841",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.santiago": {
+  "title": "Santiago",
+  "qid": "Q2887",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "w.capital.london": {
+  "title": "London",
+  "qid": "Q84",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.paris": {
+  "title": "Paris",
+  "qid": "Q90",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.berlin": {
+  "title": "Berlin",
+  "qid": "Q64",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.moscow": {
+  "title": "Moscow",
+  "qid": "Q649",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.rome": {
+  "title": "Rome",
+  "qid": "Q220",
+  "dist": 1.5,
+  "how": "guess"
+ },
+ "w.capital.madrid": {
+  "title": "Madrid",
+  "qid": "Q2807",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.kyiv": {
+  "title": "Kyiv",
+  "qid": "Q1899",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.ankara": {
+  "title": "Ankara",
+  "qid": "Q3640",
+  "dist": 0.7,
+  "how": "guess"
+ },
+ "w.capital.cairo": {
+  "title": "Cairo",
+  "qid": "Q85",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.addis-ababa": {
+  "title": "Addis Ababa",
+  "qid": "Q3624",
+  "dist": 1.5,
+  "how": "guess"
+ },
+ "w.capital.nairobi": {
+  "title": "Nairobi",
+  "qid": "Q3870",
+  "dist": 0.8,
+  "how": "guess"
+ },
+ "w.capital.abuja": {
+  "title": "Abuja",
+  "qid": "Q3787",
+  "dist": 9.4,
+  "how": "guess"
+ },
+ "w.capital.pretoria": {
+  "title": "Pretoria",
+  "qid": "Q3926",
+  "dist": 4.1,
+  "how": "guess"
+ },
+ "w.capital.kinshasa": {
+  "title": "Kinshasa",
+  "qid": "Q3838",
+  "dist": 14.3,
+  "how": "guess"
+ },
+ "w.capital.riyadh": {
+  "title": "Riyadh",
+  "qid": "Q3692",
+  "dist": 9.9,
+  "how": "guess"
+ },
+ "w.capital.tehran": {
+  "title": "Tehran",
+  "qid": "Q3616",
+  "dist": 0.1,
+  "how": "guess"
+ },
+ "w.capital.baghdad": {
+  "title": "Baghdad",
+  "qid": "Q1530",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.capital.astana": {
+  "title": "Astana",
+  "qid": "Q1520",
+  "dist": 4.2,
+  "how": "guess"
+ },
+ "w.capital.beijing": {
+  "title": "Beijing",
+  "qid": "Q956",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "w.capital.tokyo": {
+  "title": "Tokyo",
+  "qid": "Q1490",
+  "dist": 4.1,
+  "how": "guess"
+ },
+ "w.capital.seoul": {
+  "title": "Seoul",
+  "qid": "Q8684",
+  "dist": 1.3,
+  "how": "guess"
+ },
+ "w.capital.bangkok": {
+  "title": "Bangkok",
+  "qid": "Q1861",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "w.capital.hanoi": {
+  "title": "Hanoi",
+  "qid": "Q1858",
+  "dist": 3.5,
+  "how": "guess"
+ },
+ "w.capital.jakarta": {
+  "title": "Jakarta",
+  "qid": "Q3630",
+  "dist": 3.6,
+  "how": "guess"
+ },
+ "w.capital.kuala-lumpur": {
+  "title": "Kuala Lumpur",
+  "qid": "Q1865",
+  "dist": 1.3,
+  "how": "guess"
+ },
+ "w.capital.singapore": {
+  "title": "Singapore",
+  "qid": "Q334",
+  "dist": 7.8,
+  "how": "guess"
+ },
+ "w.capital.manila": {
+  "title": "Manila",
+  "qid": "Q1461",
+  "dist": 0.9,
+  "how": "guess"
+ },
+ "w.capital.canberra": {
+  "title": "Canberra",
+  "qid": "Q3114",
+  "dist": 1.4,
+  "how": "guess"
+ },
+ "w.capital.wellington": {
+  "title": "Wellington",
+  "qid": "Q23661",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "w.capital.new-delhi": {
+  "title": "New Delhi",
+  "qid": "Q987",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.city.new-york": {
+  "title": "New York City",
+  "qid": "Q60",
+  "dist": 0,
+  "how": "guess"
+ },
+ "w.city.geneva": {
+  "title": "Geneva",
+  "qid": "Q71",
+  "dist": 0.4,
+  "how": "guess"
+ },
+ "w.port.chabahar": {
+  "title": "Chabahar Port",
+  "qid": "Q7231108",
+  "dist": 3,
+  "how": "guess"
+ },
+ "w.port.bandar-abbas": {
+  "title": "Bandar Abbas",
+  "qid": "Q154814",
+  "dist": 2.5,
+  "how": "guess"
+ },
+ "w.port.duqm": {
+  "title": "Duqm Port",
+  "qid": "Q4703759",
+  "dist": 2.2,
+  "how": "guess"
+ },
+ "w.port.sabang": {
+  "title": "Sabang, Aceh",
+  "qid": "Q5787",
+  "dist": 0.5,
+  "how": "guess"
+ },
+ "w.port.rotterdam": {
+  "title": "Port of Rotterdam",
+  "qid": "Q1027807",
+  "how": "guess"
+ },
+ "w.port.shanghai": {
+  "title": "Shanghai",
+  "qid": "Q8686",
+  "dist": 0.3,
+  "how": "guess"
+ },
+ "w.capital.khartoum": {
+  "title": "Khartoum",
+  "qid": "Q1963",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.vienna": {
+  "title": "Vienna",
+  "qid": "Q1741",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.oslo": {
+  "title": "Oslo",
+  "qid": "Q585",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.riga": {
+  "title": "Riga",
+  "qid": "Q1773",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.vientiane": {
+  "title": "Vientiane",
+  "qid": "Q9326",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.accra": {
+  "title": "Accra",
+  "qid": "Q3761",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.windhoek": {
+  "title": "Windhoek",
+  "qid": "Q3935",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.rabat": {
+  "title": "Rabat",
+  "qid": "Q3551",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.lusaka": {
+  "title": "Lusaka",
+  "qid": "Q3881",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.bishkek": {
+  "title": "Bishkek",
+  "qid": "Q9361",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.beirut": {
+  "title": "Beirut",
+  "qid": "Q3820",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.ashgabat": {
+  "title": "Ashgabat",
+  "qid": "Q23438",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.bamako": {
+  "title": "Bamako",
+  "qid": "Q3703",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.baku": {
+  "title": "Baku",
+  "qid": "Q9248",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.budapest": {
+  "title": "Budapest",
+  "qid": "Q1781",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.dushanbe": {
+  "title": "Dushanbe",
+  "qid": "Q9365",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.nicosia": {
+  "title": "Nicosia",
+  "qid": "Q3856",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.taipei": {
+  "title": "Taipei",
+  "qid": "Q1867",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.tashkent": {
+  "title": "Tashkent",
+  "qid": "Q269",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.santo-domingo": {
+  "title": "Santo Domingo",
+  "qid": "Q34820",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.nassau": {
+  "title": "Nassau, Bahamas",
+  "qid": "Q2467",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.asuncion": {
+  "title": "Asunción",
+  "qid": "Q2933",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.belgrade": {
+  "title": "Belgrade",
+  "qid": "Q3711",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.zagreb": {
+  "title": "Zagreb",
+  "qid": "Q1435",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.phnom-penh": {
+  "title": "Phnom Penh",
+  "qid": "Q1850",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.dublin": {
+  "title": "Dublin",
+  "qid": "Q1761",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.copenhagen": {
+  "title": "Copenhagen",
+  "qid": "Q1748",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.amman": {
+  "title": "Amman",
+  "qid": "Q3805",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.ulaanbaatar": {
+  "title": "Ulaanbaatar",
+  "qid": "Q23430",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.sanaa": {
+  "title": "Sanaa",
+  "qid": "Q2471",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.reykjavik": {
+  "title": "Reykjavík",
+  "qid": "Q1764",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.sofia": {
+  "title": "Sofia",
+  "qid": "Q472",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.tbilisi": {
+  "title": "Tbilisi",
+  "qid": "Q994",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.banjul": {
+  "title": "Banjul",
+  "qid": "Q3726",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.kampala": {
+  "title": "Kampala",
+  "qid": "Q3894",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.kigali": {
+  "title": "Kigali",
+  "qid": "Q3859",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.helsinki": {
+  "title": "Helsinki",
+  "qid": "Q1757",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.havana": {
+  "title": "Havana",
+  "qid": "Q1563",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.suva": {
+  "title": "Suva",
+  "qid": "Q38807",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.georgetown": {
+  "title": "Georgetown, Guyana",
+  "qid": "Q10717",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.male": {
+  "title": "Malé",
+  "qid": "Q9347",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.harare": {
+  "title": "Harare",
+  "qid": "Q3921",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.port-louis": {
+  "title": "Port Louis",
+  "qid": "Q3929",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.dodoma": {
+  "title": "Dodoma",
+  "qid": "Q3866",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.bern": {
+  "title": "Bern",
+  "qid": "Q70",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.caracas": {
+  "title": "Caracas",
+  "qid": "Q1533",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.bissau": {
+  "title": "Bissau",
+  "qid": "Q3739",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.managua": {
+  "title": "Managua",
+  "qid": "Q3274",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.malabo": {
+  "title": "Malabo",
+  "qid": "Q3818",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.tunis": {
+  "title": "Tunis",
+  "qid": "Q3572",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.algiers": {
+  "title": "Algiers",
+  "qid": "Q3561",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.saint-johns": {
+  "title": "St. John's, Antigua and Barbuda",
+  "qid": "Q36262",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.san-salvador": {
+  "title": "San Salvador",
+  "qid": "Q3110",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.pristina": {
+  "title": "Pristina",
+  "qid": "Q25270",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.bratislava": {
+  "title": "Bratislava",
+  "qid": "Q1780",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.victoria-seychelles": {
+  "title": "Victoria, Seychelles",
+  "qid": "Q3940",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.freetown": {
+  "title": "Freetown",
+  "qid": "Q3780",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.san-jose": {
+  "title": "San José, Costa Rica",
+  "qid": "Q3070",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.belmopan": {
+  "title": "Belmopan",
+  "qid": "Q3043",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.valletta": {
+  "title": "Valletta",
+  "qid": "Q23800",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.amsterdam": {
+  "title": "Amsterdam",
+  "qid": "Q727",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.niamey": {
+  "title": "Niamey",
+  "qid": "Q3674",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.lisbon": {
+  "title": "Lisbon",
+  "qid": "Q597",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.warsaw": {
+  "title": "Warsaw",
+  "qid": "Q270",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.brazzaville": {
+  "title": "Brazzaville",
+  "qid": "Q3844",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.capital.montevideo": {
+  "title": "Montevideo",
+  "qid": "Q1335",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.bonn": {
+  "title": "Bonn",
+  "qid": "Q586",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.yangon": {
+  "title": "Yangon",
+  "qid": "Q37995",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.colombo": {
+  "title": "Colombo",
+  "qid": "Q35381",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.sydney": {
+  "title": "Sydney",
+  "qid": "Q3130",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.perth": {
+  "title": "Perth",
+  "qid": "Q3183",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.chicago": {
+  "title": "Chicago",
+  "qid": "Q1297",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.detroit": {
+  "title": "Detroit",
+  "qid": "Q12439",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.duluth": {
+  "title": "Duluth, Minnesota",
+  "qid": "Q485708",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.hamburg": {
+  "title": "Hamburg",
+  "qid": "Q1055",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.lahore": {
+  "title": "Lahore",
+  "qid": "Q11739",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.basra": {
+  "title": "Basra",
+  "qid": "Q48195",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.aleppo": {
+  "title": "Aleppo",
+  "qid": "Q41183",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.mosul": {
+  "title": "Mosul",
+  "qid": "Q83317",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.kirkuk": {
+  "title": "Kirkuk",
+  "qid": "Q173310",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.mazar-i-sharif": {
+  "title": "Mazar-i-Sharif",
+  "qid": "Q130469",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.anadyr": {
+  "title": "Anadyr (town)",
+  "qid": "Q7978",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.nome": {
+  "title": "Nome, Alaska",
+  "qid": "Q79996",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.dutch-harbor": {
+  "title": "Dutch Harbor",
+  "qid": "Q49376667",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.chiang-mai": {
+  "title": "Chiang Mai",
+  "qid": "Q52028",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.kunming": {
+  "title": "Kunming",
+  "qid": "Q182852",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.mombasa": {
+  "title": "Mombasa",
+  "qid": "Q225641",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.aden": {
+  "title": "Aden",
+  "qid": "Q131694",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.ho-chi-minh-city": {
+  "title": "Ho Chi Minh City",
+  "qid": "Q1854",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.rio-de-janeiro": {
+  "title": "Rio de Janeiro",
+  "qid": "Q8678",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.city.copacabana-beach": {
+  "title": "Copacabana, Rio de Janeiro",
+  "qid": "Q202730",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.port.busan": {
+  "title": "Port of Busan",
+  "qid": "Q12438381",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.port.alexandria": {
+  "title": "Alexandria",
+  "qid": "Q87",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.port.igarka": {
+  "title": "Igarka",
+  "qid": "Q141606",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.rio-grande": {
+  "title": "Rio Grande",
+  "qid": "Q160636",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.seine": {
+  "title": "Seine",
+  "qid": "Q1471",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.thames": {
+  "title": "River Thames",
+  "qid": "Q19686",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.spree": {
+  "title": "Spree (river)",
+  "qid": "Q1684",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.tiber": {
+  "title": "Tiber",
+  "qid": "Q13712",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.elbe": {
+  "title": "Elbe",
+  "qid": "Q1644",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.potomac": {
+  "title": "Potomac River",
+  "qid": "Q179444",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.missouri": {
+  "title": "Missouri River",
+  "qid": "Q5419",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.paraguay-river": {
+  "title": "Paraguay River",
+  "qid": "Q179396",
+  "how": "title"
+ },
+ "w.river.hudson-river": {
+  "title": "Hudson River",
+  "qid": "Q3140",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.salween": {
+  "title": "Salween River",
+  "qid": "Q26422",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.syr-darya": {
+  "title": "Syr Darya",
+  "qid": "Q483159",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.angara": {
+  "title": "Angara",
+  "qid": "Q162737",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.dnieper": {
+  "title": "Dnieper",
+  "qid": "Q40855",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.po": {
+  "title": "Po (river)",
+  "qid": "Q643",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.rhone": {
+  "title": "Rhône",
+  "qid": "Q602",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.don": {
+  "title": "Don (river)",
+  "qid": "Q1229",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.vistula": {
+  "title": "Vistula",
+  "qid": "Q548",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.shatt-al-arab": {
+  "title": "Shatt al-Arab",
+  "qid": "Q166966",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.chao-phraya": {
+  "title": "Chao Phraya River",
+  "qid": "Q118850",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.columbia-river": {
+  "title": "Columbia River",
+  "qid": "Q2251",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.irrawaddy": {
+  "title": "Irrawaddy River",
+  "qid": "Q26076",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.river.mahaweli": {
+  "title": "Mahaweli River",
+  "qid": "Q1518007",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-michigan": {
+  "title": "Lake Michigan",
+  "qid": "Q1169",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-huron": {
+  "title": "Lake Huron",
+  "qid": "Q1383",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-erie": {
+  "title": "Lake Erie",
+  "qid": "Q5492",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-ontario": {
+  "title": "Lake Ontario",
+  "qid": "Q1062",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.great-bear-lake": {
+  "title": "Great Bear Lake",
+  "qid": "Q5525",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.great-slave-lake": {
+  "title": "Great Slave Lake",
+  "qid": "Q5539",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-winnipeg": {
+  "title": "Lake Winnipeg",
+  "qid": "Q3272",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-athabasca": {
+  "title": "Lake Athabasca",
+  "qid": "Q272463",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.reindeer-lake": {
+  "title": "Reindeer Lake",
+  "qid": "Q1134446",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-tana": {
+  "title": "Lake Tana",
+  "qid": "Q116685",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-edward": {
+  "title": "Lake Edward",
+  "qid": "Q125211",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-albert": {
+  "title": "Lake Albert (Africa)",
+  "qid": "Q125888",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-van": {
+  "title": "Lake Van",
+  "qid": "Q126307",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.lake-urmia": {
+  "title": "Lake Urmia",
+  "qid": "Q199551",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.tonle-sap": {
+  "title": "Tonle Sap",
+  "qid": "Q199938",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.lake.patos-lagoon": {
+  "title": "Lagoa dos Patos",
+  "qid": "Q661235",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.adriatic-sea": {
+  "title": "Adriatic Sea",
+  "qid": "Q13924",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.aegean-sea": {
+  "title": "Aegean Sea",
+  "qid": "Q34575",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.ligurian-sea": {
+  "title": "Ligurian Sea",
+  "qid": "Q42820",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.tyrrhenian-sea": {
+  "title": "Tyrrhenian Sea",
+  "qid": "Q38882",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.bering-sea": {
+  "title": "Bering Sea",
+  "qid": "Q44725",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.sea-of-japan": {
+  "title": "Sea of Japan",
+  "qid": "Q27092",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.sea-of-azov": {
+  "title": "Sea of Azov",
+  "qid": "Q35000",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.sea-of-marmara": {
+  "title": "Sea of Marmara",
+  "qid": "Q35367",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.east-china-sea": {
+  "title": "East China Sea",
+  "qid": "Q45341",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.tasman-sea": {
+  "title": "Tasman Sea",
+  "qid": "Q33254",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.irish-sea": {
+  "title": "Irish Sea",
+  "qid": "Q41735",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.arctic-ocean": {
+  "title": "Arctic Ocean",
+  "qid": "Q788",
+  "dist": 1111.9,
+  "how": "title"
+ },
+ "w.gulf.great-australian-bight": {
+  "title": "Great Australian Bight",
+  "qid": "Q186733",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.gulf-of-bothnia": {
+  "title": "Gulf of Bothnia",
+  "qid": "Q122574",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.baffin-bay": {
+  "title": "Baffin Bay",
+  "qid": "Q37040",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.gulf-of-carpentaria": {
+  "title": "Gulf of Carpentaria",
+  "qid": "Q180844",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.gulf-of-tonkin": {
+  "title": "Gulf of Tonkin",
+  "qid": "Q212428",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.gulf-of-suez": {
+  "title": "Gulf of Suez",
+  "qid": "Q168277",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.gulf.gulf-of-aqaba": {
+  "title": "Gulf of Aqaba",
+  "qid": "Q81611",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.strait.davis-strait": {
+  "title": "Davis Strait",
+  "qid": "Q189262",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.strait.denmark-strait": {
+  "title": "Denmark Strait",
+  "qid": "Q152058",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.strait.straits-of-florida": {
+  "title": "Straits of Florida",
+  "qid": "Q232912",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.strait.torres-strait": {
+  "title": "Torres Strait",
+  "qid": "Q179188",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.puerto-rico-trench": {
+  "title": "Puerto Rico Trench",
+  "qid": "Q666090",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.sunda-trench": {
+  "title": "Sunda Trench",
+  "qid": "Q118394",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.aleutian-trench": {
+  "title": "Aleutian Trench",
+  "qid": "Q119177",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.kermadec-trench": {
+  "title": "Kermadec Trench",
+  "qid": "Q119196",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.south-sandwich-trench": {
+  "title": "South Sandwich Trench",
+  "qid": "Q118518",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.diamantina-trench": {
+  "title": "Diamantina fracture zone",
+  "qid": "Q5270660",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.sea.molloy-deep": {
+  "title": "Molloy Deep",
+  "qid": "Q1943612",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.karakum-desert": {
+  "title": "Karakum Desert",
+  "qid": "Q172702",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.sonoran-desert": {
+  "title": "Sonoran Desert",
+  "qid": "Q189429",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.gibson-desert": {
+  "title": "Gibson Desert",
+  "qid": "Q272577",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.great-sandy-desert": {
+  "title": "Great Sandy Desert",
+  "qid": "Q326896",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.chihuahuan-desert": {
+  "title": "Chihuahuan Desert",
+  "qid": "Q855658",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.desert.dasht-e-lut": {
+  "title": "Lut Desert",
+  "qid": "Q767128",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.great-artesian-basin": {
+  "title": "Great Artesian Basin",
+  "qid": "Q656985",
+  "how": "title"
+ },
+ "w.region.great-basin": {
+  "title": "Great Basin",
+  "qid": "Q966943",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.iberian-peninsula": {
+  "title": "Iberian Peninsula",
+  "qid": "Q12837",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.plateau.guiana-highlands": {
+  "title": "Guiana Shield",
+  "qid": "Q9309106",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.patagonia": {
+  "title": "Patagonia",
+  "qid": "Q1507",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.okavango-delta": {
+  "title": "Okavango Delta",
+  "qid": "Q650872",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.plateau.columbia-plateau": {
+  "title": "Columbia Plateau",
+  "qid": "Q401815",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.plain.kanto-plain": {
+  "title": "Kantō Plain",
+  "qid": "Q1124865",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.plain.nobi-plain": {
+  "title": "Nōbi Plain",
+  "qid": "Q1204093",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.kra-isthmus": {
+  "title": "Kra Isthmus",
+  "qid": "Q322356",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.apennines": {
+  "title": "Apennine Mountains",
+  "qid": "Q1285",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.black-forest": {
+  "title": "Black Forest",
+  "qid": "Q4204",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.alborz": {
+  "title": "Alborz",
+  "qid": "Q484725",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.altai-mountains": {
+  "title": "Altai Mountains",
+  "qid": "Q5955",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.pontic-mountains": {
+  "title": "Pontic Mountains",
+  "qid": "Q519263",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.balkan-mountains": {
+  "title": "Balkan Mountains",
+  "qid": "Q170427",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.dinaric-alps": {
+  "title": "Dinaric Alps",
+  "qid": "Q189915",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.jura-mountains": {
+  "title": "Jura Mountains",
+  "qid": "Q178611",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.vosges": {
+  "title": "Vosges",
+  "qid": "Q187843",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.cantabrian-mountains": {
+  "title": "Cantabrian Mountains",
+  "qid": "Q208076",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.allegheny-mountains": {
+  "title": "Allegheny Mountains",
+  "qid": "Q1141373",
+  "how": "title"
+ },
+ "w.range.mackenzie-mountains": {
+  "title": "Mackenzie Mountains",
+  "qid": "Q1817102",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.hoggar-mountains": {
+  "title": "Hoggar Mountains",
+  "qid": "Q26399",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.southern-alps": {
+  "title": "Southern Alps",
+  "qid": "Q206650",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.range.white-mountains": {
+  "title": "White Mountains (New England)",
+  "qid": "Q1556007",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.peak.toubkal": {
+  "title": "Toubkal",
+  "qid": "Q503433",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.peak.mount-stanley": {
+  "title": "Mount Stanley",
+  "qid": "Q221666",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.peak.titlis": {
+  "title": "Titlis",
+  "qid": "Q15138",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.peak.mount-kinabalu": {
+  "title": "Mount Kinabalu",
+  "qid": "Q60967",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.peak.mount-waialeale": {
+  "title": "Mount Waiʻaleʻale",
+  "qid": "Q1541056",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.kilauea": {
+  "title": "Kīlauea",
+  "qid": "Q188698",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.mount-rainier": {
+  "title": "Mount Rainier",
+  "qid": "Q194057",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.paricutin": {
+  "title": "Parícutin",
+  "qid": "Q231620",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.mount-st-helens": {
+  "title": "Mount St. Helens",
+  "qid": "Q4675",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.taal-volcano": {
+  "title": "Taal Volcano",
+  "qid": "Q818475",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.mount-pinatubo": {
+  "title": "Mount Pinatubo",
+  "qid": "Q1451",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.stromboli": {
+  "title": "Stromboli",
+  "qid": "Q131148",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.mount-merapi": {
+  "title": "Mount Merapi",
+  "qid": "Q134108",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.mount-apo": {
+  "title": "Mount Apo",
+  "qid": "Q455963",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.volcan-de-colima": {
+  "title": "Volcán de Colima",
+  "qid": "Q825347",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.volcano.sabancaya": {
+  "title": "Sabancaya",
+  "qid": "Q337974",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.waterfall.tugela-falls": {
+  "title": "Tugela Falls",
+  "qid": "Q223649",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.kariba-dam": {
+  "title": "Kariba Dam",
+  "qid": "Q1367609",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.hoover-dam": {
+  "title": "Hoover Dam",
+  "qid": "Q172822",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.aswan-dam": {
+  "title": "Aswan High Dam",
+  "qid": "Q38891",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.grand-coulee-dam": {
+  "title": "Grand Coulee Dam",
+  "qid": "Q930391",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.nurek-dam": {
+  "title": "Nurek Dam",
+  "qid": "Q913334",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.dam.cahora-bassa-dam": {
+  "title": "Cahora Bassa",
+  "qid": "Q755015",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.java": {
+  "title": "Java",
+  "qid": "Q3757",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.hokkaido": {
+  "title": "Hokkaido",
+  "qid": "Q35581",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.shikoku": {
+  "title": "Shikoku",
+  "qid": "Q13991",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.kyushu": {
+  "title": "Kyushu",
+  "qid": "Q13987",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.sulawesi": {
+  "title": "Sulawesi",
+  "qid": "Q3812",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.mindanao": {
+  "title": "Mindanao",
+  "qid": "Q124873",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.bali": {
+  "title": "Bali",
+  "qid": "Q3125978",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.lombok": {
+  "title": "Lombok",
+  "qid": "Q7564",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.sumbawa": {
+  "title": "Sumbawa",
+  "qid": "Q186367",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.timor": {
+  "title": "Timor",
+  "qid": "Q83067",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.canary-islands": {
+  "title": "Canary Islands",
+  "qid": "Q5813",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.madeira": {
+  "title": "Madeira",
+  "qid": "Q26253",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.azores": {
+  "title": "Azores",
+  "qid": "Q25263",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.cuba": {
+  "title": "Cuba",
+  "qid": "Q241",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.newfoundland": {
+  "title": "Newfoundland (island)",
+  "qid": "Q48335",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.aleutian-islands": {
+  "title": "Aleutian Islands",
+  "qid": "Q119285",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.chagos-archipelago": {
+  "title": "Chagos Archipelago",
+  "qid": "Q192188",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.seychelles": {
+  "title": "Seychelles",
+  "qid": "Q1042",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.falkland-islands": {
+  "title": "Falkland Islands",
+  "qid": "Q9648",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.sicily": {
+  "title": "Sicily",
+  "qid": "Q1460",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.sardinia": {
+  "title": "Sardinia",
+  "qid": "Q1462",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.mallorca": {
+  "title": "Mallorca",
+  "qid": "Q8828",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.malta": {
+  "title": "Malta (island)",
+  "qid": "Q193896",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.north-island": {
+  "title": "North Island",
+  "qid": "Q118863",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.south-island": {
+  "title": "South Island",
+  "qid": "Q120755",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.faroe-islands": {
+  "title": "Faroe Islands",
+  "qid": "Q4628",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.bahamas": {
+  "title": "The Bahamas",
+  "qid": "Q778",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.puerto-rico": {
+  "title": "Puerto Rico",
+  "qid": "Q1183",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.island.cape-verde-islands": {
+  "title": "Cape Verde",
+  "qid": "Q1011",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.bermuda-triangle": {
+  "title": "Bermuda Triangle",
+  "qid": "Q43708",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.catalonia": {
+  "title": "Catalonia",
+  "qid": "Q5705",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.crimea": {
+  "title": "Crimea",
+  "qid": "Q7835",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.donbas": {
+  "title": "Donbas",
+  "qid": "Q605714",
+  "how": "title"
+ },
+ "w.region.tigray": {
+  "title": "Tigray Region",
+  "qid": "Q200127",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.kachin-state": {
+  "title": "Kachin State",
+  "qid": "Q140646",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.amhara": {
+  "title": "Amhara Region",
+  "qid": "Q203009",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.oromia": {
+  "title": "Oromia",
+  "qid": "Q202107",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.cabo-delgado": {
+  "title": "Cabo Delgado Province",
+  "qid": "Q466538",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.normandy": {
+  "title": "Normandy",
+  "qid": "Q15878",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.aceh": {
+  "title": "Aceh",
+  "qid": "Q1823",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.grand-banks": {
+  "title": "Grand Banks of Newfoundland",
+  "qid": "Q913793",
+  "dist": 0,
+  "how": "title"
+ },
+ "w.region.sichuan-basin": {
+  "title": "Sichuan Basin",
+  "qid": "Q271294",
+  "dist": 0,
+  "how": "title"
+ }
+}

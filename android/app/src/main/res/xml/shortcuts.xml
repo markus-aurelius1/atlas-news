@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="atlas" android:enabled="true" android:icon="@mipmap/ic_launcher" android:shortcutShortLabel="@string/shortcut_atlas">
+        <intent android:action="android.intent.action.VIEW" android:data="tars://atlas" android:targetPackage="app.lodestar.study" android:targetClass="app.lodestar.study.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="news" android:enabled="true" android:icon="@mipmap/ic_launcher" android:shortcutShortLabel="@string/shortcut_news">
+        <intent android:action="android.intent.action.VIEW" android:data="tars://current-affairs" android:targetPackage="app.lodestar.study" android:targetClass="app.lodestar.study.MainActivity" />
+    </shortcut>
+</shortcuts>

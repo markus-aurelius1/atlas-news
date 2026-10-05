@@ -1,0 +1,23 @@
+{
+  "schema": "tars-soi-boundary-source/v1",
+  "authority": "Survey of India",
+  "product": "International Boundary Vector data (Outline of India)",
+  "scale": 16000000,
+  "sourcePage": "https://surveyofindia.gov.in/pages/outline-maps-of-india",
+  "sourceUrl": "https://surveyofindia.gov.in/documents/Outline_of_India.zip",
+  "sourceSha256": "bf48477f01fe8addd6384490fc6f8decc9643110331ffef2c3f17e5cccd53b88",
+  "convertedSha256": "c429ea74f201ff7125b14e633ef7bb81f3e86c2c6e5a2049028231b3b3f981a2",
+  "displayGeneralization": "Survey of India 1:16M source; reprojected to WGS84; Mapshaper simplify 5% keep-shapes for display",
+  "importedFiles": [
+    "Outline_of_India_display.geojson"
+  ],
+  "geometry": {
+    "lines": 256,
+    "points": 31905,
+    "west": 68.17751186879362,
+    "south": 6.752976885197373,
+    "east": 97.41289651394187,
+    "north": 37.08814059154492,
+    "northWestClaim": true
+  }
+}

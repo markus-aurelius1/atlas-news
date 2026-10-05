@@ -1,0 +1,1061 @@
+{
+  "schema": "atlas-pyq-hotspots/v1",
+  "canonicalManifestHash": "282b9bbedba72bf612bd9c79a267e2c541a4970dcc00b5d70a41b2a8b6963a68",
+  "places": {
+    "in.capital.agartala": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.capital.bengaluru": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.capital.bhopal": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.capital.bhubaneswar": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.capital.panaji": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.capital.patna": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.capital.raipur": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.city.bhavnagar": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.city.kanpur": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.city.prayagraj": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.city.srirangam": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.city.thumba": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.coast.coromandel-coast": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.coast.konkan-coast": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.confluence.devprayag": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.confluence.karnaprayag": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.confluence.rudraprayag": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.dam.gandhi-sagar-dam": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.dam.tehri-dam": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.desert.rann-of-kutch": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.desert.thar-desert": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.glacier.siachen-glacier": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.glacier.zemu-glacier": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.island.andaman-islands": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 3
+    },
+    "in.island.elephanta-island": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.island.little-andaman": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.island.netaji-subhas-chandra-bose-dweep": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.island.nicobar-islands": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 3
+    },
+    "in.island.rameswaram": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.lake.kolleru-lake": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.lake.loktak-lake": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 1
+    },
+    "in.lake.pulicat-lake": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.lake.thol-lake": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.lake.umiam-lake": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.monument.hampi": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.park.agasthyamala-biosphere-reserve": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.bhitarkanika-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.dachigam-national-park": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.park.desert-national-park": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.park.kaziranga-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.keibul-lamjao-national-park": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.park.madhav-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.nagarhole-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.nanda-devi-national-park": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.park.papikonda-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.rajiv-gandhi-national-park": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.sathyamangalam-tiger-reserve": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.park.silent-valley-national-park": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.pass.bolan-pass": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.peak.dhaulagiri": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.peak.guru-shikhar": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.peak.kamet": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.peak.makalu": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.peak.namcha-barwa": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 2
+    },
+    "in.plateau.amarkantak-plateau": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.plateau.chota-nagpur-plateau": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.plateau.deccan-plateau": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.plateau.malwa-plateau": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.port.chittagong": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.port.hambantota": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.port.kolkata-port": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.port.vizhinjam-port": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.cardamom-hills": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.eastern-ghats": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.kaimur": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.karbi-anglong-hills": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.mahadeo-hills": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.range.pir-panjal": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.range.western-ghats": {
+      "CSE": 2,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.alaknanda": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.banas": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.barak": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 2
+    },
+    "in.river.beas": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.betwa": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.bhagirathi": {
+      "CSE": 1,
+      "PCS": 2,
+      "CDS": 0
+    },
+    "in.river.bhilangna": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.brahmani": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.chambal": {
+      "CSE": 3,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.chenab": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.dibang": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.ganga": {
+      "CSE": 2,
+      "PCS": 2,
+      "CDS": 2
+    },
+    "in.river.ghaggar": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.godavari": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.indus": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 2
+    },
+    "in.river.jonk": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.kabini": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.kameng": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.kaveri": {
+      "CSE": 4,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.lohit": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.luni": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 1
+    },
+    "in.river.mahanadi": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.mandakini": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.musi": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.nagavali": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.netravati": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.palar": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.penner": {
+      "CSE": 2,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.periyar": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.pindar": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.pranahita": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.rangeet": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.sindh": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.subansiri": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.subarnarekha": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.sutlej": {
+      "CSE": 5,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.river.tapi": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.teesta": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.river.vamsadhara": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.river.yamuna": {
+      "CSE": 2,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.sea.arabian-sea": {
+      "CSE": 1,
+      "PCS": 3,
+      "CDS": 1
+    },
+    "in.sea.bay-of-bengal": {
+      "CSE": 4,
+      "PCS": 1,
+      "CDS": 1
+    },
+    "in.strait.eight-degree-channel": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.strait.ten-degree-channel": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.valley.gandikota-canyon": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.valley.kashmir-valley": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.valley.nubra-valley": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.waterfall.dhuandhar-falls": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.waterfall.hundru-falls": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.waterfall.jog-falls": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.waterfall.shivanasamudra-falls": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "in.wetland.bhindawas-wildlife-sanctuary": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.wetland.khijadiya-bird-sanctuary": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.wetland.patna-bird-sanctuary": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.wetland.point-calimere-wildlife-and-bird-sanctuary": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "in.wetland.rudrasagar-lake": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.wetland.samaspur-bird-sanctuary": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.wetland.sarsai-nawar": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "in.wetland.sultanpur-national-park": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 1
+    },
+    "in.wetland.surinsar-mansar-lakes": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.canal.panama-canal": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.canal.suez-canal": {
+      "CSE": 0,
+      "PCS": 2,
+      "CDS": 0
+    },
+    "w.cape.cape-canaveral": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.capital.bamako": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.capital.bangkok": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.capital.hanoi": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.capital.jakarta": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.capital.mogadishu": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.capital.prague": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.capital.putrajaya": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.city.brisbane": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.city.dutch-harbor": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.city.melbourne": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.city.perth": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.dam.itaipu-dam": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.desert.gobi-desert": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.desert.great-victoria-desert": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.desert.patagonian-desert": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.desert.sahara": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.grassland.pampas": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.gulf.persian-gulf": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.island.aleutian-islands": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.island.bermuda": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.island.canary-islands": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.island.easter-island": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.island.hawaii": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.island.lombok": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.island.north-island": {
+      "CSE": 4,
+      "PCS": 1,
+      "CDS": 3
+    },
+    "w.island.senkaku-islands": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.island.socotra": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.island.south-island": {
+      "CSE": 8,
+      "PCS": 2,
+      "CDS": 4
+    },
+    "w.island.sumatra": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.lake.caspian-sea": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.lake.great-bitter-lake": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.lake.lake-manzala": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.lake.lake-timsah": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.lake.lake-turkana": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.lake.lake-winnipeg": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.plain.mekong-delta": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.plateau.anatolian-plateau": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.plateau.tibetan-plateau": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 1
+    },
+    "w.port.chabahar": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.port.rotterdam": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.port.shanghai": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.range.alps": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.range.andes": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.range.caucasus": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.range.great-dividing-range": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.range.hindu-kush": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.range.southern-alps": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.range.vosges": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.region.bermuda-triangle": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.region.central-asia": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.region.great-barrier-reef": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.river.amur": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.river.danube": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.river.huangpu": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.river.irrawaddy": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.river.mekong": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.river.mississippi": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.river.parana": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.river.pearl": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.river.red": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.river.rhine": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.river.volga": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.sea.adriatic-sea": {
+      "CSE": 2,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.sea.atlantic-ocean": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.sea.black-sea": {
+      "CSE": 1,
+      "PCS": 1,
+      "CDS": 2
+    },
+    "w.sea.caribbean-sea": {
+      "CSE": 0,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.sea.coral-sea": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.sea.diamantina-trench": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.sea.east-china-sea": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.sea.indian-ocean": {
+      "CSE": 3,
+      "PCS": 2,
+      "CDS": 1
+    },
+    "w.sea.mediterranean-sea": {
+      "CSE": 5,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.sea.red-sea": {
+      "CSE": 2,
+      "PCS": 1,
+      "CDS": 0
+    },
+    "w.sea.sargasso-sea": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.sea.south-china-sea": {
+      "CSE": 0,
+      "PCS": 0,
+      "CDS": 1
+    },
+    "w.strait.bering-strait": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.strait.strait-of-hormuz": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.strait.strait-of-malacca": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.valley.grand-canyon": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    },
+    "w.volcano.mount-st-helens": {
+      "CSE": 1,
+      "PCS": 0,
+      "CDS": 0
+    }
+  }
+}

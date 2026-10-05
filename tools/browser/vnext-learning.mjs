@@ -1,0 +1,67 @@
+/** Production regression of universal Atlas access, canonical interaction, preserved history and offline packs. */
+import { readFileSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs'
+import { launch, prepare } from './lib.mjs'
+const base = process.argv[2] ?? 'http://localhost:4174/'
+const root = new URL('../../public/pyq-atlas/v1/', import.meta.url)
+const qs = readdirSync(new URL('papers/', root)).flatMap((f) => JSON.parse(readFileSync(new URL(`papers/${f}`, root))).questions)
+const samples = [...new Map(qs.map((q) => [q.question.type, q])).values()]
+const out = new URL('./out/vnext/', import.meta.url); mkdirSync(out, { recursive: true })
+const checks = []; const ok = (name, value) => { checks.push({ name, ok: !!value }); console.log(`${value ? '✓' : '✗'} ${name}`) }
+const { browser, ctx, page } = await launch({ touch: true }); const errors = []; await page.emulateMedia({ colorScheme: process.env.SCHEME ?? 'light' }); page.on('pageerror', (e) => errors.push(e.message))
+await page.setViewportSize({ width: 1366, height: 900 })
+await prepare(page, base, { sample: false, route: '#/atlas?place=in.pass.nathu-la' })
+await page.goto(`${base}#/atlas?place=in.pass.nathu-la`)
+await page.getByRole('heading', { name: 'Nathu La', exact: true }).waitFor()
+ok('accessible place exposes facts and Test me', await page.getByRole('button', { name: 'Test me', exact: true }).isVisible() && !await page.getByText('Its notes and questions unlock').count())
+await page.getByRole('application').waitFor()
+const dims = await page.evaluate(() => ({ map: document.querySelector('[role=application]').getBoundingClientRect().width, surface: document.querySelector('[data-atlas-surface]').getBoundingClientRect().width }))
+ok('desktop inspector overlays the full canvas', Math.abs(dims.map - dims.surface) < 2)
+await page.getByRole('button', { name: 'Collapse Atlas inspector' }).click()
+await page.locator('[data-inspector]').waitFor({ state: 'detached' })
+await page.locator('.atlas-selected').first().waitFor()
+ok('collapse retains selection', await page.locator('.atlas-selected').count() > 0 && await page.locator('[data-inspector]').count() === 0)
+await page.getByRole('button', { name: 'Open Atlas inspector' }).click()
+ok('reopen restores selected place', await page.getByRole('heading', { name: 'Nathu La', exact: true }).isVisible())
+await page.getByRole('button', { name: 'Test me', exact: true }).click()
+ok('recall opens a question', await page.getByRole('dialog').last().locator('h3').count() > 0)
+await page.keyboard.press('Escape')
+await page.goto(`${base}#/atlas?place=in.river.ganga`)
+await page.getByRole('heading', { name: 'Ganga', exact: true }).waitFor()
+const linked = page.locator('[aria-label="Previous questions"] button').first()
+await linked.waitFor(); await linked.click()
+ok('place opens a canonical question', await page.locator('[data-question-id]').count() === 1)
+await page.keyboard.press('Escape')
+for (const width of [375, 1366]) {
+  await page.setViewportSize({ width, height: 900 })
+  for (const q of samples) {
+    await page.goto(`${base}#/atlas?pyq=${q.id}`)
+    const article = page.locator('[data-question-id]'); await article.waitFor()
+    ok(`${width}: ${q.question.type} has A–D`, await article.getByRole('radio').count() === 4)
+    ok(`${width}: ${q.question.type} no horizontal page overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))
+    await article.getByRole('radio').first().check()
+    await article.getByRole('button', { name: 'Submit answer' }).click()
+    await article.getByText(/Your answer: A/).waitFor()
+    ok(`${width}: ${q.question.type} answer is locked and revealed`, await article.getByRole('radio').first().isDisabled() && await article.getByText(/Accepted answer/).count() > 0)
+    ok(`${width}: ${q.question.type} has no invented explanation`, await article.locator('[aria-live=polite]').getByText(/explanation/i).count() === 0)
+    await page.waitForTimeout(400)
+    ok(`${width}: ${q.question.type} dialog is opaque after responsive changes`, await article.evaluate((el) => getComputedStyle(el.closest('[role=dialog]')).opacity === '1'))
+    await article.evaluate((el) => { el.closest('[data-sheet-body]').scrollTop = 0 })
+    await page.screenshot({ path: new URL(`${width}-${q.question.type}.png`, out).pathname.replace(/^\/(\w:)/, '$1') })
+    const place = article.getByRole('button').last(); await place.click()
+    ok(`${width}: PYQ returns to a meaningful place`, await page.getByRole('heading', { level: 2 }).count() > 0)
+    await page.keyboard.press('Escape')
+  }
+}
+// Wait for precaching before moving offline; previously unvisited papers must work too.
+await page.evaluate(async () => { await navigator.serviceWorker.ready })
+await page.reload(); await page.waitForTimeout(1500)
+const remaining = qs.find((q) => !samples.some((s) => s.id === q.id))
+await ctx.setOffline(true)
+await page.goto(`${base}#/atlas?pyq=${remaining.id}`)
+await page.locator(`[data-question-id="${remaining.id}"]`).waitFor()
+ok('offline core includes an unvisited curated paper', await page.getByRole('radio').count() === 4)
+await ctx.setOffline(false)
+ok('no browser errors', errors.length === 0)
+await browser.close()
+writeFileSync(new URL(`learning-results-${process.env.SCHEME ?? 'light'}.json`, out), JSON.stringify({ checks, errors }, null, 2))
+if (checks.some((c) => !c.ok)) process.exitCode = 1

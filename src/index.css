@@ -1,0 +1,1035 @@
+@import 'tailwindcss';
+@import './ui/ui.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Official OFL fonts, bundled for offline UI. Cartographic metrics keep Manrope. */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url('/fonts/geist-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 600;
+  src: url('/fonts/newsreader-latin.woff2') format('woff2');
+}
+
+/* Self-hosted fonts (latin + latin-ext only) so the app looks right offline. */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../node_modules/@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Newsreader', 'Fraunces', ui-serif, Georgia, serif;
+  --color-knowledge: var(--knowledge);
+  --color-knowledge-soft: var(--knowledge-soft);
+
+  /* Surface layers, back to front: canvas (the app frame) → bg (the stage a
+     workspace sits on) → surface (raised: sheets, menus, fields) → surface-2/3 (wells, fills). */
+  --color-canvas: var(--canvas);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-correct: var(--correct);
+  --color-incorrect: var(--incorrect);
+  --color-warning-soft: var(--warning-soft);
+  --color-info-soft: var(--info-soft);
+  --color-correct-soft: var(--correct-soft);
+  --color-incorrect-soft: var(--incorrect-soft);
+  --color-chart: var(--chart);
+  --color-note: var(--note);
+  --color-note-ink: var(--note-ink);
+
+  /* Radius roles (tokens v2). Named by what they round, because Tailwind's own xs–xl steps mean other sizes
+     and are still used by code that has not moved over. cell 4 · key 8 · field 12 · card 16 · panel 24 · full. */
+  --radius-cell: 0.25rem;
+  --radius-key: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-card: 1rem;
+  --radius-panel: 1.125rem;
+  --radius-stage: 1rem;
+  --shadow-soft: var(--shadow-soft-value);
+  --shadow-lift: var(--shadow-lift-value);
+  --shadow-dialog: var(--shadow-dialog-value);
+
+  /* Motion system (twin of src/ui/motion.ts) – `ease-out` etc. utilities use these curves. */
+  --ease-out: var(--motion-ease-out);
+  --ease-in-out: var(--motion-ease-in-out);
+  --ease-in: var(--motion-ease-in);
+
+  --animate-breathe: breathe 6s ease-in-out infinite;
+}
+
+/* Motion tokens (twins of src/ui/motion.ts): instant 90ms (press in) · fast 140ms (hover, small reveals, exits) ·
+   base 220ms (popovers, content swaps, list items) · slow 320ms (panels, sheets, layout moves) · calm 520ms (a change of mode).
+   --dur-micro and --dur-layout are the earlier names for fast and slow. */
+:root {
+  --motion-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --dur-instant: 90ms;
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 320ms;
+  --dur-calm: 520ms;
+  --dur-micro: var(--dur-fast);
+  --dur-layout: var(--dur-slow);
+
+  /* Layers, back to front. Use the layer-* utilities (below), never a bare z-index. */
+  --layer-sticky: 10;
+  --layer-chrome: 20;
+  --layer-floating: 30;
+  --layer-modal: 50;
+  --layer-palette: 60;
+  --layer-popover: 70;
+  --layer-toast: 80;
+  --layer-tooltip: 90;
+
+  /* State layers: what a pressable shows on top of itself. One overlay, animated by opacity (ui/Pressable.tsx). */
+  --state-hover: 0.06;
+  --state-press: 0.11;
+  --state-selected: var(--accent-soft);
+
+  /* Control heights and the smallest thing a finger should have to hit. */
+  --control-dense: 1.75rem;
+  --control-sm: 2rem;
+  --control-md: 2.5rem;
+  --control-lg: 3rem;
+  --hit: 44px;
+}
+
+/* Paper – warm, unbleached stock: comfortable for hours of reading, never sterile white. */
+:root {
+  color-scheme: light;
+  --canvas: #F4F1E9;
+  --bg: #F9F7F2;
+  --surface: #FFFEFB;
+  --surface-2: #F0EEE8;
+  --surface-3: #E8E5DE;
+  --line: #D9D5CC;
+  --line-strong: #BFB9AE;
+  --ink: #171A1F;
+  --ink-2: #555E69;
+  --ink-3: #5D6671;
+  --accent: #245DCA;
+  --accent-soft: #E4ECFA;
+  --accent-ink: #ffffff;
+  --primary: var(--accent);
+  --primary-ink: #ffffff;
+  --knowledge: #805719;
+  --knowledge-soft: #F1E8D5;
+  --danger: #B53B48;
+  --success: #126F4F;
+  /* Feedback colours: each is an ink that keeps ≥4.5:1 on bg, surface, surface-2 and surface-3 (job4-visual asserts it), with a soft fill. */
+  --warning: #7d4407;
+  --info: #1f4f96;
+  --correct: #1f6038;
+  --incorrect: #99331f;
+  --warning-soft: color-mix(in srgb, var(--warning) 12%, transparent);
+  --info-soft: color-mix(in srgb, var(--info) 11%, transparent);
+  --correct-soft: color-mix(in srgb, var(--correct) 12%, transparent);
+  --incorrect-soft: color-mix(in srgb, var(--incorrect) 11%, transparent);
+  --mastery-familiar-ink: #2457a3;
+  /* A sheet of note paper: warmer and a touch more yellow than the stage. */
+  --note: #fbf3d6;
+  --note-ink: #2b2717;
+  /* Chart marks – validated for lightness band, chroma and ≥3:1 contrast on the surface. */
+  --chart: #b8781b;
+  --shadow-soft-value: 0 1px 2px rgba(40, 32, 16, 0.04), 0 6px 20px -12px rgba(40, 32, 16, 0.14);
+  --shadow-lift-value: 0 1px 3px rgba(40, 32, 16, 0.06), 0 16px 36px -18px rgba(40, 32, 16, 0.24);
+  --shadow-dialog-value: 0 2px 6px rgba(40, 32, 16, 0.06), 0 28px 64px -24px rgba(40, 32, 16, 0.32);
+}
+
+/* Night – deep ink, never pure black, with starlight gold. */
+.dark {
+  color-scheme: dark;
+  --canvas: #090E15;
+  --bg: #0D141E;
+  --surface: #111A26;
+  --surface-2: #162231;
+  --surface-3: #1C2A3B;
+  --line: #243247;
+  --line-strong: #35465F;
+  --ink: #F2F4F7;
+  --ink-2: #AAB4C2;
+  --ink-3: #91A0B5;
+  --accent: #4D8DFF;
+  --accent-soft: #182E50;
+  --accent-ink: #090E15;
+  --primary: var(--accent);
+  --primary-ink: #090E15;
+  --knowledge: #D5A84D;
+  --knowledge-soft: #332A1A;
+  --danger: #E86B73;
+  --success: #45B887;
+  --warning: #f0a955;
+  --info: #80b2ff;
+  --correct: #73d19a;
+  --incorrect: #f07a68;
+  --warning-soft: color-mix(in srgb, var(--warning) 14%, transparent);
+  --info-soft: color-mix(in srgb, var(--info) 14%, transparent);
+  --correct-soft: color-mix(in srgb, var(--correct) 14%, transparent);
+  --incorrect-soft: color-mix(in srgb, var(--incorrect) 14%, transparent);
+  --mastery-familiar-ink: #80b2ff;
+  --note: #1d1b14;
+  --note-ink: #ebe4cf;
+  --chart: #b88a3a;
+  --shadow-soft-value: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px -14px rgba(0, 0, 0, 0.6);
+  --shadow-lift-value: 0 1px 4px rgba(0, 0, 0, 0.35), 0 20px 44px -22px rgba(0, 0, 0, 0.7);
+  --shadow-dialog-value: 0 2px 8px rgba(0, 0, 0, 0.4), 0 32px 72px -24px rgba(0, 0, 0, 0.8);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background: var(--page-bg);
+    /* Nothing in the app is meant to scroll sideways at the page level. */
+    overflow-x: clip;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  /* A dialog or full-screen view is open: the page behind holds still (see ui/scrollLock.ts). */
+  html[data-scroll-locked] {
+    overflow: hidden;
+    padding-right: var(--scroll-lock-gap, 0px);
+  }
+  body {
+    @apply font-sans text-ink antialiased;
+    background: var(--page-bg);
+    font-feature-settings: 'ss01', 'cv11';
+    min-height: 100dvh;
+    overflow-x: clip;
+    overscroll-behavior-y: none;
+  }
+  /* Quiet, theme-aware scrollbars where the platform draws classic ones. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--ink-3);
+  }
+  #root {
+    min-height: 100dvh;
+  }
+  ::selection {
+    background: var(--accent-soft);
+  }
+  button,
+  [role='button'] {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  button:disabled {
+    cursor: default;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+  input[type='time'],
+  input[type='date'],
+  input[type='datetime-local'] {
+    min-height: 2.5rem;
+  }
+  input[type='range'] {
+    accent-color: var(--accent);
+  }
+}
+
+/* Pointer variants: `fine:` for a mouse or trackpad that can hover, `coarse:` for a finger. Density follows the
+   pointer, not the width (a touch laptop gets touch sizes); <html data-density> is set before first paint. */
+@custom-variant fine (@media (hover: hover) and (pointer: fine));
+@custom-variant coarse (@media (pointer: coarse));
+@custom-variant reduced (:root[data-motion='reduced'] &);
+
+@layer utilities {
+  /* Elevation: a hairline ring plus a shadow, as one value. 1 the stage and the one raised surface · 2 popovers, menus, map capsules, toasts · 3 dialogs, sheets, the palette. */
+  .elev-0 {
+    box-shadow: none;
+  }
+  .elev-1 {
+    box-shadow:
+      0 0 0 1px var(--line),
+      var(--shadow-soft-value);
+  }
+  .elev-2 {
+    box-shadow:
+      0 0 0 1px var(--line),
+      var(--shadow-lift-value);
+  }
+  .elev-3 {
+    box-shadow:
+      0 0 0 1px var(--line),
+      var(--shadow-dialog-value);
+  }
+  .layer-sticky {
+    z-index: var(--layer-sticky);
+  }
+  .layer-chrome {
+    z-index: var(--layer-chrome);
+  }
+  .layer-floating {
+    z-index: var(--layer-floating);
+  }
+  .layer-modal {
+    z-index: var(--layer-modal);
+  }
+  .layer-palette {
+    z-index: var(--layer-palette);
+  }
+  .layer-popover {
+    z-index: var(--layer-popover);
+  }
+  .layer-toast {
+    z-index: var(--layer-toast);
+  }
+  .layer-tooltip {
+    z-index: var(--layer-tooltip);
+  }
+  /* Sheet body padding: clear the home indicator unless a footer below already does. */
+  .sheet-pad {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  [role='dialog']:has(> [data-sheet-footer]:not(:empty)) > .sheet-pad {
+    padding-bottom: 20px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .font-display {
+    font-optical-sizing: auto;
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mb-safe {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hairline {
+    border-color: var(--line);
+  }
+}
+
+/* ── Type roles ────────────────────────────────────────────────────────────
+ * Typography carries the hierarchy, so every text style in the app is one of
+ * these. They sit in the components layer: a utility on the same element
+ * (text-ink-2, mt-2…) still wins.                                           */
+@layer components {
+  /* Home greeting and the one line a screen is about. */
+  .t-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(1.875rem, 1.3rem + 2.2vw, 2.625rem);
+    line-height: 1.08;
+    letter-spacing: -0.028em;
+  }
+  /* Display, one step down: place and region names, a quiz prompt, a summary line, onboarding. */
+  .t-display-m {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 1.625rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  /* Workspace and sheet titles: sans, tight, modern – the serif is kept for display moments. */
+  .t-title {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-size: 1.625rem;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.022em;
+  }
+  /* Section headings inside a workspace. */
+  .t-heading {
+    font-size: 0.9375rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  /* Quiet sentence-case labels above groups and fields. */
+  .t-label {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    font-weight: 650;
+    color: var(--ink-2);
+  }
+  /* The rare all-caps micro label (map legend keys, table heads). */
+  .t-eyebrow {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .t-body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  /* Row titles and longer reading text (the scale's body-l); row titles add font-semibold. */
+  .t-body-l {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  /* Ordinary interface text (the scale's body): controls, descriptions, menu items. */
+  .t-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  /* The floor: axis ticks, badges, legend keys. Nothing in the app is smaller than this. */
+  .t-micro {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  /* Dates, counts, sources – read second. */
+  .t-meta {
+    font-size: 0.78125rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+  /* Numbers and statistics. */
+  .t-num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  /* A list row: the default interactive surface. No border, no card – hover and
+     selection are a fill, the press is a small settle. */
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0.75rem;
+    transition:
+      background-color var(--dur-micro) var(--motion-ease-out),
+      transform var(--dur-micro) var(--motion-ease-out);
+  }
+  @media (hover: hover) {
+    .row:hover {
+      background: color-mix(in oklab, var(--surface-2) 70%, transparent);
+    }
+  }
+  .row:active {
+    transform: scale(0.992);
+  }
+  .row[aria-current='true'],
+  .row[data-selected] {
+    background: var(--surface-2);
+  }
+
+  /* A sheet of note paper. */
+  .note-paper {
+    position: relative;
+    background: var(--note);
+    color: var(--note-ink);
+    border-radius: 3px 3px 10px 3px;
+    box-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.04),
+      0 10px 22px -16px rgba(40, 32, 16, 0.5);
+  }
+  .note-paper::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--accent);
+    opacity: 0.55;
+  }
+  .dark .note-paper {
+    box-shadow: 0 0 0 1px var(--line);
+  }
+}
+
+/* ── App shell ─────────────────────────────────────────────────────────────
+ * One frame, two shapes. From 768px up Tars is a fixed window: a navigation
+ * rail on the canvas and, inset beside it, the stage – the surface every
+ * workspace lives on, scrolling inside itself. Below that it is a phone app:
+ * the stage is the page and a tab bar sits at the bottom.
+ *
+ * The rail's width drives the stage offset. Collapsing it (or hiding all chrome
+ * for the full-screen Atlas) changes the layout once; the stage's movement is a
+ * transform (app/shellShift.ts). The attributes are set on <html> by ShellSync
+ * (App.tsx); index.html sets the collapsed state before first paint so nothing
+ * jumps on load.                                                             */
+:root {
+  --rail-size: 14.5rem;
+  --rail-w: 0px;
+  --tabbar-h: calc(3.75rem + env(safe-area-inset-bottom));
+  /* Space the fixed navigation takes at the bottom of the viewport. */
+  --nav-bottom: var(--tabbar-h);
+  --stage-gap: 0px;
+  --page-bg: var(--bg);
+}
+@media (min-width: 768px) {
+  :root {
+    --rail-size: 4rem;
+    --rail-w: var(--rail-size);
+    --nav-bottom: 0px;
+    --stage-gap: 8px;
+    --page-bg: var(--canvas);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --rail-size: 14.5rem;
+  }
+  :root[data-sidebar='collapsed'] {
+    --rail-size: 4rem;
+  }
+}
+:root[data-chrome='hidden'] {
+  --rail-w: 0px;
+  --nav-bottom: 0px;
+  --stage-gap: 0px;
+}
+html {
+  transition: background-color var(--dur-calm) var(--motion-ease-in-out);
+}
+
+.app-frame {
+  min-height: 100dvh;
+}
+.stage {
+  position: relative;
+  background: var(--bg);
+}
+/* What scrolls: the page on a phone, the stage in the window. Screens that fit
+   the viewport themselves opt out (data-scroll="fit" | "none"). */
+.stage-scroll {
+  padding-bottom: calc(var(--nav-bottom) + 2rem);
+}
+.stage-scroll[data-scroll='fit'] {
+  padding-bottom: var(--nav-bottom);
+}
+.stage-scroll[data-scroll='none'] {
+  padding-bottom: 0;
+}
+@media (min-width: 768px) {
+  .app-frame {
+    height: 100dvh;
+    min-height: 0;
+    /* The frame clears the status bar itself, so screens inside the stage don't (see .pt-safe below). */
+    padding: max(var(--stage-gap), env(safe-area-inset-top)) var(--stage-gap) var(--stage-gap) var(--rail-w);
+    /* Not transitioned: the stage is moved with a transform and laid out once (app/shellShift.ts). */
+  }
+  .stage .pt-safe {
+    padding-top: 0;
+  }
+  .rail {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+  .stage {
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-stage);
+    box-shadow:
+      0 0 0 1px var(--line),
+      var(--shadow-soft-value);
+    transition:
+      border-radius var(--dur-layout) var(--motion-ease-in-out),
+      box-shadow var(--dur-calm) var(--motion-ease-in-out);
+  }
+  :root[data-chrome='hidden'] .stage {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .stage-scroll {
+    height: 100%;
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .stage-scroll[data-scroll='fit'] {
+    scrollbar-gutter: auto;
+  }
+  .stage-scroll[data-scroll='none'] {
+    overflow: hidden;
+    scrollbar-gutter: auto;
+  }
+}
+/* The Atlas, kept mounted behind the scroller once visited (App.tsx). The scroller is opaque, so whatever
+   workspace is open covers it; in front, the scroller is hidden instead. Window layout only. */
+.kept-screen:not([data-active]) {
+  display: none;
+}
+@media (min-width: 768px) {
+  .kept-screen,
+  .kept-screen:not([data-active]) {
+    display: block;
+    position: absolute;
+    inset: 0;
+  }
+  .stage-scroll {
+    position: relative;
+    background: var(--bg);
+  }
+  /* Behind: nothing decorative keeps running. */
+  .kept-screen:not([data-active]) *,
+  .kept-screen:not([data-active]) *::before,
+  .kept-screen:not([data-active]) *::after {
+    animation-play-state: paused !important;
+  }
+}
+/* A side panel is open beside the content (ui/surface/SidePanel.tsx): the scroller keeps clear of it. */
+@media (min-width: 1024px) {
+  :root[data-panel='open'] .stage-scroll {
+    padding-right: var(--side-panel-w, 0px);
+  }
+}
+
+.rail {
+  width: var(--rail-size);
+  /* The width changes at once (the stage slides over or away from it); only transform and opacity animate. */
+  transition:
+    transform var(--dur-layout) var(--motion-ease-in-out),
+    opacity var(--dur-layout) var(--motion-ease-in-out);
+}
+:root[data-chrome='hidden'] .rail {
+  transform: translateX(-100%);
+  /* Once it has slid away it leaves the tab order too. */
+  visibility: hidden;
+  transition:
+    transform var(--dur-layout) var(--motion-ease-in-out),
+    visibility 0s linear var(--dur-layout);
+}
+.rail-label {
+  animation: fade-in var(--dur-base) var(--motion-ease-out) both;
+  animation-delay: 80ms;
+}
+.tabbar {
+  height: var(--tabbar-h);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.chrome-bottom {
+  transition:
+    transform var(--dur-layout) var(--motion-ease-in-out),
+    opacity var(--dur-layout) var(--motion-ease-in-out);
+}
+:root[data-chrome='hidden'] .chrome-bottom {
+  transform: translateY(100%);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    transform var(--dur-layout) var(--motion-ease-in-out),
+    visibility 0s linear var(--dur-layout);
+}
+
+/* Switching theme: one soft cross-fade instead of a hard cut (class set briefly by app/theme.ts). */
+html.theme-fade,
+html.theme-fade :not(.atlas, .atlas *) {
+  transition:
+    background-color 260ms var(--motion-ease-out),
+    border-color 260ms var(--motion-ease-out),
+    color 200ms var(--motion-ease-out),
+    fill 200ms var(--motion-ease-out),
+    box-shadow 260ms var(--motion-ease-out) !important;
+}
+
+/* Content that arrives with a screen: a short rise, staggered by --i (0, 1, 2…). */
+.settle {
+  animation: settle var(--dur-layout) var(--motion-ease-out) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* Tactile press for custom controls (Button/IconButton have their own). */
+.press {
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-duration: var(--dur-micro);
+  transition-timing-function: var(--motion-ease-out);
+}
+.press:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Keyboard key hint. */
+.kbd {
+  display: inline-flex;
+  min-width: 1.5em;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  padding: 0 5px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--ink-2);
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Skeleton shimmer for content that is still loading. */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface-3) 50%, var(--surface-2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 12px;
+}
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion is handled role by role in ui/ui.css ([data-motion='reduced'] on <html>, set before first paint). */
+
+/* ── Atlas map layers ──────────────────────────────────────────────────────
+ * The painted base map and the names layer are moved on the compositor while
+ * the map is dragged; nothing inside them is repainted until it settles.   */
+.atlas-layer,
+.atlas-labels {
+  position: absolute;
+  transform-origin: 0 0;
+  will-change: transform;
+  pointer-events: none;
+  contain: strict;
+}
+/* Names and symbols are laid out a little beyond the view and keep their coordinates while the map is
+ * panned, so this layer must not clip to its box: the map itself (.atlas) does the clipping. */
+.atlas-labels {
+  inset: 0;
+  contain: layout style;
+}
+.atlas-layer svg,
+.atlas-labels svg {
+  pointer-events: none;
+}
+/* One unscaled geographic word anchor, positioned outside the scaled map layers. */
+.atlas-name {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: atlas-word-in var(--dur-base) var(--motion-ease-out) backwards;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+}
+.atlas-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.atlas-name-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: pre;
+  line-height: 1.25;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+  font-synthesis: none;
+
+}
+.atlas-name.atlas-point-name { width: max-content; height: auto; contain: layout style; }
+@keyframes atlas-word-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+:root[data-motion="reduced"] .atlas-name { animation: none; }
+.atlas-names { pointer-events: none; contain: layout style; will-change: transform; }
+.atlas:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+/* Protected-area outlines appear once zoomed in (the class is set when the view comes to rest). */
+.atlas:not(.atlas-near) .atlas-parks {
+  display: none;
+}
+
+/* Symbols and names fade in as they first appear, never mid-gesture (layout happens at rest). */
+.atlas-sym {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 140ms ease-out, opacity 140ms ease-out;
+  animation: atlas-fade-in 220ms ease-out;
+}
+.atlas-sym.is-hover {
+  transform: scale(1.2);
+}
+/* Under a finger or the mouse button, from the moment of contact. */
+.atlas-sym.is-pressed {
+  transform: scale(0.86);
+  transition-duration: 60ms;
+}
+@keyframes atlas-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+/* After a style change the previous style fades out on its own layer (compositor only). */
+.atlas-fade-out {
+  animation: atlas-fade-out 340ms ease-out forwards;
+}
+@keyframes atlas-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+/* The selection ring settles onto the symbol. */
+.atlas-selected {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: atlas-select 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes atlas-select {
+  from {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+/* A slow pulse for newly Familiar places (transform + opacity only). */
+.atlas-ring {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  opacity: 0.8;
+}
+@keyframes atlas-pulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+/* Ships at sea, derived from recall mastery. */
+.atlas-ship-at {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.atlas-ship {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  /* Recall symbols remain static so knowledge never competes with map motion. */
+}
+.atlas-ship svg {
+  display: block;
+  overflow: visible;
+}
+@keyframes atlas-ship {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(14px);
+  }
+}
+
+/* While the map moves, decorative motion holds still. */
+.atlas-moving .atlas-ring,
+.atlas-moving .atlas-ship {
+  animation-play-state: paused;
+}
+/* Low-power devices and reduced motion: no decorative motion at all. */
+.atlas-calm .atlas-ring,
+.atlas-calm .atlas-ship {
+  animation: none;
+}
+.atlas-calm .atlas-ring {
+  opacity: 0.8;
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-name-text,
+  .atlas-sym,
+  .atlas-selected {
+    animation: none;
+    transition: none;
+  }
+  .atlas-ship,
+  .atlas-ring,
+  circle.atlas-pulse {
+    animation: none;
+  }
+}
+
+.type-numeric { font-family: var(--font-sans); font-variant-numeric: tabular-nums; letter-spacing: -.035em; }
+/* Editorial product shell. The kept map retains its existing mounted lifecycle. */
+:root { --shell-top: calc(56px + env(safe-area-inset-top)); --nav-bottom: env(safe-area-inset-bottom); --rail-w: 0px; --stage-gap: 0px; --page-bg: var(--bg); }
+.app-frame { height: 100dvh; min-height: 0; padding: var(--shell-top) 0 var(--nav-bottom); }
+.stage { height: 100%; overflow: hidden; border-radius: 0; box-shadow: none; }
+.stage .pt-safe { padding-top: 0; }
+.stage-scroll { height: 100%; overflow-y: auto; overflow-x: clip; padding-bottom: 16px; overscroll-behavior: contain; scrollbar-gutter: stable; background: var(--bg); }
+.stage-scroll[data-scroll='none'] { overflow: hidden; padding-bottom: 0; scrollbar-gutter: auto; }
+.stage-scroll[data-scroll='fit'] { padding-bottom: 0; }
+.kept-screen:not([data-active]) { isolation: isolate; }
+.stage-scroll { position: relative; z-index: 1; }
+.product-bar { position: fixed; inset: 0 0 auto; height: var(--shell-top); padding: env(safe-area-inset-top) 24px 0; z-index: 30; display: flex; align-items: center; gap: 20px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.product-brand { display: flex; align-items: center; gap: 8px; height: 44px; font-weight: 600; font-size: 15px; letter-spacing: .12em; }
+.product-nav { display: flex; align-items: center; gap: 8px; align-self: stretch; }
+.product-nav-icon { display: none; }
+.product-link { position: relative; min-width: 64px; min-height: 44px; align-self: stretch; padding: 0 12px; font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.product-link[aria-current] { color: var(--accent); }
+.product-link[aria-current]::after { content: ''; position: absolute; bottom: 0; left: 12px; right: 12px; height: 2px; background: var(--accent); }
+.product-tools { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.product-search { display: flex; align-items: center; gap: 8px; height: 40px; min-width: 180px; padding: 0 12px; border-radius: 8px; font-size: 13px; color: var(--ink-2); background: var(--surface-2); }
+.product-search kbd { margin-left: auto; }
+.product-offline { display: flex; gap: 6px; align-items: center; font-size: 12px; color: var(--ink-2); }
+.tabbar { display: none; }
+:root[data-chrome='hidden'] { --shell-top: 0px; --nav-bottom: 0px; }
+:root[data-chrome='hidden'] .product-bar { visibility: hidden; transform: translateY(-100%); }
+:root[data-panel='open'] .stage-scroll { padding-right: 0; }
+@media (max-width: 599px) {
+  :root { --shell-top: calc(52px + env(safe-area-inset-top)); --nav-bottom: calc(56px + env(safe-area-inset-bottom)); }
+  .product-bar { padding-inline: 8px; gap: 4px; }
+  .product-brand { justify-content: center; min-width: 44px; flex-shrink: 0; }
+  .product-nav { position: fixed; inset: auto 0 0; height: var(--nav-bottom); padding-bottom: env(safe-area-inset-bottom); gap: 0; background: var(--bg); border-top: 1px solid var(--line); }
+  .product-link { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; padding-inline: 8px; font-size: 13px; }
+  .product-link[aria-current]::after { top: 0; bottom: auto; left: 25%; right: 25%; }
+  .product-nav-icon { display: block; }
+  .product-theme, .product-search span, .product-search kbd, .product-offline span { display: none; }
+  .product-search { width: 44px; height: 44px; min-width: 44px; padding: 0; justify-content: center; background: transparent; }
+  .product-tools { gap: 0; }
+
+}
+@media (prefers-reduced-motion: reduce) { .product-bar { transition: none; } }
+@media (pointer: coarse) { .settings-group select { min-height: 44px; } }
+.stage-scroll[data-scroll='none'] > div { height: 100%; }
+/* All map text retains the exact renderer font; interaction chrome uses Geist. */
+.atlas { font-family: 'Manrope', sans-serif; }
+/* One focused question surface shared by canonical questions and recall. */
+.question-surface { position: fixed; z-index: 50; right: 24px; top: calc(var(--shell-top) + 16px); bottom: 24px; width: 560px; max-width: calc(100vw - 48px); display: flex; flex-direction: column; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-dialog-value); outline: none; }
+.question-mobile { max-width: none; border-radius: 20px 20px 0 0; }
+.quiz-option { min-height: 48px; border-radius: 10px; padding: 12px 14px; align-items: start; }
+.quiz-option:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.quiz-option-key { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; flex-shrink: 0; border: 1px solid var(--line-strong); border-radius: 6px; font-size: 12px; font-weight: 600; }
+.quiz-option:has(input:checked) .quiz-option-key { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.quiz-option[data-answer-state='correct'] .quiz-option-key { background: var(--success); color: var(--surface); border-color: var(--success); }
+.quiz-option[data-answer-state='incorrect'] .quiz-option-key { background: var(--danger); color: var(--surface); border-color: var(--danger); }
+.quiz-verdict { display: block; margin-top: 8px; font-size: 12px; font-weight: 500; }
+.answer { border-radius: 10px; min-height: 48px; }
+@media (prefers-reduced-motion: reduce) { .question-surface, .quiz-option { transition: none; } }
+.quiz-option { position: relative; }
+.quiz-radio { position: absolute; top: 12px; left: 14px; width: 28px; height: 28px; opacity: 0; cursor: pointer; }
+.quiz-option-key { pointer-events: none; }

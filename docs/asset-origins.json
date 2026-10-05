@@ -1,0 +1,40 @@
+{
+  "baseline": "a46cbe5c73862f5f8aa4fb28ea1844d0afbf9df4",
+  "assets": [
+    {
+      "path": "atlas/v1/india-overlay.json",
+      "sha256": "f8651ec206014644e6e8199cd3096e6b4e86ed44446275c8a56bca57ff470634"
+    },
+    {
+      "path": "atlas/v1/india-relief.webp",
+      "sha256": "c4c6f70dacfeaad2882e21ce5d461bb1d0da5f3fcdf6d64c595fd959a5b6e254"
+    },
+    {
+      "path": "atlas/v1/india-shade.webp",
+      "sha256": "fda83a33439eac94a388f323dac6341c1821ee666f030bfe5327abaaa7fc391c"
+    },
+    {
+      "path": "atlas/v1/india.json",
+      "sha256": "c75cdcf2d3b23dfe61d94fa5664ce278c4d558bed632fb6ed2f0da393724faa0"
+    },
+    {
+      "path": "atlas/v1/world-overlay.json",
+      "sha256": "865991bb3368be797f7f5bb09dc9ddf7d12b62f42433d3d9dbaf89315f177bde"
+    },
+    {
+      "path": "atlas/v1/world-relief.webp",
+      "sha256": "7c015d0697ebb3222410a82fdd86b2151bef88d33035ac4ad3aeb4a837788cfe"
+    },
+    {
+      "path": "atlas/v1/world-shade.webp",
+      "sha256": "a5f6a9340cf94c4a527038d53f211b40a6dbf26a53b94ed76a9982add9dbc8ba"
+    },
+    {
+      "path": "atlas/v1/world.json",
+      "sha256": "736a091ab3c837dfd408f0f8fcd87079f4c69ae3fd73f8699c6c6e19c33d4770"
+    }
+  ],
+  "placeRecords": 2273,
+  "placesSha256": "50cb4ed13d8bd9378e9a9f248bdd94e3627cf793286aa6115e982fb45e02f28b",
+  "canonicalManifestHash": "282b9bbedba72bf612bd9c79a267e2c541a4970dcc00b5d70a41b2a8b6963a68"
+}

@@ -1,0 +1,4058 @@
+{
+ "in.dam.rihand-dam": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "pyq",
+   "syllabus"
+  ]
+ },
+ "in.valley.spiti-valley": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "pyq"
+  ]
+ },
+ "in.river.chenab": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.river.parbati": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.river.gomti": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.valley.imphal-valley": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.valley.nubra-valley": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.monument.kedarnath": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.pass.thal-ghat": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.river.kabini": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.monument.omkareshwar": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.river.teesta": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.strait.coco-channel": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.island.rameswaram": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.region.kathiawar-peninsula": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.range.karbi-anglong-hills": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.park.pilibhit-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2014."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "pyq",
+   "tiger-reserve"
+  ]
+ },
+ "in.range.palani-hills": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "pyq"
+  ]
+ },
+ "in.river.siang": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.lake.tonle-sap": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.city.geneva": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.range.karakoram": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.range.arakan-yoma": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.peak.toubkal": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.peak.mount-kailash": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.peak.k2": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.peak.mount-everest": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.volcano.mount-vesuvius": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.volcano.barren-island": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.island.andaman-islands": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.sea.arabian-sea": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.sea.andaman-sea": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.sea.lakshadweep-sea": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.sea.bay-of-bengal": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.island.java": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.island.timor": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.capital.riga": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "syllabus",
+   "capital"
+  ]
+ },
+ "w.canal.panama-canal": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "syllabus",
+   "capital"
+  ]
+ },
+ "w.gulf.gulf-of-bothnia": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.gulf.gulf-of-khambhat": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.gulf.gulf-of-mannar": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.capital.tokyo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "syllabus",
+   "capital"
+  ]
+ },
+ "w.canal.kiel-canal": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.island.sicily": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.strait.palk-strait": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.strait.ten-degree-channel": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.strait.nine-degree-channel": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.strait.eight-degree-channel": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.capital.singapore": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "syllabus",
+   "capital"
+  ]
+ },
+ "w.strait.denmark-strait": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.strait.mozambique-channel": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.desert.arabian-desert": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.desert.thar-desert": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.plateau.deccan-plateau": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.desert.patagonian-desert": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.grassland.pampas": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.river.po": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.plain.indo-gangetic-plain": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.river.irrawaddy": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.river.lena": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.region.okavango-delta": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.region.crimea": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.range.caucasus": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.region.donbas": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.region.grand-banks": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.grassland.llanos": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.cape.kanyakumari": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.coast.malabar-coast": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "in.coast.coromandel-coast": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.sea.sunda-trench": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.grassland.serengeti": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "w.waterfall.iguazu-falls": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "w.peak.mount-kinabalu": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "in.delta.sundarbans-delta": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 30 January 2019 (4,230 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "conservation",
+   "ramsar"
+  ]
+ },
+ "w.lake.lake-baikal": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "w.island.socotra": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "w.region.great-barrier-reef": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "conservation"
+  ]
+ },
+ "in.port.gwadar": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.strait.strait-of-gibraltar": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.island.svalbard": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.island.greenland": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.island.diego-garcia": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "in.port.hambantota": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.strait.taiwan-strait": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.island.mindanao": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.island.falkland-islands": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.strait.strait-of-hormuz": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "w.strait.bab-el-mandeb": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "current-affairs"
+  ]
+ },
+ "in.capital.mumbai": {
+  "tags": [],
+  "facts": [],
+  "src": [],
+  "why": [
+   "syllabus"
+  ]
+ },
+ "w.capital.manila": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "syllabus",
+   "capital"
+  ]
+ },
+ "in.lake.kolleru-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (901 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.deepor-beel": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (30 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.sultanpur-national-park": {
+  "tags": [
+   "ramsar",
+   "national-park"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 25 May 2021 (1.43 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "ramsar",
+   "national-park"
+  ]
+ },
+ "in.dam.pong-dam": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (156.62 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.chandra-taal": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 8 November 2005 (0.49 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.renuka-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 8 November 2005 (0.2 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.ashtamudi-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 18 August 2002 (61.4 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.loktak-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 23 March 1990 (266 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.east-kolkata-wetlands": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (125 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.nawabganj-bird-sanctuary": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 September 2019 (2.25 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.parvati-arga": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 2 December 2019 (7.22 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.park.keoladeo-national-park": {
+  "tags": [
+   "ramsar",
+   "national-park"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 1 October 1981 (28.73 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "ramsar",
+   "national-park"
+  ]
+ },
+ "in.wetland.rudrasagar-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 8 November 2005 (2.4 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.samaspur-bird-sanctuary": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 3 October 2019 (8 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.sambhar-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 23 March 1990 (240 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.sandi-bird-sanctuary": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 26 September 2019 (3 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.sarsai-nawar": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 September 2019 (1.61 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.sasthamkotta-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (3.73 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.haiderpur-wetland": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 13 April 2021 (69.08 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.surinsar-mansar-lakes": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 8 November 2005 (3.5 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.vembanad-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (1,512.5 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.wular-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 23 March 1990 (189 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.park.bhitarkanika-national-park": {
+  "tags": [
+   "ramsar",
+   "national-park"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 19 August 2002 (650 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "ramsar",
+   "national-park"
+  ]
+ },
+ "in.wetland.sur-sarovar": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 21 August 2020 (4.31 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.lonar-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 22 July 2020 (4.27 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.tso-kar": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 17 November 2020 (95.77 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.lake.chilika-lake": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 1 October 1981 (1,165 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.bakhira-wildlife-sanctuary": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 29 June 2021 (28.94 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.wetland.harike-wetland": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 23 March 1990 (41 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.park.gulf-of-mannar-biosphere-reserve": {
+  "tags": [
+   "ramsar",
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 8 April 2022 (527 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "ramsar",
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.dam.hirakud-dam": {
+  "tags": [
+   "ramsar"
+  ],
+  "facts": [
+   "Designated a Ramsar site on 12 October 2021 (743 km²)."
+  ],
+  "src": [
+   {
+    "title": "List of Ramsar sites in India (Ramsar Sites Information Service (rsis.ramsar.org))",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ramsar_sites_in_India"
+   }
+  ],
+  "why": [
+   "ramsar"
+  ]
+ },
+ "in.park.bandipur-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.jim-corbett-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.kanha-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.manas-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.park.melghat-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.palamau-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.ranthambore-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.similipal-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.park.sundarbans-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1973–74."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.park.periyar-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1978–79."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.sariska-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1978–79."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.buxa-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1982–83."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.indravati-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1982–83."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.namdapha-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1982–83."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.nagarjunasagar-srisailam-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1982–83."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.dudhwa-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1987–88."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.kalakkad-mundanthurai-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1988–89."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.valmiki-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1989–90."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.pench-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1992–93.",
+   "Part of Project Tiger's network of tiger reserves since 1998–99."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.tadoba-andhari-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1993–94."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.bandhavgarh-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1993–94."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.panna-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1994–95."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.dam.bhadra-dam": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1998–99."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.pakke-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1999–00."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.nameri-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1999–00."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.satpura-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 1999–00."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.anamalai-tiger-reserve": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2008–09."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.kaziranga-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2008–09."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.achanakmar-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2008–09."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.mudumalai-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2008–09."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.nagarhole-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2008–09."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.range.biligirirangan-hills": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2010–11."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.rajaji-national-park": {
+  "tags": [
+   "tiger-reserve",
+   "national-park"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2015."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   },
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve",
+   "national-park"
+  ]
+ },
+ "in.park.ranipur-tiger-reserve": {
+  "tags": [
+   "tiger-reserve"
+  ],
+  "facts": [
+   "Part of Project Tiger's network of tiger reserves since 2022."
+  ],
+  "src": [
+   {
+    "title": "List of tiger reserves in India (National Tiger Conservation Authority (ntca.gov.in))",
+    "url": "https://en.wikipedia.org/wiki/List_of_tiger_reserves_in_India"
+   }
+  ],
+  "why": [
+   "tiger-reserve"
+  ]
+ },
+ "in.park.mahatma-gandhi-marine-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.peak.saddle-peak": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.dibru-saikhowa-national-park": {
+  "tags": [
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.park.velavadar-blackbuck-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.gir-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.gulf-of-kutch-marine": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.great-himalayan-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.pin-valley-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.dachigam-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.kudremukh-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.eravikulam-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.silent-valley-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.hemis-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.kuno-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.sanjay-gandhi-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.keibul-lamjao-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.nokrek-national-park": {
+  "tags": [
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.peak.phawngpui": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.desert-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.khangchendzonga-national-park": {
+  "tags": [
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [
+   "In UNESCO's World Network of Biosphere Reserves since 2018."
+  ],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.glacier.gangotri-glacier": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.nanda-devi-national-park": {
+  "tags": [
+   "national-park",
+   "biosphere"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   },
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "national-park",
+   "biosphere"
+  ]
+ },
+ "in.park.valley-of-flowers": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.singalila-national-park": {
+  "tags": [
+   "national-park"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "List of national parks of India (Ministry of Environment, Forest and Climate Change / Wildlife Institute of India (ENVIS))",
+    "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_India"
+   }
+  ],
+  "why": [
+   "national-park"
+  ]
+ },
+ "in.park.nilgiri-biosphere-reserve": {
+  "tags": [
+   "biosphere"
+  ],
+  "facts": [
+   "In UNESCO's World Network of Biosphere Reserves since 2000."
+  ],
+  "src": [
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "biosphere"
+  ]
+ },
+ "in.island.great-nicobar": {
+  "tags": [
+   "biosphere"
+  ],
+  "facts": [
+   "In UNESCO's World Network of Biosphere Reserves since 2013."
+  ],
+  "src": [
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "biosphere"
+  ]
+ },
+ "in.range.seshachalam-hills": {
+  "tags": [
+   "biosphere"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Biosphere reserves of India (MoEFCC; UNESCO Man and the Biosphere Programme)",
+    "url": "https://en.wikipedia.org/wiki/Biosphere_reserves_of_India"
+   }
+  ],
+  "why": [
+   "biosphere"
+  ]
+ },
+ "w.capital.kigali": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bratislava": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.dodoma": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bern": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.pristina": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.banjul": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.port-louis": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.saint-johns": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.montevideo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.tunis": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.ashgabat": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.lusaka": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.harare": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.georgetown": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.reykjavik": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.kampala": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.niamey": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.dushanbe": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.asuncion": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.managua": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.freetown": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.pretoria": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.rabat": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.city.colombo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.ulaanbaatar": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.windhoek": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.abuja": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bissau": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.amman": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bishkek": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.san-jose": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.san-salvador": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.malabo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.zagreb": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.suva": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bamako": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.beirut": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.tbilisi": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.astana": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.vientiane": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.brazzaville": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.ottawa": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.belgrade": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.belmopan": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.baku": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.phnom-penh": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.sofia": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.canberra": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.victoria-seychelles": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.valletta": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.male": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.nassau": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.nicosia": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.hanoi": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.ankara": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.budapest": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.sanaa": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.lisbon": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.khartoum": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.oslo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.warsaw": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.dublin": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.kuala-lumpur": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.havana": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.santo-domingo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.accra": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.helsinki": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.copenhagen": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.brasilia": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.algiers": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.city.yangon": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.caracas": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.kyiv": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.tashkent": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.madrid": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bangkok": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.lima": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.amsterdam": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.seoul": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.berlin": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.kinshasa": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.new-delhi": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.baghdad": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.addis-ababa": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.tehran": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.buenos-aires": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.vienna": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.taipei": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.washington": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.london": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.riyadh": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.moscow": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.mexico-city": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.rome": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.beijing": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.nairobi": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.jakarta": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.bogota": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.cairo": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.paris": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.santiago": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ },
+ "w.capital.wellington": {
+  "tags": [
+   "national"
+  ],
+  "facts": [],
+  "src": [
+   {
+    "title": "Natural Earth populated places (Admin-0 capitals)",
+    "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
+   }
+  ],
+  "why": [
+   "capital"
+  ]
+ }
+}
