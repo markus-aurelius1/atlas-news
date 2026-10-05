@@ -8,7 +8,7 @@ const event = (id = 'one', overrides: Partial<ClassifiedItem> = {}): NewsEvent =
   const primary: ClassifiedItem = { title: 'RBI monetary regulation framework', url: `https://example.org/${id}`, publisher: 'Indian Express', sourceId: 'ie-economy', section: 'Economy', description: '', publishedAt: '2026-10-01T09:00:00Z', relevance: { accepted: true, score: 7, exam: 'both', subjects: ['Economy'], topics: ['Monetary policy'], staticAnchors: ['RBI'], signals: ['RBI · CSE P20/M3'] }, ...overrides }
   return { id: primary.url, primary, members: [primary] }
 }
-const index: RelevanceIndex = { version: 1, provenance: {}, signals: [{ concept: 'RBI', aliases: ['rbi'], subject: 'Economy', topic: 'Monetary policy', subtopic: 'Regulators', taxonomyIds: ['eco-1'], prelimsCount: 20, mainsCount: 3, prelimsDemand: true, mainsDemand: true }] }
+const index: RelevanceIndex = { version: 2, provenance: {}, signals: [{ concept: 'RBI', aliases: ['rbi'], subject: 'Economy', topic: 'Monetary policy', subtopic: 'Regulators', taxonomyIds: ['eco-1'], prelimsCount: 20, mainsCount: 3, prelimsDemand: true, mainsDemand: true }] }
 const workspace = (id = 'one', overrides: Partial<WorkspaceEvent> = {}): WorkspaceEvent => ({ ...buildWorkspace([event(id)], index)[0], ...overrides })
 const filters: WorkspaceFilters = { day: '2026-10-01', tab: 'To be Read', exam: 'All', subject: 'All subjects', publisher: 'All sources', query: '', budget: null }
 it('publisher-curated general coverage does not imply Prelims/Mains demand or Must Read', () => {

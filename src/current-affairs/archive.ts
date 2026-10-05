@@ -8,11 +8,15 @@ export const ARCHIVE_STORE = 'articles'
 export interface ArchivedArticle extends NewsItem { firstSeenAt: number; lastSeenAt: number }
 export type ArchivePeriod = 'Daily' | 'Weekly' | 'Monthly' | 'Yearly'
 export const archivePeriods: ArchivePeriod[] = ['Daily', 'Weekly', 'Monthly', 'Yearly']
-export function archiveRecord(item: NewsItem, seenAt: number): ArchivedArticle | null {
+/** Allowlisted, length-limited publisher metadata for one article, whatever has since become of its source. */
+export function articleMetadata(item: NewsItem, seenAt: number): ArchivedArticle | null {
   const url = canonicalUrl(item.url)
-  if (!url || !isActiveSource(item.sourceId) || !Number.isFinite(seenAt)) return null
+  if (!url || !Number.isFinite(seenAt) || typeof item.title !== 'string' || typeof item.publisher !== 'string' || typeof item.sourceId !== 'string' || typeof item.section !== 'string' || typeof item.description !== 'string') return null
   const image = item.thumbnailUrl && thumbnailUrl(item.thumbnailUrl)
   return { url, title: item.title.slice(0, 400), publisher: item.publisher.slice(0, 100), sourceId: item.sourceId, section: item.section.slice(0, 100), description: item.description.slice(0, 600), publishedAt: item.publishedAt && Number.isFinite(Date.parse(item.publishedAt)) ? new Date(item.publishedAt).toISOString() : null, ...(image ? { thumbnailUrl: image } : {}), firstSeenAt: seenAt, lastSeenAt: seenAt }
+}
+export function archiveRecord(item: NewsItem, seenAt: number): ArchivedArticle | null {
+  return isActiveSource(item.sourceId) ? articleMetadata(item, seenAt) : null
 }
 export function periodKey(day: string, period: ArchivePeriod): string {
   if (day === UNDATED) return UNDATED
@@ -45,6 +49,17 @@ export async function readArchive(factory: IDBFactory = indexedDB): Promise<Arch
   return new Promise((resolve, reject) => {
     const tx = db.transaction(ARCHIVE_STORE, 'readonly'), request = tx.objectStore(ARCHIVE_STORE).getAll()
     tx.oncomplete = () => { db.close(); resolve(request.result.filter((row: ArchivedArticle) => isActiveSource(row.sourceId))) }
+    tx.onabort = () => { db.close(); reject(tx.error ?? new Error('Archive read failed')) }
+  })
+}
+/** Stored rows for these URLs, including ones whose source is no longer in the registry: a Saved article outlives its feed. */
+export async function readArchivedByUrl(urls: string[], factory: IDBFactory = indexedDB): Promise<ArchivedArticle[]> {
+  if (!urls.length) return []
+  const db = await openArchive(factory)
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(ARCHIVE_STORE, 'readonly'), store = tx.objectStore(ARCHIVE_STORE), found: ArchivedArticle[] = []
+    for (const url of urls) { const request = store.get(url); request.onsuccess = () => { if (request.result) found.push(request.result as ArchivedArticle) } }
+    tx.oncomplete = () => { db.close(); resolve(found) }
     tx.onabort = () => { db.close(); reject(tx.error ?? new Error('Archive read failed')) }
   })
 }

@@ -1,17 +1,22 @@
 /** Pure daily-edition, priority and reading-plan rules; all estimates use existing metadata, never article fetches. */
-import { OFFICIAL_LINKS } from './static-links'
-import { normalize } from './relevance'
-import { eventPersonalState, type PersonalState } from './personal-state'
+import { ANCHOR_PUBLISHERS } from './anchors.ts'
+import { OFFICIAL_LINKS } from './static-links.ts'
+import { normalize } from './relevance.ts'
+import { eventPersonalState, type PersonalState } from './personal-state.ts'
 import type { NewsEvent, RelevanceIndex } from './types'
 export const MUST_READ_THRESHOLD = 7
 export const EDITION_TIMEZONE = 'Asia/Kolkata'
 export const UNDATED = 'undated'
 export type ReadingTab = 'To be Read' | 'Read' | 'Saved'
-export interface WorkspaceEvent extends NewsEvent { mustRead: boolean; priority: number; priorityReasons: string[]; minutes: number; day: string }
+export interface WorkspaceEvent extends NewsEvent { mustRead: boolean; priority: number; priorityReasons: string[]; minutes: number; day: string; /** UPSC/UPPCS value used to rank stories and to choose the day's list. */ value?: number; valueReasons?: string[] }
+/** The rolling 24-hour list shows at most this many stories; lower-ranked ones stay in the Archive. */
+export const TODAY_STORY_LIMIT = 100
 export interface WorkspaceFilters { day: string; days?: string[]; tab: ReadingTab; exam: 'All' | 'Prelims' | 'Mains' | 'Both'; subject: string; publisher: string; query: string; budget: number | null }
+/** One formatter for every item: constructing it per call dominated clustering time on a full registry snapshot. */
+let editionDay: Intl.DateTimeFormat | undefined
 export function publicationDay(value: string | number | null): string {
   if (value === null || !Number.isFinite(new Date(value).getTime())) return UNDATED
-  return new Intl.DateTimeFormat('en-CA', { timeZone: EDITION_TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value))
+  return (editionDay ??= new Intl.DateTimeFormat('en-CA', { timeZone: EDITION_TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit' })).format(new Date(value))
 }
 export function shiftDay(day: string, delta: number): string {
   const date = new Date(`${day}T12:00:00Z`)
@@ -44,8 +49,32 @@ export function mustReadEvidence(event: NewsEvent, index: RelevanceIndex) {
   if (r.exam === 'both') add(1, 'Prelims and Mains demand')
   return { mustRead: r.accepted && score >= MUST_READ_THRESHOLD, priority: score, priorityReasons: reasons }
 }
+/**
+ * What a story is worth to a UPSC/UPPCS reader, from evidence already gathered: how strongly its best article matched
+ * the syllabus, how often its concepts recur in past papers and how specific they are, India and Uttar Pradesh
+ * relevance, the quality of the coverage, and how many publishers independently reported it.
+ */
+export function storyValue(event: NewsEvent, index: RelevanceIndex) {
+  const reasons: string[] = []
+  let value = 0
+  const add = (points: number, reason: string) => { if (points > 0) { value += points; reasons.push(`${reason} +${Math.round(points * 10) / 10}`) } }
+  const best = event.members.reduce((a, b) => b.relevance.score > a.relevance.score ? b : a)
+  add(best.relevance.score, 'Syllabus match')
+  const anchors = new Set(event.members.flatMap(m => m.relevance.staticAnchors)), signals = index.signals.filter(s => anchors.has(s.concept))
+  const recurrence = signals.reduce((max, s) => Math.max(max, s.prelimsCount + s.mainsCount + (s.uppcsCount ?? 0)), 0)
+  add(Math.min(2, 0.8 * Math.log10(1 + recurrence)), 'Past-paper recurrence')
+  if (signals.some(s => s.tier === 3 || s.taxonomyIds.length > 0 && (s.tier ?? 2) >= 2)) add(0.5, 'Specific syllabus concept')
+  const evidence = best.relevance.evidence ?? []
+  if (evidence.some(e => e.kind === 'state')) add(1, 'Uttar Pradesh')
+  else if (evidence.some(e => e.kind === 'india')) add(0.5, 'India')
+  if (event.members.some(m => ANCHOR_PUBLISHERS.includes(m.publisher))) add(1, 'Indian Express or The Hindu coverage')
+  if (event.members.some(m => /explained|explainer|editorial|opinion|upsc/i.test(m.section))) add(1, 'Explainer or editorial')
+  const publishers = new Set(event.members.map(m => m.publisher)).size
+  add(Math.min(4, 1.5 * Math.log2(publishers) + (event.overflow?.length ? 0.5 : 0)), `Reported by ${publishers}${event.overflow?.length ? '+' : ''} publishers`)
+  return { value: Math.round(value * 10) / 10, valueReasons: reasons }
+}
 export function buildWorkspace(events: NewsEvent[], index: RelevanceIndex): WorkspaceEvent[] {
-  return events.map(event => ({ ...event, ...mustReadEvidence(event, index), minutes: readingMinutes(event), day: publicationDay(event.primary.publishedAt) }))
+  return events.map(event => ({ ...event, ...mustReadEvidence(event, index), ...storyValue(event, index), minutes: readingMinutes(event), day: publicationDay(event.primary.publishedAt) }))
 }
 export function dailyGroups(events: WorkspaceEvent[]): Map<string, WorkspaceEvent[]> {
   const groups = new Map<string, WorkspaceEvent[]>()
@@ -56,7 +85,7 @@ export function editionProgress(events: WorkspaceEvent[], state: PersonalState) 
   const unread = events.filter(e => !eventPersonalState(e, state).readAt)
   return { total: events.length, read: events.length - unread.length, unread: unread.length, minutesLeft: unread.reduce((n, e) => n + e.minutes, 0), mustRead: events.filter(e => e.mustRead).length }
 }
-const valueOrder = (a: WorkspaceEvent, b: WorkspaceEvent) => Number(b.mustRead) - Number(a.mustRead) || b.priority - a.priority || (Date.parse(b.primary.publishedAt ?? '') || 0) - (Date.parse(a.primary.publishedAt ?? '') || 0) || a.id.localeCompare(b.id)
+export const valueOrder = (a: WorkspaceEvent, b: WorkspaceEvent) => (b.value ?? 0) - (a.value ?? 0) || Number(b.mustRead) - Number(a.mustRead) || b.priority - a.priority || (Date.parse(b.primary.publishedAt ?? '') || 0) - (Date.parse(a.primary.publishedAt ?? '') || 0) || a.id.localeCompare(b.id)
 export function readingQueue(personal: import('./personal-state').PersonalEntry): ReadingTab {
   return personal.savedAt ? 'Saved' : personal.readAt ? 'Read' : 'To be Read'
 }

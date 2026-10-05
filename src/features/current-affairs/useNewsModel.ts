@@ -11,6 +11,7 @@ import { activeFeedItems } from '@/current-affairs/sources'
 import type { ClassifiedItem, NewsItem, Relevance, RelevanceIndex } from '@/current-affairs/types'
 import { buildWorkspace } from '@/current-affairs/workspace'
 import { useArchive } from './useArchive'
+import { usePinned } from './usePinned'
 import { useFeeds } from './useFeeds'
 
 const verdicts = new WeakMap<RelevanceIndex, Map<string, Relevance>>()
@@ -39,6 +40,16 @@ export function useNewsModel() {
     }
     return [...items.values()].map((item) => classified(item, index))
   }, [data, index, archived])
-  const events = useMemo(() => (index ? buildWorkspace(clusterItems(all), index) : []), [all, index])
+  const pinned = usePinned()
+  const events = useMemo(() => {
+    if (!index) return []
+    const stories = buildWorkspace(clusterItems(all), index)
+    if (!pinned.length) return stories
+    // A Saved article is never dropped: when its source has left the registry, its feed no longer carries it or it
+    // no longer forms a story, it is listed on its own from the metadata pinned when it was saved.
+    const listed = new Set(stories.flatMap((event) => [...event.members.map((m) => m.url), ...(event.overflow ?? [])]))
+    const kept = pinned.filter((article) => !listed.has(article.url)).map((article) => { const item = classified(article, index); return { id: item.url, primary: item, members: [item] } })
+    return kept.length ? [...stories, ...buildWorkspace(kept, index)] : stories
+  }, [all, index, pinned])
   return { ...feeds, archived, archiveError, classified: all, events }
 }

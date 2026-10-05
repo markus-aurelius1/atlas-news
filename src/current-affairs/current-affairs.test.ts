@@ -2,24 +2,40 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import { canonicalUrl, cleanText, dedupeUrls, parseFeed, thumbnailUrl } from './feed'
-import { collectFeeds } from './gateway'
-import { NEWS_SOURCES, activeFeedItems } from './sources'
+import { collectFeeds, COLLECT_BUDGET_MS, FEED_CONCURRENCY } from './gateway'
+import { MAX_NEWS_SOURCES, NEWS_SOURCES, activeFeedItems } from './sources'
 import { classify } from './relevance'
 import { clusterItems } from './cluster'
 import { referenceLinks } from './static-links'
 import type { ClassifiedItem, NewsItem, RelevanceIndex } from './types'
 const source = NEWS_SOURCES.find(s => s.id === 'ie-explained')!
-const index: RelevanceIndex = JSON.parse(readFileSync(new URL('../../public/current-affairs/v1/relevance-index.json', import.meta.url), 'utf8'))
+const index: RelevanceIndex = JSON.parse(readFileSync(new URL('../../public/current-affairs/v2/relevance-index.json', import.meta.url), 'utf8'))
 const rss = '<rss version="2.0"><channel><item><title>RBI &amp; regulation</title><link>https://example.org/a?utm_source=x&amp;id=7</link><pubDate>Thu, 01 Oct 2026 10:00:00 GMT</pubDate><description><![CDATA[<p>Banking &amp; credit &#8211; rules</p>]]></description><content:encoded>FULL BODY MUST NOT SHIP</content:encoded></item></channel></rss>'
 const item = (title: string, overrides: Partial<NewsItem> = {}): NewsItem => ({ title, description: '', publisher: 'Indian Express', section: 'Explained', sourceId: 'ie-explained', url: 'https://example.org/' + encodeURIComponent(title), publishedAt: '2026-10-01T10:00:00Z', ...overrides })
 const classified = (title: string, overrides: Partial<NewsItem> = {}): ClassifiedItem => { const row = item(title, overrides); return { ...row, relevance: classify(row, index) } }
 describe('RSS and Atom gateway', () => {
   it('fetches newspapers only and excludes removed official items from older caches', () => {
-    expect(NEWS_SOURCES).toHaveLength(39)
-    expect(new Set(NEWS_SOURCES.map(s => s.publisher)).size).toBe(9)
-    expect(NEWS_SOURCES.every(s => s.kind === 'newspaper' || s.kind === 'international')).toBe(true)
-    expect(NEWS_SOURCES.some(s => /rbi|sebi|pib/.test(s.id))).toBe(false)
+    expect(NEWS_SOURCES).toHaveLength(77)
+    expect(new Set(NEWS_SOURCES.map(s => s.publisher)).size).toBe(33)
+    expect(NEWS_SOURCES.every(s => s.kind === 'newspaper' || s.kind === 'international' || s.kind === 'newsletter')).toBe(true)
+    expect(NEWS_SOURCES.some(s => /^(?:rbi|sebi|pib)/.test(s.id) || /(?:^|.)(?:rbi.org.in|sebi.gov.in|pib.gov.in)$/.test(new URL(s.feedUrl).hostname))).toBe(false)
     expect(activeFeedItems([item('News'), item('Old circular', { sourceId: 'rbi-notifications' }), item('Old SEBI notice', { sourceId: 'sebi' }), item('Unknown feed', { sourceId: 'unknown' })]).map(i => i.title)).toEqual(['News'])
+  })
+  it('keeps the curated registry capped, unique, HTTPS-only and free of rejected or removed feeds', () => {
+    expect(NEWS_SOURCES.length).toBeLessThanOrEqual(MAX_NEWS_SOURCES)
+    expect(MAX_NEWS_SOURCES).toBeLessThan(100)
+    expect(new Set(NEWS_SOURCES.map(s => s.id)).size).toBe(NEWS_SOURCES.length)
+    expect(new Set(NEWS_SOURCES.map(s => s.feedUrl)).size).toBe(NEWS_SOURCES.length)
+    expect(NEWS_SOURCES.every(s => new URL(s.feedUrl).protocol === 'https:' && new URL(s.siteUrl).protocol === 'https:' && s.enabled)).toBe(true)
+    const substack = NEWS_SOURCES.filter(s => new URL(s.feedUrl).hostname.endsWith('.substack.com'))
+    expect(substack.map(s => new URL(s.feedUrl).hostname.split('.')[0]).sort()).toEqual(['foifaction', 'gentleleviathan', 'pibindia', 'publicpolicy', 'rgupta', 'statsandsociety', 'theeconomistoffthecharts', 'thequantifiedindia'])
+    expect(substack.every(s => s.kind === 'newsletter' && s.feedUrl.endsWith('/feed'))).toBe(true)
+    expect(NEWS_SOURCES.find(s => s.id === 'et-uttarpradesh')).toMatchObject({ section: 'Uttar Pradesh', feedUrl: 'https://b2b.economictimes.indiatimes.com/rss/uttarpradesh' })
+    // Shortlisted feeds that failed the 2026-10-05 live probe (empty, dormant, RSS 1.0/RDF or redundant) stay out.
+    for (const id of ['et-bfsi', 'et-defence', 'et-energy', 'et-government', 'et-health', 'et-infra', 'et-legal', 'et-psu', 'et-telecom', 'ext-nature', 'ext-science-org-news', 'ext-dw-english', 'nyt-energy-environment', 'toi-education']) expect(NEWS_SOURCES.some(s => s.id === id)).toBe(false)
+    expect(NEWS_SOURCES.some(s => /sport|cricket|gaming|games|gizmodo|techcrunch|techmeme|techradar|technologyreview|washingtonpost|news.google|lifestyle|entertainment/i.test(s.feedUrl + ' ' + s.id + ' ' + s.section))).toBe(false)
+    // The publisher-curated UPSC admission stays tied to the one verified feed.
+    expect(NEWS_SOURCES.filter(s => s.id === 'ie-upsc')).toHaveLength(1)
   })
   it('normalizes RSS metadata without full article content', () => {
     const rows = parseFeed(rss, source)
@@ -71,6 +87,35 @@ describe('RSS and Atom gateway', () => {
     expect(fetcher).toHaveBeenCalledTimes(2)
     expect(data.fetchedAt).toBe('1970-01-01T00:00:00.000Z')
   })
+  it('keeps upstream fan-out bounded and reports sources in registry order', async () => {
+    const sources = Array.from({ length: 25 }, (_, i) => ({ ...source, id: 's' + i, feedUrl: 'https://example.org/feed/' + i }))
+    let inFlight = 0, peak = 0
+    const fetcher = vi.fn<typeof fetch>().mockImplementation(async url => {
+      peak = Math.max(peak, ++inFlight)
+      await new Promise(r => setTimeout(r, 2))
+      inFlight--
+      return new Response(String(url).endsWith('/7') ? '' : rss.replace('https://example.org/a?', String(url) + '/a?'), { status: String(url).endsWith('/7') ? 502 : 200 })
+    })
+    const data = await collectFeeds(fetcher, sources, 0)
+    expect(peak).toBe(FEED_CONCURRENCY)
+    expect(fetcher).toHaveBeenCalledTimes(25)
+    expect(data.sources.map(s => s.sourceId)).toEqual(sources.map(s => s.id))
+    expect(data.sources.filter(s => s.status === 'failed').map(s => s.sourceId)).toEqual(['s7'])
+    expect(data.items).toHaveLength(24)
+  })
+  it('stops starting upstream requests once the collection budget is spent', async () => {
+    vi.useFakeTimers()
+    try {
+      const sources = Array.from({ length: FEED_CONCURRENCY * 2 + 3 }, (_, i) => ({ ...source, id: 'hang' + i, feedUrl: 'https://example.org/hang/' + i }))
+      const fetcher = vi.fn<typeof fetch>().mockImplementation(async (_url, options) => new Promise((_, reject) => options?.signal?.addEventListener('abort', () => reject(new Error('timeout')))))
+      const promise = collectFeeds(fetcher, sources)
+      await vi.advanceTimersByTimeAsync(COLLECT_BUDGET_MS + 1)
+      const data = await promise
+      expect(fetcher).toHaveBeenCalledTimes(FEED_CONCURRENCY * 2)
+      expect(data.sources).toHaveLength(sources.length)
+      expect(data.sources.every(s => s.status === 'failed')).toBe(true)
+    } finally { vi.useRealTimers() }
+  })
   it('times out an individual publisher without suppressing a successful one', async () => {
     vi.useFakeTimers()
     try {
@@ -95,12 +140,13 @@ describe('CSE relevance', () => {
     expect(result.accepted).toBe(true)
     expect(result.staticAnchors.length).toBeGreaterThan(0)
   })
-  it('uses publisher-curated UPSC coverage without inventing PYQ concepts or exam demand', () => {
+  it('treats the publisher-curated UPSC feed as a prior, never a bypass, and invents no exam demand', () => {
     const title = 'UPSC Key: Poompuhar, NCERT Textbooks and Article 370'
     const result = classify(item(title, { sourceId: 'ie-upsc', section: 'UPSC Current Affairs' }), index)
-    expect(result).toMatchObject({ accepted: true, exam: 'general', subjects: ['General studies'], staticAnchors: [] })
-    expect(result.signals).toEqual(['Publisher-curated UPSC coverage; no matched PYQ concept'])
-    expect(classify(item(title, { sourceId: 'hindu-national' }), index).accepted).toBe(false)
+    expect(result).toMatchObject({ accepted: true, staticAnchors: ['Constitutional articles'], subjects: ['Polity'] })
+    expect(result.evidence).toEqual(expect.arrayContaining([expect.objectContaining({ kind: 'source', label: 'Publisher-curated UPSC section' })]))
+    // The same feed without any syllabus concept stays out, with no exam demand claimed.
+    expect(classify(item('UPSC Key: Poompuhar and a long weekend', { sourceId: 'ie-upsc', section: 'UPSC Current Affairs' }), index)).toMatchObject({ accepted: false, exam: 'general', staticAnchors: [], signals: [] })
     expect(classify(item('UPSC MCQs on science', { sourceId: 'ie-upsc' }), index).accepted).toBe(false)
     expect(classify(item('Cricket match score', { sourceId: 'ie-upsc' }), index).accepted).toBe(false)
   })

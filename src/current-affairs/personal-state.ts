@@ -22,7 +22,8 @@ export function parsePersonalState(raw: string | null): PersonalState {
 }
 export function readPersonalState(storage: StateStorage): PersonalState { return parsePersonalState(storage.getItem(CA_STATE_KEY)) }
 export function eventPersonalState(event: NewsEvent, state: PersonalState): PersonalEntry {
-  const rows = event.members.map(m => state.entries[m.url]).filter((row): row is PersonalEntry => !!row)
+  // Further reports of the same event count too, so a story stays read when a better article replaces the one opened.
+  const rows = [...event.members.map(m => m.url), ...(event.overflow ?? [])].map(url => state.entries[url]).filter((row): row is PersonalEntry => !!row)
   const earliest = (field: 'readAt' | 'savedAt' | 'ignoredAt') => { const values = rows.map(r => r[field]).filter(timestamp); return values.length ? Math.min(...values) : undefined }
   return { readAt: earliest('readAt'), savedAt: earliest('savedAt'), ignoredAt: earliest('ignoredAt'), note: rows.find(r => r.note)?.note ?? '' }
 }

@@ -1,0 +1,2309 @@
+{
+ "note": "Hand-labelled feed metadata from the 2026-10-05 registry snapshot. relevant: UPSC/UPPCS current affairs a careful reader would want; not-relevant: noise or off-syllabus; borderline: either verdict is acceptable. Titles and truncated feed summaries only.",
+ "cases": [
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Appointing the Election Commission: An Expert Explains what Constituent Assembly said",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Supreme Court notice to ECI, Centre on plea challenging decisions taken by CEC-led poll panel",
+   "description": "The Bench said the decisions of the Election Commission have to be either unanimous or by majority and that it presumed that this is how all decisions were taken",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Justice Bhuyan: ‘Mass voter exclusion would negate constitutional order’",
+   "description": "The Supreme Court judge says no amount of whataboutery can justify the exclusion of voters en masse from the electoral rolls as such an action is fatal to the Constitution.",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Obstacle race: On Special Intensive Revision exercise",
+   "description": "The SIR is threatening universal adult franchise",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Two or three?: On the Court, students, three-language policy",
+   "description": "Students must be free to choose a third language that is not tested in a Board exam",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Why Amit Shah’s 2029 UCC push is going through states, not Parliament",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "The evolution of state protections under Article 371, and what 371K could mean for Ladakh",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Process of deleting citizens as voters ‘intrinsically arbitrary’, says SC judge amid SIR concerns",
+   "description": "Former SC judge Rohinton Fali Nariman also flagged crores of electors being removed from rolls and said that the ‘Election Commission cannot malfunction’.",
+   "publisher": "Scroll.in",
+   "section": "Latest",
+   "sourceId": "india-scroll-in"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Declare ‘Vettri Payanam’ scheme unconstitutional, urges private bus operator before Madras High Court",
+   "description": "A private bus operator from Erode claims that no-fare travel for women in government buses alone would cause a severe dent to their business and force them to shut down operations",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Jharkhand woman still in detention centre despite court order. Now HC asks, ‘under what law?’",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "SC orders vehicle seizure, licence renewal curbs over unpaid e-challans",
+   "description": "The Supreme Court directed states and UTs to recover unpaid e-challans by seizing vehicles and blocking registration, fitness, PUC and ownership-transfer services until outstanding fines are cleared",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "NHRC directs states to protect street vendors from harassment, arbitrary eviction",
+   "description": "The National Human Rights Commission (NHRC) has directed all states and Union Territories to ensure that street vendors, hawkers and small traders are not unnecessarily displaced or harassed during the upcoming festive season. In directions issued ahead of Navratri, Diwali and Chhath Puja, the Commi",
+   "publisher": "The Tribune",
+   "section": "India",
+   "sourceId": "tribune-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Madhya Pradesh pauses directive on community forest rights after Union Minister’s letter",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Perilous retreat: On gram sabhas, tribal land issues",
+   "description": "Gram sabhas must have a veto on issues relating to tribal land",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Balance AI-driven judicial transformation with constitutional values: CJI",
+   "description": "Surya Kant says technology can improve access and reduce delays without diluting dignity, equality, liberty and fairness",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "From Amitabh Bachchan to Janhvi Kapoor: How Delhi HC is redefining protection of celebrity identity",
+   "description": "The nature of this litigation has evolved, with courts taking a more nuanced and narrow approach to the personality rights of celebrities",
+   "publisher": "Hindustan Times",
+   "section": "Explained",
+   "sourceId": "ht-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Fiscal federalism: Why public finance matters to every citizen",
+   "description": "Sarthak Pradhan and Pranay Kotasthane's book, Fiscal Fables, offers insights into India's public finance, linking tax policies to citizen welfare.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "‘Assembly or panchayat?’: J&K legislators slam law secretary’s letter against statehood resolution",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Vijay Govt faces RTI backlash: What was controversial Tamil Nadu order and why has it been revoked now?",
+   "description": "The now-retracted order had originally invoked Section 24(4) of the transparency law to classify the department as an ‘Intelligence and Security Organisation,’ thereby shielding it from public disclosures.",
+   "publisher": "Mint",
+   "section": "Politics",
+   "sourceId": "mint-politics"
+  },
+  {
+   "label": "relevant",
+   "group": "polity",
+   "title": "Government panel to study AI-copyright hasn’t met since June; second working paper delayed",
+   "description": "The DPIIT committee was expected to examine ownership, liability and originality of AI-generated content, but members say discussions have become sporadic.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "One state, one ration card: MP reforms its Aadhaar-enabled PDS, helps migrant workers",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Governance",
+   "sourceId": "ie-governance"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "Karnataka’s gig-worker welfare scheme faces test as unions seek rollout of benefits",
+   "description": "The implementation push comes amid legal challenges by platforms and industry bodies",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "VB-G RAM G: Work demand from households rises 34% to 15.64 mn in September",
+   "description": "Household demand reaches 15.64 mn amid monsoon deficit in south, west states, up 26% from August",
+   "publisher": "Business Standard",
+   "section": "Economy",
+   "sourceId": "bs-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "Delhi women now needs Pink Saheli card for free DTC, cluster bus travel",
+   "description": "The Delhi government has notified that women residents can avail free travel on DTC and cluster buses only through the 'Pink Saheli Smart Card', officials said on Sunday. The change has been made under the Delhi Transport Corporation (Free and Concessional Passes) (Second Amendment) Regulations, 202",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "No PUC, No fuel: Haryana govt directs fuel pumps in its NCR districts",
+   "description": "In view of the stringent measures being implemented to control air pollution in the Delhi-NCR region, the Haryana transport department has directed all petrol pump operators and retail outlets in the NCR districts of the state to ensure mandatory verification of a valid Pollution Under Control Certi",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "FSSAI recalls Everest cumin power over ‘unsafe’ pesticide levels, suspends Creative Bakers' licence",
+   "description": "The FSSAI has, over the past six months, stepped up enforcement actions and relays them to food business operators and the public through social media.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "RML recalls 10 drug batches used to treat seizures, heart conditions",
+   "description": "Three tablet and five injectable batches failed analytical tests, while two more were found physically defective; hospital says no severe adverse effects reported",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "Lung cancer is India’s deadliest cancer. So why don’t we screen for it?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "What does the latest revision to the EPFO wage ceiling entail? | Explained",
+   "description": "How does the EPFO wage ceiling revision expand the social security net? What are the concerns of Unions and Employers? What are the legal issues that may arise?",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "The tussle for top posts in India’s CAPFs: IPS officers or force veterans?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "Editorial. NEET revamp",
+   "description": "Stringent laws, NTA reforms not enough",
+   "publisher": "BusinessLine",
+   "section": "Editorial",
+   "sourceId": "bl-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "Other than outrage: On women, unsafe public spaces",
+   "description": "Restrictions on women cannot be the answer to unsafe public spaces",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "governance",
+   "title": "SC reserves judgement on the front-of-the-pack warning label matter, says its order will be binding on FSSAI",
+   "description": "The bench directed all parties to file their final written submissions within three days.",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "GST revenue rises to ₹2.03 lakh crore in September but share of domestic sources falls to all-time low",
+   "description": "An analysis of historical GST data shows that an increasing share of GST revenues have been coming from the tax paid on imports rather than GST collected on domestic transactions",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "RBI likely to raise repo rate in October 2026 as West Asia crisis fuels inflation risks",
+   "description": "Experts poll: RBI may increase rates by 0.25 pc in Oct policy amid inflationary pressures",
+   "publisher": "Mint",
+   "section": "Economy",
+   "sourceId": "mint-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "RBI extends benchmark issuance strategy to 7 more states, J&K from Q3 FY27",
+   "description": "The framework will cover more states and Jammu and Kashmir from Q3 FY27, while total market borrowing by states and Union Territories is expected at ₹3.61 trillion.",
+   "publisher": "Business Standard",
+   "section": "Economy",
+   "sourceId": "bs-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Why edible oils are bearing the brunt of food inflation",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "IMF clears the way for Sri Lanka to draw $345 million",
+   "description": "The IMF warned that higher energy prices, the El Niño climate phenomenon and the West Asia conflict could threaten Sri Lanka’s economic recovery",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Manufacturing PMI rose to seven-month high of 55.1 in September",
+   "description": "September’s performance marked a significant recovery as the HSBC India Manufacturing Purchasing Managers’ Index rose by 2.3 index points from its 52.8 reading in August 2026",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "What are the objectives of the National PNG Drive 3.0? | Explained",
+   "description": "The PNGRB’s new drive aims to add 50 lakh new piped gas connections, convert 40 lakh unbilled connections into active users and register 50 lakh more users by the end of the fiscal year 2027",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Trade deals that undermine multilateralism may hit growth and exports, govt economists warn",
+   "description": "However, the report by the Department of Economic Affairs noted that while India was pursuing a diversified trade strategy, it was doing so within the multilateral trading system and still sought to have the WTO at the core",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "New bilateral investment treaty framework to get Cabinet nod: Sitharaman",
+   "description": "Finance Minister Nirmala Sitharaman on Monday said a new template for bilateral investment treaties is ready and is expected to get Cabinet approval soon in a bid to make it more investor-friendly. The new template, being prepared over the last one-and-a-half years, seeks to address shortcomings in ",
+   "publisher": "Business Standard",
+   "section": "Economy",
+   "sourceId": "bs-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Govt raises deepwater gas price ceiling to $9.89 per MMBtu, APM cap at $7",
+   "description": "The government has raised the ceiling price for natural gas produced from difficult fields such as the KG-D6 block of Reliance Industries and BP to USD 9.89 per million British thermal units (MMBtu) for the six months beginning October 1, from USD 8.90 previously, while keeping the ceiling for gas p",
+   "publisher": "Business Standard",
+   "section": "Economy",
+   "sourceId": "bs-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Mint Explainer | Why tax refunds matter for Indian apparel exports",
+   "description": "The RoSCTL scheme helps Indian apparel exporters offset embedded domestic taxes and compete on price as they face rising costs, supply-chain disruptions and competition from lower-cost manufacturing hubs.",
+   "publisher": "Mint",
+   "section": "Economy",
+   "sourceId": "mint-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "India-EU FTA to be signed on December 16",
+   "description": "The signing will be part of Prime Minister Modi’s upcoming trips in December to Canada, the U.S., and Belgium, where three separate FTAs are currently either being negotiated or in the process of approval",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Govt scraps duty on cotton imports till Sept 30 amid US tariffs pressure",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Economy",
+   "sourceId": "ie-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Asian Development Bank lowers India’s FY26 growth forecast to 6.5% over US tariffs",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Economy",
+   "sourceId": "ie-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "India raises wheat MSP by ₹25 to ₹2,610 per quintal for 2027-28",
+   "description": "The revised support prices cover six rabi crops, with the government estimating a Rs 90,962 crore payout for 324 lakh tonnes.",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Farmers’ share in rabi crop consumer prices ranged from 40-67%: RBI survey",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Economy",
+   "sourceId": "ie-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "India’s crude oil imports in August fall 3%, import bill rises 18%",
+   "description": "India’s net spend on oil and gas stayed nearly flat in August at $9.3 billion.",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Govt panel working on new SEZ norms for exporters to access domestic market",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Economy",
+   "sourceId": "ie-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Government set to halt sugarcane juice, B-heavy molasses diversion for ethanol",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "India",
+   "sourceId": "toi-india"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Industry is growing, but isn’t creating jobs",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Govt pushes rare-earth magnet capacity, India seeks control over critical manufacturing inputs: Shaktikanta Das",
+   "description": "The government has responded to vulnerabilities in the global rare-earth magnet supply chain by initiating measures to develop domestic capabilities in the sector",
+   "publisher": "BusinessLine",
+   "section": "Economy",
+   "sourceId": "bl-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Rupee hovers near 96 as oil stays above $100 per barrel, foreign selling persists",
+   "description": "The rupee started off on a weaker note against the US dollar due to soaring crude oil prices and foreign investors selling off. In response, the Reserve Bank of India is stepping in to curb volatile changes, as forex reserves dwindle. Market analysts anticipate a possible interest rate increase foll",
+   "publisher": "Times of India",
+   "section": "Business",
+   "sourceId": "toi-business"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Monsoon ends with 13% rain deficit, driest year in a decade",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Economy maintains strong start to FY27 as industrial production rises 6.7% in July",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Economy",
+   "sourceId": "ie-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "For a small fee, UPI has become stronger",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Maharashtra regains the sugar crown but water, yield, and idle capacity raise bigger questions",
+   "description": "Five years of data reveal that Maharashtra’s real challenge is no longer installed capacity, but dependable cane, water efficiency, and the optimal utilisation of its bioenergy infrastructure.",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "Why India’s cold storages need collateral management?",
+   "description": "For the agricultural sector to achieve genuine resilience, physical preservation must work in sync with structured trade finance",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "G7 unlocks 100 million barrels: Who holds world’s emergency oil and who decides when to release it? A deep dive",
+   "description": "G7 unlocks 100 million barrels as oil supplies tighten. Who controls the world's emergency oil reserves, and who decides when they are released?",
+   "publisher": "Mint",
+   "section": "Economy",
+   "sourceId": "mint-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "US’s Russia sanctions Bill: What 100% tariffs on Russian oil buyers can mean for India",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "economy",
+   "title": "US leverage, India’s limited options: Why is the trade deal taking so long?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "In tit-for-tat move, India, Pakistan summon top envoys",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "India is discussing agreements on grains and maritime safety with Moscow and Kyiv: Jaishankar",
+   "description": "At German think-tank event in Delhi, External Affairs Minister presents strong defence of India-Russia ties; says U.S. and China are exclusivist powers; suggests other countries build coalitions beyond the superpowers",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Ukraine ready to consider India’s ceasefire proposal: FM Sybiha",
+   "description": "‘We have four proposals; the broadest one is India’s proposal; we are ready for an energy and Black Sea ceasefire, but only in this combination,’ said Ukrainian Foreign Minister Andrii Sybiha",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Strait of Hormuz will not reopen until conditions are met, says Iran",
+   "description": "Iran's parliament speaker Mohammad Baqer Qalibaf said the Strait of Hormuz will remain closed until Washington meets seven conditions agreed under a June interim pact",
+   "publisher": "Business Standard",
+   "section": "World",
+   "sourceId": "bs-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "North Korea launches ballistic missile after Seoul demands apology over wounded soldiers",
+   "description": "Pyongyang fires towards sea a day after Kim Jong-un sister denounces South Korea for claiming North’s mines wounded South’s soldiers in DMZ North Korea fired a ballistic missile towards the sea on Saturday, South Korea and Japan said, ⁠a day ​after it rejected Seoul’s accusation of its mines woundin",
+   "publisher": "Guardian",
+   "section": "World",
+   "sourceId": "guardian-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Amid West Asia war, BRICS’s call on energy flows, infra protection reflects its dilemma",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "US choosing to be a 'lonelier power'; China rising on world stage: S Jaishankar",
+   "description": "In his address, the minister also laid out a road map for India’s economic growth, touched upon AI’s use and the FTA with the EU.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "What is Section 301? Why EAM Jaishankar says US trade probe could impact the deal",
+   "description": "What is Section 301 and why does it matter to the India-US trade deal? Jaishankar says the ongoing US trade probe could influence when the agreement is formally concluded.",
+   "publisher": "Mint",
+   "section": "Politics",
+   "sourceId": "mint-politics"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "India-Bangladesh ties should be Hasina-proof",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Outbound force: On the U.S. leaving Iraq",
+   "description": "The U.S. is leaving Iraq in weariness, if not defeat",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Saudi Arabia has defence pacts with Pakistan, Turkey, US: Why aren’t they fighting the Houthis?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Netanyahu faces another UN walkout: The history of such protests at the world body",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Finland backs India’s diplomatic push for negotiations to end Ukraine war",
+   "description": "Finland’s Ambassador to India, Mikko Kivikoski, praised India's diplomatic efforts to end the Russia-Ukraine war, emphasising the need to incentivise Moscow to negotiate. The envoy also noted how Russia’s invasion drastically shifted Finland’s security outlook, leading to its historic NATO membershi",
+   "publisher": "The Tribune",
+   "section": "World",
+   "sourceId": "tribune-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Popular Mobilisation Forces | Iraq’s militias within the military",
+   "description": "For the Iran-backed Shia armed organisations, which opposed the U.S. occupation of Iraq and frequently clashed with U.S. forces, the September 30 withdrawal of American troops, at a time when Washington wages war on Iran, is a ‘historic victory’",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Swiss President Guy Parmelin accorded grand ceremonial welcome at Rashtrapati Bhavan as three-day India State visit begins",
+   "description": "Swiss President Guy Parmelin arrived in New Delhi on Monday for a three-day State visit. Welcomed at Rashtrapati Bhavan with a Guard of Honour by President Droupadi Murmu and PM Modi, he will hold bilateral talks to boost trade, technology, and economic ties during the India-EFTA summit.",
+   "publisher": "The Tribune",
+   "section": "World",
+   "sourceId": "tribune-world"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "Russia to take 70,000 Indian skilled workers this year, Jaishankar tells parliamentary panel",
+   "description": "Jaishankar briefed the parliamentary committee on trade, investment, energy cooperation, Ukraine conflict and efforts to secure Indians serving in Russia",
+   "publisher": "BusinessLine",
+   "section": "Economy",
+   "sourceId": "bl-economy"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "IAF needs 36-40 jets annually; Pakistan’s fifth-gen jet plan worrying: Air Chief",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "India aims to sign multibillion-dollar French jet deal by March",
+   "description": "Price negotiations are in their final stages, with the deal estimated to be worth between $30 billion and $35 billion",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "A fighter-jet shortage won’t fly in these times",
+   "description": "The traditional tardiness of many of India’s public sector undertakings has been ignored for far too long. Averting our gaze now will have serious consequences",
+   "publisher": "Hindustan Times",
+   "section": "Editorial",
+   "sourceId": "ht-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "ir",
+   "title": "US demands up to $20,000 visa bond from 50 countries; India left out",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "World",
+   "sourceId": "ie-world"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Chhattisgarh tiger reserve finds 2,500 trees girdled. Satellite images show scale",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Mapping of two Western Ghats districts shows much of proposed ESA overlaps with Notified Forests, Protected Areas, or existing ESZs",
+   "description": "Citizen-led initiative breaks down the draft ESA notification for two districts to clear misconceptions about how it affects residents",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Two captive-bred great Indian bustards released in Rajasthan national park",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Nepal plans to drain four glacial lakes after deadly floods",
+   "description": "The work of draining “through gated structures” will start after a detailed study, and could take up ⁠to six years to complete, said Sanjeeb Baral, the Centre’s executive director.",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "India’s GLOF threat is growing. So must its resilience",
+   "description": "",
+   "publisher": "Down To Earth",
+   "section": "Environment & development",
+   "sourceId": "dte-news"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "The EU CBAM is taken to the WTO: What does this mean?",
+   "description": "",
+   "publisher": "Down To Earth",
+   "section": "Environment & development",
+   "sourceId": "dte-news"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Reintroduction of tigers in Buxa: What it means for conservation | Explained",
+   "description": "The release of the tigress is not is not merely about bringing tigers back to Buxa but its “objective is to create the conditions in which a tiger population can establish, breed and ultimately become viable and self-sustaining,” PIB said in a statement.",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Rescue act: On tiger reintroduction in West Bengal’s Buxa",
+   "description": "Preventing ecological degradation is the way to protect wildlife",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Season’s end: On the India Meteorological Department forecasts, rainfall deficit",
+   "description": "The IMD is conservative when it comes to projecting rainfall deficit",
+   "publisher": "The Hindu",
+   "section": "Editorial",
+   "sourceId": "hindu-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "El Niño calls for wider monitoring of ecological stress",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Why India needs more transmission, battery storage for green energy push",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "India’s first offshore wind farm prototype being planned off Thoothukudi in southern TN",
+   "description": "The project, estimated at ₹77 crore, is being tendered by Indian Port Rail & Ropeway Corporation Ltd (IPRCL)",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Keralam govt requests NGT to exempt it from creating ring-fenced account for liquid waste management",
+   "description": "Principal Bench of tribunal in New Delhi had earlier asked the authorities to set up a single, centralised ring-fenced account at the State level to deposit the funds earmarked as ‘environmental compensation’ for improper waste management",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Pay the Global South for climate damage, but only if it prices carbon, says economist Greenstone",
+   "description": "Michael Greenstone, Director of the Energy Policy Institute of the University of Chicago, says that the exact parameters of agreements would have to be negotiated",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Revealed: the methane mega-leaks from UN climate summit host Turkey",
+   "description": "Exclusive: Cop31 leader calling for global curbs on climate-heating gas has landfills producing some of world’s worst plumes Two or three nights each week, the smell descends. Residents of villages on the rural outskirts of Istanbul don’t know what the smell is, but they have been plagued by it for ",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Swiss Glaciers Vanished by Nearly a Fifth in Recent Years, Scientists Say",
+   "description": "One researcher called it a “desperately needed warning sign” that countries need to tackle human-driven climate change.",
+   "publisher": "New York Times",
+   "section": "Climate",
+   "sourceId": "nyt-climate"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Why Shimla monkey menace poses questions beyond human-wildlife conflict",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "India’s river interlinks may carry invasive species to more areas",
+   "description": "The Lower Ganga basin hosts 13-15 invasive alien species and could become a major source of invasives for the Mahanadi, home to 69 threatened species; water connections under the river interlinking project could also help aquatic pathogens to spread and flatten the unique biota that individual river",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "New checklist by Keralam research team records 3,261 flowering plant species in Agasthyamalai Biosphere Reserve",
+   "description": "Compilation by team from Jawaharlal Nehru Tropical Botanic Garden and Research Institute seeks to reaffirm global significance of Western Ghats as a biodiversity hotspot and need for focused, region-specific strategies for protecting it",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Editorial. CAFE smokescreen",
+   "description": "Fuel efficiency norms for cars disappointing",
+   "publisher": "BusinessLine",
+   "section": "Editorial",
+   "sourceId": "bl-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "In Assam, floods shift course. State response is static",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "environment",
+   "title": "Green pilgrimage : Regulate numbers, plastics, mountain waste",
+   "description": "A pilgrimage should leave a spiritual imprint, not a plastic one. But the Himalayas are increasingly bearing the burden of religious tourism. Kedarnath’s latest figures are a warning. The shrine generated 50.30 tonnes of waste between April and August — more than in any full year from 2023 to 2025. ",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "ISRO to get a boost for its satellite and space asset tracking with its newest facility in Guwahati",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "CSIR-CCMB develops India-specific tool to predict Sickle Cell severity",
+   "description": "The new tool could improve treatment decisions and disease management as existing international scoring systems do not accurately reflect the clinical profile of Indian patients with SCA",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "Multiple Indian payloads launched by Space X’s Falcon 9",
+   "description": "Dhruva Space’s LEAP-2, hosting multiple In-Orbit Demonstration (IOD) missions, which includes a star tracker by France-based Sodern ArianeGroup, and TAPAS-1 by India-based Satleo Labs, was part of the Transporter-18 mission",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "India takes step towards quantum-secure communication with 5.56-km free-space QKD link",
+   "description": "The field trial brought together indigenous technology, academic research and real-world testing to advance secure communication systems for the quantum era",
+   "publisher": "BusinessLine",
+   "section": "Science",
+   "sourceId": "bl-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "What are the three plague pandemics in human history?",
+   "description": "",
+   "publisher": "Down To Earth",
+   "section": "Environment & development",
+   "sourceId": "dte-news"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "Plague never went away. Death of a ‘lab technician’ in Siberia is a reminder of what it does and the panic it causes",
+   "description": "Yersinia pestis has shaped centuries of history, from Justinian to the Black Death to Bombay. One death in Irkutsk puts it back in the news.",
+   "publisher": "Hindustan Times",
+   "section": "Explained",
+   "sourceId": "ht-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "When AI agents slip the leash: How do companies like OpenAI control them?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "NASA’s Roman Space Telescope blasts off on SpaceX Falcon Heavy to unlock dark energy secrets",
+   "description": "By mapping billions of galaxies and studying how they are distributed and how their distances change over time, scientists hope Roman will provide new clues about the expansion of the universe and the forces driving it.",
+   "publisher": "Mint",
+   "section": "Science",
+   "sourceId": "mint-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "Google to test AI chip in space",
+   "description": "Project Suncatcher will enable Google’s experts to test hardware survival, cooling processes, and satellite interconnectivity",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "Trump, tech leaders sign 4-tier pact for AI self-regulation",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "World",
+   "sourceId": "ie-world"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "What human brain tissue transplanted into mice showed us",
+   "description": "A Stanford University experiment called ‘xenocortication’ lets human brain tissue develop inside a living mouse, offering a novel way to study the developing human brain and, potentially, how disease develops. It also raises new ethical questions about how far such experiments should go",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "relevant",
+   "group": "science",
+   "title": "Sputnik, Kaputnik and many giant leaps: The Space Race, 69 years later",
+   "description": "The launch of Sputnik 1 by the Soviet Union in 1957 initiated the space race with the US, leading to historic milestones.",
+   "publisher": "Hindustan Times",
+   "section": "Explained",
+   "sourceId": "ht-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "Election Commission likely to hold special revision of voter rolls ahead of UP assembly elections",
+   "description": "The voter list for the 2027 Uttar Pradesh assembly elections is expected to be released in the first week of January.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "UP girl dies amid ‘loud DJ music’: Allahabad High Court takes up noise pollution menace",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "U.P. focuses on utilisation of Gram Sabha ponds, reservoirs, rivers to make fisheries backbone of rural livelihood",
+   "description": "The State government says more than 80,000 hectares of Gram Sabha ponds and 2,205 km of rivers have been brought under leasing, and fish production has risen from 6.29 lakh tonnes to 15.90 lakh tonnes in eight years",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "UP power sector’s losses dip from 27% to 19.5% in 4 years, Minister Shripad Naik tells Rajya Sabha",
+   "description": "The power sector in Uttar Pradesh is experiencing a robust revival, marked by notable declines in technical and commercial losses. With 2025-26 on the horizon, the state aims to effectively meet its peak electricity demands thanks to considerable government funding.",
+   "publisher": "Economic Times",
+   "section": "Uttar Pradesh",
+   "sourceId": "et-uttarpradesh"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "Uttar Pradesh Pharma Conclave 1.0: Yogi Adityanath Declares State a Pharma Investment Hub",
+   "description": "Uttar Pradesh is stepping into the spotlight as a key player in pharmaceutical manufacturing. At the inaugural Pharma Conclave 1.0, Chief Minister Yogi Adityanath emphasized the state's shift towards a more investor-friendly environment. With commitments to ensure business safety, stability, and eff",
+   "publisher": "Economic Times",
+   "section": "Uttar Pradesh",
+   "sourceId": "et-uttarpradesh"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "UP industrial areas provided better lighting, surveillance",
+   "description": "Uttar Pradesh is transforming its industrial landscape to attract and accommodate investors. UPSIDA is brightening up the streets with more streetlights and high-mast lighting, while enhanced security measures involving 24/7 monitored CCTV cameras ensure a safe environment for business.",
+   "publisher": "Economic Times",
+   "section": "Uttar Pradesh",
+   "sourceId": "et-uttarpradesh"
+  },
+  {
+   "label": "relevant",
+   "group": "uppcs",
+   "title": "From Varanasi to Tashkent, how Mahatma Gandhi influenced Lal Bahadur Shastri",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Explained",
+   "sourceId": "ie-explained"
+  },
+  {
+   "label": "relevant",
+   "group": "substack",
+   "title": "Dispatch #127: The Indian economy has a demand problem",
+   "description": "In this dispatch, we will look at how weak demand in general has kept the demand for labour low and argue why that’s a tougher problem to solve.",
+   "publisher": "Gentle Leviathan",
+   "section": "Newsletter",
+   "sourceId": "substack-gentle-leviathan"
+  },
+  {
+   "label": "relevant",
+   "group": "substack",
+   "title": "Data Centres in India: Infrastructure for the Digital Age",
+   "description": "The digital services that have become part of everyday life depend on an infrastructure that most users rarely see.Thanks for reading People, Policies, Progress!",
+   "publisher": "People, Policies, Progress — PIB India",
+   "section": "Newsletter",
+   "sourceId": "substack-people-policies-progress-pib-india"
+  },
+  {
+   "label": "relevant",
+   "group": "substack",
+   "title": "Policy Paper: AI, Jobs, and the Social Contract",
+   "description": "AI will reorganise work at scale. How it reorganises opportunity, and in whose interest, is a matter of governance.",
+   "publisher": "India: Politics, Power & Public Discourse",
+   "section": "Newsletter",
+   "sourceId": "substack-india-politics-power-public-discourse"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Editorial. Bite the bullet",
+   "description": "Strong case for MPC to change course",
+   "publisher": "BusinessLine",
+   "section": "Editorial",
+   "sourceId": "bl-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Editorial. PMS promise",
+   "description": "SEBI’s new rules can help expand PMS segment",
+   "publisher": "BusinessLine",
+   "section": "Editorial",
+   "sourceId": "bl-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Mismatch mess : Genuine paddy farmers must not suffer",
+   "description": "THE Haryana paddy procurement problem exposes a larger weakness in the way technology is being used to deliver government support. The Meri Fasal Mera Byora (MFMB) portal was meant to make procurement more transparent and prevent bogus claims. But with procurement under way, nearly 59% of the crop a",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "SIR fallout : Need to streamline teachers’ duties",
+   "description": "THE Special Intensive Revision (SIR) of electoral rolls continues to be under sharp scrutiny for administrative and political reasons. Accused of disenfranchising crores of eligible citizens, the Election Commission of India (ECI) has directed its state poll officials to launch a special drive to in",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Drug seizure : Massive haul underscores the challenge",
+   "description": "ANY massive drug haul highlights the soundness of the strategies to prevent smuggling, but also lays bare the enormity of the challenge. As the use of drones complicates the sea and land route matrix, border security is a 24/7 test for the intelligence and interception capabilities. The seizure of 5",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Beyond the patent",
+   "description": "HARYANA’s decision to reimburse patent registration fees of up to Rs 50,000 for students is a welcome attempt to encourage innovation. But a patent is only the beginning of the journey. The harder question is what happens after the certificate is obtained. India has no shortage of bright students, r",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Knowledge Nugget | From grasslands to drought resilience: Key takeaways from UNCCD CoP 17",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "UPSC Key: Hindi Diwas, Lunar Polar Regions and Decoherence",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "relevant",
+   "group": "description",
+   "title": "Knowledge Nugget | CAFE-III norms: What are the new rules and how will they work?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "UPSC Essentials daily subject quiz : International Relations MCQs (Week 182) — Check out answers with explanations",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "UPSC Ethics Answer Practice: Ethics in public health domain | Question and Case Study",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Top 20 UPSC Current Affairs Pointers of the past week | September 28 to October 4, 2026",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "UPSC Current Affairs",
+   "sourceId": "ie-upsc"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Sensex and Nifty open higher after longest weekly decline in 25 years",
+   "description": "Sensex today: Both Nifty 50 and Sensex posted their eighth straight weekly decline last week, weighed down by record foreign selling, elevated crude oil prices.",
+   "publisher": "Hindustan Times",
+   "section": "Business",
+   "sourceId": "ht-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Stock market on the rise: What caused the Nifty, Sensex rebound today?",
+   "description": "The Indian stock market rebounded on Monday after a lengthy losing streak. The Sensex and Nifty climbed as sectors like finance and IT saw gains.",
+   "publisher": "Hindustan Times",
+   "section": "Business",
+   "sourceId": "ht-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Microsoft stock at $518: Why a 10th share split may not happen anytime soon",
+   "description": "Microsoft stock trades near $518, but a 10th stock split may not happen soon. Here's why its share price, earnings and Dow Jones weight matter.",
+   "publisher": "Hindustan Times",
+   "section": "Business",
+   "sourceId": "ht-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Gold slips nearly 1% to ₹1.49 lakh/10g as firm dollar keeps lid on bullion recovery",
+   "description": "Gold had shed ₹2,887, or 2 per cent, in a holiday-shortened last week, to end at ₹1.5 lakh per 10 grams.",
+   "publisher": "Hindustan Times",
+   "section": "Business",
+   "sourceId": "ht-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Nikkei jumps 2.5% above 70,000 to three-month high as AI stocks rally",
+   "description": "Japan's Nikkei index experienced a remarkable rise of over 2% on Monday, breaking the 70,000 mark for the first time in three months. The surge was largely driven by chip manufacturers like Tokyo Electron and Advantest, while Kioxia's contribution fell short. The optimistic trend in Japanese stocks ",
+   "publisher": "Times of India",
+   "section": "Business",
+   "sourceId": "toi-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Intel Wildcat Lake chips find an elusive formula and Acer Swift Air 14 proves it",
+   "description": "Intel has given Windows PC makers the key tool to build a strong answer to the Apple MacBook Neo, and they must make full use of it",
+   "publisher": "Hindustan Times",
+   "section": "Business",
+   "sourceId": "ht-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Bharat Petroleum Corporation Limited (BPCL) is proud to sponsor Indian football team’s high-profile international fixtures at the Kolkata matches",
+   "description": "MUMBAI, India, Oct. 5, 2026 /PRNewswire/ — Bharat Petroleum Corporation Limited (BPCL), Director (Marketing) Mr. Subhankar Sen said the matches of Indian Football team represent more than just exciting sporting encounters offering an opportunity to inspire millions of young Indians to dream bigger a",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "LTM Launches BlueVerse™ AgenTraceIQ",
+   "description": "Offering stems from Rubrik’s Project Hourglass, an alliance helping organizations scale agentic AI securely Mumbai, Maharashtra, India – Business Wire India LTM, the Business Creativity partner to the world’s largest enterprises, today announced the launch of BlueVerse™ AgenTraceIQ, an offering desi",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Lite Bite Foods Debuts First Hybrid Standalone with Street Foods by Punjab Grill & Asia Seven in Gurugram",
+   "description": "New Delhi [India], October 5: Delhi NCR-based hospitality major Lite Bite Foods has opened a new outlet that brings together two of its popular quick-service brands — Street Foods by Punjab Grill and Asia Seven — under one roof at HUDA Market, Sector 14, Gurugram. The store marks the first time the ",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Zeal Global announced plans to expand in Central Asia at Tashkent Summit",
+   "description": "New Delhi [India], October 5: Zeal Global Services Ltd. (NSE: ZEAL), a leading air cargo logistics solutions provider, recently announced its strategic plans to expand operations into Central Asia. The announcement was made on October 1, 2026, at the Central Asia Air Cargo Summit in Tashkent, Uzbeki",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Lord's Mark Industries Advances UK & Allied Countries Expansion",
+   "description": "The development comes shortly after the company's MHRA registration for its AI-powered haemodialysis system, announced in September, which marked its planned entry into the UK and UK-allied markets.",
+   "publisher": "NDTV",
+   "section": "Latest",
+   "sourceId": "india-ndtv-latest"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Dhanuka Agritech launches biosolution adjuvant Wetcit Neo",
+   "description": "Wetcit Neo addresses a key challenge by improving spray spreading, coverage and absorption, particularly on crops where waxy leaf surfaces can limit the effectiveness of conventional sprays",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Anay Gupta re-elected as All India Rubber Industries Association president",
+   "description": "Gupta has played an active role in AIRIA’s initiatives focused on industry development, policy advocacy, and stakeholder engagement",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Two persons hack farmer to death in Tiruttani; one arrested",
+   "description": "The victim had given a complaint to the Tiruttani police against a youth for harassing his minor daughter; the youth and his friend hacked the man to death in retaliation, police said",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Two drown in the Krishna in separate incidents in Andhra’s Krishna district; bodies retrieved",
+   "description": "A 70-year-old cattle rearer was washed away at Madhyalanka, and a 25-year-old drowned when the boat he was fishing from with his parents capsized; his parents swam to safety",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "22 Telangana pilgrims injured as bus hits truck in Bihar’s Buxar",
+   "description": "At least 22 pilgrims from Telangana were injured on Monday morning when a bus carrying them to Ayodhya from Bihar’s Gayaji collided with a truck in Buxar, officials said. The pilgrims had come to Gayaji to perform ‘pind daan’ during the Pitru Paksha fair. The accident took place around 4 am on the V",
+   "publisher": "The Tribune",
+   "section": "India",
+   "sourceId": "tribune-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "US Marine arrested over alleged murder of Japanese woman; embassy vows cooperation",
+   "description": "As per local police, a 20-year-old Marine stationed at Futenma Air Station killed the 39-year-old woman at a hotel in Naha and stole her wallet.",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Seven charged with setting fire to 13 rented Louisiana homes for insurance claims",
+   "description": "Seven people have been charged in Louisiana over an alleged insurance fraud scheme involving 13 residential fires between 2019 and 2026. Prosecutors say the group rented homes, took out insurance, allegedly set fires and then submitted false claims for property losses, hotel stays and disaster relie",
+   "publisher": "Times of India",
+   "section": "World",
+   "sourceId": "toi-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Christa Pike execution: Two lethal doses, but she survived. What’s next?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "World",
+   "sourceId": "ie-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Shadolla Peterson: Who is Christa Pike's accomplice and where is she now? Then-Police Chief called crime scene ‘incredibly grotesque’",
+   "description": "Christa Pike had two accomplices – 17-year-old Tadaryl Shipp and 18-year-old Shadolla Peterson. Pike was the only one who ended up on death row.",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Cornell University case: She didn’t initially call it rape. New records show what changed",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "World",
+   "sourceId": "ie-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "FBI director Kash Patel gets engaged to longtime girlfriend, country singer Alexis Wilkins",
+   "description": "FBI Director Kash Patel is engaged to his country singer girlfriend, Alexis Wilkins, the pair announced in a post to X on Sunday evening. Wilkins, 27, posted a black-and-white photo of herself standing with Patel, 46, flashing her hand in front of them to show off her ring with the caption, “Went an",
+   "publisher": "The Tribune",
+   "section": "World",
+   "sourceId": "tribune-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Paris gala: Hyderabad’s Bhavitha dazzles in Chanel, but mum’s Kanjivaram saree outshines runway looks",
+   "description": "It is Bhavitha Mandava making her country and family proud once again. Mandava made her debut on the prestigious BoF 500 red carpet on October 3. The model attended the BoF Class of 2026 gala in Paris with her parents, wearing a Chanel ensemble. For the occasion, she chose a dress from Chanel’s Fall",
+   "publisher": "The Tribune",
+   "section": "India",
+   "sourceId": "tribune-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "\"Apologise For What?\" Portugal Boss Snaps At Reporter Over Ronaldo Question",
+   "description": "Portugal coach Jorge Jesus lost his cool at a reporter in the press conference after being asked if an apology has been issued over the Cristiano Ronaldo controversy.",
+   "publisher": "NDTV",
+   "section": "Latest",
+   "sourceId": "india-ndtv-latest"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "BenDaDonnn Texas Arrest Controversy Explained As Police Detail Incident",
+   "description": "BenDaDonnn was arrested in College Station after a police confrontation outside The Spot. Police said he faced an evading arrest charge, while his companion Kenny Carter faced another charge and had a...",
+   "publisher": "NDTV",
+   "section": "Latest",
+   "sourceId": "india-ndtv-latest"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "After Asiad, aim for Olympics glory",
+   "description": "A meaningful bid needs the active involvement of all parties — from the government to the federations",
+   "publisher": "Hindustan Times",
+   "section": "Editorial",
+   "sourceId": "ht-editorial"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "A late surge at Nagoya and a long way to Los Angeles",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Shuffle the back rank, keep the score: A guide to Chess960, the Fischer variant that will get an official Fide rating",
+   "description": "Bobby Fischer devised the variant in the 1990s to put creativity ahead of preparation. Three decades later, the world chess body will rank its players.",
+   "publisher": "Hindustan Times",
+   "section": "Explained",
+   "sourceId": "ht-explained"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Assam Career 2026 : ICMR NIHR Dibrugarh Recruitment",
+   "description": "Applications are invited for recruitment of various administrative and technical positions or career in ICMR NIHR Dibrugarh Assam in 2026. ICMR NIHR Dibrugarh Assam is inviting applications from eligible candidates for recruitment to the posts or career of Senior Consultant (Scientific -Non-Medical)",
+   "publisher": "Northeast Now",
+   "section": "Northeast India",
+   "sourceId": "india-northeast-now"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Meghalaya Jobs 2026 : Office Asst. & other posts in NIT Meghalaya",
+   "description": "Applications are invited for recruitment of various administrative and technical positions or jobs in NIT Meghalaya in 2026. National Institute of Technology (NIT) Meghalaya is inviting applications from eligible candidates for recruitment to the posts or jobs of SRA/JRA/Office Assistant in the proj",
+   "publisher": "Northeast Now",
+   "section": "Northeast India",
+   "sourceId": "india-northeast-now"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Azerbaijani woman’s decades-long collection now holds 8,000 miniature books",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "World",
+   "sourceId": "toi-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Texas man used Civil War relic as paperweight; later found it was a live explosive",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "World",
+   "sourceId": "toi-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Meet the Indian-origin seventh-grader who boosted atmospheric water output by 117%",
+   "description": "Ankith Burki, a seventh-grader from BASIS Independent Silicon Valley, created an atmospheric water generator for his project. He utilized low-frequency sound waves to improve the efficiency of water collection. Testing revealed a 117 percent increase in water production under specific sound conditio",
+   "publisher": "Times of India",
+   "section": "Science",
+   "sourceId": "toi-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Is Trump to blame for Americans getting explosive diarrhea? | Arwa Mahdawi",
+   "description": "As the midterms approach, Americans’ digestive health has become a bizarre talking point Donald Trump seems to spend an unusual amount of time thinking about toilets. Back in 2019, he bizarrely claimed : “People are flushing toilets 10 times, 15 times as opposed to once.” He repeated this claim at a",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Country diary: Lave net fishing is a tradition in trouble | Gwyneth Lewis",
+   "description": "Portskewett, Monmouthshire : For hundreds of years this has been a method of catching salmon in the Severn’s churning waters. I visit one of the few fishermen still going Every time I cross the new Severn Bridge leaving Wales, I check the state of the tide, using a buoy in the middle of the channel.",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Starwatch: how to spot Saturn as it makes it closest approach to Earth this year",
+   "description": "The planet looks like a moderately bright, creamy-white object and is easily visible to the naked eye This week offers an excellent opportunity to track down Saturn. The giant planet, situated about 10 times further from the sun than the Earth, reached opposition on 4 October. In this configuration,",
+   "publisher": "Guardian",
+   "section": "Science",
+   "sourceId": "guardian-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Nitrite-free bacon sales boom in UK amid fears over curing chemicals",
+   "description": "Shoppers are switching from traditional product despite little evidence alternative is safer Bacon has long been a favourite of carnivores, but there is growing consumer concern about the health risks posed by nitrites, chemicals used to cure meats. While many experts argue there is no evidence proc",
+   "publisher": "Guardian",
+   "section": "Science",
+   "sourceId": "guardian-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "The week in wildlife: a rescued orangutan, the chonkiest bear and a barn owl’s triumph",
+   "description": "This week’s best wildlife photographs from around the world Continue reading...",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Recommendations for the week",
+   "description": "",
+   "publisher": "Down To Earth",
+   "section": "Environment & development",
+   "sourceId": "dte-news"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Daily weather tracker: Weather set to shift across North India as rain brings relief",
+   "description": "",
+   "publisher": "Down To Earth",
+   "section": "Environment & development",
+   "sourceId": "dte-news"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Rush Hour: India logs driest monsoon in decade, jet fuel prices hiked by 13% and more",
+   "description": "Become a Scroll member to get Rush Hour – a wrap of the day’s important stories delivered straight to your inbox every evening.",
+   "publisher": "Scroll.in",
+   "section": "Latest",
+   "sourceId": "india-scroll-in"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Loss of grasslands and Kutch drought | Green Humour by Rohan Chakravarty",
+   "description": "",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "The Hindu releases documentary Gandhi for GenZ",
+   "description": "The documentary highlights the relevance of the Father of the Nation to the struggles of the youth of India today",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Wildlife photography exhibition opens at Hawa Mahal in Visakhapatnam",
+   "description": "Nearly 150 photographs by 25 wildlife photographers showcase India’s biodiversity, landscapes and wildlife as part of World Wildlife Week 2026",
+   "publisher": "The Hindu",
+   "section": "Environment",
+   "sourceId": "hindu-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Ex-TMC MP Koel Mallick joins BJP a day after being nominated for Rajya Sabha seat",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "India",
+   "sourceId": "toi-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Vijay takes out roadshow in bypoll-bound Dharapuram, slams DMK for remarks against women",
+   "description": "Vijay takes out roadshow in bypoll-bound Dharapuram, slams DMK for remarks against women",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Sitharaman's speech disrupted, Cong claims anger, Chandrababu says enthusiasm",
+   "description": "Sitharaman's speech disrupted, Cong claims anger, Chandrababu says enthusiasm",
+   "publisher": "India Today",
+   "section": "India",
+   "sourceId": "india-india-today-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "‘Comment on Smit’s bravery also’: Piyush Mishra questions Naseeruddin for attending Mumbai CJP protest",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "India",
+   "sourceId": "toi-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Assam: SC to deliver order on Shyamkanu Mahanta’s bail plea in Zubeen Garg case",
+   "description": "Guwahati: The Supreme Court is set to pronounce its order on Monday, October 5, on the bail petition filed by Shyamkanu Mahanta, one of the accused in the case concerning the death of Assamese singer Zubeen Garg. The hearing on Mahanta’s bail plea has already been concluded, with a bench of Justice ",
+   "publisher": "Northeast Now",
+   "section": "Northeast India",
+   "sourceId": "india-northeast-now"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Supreme Court lets Delhi Gymkhana Club members move HC against Centre takeover",
+   "description": "Supreme Court lets Delhi Gymkhana Club members move HC against Centre takeover",
+   "publisher": "India Today",
+   "section": "India",
+   "sourceId": "india-india-today-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "IndiGo to hike fuel charges for domestic, international flights from October 6",
+   "description": "Air travel is set to get costlier on IndiGo as the airline has raised fuel charges on all domestic and international flights following a sharp increase in Aviation Turbine Fuel (ATF) prices, with the latest hike taking jet fuel rates to among the highest levels in a decade. The revised charges will ",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Ahmedabad airport imposes new drop-off/visit charge on taxis; raises pick-up fee by 33%",
+   "description": "The new charges also cover tempos, minibuses and buses, for which the levy can go up to ₹600 for the first 0-30 minutes, adding to the cost of airport travel for passengers using hired transport",
+   "publisher": "BusinessLine",
+   "section": "Economy",
+   "sourceId": "bl-economy"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Honda plans highway test of wireless charging for moving trucks",
+   "description": "The system, developed by Honda's ⁠research arm with the two firms, aims ‌to transfer electricity wirelessly from charging units embedded in roads to vehicles in motion, which could lead to ‌fewer charging stops",
+   "publisher": "BusinessLine",
+   "section": "Economy",
+   "sourceId": "bl-economy"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "The Swiss watch industry is shrinking—but getting swankier",
+   "description": "Brands such as Rolex and Patek Philippe are consolidating the market",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "SRMIST signs MoU with South Korea’s Jeonbuk National University",
+   "description": "Partnership to facilitate student and faculty exchanges, joint research, publications and short-term academic programmes",
+   "publisher": "The Hindu",
+   "section": "Economy",
+   "sourceId": "hindu-economy"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Beijing doesn’t get it – Jane Eyre is no model for domesticity",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Can Singapore turn doomscrollers become doomreaders?",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "Editorial",
+   "sourceId": "ie-editorial"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Packaging paradigm shift: Why food marketers must use information instead of emotion to sell their eats",
+   "description": "Society used to know exactly who made its food. Then brands arrived and asked us to trust their products. Now, food companies must adapt. Emotion used to create trust and data confirmed it, but now data sets the terms on which emotion may operate. Dull packages full of details may be the way to go.",
+   "publisher": "Mint",
+   "section": "Opinion",
+   "sourceId": "mint-opinion"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Anup Bagchi's Act 1: Set HDFC house in order",
+   "description": "Anup Bagchi has been chosen as the new CEO of HDFC Bank after Sashidhar Jagdishan's decision not to continue. Bagchi's leadership will address critical issues within the bank, including leadership succession and regulatory concerns. He aims to recapitalize the brand while focusing on technology and ",
+   "publisher": "Times of India",
+   "section": "Business",
+   "sourceId": "toi-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "In 2024, researchers put 42 sponges in a Spanish marina; 455 days later, only the chicken kidney sponge had survived, cloned itself, and even crawled",
+   "description": "In 2024, researchers put 42 sponges in a Spanish marina. After 455 days, 22 of 24 chicken kidney sponges were alive, while three other species had died.",
+   "publisher": "Hindustan Times",
+   "section": "Science",
+   "sourceId": "ht-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "noise",
+   "title": "Godfrey Hounsfield’s CT scanner revealed a brain cyst in the first scan in 1971",
+   "description": "",
+   "publisher": "Times of India",
+   "section": "Science",
+   "sourceId": "toi-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Amare Woods, Cameron Lewis, Kayla Smith: 3 University of South Alabama students charged over alleged Trump threats on social media",
+   "description": "Three University of South Alabama students face federal charges over alleged social media threats against Trump before his Alabama rally.",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "From Farm Inputs to an International Agriculture Network: How Young Entrepreneur Ghanshyam Tewari Is shaping Athrav Agricure-Flagship of Atharv Group",
+   "description": "Lucknow (Uttar Pradesh) [India], October 5: In an era where sustainable agriculture and farm profitability are paramount global concerns, Lucknow-based Athrav Agricure Pvt. Ltd.—the flagship enterprise of the Atharv Group of Industries—is leading a significant transformation in crop protection and p",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Pay Phone, a Lifeline During 2019 Australia Wildfires, Gains Heritage Status",
+   "description": "Hundreds lined up to call loved ones as the internet went down and the flames closed in on the Australian town of Narooma in 2019.",
+   "publisher": "New York Times",
+   "section": "World",
+   "sourceId": "nyt-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Black Unemployment Rose Sharply in September, Jobs Report Shows",
+   "description": "Economists had taken a recent drop in Black unemployment as a hopeful sign that job gains were lifting a broad share of workers.",
+   "publisher": "New York Times",
+   "section": "Economy",
+   "sourceId": "nyt-economy"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "‘It’s shocking really’: Devon community tracks River Dart sewage spills",
+   "description": "Citizen environmentalists create online platform that flags spills in real time and highlights repeatedly polluted spots The easy thing for the people who live on the banks of the River Dart in Devon might have been to grumble and groan about the sewage spills that blight their beloved waterway. Ins",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Hit by Bihar floods, man waiting under helicopter dies as ‘relief material falls on him’",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "The Mighty American Consumer Is Crashing Through Inflation and Driving Growth",
+   "description": "Spending is rising because prices are climbing and Americans are buying more stuff.",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Revealed: Government quietly dropped plan to prepare England for wildfires",
+   "description": "FOI request shows wildfire risk scheme scrapped, as survey highlights many fire services lack proper protective gear The government quietly scrapped plans to prepare the countryside in England for wildfires, it has been revealed. This was despite new data showing fire crews do not have the proper pr",
+   "publisher": "Guardian",
+   "section": "Environment",
+   "sourceId": "guardian-environment"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Messi’s Keralam visit row: ED to register money-laundering case",
+   "description": "Kochi unit of ED to register Enforcement Case Information Report (ECIR) under provisions of Prevention of Money Laundering Act after revelations of financial transactions worth crores in connection with the failed bid",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "label": "not-relevant",
+   "group": "old-fp",
+   "title": "Israel’s Supreme Court overturns election ban on Arab parties ahead of Oct 27 polls",
+   "description": "The ruling followed a decision by the central elections committee to disqualify four Arab-majority parties from contesting the vote.",
+   "publisher": "Hindustan Times",
+   "section": "World",
+   "sourceId": "ht-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Trump's AI rebrand causes 'unprecedented' demand for Slovenian website names",
+   "description": "The president wants AI to be called super intelligence - or SI - the same initials used by Slovenian domains.",
+   "publisher": "BBC",
+   "section": "Business",
+   "sourceId": "ext-bbc-business"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "US Man Targets Indian Professor, Internet Highlights Her IIT Credentials",
+   "description": "Dr Shivali Banerjee holds a PhD from the Indian Institute of Technology Bombay, one of India's most prestigious institutions for higher education and research.",
+   "publisher": "NDTV",
+   "section": "Latest",
+   "sourceId": "india-ndtv-latest"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Why your house might be too clean - video",
+   "description": "Our use of cleaning products has increased since the pandemic, but do we understand what they could be doing to our health? The journalist Rebecca Seal recently wrote for the Guardian about the potential impacts of the many chemicals we now use in our homes. She tells Madeleine Finlay how social med",
+   "publisher": "Guardian",
+   "section": "Science",
+   "sourceId": "guardian-science"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Meet Sarvesh Sharma: How A ₹87,000 Drone Led To ₹3.5 Crore Defence Funding",
+   "description": "A Himachal Pradesh student received Rs 3.5 crore from the Defence Ministry to develop a surveillance drone for high-altitude border areas.",
+   "publisher": "NDTV",
+   "section": "Latest",
+   "sourceId": "india-ndtv-latest"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "‘Total government failure… will raise issue in Parliament’: Rahul Gandhi visits Balaghat",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Weather department predicts heavy rain over Uttarakhand; respite likely in Uttar Pradesh, Chhattisgarh",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Godavari Biorefineries secures a Chinese patent for viral infection treatment compounds",
+   "description": "The patent covers compounds that inhibit Vacuolar ATPase (V-ATPase), a cellular mechanism some viruses use during infection, and their use in medicaments for treating viral infections",
+   "publisher": "BusinessLine",
+   "section": "Agriculture",
+   "sourceId": "bl-agriculture"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Germany targets two-fold rise in Indian tourist overnight stays by 2030",
+   "description": "Germany is aiming to double annual overnight stays by Indian visitors by 2030, its national tourism board chief Petra Hedorfer said, as the country seeks to tap the growing appetite among Indian travellers for longer, experience-led holidays beyond traditional city itineraries. India is an important",
+   "publisher": "Business Standard",
+   "section": "World",
+   "sourceId": "bs-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "The climate scientist Kate Marvel sheds light on why she left NASA this year.",
+   "description": "“Chaotic” conditions made it hard to continue her work, she said. “It really grieved me to say that I can’t do science because I work at NASA.”",
+   "publisher": "New York Times",
+   "section": "Climate",
+   "sourceId": "nyt-climate"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Mapping the Gaps in NASA’s Return to the Moon, featuring Richard Spolzino",
+   "description": "“I want to be able to look at a rocket launch and say, ‘I touched a piece of this.’” That’s how Richard Spolzino describes the thing he’s chasing. Not a title, not a specific mission, not even NASA itself, just the ability to point at something real and know his work made it possible. At […]",
+   "publisher": "NASA",
+   "section": "News releases",
+   "sourceId": "ext-nasa-news-releases"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Amid battle for Brahmin vote, BJP to sharpen outreach ahead in UP",
+   "description": "The party plans caste-focused meetings to address concerns among upper castes while continuing its broader outreach to non-dominant and marginalised communities",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Indian envoy to US meets US Senator Angela Alsobrooks",
+   "description": "Kwatra said he also highlighted the vibrant Indian diaspora's contributions to strengthening India’s ties with Maryland as well",
+   "publisher": "BusinessLine",
+   "section": "Economy",
+   "sourceId": "bl-economy"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "U.K. Base Would Be Ambitious Target for ‘Gig Economy’ Warfare",
+   "description": "The U.S. war in Iran unleashed small-scale attacks by local criminals or disenfranchised young men hired anonymously to target Jewish and American sites in Europe and North America, experts say.",
+   "publisher": "New York Times",
+   "section": "World",
+   "sourceId": "nyt-world"
+  },
+  {
+   "label": "not-relevant",
+   "group": "new-fp",
+   "title": "Elon Musk to rename SpaceX AI arm SpaceXSI after Trump's directive",
+   "description": "Musk confirmed the change in a post on X while responding to a user who suggested the rebranding of SpaceXAI",
+   "publisher": "Business Standard",
+   "section": "World",
+   "sourceId": "bs-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Brazil heads to run-off between Lula and pro-Trump Senator Flavio Bolsonaro",
+   "description": "Brazil’s presidential election will go to a run-off on October 25 between President Luiz Inacio Lula da Silva and Senator Flavio Bolsonaro, who has promised the Trump administration access to Brazil’s rare earths to cut US reliance on China. With 99.9 per cent of ballots counted from Sunday’s vote, ",
+   "publisher": "South China Morning Post",
+   "section": "World",
+   "sourceId": "ext-scmp"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Brazilians head to polls in high-stakes, polarized presidential election",
+   "description": "Lula and Flavio Bolsonaro lead a crowded field as economic worries, corruption and crime dominate the campaign",
+   "publisher": "Business Standard",
+   "section": "World",
+   "sourceId": "bs-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "31-year-old Indian Navy sailor 'honey-trapped', lured into sharing classified data with Pakistani operative",
+   "description": "Pradeep Mukherjee was arrested at INS Agrani, a naval leadership training facility in Coimbatore, by the Andhra Pradesh Police Counter Intelligence (CI) cell.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Rs 50 crore worth of heroin recovered as police bust interstate narco syndicate in Delhi",
+   "description": "Delhi Police have busted an interstate heroin supply-cum-manufacturing network with the arrest of four persons and the recovery of 7.076 kg heroin, valued at around Rs 50 crore in the international market, officials said. The operation, carried out by the Special Staff of the Rohini district, also l",
+   "publisher": "The Tribune",
+   "section": "India",
+   "sourceId": "tribune-india"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Earthquake of magnitude 5.9 strikes Indonesia's Sumbawa region, GFZ says",
+   "description": "The ​quake was ⁠at a ‌depth of 10 ‌km",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Yogi vs Akhilesh: Why UP Rajya Sabha elections 2026 has become nail-biting contest between SP, BJP",
+   "description": "UP Rajya Sabha Elections 2026: SP MP Virendra Singh said on Friday his party will field a third candidate in the upcoming Rajya Sabha elections in Uttar Pradesh, setting the stage for a contest in the polls for 10 seats. Here's how numbers stack up for the BJP and the SP.",
+   "publisher": "Mint",
+   "section": "Politics",
+   "sourceId": "mint-politics"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Punjab Election 2027: AAP seeks repeat, Cong eyes comeback, SAD seeks consolidation - What is at stake?",
+   "description": "For AAP, it will be a test of its five-year record in government, for Congress, it is an opportunity to convert its position as the principal Opposition party into a return to power. And for Akalis, the election is about rebuilding a political base after its dramatic decline in 2022.",
+   "publisher": "Mint",
+   "section": "Politics",
+   "sourceId": "mint-politics"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Iran’s Oil Minister resigns, no reason given",
+   "description": "Mohsen Paknejad has been the Oil Minister of the ​OPEC member country ‌since August 2024",
+   "publisher": "The Hindu",
+   "section": "World",
+   "sourceId": "hindu-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Flydubai co-pilot used crash axe to attack captain, says UAE",
+   "description": "Attorney general says ‘terrorist attack’ was attempted by suspect who is said to have been barred from flying by Oman because of extremist views The co-pilot of flydubai flight FZ1073 used an axe to attempt to carry out a “terrorist attack” during the Israel-bound flight, the United ⁠Arab Emirates p",
+   "publisher": "Guardian",
+   "section": "World",
+   "sourceId": "guardian-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Courage in the air : Flydubai ordeal raises troubling questions",
+   "description": "THE bravery of an Indian pilot and others who helped save 174 lives aboard a Flydubai plane deserves a grand salute. The flight from Dubai to Tel Aviv plunged after the captain, Smit Machchhar, was stabbed by his co-pilot. Despite his injuries, he managed to open the cockpit door, allowing passenger",
+   "publisher": "The Tribune",
+   "section": "Editorial",
+   "sourceId": "tribune-editorial"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "AP Govt to implement 100% housing programme by 2029: CM Naidu",
+   "description": "",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Andhra Pradesh commercial tax collections rise 18% to ₹30,436 cr in H1",
+   "description": "Andhra Pradesh collects ₹4,986.18 crore in commercial taxes in September, ₹651.34 crore or 15.03% more than a year earlier",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Chandrababu Naidu calls on IITians to unite for nation building, pitches Quantum Valley in Amaravati",
+   "description": "Addressing the PanIIT summit, Naidu outlined initiatives spanning startups, research, quantum computing, education and technology across Andhra Pradesh.",
+   "publisher": "BusinessLine",
+   "section": "National",
+   "sourceId": "bl-national"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Denmark data breach exposes personal details of 8.8 million people",
+   "description": "The breach occurred after unidentified individuals misused a private Danish company's legitimate access to search the Central Person Register, known as CPR",
+   "publisher": "Business Standard",
+   "section": "World",
+   "sourceId": "bs-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Jamie Dimon wants fewer trade barriers with Europe. But there’s a catch",
+   "description": "Jamie Dimon wants fewer trade barriers with Europe, but says the EU must first reform its economy, defence and energy sectors.",
+   "publisher": "Mint",
+   "section": "Economy",
+   "sourceId": "mint-economy"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Russia’s Latest Propaganda? A.I.-Generated War Songs.",
+   "description": "Russians are creating and spreading music glorifying the invasion of Ukraine, using platforms built in the United States.",
+   "publisher": "New York Times",
+   "section": "Russia–Ukraine war",
+   "sourceId": "nyt-russia-ukraine-war"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "A Spirited Battle Over Data Centers",
+   "description": "At the Climate Forward live event, policymakers, executives and activists debated the boom in data centers, the growing backlash and its environmental effects.",
+   "publisher": "New York Times",
+   "section": "Climate",
+   "sourceId": "nyt-climate"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "States Sue Over Trump’s Repeal of Climate Rules for Power Plants",
+   "description": "The mostly Democratic-led states say that the E.P.A. acted unlawfully when it erased Biden-era limits on carbon dioxide from coal- and gas-fired plants.",
+   "publisher": "New York Times",
+   "section": "Climate",
+   "sourceId": "nyt-climate"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Largest review yet ties addictive screen habits to poorer mental health in the young",
+   "description": "A major review reveals that young individuals using screens excessively are at higher risk for mental health issues, self-harm, and sleep problems.",
+   "publisher": "Hindustan Times",
+   "section": "Explained",
+   "sourceId": "ht-explained"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "SpaceX set to launch new crew for NASA on retiring dragon craft",
+   "description": "It’s the latest in a series of flights that SpaceX performs for NASA to ensure the ISS is staffed at all times",
+   "publisher": "BusinessLine",
+   "section": "Science",
+   "sourceId": "bl-science"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Scientists puzzled as baby whales wash up dead in Argentina",
+   "description": "A team of biologists, veterinarians, and park rangers have been searching the area for the dead calves from shore and with boats, planes, and drones",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "After great apes, scientists find African elephants self-medicate too",
+   "description": "Several plants they use are also consumed as indigenous human traditional medicine",
+   "publisher": "The Hindu",
+   "section": "Science",
+   "sourceId": "hindu-science"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Egyptian journalist faces terrorism charges after entire newsroom detained",
+   "description": "Calls for release of six Matsadaash staff after one is charged, while whereabouts of other five remain unknown An Egyptian journalist has been charged with joining a terrorist group, days after an entire newsroom was detained in what rights groups have said is a crackdown on press freedoms. Last wee",
+   "publisher": "Guardian",
+   "section": "World",
+   "sourceId": "guardian-world"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Bjorn Lomborg: The Great Barrier Reef isn't dying—although alarm ringers aren’t ready to admit it",
+   "description": "The reef’s record coral cover should end the alarms that ecologists routinely sound over its health. An ecosystem that has just delivered the five best years in its 40-year record is not on its deathbed.",
+   "publisher": "Mint",
+   "section": "Opinion",
+   "sourceId": "mint-opinion"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Must Tata Sons go public? India’s central bank has several other options that could be explored",
+   "description": "It’s unclear if the Reserve Bank of India (RBI) can actually force corporate entities such as Tata Sons to list their shares for public trading. Many other ways exist for this regulator to secure the financial system’s security without heavy-handed intervention.",
+   "publisher": "Mint",
+   "section": "Opinion",
+   "sourceId": "mint-opinion"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "White-collar hiring shifts towards specialised AI skills, experienced professionals in September: Report",
+   "description": "The white-collar job market is becoming increasingly selective, driven by demand for specialised AI skills and experience professionals. Check where hiring stood for freshers and mid-career job seekers.",
+   "publisher": "Mint",
+   "section": "Economy",
+   "sourceId": "mint-economy"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Himachal CM Sukhu distributes ₹5.78 crore aid to 1,471 workers, dependents",
+   "description": "Himachal Pradesh Chief Minister Sukhvinder Singh Sukhu on Saturday distributed financial assistance of Rs 5.78 crore under various welfare schemes to 1,471 registered workers and their dependents across the state. Sukhu distributed the assistance through the Himachal Pradesh Building and Other Const",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Tripura: TTAADC Village Committee election counting begins amid tight security",
+   "description": "Reported by Mrinal Kanti Banik Agartala: Counting of votes for the Tripura Tribal Areas Autonomous District Council (TTAADC) Village Committee elections began across Tripura on Monday, with authorities deploying around 2,000 personnel to ensure the process was conducted peacefully and securely. The ",
+   "publisher": "Northeast Now",
+   "section": "Northeast India",
+   "sourceId": "india-northeast-now"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Assam: Bordoibam residents face growing threat from elephants, erosion",
+   "description": "Dibrugarh: For residents of Bordoibam village in Assam’s Dibrugarh district, daily life has become increasingly difficult as they face two persistent threats, riverbank erosion and frequent incursions by wild elephants from the nearby Dehing-Medela Reserve Forest. Located under Khowang constituency,",
+   "publisher": "Northeast Now",
+   "section": "Northeast India",
+   "sourceId": "india-northeast-now"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Leonardo DiCaprio gave $1 million to a Seychelles debt swap that protected 410,000 sq km of ocean",
+   "description": "Seychelles protected 30% of its ocean by 2020 through a debt conversion deal linked to long-term conservation. The plan safeguards 410,000 sq km of ocean, while allowing sustainable fishing, tourism and other economic activities. Leonardo DiCaprio Foundation was among the private funders supporting ",
+   "publisher": "Times of India",
+   "section": "Science",
+   "sourceId": "toi-science"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Bihar police job aspirants march in Patna, seek withdrawal of exam cancellation",
+   "description": "The Bihar Police Subordinate Services Commission (BPSSC) had cancelled the examination on September 23 for recruitment to 1,799 posts.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "label": "borderline",
+   "group": "borderline",
+   "title": "Hardened narco-trafficking kingpin Navpreet Singh deported from Turkey: Amit Shah",
+   "description": "",
+   "publisher": "Indian Express",
+   "section": "India",
+   "sourceId": "ie-india"
+  }
+ ]
+}

@@ -2,6 +2,7 @@ import type { Table } from 'dexie'
 import { collectExtras, eraseExtras, parseExtras, restoreExtras, type BackupExtras, type ExtrasEnv, type ExtrasReport } from './backup-extras'
 import { db } from './db'
 import { normalizeSettings } from './seed'
+import { resetSyncState } from '@/sync/store'
 import { applyChanges, type MergeReport } from './compatibility/merge'
 import { BACKUP_TABLES as SYNC_TABLES, type BackupTable as SyncTable } from './compatibility/schema'
 import type { Entity, Settings, Tombstone } from './types'
@@ -107,7 +108,10 @@ export async function restoreBackup(b: BackupFile, mode: 'merge' | 'replace', en
       await db.tombstones.bulkPut(b.tombstones ?? [])
       if (b.settings) await db.settings.put(normalizeSettings(b.settings))
     })
-    return { inserted, updated: 0, skipped: 0, deleted: 0, extras: await restoreExtras(b.extras, mode, env) }
+    const extras = await restoreExtras(b.extras, mode, env)
+    // What is missing from the backup was replaced here, not deleted: sync starts over and merges, so nothing is removed from other devices.
+    await resetSyncState()
+    return { inserted, updated: 0, skipped: 0, deleted: 0, extras }
   }
   const report = await applyChanges({ records: b.tables, tombstones: b.tombstones ?? [] })
   if (b.settings) {
@@ -124,4 +128,6 @@ export async function eraseEverything(env?: ExtrasEnv): Promise<void> {
     for (const t of tables) await t.clear()
   })
   await eraseExtras(env)
+  // Erasing this device is not a deletion to pass on to the others.
+  await resetSyncState()
 }

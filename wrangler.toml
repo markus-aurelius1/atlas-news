@@ -1,4 +1,21 @@
-# Pages serves Vite assets and invokes only the same-origin News gateway.
+# Pages serves the Vite build and runs the functions under /api: the News gateway and sync.
+# Free-plan budget: each /api/current-affairs?shard=N invocation makes at most 6 upstream requests
+# (limit 50) on 6 connections; shards are edge-cached for two hours. /api/sync is one D1 transaction
+# per request. See README, "News gateway on Cloudflare" and "Sync".
 name = "tars-atlas-news"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-10-04"
+
+# Sync storage. Schema: migrations/0001_sync.sql (npx wrangler d1 migrations apply tars-sync --remote).
+[[d1_databases]]
+binding = "SYNC_DB"
+database_name = "tars-sync"
+database_id = "824fd651-a92c-4716-a618-232624fa5bcc"
+migrations_dir = "migrations"
+
+# Cloudflare Access is the only sign-in. Every /api route verifies the Access token against these and stays
+# closed (503) while either is empty. ACCESS_TEAM_DOMAIN: <team>.cloudflareaccess.com.
+# ACCESS_AUD: the Access application's audience tag; several, comma-separated, if previews have their own.
+[vars]
+ACCESS_TEAM_DOMAIN = "marcus-circle.cloudflareaccess.com"
+ACCESS_AUD = "c21bd2b01dc9cb0f66bee87b92ae35efadffd67fa33b5950190a8855f6ac93b5"

@@ -208,6 +208,8 @@ function Main({ ready }: { ready: boolean }) {
     }
   }, [atlasInFront, atlasKept])
   useEffect(() => (ready ? preloadRoutesWhenIdle() : undefined), [ready])
+  // Sync starts once the database is open and never holds up a screen.
+  useEffect(() => { if (ready) whenIdle(() => void import('@/sync/runtime').then((sync) => sync.startSync())) }, [ready])
   // The review count and the action context use the gazetteer if it is there. It is fetched once the app has settled, not during start-up.
   useEffect(() => {
     if (!ready) return

@@ -1,3 +1,49 @@
+# Sync and first Cloudflare deployment — 2026-10-05
+
+Local-first sync of durable personal state (`src/sync`, `functions/api`, `migrations/`) was added and the site was deployed to Cloudflare Pages for the first time. No file under `public/` changed except `_routes.json` (now `/api/*`); the build re-verified every Atlas asset hash. The News gateway, validator, clustering and feed cache code are unchanged; `archive.ts` gained a by-URL reader and a metadata cleaner split out of `archiveRecord` (same output for active sources).
+
+| Check | Result |
+| --- | --- |
+| `npm run typecheck` | Passed |
+| `npm run lint` | Passed: 0 errors, 118 warnings (unchanged) |
+| `npm test` | Passed: 502 tests in 35 files. New: 9 sync service tests and 11 multi-device engine tests in `tools/cloudflare`, run through the real functions and the real migration on SQLite |
+| `npm run test:pipeline` | 45 tests: 39 passed, 0 failed, 6 skipped (the frozen canonical ZIP was not supplied on this machine) |
+| `npm run build` | Passed; 162 PWA precache entries, 8,554 KiB |
+| `npm run test:browser` | Passed, whole suite, after the sync change: smoke 36; News 268; cold starts, label order, Atlas interaction, canonical questions (light and dark) and recall integration all passed |
+| `npm run test:sync` | Passed: 27 checks, no page errors. Production build + real Pages functions under `wrangler pages dev` (workerd) + local D1 with the real migration + Access tokens signed by a local issuer and verified by the functions; each browser context is a device |
+
+What the two-device check showed (`tools/browser/out/sync/results.json`):
+
+- A device used with no sync service (1,500 Atlas answers, a claim, Read/Saved/Removed marks, a theme) uploaded 1,510 rows in 4 requests, 1.5–3.5 s across runs, by itself when the service became reachable; its local storage was identical before and after.
+- A second device with marks of its own merged on first launch: every mark kept, the later time for a shared one, all 1,500 answers with the same ids and times, and the chosen theme.
+- Unsave and unread on one device cleared the marks on the other. A save made offline was usable at once, was sent when the connection returned, and kept the time it was made.
+- A third device whose feed never carried two Saved articles listed them from synced metadata, including after a reload with the sync service unreachable.
+- No token: the app worked locally and asked for sign-in; a request naming an account in its body got 401. Another account saw nothing and got 409 when it claimed the first account.
+- D1 accounting as reported by the local D1 runtime: an idle sync is 1 query, 1 row read, 0 written; a 400-row push is 5 queries, 404 rows read, about 801 written; a 500-row page is 1 query, 501 rows read.
+
+Deployment: Pages project `tars-atlas-news` (production branch `main`, direct upload from this working tree at `f18a181` plus uncommitted changes), D1 database `tars-sync` (`824fd651-a92c-4716-a618-232624fa5bcc`, APAC) with `0001_sync.sql` applied and both tables and the cursor index confirmed present. Live at https://tars-atlas-news.pages.dev: the app shell, manifest (`lodestar-study`), service worker file, relevance index and SoI outline are served; in Chrome the Atlas rendered and placed its labels with no page errors.
+
+## Production, signed in through Cloudflare Access — 2026-10-05
+
+Access now protects `tars-atlas-news.pages.dev` (team `marcus-circle.cloudflareaccess.com`); `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` are set in `wrangler.toml`. Checked on the production hostname in a signed-in browser:
+
+| Check | Result |
+| --- | --- |
+| No session | Every path, pages and `/api` alike, redirects to the Access login |
+| Per-deployment hostname (not covered by the Access application) | Static files are served; `/api` answers 401 with no token and with a forged one |
+| Sign-in from an installed app | Failed at first: the service worker answered Access's callback (`/cdn-cgi/access/authorized`) from its cache, so no session cookie was set and News could not refresh. Fixed by keeping `/cdn-cgi/` out of the navigation fallback (`vite.config.ts`); after redeploying, "Sign in" went to the identity provider and returned to the app |
+| `/api/current-affairs?shard=0…12` | All 13 answered 200 uncached, 0.7–2.9 s each; 77 of 77 sources `ok` |
+| News in the app | 3,914 items, 100 stories in the rolling list, no alert |
+| Navigation and reload inside the two-hour window | Atlas → Settings → News: 0 new gateway requests; full reload: 0 gateway requests, list restored from the local snapshot |
+| Manual refresh | 13 requests, all with `refresh=1`, all 200, slowest 2.1 s; the snapshot's `fetchedAt` advanced |
+| `/api/sync` against production D1 | 200 for the signed-in account; an idle exchange reported `queries=1;read=1;written=0` |
+| Two clients, one account | Marking a story read in the app (5 article URLs) was sent by itself and read back by a second client with the same times; that client's unread reached the app on its next sync and cleared the marks. The second client spoke the protocol from the same browser session, not from a separate physical device |
+| CPU limit (error 1102) | None observed: 26 uncached shard collections (13 first fetches, 13 forced) all returned 200. The Functions metrics page itself was not read; the wrangler login does not expose it |
+
+The production database holds only what that test left: 5 tombstones in `news` for one account.
+
+Not verified: a second physical device signed in to production; behaviour after the Access session expires on its own; Functions analytics in the dashboard. A browser that installed the app before the service-worker fix must clear the site's data once, because its old worker intercepts the sign-in callback. Also not run: `tools/audit-foundation.mjs` (needs ripgrep), Capacitor sync, Android/iOS builds.
+
 # Interface rebuild verification — 2026-10-05
 
 The shell, Atlas instruments, News reading list and Settings were rebuilt on the foundation below. Data, storage and the News cache/gateway were not changed: no file under `public/`, `src/data`, `src/atlas` (except the question-table border colour in `pyq/blocks.css`), `src/current-affairs`, `functions/` or `tools/atlas-build` was edited, and `useFeeds.ts`, `useArchive.ts` and `usePersonalState.ts` are untouched. Map rendering changes are styling only: line weights and colours in `renderer/tilePainter.ts` and `renderer/palette.ts`, a `dusk` tone (the same relief raster, dimmed at paint time, for the dark theme), and sparser symbol thresholds in `AtlasMap.tsx`.

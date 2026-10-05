@@ -3,13 +3,12 @@
  * article on one story, fold under a single anchor article. Pure presentation grouping –
  * nothing is discarded, and Read/Saved state stays keyed to each story's own URLs.
  */
-import { informationValue } from './cluster.ts'
+import { ANCHOR_PUBLISHERS, MAX_STORY_ARTICLES, informationValue } from './cluster.ts'
 import { NEWS_SOURCES } from './sources.ts'
 import type { ClassifiedItem } from './types.ts'
 import type { WorkspaceEvent } from './workspace.ts'
 
-/** The papers a UPSC reader is most likely to work from; one of theirs anchors a group whenever it covers the topic. */
-export const ANCHOR_PUBLISHERS: readonly string[] = ['Indian Express', 'The Hindu']
+export { ANCHOR_PUBLISHERS }
 export const isAnchorPublisher = (item: Pick<ClassifiedItem, 'publisher'>) => ANCHOR_PUBLISHERS.includes(item.publisher)
 
 const sourcePriority = (item: ClassifiedItem) => NEWS_SOURCES.find((s) => s.id === item.sourceId)?.priority ?? 9
@@ -62,12 +61,17 @@ export const topicOf = (event: WorkspaceEvent): string | null => event.primary.r
  */
 export function groupTopics(events: WorkspaceEvent[], coverage: (event: WorkspaceEvent) => ClassifiedItem[] = (event) => event.members): TopicGroup[] {
   const buckets = new Map<string, { topic: string | null; events: WorkspaceEvent[] }>()
+  // A group never holds more than MAX_STORY_ARTICLES articles: once a topic's group is full, its next story opens another.
+  const open = new Map<string, { key: string; articles: number; part: number }>()
+  const size = (event: WorkspaceEvent) => { const shown = coverage(event); return (shown.length ? shown : event.members).length }
   for (const event of events) {
-    const topic = topicOf(event)
-    const key = topic ? `topic:${topic}` : `story:${event.id}`
-    const bucket = buckets.get(key)
-    if (bucket) bucket.events.push(event)
-    else buckets.set(key, { topic, events: [event] })
+    const topic = topicOf(event), articles = size(event)
+    if (!topic) { buckets.set(`story:${event.id}`, { topic, events: [event] }); continue }
+    const current = open.get(topic)
+    if (current && current.articles + articles <= MAX_STORY_ARTICLES) { buckets.get(current.key)!.events.push(event); current.articles += articles; continue }
+    const part = (current?.part ?? 0) + 1, key = part === 1 ? `topic:${topic}` : `topic:${topic}:${part}`
+    buckets.set(key, { topic, events: [event] })
+    open.set(topic, { key, articles, part })
   }
   return [...buckets].map(([key, { topic, events: stories }]) => {
     const parts = stories.map((event) => {

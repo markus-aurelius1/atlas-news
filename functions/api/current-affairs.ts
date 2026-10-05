@@ -1,12 +1,22 @@
-/** Pages adapter for the registry-only News gateway, with a two-hour edge cache and explicit force-refresh bypass. */
+/**
+ * Pages adapter for the registry-only News gateway. Each request collects one fixed shard of the registry
+ * (?shard=N), so an invocation makes at most FEED_SHARD_SIZE upstream requests plus its own cache read and write.
+ * Every shard has its own two-hour edge cache entry and an explicit force-refresh bypass.
+ */
 import { collectFeeds, FEED_CACHE_CONTROL } from '../../src/current-affairs/gateway.ts'
+import { FEED_SHARDS, shardIndex } from '../../src/current-affairs/shards.ts'
 import type { FeedResponse } from '../../src/current-affairs/types.ts'
 
-let pending: Promise<FeedResponse> | null = null
+const pending = new Map<number, Promise<FeedResponse>>()
 
-const collectShared = () => {
-  pending ??= collectFeeds((input, init) => fetch(input, { ...init, redirect: 'manual' })).finally(() => { pending = null })
-  return pending
+/** Concurrent requests for one shard share a single collection. */
+function collectShared(shard: number): Promise<FeedResponse> {
+  let job = pending.get(shard)
+  if (!job) {
+    job = collectFeeds((input, init) => fetch(input, { ...init, redirect: 'manual' }), FEED_SHARDS[shard]).finally(() => { pending.delete(shard) })
+    pending.set(shard, job)
+  }
+  return job
 }
 
 export async function onRequest({ request, waitUntil }: { request: Request; waitUntil: (promise: Promise<unknown>) => void }): Promise<Response> {
@@ -17,9 +27,15 @@ export async function onRequest({ request, waitUntil }: { request: Request; wait
   }
 
   const url = new URL(request.url)
+  const shard = shardIndex(url.searchParams)
+  if (shard === null) {
+    // No upstream request is made without a valid shard: the whole registry never fits one invocation.
+    baseHeaders.set('Cache-Control', 'no-store')
+    return new Response(JSON.stringify({ error: 'A shard number is required', shards: FEED_SHARDS.length }), { status: 400, headers: baseHeaders })
+  }
   const force = url.searchParams.get('refresh') === '1'
   const cache = (globalThis as unknown as { caches?: { default?: { match: (request: Request) => Promise<Response | undefined>; put: (request: Request, response: Response) => Promise<void> } } }).caches?.default
-  const cacheKey = new Request(`${url.origin}${url.pathname}`, { method: 'GET' })
+  const cacheKey = new Request(`${url.origin}${url.pathname}?shard=${shard}`, { method: 'GET' })
 
   if (!force && cache) {
     const hit = await cache.match(cacheKey)
@@ -30,12 +46,12 @@ export async function onRequest({ request, waitUntil }: { request: Request; wait
     }
   }
 
-  const data = await collectShared()
+  const data = await collectShared(shard)
   const available = data.sources.some(source => source.status !== 'failed')
   const headers = new Headers(baseHeaders)
   headers.set('Cache-Control', force ? 'no-store' : available ? FEED_CACHE_CONTROL : 'no-store')
   headers.set('X-Tars-News-Cache', force ? 'bypass' : 'miss')
-  const response = new Response(JSON.stringify(available ? data : { error: 'All publishers are unavailable', sources: data.sources }), { status: available ? 200 : 503, headers })
+  const response = new Response(JSON.stringify(available ? data : { error: 'All publishers in this shard are unavailable', sources: data.sources }), { status: available ? 200 : 503, headers })
   if (available && cache) {
     const cachedHeaders = new Headers(response.headers)
     cachedHeaders.set('Cache-Control', FEED_CACHE_CONTROL)

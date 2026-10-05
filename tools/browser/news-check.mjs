@@ -21,12 +21,12 @@ const fixture = { version: 1, fetchedAt, sources: [{ sourceId: 'ie-explained', s
   { ...row('Ramsar protected area conservation expands', 'guardian-environment', 'Guardian', 'https://www.theguardian.com/fixture-environment'), thumbnailUrl: 'https://images.example.org/broken.jpg' },
   row('ISRO launches important lunar space mission', 'ie-explained', 'Indian Express', 'https://indianexpress.com/article/fixture-space'),
   { ...row('Supreme Court ruling on constitutional fundamental rights', 'hindu-national', 'The Hindu', 'https://www.thehindu.com/fixture-rights'), section: 'National', description: 'Feed supplied excerpt about the constitutional ruling.' },
-  { ...row('Government scheme expands Ayushman Bharat coverage', 'hindu-national', 'The Hindu', 'https://www.thehindu.com/fixture-health'), section: 'National' },
+  { ...row('Cabinet approves expansion of Ayushman Bharat scheme coverage', 'hindu-national', 'The Hindu', 'https://www.thehindu.com/fixture-health'), section: 'National' },
   { ...row('RBI monetary policy holds repo rate', 'mint-economy', 'Mint', 'https://www.livemint.com/fixture-old'), publishedAt: yesterday, section: 'Economy' },
   { ...row('ISRO launches new space mission', 'hindu-national', 'The Hindu', 'https://www.thehindu.com/fixture-undated'), publishedAt: null },
   { ...row('New GDP series uses double deflation', 'ie-economy', 'Indian Express', 'https://indianexpress.com/article/fixture-gdp'), section: 'Economy' },
   { ...row('UPSC Key: Poompuhar, NCERT Textbooks and Article 370', 'ie-upsc', 'Indian Express', 'https://indianexpress.com/article/fixture-key'), section: 'UPSC Current Affairs' },
-  { ...row('El Niño-driven wildfires threaten orangutan habitat', 'guardian-environment', 'Guardian', 'https://www.theguardian.com/fixture-wildfire'), thumbnailUrl: 'https://images.example.org/fixture-wildfire.jpg' },
+  { ...row('El Niño-driven wildfires threaten orangutan habitat, IUCN Red List study warns', 'guardian-environment', 'Guardian', 'https://www.theguardian.com/fixture-wildfire'), thumbnailUrl: 'https://images.example.org/fixture-wildfire.jpg' },
   { ...row('WHO public health vaccination framework expands', 'ht-science', 'Hindustan Times', 'https://www.hindustantimes.com/fixture-recent-prior-day'), publishedAt: new Date(Date.now() - 23 * 3600000).toISOString() },
   row('Cricket score: India wins', 'ie-explained', 'Indian Express', 'https://indianexpress.com/article/fixture-cricket'),
   { ...row('Ramsar wetland conservation framework expands', 'dte-news', 'Down To Earth', 'https://www.downtoearth.org.in/fixture-past-year'), publishedAt: pastYear + 'T06:00:00Z' },
@@ -96,7 +96,7 @@ try {
     check(tag, 'RSS thumbnail loads lazily without a referrer', await rbi().locator('img').getAttribute('loading') === 'lazy' && await rbi().locator('img').getAttribute('referrerpolicy') === 'no-referrer')
     await rows.filter({ hasText: 'Ramsar' }).scrollIntoViewIfNeeded(); await rows.filter({ hasText: 'Ramsar' }).locator('img').waitFor({ state: 'detached' }); check(tag, 'broken image disappears')
     await showFilters()
-    for (const exam of ['Prelims', 'Mains', 'Both']) { await filterDialog().getByRole('group', { name: 'Exam filter' }).getByRole('button', { name: exam, exact: true }).click(); check(tag, exam + ' excludes unsupported curated coverage', await rows.count() > 0 && await rows.filter({ hasText: 'UPSC Key' }).count() === 0) }
+    for (const exam of ['Prelims', 'Mains', 'Both']) { await filterDialog().getByRole('group', { name: 'Exam filter' }).getByRole('button', { name: exam, exact: true }).click(); check(tag, exam + ' filter keeps supported coverage and no noise', await rows.count() > 0 && await rows.filter({ hasText: 'Cricket' }).count() === 0) }
     await filterDialog().getByRole('button', { name: 'All exams', exact: true }).click(); await hideFilters()
     await subject('Economy').click(); check(tag, 'subject filter', await rows.count() >= 1 && await subject('Economy').getAttribute('aria-pressed') === 'true'); await subject('Economy').click()
     await showFilters(); await page.getByLabel('Publisher filter').selectOption('The Hindu'); check(tag, 'publisher filter includes grouped alternate coverage', await rbi().count() === 1)
@@ -180,6 +180,8 @@ try {
   console.log('News 503 cache evidence', cachedAfter503)
   check('News cache', '503 preserves last successful response', cachedAfter503.fetchedAt === fixture.fetchedAt)
   const cdp = await ctx.newCDPSession(page); await cdp.send('Network.clearBrowserCache'); await cdp.send('Network.setCacheDisabled', { cacheDisabled: true })
+  // A refresh is one request per shard; wait until the gateway has stopped receiving them before the connection is cut.
+  for (let seen = -1; seen !== apiRequests;) { seen = apiRequests; await page.waitForTimeout(1500) }
   await ctx.setOffline(true); const requestsBeforeOfflineReload = apiRequests; await page.reload(); await page.locator('[data-news-event]').first().waitFor()
   check('News cache', 'offline reload makes no API request', apiRequests === requestsBeforeOfflineReload)
   check('News cache', 'offline reload with HTTP cache disabled shows today cached events', await page.locator('[data-news-event]').count() === 9)

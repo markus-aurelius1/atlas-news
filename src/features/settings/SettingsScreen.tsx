@@ -16,6 +16,7 @@ import { Sheet, SheetActions } from '@/ui/Sheet'
 import { toast } from '@/ui/toast'
 import { motionChoice, setMotionChoice, type MotionChoice } from '@/lib/motion'
 import { OfflineAtlas } from '@/features/atlas/OfflineAtlas'
+import { describeSync, requestSync, signIn, useSyncStatus } from '@/sync/status'
 import './settings.css'
 
 
@@ -85,6 +86,8 @@ export default function SettingsScreen() {
         <SwitchRow className="settings-line" title="Haptics" description="Gentle vibrations on supported devices." checked={settings.haptics} onChange={(v) => void updateSettings({ haptics: v })} />
       </Group>
 
+      <SyncGroup />
+
       <DataGroup />
 
       <InstallGroup />
@@ -96,7 +99,7 @@ export default function SettingsScreen() {
       <footer className="settings-foot">
         <LogoMark className="size-5" />
         <p>
-          Tars {__APP_VERSION__} · Local-first: your data lives on this device and never leaves it unless you export it. News opens on the publisher’s site; Read and Saved stay here. Works offline.
+          Tars {__APP_VERSION__} · Local-first: your data lives on this device and everything works offline. When you are signed in, reading state, notes, Atlas progress and settings also sync to your own account; the news feed itself is never uploaded. News opens on the publisher’s site.
         </p>
       </footer>
     </div>
@@ -136,6 +139,34 @@ function ActionRow({ icon, title, body, onClick, danger }: { icon: ReactNode; ti
       meta={body}
       onClick={onClick}
     />
+  )
+}
+
+/** One line: who is syncing and whether it is up to date, with the single action that state calls for. */
+function SyncGroup() {
+  const status = useSyncStatus()
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    const tick = setInterval(() => setNow(Date.now()), 30_000)
+    return () => clearInterval(tick)
+  }, [])
+  const view = describeSync(status, now)
+  return (
+    <Group title="Sync">
+      <div className="settings-line" data-sync={status.phase} role={view.tone === 'warning' ? 'alert' : 'status'}>
+        <span className="settings-label">
+          <b>{view.title}</b>
+          <small>{view.body}</small>
+        </span>
+        {view.action && (
+          <span className="shrink-0">
+            <Button size="sm" variant={view.action === 'signin' ? 'primary' : 'secondary'} loading={status.busy} onClick={view.action === 'signin' ? signIn : requestSync}>
+              {view.action === 'signin' ? 'Sign in' : 'Sync now'}
+            </Button>
+          </span>
+        )}
+      </div>
+    </Group>
   )
 }
 
@@ -188,7 +219,7 @@ function DataGroup() {
   }
 
   const erase = async () => {
-    if (!(await confirmDialog({ title: 'Erase all data?', body: 'All Atlas progress, News reading state, notes, settings and historical data on this device will be deleted. This can’t be undone.', confirmLabel: 'Erase everything', danger: true }))) return
+    if (!(await confirmDialog({ title: 'Erase all data?', body: useSyncStatus.getState().account ? 'All Atlas progress, News reading state, notes, settings and historical data on this device will be deleted. What has synced to your account stays there and returns when this device next syncs.' : 'All Atlas progress, News reading state, notes, settings and historical data on this device will be deleted. This can’t be undone.', confirmLabel: 'Erase everything', danger: true }))) return
     await eraseEverything()
     location.reload()
   }

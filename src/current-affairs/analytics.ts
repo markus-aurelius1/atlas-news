@@ -1,6 +1,6 @@
 /** Derived reading metrics and disjoint rolling-window scopes. Cluster members count as one reading item. */
-import { eventPersonalState, type PersonalState } from './personal-state'
-import { publicationDay, readingMinutes, readingQueue, shiftDay, type WorkspaceEvent } from './workspace'
+import { eventPersonalState, type PersonalState } from './personal-state.ts'
+import { TODAY_STORY_LIMIT, publicationDay, readingMinutes, readingQueue, shiftDay, valueOrder, type WorkspaceEvent } from './workspace.ts'
 export const RECENT_WINDOW_MS = 24 * 60 * 60 * 1000
 export function latestPublication(event: WorkspaceEvent): number {
   return Math.max(0, ...event.members.map(m => Date.parse(m.publishedAt ?? '') || 0))
@@ -11,7 +11,7 @@ export function recentCoverage(event: WorkspaceEvent, now: number) {
     return time > now - RECENT_WINDOW_MS && time <= now
   })
 }
-export function readingScopes(events: WorkspaceEvent[], now: number) {
+export function readingScopes(events: WorkspaceEvent[], now: number, limit = TODAY_STORY_LIMIT) {
   const today: WorkspaceEvent[] = [], archive: WorkspaceEvent[] = []
   for (const event of events) {
     const recent = recentCoverage(event, now)
@@ -23,6 +23,9 @@ export function readingScopes(events: WorkspaceEvent[], now: number) {
     }
     else archive.push(event)
   }
+  // The day's list is the highest-value stories; the rest are still valid and stay reachable in the Archive.
+  today.sort(valueOrder)
+  archive.push(...today.splice(limit))
   archive.sort((a, b) => latestPublication(b) - latestPublication(a) || a.id.localeCompare(b.id))
   return { today, archive }
 }

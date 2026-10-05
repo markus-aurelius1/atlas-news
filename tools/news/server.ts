@@ -1,22 +1,29 @@
-/** Local preview middleware; fixed refresh flag only, no arbitrary upstream URL, scheduler or server database. */
+/** Local preview middleware with the production contract: one registry shard per request, a fixed refresh flag, no arbitrary upstream URL. */
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { collectFeeds, FEED_CACHE_CONTROL } from '../../src/current-affairs/gateway.ts'
+import { FEED_SHARDS, shardIndex } from '../../src/current-affairs/shards.ts'
 import type { FeedResponse } from '../../src/current-affairs/types.ts'
 
-let pending: Promise<FeedResponse> | null = null
-const collectShared = () => {
-  pending ??= collectFeeds().finally(() => { pending = null })
-  return pending
+const pending = new Map<number, Promise<FeedResponse>>()
+function collectShared(shard: number): Promise<FeedResponse> {
+  let job = pending.get(shard)
+  if (!job) {
+    job = collectFeeds((input, init) => fetch(input, { ...init, redirect: 'manual' }), FEED_SHARDS[shard]).finally(() => { pending.delete(shard) })
+    pending.set(shard, job)
+  }
+  return job
 }
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); res.writeHead(405); res.end(JSON.stringify({ error: 'Method not allowed' })); return }
-  const force = new URL(req.url ?? '/', 'http://tars.local').searchParams.get('refresh') === '1'
-  const data = await collectShared()
+  const params = new URL(req.url ?? '/', 'http://tars.local').searchParams, shard = shardIndex(params)
+  if (shard === null) { res.setHeader('Cache-Control', 'no-store'); res.writeHead(400); res.end(JSON.stringify({ error: 'A shard number is required', shards: FEED_SHARDS.length })); return }
+  const force = params.get('refresh') === '1'
+  const data = await collectShared(shard)
   const available = data.sources.some(s => s.status !== 'failed')
   res.setHeader('Cache-Control', force ? 'no-store' : available ? FEED_CACHE_CONTROL : 'no-store')
   res.setHeader('X-Tars-News-Cache', force ? 'bypass' : 'miss')
   res.writeHead(available ? 200 : 503)
-  res.end(JSON.stringify(available ? data : { error: 'All publishers are unavailable', sources: data.sources }))
+  res.end(JSON.stringify(available ? data : { error: 'All publishers in this shard are unavailable', sources: data.sources }))
 }

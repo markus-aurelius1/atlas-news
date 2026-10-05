@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 import { readFileSync } from 'node:fs'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import currentAffairs from './tools/news/server.ts'
 
 // BASE lets the PWA be hosted from a sub-path (e.g. GitHub Pages). Capacitor uses '/'.
@@ -16,6 +17,13 @@ const siteUrl = (
   process.env.SITE_URL ??
   'http://localhost:5173'
 ).replace(/\/+$/, '')
+
+/** Local development and preview have no sync service; say so plainly instead of answering 404. Sync runs on Cloudflare (functions/api/sync.ts). */
+const noSync = (_req: IncomingMessage, res: ServerResponse) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  res.setHeader('Cache-Control', 'no-store')
+  res.end(JSON.stringify({ v: 1, available: false }))
+}
 
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as { version: string }
 
@@ -29,6 +37,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     { name: 'current-affairs-gateway', configureServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) }, configurePreviewServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) } },
+    { name: 'sync-not-available', configureServer(server) { server.middlewares.use('/api/sync', noSync) }, configurePreviewServer(server) { server.middlewares.use('/api/sync', noSync) } },
     { name: 'site-url', transformIndexHtml: (html) => html.replaceAll('%SITE_URL%', siteUrl) },
     {
       // The UI font is needed for the very first text: preload it, so nothing reflows when it arrives and the Atlas measures its names once.
@@ -87,6 +96,9 @@ export default defineConfig({
         ],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         navigateFallback: 'index.html',
+        // /api/session must reach the network, where Cloudflare Access can ask for a login, and so must Access's own
+        // callback (/cdn-cgi/access/authorized): answered from the cache, it would never set the session cookie.
+        navigateFallbackDenylist: [/^\/api\//, /^\/cdn-cgi\//],
         cleanupOutdatedCaches: true,
       },
       devOptions: { enabled: false },

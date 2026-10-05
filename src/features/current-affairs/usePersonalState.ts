@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { CA_STATE_KEY, readPersonalState, writePersonalPatch, type PersonalEntry, type PersonalState } from '@/current-affairs/personal-state'
 import type { NewsEvent } from '@/current-affairs/types'
+import { noteLocalChange, PERSONAL_STATE_EVENT } from '@/sync/signal'
 export function usePersonalState() {
   const [state, setState] = useState<PersonalState>({ version: 1, entries: {} }), [stateError, setError] = useState('')
   useEffect(() => {
@@ -12,10 +13,12 @@ export function usePersonalState() {
     load()
     const change = (e: StorageEvent) => { if (e.key === CA_STATE_KEY || e.key === null) load() }
     window.addEventListener('storage', change)
-    return () => window.removeEventListener('storage', change)
+    // Sync wrote marks made on another device.
+    window.addEventListener(PERSONAL_STATE_EVENT, load)
+    return () => { window.removeEventListener('storage', change); window.removeEventListener(PERSONAL_STATE_EVENT, load) }
   }, [])
   const patch = useCallback((event: NewsEvent, value: PersonalEntry) => {
-    try { setState(writePersonalPatch(window.localStorage, event, value)); setError(''); return true }
+    try { setState(writePersonalPatch(window.localStorage, event, value)); setError(''); noteLocalChange(); return true }
     catch { setError('Couldn’t save on this device. Your last saved state is preserved.'); return false }
   }, [])
   return { state, stateError, patch }

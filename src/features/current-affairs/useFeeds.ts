@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useOnline } from '@/lib/useOnline'
 import { canonicalUrl } from '@/current-affairs/feed'
+import { FEED_SHARDS, mergeShards } from '@/current-affairs/shards'
 import type { FeedResponse, RelevanceIndex } from '@/current-affairs/types'
 
 const endpoint = '/api/current-affairs'
@@ -25,7 +26,7 @@ function validResponse(data: FeedResponse) {
 }
 
 function validIndex(data: RelevanceIndex) {
-  return data?.version === 1 && Array.isArray(data.signals)
+  return data?.version === 2 && Array.isArray(data.signals)
 }
 
 export function feedRefreshDue(data: FeedResponse | null, now = Date.now()) {
@@ -35,7 +36,7 @@ export function feedRefreshDue(data: FeedResponse | null, now = Date.now()) {
 async function loadIndex(): Promise<RelevanceIndex> {
   if (memoryIndex) return memoryIndex
   if (indexPending) return indexPending
-  indexPending = fetch(`${import.meta.env.BASE_URL}current-affairs/v1/relevance-index.json`, { cache: 'force-cache' })
+  indexPending = fetch(`${import.meta.env.BASE_URL}current-affairs/v2/relevance-index.json`, { cache: 'force-cache' })
     .then(async response => {
       if (!response.ok) throw new Error('Relevance index unavailable')
       const next = await response.json() as RelevanceIndex
@@ -72,18 +73,34 @@ async function persistFeed(data: FeedResponse) {
   }
 }
 
+/** One registry shard from the gateway; null when it cannot be fetched or is not a feed. */
+async function requestShard(shard: number, force: boolean, signal: AbortSignal): Promise<{ data: FeedResponse; cached: boolean } | null> {
+  try {
+    const response = await fetch(`${endpoint}?shard=${shard}${force ? '&refresh=1' : ''}`, { signal, cache: force ? 'reload' : 'no-cache' })
+    if (!response.ok) return null
+    const data = await response.json() as FeedResponse
+    return validResponse(data) ? { data, cached: response.headers.get('X-Tars-News-Cache') === 'hit' } : null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * A refresh asks for every shard at once and merges whatever answers. Shards that fail keep their sources'
+ * articles from the last snapshot; only when none answers does the refresh fail and leave that snapshot untouched.
+ */
 function requestFeed(force = false): Promise<{ data: FeedResponse; cached: boolean }> {
   if (refreshPending) return refreshPending
   lastAttemptAt = Date.now()
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 18000)
-  refreshPending = fetch(force ? `${endpoint}?refresh=1` : endpoint, { signal: controller.signal, cache: force ? 'reload' : 'no-cache' })
-    .then(async response => {
-      if (!response.ok) throw new Error('News unavailable')
-      const next = await response.json() as FeedResponse
+  refreshPending = Promise.all(FEED_SHARDS.map((_, shard) => requestShard(shard, force, controller.signal)))
+    .then(async parts => {
+      const next = mergeShards(parts.map(part => part?.data ?? null), memoryFeed ?? await restoreFeed())
+      if (!next) throw new Error('News unavailable')
       if (!validResponse(next)) throw new Error('Invalid feed response')
       await persistFeed(next)
-      return { data: next, cached: response.headers.get('X-Tars-News-Cache') === 'hit' }
+      return { data: next, cached: parts.every(part => part?.cached) }
     })
     .finally(() => {
       clearTimeout(timeout)
