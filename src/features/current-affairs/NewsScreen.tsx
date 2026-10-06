@@ -1,7 +1,7 @@
-/** News: a text-first reading list of publisher links. Feed metadata and Read/Saved state stay authoritative; nothing here fetches an article. */
+/** News: a text-first reading list. Feed metadata and Read/Saved state stay authoritative; a headline opens its article in the reader (reader/Reader.tsx), which fetches it then and keeps nothing. */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { CloudOff, Inbox, RefreshCw, Search, SlidersHorizontal, X } from 'lucide-react'
-import { useRoute } from '@/app/router'
+import { currentRoute, goBack, navigate, useRoute } from '@/app/router'
 import { useRouteState } from '@/app/routeState'
 import { isTyping } from '@/app/shortcuts'
 import { latestPublication, queueCounts, readingScopes, recentCoverage } from '@/current-affairs/analytics'
@@ -13,6 +13,7 @@ import { editionProgress, filterWorkspace, publicationDay, UNDATED, type Reading
 import { cn } from '@/lib/cn'
 import { anyLayerOpen, Sheet } from '@/ui/Sheet'
 import { toast } from '@/ui/toast'
+import { Reader, type ReaderEntry } from './reader/Reader'
 import { StoryGroup, type StoryAction } from './StoryGroup'
 import { NEWS_REFRESH_TTL_MS, relativeAge } from './useFeeds'
 import { useNewsModel } from './useNewsModel'
@@ -29,6 +30,7 @@ const ALL = 'All subjects'
 const SUBJECTS = ['Polity', 'Governance', 'Economy', 'International relations', 'Environment', 'Geography', 'Sci-Tech', 'Security', 'History & Culture', 'General studies']
 const GENERAL = 'General studies'
 const PAGE = 60
+const NO_MARKS = {}
 const subjectOf = (event: WorkspaceEvent) => event.primary.relevance.subjects[0] ?? GENERAL
 const dateline = (now: number) => new Date(now).toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long' })
 
@@ -42,7 +44,7 @@ interface Section {
 export default function NewsScreen() {
   const route = useRoute()
   const debug = route.params.get('debug') === '1' || new URLSearchParams(location.search).get('debug') === '1'
-  const { data, loading, refreshing, error, cached, now, online, reload, archived, archiveError, classified, events } = useNewsModel()
+  const { data, index, loading, refreshing, error, cached, now, online, reload, archived, archiveError, classified, events } = useNewsModel()
   const { state, stateError, patch } = usePersonalState()
   const today = publicationDay(now)
   // The queue, filters and archive position are kept while the app is open (app/routeState.ts); the day always starts as today.
@@ -143,6 +145,46 @@ export default function NewsScreen() {
     },
     [patch],
   )
+
+  // ── The reader: the article named in the route, opened over this list ──
+  const readUrl = route.params.get('read')
+  const byUrl = useMemo(() => {
+    const map = new Map<string, ReaderEntry>()
+    for (const event of events) for (const item of event.members) if (!map.has(item.url)) map.set(item.url, { item, event })
+    return map
+  }, [events])
+  // One article per story, in the order the list shows them.
+  const order = useMemo(() => sections.flatMap((s) => s.groups.flatMap((g) => [g.anchor, ...g.rest])).filter((e) => e.lead).map((e) => e.item.url), [sections])
+  /**
+   * Previous and next follow the list as it stood when the reader opened: marking an article read moves it out
+   * of To Read underneath, and must not change where "next" leads.
+   */
+  const [sequence, setSequence] = useState<string[]>([])
+  useEffect(() => {
+    if (!readUrl) {
+      setSequence((s) => (s.length ? [] : s))
+      return
+    }
+    setSequence((s) => {
+      if (s.length > 1 && s.includes(readUrl)) return s
+      if (order.includes(readUrl)) return order
+      // Another publisher's report of a listed story sits beside that story.
+      const event = byUrl.get(readUrl)?.event
+      const beside = event ? order.findIndex((url) => byUrl.get(url)?.event.id === event.id) : -1
+      return beside < 0 ? (s.length === 1 && s[0] === readUrl ? s : [readUrl]) : [...order.slice(0, beside + 1), readUrl, ...order.slice(beside + 1)]
+    })
+  }, [readUrl, order, byUrl])
+  const openReader = useCallback((url: string, replace = false) => {
+    const params = new URLSearchParams(currentRoute().params)
+    params.set('read', url)
+    navigate(`#/current-affairs?${params}`, { replace })
+  }, [])
+  const closeReader = useCallback(() => goBack('#/current-affairs'), [])
+  // Stepping replaces the address, so Back always returns to the list.
+  const stepReader = useCallback((url: string) => openReader(url, true), [openReader])
+  const actInReader = useCallback((event: WorkspaceEvent, action: 'read' | 'save') => act(event, action), [act])
+  const reading = readUrl ? (byUrl.get(readUrl) ?? null) : null
+  const at = readUrl ? sequence.indexOf(readUrl) : -1
 
   const closeSearch = () => {
     updateFilters({ query: '' })
@@ -321,7 +363,7 @@ export default function NewsScreen() {
                   <span className="type-numeric">{section.events.length}</span>
                 </h2>
                 {section.groups.map((group) => (
-                  <StoryGroup key={group.key} group={group} state={state} now={now} archive={view === 'Archive'} debug={debug} act={act} />
+                  <StoryGroup key={group.key} group={group} state={state} now={now} archive={view === 'Archive'} debug={debug} act={act} open={openReader} />
                 ))}
               </section>
             ))}
@@ -343,7 +385,7 @@ export default function NewsScreen() {
               </ul>
             </details>
           )}
-          <p className="news-foot">Headlines and excerpts come from publisher feeds and open on the publisher’s site. Only stories that pass the PYQ-backed UPSC check are listed. Reading times are estimates.</p>
+          <p className="news-foot">Headlines and excerpts come from publisher feeds. A headline opens its article in the reader, fetched from the publisher at that moment and not kept; the original is always one press away. Only stories that pass the PYQ-backed UPSC check are listed. Reading times are estimates.</p>
         </div>
       </div>
 
@@ -426,6 +468,18 @@ export default function NewsScreen() {
           </section>
         </div>
       </Sheet>
+      <Reader
+        url={readUrl}
+        entry={reading}
+        resolving={!reading && (loading || !index)}
+        personal={reading ? eventPersonalState(reading.event, state) : NO_MARKS}
+        prev={at > 0 ? (byUrl.get(sequence[at - 1]) ?? null) : null}
+        next={at >= 0 && at < sequence.length - 1 ? (byUrl.get(sequence[at + 1]) ?? null) : null}
+        position={at >= 0 && sequence.length > 1 ? { index: at, total: sequence.length } : null}
+        onClose={closeReader}
+        onNavigate={stepReader}
+        onAct={actInReader}
+      />
     </section>
   )
 }

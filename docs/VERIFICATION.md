@@ -1,3 +1,49 @@
+# News reader — 2026-10-06
+
+A headline now opens its article in a full-screen reader inside Tars (`src/features/current-affairs/reader`, `src/current-affairs/reader`, `functions/api/article.ts`; see README "News reader"). Branch `feature/news-reader`; not merged, not deployed. The feed gateway, shards, feed cache, archive, clustering, relevance, filters, sync, D1, Access middleware and every Atlas file are unchanged. `NewsScreen.tsx` gained the reader's route state and `StoryGroup.tsx` a click handler on links that remain real publisher links. AGENTS.md's News rule was rewritten at the owner's request: it used to forbid fetching article bodies at all.
+
+| Check | Result |
+| --- | --- |
+| `npm run typecheck` | Passed |
+| `npm run lint` | Passed: 0 errors, 132 warnings (118 before; the 14 new ones are the reader's own buttons, an image load handler and a focusable table scroller, the same kinds News already carries) |
+| `npm test` | Passed: 568 tests in 39 files. New: 14 policy and bounded-fetch tests, 15 extraction and sanitizer tests, 13 reader component tests, 4 Pages contract tests |
+| `npm run test:pipeline` | 45 tests: 39 passed, 0 failed, 6 skipped (the frozen canonical ZIP is not on this machine) |
+| `npm run build` | Passed; 165 PWA precache entries, 8,798 KiB (the italic reading face adds 147 kB). Readability and the extractor are a separate 41 kB chunk loaded when the first article is opened |
+| `npm run test:browser` | Passed, whole suite: smoke 36; News 276 (was 268: the headline now opens the reader, Open original leads to the publisher, opening is not reading); reader 264; cold starts, label order, Atlas interaction, canonical questions (light and dark) and recall integration passed. Two earlier runs failed in Atlas scripts this change does not touch (a label wait and a double-tap zoom timed out) while other Chrome instances were running on the machine; both passed alone and in the final run |
+| `npm run test:sync` | Passed: 30 checks (27 before). New, under `wrangler pages dev` (workerd) with Access tokens from the local issuer: the gateway answers 401 without a token; signed in, it answers 403, 451 and 400 for an unlisted, a restricted and a local address without fetching; and, with `READER_LIVE_URL` set, one live Indian Express article came through in 2.0 s as 140 kB of script-free HTML |
+
+What the reader check covers (`tools/browser/reader-check.mjs`, 66 checks in each of 375 px and 1366 px, light and dark, against the production build with a fixture feed and a fixture gateway): opening from a headline and from related coverage, the reader as a full-screen modal over an inert, unchanged list; headings, quotation, list, table, figure and caption kept; a failed picture and publisher furniture removed; no script, handler, form or `javascript:` link reaching the page from a hostile fixture; measure and line height; progress from 0 to 100 and controls that hide while reading down; text size, typeface, column and line spacing changing and persisting; reload on a reader address; Escape, the Back control and the browser's Back all returning to the same list position with focus on the headline; a modified click still opening the publisher; Read and Saved writing the list's own marks; previous and next following the list as it stood when the reader opened, without adding history; loading, subscriber, refused, unreadable, subscription-publisher, failed-then-retried, short-text and offline states, each with no article text and the original offered; an unknown address not being fetched; and, at the end, no article text in localStorage, sessionStorage, Cache Storage or IndexedDB.
+
+## Publisher compatibility
+
+Live, 2026-10-06, from this machine: the three newest articles of up to two feeds per publisher, through the dev server's gateway and the app's own extraction in Chrome (133 articles; `npm run news:reader` repeats it with happy-dom). 105 were extracted, 5 were withheld as subscriber articles, 18 belong to publishers that are never fetched, 3 were refused by the publisher, 1 was on a domain not then listed and 1 feed did not answer. Median 794 words; extraction took a median 42 ms in an unminified development build; the largest page sent to the browser was 191 kB before compression.
+
+| Publisher | Result |
+| --- | --- |
+| The Hindu | 6 of 6. The opening picture is filled in by the site's script, so the reader uses the publisher's `og:image` and its caption is lost. The metered paywall is counted in the visitor's browser, so the reader, like any first visit, is not metered (see limitations) |
+| Indian Express | 6 of 6, with headings, links and pictures; "Also read" and Telegram prompts removed |
+| Hindustan Times | 6 of 6. Pictures are the 400 px versions the page carries and are shown at their own size |
+| Times of India, The Tribune, Business Standard, BusinessLine, Guardian, BBC | 6 of 6 each. The Tribune is slow (0.2–9 s; one timeout in an earlier run) |
+| Down To Earth, Economic Times, Frontline, India Today, Northeast Now, Scroll.in, Al Jazeera, Politico Europe | 3 of 3 each. Politico's text is split across containers and needs the content hint in `extract.ts`. India Today's video pages give the description text |
+| Substack newsletters (seven) | 21 of 21 free posts; long posts with many charts keep their pictures |
+| Mint | 4 of 6; 2 premium articles withheld, as the publisher declares them |
+| NDTV | 1 of 3; one article withheld as declared, one on `ndtvprofit.com`, which was added to the policy afterwards |
+| The Economist: Off the Charts (Substack) | 1 of 3; 2 paid posts withheld |
+| South China Morning Post | 0 of 3: the publisher refuses the request (403). The reader says so and offers the original |
+| The Economist, Financial Times, Bloomberg, The New York Times | Never fetched, by policy |
+| NASA | Not verified: its feed did not answer during the run |
+
+## Limitations
+
+- **Cloudflare is unverified.** Nothing was deployed. The function does little work (it streams one page and strips it; extraction is in the browser), but its CPU time on the free plan and whether publishers answer Cloudflare's addresses as they answered this machine are only known after a deployment. After deploying, watch the Functions metrics for error 1102 and open one article per publisher.
+- **Metered paywalls.** Subscriber articles are withheld when the publisher declares them (`isAccessibleForFree`, a locked content tier) or the page shows its paywall. A meter that counts free articles in the visitor's browser (The Hindu) cannot be seen: each article arrives as a first visit would receive it. To be stricter, mark that publisher `restricted` in `policy.ts`.
+- **robots.txt is not consulted.** The request is a single page for the person who opened it, identified as `TarsReader`, the way a browser's reader view works; it is not a crawl. A publisher that refuses is not asked again another way.
+- **Embeds are dropped**: video, audio, tweets, interactive charts and iframes disappear without a placeholder, and a gallery keeps its first picture. Live pages and video pages give whatever text they hold, or the "no article text" state.
+- **Short texts** (under 110 words, or ending in an ellipsis) are labelled as possibly incomplete; a genuinely short brief gets the same label.
+- **No offline reading.** Article text is never stored, so only articles opened earlier in the same visit are available offline.
+- **An expired Access session** shows as "Couldn't load this article": the sign-in redirect is cross-origin and cannot be told apart from a network failure. The "Sign in" state appears only when the gateway itself answers 401.
+- **Native builds** have no `/api`, as with the feed: the reader shows its failure state and the original link.
+
 # News substantive-value gate — 2026-10-05
 
 A gate was added after syllabus matching (`relevance.ts`, `SUBSTANCE` / `LOW_VALUE` in `evidence-lexicon.ts`; see FOUNDATION.md). Scores, the 6.5 and 7.2 thresholds, ranking, the 100-story cap, clustering, sources, sync, cache and the Cloudflare configuration are unchanged. Regression cases: the eleven live false positives the owner flagged (`fixtures/substance-cases.json`).

@@ -210,6 +210,16 @@ try {
   check('and cannot read it by claiming the account: ' + JSON.stringify(forged), forged.status === 409 && forged.body.error === 'account_mismatch')
   const session = await one.page.evaluate(async () => { const r = await fetch('/api/session', { redirect: 'manual' }); return r.type })
   check('the sign-in route answers from the network with a redirect back to the app', session === 'opaqueredirect')
+  // The reader gateway under the same runtime and the same Access check. None of these contacts a publisher.
+  const article = (who, target) => who.page.evaluate(async url => { const r = await fetch('/api/article?url=' + encodeURIComponent(url)); return { status: r.status, error: (await r.json()).error, cache: r.headers.get('Cache-Control') } }, target)
+  check('the reader gateway is closed without an Access token', (await article(anonymous, 'https://www.thehindu.com/a.ece')).status === 401)
+  const refusals = [await article(stranger, 'https://example.org/a'), await article(stranger, 'https://www.ft.com/content/a'), await article(stranger, `http://127.0.0.1:${port}/api/sync`)]
+  check('signed in, it refuses unlisted, restricted and local addresses without fetching them: ' + refusals.map(r => `${r.status} ${r.error}`).join(', '), JSON.stringify(refusals.map(r => [r.status, r.error])) === JSON.stringify([[403, 'publisher_not_listed'], [451, 'publisher_restricted'], [400, 'invalid_url']]) && refusals.every(r => r.cache === 'private, no-store'))
+  // Optional, and the only step here that reaches a publisher: READER_LIVE_URL=<a listed article> fetches it through workerd.
+  if (process.env.READER_LIVE_URL) {
+    const live = await stranger.page.evaluate(async url => { const started = performance.now(); const r = await fetch('/api/article?url=' + encodeURIComponent(url)); const body = await r.json(); return { status: r.status, error: body.error, chars: body.html?.length ?? 0, scripts: /<script(?![^>]*ld\+json)/i.test(body.html ?? ''), ms: Math.round(performance.now() - started) } }, process.env.READER_LIVE_URL)
+    check('a live article comes through the gateway under workerd, stripped of scripts: ' + JSON.stringify(live), live.status === 200 && live.chars > 2000 && !live.scripts)
+  }
 
   // ── 8. What it cost ────────────────────────────────────────────────────────────────────────────────────
   await one.syncNow(); await one.syncNow()

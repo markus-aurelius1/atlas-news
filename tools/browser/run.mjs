@@ -22,6 +22,7 @@ try {
   for(const script of ['smoke.mjs','atlas-cold-start.mjs','atlas-label-visibility.mjs','atlas-check.mjs','vnext-learning.mjs'])check(script,[base])
   check('vnext-learning.mjs',[base],{SCHEME:'dark'})
   check('news-check.mjs')
+  check('reader-check.mjs')
   await serve(['--port',String(devPort)],'http://'+host+':'+devPort+'/')
   check('atlas-recall-check.mjs',['http://'+host+':'+devPort+'/'])
 }finally{for(const child of processes)child.kill()}

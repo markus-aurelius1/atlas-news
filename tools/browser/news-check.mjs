@@ -45,6 +45,12 @@ const server = createServer(async (req, res) => {
     res.writeHead(state === 'fail' ? 503 : 200)
     res.end(JSON.stringify(state === 'fail' ? { error: 'Fixture failure' } : state === 'stale' ? { ...fixture, fetchedAt: new Date(Date.now() - 7200000).toISOString() } : state === 'trimmed' ? { ...fixture, items: fixture.items.filter(i => i.publishedAt === publishedAt) } : fixture)); return
   }
+  if (path === '/api/article') {
+    // The reader has its own check (reader-check.mjs); here it only needs an article to show.
+    const target = new URL(req.url, 'http://localhost').searchParams.get('url')
+    res.setHeader('Content-Type', 'application/json'); res.setHeader('Cache-Control', 'private, no-store')
+    res.end(JSON.stringify({ v: 1, url: target, html: '<!doctype html><html><head><title>Fixture</title></head><body><article>' + Array.from({ length: 8 }, (_, i) => '<p>Fixture paragraph ' + i + ' reports that the committee reviewed the scheme and set out what it found in the districts it visited during the session.</p>').join('') + '</article></body></html>' })); return
+  }
   const file = resolve(dist, '.' + (path === '/' ? '/index.html' : decodeURIComponent(path)))
   if (!file.startsWith(dist + sep) || !existsSync(file)) { res.writeHead(404); res.end(); return }
   res.setHeader('Content-Type', mime[file.slice(file.lastIndexOf('.'))] ?? 'application/octet-stream')
@@ -108,7 +114,9 @@ try {
     await page.getByRole('button', { name: 'Search news', exact: true }).click()
     const search = page.getByLabel('Search articles, topics or sources'); await search.fill('GDP'); check(tag, 'metadata search', await rows.count() === 1); await search.fill(''); await search.focus(); await page.keyboard.type('jrsko'); check(tag, 'typing is uninterrupted', await search.inputValue() === 'jrsko'); await search.fill('')
     const original = rbi().locator('[data-news-original]'); check(tag, 'direct safe original publisher link', await original.getAttribute('target') === '_blank' && (await original.getAttribute('rel')).includes('noopener'))
-    await original.scrollIntoViewIfNeeded(); const position = await page.evaluate(() => scrollY), wait = page.waitForEvent('popup'); await original.click(); const publisher = await wait; await publisher.waitForLoadState(); await publisher.close(); check(tag, 'return preserves list position', Math.abs(await page.evaluate(() => scrollY) - position) <= 2)
+    const readerDialog = page.getByRole('dialog', { name: /^Reader:/ }), leaveReader = async () => { await readerDialog.getByRole('button', { name: 'Back to News', exact: true }).click(); await readerDialog.waitFor({ state: 'detached' }) }
+    await original.scrollIntoViewIfNeeded(); const position = await page.evaluate(() => scrollY); await original.click(); await readerDialog.locator('.reader-body').waitFor(); check(tag, 'the headline opens the reader over the list', await rows.count() === 9); await leaveReader(); check(tag, 'return preserves list position', Math.abs(await page.evaluate(() => scrollY) - position) <= 2)
+    check(tag, 'opening an article is not reading it', await rows.count() === 9 && await page.evaluate(key => !JSON.parse(localStorage.getItem(key) ?? '{"entries":{}}').entries['https://indianexpress.com/article/fixture-rbi'], stateKey))
     const unreadInk = await rbi().locator('h3').evaluate(el => getComputedStyle(el).color)
     await read(rbi()).click(); check(tag, 'marking done moves out of To be Read', await rows.count() === 8 && await rbi().count() === 0)
     await queue('Read'); check(tag, 'read article moves into Read', await rows.count() === 1 && await rbi().count() === 1)
@@ -145,7 +153,7 @@ try {
     const openOriginal = rbi().locator('[data-news-original]')
     await queue('Saved')
     check(tag, 'the headline links to the same safe canonical URL', await openOriginal.getAttribute('href') === 'https://indianexpress.com/article/fixture-rbi' && await openOriginal.getAttribute('target') === '_blank' && (await openOriginal.getAttribute('rel')).includes('noopener'))
-    const openWait = page.waitForEvent('popup'); await openOriginal.click(); const opened = await openWait; await opened.waitForLoadState(); check(tag, 'the headline opens the publisher without an internal screen', opened.url() === 'https://indianexpress.com/article/fixture-rbi' && await page.getByRole('dialog').count() === 0); await opened.close(); await queue('To be Read')
+    await openOriginal.click(); await readerDialog.locator('.reader-body').waitFor(); const openWait = page.waitForEvent('popup'); await readerDialog.locator('[data-reader-original]').click(); const opened = await openWait; await opened.waitForLoadState(); check(tag, 'the reader’s Open original leads to the publisher', opened.url() === 'https://indianexpress.com/article/fixture-rbi'); await opened.close(); await leaveReader(); await queue('To be Read')
     mode = 'stale'; await page.getByRole('button', { name: 'Refresh news' }).click(); await page.getByText(/Refresh due – showing cached feed/).waitFor(); check(tag, 'stale metadata is explicit')
     await ctx.setOffline(true); const requestsBeforeOfflineRefresh = apiRequests; await page.getByRole('button', { name: 'Refresh news' }).click(); await page.getByText(/Offline – cached feed/).waitFor(); check(tag, 'offline refresh makes no API request', apiRequests === requestsBeforeOfflineRefresh); check(tag, 'offline preserves pending queue and state', await rows.count() === 7); await overflow()
     await ctx.setOffline(false); mode = 'ok'; await page.getByRole('button', { name: 'Refresh news' }).click(); await page.getByText('Loading trusted feeds…').waitFor({ state: 'hidden' }); await hideFilters(); for (const b of await page.getByRole('button', { name: 'Dismiss', exact: true }).all()) await b.click(); await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(400); await page.screenshot({ path: fileURLToPath(new URL(tag + '.png', out)), fullPage: true })

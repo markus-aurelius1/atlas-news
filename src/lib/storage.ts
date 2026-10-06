@@ -7,6 +7,7 @@ export const KEYS = {
   theme: 'tars.theme',
   atlasVisit: 'tars.atlas.lastVisit',
   sidebar: 'tars.sidebar.collapsed',
+  reader: 'tars.reader.prefs',
 } as const
 
 const LEGACY: Partial<Record<keyof typeof KEYS, string>> = {

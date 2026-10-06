@@ -1,4 +1,4 @@
-/** Feed metadata is transient; no article bodies or learner state belong here. */
+/** Feed metadata is transient; no article bodies or learner state belong here. (The reader's article text lives only in memory: reader/extract.ts.) */
 export interface NewsSource {
   id: string
   publisher: string

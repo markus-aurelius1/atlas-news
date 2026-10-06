@@ -1,0 +1,1067 @@
+/* The reader: one article on a quiet page. A single column set in the display serif (or the interface sans),
+   a measure that follows the text size, and controls that step back while the article is being read.
+   Everything here is ink on paper in both themes; the one signal colour marks progress and what is saved. */
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400 600;
+  src: url('/fonts/newsreader-italic-latin.woff2') format('woff2');
+}
+
+.reader {
+  /* Set from the reader's preferences (Reader.tsx): scale, and through the data attributes below, face, measure and leading. */
+  --reader-scale: 1;
+  --reader-base: 20px;
+  --reader-measure: 31em;
+  --reader-leading: 1.62;
+  --reader-font: var(--font-display);
+  --reader-gutter: 24px;
+  --reader-text: color-mix(in srgb, var(--ink) 94%, var(--bg));
+  --reader-bar: 52px;
+  position: fixed;
+  inset: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+}
+.dark .reader {
+  /* White text on graphite glares at reading length: the article sits a step below the interface ink. */
+  --reader-text: color-mix(in srgb, var(--ink) 86%, var(--bg));
+}
+.reader[data-face='sans'] {
+  --reader-base: 17.5px;
+  --reader-font: var(--font-sans);
+}
+.reader[data-width='narrow'] {
+  --reader-measure: 27em;
+}
+.reader[data-width='wide'] {
+  --reader-measure: 36em;
+}
+.reader[data-leading='compact'] {
+  --reader-leading: 1.5;
+}
+.reader[data-leading='relaxed'] {
+  --reader-leading: 1.78;
+}
+.reader[data-face='sans'][data-leading='standard'] {
+  --reader-leading: 1.66;
+}
+.reader-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* ── Progress: the top edge of the page ── */
+.reader-progress {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+.reader-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 120ms linear;
+}
+
+/* ── The bar: back, where you are, and the controls ── */
+.reader-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  height: calc(var(--reader-bar) + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) max(10px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left));
+  background: var(--bg);
+  box-shadow: 0 1px 0 transparent;
+  transition:
+    transform var(--dur-slow) var(--motion-ease-in-out),
+    box-shadow var(--dur-base) var(--motion-ease-out);
+}
+.reader[data-scrolled] .reader-bar {
+  box-shadow: 0 1px 0 var(--line);
+}
+/* Reading down: the controls leave. Scrolling back, focus, or an open panel returns them. */
+.reader[data-quiet]:not([data-pinned]) .reader-bar:not(:focus-within) {
+  transform: translateY(-100%);
+}
+.reader-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 34px;
+  padding: 0 12px 0 6px;
+  border-radius: 9px;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition:
+    color var(--dur-fast) var(--motion-ease-out),
+    background-color var(--dur-fast) var(--motion-ease-out),
+    transform var(--dur-instant) var(--motion-ease-out);
+}
+.reader-back svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 2;
+}
+@media (hover: hover) {
+  .reader-back:hover {
+    color: var(--ink);
+    background: color-mix(in srgb, var(--ink) 7%, transparent);
+  }
+}
+.reader-back:active {
+  transform: scale(0.96);
+}
+.reader-bar-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-3);
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--dur-base) var(--motion-ease-out),
+    transform var(--dur-base) var(--motion-ease-out);
+}
+.reader-bar-title b {
+  margin-right: 8px;
+  font-weight: 650;
+  color: var(--ink);
+}
+.reader[data-deep] .reader-bar-title {
+  opacity: 1;
+  transform: none;
+}
+.reader-tools,
+.reader-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.reader-tool {
+  height: 34px;
+  min-width: 34px;
+  border-radius: 9px;
+}
+.reader-tool svg {
+  width: 17px;
+  height: 17px;
+}
+.reader-actions .reader-tool > span {
+  display: none;
+}
+.reader-tool[data-kind='read'][aria-pressed='true'] {
+  color: var(--success);
+  background: none;
+}
+.reader-tool[data-kind='save'][aria-pressed='true'] {
+  color: var(--accent);
+  background: none;
+}
+.reader-tool[data-kind='save'][aria-pressed='true'] svg {
+  fill: currentColor;
+}
+.reader-position {
+  min-width: 44px;
+  padding: 0 2px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--ink-3);
+}
+.reader-position i {
+  margin: 0 3px;
+  font-style: normal;
+  opacity: 0.55;
+}
+.reader-rule {
+  width: 1px;
+  height: 16px;
+  margin: 0 8px;
+  background: var(--line-strong);
+}
+.reader-type > span {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.reader-original {
+  padding: 0 10px 0 8px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.reader-original > span {
+  display: none;
+}
+@media (min-width: 720px) {
+  .reader-bar {
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .reader-original {
+    margin-left: 6px;
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+  }
+  .reader-original > span {
+    display: inline;
+  }
+}
+@media (max-width: 899px) {
+  .reader-bar-title {
+    visibility: hidden;
+  }
+}
+
+/* The same actions as a dock under the thumb (phones). */
+.reader-actions[data-dock] {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  height: calc(54px + env(safe-area-inset-bottom));
+  padding: 0 6px env(safe-area-inset-bottom);
+  background: var(--bg);
+  box-shadow: 0 -1px 0 var(--line);
+  transition: transform var(--dur-slow) var(--motion-ease-in-out);
+}
+.reader[data-quiet]:not([data-pinned]) .reader-actions[data-dock]:not(:focus-within) {
+  transform: translateY(100%);
+}
+.reader-actions[data-dock] .reader-position,
+.reader-actions[data-dock] .reader-rule {
+  display: none;
+}
+.reader-actions[data-dock] .reader-tool {
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+  border-radius: 10px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
+  background: none;
+}
+.reader-actions[data-dock] .reader-tool::after {
+  content: none;
+}
+.reader-actions[data-dock] .reader-tool > span {
+  display: block;
+}
+.reader-actions[data-dock] .reader-tool svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.75;
+}
+/* Reading order under the thumb: back a story, mark, keep, on to the next. */
+.reader-actions[data-dock] > button:nth-of-type(1) {
+  order: 1;
+}
+.reader-actions[data-dock] > button:nth-of-type(2) {
+  order: 4;
+}
+.reader-actions[data-dock] > button:nth-of-type(3) {
+  order: 2;
+}
+.reader-actions[data-dock] > button:nth-of-type(4) {
+  order: 3;
+}
+
+/* ── The article ── */
+.reader-sheet {
+  flex: 1;
+  padding: 0 max(var(--reader-gutter), env(safe-area-inset-right)) 0 max(var(--reader-gutter), env(safe-area-inset-left));
+}
+.reader-article {
+  width: 100%;
+  max-width: var(--reader-measure);
+  margin-inline: auto;
+  padding: 26px 0 72px;
+  font-size: calc(var(--reader-base) * var(--reader-scale));
+  animation: reader-rise var(--dur-calm) var(--motion-ease-out) backwards;
+}
+@keyframes reader-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.reader-head {
+  /* The headline keeps its own scale: it is the page's title, not part of the text being sized. */
+  font-size: 1rem;
+}
+.reader-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.reader-kicker b {
+  font-weight: 700;
+  color: var(--accent);
+}
+.reader-kicker span::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: var(--line-strong);
+}
+.reader-title {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(1.875rem, 1.3rem + 2.4vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.024em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.reader-standfirst {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(1.125rem, 1.02rem + 0.5vw, 1.3125rem);
+  line-height: 1.42;
+  letter-spacing: -0.006em;
+  text-wrap: pretty;
+  color: var(--ink-2);
+}
+.reader-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 0;
+  margin-top: 26px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.reader-meta > * + *::before {
+  content: '·';
+  margin: 0 8px;
+  opacity: 0.7;
+}
+.reader-byline {
+  font-weight: 650;
+  color: var(--ink);
+}
+.reader-meta:empty {
+  display: none;
+}
+
+/* ── Text ── */
+.reader-body {
+  margin-top: 30px;
+  font-family: var(--reader-font);
+  font-optical-sizing: auto;
+  line-height: var(--reader-leading);
+  color: var(--reader-text);
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  hanging-punctuation: first;
+}
+.reader-body > :first-child {
+  margin-top: 0;
+}
+.reader-body > :last-child {
+  margin-bottom: 0;
+}
+.reader-body p {
+  margin: 0 0 1.02em;
+  text-wrap: pretty;
+}
+.reader-body h2,
+.reader-body h3,
+.reader-body h4 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.reader-body h2 {
+  margin: 1.85em 0 0.5em;
+  font-size: 1.42em;
+  line-height: 1.2;
+  font-weight: 550;
+  letter-spacing: -0.016em;
+}
+.reader-body h3 {
+  margin: 1.7em 0 0.45em;
+  font-size: 1.18em;
+  line-height: 1.28;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.reader-body h4 {
+  margin: 1.8em 0 0.6em;
+  font-family: var(--font-sans);
+  font-size: 0.62em;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.reader-body h2 + p,
+.reader-body h3 + p {
+  margin-top: 0;
+}
+.reader-body strong {
+  font-weight: 650;
+  color: var(--ink);
+}
+.reader-body a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 62%, transparent);
+  transition:
+    color var(--dur-fast) var(--motion-ease-out),
+    text-decoration-color var(--dur-fast) var(--motion-ease-out);
+}
+@media (hover: hover) {
+  .reader-body a:hover {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+  }
+}
+.reader-body blockquote {
+  margin: 1.7em 0;
+  padding: 0.1em 0 0.1em 1.15em;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.08em;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.reader[data-face='sans'] .reader-body blockquote {
+  font-size: 1.22em;
+}
+.reader-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+.reader-body blockquote cite,
+.reader-body blockquote small {
+  display: block;
+  margin-top: 0.7em;
+  font-family: var(--font-sans);
+  font-size: 0.62em;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+.reader-body ul,
+.reader-body ol {
+  margin: 0 0 1.1em;
+  padding-left: 1.35em;
+}
+.reader-body ul {
+  list-style: disc;
+}
+.reader-body ol {
+  list-style: decimal;
+}
+.reader-body li {
+  margin: 0.32em 0;
+  padding-left: 0.2em;
+}
+.reader-body li::marker {
+  color: var(--ink-3);
+  font-family: var(--font-sans);
+  font-size: 0.82em;
+  font-variant-numeric: tabular-nums;
+}
+.reader-body li > p {
+  margin-bottom: 0.4em;
+}
+.reader-body hr {
+  height: auto;
+  margin: 2.1em 0;
+  border: 0;
+  text-align: center;
+  color: var(--ink-3);
+}
+.reader-body hr::after {
+  content: '· · ·';
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  letter-spacing: 0.4em;
+}
+.reader-body sup,
+.reader-body sub {
+  font-size: 0.7em;
+  line-height: 0;
+}
+.reader-body mark {
+  padding: 0 0.12em;
+  border-radius: 2px;
+  background: var(--accent-soft);
+  color: inherit;
+}
+.reader-body small {
+  font-size: 0.84em;
+  color: var(--ink-2);
+}
+.reader-body code {
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: var(--surface-2);
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.78em;
+}
+.reader-body pre {
+  margin: 1.5em 0;
+  padding: 0.9em 1.1em;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-size: 0.86em;
+  line-height: 1.55;
+}
+.reader-body pre code {
+  padding: 0;
+  background: none;
+}
+.reader-body dt {
+  margin-top: 0.9em;
+  font-weight: 650;
+  color: var(--ink);
+}
+.reader-body dd {
+  margin: 0.2em 0 0;
+}
+
+/* ── Pictures ── */
+.reader-figure {
+  margin: 2.1em 0;
+}
+.reader-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(84vh, 880px);
+  margin-inline: auto;
+  border-radius: 3px;
+  background: var(--surface-2);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--motion-ease-out);
+}
+/* A picture large enough for the column fills it; a small one keeps its own size rather than being blown up. */
+.reader-figure:not([data-small]) img {
+  width: 100%;
+  object-fit: cover;
+}
+.reader-figure img:not([width]) {
+  /* Holds the picture's place until its own shape is known. */
+  aspect-ratio: auto 16 / 9;
+}
+.reader-figure[data-loaded] img {
+  opacity: 1;
+  background: none;
+}
+.dark .reader-figure img {
+  filter: brightness(0.94);
+}
+.reader-figure figcaption {
+  margin-top: 0.75em;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+.reader-figure[data-small] figcaption {
+  max-width: 34em;
+  margin-inline: auto;
+  text-align: center;
+}
+.reader-figure[data-lead] {
+  margin: 30px 0 0;
+}
+.reader-figure[data-lead] + .reader-body {
+  margin-top: 28px;
+}
+@media (max-width: 599px) {
+  /* On a phone the opening picture runs edge to edge. */
+  .reader-figure[data-lead]:not([data-small]) {
+    margin-inline: calc(var(--reader-gutter) * -1);
+  }
+  .reader-figure[data-lead]:not([data-small]) img {
+    border-radius: 0;
+  }
+  .reader-figure[data-lead] figcaption {
+    padding-inline: var(--reader-gutter);
+  }
+}
+@media (min-width: 900px) {
+  /* With room either side, the opening picture is a little wider than the text it introduces. */
+  .reader-figure[data-lead]:not([data-small]) {
+    margin-inline: calc(-1 * clamp(0px, (100vw - 100% - 2 * var(--reader-gutter)) / 2 - 24px, 72px));
+  }
+}
+
+/* ── Tables ── */
+.reader-table {
+  margin: 1.8em 0;
+  overflow-x: auto;
+  outline-offset: 4px;
+  scrollbar-width: thin;
+}
+.reader-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.reader-table caption {
+  padding-bottom: 8px;
+  text-align: left;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.reader-table th,
+.reader-table td {
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.reader-table th {
+  border-bottom-color: var(--ink);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.reader-table p {
+  margin: 0;
+}
+
+/* ── A short text, said plainly ── */
+.reader-partial {
+  margin-top: 26px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: var(--warning-soft);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.reader-partial b {
+  font-weight: 650;
+  color: var(--warning);
+}
+
+/* ── Waiting for the text ── */
+.reader-loading {
+  margin-top: 34px;
+  line-height: var(--reader-leading);
+}
+.reader-loading > i {
+  display: block;
+  height: 0.62em;
+  margin-bottom: calc(var(--reader-leading) * 1em - 0.62em);
+  border-radius: 4px;
+  background: var(--surface-2);
+  animation: reader-pulse 1.4s ease-in-out infinite;
+}
+.reader-loading > br {
+  display: block;
+  content: '';
+  height: 0.7em;
+}
+.reader-loading > .reader-loading-figure {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 2em;
+  border-radius: 3px;
+}
+.reader-loading > i:nth-child(odd) {
+  animation-delay: 120ms;
+}
+div.reader-article.reader-loading {
+  padding-top: 64px;
+}
+@keyframes reader-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ── When the article cannot be shown ── */
+.reader-notice {
+  margin-top: 30px;
+  padding: 4px 0;
+  font-size: 1rem;
+  animation: reader-rise var(--dur-slow) var(--motion-ease-out) backwards;
+}
+.reader-notice-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+.reader-notice-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.75;
+}
+.reader-notice h2 {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.016em;
+}
+.reader-notice p {
+  max-width: 34em;
+  margin-top: 8px;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.reader-notice-actions,
+.reader-end-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.reader-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--motion-ease-out),
+    box-shadow var(--dur-fast) var(--motion-ease-out),
+    color var(--dur-fast) var(--motion-ease-out),
+    transform var(--dur-instant) var(--motion-ease-out);
+}
+.reader-button svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.reader-button[data-variant='primary'] {
+  box-shadow: none;
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+.reader-button[aria-pressed='true'] {
+  color: var(--success);
+}
+@media (hover: hover) {
+  .reader-button:hover {
+    background: var(--surface-2);
+  }
+  .reader-button[data-variant='primary']:hover {
+    background: color-mix(in srgb, var(--primary) 88%, var(--bg));
+  }
+}
+.reader-button:active {
+  transform: scale(0.97);
+}
+
+/* ── The end of the article ── */
+.reader-end {
+  margin-top: 3.2em;
+  font-size: 1rem;
+  text-align: center;
+}
+.reader-endmark {
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin-inline: auto;
+  background: var(--ink);
+}
+.reader-credit {
+  max-width: 30em;
+  margin: 22px auto 0;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-3);
+  text-wrap: balance;
+}
+.reader-credit a {
+  font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+.reader-end-actions {
+  justify-content: center;
+}
+.reader-next {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 48px;
+  padding: 20px 44px 22px 0;
+  border-top: 1px solid var(--ink);
+  font-size: 1rem;
+  text-align: left;
+}
+.reader-next b {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: 1.375rem;
+  line-height: 1.22;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  text-wrap: balance;
+}
+.reader-next svg {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  color: var(--ink-3);
+  transition:
+    transform var(--dur-base) var(--motion-ease-out),
+    color var(--dur-base) var(--motion-ease-out);
+}
+@media (hover: hover) {
+  .reader-next:hover b {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--line-strong);
+  }
+  .reader-next:hover svg {
+    color: var(--ink);
+    transform: translateX(4px);
+  }
+}
+
+/* ── Text and appearance ── */
+.reader-type-panel {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+.reader-size {
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 12px;
+}
+.reader-size-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--ink);
+  transition:
+    background-color var(--dur-fast) var(--motion-ease-out),
+    transform var(--dur-instant) var(--motion-ease-out);
+}
+@media (hover: hover) {
+  .reader-size-step:hover:not(:disabled) {
+    background: var(--surface-3);
+  }
+}
+.reader-size-step:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.reader-size-step:disabled {
+  opacity: 0.4;
+}
+.reader-size-a {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1;
+}
+.reader-size-a[data-size='small'] {
+  font-size: 15px;
+}
+.reader-size-a[data-size='large'] {
+  font-size: 23px;
+}
+.reader-size-scale {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.reader-size-scale i {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line-strong);
+  transition: background-color var(--dur-fast) var(--motion-ease-out);
+}
+.reader-size-scale i[data-on] {
+  background: var(--ink);
+}
+.reader-setting {
+  display: grid;
+  gap: 7px;
+}
+.reader-setting .segmented {
+  display: flex;
+  border-radius: 10px;
+}
+.reader-setting .segment,
+.reader-setting .segment-pill {
+  border-radius: 7px;
+}
+.reader-setting .segment {
+  padding-block: 0.4rem;
+}
+.reader-face-serif {
+  font-family: var(--font-display);
+  font-size: 1.08em;
+}
+
+/* ── Room to breathe on larger screens ── */
+@media (min-width: 600px) {
+  .reader {
+    --reader-gutter: 40px;
+  }
+  .reader-article {
+    padding: 44px 0 96px;
+  }
+  .reader-title {
+    margin-top: 18px;
+  }
+}
+@media (min-width: 1100px) {
+  .reader-article {
+    padding-top: 64px;
+  }
+}
+@media (max-width: 599px) {
+  .reader {
+    --reader-base: 18.5px;
+    --reader-leading: 1.56;
+  }
+  /* The byline has its own line; date and length share the next. */
+  .reader-byline {
+    flex-basis: 100%;
+  }
+  .reader-byline + *::before {
+    content: none;
+  }
+  .reader[data-face='sans'] {
+    --reader-base: 16.5px;
+  }
+  .reader-button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reader-article,
+  .reader-notice,
+  .reader-loading > i {
+    animation: none;
+  }
+  .reader-bar,
+  .reader-actions[data-dock],
+  .reader-progress span {
+    transition: none;
+  }
+}
+:root[data-motion='reduced'] .reader-article,
+:root[data-motion='reduced'] .reader-notice,
+:root[data-motion='reduced'] .reader-loading > i {
+  animation: none;
+}
+:root[data-motion='reduced'] .reader-bar,
+:root[data-motion='reduced'] .reader-actions[data-dock] {
+  transition: none;
+}
+
+@media print {
+  .reader-bar,
+  .reader-actions,
+  .reader-progress,
+  .reader-next,
+  .reader-end-actions {
+    display: none;
+  }
+  .reader {
+    position: static;
+    overflow: visible;
+  }
+}

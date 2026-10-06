@@ -36,6 +36,16 @@ export const SHORTCUTS: ShortcutGroup[] = [
     ],
   },
   {
+    title: 'News reader',
+    items: [
+      { keys: ['J', 'K'], label: 'Next and previous article', join: 'or' },
+      { keys: ['M'], label: 'Mark read or unread' },
+      { keys: ['S'], label: 'Save or unsave' },
+      { keys: ['O'], label: 'Open the original' },
+      { keys: ['+', '−'], label: 'Larger and smaller text', join: 'or' },
+    ],
+  },
+  {
     title: 'Atlas',
     items: [
       { keys: ['Shift+F'], label: 'Full-screen map' },

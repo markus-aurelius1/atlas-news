@@ -18,7 +18,7 @@ The lockfile includes the offline data builder and Playwright browser workspace.
 
 `npm run atlas:places` rebuilds the gazetteer offline from curated inputs and bundled overlays. `npm run atlas:pyq` verifies the frozen canonical package and rebuilds the curated subset; provide `CANONICAL_PYQ_PACKAGE` or the sibling `canonical-pyq-v2-final.zip`. Full cartographic regeneration (`npm run build --prefix tools/atlas-build`) uses cited upstream geographic sources and needs network access. Existing bundled plates do not need regeneration to build the app.
 
-For Cloudflare Pages, set `SITE_URL` to the new site's HTTPS origin and use `node tools/cloudflare/build.mjs` as the build command, with `dist` as output. `wrangler.toml`, `public/_routes.json`, `public/_headers`, `migrations/` and `functions/api/` define deployment behavior. News stores feed metadata and Read/Saved state offline; original publisher articles open externally.
+For Cloudflare Pages, set `SITE_URL` to the new site's HTTPS origin and use `node tools/cloudflare/build.mjs` as the build command, with `dist` as output. `wrangler.toml`, `public/_routes.json`, `public/_headers`, `migrations/` and `functions/api/` define deployment behavior. News stores feed metadata and Read/Saved state offline; a headline opens its article in the reader (see "News reader"), and the original is always one press away.
 
 `npm run test:sync` (after `npm run build`) runs the two-device sync check: the production build and the real functions under `wrangler pages dev` with a local D1, signed in through a local stand-in for the Access issuer.
 
@@ -32,6 +32,16 @@ The gateway never collects the whole registry in one invocation. The 77 feeds ar
 - **Cloudflare Access:** every request is a same-origin browser `fetch`, so the Access session cookie travels with it and the function never calls its own hostname. `functions/api/_middleware.ts` verifies the Access token on every `/api` request (one extra subrequest for the team's signing keys per runtime instance, then cached for an hour), so the gateway is closed to anyone Access has not signed in, including on a hostname Access does not cover. If the session has expired the shard requests fail and the last snapshot stays on screen until the user signs in again.
 - **CPU time:** parsing a shard takes roughly 12–35 ms of CPU in Node, above the free plan's nominal 10 ms per invocation. Cached responses cost almost nothing and a shard is collected at most once per two hours per location, but this cannot be verified without deploying: after the first deploy, watch the Functions metrics for "exceeded CPU" (error 1102). If it appears, lower `FEED_SHARD_SIZE` or move to the paid plan.
 - **Not a public feed:** Times of India feeds are personal-use only; keep the site behind Access.
+
+### News reader
+
+Opening a headline opens the article full screen inside Tars (`#/current-affairs?read=<article address>`). The address is part of the route, so Back closes the reader and the list underneath is exactly as it was left.
+
+- **One request, on demand.** `functions/api/article.ts` fetches the page of the article that was opened: one upstream request per invocation (at most three redirects, each re-checked), nine seconds, HTML only, three megabytes. Nothing is fetched ahead of time or in bulk. There is no edge cache and the response is `no-store`; the app keeps the last few articles in memory for the visit and writes none to storage, so an article is not available offline unless it was opened in that visit.
+- **Not a proxy.** Only https pages on the domains in `src/current-affairs/reader/policy.ts` are fetched (every registry publisher must have an entry; a test enforces it). An unlisted, malformed, credentialed, non-default-port or address-literal URL makes no request, and the route sits behind the same Access check as the rest of `/api`.
+- **Publisher restrictions.** The request identifies itself (`TarsReader`), sends no cookies and tries nothing else when refused. The Economist, Financial Times, Bloomberg and The New York Times are never fetched. An article the publisher marks `isAccessibleForFree: false` (or a locked content tier), or whose page shows its paywall, is not shown. A text that looks cut short is shown labelled as possibly incomplete.
+- **Extraction** runs in the browser, in a lazily loaded chunk: Mozilla Readability on an inert document, then an allowlist sanitizer (`reader/sanitize.ts`), then React elements built from the same allowlist (`reader/ArticleBody.tsx`); publisher markup is never inserted as HTML. Doing this in the browser keeps the function's CPU to a stream read and a strip pass, inside the free plan's budget.
+- **Check a publisher:** `npm run news:reader` runs the newest articles of each registry publisher through the same fetch and extraction and prints what a reader would get (`npm run news:reader -- ht-india 3` for one feed). Results and known limitations are in `docs/VERIFICATION.md`.
 
 ### Sync
 

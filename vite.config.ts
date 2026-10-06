@@ -7,6 +7,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { readFileSync } from 'node:fs'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import currentAffairs from './tools/news/server.ts'
+import article from './tools/news/article-server.ts'
 
 // BASE lets the PWA be hosted from a sub-path (e.g. GitHub Pages). Capacitor uses '/'.
 const base = process.env.BASE ?? '/'
@@ -37,6 +38,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     { name: 'current-affairs-gateway', configureServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) }, configurePreviewServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) } },
+    { name: 'reader-gateway', configureServer(server) { server.middlewares.use('/api/article', article) }, configurePreviewServer(server) { server.middlewares.use('/api/article', article) } },
     { name: 'sync-not-available', configureServer(server) { server.middlewares.use('/api/sync', noSync) }, configurePreviewServer(server) { server.middlewares.use('/api/sync', noSync) } },
     { name: 'site-url', transformIndexHtml: (html) => html.replaceAll('%SITE_URL%', siteUrl) },
     {

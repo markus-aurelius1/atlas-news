@@ -1,7 +1,8 @@
 # Pages serves the Vite build and runs the functions under /api: the News gateway and sync.
 # Free-plan budget: each /api/current-affairs?shard=N invocation makes at most 6 upstream requests
 # (limit 50) on 6 connections; shards are edge-cached for two hours. /api/sync is one D1 transaction
-# per request. See README, "News gateway on Cloudflare" and "Sync".
+# per request. /api/article makes one upstream request per invocation (the article that was opened) and uses
+# no cache. See README, "News gateway on Cloudflare", "News reader" and "Sync".
 name = "tars-atlas-news"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-10-04"

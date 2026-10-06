@@ -1,6 +1,6 @@
 /** One topic in the reading list: the anchor article, and everything else on that topic folded underneath it. */
 import { Bookmark, Check, ChevronDown, X } from 'lucide-react'
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState, type MouseEvent } from 'react'
 import { thumbnailUrl } from '@/current-affairs/feed'
 import { eventPersonalState, type PersonalState } from '@/current-affairs/personal-state'
 import type { TopicEntry, TopicGroup } from '@/current-affairs/topics'
@@ -10,6 +10,17 @@ import { relativeAge } from './useFeeds'
 
 export type StoryAction = 'read' | 'save' | 'remove'
 type Act = (event: WorkspaceEvent, action: StoryAction) => void
+type Open = (url: string) => void
+
+/**
+ * A headline opens the article in the reader. It is still a link to the publisher: a middle click, a modified
+ * click or "open in new tab" goes to the original, as a link should.
+ */
+const reads = (open: Open, url: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+  e.preventDefault()
+  open(url)
+}
 
 const FOLD_MS = 220
 
@@ -46,7 +57,7 @@ function Actions({ entry, state, act }: { entry: TopicEntry; state: PersonalStat
   )
 }
 
-export function StoryGroup({ group, state, now, archive, debug, act }: { group: TopicGroup; state: PersonalState; now: number; archive: boolean; debug: boolean; act: Act }) {
+export function StoryGroup({ group, state, now, archive, debug, act, open: read }: { group: TopicGroup; state: PersonalState; now: number; archive: boolean; debug: boolean; act: Act; open: Open }) {
   const { anchor, rest } = group
   const [open, setOpen] = useState(false)
   // The folded list stays mounted while it closes, so the collapse is animated too.
@@ -72,7 +83,7 @@ export function StoryGroup({ group, state, now, archive, debug, act }: { group: 
   return (
     <div className="topic" data-topic={group.topic ?? undefined} data-open={open || undefined}>
       <article data-news-event data-read={!!p.readAt} data-saved={!!p.savedAt} className="story">
-        <a data-news-original href={item.url} target="_blank" rel="noopener noreferrer" className="story-main">
+        <a data-news-original href={item.url} target="_blank" rel="noopener noreferrer" className="story-main" onClick={reads(read, item.url)}>
           <div className="story-copy">
             <h3 className="story-title">{item.title}</h3>
             {item.description && <p className="story-excerpt">{item.description}</p>}
@@ -100,7 +111,7 @@ export function StoryGroup({ group, state, now, archive, debug, act }: { group: 
             <ul data-related-coverage className="story-related">
               {same.map((entry) => (
                 <li key={entry.item.url}>
-                  <a href={entry.item.url} target="_blank" rel="noopener noreferrer">
+                  <a href={entry.item.url} target="_blank" rel="noopener noreferrer" onClick={reads(read, entry.item.url)}>
                     <b>{entry.item.publisher}</b>
                     <span>{entry.item.title}</span>
                   </a>
@@ -122,11 +133,11 @@ export function StoryGroup({ group, state, now, archive, debug, act }: { group: 
             {others.map((entry) =>
               entry.lead ? (
                 <li key={entry.item.url}>
-                  <SubStory entry={entry} state={state} now={now} archive={archive} act={act} />
+                  <SubStory entry={entry} state={state} now={now} archive={archive} act={act} open={read} />
                 </li>
               ) : (
                 <li key={entry.item.url} className="topic-alternate" data-related-coverage>
-                  <a href={entry.item.url} target="_blank" rel="noopener noreferrer">
+                  <a href={entry.item.url} target="_blank" rel="noopener noreferrer" onClick={reads(read, entry.item.url)}>
                     <b>{entry.item.publisher}</b>
                     <span>{entry.item.title}</span>
                   </a>
@@ -141,11 +152,11 @@ export function StoryGroup({ group, state, now, archive, debug, act }: { group: 
 }
 
 /** A further story on the same topic: compact, but with its own Read/Saved state. */
-function SubStory({ entry, state, now, archive, act }: { entry: TopicEntry; state: PersonalState; now: number; archive: boolean; act: Act }) {
+function SubStory({ entry, state, now, archive, act, open }: { entry: TopicEntry; state: PersonalState; now: number; archive: boolean; act: Act; open: Open }) {
   const p = eventPersonalState(entry.event, state)
   return (
     <article data-news-event data-read={!!p.readAt} data-saved={!!p.savedAt} className="story story-sub">
-      <a data-news-original href={entry.item.url} target="_blank" rel="noopener noreferrer" className="story-main">
+      <a data-news-original href={entry.item.url} target="_blank" rel="noopener noreferrer" className="story-main" onClick={reads(open, entry.item.url)}>
         <h3 className="story-title">{entry.item.title}</h3>
       </a>
       <div className="story-foot">
