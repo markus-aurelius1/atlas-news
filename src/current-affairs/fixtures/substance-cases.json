@@ -1,0 +1,93 @@
+{
+ "note": "Articles the owner flagged in the live feed on 2026-10-05 as false positives: each names a syllabus entity but adds little exam value. Headlines and feed summaries as shown in the reading list (summaries truncated there are truncated here, except the water-cut notice, which carries the feed’s full summary: its length is what let it through the first version of the gate). All must be rejected.",
+ "cases": [
+  {
+   "pattern": "partisan reaction",
+   "title": "CEC Gyanesh Kumar should resign to protect his dignity, says CPI(M) national general secretary",
+   "description": "M.A. Baby alleges SIR has deprived 13 crore people of voting rights; calls for strengthening INDIA bloc to protect democracy",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "pattern": "local operational notice",
+   "title": "Minimum 10% water cut in Maharashtra urban, rural local bodies from Oct 16",
+   "description": "The Maharashtra government on Monday said it will impose minimum 10 per cent water cut in all urban and rural local bodies from October 16 amid a deficient monsoon. State Water Resources Minister Girish Mahajan said his department had undertaken detailed dam-wise and use-wise planning of available water stocks up to August 31, 2027, keeping in mind the impact of El Nino and the possibility of a drought-like situation. \"Drinking water will be given the highest priority. All municipal corporations, municipalities and gram panchayats have been directed to implement a 10 per cent water cut from Oc",
+   "publisher": "Business Standard",
+   "section": "India",
+   "sourceId": "bs-india"
+  },
+  {
+   "pattern": "routine party politics",
+   "title": "BJP drops all 8 Uttar Pradesh Rajya Sabha members, including Hardeep Puri - what it means",
+   "description": "The outgoing BJP members, apart from Hardeep Singh Puri and BL Verma, are Arun Singh, Neeraj Shekhar, Geeta Shakya, Brijlal and Seema Dwivedi. The",
+   "publisher": "Times of India",
+   "section": "India",
+   "sourceId": "toi-india"
+  },
+  {
+   "pattern": "product recall",
+   "title": "Food regulator orders Everest to recall cumin powder after finding unsafe levels of pesticides",
+   "description": "FSSAI found unsafe levels of Azoxystrobin and Thiamethoxam in samples of the pre-packed cumin powder taken from a resort in Goa.",
+   "publisher": "Scroll.in",
+   "section": "Latest",
+   "sourceId": "india-scroll-in"
+  },
+  {
+   "pattern": "foreign domestic incident",
+   "title": "Schoolboy, 15, loses hand after picking up police stun grenade during French school protests",
+   "description": "PM orders ministers to tackle students’ five major demands, including organising replacement teachers and school repairs Europe live – latest",
+   "publisher": "Guardian",
+   "section": "World",
+   "sourceId": "guardian-world"
+  },
+  {
+   "pattern": "routine company development",
+   "title": "Must Tata Sons go public? India’s central bank has several other options that could be explored",
+   "description": "It’s unclear if the Reserve Bank of India (RBI) can actually force corporate entities such as Tata Sons to list their shares for public trading. Many other",
+   "publisher": "Mint",
+   "section": "Opinion",
+   "sourceId": "mint-opinion"
+  },
+  {
+   "pattern": "crime and influencer",
+   "title": "‘Insulting remarks, sexual gestures': Gujarat influencer posts reel on Mahatma Gandhi with ₹500 note, booked under IT Act",
+   "description": "The accused woman has been identified as Simran Patel who has nearly 1 million followers on Instagram.",
+   "publisher": "Hindustan Times",
+   "section": "India",
+   "sourceId": "ht-india"
+  },
+  {
+   "pattern": "candidate list",
+   "title": "BJP releases list of candidates for Rajya Sabha polls in Uttar Pradesh",
+   "description": "The elections to the Rajya Sabha will be held on October 16, 2026",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  },
+  {
+   "pattern": "routine business development",
+   "title": "UP hotel investment pipeline tops ₹44,250 crore amid tourism boom",
+   "description": "UP's hotel investment pipeline crosses ₹44,250 crore as rising tourist inflows spur new projects in Varanasi, Ayodhya, Lucknow and other cities",
+   "publisher": "Business Standard",
+   "section": "Economy",
+   "sourceId": "bs-economy"
+  },
+  {
+   "pattern": "official remarks",
+   "title": "“Do not invest because someone told you to,” says SEBI chief as regulator launches Project Jagruk",
+   "description": "Securities and Exchange Board of India (SEBI) Chairman Tuhin Kanta Pandey on Monday urged investors to understand financial products and risks before putting their money into the markets as the regulator",
+   "publisher": "The Tribune",
+   "section": "Business",
+   "sourceId": "tribune-business"
+  },
+  {
+   "pattern": "partisan reaction",
+   "title": "Flame of hope flickers: Congress after Supreme Court rejects Centre’s plea on Nicobar petitions in Calcutta High Court",
+   "description": "The Opposition party’s reaction came after the Supreme Court refused to entertain the Centre’s plea against the Calcutta High Court order upholding the maintainabilit",
+   "publisher": "The Hindu",
+   "section": "National",
+   "sourceId": "hindu-national"
+  }
+ ]
+}

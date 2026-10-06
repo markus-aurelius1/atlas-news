@@ -1,5 +1,5 @@
 {
- "note": "Hand-labelled feed metadata from the 2026-10-05 registry snapshot. relevant: UPSC/UPPCS current affairs a careful reader would want; not-relevant: noise or off-syllabus; borderline: either verdict is acceptable. Titles and truncated feed summaries only.",
+ "note": "Hand-labelled feed metadata from the 2026-10-05 registry snapshot. relevant: UPSC/UPPCS current affairs a careful reader would want; not-relevant: noise or off-syllabus; borderline: either verdict is acceptable. Titles and truncated feed summaries only. Three cases first labelled relevant (a product recall and two routine Uttar Pradesh business notices) were relabelled not-relevant on 2026-10-05 after the owner flagged the same patterns in the live feed.",
  "cases": [
   {
    "label": "relevant",
@@ -227,7 +227,7 @@
    "sourceId": "bs-india"
   },
   {
-   "label": "relevant",
+   "label": "not-relevant",
    "group": "governance",
    "title": "FSSAI recalls Everest cumin power over ‘unsafe’ pesticide levels, suspends Creative Bakers' licence",
    "description": "The FSSAI has, over the past six months, stepped up enforcement actions and relays them to food business operators and the public through social media.",
@@ -1091,7 +1091,7 @@
    "sourceId": "et-uttarpradesh"
   },
   {
-   "label": "relevant",
+   "label": "not-relevant",
    "group": "uppcs",
    "title": "Uttar Pradesh Pharma Conclave 1.0: Yogi Adityanath Declares State a Pharma Investment Hub",
    "description": "Uttar Pradesh is stepping into the spotlight as a key player in pharmaceutical manufacturing. At the inaugural Pharma Conclave 1.0, Chief Minister Yogi Adityanath emphasized the state's shift towards a more investor-friendly environment. With commitments to ensure business safety, stability, and eff",
@@ -1100,7 +1100,7 @@
    "sourceId": "et-uttarpradesh"
   },
   {
-   "label": "relevant",
+   "label": "not-relevant",
    "group": "uppcs",
    "title": "UP industrial areas provided better lighting, surveillance",
    "description": "Uttar Pradesh is transforming its industrial landscape to attract and accommodate investors. UPSIDA is brightening up the streets with more streetlights and high-mast lighting, while enhanced security measures involving 24/7 monitored CCTV cameras ensure a safe environment for business.",

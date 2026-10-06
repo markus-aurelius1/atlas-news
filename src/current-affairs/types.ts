@@ -31,7 +31,7 @@ export interface RelevanceSignal {
 export interface RelevanceIndex { version: 2; provenance: Record<string, unknown>; signals: RelevanceSignal[]; /** Editorial vocabulary with no past-paper or taxonomy support. */ context?: RelevanceSignal[] }
 /** One weighed observation behind a verdict; points sum to the score. */
 export interface RelevanceEvidence { kind: 'concept' | 'recurrence' | 'framing' | 'india' | 'state' | 'source' | 'foreign' | 'noise'; label: string; points: number; where?: 'title' | 'description' | 'feed' }
-export interface Relevance { accepted: boolean; score: number; exam: 'prelims' | 'mains' | 'both' | 'general'; subjects: string[]; topics: string[]; staticAnchors: string[]; signals: string[]; rejectionReason?: string; /** Acceptance threshold the score was compared with. */ threshold?: number; evidence?: RelevanceEvidence[] }
+export interface Relevance { accepted: boolean; score: number; exam: 'prelims' | 'mains' | 'both' | 'general'; subjects: string[]; topics: string[]; staticAnchors: string[]; signals: string[]; rejectionReason?: string; /** Acceptance threshold the score was compared with. */ threshold?: number; evidence?: RelevanceEvidence[]; /** The substantive-value gate: what the article reports, and what makes it low-value. Applies after the score. */ substance?: { score: number; signals: string[]; lowValue: string[] } }
 export interface ClassifiedItem extends NewsItem { relevance: Relevance }
 /** members are the articles a story shows (best first, at most five); overflow holds the URLs of further reports of the same event. */
 export interface NewsEvent { id: string; primary: ClassifiedItem; members: ClassifiedItem[]; overflow?: string[] }

@@ -3,7 +3,7 @@
  * framing, setting and the feed an item arrived in, weighed against noise. No single observation decides; an item
  * qualifies when the evidence accumulates past one threshold, and every verdict lists what was weighed.
  */
-import { ABROAD, FRAMING, INDIA, NOISE, UNITED_STATES, US_DOMESTIC, sourcePrior, type NoiseCategory } from './evidence-lexicon.ts'
+import { ABROAD, FRAMING, INDIA, LOW_VALUE, NOISE, SUBSTANCE, UNITED_STATES, US_DOMESTIC, sourcePrior, type NoiseCategory } from './evidence-lexicon.ts'
 import { PhraseMatcher, parseTerm, tokenize, type Token } from './match.ts'
 import { NEWS_SOURCES } from './sources.ts'
 import type { NewsItem, Relevance, RelevanceEvidence, RelevanceIndex, RelevanceSignal } from './types'
@@ -25,6 +25,16 @@ const CONCEPT_CAP = 11, FRAMING_TITLE = 1, FRAMING_DESCRIPTION = 0.5, FRAMING_CA
 /** Recurrence in past papers strengthens a concept; a broad word (tier 1) earns a third of it. */
 const recurrenceBonus = (count: number, tier: number) => Math.min(1.5, 0.75 * Math.log10(1 + count)) * (tier === 1 ? 1 / 3 : 1)
 const round = (n: number) => Math.round(n * 10) / 10
+/**
+ * Substantive-value gate. A signal counts 2 in the headline and 1 in the summary, once per kind; an explainer,
+ * editorial or analysis counts as a headline signal; each low-value headline pattern takes 2 away. What is left must
+ * be positive: one signal passes on its own, a signal beside a low-value pattern does not, two signals beside one do.
+ * Beside a low-value headline only headline signals count.
+ * Specialist analysis (Down To Earth, the newsletters) counts as explanatory throughout.
+ */
+export const SUBSTANCE_THRESHOLD = 1
+const SUBSTANCE_TITLE = 2, SUBSTANCE_DESCRIPTION = 1, LOW_VALUE_POINTS = 2
+const LOCAL_NOTICE = LOW_VALUE.find(l => l.id === 'local')!.label
 
 interface ConceptTerm { signal: RelevanceSignal; backed: boolean; recurrence: number; spelling: string }
 const compiled = new WeakMap<RelevanceIndex, PhraseMatcher<ConceptTerm>>()
@@ -43,6 +53,16 @@ const phrases = <T>(groups: { terms: string[]; value: T }[]) => { const m = new 
 const framing = phrases(FRAMING.map(f => ({ terms: f.terms, value: f })))
 const india = phrases([{ terms: INDIA, value: true }]), abroad = phrases([{ terms: ABROAD, value: true }])
 const noise = phrases(NOISE.map(n => ({ terms: n.terms, value: n })))
+const substance = phrases(SUBSTANCE.map(s => ({ terms: s.terms, value: s }))), lowValue = phrases(LOW_VALUE.map(s => ({ terms: s.terms, value: s })))
+/** A figure in the text is the mark of a data story. */
+const PERCENT = /\d\s?(?:%|per ?cent|percent)/i
+/** A headline that asks the question it answers. */
+const EXPLAINS = /^\s*(?:why|how|what|explained|decoded|takeaways)\b|:\s*(?:why|how)\b|\bexplain(?:ed|s|er)\b/i
+/** A headline spoken by a party: "…: Congress", "…, says BJP", "Congress after …". Whatever it reacts to is reported elsewhere. */
+const PARTIES = String.raw`(?:Congress|BJP|AAP|TMC|DMK|AIADMK|SP|BSP|RJD|JD\(U\)|CPI(?:\(M\)|-M)?|Opposition|Oppn)`
+const PARTY_VOICE = new RegExp(`[:,]\\s*(?:says\\s+)?${PARTIES}\\.?\\s*$|\\bsays\\s+${PARTIES}\\b|(?:^|:\\s*)${PARTIES}\\s+(?:after|on|over|reacts|responds)\\b`)
+/** A headline that opens with a quotation and names its speaker is a report of someone's remarks. */
+const QUOTE_LED = /^\s*["“‘'][^"”’']{8,}["”’'],?\s+(?:says|said)\b/
 const unitedStates = phrases([{ terms: UNITED_STATES, value: true }]), usDomestic = phrases([{ terms: US_DOMESTIC, value: true }])
 /** Concepts that give a foreign story an international dimension of its own. */
 const INTERNATIONAL_SUBJECTS = new Set(['International relations', 'Security']), INTERNATIONAL_CONCEPTS = new Set(['Global economy', 'Trade policy', 'WTO', 'IMF and World Bank', 'Maritime chokepoints and seas'])
@@ -114,7 +134,26 @@ export function classify(item: Pick<NewsItem, 'title' | 'description' | 'publish
   for (const [category, phrase] of noiseHits) if (!category.hard) add('noise', `${category.label} (“${phrase}”)`, category.points, 'title')
 
   const total = round(evidence.reduce((n, e) => n + e.points, 0)), score = hard ? 0 : Math.max(0, total)
-  const accepted = !hard && conceptPoints > 0 && total >= ACCEPT_THRESHOLD
+  // Substance is judged apart from the score, so ranking and the acceptance threshold are untouched.
+  const substantive = new Map<string, number>(), weak: string[] = []
+  for (const hit of substance.scan(description)) substantive.set(hit.value.label, SUBSTANCE_DESCRIPTION)
+  for (const hit of substance.scan(title)) substantive.set(hit.value.label, SUBSTANCE_TITLE)
+  if (PERCENT.test(item.description) && !substantive.has('official report or data')) substantive.set('official report or data', SUBSTANCE_DESCRIPTION)
+  if (PERCENT.test(item.title)) substantive.set('official report or data', SUBSTANCE_TITLE)
+  const explainer = item.sourceId === 'ie-upsc' || item.sourceId === 'dte-news' || kind === 'newsletter' || /explained|explainer|editorial|opinion/i.test(item.section) || EXPLAINS.test(item.title)
+  if (explainer) substantive.set('explainer or editorial', SUBSTANCE_TITLE)
+  for (const hit of lowValue.scan(title)) if (!weak.includes(hit.value.label)) weak.push(hit.value.label)
+  if (QUOTE_LED.test(item.title)) weak.push('report of remarks')
+  // A party's own statement is rejected whatever it reacts to: the development itself is reported in its own right.
+  const partyVoice = PARTY_VOICE.test(item.title)
+  if (partyVoice) weak.push('party statement')
+  // The headline says what the piece is: beside a low-value headline, a long summary cannot supply the substance.
+  if (weak.length) for (const [label, points] of substantive) if (points < SUBSTANCE_TITLE) substantive.delete(label)
+  // An operational notice (a water cut, a closure, new timings) stays one however its cause and size are described.
+  const notice = weak.includes(LOCAL_NOTICE) ? LOW_VALUE_POINTS : 0
+  const substanceScore = [...substantive.values()].reduce((n, p) => n + p, 0) - LOW_VALUE_POINTS * weak.length - notice
+  const passesScore = !hard && conceptPoints > 0 && total >= ACCEPT_THRESHOLD
+  const accepted = passesScore && !partyVoice && substanceScore >= SUBSTANCE_THRESHOLD
   // Anchors name what the article is about: specific concepts first, broad ones only when nothing else matched.
   const meaningful = hits.filter(h => h.points >= 0.8), ordered = (meaningful.length ? meaningful : hits).slice().sort((a, b) => Number((b.term.signal.tier ?? 2) >= 2) - Number((a.term.signal.tier ?? 2) >= 2) || Number(b.title) - Number(a.title) || b.points - a.points)
   const unique = (values: string[]) => [...new Set(values)]
@@ -127,7 +166,8 @@ export function classify(item: Pick<NewsItem, 'title' | 'description' | 'publish
     topics: unique(ordered.map(h => h.term.signal.topic)).slice(0, 3),
     staticAnchors: unique(ordered.map(h => h.term.signal.concept)).slice(0, 3),
     signals: ordered.slice(0, 6).map(h => { const s = h.term.signal; return h.term.backed ? `${s.concept} · CSE P${s.prelimsCount}/M${s.mainsCount}${s.uppcsCount ? ` · UPPCS ${s.uppcsCount}` : ''}${h.title ? '' : ' · summary only'}` : `${s.concept} · editorial context` }),
+    substance: { score: substanceScore, signals: [...substantive.keys()], lowValue: weak },
     evidence: hard ? [{ kind: 'noise', label: `${hard[0].label} (“${hard[1]}”)`, points: 0, where: 'title' }, ...evidence] : evidence,
-    ...(!accepted ? { rejectionReason: hard ? `Noise headline: ${hard[0].label.toLowerCase()}` : !hits.length ? 'No syllabus concept in headline or summary' : `Evidence ${total} below threshold ${ACCEPT_THRESHOLD}${negative ? `; ${negative.label.replace(/ \(.*$/, '').toLowerCase()}` : ''}` } : {}),
+    ...(!accepted ? { rejectionReason: hard ? `Noise headline: ${hard[0].label.toLowerCase()}` : !hits.length ? 'No syllabus concept in headline or summary' : passesScore ? `No substantive development${weak.length ? `: ${weak[0]}` : substantive.size ? ': only a passing mention in the summary' : ': names a syllabus entity without a law, judgment, policy, report, reform, agreement or finding'}` : `Evidence ${total} below threshold ${ACCEPT_THRESHOLD}${negative ? `; ${negative.label.replace(/ \(.*$/, '').toLowerCase()}` : ''}` } : {}),
   }
 }

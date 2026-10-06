@@ -2,7 +2,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { PhraseMatcher, tokenize } from './match'
-import { ACCEPT_THRESHOLD, classify } from './relevance'
+import { ACCEPT_THRESHOLD, SUBSTANCE_THRESHOLD, classify } from './relevance'
 import { NEWS_SOURCES } from './sources'
 import type { NewsItem, RelevanceIndex } from './types'
 
@@ -79,7 +79,7 @@ describe('weighted evidence', () => {
       if (r.rejectionReason?.startsWith('Noise headline')) { expect(r.score).toBe(0); continue }
       expect(r.score).toBeCloseTo(Math.max(0, total), 1)
       if (r.accepted) expect(r.score).toBeGreaterThanOrEqual(ACCEPT_THRESHOLD)
-      else expect(r.rejectionReason).toMatch(/^(?:No syllabus concept|Evidence -?[\d.]+ below threshold)/)
+      else expect(r.rejectionReason).toMatch(/^(?:No syllabus concept|No substantive development|Evidence -?[\d.]+ below threshold)/)
     }
   })
   it('weighs a headline concept above the same concept in the summary', () => {
@@ -197,5 +197,65 @@ describe('phrase matching and the index', () => {
     for (const c of batch) classify(c, index)
     expect(batch.length).toBeGreaterThan(10000)
     expect(performance.now() - started).toBeLessThan(5000)
+  })
+})
+
+describe('substantive-value gate', () => {
+  interface Flagged extends Pick<NewsItem, 'title' | 'description' | 'publisher' | 'section' | 'sourceId'> { pattern: string }
+  const flagged: Flagged[] = JSON.parse(readFileSync(new URL('./fixtures/substance-cases.json', import.meta.url), 'utf8')).cases
+  it('holds all eleven articles flagged in the live feed', () => {
+    expect(flagged.length).toBe(11)
+  })
+  it.each(flagged)('rejects [$pattern] $title', c => {
+    const r = classify(c, index)
+    expect(r.accepted, JSON.stringify(r.substance)).toBe(false)
+    expect(r.substance!.score < SUBSTANCE_THRESHOLD || r.substance!.lowValue.includes('party statement')).toBe(true)
+    expect(r.rejectionReason).toBeTruthy()
+  })
+  it('rejects for want of substance, not by moving the score: most flagged articles still clear the evidence threshold', () => {
+    const cleared = flagged.map(c => classify(c, index)).filter(r => r.score >= ACCEPT_THRESHOLD)
+    expect(cleared.length).toBeGreaterThanOrEqual(9)
+    for (const r of cleared) expect(r.rejectionReason).toMatch(/^No substantive development/)
+  })
+  it('a syllabus entity alone is not enough; the same entity with a development is', () => {
+    expect(verdict('Election Commission chief addresses officers in Lucknow').accepted).toBe(false)
+    expect(verdict('Election Commission notifies new rules for postal ballots').accepted).toBe(true)
+    expect(verdict('SEBI chief speaks at investor event in Mumbai').accepted).toBe(false)
+    expect(verdict('SEBI bans finfluencer from securities market, orders refund under new norms').accepted).toBe(true)
+  })
+  it('a party’s statement about a real development is rejected while the development itself is kept', () => {
+    const ruling = verdict('Supreme Court strikes down electoral bonds scheme as unconstitutional')
+    expect(ruling.accepted).toBe(true)
+    for (const title of ['Supreme Court verdict on electoral bonds scheme a slap on government: Congress', 'Electoral bonds verdict vindicates our stand, says BJP', 'Congress after Supreme Court strikes down electoral bonds scheme: ‘Victory for democracy’']) {
+      const r = verdict(title)
+      expect(r.accepted, title).toBe(false)
+      expect(r.substance!.lowValue, title).toContain('party statement')
+    }
+  })
+  it('one low-value pattern cancels one development; two developments outweigh it', () => {
+    const recall = verdict('Food regulator orders company to recall spice batch after tests')
+    expect(recall.substance!.lowValue).toContain('product recall')
+    expect(recall.accepted).toBe(false)
+    const reform = verdict('After spice recall, FSSAI notifies new pesticide residue norms, mandates batch testing')
+    expect(reform.substance!.lowValue).toContain('product recall')
+    expect(reform.substance!.signals).toEqual(expect.arrayContaining(['law or rule', 'regulatory action']))
+    expect(reform.accepted).toBe(true)
+  })
+  it('explainers and editorials carry their own substance, unless they are about a company’s affairs', () => {
+    expect(verdict('Appointing the Election Commission: An Expert Explains what Constituent Assembly said', { section: 'Explained', sourceId: 'ie-explained' }).accepted).toBe(true)
+    expect(verdict('Must Tata Sons go public? India’s central bank has several other options', { section: 'Opinion', sourceId: 'mint-opinion', publisher: 'Mint', description: 'It’s unclear if the Reserve Bank of India (RBI) can actually force corporate entities such as Tata Sons to list their shares.' }).accepted).toBe(false)
+  })
+  it('an operational notice stays one however its cause and size are described', () => {
+    // Still listed on the live site after the first version of the gate: the feed's full summaries name El Niño, percentages and directions.
+    const summaries: Record<string, string> = { 'bs-india': flagged.find(c => c.title.startsWith('Minimum 10% water cut'))!.description, 'ht-india': 'Industries must reuse or recycle at least 30% of water, while irrigation will be allowed only after meeting drinking water, livestock and fodder needs.' }
+    for (const [title, sourceId, publisher] of [['Minimum 10% water cut in Maharashtra urban, rural local bodies from Oct 16', 'bs-india', 'Business Standard'], ['Maharashtra govt orders 10% water cut from October 16 across state amid El Niño concerns', 'ht-india', 'Hindustan Times']]) {
+      const r = verdict(title, { description: summaries[sourceId], sourceId, publisher })
+      expect(r.substance!.lowValue, title).toContain('local operational notice')
+      expect(r.accepted, title + ' ' + JSON.stringify(r.substance)).toBe(false)
+    }
+    expect(verdict('Maharashtra notifies drought policy: water rationing rules, crop relief package for 14 districts amid El Niño').accepted).toBe(true)
+  })
+  it('leaves the score, and so the ranking, exactly as it was', () => {
+    for (const c of flagged) { const r = classify(c, index); expect(r.score).toBe(Math.max(0, Math.round(r.evidence!.reduce((n, e) => n + e.points, 0) * 10) / 10)) }
   })
 })

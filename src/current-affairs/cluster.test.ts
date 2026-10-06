@@ -207,3 +207,25 @@ describe('ranking and the day’s list', () => {
     expect(readingScopes(many.slice(0, 5), now).archive).toHaveLength(0)
   })
 })
+
+describe('every article in a story clears the bar on its own', () => {
+  it('a strong story does not carry party reactions or candidate lists about the same event', () => {
+    const reactions = [
+      article('CEC Gyanesh Kumar should resign to protect his dignity, says CPI(M) national general secretary', 'The Hindu', 'hindu-national', { section: 'National', description: 'M.A. Baby alleges SIR has deprived 13 crore people of voting rights; calls for strengthening INDIA bloc to protect democracy' }),
+      article('CEC Gyanesh Kumar’s ability to ‘execute G2’s illegal orders’ makes him a liability for country: Congress', 'The Tribune', 'tribune-india'),
+      article('Justice Bhuyan’s remarks on SIR prove CEC violated Constitution: Congress', 'Times of India', 'toi-india'),
+    ]
+    const events = clusterItems([...hearing(), ...reactions])
+    const listed = new Set(events.flatMap(e => [...e.members.map(m => m.url), ...(e.overflow ?? [])]))
+    for (const reaction of reactions) {
+      expect(reaction.relevance.accepted, reaction.title).toBe(false)
+      expect(listed.has(reaction.url), reaction.title).toBe(false)
+    }
+    expect(events.length).toBeGreaterThan(0)
+    for (const event of events) for (const member of event.members) {
+      expect(member.relevance.accepted, member.title).toBe(true)
+      expect(member.relevance.score).toBeGreaterThanOrEqual(ACCEPT_THRESHOLD)
+      expect(member.relevance.substance!.score, member.title).toBeGreaterThanOrEqual(1)
+    }
+  })
+})
