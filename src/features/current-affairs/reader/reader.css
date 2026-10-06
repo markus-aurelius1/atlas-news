@@ -931,29 +931,6 @@ div.reader-article.reader-loading {
   font-weight: 500;
   color: var(--ink-3);
 }
-.reader-retry {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 18px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-2);
-  text-decoration: underline;
-  text-decoration-color: var(--line-strong);
-  text-underline-offset: 3px;
-  transition: color var(--dur-fast) var(--motion-ease-out);
-}
-.reader-retry svg {
-  width: 14px;
-  height: 14px;
-}
-@media (hover: hover) {
-  .reader-retry:hover {
-    color: var(--ink);
-  }
-}
 @media (max-width: 599px) {
   /* The ways out, one under another, each a full thumb target. */
   .reader-notice-actions[data-reader-elsewhere] {

@@ -193,17 +193,23 @@ describe('Reader', () => {
       expect(alert.querySelector('h2')?.textContent).toMatch(title)
       expect(document.querySelector('.reader-body')).toBeNull()
       expect(alert.querySelector('a[target="_blank"]')?.getAttribute('href')).toBe(over.url ?? first.item.url)
-      expect(!!screen.queryByRole('button', { name: 'Try again' })).toBe(retry)
+      // A terminal failure has its two links and no retry.
+      expect(retry).toBeTypeOf('boolean')
+      expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull()
       if (!response) expect(fetched).not.toHaveBeenCalled()
       view.unmount()
     }
   })
 
-  it('retries on request, and reports an article that is not in the list', async () => {
+  it('asks again when a failed article is reopened, and reports an article that is not in the list', async () => {
+    // A fetch that failed is not remembered: opening the article again asks again.
     const responses = [json({ error: 'upstream_timeout' }, 504), json({ v: 1, url: first.item.url, html: pageHtml(body) })]
     vi.stubGlobal('fetch', vi.fn(async () => responses.shift()!))
+    const failed = render(<Reader {...props()} />)
+    await screen.findByRole('alert')
+    expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull()
+    failed.unmount()
     const view = render(<Reader {...props()} />)
-    fireEvent.click(await screen.findByRole('button', { name: 'Try again' }))
     await waitFor(() => expect(document.querySelector('.reader-body')).not.toBeNull())
     view.unmount()
 
@@ -249,6 +255,7 @@ describe('when Tars cannot show the article', () => {
         { text: 'Read Original', href: target, ...safe },
         { text: 'Read at smry.ai (0/20 today)', href: `https://smry.ai/${target}`, ...safe },
       ])
+      expect(alert.querySelectorAll('a, button'), reason).toHaveLength(2)
       expect(document.querySelector('.reader-body'), reason).toBeNull()
       view.unmount()
     }

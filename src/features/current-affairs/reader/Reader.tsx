@@ -66,7 +66,6 @@ interface Notice {
   icon: ReactNode
   title: string
   body: string
-  retry?: boolean
 }
 function notice(reason: UnavailableReason, publisher: string): Notice {
   switch (reason) {
@@ -75,19 +74,19 @@ function notice(reason: UnavailableReason, publisher: string): Notice {
     case 'subscribers':
       return { icon: <Lock />, title: 'For subscribers', body: `${publisher} marks this article as subscriber reading, so Tars has not laid it out.` }
     case 'refused':
-      return { icon: <ShieldAlert />, title: `${publisher} declined the request`, body: 'The publisher does not serve this article to reader views, and Tars does not ask twice.', retry: true }
+      return { icon: <ShieldAlert />, title: `${publisher} declined the request`, body: 'The publisher does not serve this article to reader views, and Tars does not ask twice.' }
     case 'offline':
-      return { icon: <CloudOff />, title: 'You’re offline', body: 'Articles are fetched when you open them and are not kept on this device. This one will load when you are back online.', retry: true }
+      return { icon: <CloudOff />, title: 'You’re offline', body: 'Articles are fetched when you open them and are not kept on this device. This one will load when you are back online.' }
     case 'gone':
       return { icon: <FileText />, title: 'This article has moved', body: `${publisher} no longer has a page at this address.` }
     case 'unreadable':
       return { icon: <FileText />, title: 'No article text to show', body: 'This page does not hold an article the reader can lay out. It may be a video, a live page or a gallery.' }
     case 'slow':
-      return { icon: <Clock />, title: 'The publisher took too long', body: `${publisher} did not answer in time. Your place in the reading list is unchanged.`, retry: true }
+      return { icon: <Clock />, title: 'The publisher took too long', body: `${publisher} did not answer in time. Your place in the reading list is unchanged.` }
     case 'session':
       return { icon: <LogIn />, title: 'Session expired', body: 'Sign in again and this article will open where you left it.' }
     default:
-      return { icon: <RotateCw />, title: 'Couldn’t load this article', body: 'Something went wrong between Tars and the publisher. Your reading list is unaffected.', retry: true }
+      return { icon: <RotateCw />, title: 'Couldn’t load this article', body: 'Something went wrong between Tars and the publisher. Your reading list is unaffected.' }
   }
 }
 
@@ -330,7 +329,7 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                     </div>
                   ) : (
                     <>
-                      {/* Tars could not show it: the publisher's page, and one reading service outside Tars that the reader may choose. */}
+                      {/* Exactly two actions. Tars could not show it: the publisher's page, and one reading service outside Tars that the reader may choose. */}
                       <div className="reader-notice-actions" data-reader-elsewhere>
                         <a className="reader-button" data-variant="primary" href={item.url} target="_blank" rel="noopener noreferrer">
                           Read Original
@@ -340,12 +339,6 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                           Read at smry.ai <span className="reader-button-count type-numeric">({smry.count}/{SMRY_DAILY} today)</span>
                         </a>
                       </div>
-                      {failure.retry && (
-                        <button type="button" className="reader-retry" onClick={retry}>
-                          <RotateCw aria-hidden="true" />
-                          Try again
-                        </button>
-                      )}
                     </>
                   )}
                 </section>
