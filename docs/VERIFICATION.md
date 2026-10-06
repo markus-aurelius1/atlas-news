@@ -5,16 +5,39 @@ Continues `feature/news-reader` from `4ef618b`. The reader's architecture is unc
 | Check | Result |
 | --- | --- |
 | `npm run typecheck` | Passed |
-| `npm run lint` | Passed: 0 errors, 134 warnings (132 before; the two new ones are the reader's retry and sign-in buttons) |
+| `npm run lint` | Passed: 0 errors, 133 warnings (132 before; the new one is the reader's sign-in button) |
 | `npm test` | Passed: 588 tests in 40 files (568 before). New: infographic regression fixture (4), pictures (3), embeds (2), frame stand-ins (1), the two-link fallback, the count, session recovery and offline (5), and 5 count/sync tests through the real sync functions and schema |
 | `npm run test:pipeline` | 45 tests: 39 passed, 0 failed, 6 skipped (canonical ZIP not on this machine) |
 | `npm run build` | Passed; 165 PWA precache entries, 8,812 KiB |
 | `npm run test:browser` | Passed, whole suite: smoke 36; News 276; reader 320 (80 per layout: 375 px and 1366 px, light and dark); Atlas scripts passed |
 | `npm run test:sync` | Passed: 33 checks. New: an article opened at smry.ai on one device is counted on the other, once, and the reverse; D1 holds one `reader` row for the day. With `READER_LIVE_URL`, a live article from The Hindu came through the gateway under workerd in 0.5 s |
 
+## Production — 2026-10-06
+
+`main` at `bb30f38` (fast-forward of `feature/news-reader`, then one fix) was built with `SITE_URL=https://tars-atlas-news.pages.dev` and uploaded with `wrangler pages deploy`; live deployment `8675aa42-07ea-4847-8e05-1b58b1da40d3`. No D1 migration was needed. Checked on https://tars-atlas-news.pages.dev, signed in through Access in a browser, with `wrangler pages deployment tail` running.
+
+| Check | Result |
+| --- | --- |
+| Without a session | `/api/article` on the production host is redirected by Access to its login; on the per-deployment host, which Access does not cover, the function's own check answers `401 unauthenticated` |
+| Signed in, refusals | Unlisted address `403 publisher_not_listed`; Financial Times `451 publisher_restricted`; `http://127.0.0.1/` `400 invalid_url`; a Hindu address that does not exist `502 upstream_not_found`. All `private, no-store`, 28–56 ms where nothing is fetched |
+| Signed in, articles | One article from each of the 32 publishers then in the feed, then three more from four of them: 25 of 32 came through on the first pass, three were refused (24–170 kB of script-free HTML, 59–1,974 ms); four subscription publishers answered 451 without a fetch |
+| In the app | An Indian Express article opened from its headline: 782 words, 22 paragraphs, one picture, byline and time; the only links out are `Read Original` and the publisher credit; Escape returned to the same list position. A listed New York Times article: "Read this on New York Times" with exactly `Read Original` and `Read at smry.ai (n/20 today)`, both `_blank noopener noreferrer` |
+| The count, against the real D1 | Two different articles opened at smry.ai (one pressed twice) read `(2/20 today)`; about four seconds later D1 held one `reader` row, `smry:2026-10-06`, with those two addresses. With the device's count and its sync database deleted, a reload brought the two addresses back from D1 |
+| Worker | 40 `/api/article` invocations traced: every outcome `ok`, no exceptions, none over a limit. CPU 1–33 ms, median 11 ms, 90th percentile 26 ms; the heaviest were SCMP, Down To Earth and Indian Express pages. `/api/sync`: 2–9 ms |
+| The final build is the one served | After the waiting service worker was activated, the page's News chunk contains no `reader-retry` and no RemovePaywall text |
+
+What production showed that this machine did not:
+
+- **NDTV refuses Cloudflare.** All four NDTV addresses tried (`www`, `food`, `ndtvprofit`) answered `upstream_blocked`, though NDTV answered from this machine. The reader shows the refusal and the two links.
+- **Hindustan Times and India Today refuse now and then**: one refusal each in four requests. A refusal is not remembered, so opening the article again asks again.
+- **South China Morning Post answers Cloudflare** (four of four), though it refused this machine.
+- **CPU** is above the free plan's nominal 10 ms for about half of article fetches, in the same range the feed shards already run at (12–35 ms). No request was terminated. If error 1102 ever appears, the page-stripping pass in `fetch-article.ts` is the work to move.
+
+Not checked in production: a genuinely lapsed Access session (it would mean signing the owner out); it is covered by the unit and browser checks. Pushes to `main` also start a Cloudflare Git build that fails (`d9ffc6f6`, `2566a287`); the live deployments are the direct uploads, as before.
+
 What changed, and how each part is checked:
 
-- **Two ways out, never three.** A rendered article offers only `Read Original`. Every terminal failure (subscriber-only, refused, gone, unreadable, slow, failed, an unlisted address, a publisher that is never fetched) offers exactly `Read Original` and `Read at smry.ai (x/20 today)`, both `target="_blank" rel="noopener noreferrer"`. A `Read elsewhere` / RemovePaywall link was built and then removed at the owner's instruction before release; the unit and browser checks assert its absence. Offline offers `Try again` only; a lapsed session offers `Sign in again` and `Read Original`.
+- **Two ways out, never three.** A rendered article offers only `Read Original`. Every terminal failure (subscriber-only, refused, gone, unreadable, slow, failed, an unlisted address, a publisher that is never fetched) offers exactly `Read Original` and `Read at smry.ai (x/20 today)`, both `target="_blank" rel="noopener noreferrer"`, and no other control: a `Try again` link first sat under them and was removed at the owner's instruction (a failed fetch is not remembered, so reopening the article asks again). A `Read elsewhere` / RemovePaywall link was built and then removed at the owner's instruction before release; the unit and browser checks assert its absence. Offline offers `Try again` only; a lapsed session offers `Sign in again` and `Read Original`.
 - **The count.** Unique article addresses per local calendar day, in `localStorage` and in sync collection `reader` (`smry:<day>` → the day's addresses). Sets are united on receipt, so devices converge whichever opened what; rows two days old are tombstoned. The link is never disabled: the browser check drives it to `(21/20 today)` and still opens it, and moves the stored day to show the count restarting.
 - **Infographics.** `reader/blocks.ts` rewrites stat grids, comparison cards, point lists, narrative cards and tabbed panels before Readability reads the page. The regression fixture is the Indian Express block from article 10907921 with its own class names: the output must contain `<dl data-reader="stats"><dt>Length of the coastline</dt><dd><strong>11,098</strong> km</dd>…` and must not contain `11,098`, `km` or the label as separate paragraphs. Verified live on that article (1,791 words; three figures in one grid, the comparison as a second grid, six numbered points as an ordered list, each tab's panel under its name).
 - **Pictures and captions.** The widest version up to 1,600 px among `srcset`, `<picture>` sources and lazy-load attributes is preferred to a small `src` (Hindustan Times now gets its 960 px picture instead of the 400 px one). The caption beside an opening picture is kept when the picture itself comes from `og:image` (The Hindu, Indian Express).
