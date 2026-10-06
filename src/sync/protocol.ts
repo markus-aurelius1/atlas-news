@@ -16,8 +16,9 @@ export const SESSION_ENDPOINT = '/api/session'
  * note      id → a short note
  * recall    id → one Atlas recall attempt        claim  id → one recall reward claim
  * settings  field → one preference
+ * reader    `smry:${localDay}` → the article addresses opened at smry.ai that day (a count shown beside the link)
  */
-export const COLLECTIONS = ['news', 'article', 'note', 'recall', 'claim', 'settings'] as const
+export const COLLECTIONS = ['news', 'article', 'note', 'recall', 'claim', 'settings', 'reader'] as const
 export type Collection = (typeof COLLECTIONS)[number]
 
 export interface SyncRow {

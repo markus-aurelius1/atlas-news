@@ -24,6 +24,34 @@ const FLOW = new Set(['blockquote', 'li', 'td', 'th', 'dd', 'figure'])
 const FURNITURE = /^(?:(?:also|must)\s+(?:read|see|watch)\b|read\s+(?:also|more|here)\b|don[’']t\s+miss\b|in\s+pics\b|watch\s*[:|]|advertisement\s*$|story\s+continues\s+below|follow\s+us\s+on\b|(?:subscribe|sign\s+up)\s+(?:to|for)\s+(?:our|the)\b|click\s+here\s+to\s+(?:join|follow|subscribe|read)\b|recommended\s+stories\b|related\s+(?:stories|articles|news)\b|you\s+may\s+(?:also\s+)?like\b|express\s+shorts\b|prefer\s+\S+\s*on\s+google\b|featured\s+video\b|topics\s+mentioned\s+in\s+this\s+article|share\s+your\s+thoughts\b|stay\s+updated\s+with\b|(?:first\s+)?published\s*(?:on\s*)?[-–:]|last\s+updated\s*[-–:])/i
 const FURNITURE_MAX = 160
 
+/** Set by the gateway on the stand-in it leaves where an embed was (fetch-article.ts). */
+export const EMBED_MARK = 'data-tars-embed'
+/** Embeds worth pointing to. Advertising and tracking frames are not on it, so they leave no trace. */
+const EMBEDS: Array<[string[], string]> = [
+  [['youtube.com', 'youtube-nocookie.com', 'youtu.be'], 'Video on YouTube'],
+  [['vimeo.com'], 'Video on Vimeo'],
+  [['dailymotion.com'], 'Video on Dailymotion'],
+  [['twitter.com', 'x.com'], 'Post on X'],
+  [['instagram.com'], 'Post on Instagram'],
+  [['facebook.com'], 'Post on Facebook'],
+  [['datawrapper.de', 'dwcdn.net', 'flourish.studio', 'flo.uri.sh', 'infogram.com', 'public.tableau.com'], 'Interactive chart'],
+  [['spotify.com', 'soundcloud.com'], 'Audio'],
+  [['scribd.com', 'documentcloud.org'], 'Document'],
+]
+
+export function embedSource(value: string | null): { url: string; label: string } | null {
+  if (!value || value.length > 2048) return null
+  try {
+    const url = new URL(value.startsWith('//') ? 'https:' + value : value)
+    if (url.protocol !== 'https:' || url.username || url.password) return null
+    const host = url.hostname.toLowerCase()
+    const label = EMBEDS.find(([domains]) => domains.some((domain) => host === domain || host.endsWith('.' + domain)))?.[1]
+    return label ? { url: url.href, label } : null
+  } catch {
+    return null
+  }
+}
+
 export const MAX_READER_NODES = 20000
 const MAX_DEPTH = 80
 
@@ -68,31 +96,60 @@ function resolveLink(value: string | null, base: string): string | null {
 
 const PLACEHOLDER = /(?:^data:|placeholder|blank\.(?:gif|png)|spacer\.|transparent\.|1x1|pixel\.(?:gif|png)|lazy-?load|loading\.(?:gif|svg)|grey\.(?:gif|png)|default\.(?:jpg|png))/i
 
-function fromSrcset(value: string | null): string | null {
-  if (!value) return null
-  let best: { url: string; width: number } | null = null
-  for (const part of value.split(/,\s+|,(?=https?:)/)) {
-    const [url, size = ''] = part.trim().split(/\s+/)
-    if (!url || url.startsWith('data:')) continue
-    const width = size.endsWith('w') ? Number(size.slice(0, -1)) : size.endsWith('x') ? Number(size.slice(0, -1)) * 800 : 800
-    // The largest candidate a reading column can use; beyond that it is only weight.
-    if (!best || (width > best.width && width <= 1600) || (best.width > 1600 && width < best.width)) best = { url, width: Number.isFinite(width) ? width : 800 }
-  }
-  return best?.url ?? null
+/** The width a picture address says it has (`?w=1024`, `/960x540/`, `width-400`), when it says. */
+function declaredWidth(url: string): number | null {
+  const match = /[?&,/](?:w|width)[=-](\d{2,4})(?![\dx])/i.exec(url) ?? /[/_-](\d{3,4})x\d{2,4}(?=[/_.-])/i.exec(url)
+  const width = match ? Number(match[1]) : NaN
+  return width >= 40 && width <= 8000 ? width : null
 }
 
-/** The picture an <img> stands for: its own address, or the one a lazy loader would have filled in. Never a placeholder. */
-export function imageAddress(el: Element, base: string): string | null {
-  const lazy = ['data-src', 'data-original', 'data-src-template', 'data-lazy-src', 'data-lazy', 'data-original-src', 'data-hi-res-src', 'data-full-src'].map((name) => el.getAttribute(name))
-  const candidates = [el.getAttribute('src'), ...lazy, fromSrcset(el.getAttribute('data-srcset')), fromSrcset(el.getAttribute('srcset'))]
-  if (el.parentElement?.tagName.toLowerCase() === 'picture') for (const source of Array.from(el.parentElement.querySelectorAll('source'))) candidates.push(fromSrcset(source.getAttribute('data-srcset')), fromSrcset(source.getAttribute('srcset')))
-  for (const candidate of candidates) {
-    if (!candidate || PLACEHOLDER.test(candidate)) continue
-    const url = resolve(candidate, base)
-    if (url) return url
+interface Candidate { url: string; width: number | null }
+
+function srcset(value: string | null): Candidate[] {
+  if (!value) return []
+  const out: Candidate[] = []
+  for (const part of value.split(/,\s+|,(?=https?:)/)) {
+    const [url, size = ''] = part.trim().split(/\s+/)
+    if (!url) continue
+    const stated = size.endsWith('w') ? Number(size.slice(0, -1)) : size.endsWith('x') ? Number(size.slice(0, -1)) * 800 : NaN
+    out.push({ url, width: Number.isFinite(stated) && stated > 0 ? stated : declaredWidth(url) })
   }
-  return null
+  return out
 }
+
+/** Wide enough for the reading column on a dense screen; anything larger is only weight. */
+const ENOUGH = 1600
+const LAZY = ['data-src', 'data-original', 'data-src-template', 'data-lazy-src', 'data-lazy', 'data-original-src', 'data-hi-res-src', 'data-full-src']
+
+/**
+ * The picture an <img> stands for. A page usually names several versions: the `src` (often a small or
+ * placeholder one), what a lazy loader would fill in, and `srcset` candidates on the image and on its
+ * <picture> sources. The best is the widest that is not more than the column can use; a version of unknown
+ * width named by a lazy loader or a srcset is taken over a `src` known to be small. Never a placeholder.
+ */
+export function imageChoice(el: Element, base: string): { url: string; fromSrc: boolean } | null {
+  const src = el.getAttribute('src')
+  const named: Candidate[] = [...srcset(el.getAttribute('data-srcset')), ...srcset(el.getAttribute('srcset'))]
+  if (el.parentElement?.tagName.toLowerCase() === 'picture') for (const source of Array.from(el.parentElement.querySelectorAll('source'))) named.push(...srcset(source.getAttribute('data-srcset')), ...srcset(source.getAttribute('srcset')))
+  for (const name of LAZY) {
+    const value = el.getAttribute(name)
+    if (value) named.push({ url: value, width: declaredWidth(value) })
+  }
+  const candidates = [...named, ...(src ? [{ url: src, width: declaredWidth(src) }] : [])].flatMap((c) => {
+    if (PLACEHOLDER.test(c.url)) return []
+    const url = resolve(c.url, base)
+    return url ? [{ url, width: c.width }] : []
+  })
+  if (!candidates.length) return null
+  const own = src ? resolve(src, base) : null
+  // Unknown widths rank as a full-size picture when a loader named them, and as a modest one when it is the plain src.
+  // An oversized version is taken only over a small one, and then the least oversized.
+  const rank = (c: Candidate) => { const width = c.width ?? (c.url === own ? 700 : 1000); return width <= ENOUGH ? width : 600 - width / 10000 }
+  const best = candidates.reduce((a, b) => (rank(b) > rank(a) ? b : a))
+  return { url: best.url, fromSrc: best.url === own }
+}
+
+export const imageAddress = (el: Element, base: string): string | null => imageChoice(el, base)?.url ?? null
 
 const dimension = (value: string | null) => (value && /^\d{1,5}$/.test(value.trim()) ? Number(value) : null)
 
@@ -119,15 +176,17 @@ export function sanitizeArticle(source: Element, base: string, doc: Document): S
   const root = doc.createElement('div')
 
   const image = (el: Element): Element | null => {
-    const url = imageAddress(el, base)
-    if (!url || images.includes(url)) return null
+    const choice = imageChoice(el, base)
+    if (!choice || images.includes(choice.url)) return null
+    const url = choice.url
     const width = dimension(el.getAttribute('width')), height = dimension(el.getAttribute('height'))
     // Tracking pixels, icons and avatars are not illustrations.
     if ((width !== null && width < 100) || (height !== null && height < 60)) return null
     const img = doc.createElement('img')
     img.setAttribute('src', url)
     img.setAttribute('alt', squash(el.getAttribute('alt') ?? '').slice(0, 300))
-    if (width && height) {
+    // The stated size describes the page's own src; a better version chosen over it has its own.
+    if (width && height && choice.fromSrc) {
       img.setAttribute('width', String(width))
       img.setAttribute('height', String(height))
     }
@@ -158,6 +217,19 @@ export function sanitizeArticle(source: Element, base: string, doc: Document): S
       if (tag === 'img') {
         const img = image(el)
         if (img) into.appendChild(img)
+        continue
+      }
+      if (el.hasAttribute(EMBED_MARK)) {
+        // Something the reader cannot show (a video, a chart, a post): a quiet pointer to it, when its address is one we know.
+        const embed = embedSource(el.querySelector('a')?.getAttribute('href') ?? null)
+        if (embed) {
+          const p = doc.createElement('p'), a = doc.createElement('a')
+          p.setAttribute('data-reader', 'embed')
+          a.setAttribute('href', embed.url)
+          a.textContent = embed.label
+          p.appendChild(a)
+          into.appendChild(p)
+        }
         continue
       }
       if (tag === 'br' || tag === 'hr') {
@@ -193,6 +265,8 @@ export function sanitizeArticle(source: Element, base: string, doc: Document): S
         const datetime = el.getAttribute('datetime')
         if (datetime && /^[\dT:+.\-Z ]{4,40}$/.test(datetime)) out.setAttribute('datetime', datetime)
       }
+      // Figures the publisher set out as a grid of numbers (normalised in reader/blocks.ts).
+      if (tag === 'dl' && (el.getAttribute('class') ?? '').split(' ').includes('tars-stats')) out.setAttribute('data-reader', 'stats')
       walk(el, out, depth + 1, pre || tag === 'pre')
       into.appendChild(out)
     }

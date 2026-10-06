@@ -8,13 +8,16 @@ import { AnimatePresence, motion, useIsPresent } from 'motion/react'
 import { ArrowRight, ArrowUpRight, Bookmark, Check, ChevronDown, ChevronLeft, ChevronUp, Clock, CloudOff, FileText, Lock, LogIn, RotateCw, ShieldAlert } from 'lucide-react'
 import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
+import { rememberPlace } from '@/app/resume'
 import { isTyping } from '@/app/shortcuts'
 import { useResolvedDark } from '@/app/theme'
 import type { PersonalEntry } from '@/current-affairs/personal-state'
+import { SMRY_DAILY, smryUrl } from '@/current-affairs/reader/elsewhere'
 import type { ClassifiedItem } from '@/current-affairs/types'
 import type { WorkspaceEvent } from '@/current-affairs/workspace'
 import { updateSettings, useSettings } from '@/data/hooks'
 import { useOnline } from '@/lib/useOnline'
+import { SESSION_ENDPOINT } from '@/sync/protocol'
 import { SegmentedControl } from '@/ui/controls'
 import { M } from '@/ui/motion'
 import { isTopLayer, useSurface } from '@/ui/surface/core'
@@ -24,6 +27,7 @@ import { useIsWide } from '@/ui/useMedia'
 import { ArticleBody, ReaderFigure } from './ArticleBody'
 import { READER_SCALE, setReaderPrefs, useReaderPrefs, type ReaderFace, type ReaderLeading, type ReaderWidth } from './prefs'
 import { useArticle, type UnavailableReason } from './useArticle'
+import { useSmry } from './useSmry'
 import './reader.css'
 
 export interface ReaderEntry {
@@ -67,11 +71,11 @@ interface Notice {
 function notice(reason: UnavailableReason, publisher: string): Notice {
   switch (reason) {
     case 'publisher':
-      return { icon: <Lock />, title: `Read this on ${publisher}`, body: `${publisher} publishes for its subscribers, so Tars does not fetch its articles. The original opens on the publisher’s site.` }
+      return { icon: <Lock />, title: `Read this on ${publisher}`, body: `${publisher} publishes for its subscribers, so Tars does not fetch its articles.` }
     case 'subscribers':
-      return { icon: <Lock />, title: 'For subscribers', body: `${publisher} marks this article as subscriber reading. Tars does not show text from behind a paywall.` }
+      return { icon: <Lock />, title: 'For subscribers', body: `${publisher} marks this article as subscriber reading, so Tars has not laid it out.` }
     case 'refused':
-      return { icon: <ShieldAlert />, title: `${publisher} declined the request`, body: 'The publisher does not serve this article to reader views. It is available on the publisher’s own site.', retry: true }
+      return { icon: <ShieldAlert />, title: `${publisher} declined the request`, body: 'The publisher does not serve this article to reader views, and Tars does not ask twice.', retry: true }
     case 'offline':
       return { icon: <CloudOff />, title: 'You’re offline', body: 'Articles are fetched when you open them and are not kept on this device. This one will load when you are back online.', retry: true }
     case 'gone':
@@ -81,7 +85,7 @@ function notice(reason: UnavailableReason, publisher: string): Notice {
     case 'slow':
       return { icon: <Clock />, title: 'The publisher took too long', body: `${publisher} did not answer in time. Your place in the reading list is unchanged.`, retry: true }
     case 'session':
-      return { icon: <LogIn />, title: 'Sign in to keep reading', body: 'Your session has ended. Sign in again and the article will load.' }
+      return { icon: <LogIn />, title: 'Session expired', body: 'Sign in again and this article will open where you left it.' }
     default:
       return { icon: <RotateCw />, title: 'Couldn’t load this article', body: 'Something went wrong between Tars and the publisher. Your reading list is unaffected.', retry: true }
   }
@@ -102,6 +106,12 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
   useSurface({ open: present, onClose, id, panel, modal: true, history: false })
 
   const item = entry?.item ?? null
+  const smry = useSmry()
+  // Leave to sign in, and come back to this article (app/resume.ts).
+  const signInAgain = useCallback(() => {
+    rememberPlace()
+    location.assign(SESSION_ENDPOINT)
+  }, [])
   const { state, retry } = useArticle(item, online)
   const article = state.status === 'ready' ? state.article : null
   const read = !!personal.readAt, saved = !!personal.savedAt
@@ -148,8 +158,13 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
     }
   }, [url, state.status])
 
+  // The keys act on the article on screen. The listener is attached once and reads what is current: attached
+  // per render it would, for the moment between a paint and its effect, still step from the previous article.
+  const live = useRef({ item, next, prev, size: prefs.size, step, toggle })
+  live.current = { item, next, prev, size: prefs.size, step, toggle }
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      const { item, next, prev, size, step, toggle } = live.current
       if (!isTopLayer(id) || e.metaKey || e.ctrlKey || e.altKey || isTyping(e.target) || e.defaultPrevented) return
       const key = e.key.toLowerCase()
       const run = (fn: () => void) => {
@@ -161,12 +176,12 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
       else if (key === 'm') run(() => toggle('read'))
       else if (key === 's') run(() => toggle('save'))
       else if (key === 'o' && item) run(() => window.open(item.url, '_blank', 'noopener,noreferrer'))
-      else if (key === '+' || key === '=') run(() => setReaderPrefs({ size: Math.min(READER_SCALE.length - 1, prefs.size + 1) }))
-      else if (key === '-') run(() => setReaderPrefs({ size: Math.max(0, prefs.size - 1) }))
+      else if (key === '+' || key === '=') run(() => setReaderPrefs({ size: Math.min(READER_SCALE.length - 1, size + 1) }))
+      else if (key === '-') run(() => setReaderPrefs({ size: Math.max(0, size - 1) }))
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [id, item, next, prev, prefs.size, step, toggle])
+  }, [id])
 
   // One set of actions: in the bar where there is room for it, a thumb-reach dock below the text on a phone.
   const tip = wide ? 'bottom' : 'top'
@@ -253,10 +268,10 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
               </button>
             </Tooltip>
             {item && (
-              <Tooltip label={`Open on ${item.publisher}`} shortcut="O" side="bottom">
-                <a className="tool reader-tool reader-original" data-reader-original href={item.url} target="_blank" rel="noopener noreferrer" aria-label="Open original">
+              <Tooltip label={`Read on ${item.publisher}`} shortcut="O" side="bottom">
+                <a className="tool reader-tool reader-original" data-reader-original href={item.url} target="_blank" rel="noopener noreferrer" aria-label="Read Original">
                   <ArrowUpRight aria-hidden="true" />
-                  <span>Original</span>
+                  <span>Read Original</span>
                 </a>
               </Tooltip>
             )}
@@ -295,24 +310,44 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                   </span>
                   <h2>{failure.title}</h2>
                   <p>{failure.body}</p>
-                  <div className="reader-notice-actions">
-                    {state.status === 'unavailable' && state.reason === 'session' ? (
-                      <a className="reader-button" data-variant="primary" href="/api/session">
-                        Sign in
-                      </a>
-                    ) : (
-                      <a className="reader-button" data-variant="primary" href={item.url} target="_blank" rel="noopener noreferrer">
-                        Open on {item.publisher}
+                  {state.status === 'unavailable' && state.reason === 'session' ? (
+                    <div className="reader-notice-actions">
+                      <button type="button" className="reader-button" data-variant="primary" data-reader-signin onClick={signInAgain}>
+                        <LogIn aria-hidden="true" />
+                        Sign in again
+                      </button>
+                      <a className="reader-button" href={item.url} target="_blank" rel="noopener noreferrer">
+                        Read Original
                         <ArrowUpRight aria-hidden="true" />
                       </a>
-                    )}
-                    {failure.retry && (
-                      <button type="button" className="reader-button" onClick={retry}>
+                    </div>
+                  ) : state.status === 'unavailable' && state.reason === 'offline' ? (
+                    <div className="reader-notice-actions">
+                      <button type="button" className="reader-button" data-variant="primary" onClick={retry}>
                         <RotateCw aria-hidden="true" />
                         Try again
                       </button>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <>
+                      {/* Tars could not show it: the publisher's page, and one reading service outside Tars that the reader may choose. */}
+                      <div className="reader-notice-actions" data-reader-elsewhere>
+                        <a className="reader-button" data-variant="primary" href={item.url} target="_blank" rel="noopener noreferrer">
+                          Read Original
+                          <ArrowUpRight aria-hidden="true" />
+                        </a>
+                        <a className="reader-button" href={smryUrl(item.url)} target="_blank" rel="noopener noreferrer" onClick={() => smry.opened(item.url)} onAuxClick={(e) => e.button === 1 && smry.opened(item.url)}>
+                          Read at smry.ai <span className="reader-button-count type-numeric">({smry.count}/{SMRY_DAILY} today)</span>
+                        </a>
+                      </div>
+                      {failure.retry && (
+                        <button type="button" className="reader-retry" onClick={retry}>
+                          <RotateCw aria-hidden="true" />
+                          Try again
+                        </button>
+                      )}
+                    </>
+                  )}
                 </section>
               )}
 
@@ -323,7 +358,7 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                       <b>This may not be the whole article.</b> {item.publisher} gave the reader a short text. The complete article is on the publisher’s site.
                     </p>
                   )}
-                  {article.lead && <ReaderFigure lead src={article.lead.src} alt={article.lead.alt} />}
+                  {article.lead && <ReaderFigure lead src={article.lead.src} alt={article.lead.alt} caption={article.lead.caption ?? undefined} />}
                   <ArticleBody html={article.html} />
                   <footer className="reader-end">
                     <span className="reader-endmark" aria-hidden="true" />
@@ -340,7 +375,7 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                         {read ? 'Marked as read' : 'Mark as read'}
                       </button>
                       <a className="reader-button" href={item.url} target="_blank" rel="noopener noreferrer">
-                        Open original
+                        Read Original
                         <ArrowUpRight aria-hidden="true" />
                       </a>
                     </div>

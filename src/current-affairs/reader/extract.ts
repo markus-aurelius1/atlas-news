@@ -12,6 +12,7 @@
  * is what opens; the page supplies the byline, the picture and the text.
  */
 import { Readability } from '@mozilla/readability'
+import { STATS_CLASS, normaliseInfographics } from './blocks.ts'
 import { imageAddress, sanitizeArticle } from './sanitize.ts'
 
 export interface ReaderArticle {
@@ -20,7 +21,7 @@ export interface ReaderArticle {
   byline: string | null
   publishedAt: string | null
   /** The opening picture, when the text does not start with one of its own. */
-  lead: { src: string; alt: string } | null
+  lead: { src: string; alt: string; caption: string | null } | null
   /** Sanitized: elements of READER_ELEMENTS only. */
   html: string
   words: number
@@ -146,7 +147,8 @@ const names = (el: Element) => `${el.getAttribute('class') ?? ''} ${el.getAttrib
  * Repairs made to the page before Readability reads it: none of them adds anything, they only put the
  * publisher's own content where an article reader expects it.
  */
-function prepare(doc: Document, url: string, lead: string | null) {
+function prepare(doc: Document, url: string, lead: string | null): string | null {
+  normaliseInfographics(doc)
   const host = new URL(url).hostname
   const hint = Object.entries(CONTENT_HINTS).find(([domain]) => host === domain || host.endsWith('.' + domain))?.[1]
   const parts = hint ? Array.from(doc.querySelectorAll(hint)) : []
@@ -173,18 +175,26 @@ function prepare(doc: Document, url: string, lead: string | null) {
     if (images.length !== 1 || squash(holder.textContent ?? '').length - text.length > 20) continue
     const figure = doc.createElement('figure'), caption = doc.createElement('figcaption')
     caption.textContent = text
-    figure.append(images[0], caption)
+    // With its <picture>, whose sources may name the better versions.
+    figure.append(images[0].closest('picture') ?? images[0], caption)
     while (holder.firstChild) holder.removeChild(holder.firstChild)
     holder.appendChild(figure)
   }
+  if (!lead) return null
   // An opening picture that only a script would have filled in: the publisher names the same picture as og:image.
-  if (lead) {
-    const hero = Array.from(doc.body.querySelectorAll('img')).find((img) => !imageAddress(img, url) && [img, img.parentElement, img.parentElement?.parentElement, img.parentElement?.parentElement?.parentElement].some((el) => el && HERO.test(names(el))))
-    if (hero) {
-      for (const name of hero.getAttributeNames()) if (name !== 'alt') hero.removeAttribute(name)
-      hero.setAttribute('src', lead)
-    }
+  const hero = Array.from(doc.body.querySelectorAll('img')).find((img) => !imageAddress(img, url) && [img, img.parentElement, img.parentElement?.parentElement, img.parentElement?.parentElement?.parentElement].some((el) => el && HERO.test(names(el))))
+  if (hero) {
+    for (const name of hero.getAttributeNames()) if (name !== 'alt') hero.removeAttribute(name)
+    hero.setAttribute('src', lead)
   }
+  // The caption the page gives that same picture, kept in case the picture itself is left out of the article text.
+  const key = pathKey(lead)
+  for (const figure of Array.from(doc.body.querySelectorAll('figure'))) {
+    const img = figure.querySelector('img'), address = img && imageAddress(img, url)
+    const caption = squash(figure.querySelector('figcaption')?.textContent ?? '')
+    if (address && caption && caption.length <= 500 && (address === lead || (key && pathKey(address) === key))) return caption
+  }
+  return null
 }
 
 export function extractArticle(page: { url: string; html: string }, hint: { title: string; description?: string; publishedAt?: string | null }): Extraction {
@@ -202,8 +212,8 @@ export function extractArticle(page: { url: string; html: string }, hint: { titl
   const byline = cleanByline(authors(data)) ?? cleanByline(meta(doc, 'author', 'article:author_name', 'parsely-author', 'dc.creator'))
   const published = isoDate(hint.publishedAt) ?? data.map((node) => isoDate(node.datePublished)).find(Boolean) ?? isoDate(meta(doc, 'article:published_time', 'datePublished'))
 
-  prepare(doc, page.url, lead)
-  const parsed = new Readability(doc, { charThreshold: 250, maxElemsToParse: 30000 }).parse()
+  const leadCaption = prepare(doc, page.url, lead)
+  const parsed = new Readability(doc, { charThreshold: 250, maxElemsToParse: 30000, classesToPreserve: [STATS_CLASS] }).parse()
   if (!parsed?.content) return { kind: 'unreadable' }
   const content = new DOMParser().parseFromString(`<!doctype html><body>${parsed.content}</body>`, 'text/html')
   // The headline is shown from the feed, and so is its standfirst: copies of them at the top of the text are removed.
@@ -229,7 +239,7 @@ export function extractArticle(page: { url: string; html: string }, hint: { titl
       url: page.url,
       byline: byline ?? cleanByline(parsed.byline),
       publishedAt: published ?? isoDate(parsed.publishedTime),
-      lead: lead && !opensWithPicture && !repeated ? { src: lead, alt: squash(leadAlt).slice(0, 300) } : null,
+      lead: lead && !opensWithPicture && !repeated ? { src: lead, alt: squash(leadAlt).slice(0, 300), caption: leadCaption && !same(key(leadCaption), title) ? leadCaption : null } : null,
       html: clean.html,
       words: clean.words,
       minutes: Math.max(1, Math.round(clean.words / WORDS_PER_MINUTE)),

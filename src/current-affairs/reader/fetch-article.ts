@@ -62,10 +62,23 @@ function stripElement(text: string, tag: string): string {
     const stop = selfClosed ? open.lastIndex : close.exec(text) ? close.lastIndex : code ? text.length : open.lastIndex
     const keep = tag === 'script' && /\btype\s*=\s*["']?application\/ld\+json/i.test(match[0])
     result += text.slice(cursor, keep ? stop : match.index)
+    if (tag === 'iframe') result += embedStandIn(match[0])
     cursor = stop
     open.lastIndex = stop
   }
   return result + text.slice(cursor)
+}
+
+/**
+ * Where a frame was, its https address is left as a plain link, so the reader can say that something was
+ * embedded there and point to it. Whether it is worth pointing to (a video, a chart) or not (an advertisement)
+ * is decided by the sanitizer's own list; this only carries the address across.
+ */
+function embedStandIn(tag: string): string {
+  const src = /\s(?:data-)?src\s*=\s*(?:"([^"]*)"|'([^']*)')/i.exec(tag)
+  const address = (src?.[1] ?? src?.[2] ?? '').trim().replace(/&amp;/g, '&')
+  if (!/^(?:https:)?\/\/[^\s"'<>]{4,2000}$/i.test(address)) return ''
+  return `<p data-tars-embed=""><a href="${address.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')}">Embedded content</a></p>`
 }
 
 function stripComments(text: string): string {

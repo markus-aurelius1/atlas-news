@@ -215,6 +215,21 @@ try {
   check('the reader gateway is closed without an Access token', (await article(anonymous, 'https://www.thehindu.com/a.ece')).status === 401)
   const refusals = [await article(stranger, 'https://example.org/a'), await article(stranger, 'https://www.ft.com/content/a'), await article(stranger, `http://127.0.0.1:${port}/api/sync`)]
   check('signed in, it refuses unlisted, restricted and local addresses without fetching them: ' + refusals.map(r => `${r.status} ${r.error}`).join(', '), JSON.stringify(refusals.map(r => [r.status, r.error])) === JSON.stringify([[403, 'publisher_not_listed'], [451, 'publisher_restricted'], [400, 'invalid_url']]) && refusals.every(r => r.cache === 'private, no-store'))
+  // The smry.ai count belongs to the account: opened on one device, counted on the other. The gateway and smry.ai are stood in for.
+  for (const d of [one, two]) {
+    await d.ctx.route('**/api/article*', route => route.fulfill({ status: 502, contentType: 'application/json', body: JSON.stringify({ error: 'upstream_blocked' }) }))
+    await d.ctx.route(url => url.hostname === 'smry.ai', route => route.fulfill({ contentType: 'text/html', body: '<h1>Outside Tars</h1>' }))
+  }
+  const smry = d => d.page.getByRole('link', { name: /Read at smry\.ai/ })
+  const unreadable = async (d, url) => { await d.open('#/current-affairs?read=' + encodeURIComponent(url)); await smry(d).waitFor(); return (await smry(d).innerText()).replace(/\s+/g, ' ') }
+  const viaSmry = async (d, url) => { await unreadable(d, url); const tab = d.ctx.waitForEvent('page'); await smry(d).click(); await (await tab).close() }
+  check('the smry.ai count starts at nothing: ' + await unreadable(one, RIGHTS), (await smry(one).innerText()).includes('(0/20 today)'))
+  await viaSmry(one, RIGHTS); await viaSmry(one, RIGHTS); await one.sent()
+  await two.syncNow()
+  check('an article opened at smry.ai on device one is counted on device two, once: ' + await unreadable(two, RBI), (await smry(two).innerText()).includes('(1/20 today)'))
+  await viaSmry(two, RBI); await two.sent()
+  await one.syncNow()
+  check('and device two’s article is counted on device one: ' + await unreadable(one, RBI), (await smry(one).innerText()).includes('(2/20 today)') && (await smry(one).getAttribute('href')) === 'https://smry.ai/' + RBI)
   // Optional, and the only step here that reaches a publisher: READER_LIVE_URL=<a listed article> fetches it through workerd.
   if (process.env.READER_LIVE_URL) {
     const live = await stranger.page.evaluate(async url => { const started = performance.now(); const r = await fetch('/api/article?url=' + encodeURIComponent(url)); const body = await r.json(); return { status: r.status, error: body.error, chars: body.html?.length ?? 0, scripts: /<script(?![^>]*ld\+json)/i.test(body.html ?? ''), ms: Math.round(performance.now() - started) } }, process.env.READER_LIVE_URL)
@@ -229,7 +244,7 @@ try {
   const totals = wrangler(['d1', 'execute', 'tars-sync', '--local', '--persist-to', state, '--json', '--command', '"SELECT user_id, collection, sum(deleted) AS tombstones, count(*) AS n FROM sync_records GROUP BY user_id, collection ORDER BY user_id, collection"'])
   const stored = JSON.parse(totals.stdout.slice(totals.stdout.indexOf('[')))[0].results
   console.log('D1 contents', JSON.stringify(stored))
-  check('D1 holds one row per key for this account only, and no feed or unsaved-article data', stored.every(r => r.user_id === USER) && stored.find(r => r.collection === 'recall').n === HISTORY && stored.find(r => r.collection === 'article').n <= 4 && !stored.some(r => !['news', 'article', 'note', 'recall', 'claim', 'settings'].includes(r.collection)))
+  check('D1 holds one row per key for this account only (one for the day’s smry.ai count), and no feed or unsaved-article data', stored.every(r => r.user_id === USER) && stored.find(r => r.collection === 'recall').n === HISTORY && stored.find(r => r.collection === 'article').n <= 4 && stored.find(r => r.collection === 'reader').n === 1 && !stored.some(r => !['news', 'article', 'note', 'recall', 'claim', 'settings', 'reader'].includes(r.collection)))
   check('the signing keys were fetched once per runtime, not per request (' + certRequests + ')', certRequests >= 1 && certRequests <= 4)
   assert.deepEqual(errors, [])
   const summary = { checks, migration, usage: { requests: usage.length, byDevice: Object.fromEntries([...new Set(usage.map(u => u.device))].map(d => [d, usage.filter(u => u.device === d).map(u => `${u.sent}→${u.usage}`)])) }, stored }

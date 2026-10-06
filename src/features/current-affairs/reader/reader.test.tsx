@@ -2,6 +2,8 @@
 // @vitest-environment happy-dom
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { rememberPlace, takePlace } from '@/app/resume'
+import { SMRY_KEY, localDay, readSmry } from '@/current-affairs/reader/elsewhere'
 import type { ClassifiedItem } from '@/current-affairs/types'
 import type { WorkspaceEvent } from '@/current-affairs/workspace'
 import { KEYS } from '@/lib/storage'
@@ -215,5 +217,126 @@ describe('Reader', () => {
   it('is not in the page when closed', () => {
     render(<Reader {...props({ url: null, entry: null })} />)
     expect(document.querySelector('[data-reader]')).toBeNull()
+  })
+})
+
+describe('when Tars cannot show the article', () => {
+  type Props = Parameters<typeof Reader>[0]
+  const props = (over: Partial<Props> = {}): Props => ({ url: first.item.url, entry: first, resolving: false, personal: {}, prev: null, next: null, position: null, onClose: vi.fn(), onNavigate: vi.fn(), onAct: vi.fn(), ...over })
+  const links = (root: Element) => Array.from(root.querySelectorAll('a')).map((a) => ({ text: a.textContent?.replace(/\s+/g, ' ').trim(), href: a.getAttribute('href'), target: a.getAttribute('target'), rel: a.getAttribute('rel') }))
+  const safe = { target: '_blank', rel: 'noopener noreferrer' }
+  const U = first.item.url
+
+  it('offers exactly two ways to read it, for every terminal failure', async () => {
+    const failures: Array<[string, () => Response, Partial<Props>]> = [
+      ['subscribers', () => json({ v: 1, url: U, html: pageHtml(body, '<meta property="article:content_tier" content="locked">') }), {}],
+      ['refused', () => json({ error: 'upstream_blocked' }, 502), {}],
+      ['unreadable', () => json({ v: 1, url: U, html: pageHtml('<p>Watch the video.</p>') }), {}],
+      ['gone', () => json({ error: 'upstream_not_found' }, 502), {}],
+      ['slow', () => json({ error: 'upstream_timeout' }, 504), {}],
+      ['failed', () => json({ error: 'upstream_unavailable' }, 502), {}],
+      ['failed', () => json({ error: 'publisher_not_listed' }, 403), {}],
+      ['publisher', () => json({}), { url: 'https://www.ft.com/content/abc', entry: entry('https://www.ft.com/content/abc', 'A subscription story', 'Financial Times') }],
+    ]
+    for (const [reason, response, over] of failures) {
+      forgetArticles()
+      vi.stubGlobal('fetch', vi.fn(async () => response()))
+      const view = render(<Reader {...props(over)} />)
+      const alert = await screen.findByRole('alert')
+      const target = over.url ?? U
+      expect(alert.getAttribute('data-reason'), reason).toBe(reason)
+      expect(links(alert), reason).toEqual([
+        { text: 'Read Original', href: target, ...safe },
+        { text: 'Read at smry.ai (0/20 today)', href: `https://smry.ai/${target}`, ...safe },
+      ])
+      expect(document.querySelector('.reader-body'), reason).toBeNull()
+      view.unmount()
+    }
+  })
+
+  it('shows only Read Original when the article is rendered', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => json({ v: 1, url: U, html: pageHtml(body) })))
+    render(<Reader {...props()} />)
+    await waitFor(() => expect(document.querySelector('.reader-body')).not.toBeNull())
+    const dialog = screen.getByRole('dialog')
+    const out = links(dialog).filter((link) => link.target === '_blank' && !link.href?.includes('thehindu.com'))
+    expect(out).toEqual([])
+    expect(dialog.textContent).not.toMatch(/smry|elsewhere|removepaywall/i)
+    expect(links(dialog).filter((link) => link.text === 'Read Original').map((link) => link.href)).toEqual([U, U])
+  })
+
+  it('counts each article opened at smry.ai once a day, tells sync, and never locks the link', async () => {
+    const changed = vi.fn()
+    window.addEventListener('tars:local-change', changed)
+    // Nineteen other articles were already opened there today, on this or another device.
+    localStorage.setItem(SMRY_KEY, JSON.stringify({ version: 1, days: { [localDay()]: Array.from({ length: 19 }, (_, i) => `https://example.org/${i}`) } }))
+    vi.stubGlobal('fetch', vi.fn(async () => json({ error: 'upstream_blocked' }, 502)))
+    const view = render(<Reader {...props()} />)
+    const smry = () => screen.getByRole('link', { name: /Read at smry\.ai/ }) as HTMLAnchorElement
+    await screen.findByRole('alert')
+    expect(smry().textContent).toContain('(19/20 today)')
+    smry().addEventListener('click', (e) => e.preventDefault())
+    fireEvent.click(smry())
+    expect(smry().textContent).toContain('(20/20 today)')
+    fireEvent.click(smry())
+    expect(smry().textContent).toContain('(20/20 today)')
+    expect(changed).toHaveBeenCalledTimes(2)
+    expect(readSmry(localStorage).days[localDay()]).toContain(U)
+    view.unmount()
+
+    // A twenty-first article: the count goes past the allowance and the link is still a link.
+    forgetArticles()
+    render(<Reader {...props({ url: second.item.url, entry: second })} />)
+    await screen.findByRole('alert')
+    smry().addEventListener('click', (e) => e.preventDefault())
+    fireEvent.click(smry())
+    expect(smry().textContent).toContain('(21/20 today)')
+    expect(smry().getAttribute('href')).toBe(`https://smry.ai/${second.item.url}`)
+    expect(smry().hasAttribute('aria-disabled')).toBe(false)
+    // Another device's count arriving through sync shows at once.
+    localStorage.setItem(SMRY_KEY, JSON.stringify({ version: 1, days: { [localDay()]: ['https://example.org/only'] } }))
+    await act(async () => { window.dispatchEvent(new Event('tars:reader-smry')) })
+    expect(smry().textContent).toContain('(1/20 today)')
+    window.removeEventListener('tars:local-change', changed)
+  })
+
+  it('treats a lapsed Access session as a session, and comes back to the article after signing in', async () => {
+    const lapsed: Array<() => Response> = [
+      () => json({ error: 'unauthenticated' }, 401),
+      () => new Response('<html>Forbidden</html>', { status: 403, headers: { 'Content-Type': 'text/html' } }),
+      () => Object.defineProperty(new Response(null, { status: 200 }), 'type', { value: 'opaqueredirect' }),
+    ]
+    for (const response of lapsed) {
+      forgetArticles()
+      const fetched = vi.fn(async (_input: RequestInfo | URL, _init?: RequestInit) => response())
+      vi.stubGlobal('fetch', fetched)
+      const view = render(<Reader {...props()} />)
+      const alert = await screen.findByRole('alert')
+      expect(fetched.mock.calls[0][1]?.redirect).toBe('manual')
+      expect(alert.getAttribute('data-reason')).toBe('session')
+      expect(alert.querySelector('h2')?.textContent).toBe('Session expired')
+      expect(screen.getByRole('button', { name: 'Sign in again' })).toBeTruthy()
+      expect(alert.textContent).not.toMatch(/smry|elsewhere|removepaywall/i)
+      view.unmount()
+    }
+    // The place is remembered when leaving to sign in, and taken once on return.
+    sessionStorage.clear()
+    rememberPlace('#/current-affairs?read=' + encodeURIComponent(U))
+    expect(takePlace()).toBe('#/current-affairs?read=' + encodeURIComponent(U))
+    expect(takePlace()).toBeNull()
+    rememberPlace('#/current-affairs?read=x')
+    expect(takePlace(Date.now() + 31 * 60 * 1000)).toBeNull()
+    rememberPlace('https://evil.example/')
+    expect(takePlace()).toBeNull()
+  })
+
+  it('offline is not a dead end: it waits, with nothing to open elsewhere', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('Failed to fetch') }))
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false)
+    render(<Reader {...props()} />)
+    const alert = await screen.findByRole('alert')
+    expect(alert.getAttribute('data-reason')).toBe('offline')
+    expect(links(alert)).toEqual([])
+    expect(screen.getByRole('button', { name: 'Try again' })).toBeTruthy()
   })
 })

@@ -4,6 +4,7 @@
  */
 import { liveQuery } from 'dexie'
 import { CA_STATE_KEY } from '@/current-affairs/personal-state'
+import { SMRY_KEY } from '@/current-affairs/reader/elsewhere'
 import { CA_NOTES_KEY } from '@/data/compatibility/notes'
 import { db } from '@/data/db'
 import { isNative } from '@/lib/platform'
@@ -11,7 +12,7 @@ import { onWake } from '@/services/lifecycle'
 import { toast } from '@/ui/toast'
 import { adapters } from './adapters.ts'
 import { createSyncEngine, type SyncEngine, type SyncOutcome } from './engine.ts'
-import { LOCAL_CHANGE_EVENT, NOTES_EVENT, PERSONAL_STATE_EVENT, PINNED_EVENT } from './signal.ts'
+import { LOCAL_CHANGE_EVENT, NOTES_EVENT, PERSONAL_STATE_EVENT, PINNED_EVENT, READER_EVENT } from './signal.ts'
 import { signIn, useSyncStatus, type SyncPhase } from './status.ts'
 import { syncStore } from './store.ts'
 import { fetchTransport } from './transport.ts'
@@ -33,7 +34,7 @@ let timer: ReturnType<typeof setTimeout> | undefined
 let lastAttempt = 0
 let warned = false
 
-const EVENTS = { news: PERSONAL_STATE_EVENT, articles: PINNED_EVENT, notes: NOTES_EVENT } as const
+const EVENTS = { news: PERSONAL_STATE_EVENT, articles: PINNED_EVENT, notes: NOTES_EVENT, reader: READER_EVENT } as const
 
 function build(): SyncEngine {
   return createSyncEngine({
@@ -110,8 +111,10 @@ export function startSync(): void {
   void syncStore().readMeta().then((meta) => useSyncStatus.setState({ account: meta.account, lastSyncedAt: meta.lastSyncedAt })).catch(() => {})
   void run('start')
   window.addEventListener(LOCAL_CHANGE_EVENT, () => schedule())
+  // Another device's smry.ai count was united with this one's: if that made the set larger, send the union on.
+  window.addEventListener(READER_EVENT, () => schedule())
   // Another tab changed the reading state or the notes.
-  window.addEventListener('storage', (event) => { if (event.key === CA_STATE_KEY || event.key === CA_NOTES_KEY) schedule() })
+  window.addEventListener('storage', (event) => { if (event.key === CA_STATE_KEY || event.key === CA_NOTES_KEY || event.key === SMRY_KEY) schedule() })
   // Atlas answers, reward claims, deletions and settings all live in the database.
   let first = true
   liveQuery(() => Promise.all([db.recalls.count(), db.claims.count(), db.tombstones.count(), db.settings.get('settings')])).subscribe({

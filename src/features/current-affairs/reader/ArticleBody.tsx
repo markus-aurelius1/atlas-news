@@ -3,6 +3,7 @@
  * document and each node is rebuilt here from the same allowlist the sanitizer used, so no publisher markup is
  * ever inserted as HTML: an element this file does not name cannot reach the page.
  */
+import { ArrowUpRight } from 'lucide-react'
 import { createElement, memo, useMemo, useState, type ReactNode } from 'react'
 import { READER_ELEMENTS } from '@/current-affairs/reader/sanitize'
 
@@ -58,6 +59,50 @@ function build(node: Node, key: number, structural: boolean): ReactNode {
       <a key={key} href={href} target="_blank" rel="noopener noreferrer nofollow">
         {children(el, false)}
       </a>
+    )
+  }
+  const kind = el.getAttribute('data-reader')
+  if (tag === 'p' && kind === 'embed') {
+    const href = secure(el.querySelector('a')?.getAttribute('href') ?? null)
+    if (!href) return null
+    return (
+      <p key={key} className="reader-embed">
+        <span>{el.textContent?.trim().slice(0, 40) || 'Embedded content'}</span>
+        <a href={href} target="_blank" rel="noopener noreferrer nofollow">
+          View on original
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      </p>
+    )
+  }
+  if (tag === 'dl' && kind === 'stats') {
+    // Each figure with its label (and note) is one cell of the grid.
+    const cells: Array<{ label: string; value: Element | null; notes: string[] }> = []
+    for (const part of Array.from(el.children)) {
+      const name = part.tagName.toLowerCase()
+      if (name === 'dt') cells.push({ label: part.textContent?.trim() ?? '', value: null, notes: [] })
+      else if (name === 'dd' && cells.length) {
+        const cell = cells[cells.length - 1]
+        if (!cell.value) cell.value = part
+        else cell.notes.push(part.textContent?.trim() ?? '')
+      }
+    }
+    const shown = cells.filter((cell) => cell.value)
+    if (!shown.length) return null
+    return (
+      <dl key={key} className="reader-stats" data-count={Math.min(shown.length, 4)}>
+        {shown.map((cell, i) => (
+          <div key={i} className="reader-stat">
+            <dt>{cell.label}</dt>
+            <dd className="reader-stat-value">{children(cell.value!, false)}</dd>
+            {cell.notes.filter(Boolean).map((note, n) => (
+              <dd key={n} className="reader-stat-note">
+                {note}
+              </dd>
+            ))}
+          </div>
+        ))}
+      </dl>
     )
   }
   if (tag === 'table')

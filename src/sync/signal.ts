@@ -5,6 +5,8 @@ export const LOCAL_CHANGE_EVENT = 'tars:local-change'
 export const PERSONAL_STATE_EVENT = 'tars:personal-state'
 /** The set of pinned Saved articles changed. */
 export const PINNED_EVENT = 'tars:pinned-articles'
+/** The count of articles opened at smry.ai changed (re-exported name: current-affairs/reader/elsewhere.ts). */
+export const READER_EVENT = 'tars:reader-smry'
 /** Existing event: the short notes changed underneath their views. */
 export const NOTES_EVENT = 'tars:notes-changed'
 

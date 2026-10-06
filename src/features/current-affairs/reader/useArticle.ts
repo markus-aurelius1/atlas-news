@@ -49,6 +49,8 @@ const GATEWAY_REASON: Record<string, UnavailableReason> = {
   upstream_not_found: 'gone',
   upstream_timeout: 'slow',
   upstream_unavailable: 'failed',
+  forbidden_origin: 'failed',
+  method_not_allowed: 'failed',
   not_article: 'unreadable',
   too_large: 'unreadable',
 }
@@ -62,15 +64,17 @@ export async function loadArticle(request: ArticleRequest, signal: AbortSignal):
   if (!target.ok) return unavailable(target.error === 'publisher_restricted' ? 'publisher' : 'failed')
   let response: Response
   try {
-    response = await fetch(`${endpoint}?url=${encodeURIComponent(request.url)}`, { signal, cache: 'no-store', credentials: 'same-origin', headers: { Accept: 'application/json' } })
+    response = await fetch(`${endpoint}?url=${encodeURIComponent(request.url)}`, { signal, cache: 'no-store', credentials: 'same-origin', redirect: 'manual', headers: { Accept: 'application/json' } })
   } catch (error) {
     if (signal.aborted) throw error
     return unavailable(navigator.onLine ? 'failed' : 'offline')
   }
-  if (response.status === 401) return unavailable('session')
+  // Access has stopped vouching for this browser: it answers for the gateway with a redirect to its login, or with its own 401 or 403.
+  if (response.type === 'opaqueredirect' || response.status === 401) return unavailable('session')
   if (!response.ok) {
     const code = await response.json().then((body: { error?: string }) => body?.error ?? '', () => '')
-    return unavailable(GATEWAY_REASON[code] ?? 'failed')
+    // A 403 the gateway did not write (it names every refusal of its own) is Access's.
+    return unavailable(GATEWAY_REASON[code] ?? (response.status === 403 ? 'session' : 'failed'))
   }
   let page: ArticlePayload
   try {

@@ -59,6 +59,19 @@ const rich = shell(`
   <ul><li>First finding of the panel</li><li>Second finding of the panel</li></ul>
   <table><thead><tr><th>District</th><th>Households</th></tr></thead><tbody><tr><td>North</td><td>12,400</td></tr><tr><td>South</td><td>9,150</td></tr></tbody></table>
   <figure><img src="https://images.example.org/broken.jpg" width="900" height="600" alt="Broken"><figcaption>A picture that fails to load.</figcaption></figure>
+  <div class="infographic-coast"><div class="infographic-coast__tab-strip" role="tablist"><label role="tab">By the numbers</label> <label role="tab">Lessons</label></div>
+    <div class="infographic-coast__panel" role="tabpanel"><div class="infographic-coast__stat-grid">
+      <div class="infographic-coast__stat-cell"><div class="infographic-coast__stat-number">11,098</div><div class="infographic-coast__stat-unit">km</div><div class="infographic-coast__stat-label">Length of the coastline</div></div>
+      <div class="infographic-coast__stat-cell"><div class="infographic-coast__stat-number">~95%</div><div class="infographic-coast__stat-unit">of trade</div><div class="infographic-coast__stat-label">Share of trade carried by sea</div></div>
+      <div class="infographic-coast__stat-cell"><div class="infographic-coast__stat-number">~30 mn</div><div class="infographic-coast__stat-unit">livelihoods</div><div class="infographic-coast__stat-label">Supported by fisheries</div></div>
+    </div></div>
+    <div class="infographic-coast__panel" role="tabpanel"><div class="infographic-coast__compare-grid">
+      <div class="infographic-coast__compare-card"><div class="infographic-coast__compare-label">Seychelles, 2018</div><div class="infographic-coast__compare-value">USD 15 mn</div><div class="infographic-coast__compare-text">The first sovereign bond of its kind.</div></div>
+      <div class="infographic-coast__compare-card"><div class="infographic-coast__compare-label">Belize</div><div class="infographic-coast__compare-value">USD 364 mn</div><div class="infographic-coast__compare-text">A debt conversion that paid for conservation.</div></div>
+    </div></div>
+  </div>
+  <p data-tars-embed=""><a href="https://www.youtube.com/embed/fixture">Embedded content</a></p>
+  <p data-tars-embed=""><a href="https://ads.example.org/frame">Embedded content</a></p>
   <h3>What happens next</h3>
   ${paragraphs(9, 7)}
   <form action="https://evil.example"><input name="q"></form>`)
@@ -76,15 +89,18 @@ const ARTICLES = {
 }
 
 const requests = new Map()
-let healthFailures = 1
+let healthFailures = 1, session = 'ok', sessionVisits = 0
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.html': 'text/html', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.webp': 'image/webp', '.woff2': 'font/woff2' }
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost'), path = url.pathname
   const send = (status, body) => { res.setHeader('Content-Type', 'application/json'); res.setHeader('Cache-Control', 'private, no-store'); res.writeHead(status); res.end(JSON.stringify(body)) }
   if (path === '/api/current-affairs') return send(200, feed)
+  // Signing in: Access would ask for the login here; the fixture simply grants it and sends the browser back to the front door.
+  if (path === '/api/session') { session = 'ok'; sessionVisits++; res.writeHead(302, { Location: '/', 'Cache-Control': 'no-store' }); res.end(); return }
   if (path === '/api/article') {
     const target = url.searchParams.get('url')
     requests.set(target, (requests.get(target) ?? 0) + 1)
+    if (session === 'expired') return send(401, { error: 'unauthenticated' })
     if (target === URLS.gdp) await new Promise(r => setTimeout(r, 1200))
     if (target === URLS.ramsar) return send(502, { error: 'upstream_blocked' })
     if (target === URLS.health && healthFailures-- > 0) return send(502, { error: 'upstream_unavailable' })
@@ -106,10 +122,12 @@ const picture = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="67
 try {
   for (const width of [375, 1366]) for (const theme of ['light', 'dark']) {
     const tag = `${width}-${theme}`
-    requests.clear(); healthFailures = 1
+    requests.clear(); healthFailures = 1; session = 'ok'; sessionVisits = 0
     const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: theme, timezoneId: 'Asia/Kolkata', serviceWorkers: 'block' }), page = await ctx.newPage()
     page.on('pageerror', e => errors.push(`${tag}: ${e.message}`))
     await ctx.route('https://**/*fixture*', route => route.fulfill({ contentType: 'text/html', body: '<h1>Original publisher fixture</h1>' }))
+    // smry.ai is stood in for: the check is about where Tars sends the reader, not about that service.
+    await ctx.route(url => url.hostname === 'smry.ai', route => route.fulfill({ contentType: 'text/html', body: '<h1>Outside Tars</h1>' }))
     await ctx.route('https://images.example.org/**', route => route.request().url().includes('broken') ? route.fulfill({ status: 404 }) : route.fulfill({ contentType: 'image/svg+xml', body: picture }))
     const shot = name => page.screenshot({ path: fileURLToPath(new URL(`${tag}-${name}.png`, out)) })
     const rows = page.locator('[data-news-event]'), reader = page.locator('[data-reader]')
@@ -140,7 +158,7 @@ try {
 
     // ── The article as drawn ──
     const body = reader.locator('.reader-body')
-    check(tag, 'paragraphs, headings, quotation, list and table are kept', await body.locator('p').count() >= 15 && await body.locator('h2').innerText() === 'What the committee found' && await body.locator('h3').count() === 1 && await body.locator('blockquote').count() === 1 && await body.locator('ul li').count() === 2 && await body.locator('.reader-table td').count() === 4)
+    check(tag, 'paragraphs, headings, quotation, list and table are kept', await body.locator('p').count() >= 15 && await body.locator('h2').innerText() === 'What the committee found' && await body.locator('h3').count() === 3 && await body.locator('blockquote').count() === 1 && await body.locator('ul li').count() === 2 && await body.locator('.reader-table td').count() === 4)
     await page.waitForFunction(() => { const img = document.querySelector('[data-reader] .reader-figure img'); return img && img.complete && img.naturalWidth > 0 })
     const figure = reader.locator('.reader-figure').first()
     check(tag, 'the picture keeps its caption and loads without a referrer', await figure.locator('figcaption').innerText() === 'The reservoir in June. Photo: Fixture' && await figure.locator('img').getAttribute('referrerpolicy') === 'no-referrer' && await figure.locator('img').getAttribute('alt') === 'A reservoir at low water')
@@ -150,6 +168,13 @@ try {
     check(tag, 'no script, handler, form or unsafe link reaches the page', await reader.evaluate(el => el.querySelectorAll('script, iframe, form, input, [onclick], [onerror], [style*="expression"], a[href^="javascript"]').length === 0) && await page.evaluate(() => window.__pwned === undefined))
     const relative = body.locator('a', { hasText: 'relative link' })
     check(tag, 'article links are absolute and open outside the reader', await relative.getAttribute('href') === 'https://indianexpress.com/explained/related' && await relative.getAttribute('target') === '_blank' && (await relative.getAttribute('rel')).includes('noopener'))
+    const stats = body.locator('.reader-stats').first()
+    check(tag, 'an infographic’s figures are one grid of number, unit and label, not loose lines', await body.locator('.reader-stats').count() === 2 && await stats.locator('.reader-stat').count() === 3 && await stats.locator('.reader-stat').first().evaluate(el => el.querySelector('strong').textContent === '11,098' && el.querySelector('.reader-stat-value').textContent.replace(/\s+/g, ' ').trim() === '11,098 km' && el.querySelector('dt').textContent === 'Length of the coastline') && !(await body.locator('p').allInnerTexts()).some(t => /^(11,098|km|Length of the coastline)$/.test(t.trim())))
+    check(tag, 'the grid is a grid: cells side by side where there is room, the number larger than its label', await stats.evaluate((el, wide) => { const cells = [...el.querySelectorAll('.reader-stat')].map(c => c.getBoundingClientRect()); const number = parseFloat(getComputedStyle(el.querySelector('strong')).fontSize), label = parseFloat(getComputedStyle(el.querySelector('dt')).fontSize); const sideBySide = cells[1].left > cells[0].right - 1 && Math.abs(cells[1].top - cells[0].top) < 2; return number >= label * 1.8 && cells.every(c => c.right <= innerWidth) && (wide ? sideBySide : true) }, width > 600))
+    check(tag, 'a comparison keeps each figure with its note, under its tab’s name', (await body.locator('.reader-stats').nth(1).locator('.reader-stat-note').first().innerText()) === 'The first sovereign bond of its kind.' && (await body.locator('h3').allInnerTexts()).join('|') === 'By the numbers|Lessons|What happens next')
+    const embed = body.locator('.reader-embed')
+    check(tag, 'a removed embed leaves one quiet pointer to it; an advertising frame leaves nothing', await embed.count() === 1 && (await embed.innerText()).replace(/\s+/g, ' ').includes('Video on YouTube') && await embed.locator('a').getAttribute('href') === 'https://www.youtube.com/embed/fixture' && await embed.locator('a').getAttribute('target') === '_blank' && (await embed.locator('a').innerText()).trim() === 'View on original' && !(await body.innerHTML()).includes('ads.example'))
+    await stats.scrollIntoViewIfNeeded(); await page.waitForTimeout(400); await shot('stats'); await scrollReader(0)
     check(tag, 'byline, date and reading time', (await reader.locator('.reader-meta').innerText()).includes('Fixture Reporter') && /min read/.test(await reader.locator('.reader-meta').innerText()) && /IST/.test(await reader.locator('.reader-meta').innerText()))
     check(tag, 'the reader never scrolls sideways', await reader.evaluate(el => el.scrollWidth <= el.clientWidth) && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
     const measure = await body.evaluate(el => ({ width: el.getBoundingClientRect().width, size: parseFloat(getComputedStyle(el).fontSize), family: getComputedStyle(el).fontFamily, line: parseFloat(getComputedStyle(el).lineHeight) }))
@@ -166,6 +191,7 @@ try {
     check(tag, 'scrolling back returns the controls', !(await reader.evaluate(el => el.hasAttribute('data-quiet'))))
     await scrollReader(-1)
     check(tag, 'the end of the article is 100%', await progress.getAttribute('aria-valuenow') === '100' && await reader.locator('.reader-progress span').evaluate(el => getComputedStyle(el).transform === 'matrix(1, 0, 0, 1, 0, 0)' || getComputedStyle(el).transform === 'none'))
+    check(tag, 'a rendered article offers Read Original and no other way out', await reader.evaluate((el, url) => { const out = [...el.querySelectorAll('a[target="_blank"]')].filter(a => !el.querySelector('.reader-body').contains(a)); return out.length === 3 && out.every(a => a.href === url) && !/smry|elsewhere/i.test(el.textContent) && [...el.querySelectorAll('a')].filter(a => a.textContent.trim() === 'Read Original').length === 2 }, URLS.rbi))
     check(tag, 'the end credits the publisher and offers the original', (await reader.locator('.reader-credit').innerText()).includes('Indian Express') && await reader.locator('.reader-end-actions a').getAttribute('href') === URLS.rbi)
     await page.waitForTimeout(400); await shot('end')
 
@@ -250,7 +276,8 @@ try {
     const unavailable = async (text, title, { retry, url }) => {
       await open(text); await notice().waitFor()
       check(tag, `${title}: explained, with no article text`, (await notice().locator('h2').innerText()).includes(title) && await reader.locator('.reader-body').count() === 0 && !(await reader.innerText()).includes(MARK))
-      check(tag, `${title}: the original is offered`, await notice().locator('a[target="_blank"]').getAttribute('href') === url && await notice().getByRole('button', { name: 'Try again' }).count() === (retry ? 1 : 0))
+      const ways = await notice().locator('a').evaluateAll(links => links.map(a => [a.textContent.replace(/\s+/g, ' ').trim().replace(/\(\d+\/20 today\)/, '(n/20 today)'), a.href, a.target, a.rel]))
+      check(tag, `${title}: exactly Read Original and smry.ai, each in a new tab`, JSON.stringify(ways) === JSON.stringify([['Read Original', url, '_blank', 'noopener noreferrer'], ['Read at smry.ai (n/20 today)', 'https://smry.ai/' + url, '_blank', 'noopener noreferrer']]) && !/Read elsewhere|removepaywall/i.test(await reader.innerHTML()) && await notice().getByRole('button', { name: 'Try again' }).count() === (retry ? 1 : 0))
     }
     await unavailable('Supreme Court ruling', 'For subscribers', { retry: false, url: URLS.rights }); await page.waitForTimeout(300); await shot('subscribers'); await close()
     await unavailable('Ramsar protected area', 'Guardian declined the request', { retry: true, url: URLS.ramsar }); await close()
@@ -260,6 +287,37 @@ try {
     await unavailable('Ayushman Bharat', 'Couldn’t load this article', { retry: true, url: URLS.health })
     await notice().getByRole('button', { name: 'Try again' }).click(); await reader.locator('.reader-body').waitFor()
     check(tag, 'Try again loads the article', requests.get(URLS.health) === 2 && await reader.locator('.reader-body p').count() === 9); await close()
+    // ── The smry.ai count ──
+    const smry = () => notice().getByRole('link', { name: /Read at smry\.ai/ })
+    const today = () => page.evaluate(() => { const d = new Date(), day = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); return (JSON.parse(localStorage.getItem('tars.reader.smry.v1') ?? '{"days":{}}').days[day] ?? []) })
+    await open('Supreme Court ruling'); await notice().waitFor()
+    check(tag, 'the count starts at nothing opened today', (await smry().innerText()).includes('(0/20 today)'))
+    for (const expected of ['(1/20 today)', '(1/20 today)']) {
+      const tabOpened = ctx.waitForEvent('page'); await smry().click(); const tab = await tabOpened; await tab.waitForLoadState()
+      check(tag, 'smry.ai opens in another tab at the article: ' + expected, tab.url() === 'https://smry.ai/' + URLS.rights && (await smry().innerText()).includes(expected) && await reader.count() === 1); await tab.close()
+    }
+    await close()
+    await open('Ramsar protected area'); await notice().waitFor()
+    const second = ctx.waitForEvent('page'); await smry().click(); await (await second).close()
+    check(tag, 'a different article is the second of the day, on every notice', (await smry().innerText()).includes('(2/20 today)') && JSON.stringify(await today()) === JSON.stringify([URLS.ramsar, URLS.rights].sort()))
+    await page.evaluate(() => { const key = 'tars.reader.smry.v1', s = JSON.parse(localStorage.getItem(key)), day = Object.keys(s.days)[0]; s.days[day] = [...s.days[day], ...Array.from({ length: 19 }, (_, i) => 'https://example.org/' + i)]; localStorage.setItem(key, JSON.stringify(s)); dispatchEvent(new Event('tars:reader-smry')) })
+    await page.waitForFunction(() => document.querySelector('[data-reader-elsewhere]')?.textContent.includes('(21/20 today)'))
+    check(tag, 'past twenty the count goes on and the link still opens', await smry().isEnabled() && await smry().getAttribute('href') === 'https://smry.ai/' + URLS.ramsar && await smry().getAttribute('aria-disabled') === null)
+    await page.evaluate(() => { const key = 'tars.reader.smry.v1', s = JSON.parse(localStorage.getItem(key)), day = Object.keys(s.days)[0]; localStorage.setItem(key, JSON.stringify({ version: 1, days: { '2020-01-01': s.days[day] } })); dispatchEvent(new Event('tars:reader-smry')) })
+    await page.waitForFunction(() => document.querySelector('[data-reader-elsewhere]')?.textContent.includes('(0/20 today)'))
+    check(tag, 'a new local day starts the count again'); await page.waitForTimeout(250); await shot('elsewhere'); await close()
+
+    // ── A lapsed session ──
+    session = 'expired'
+    await open('WHO public health'); await notice().waitFor()
+    check(tag, 'a lapsed Access session is named as one, with no ways round it offered', (await notice().locator('h2').innerText()) === 'Session expired' && await notice().locator('[data-reader-elsewhere]').count() === 0 && await reader.locator('.reader-body').count() === 0)
+    await shot('session')
+    await notice().getByRole('button', { name: 'Sign in again', exact: true }).click()
+    await page.waitForURL(url => url.hash.includes('read=' + encodeURIComponent(URLS.who))); await reader.locator('.reader-body').waitFor()
+    check(tag, 'after signing in the same article opens, loaded', sessionVisits === 1 && await reader.locator('h1').innerText() === 'WHO public health vaccination framework expands' && await page.evaluate(() => sessionStorage.getItem('tars.resume')) === null)
+    sessionVisits = 0; await close()
+    check(tag, 'and closing it lands on the list', await page.evaluate(() => location.hash) === '#/current-affairs' && await rows.count() === total)
+
     await open('ISRO launches'); await reader.getByRole('note').waitFor()
     check(tag, 'a short text is shown as possibly incomplete, never as the whole article', (await reader.getByRole('note').innerText()).includes('This may not be the whole article') && (await reader.locator('.reader-credit').innerText()).startsWith('Part of an article'))
     await page.waitForTimeout(300); await shot('partial'); await close()
@@ -271,8 +329,7 @@ try {
     await page.waitForTimeout(300); await shot('offline')
     await ctx.setOffline(false); await reader.locator('.reader-body').waitFor()
     check(tag, 'back online, the article loads by itself', requests.get(URLS.wildfire) === 1); await close()
-    await ctx.setOffline(true); await open('WHO public health'); await notice().waitFor(); await close()
-    await open('El Niño'); await reader.locator('.reader-body').waitFor()
+    await ctx.setOffline(true); await open('El Niño'); await reader.locator('.reader-body').waitFor()
     check(tag, 'an article read this visit is still there offline', requests.get(URLS.wildfire) === 1); await close(); await ctx.setOffline(false)
 
     // ── An address the list does not know ──

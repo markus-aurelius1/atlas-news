@@ -9,6 +9,7 @@
  */
 import { articleMetadata, readArchivedByUrl, restoreArticles, type ArchivedArticle } from '@/current-affairs/archive'
 import { CA_STATE_KEY, NOTE_LIMIT, parsePersonalState, type PersonalEntry, type PersonalState } from '@/current-affairs/personal-state'
+import { SMRY_KEY, cleanUrls, localDay, readSmry, recentDays, shiftLocalDay } from '@/current-affairs/reader/elsewhere'
 import { applyChanges } from '@/data/compatibility/merge'
 import { CA_NOTES_KEY, parseStickyNotes, type StickyNote, type StickyNotes } from '@/data/compatibility/notes'
 import { db } from '@/data/db'
@@ -42,7 +43,7 @@ export interface AdapterEnv {
   /** Where the article archive lives. */
   archive?: IDBFactory
   /** Tell open views that storage changed underneath them. */
-  notify?: (what: 'news' | 'articles' | 'notes') => void
+  notify?: (what: 'news' | 'articles' | 'notes' | 'reader') => void
 }
 
 function diff(local: Map<string, { v: string; t?: number }>, shadow: Map<string, StoredRow>, absentIsDeleted: boolean): LocalChange[] {
@@ -301,6 +302,47 @@ export function settingsAdapter(): Adapter {
   }
 }
 
+// Reader: the day's count of articles opened at smry.ai
+
+const smryDay = (k: string): string | null => (k.startsWith('smry:') && k.length === 15 ? k.slice(5) : null)
+
+/**
+ * One row per local day, holding that day's set of article addresses. A set only grows, so two devices never
+ * disagree for long: an incoming row is united with what this device has, and if that made the set larger the
+ * next scan sends the union back. Rows two days old or more are removed, here and (as tombstones) from the account.
+ */
+export function readerAdapter(env: AdapterEnv): Adapter {
+  return {
+    c: 'reader',
+    async scan(shadow) {
+      const today = localDay(), state = recentDays(readSmry(env.storage), today)
+      const local = new Map<string, { v: string; t?: number }>()
+      for (const [day, urls] of Object.entries(state.days)) local.set(`smry:${day}`, { v: canon(urls) })
+      const changes = diff(local, shadow, false)
+      const stale = shiftLocalDay(today, -1)
+      for (const known of shadow.values()) {
+        const day = smryDay(known.k)
+        if (!known.d && day && day < stale) changes.push({ k: known.k, v: null, d: 1 })
+      }
+      return changes
+    },
+    async apply(rows) {
+      const today = localDay(), state = recentDays(readSmry(env.storage), today)
+      const kept = new Set([shiftLocalDay(today, -1), today, shiftLocalDay(today, 1)])
+      let changed = false
+      for (const row of rows) {
+        const day = smryDay(row.k)
+        if (row.d || !day || !kept.has(day)) continue
+        const mine = state.days[day] ?? [], united = cleanUrls([...mine, ...cleanUrls(parse(row.v))])
+        if (united.length !== mine.length) { state.days[day] = united; changed = true }
+      }
+      if (!changed) return
+      env.storage.setItem(SMRY_KEY, JSON.stringify(state))
+      env.notify?.('reader')
+    },
+  }
+}
+
 export function adapters(env: AdapterEnv): Adapter[] {
-  return [newsAdapter(env), articleAdapter(env), noteAdapter(env), tableAdapter('recall'), tableAdapter('claim'), settingsAdapter()]
+  return [newsAdapter(env), articleAdapter(env), noteAdapter(env), tableAdapter('recall'), tableAdapter('claim'), settingsAdapter(), readerAdapter(env)]
 }

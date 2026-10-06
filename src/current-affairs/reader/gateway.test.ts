@@ -120,7 +120,13 @@ describe('stripPage', () => {
   it('removes code and embeds, keeps the article and the publisher’s structured data', () => {
     const html = '<head><link rel="stylesheet" href="a.css"><style>p{color:red}</style><script type="application/ld+json">{"@type":"NewsArticle","isAccessibleForFree":false}</script><script>alert(1)</script></head><body><!-- ad --><p>One</p><iframe src="https://ads.example"></iframe><svg><path d="M0"/></svg><p>Two</p><SCRIPT src="x.js"></SCRIPT><embed src="x.swf"><p>Three</p></body>'
     const out = stripPage(html)
-    expect(out).toBe('<head><script type="application/ld+json">{"@type":"NewsArticle","isAccessibleForFree":false}</script></head><body><p>One</p><p>Two</p><p>Three</p></body>')
+    expect(out).toBe('<head><script type="application/ld+json">{"@type":"NewsArticle","isAccessibleForFree":false}</script></head><body><p>One</p><p data-tars-embed=""><a href="https://ads.example">Embedded content</a></p><p>Two</p><p>Three</p></body>')
+  })
+
+  it('leaves a plain link where a frame was, and only for an https address', () => {
+    expect(stripPage('<iframe width="560" src="https://www.youtube.com/embed/abc?rel=0&amp;start=5" allowfullscreen></iframe>')).toBe('<p data-tars-embed=""><a href="https://www.youtube.com/embed/abc?rel=0&amp;start=5">Embedded content</a></p>')
+    expect(stripPage("<iframe data-src='//datawrapper.dwcdn.net/x1/2/'></iframe>")).toBe('<p data-tars-embed=""><a href="//datawrapper.dwcdn.net/x1/2/">Embedded content</a></p>')
+    for (const frame of ['<iframe src="javascript:alert(1)"></iframe>', '<iframe src="http://insecure.example/x"></iframe>', '<iframe srcdoc="<p>x</p>"></iframe>', '<iframe src="about:blank"></iframe>']) expect(stripPage(frame), frame).toBe('')
   })
 
   it('never drops the text that follows an unclosed embed, and treats unclosed code as code', () => {
