@@ -1171,3 +1171,50 @@ div.reader-article.reader-loading {
     overflow: visible;
   }
 }
+
+/* H1: native text paint. Selection, layout, links and React's DOM remain unchanged. */
+.reader-body::highlight(tars-yellow), .reader-body::highlight(tars-preview-yellow) { background-color: #f5df85; color: #20201b; }
+.reader-body::highlight(tars-green), .reader-body::highlight(tars-preview-green) { background-color: #a6d6ab; color: #162b1d; }
+.reader-body::highlight(tars-blue), .reader-body::highlight(tars-preview-blue) { background-color: #b0d4f3; color: #142a3c; }
+.reader-body::highlight(tars-pink), .reader-body::highlight(tars-preview-pink) { background-color: #efbfd3; color: #361a29; }
+.reader-body::highlight(tars-orange), .reader-body::highlight(tars-preview-orange) { background-color: #f1c398; color: #342316; }
+.dark .reader-body::highlight(tars-yellow), .dark .reader-body::highlight(tars-preview-yellow) { background-color: #75662e; color: #fff7dc; }
+.dark .reader-body::highlight(tars-green), .dark .reader-body::highlight(tars-preview-green) { background-color: #345f42; color: #eaffed; }
+.dark .reader-body::highlight(tars-blue), .dark .reader-body::highlight(tars-preview-blue) { background-color: #345d7c; color: #eaf7ff; }
+.dark .reader-body::highlight(tars-pink), .dark .reader-body::highlight(tars-preview-pink) { background-color: #75465d; color: #fff0f7; }
+.dark .reader-body::highlight(tars-orange), .dark .reader-body::highlight(tars-preview-orange) { background-color: #795033; color: #fff2e5; }
+.reader-highlighter { gap: 5px; padding: 0 8px; }
+.reader-highlighter span { font-size: 11px; font-weight: 650; }
+.reader-highlighter[aria-pressed='true'] { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); box-shadow: inset 0 -2px var(--accent); }
+.highlight-color-dot { width: 6px; height: 6px; border-radius: 50%; }
+.highlight-swatch[data-color='yellow'], .highlight-color-dot[data-color='yellow'] { background: #f5df85; }
+.highlight-swatch[data-color='green'], .highlight-color-dot[data-color='green'] { background: #a6d6ab; }
+.highlight-swatch[data-color='blue'], .highlight-color-dot[data-color='blue'] { background: #b0d4f3; }
+.highlight-swatch[data-color='pink'], .highlight-color-dot[data-color='pink'] { background: #efbfd3; }
+.highlight-swatch[data-color='orange'], .highlight-color-dot[data-color='orange'] { background: #f1c398; }
+.highlight-panel { padding: 18px; color: var(--ink); }
+.highlight-panel-title { font-size: 12px; font-weight: 700; margin: 0 0 12px; }
+.highlight-palette { display: flex; gap: 10px; }
+.highlight-swatch { width: 32px; height: 32px; border: 1px solid #20201b33; border-radius: 50%; color: #20201b; display: grid; place-items: center; }
+.highlight-swatch svg { width: 17px; height: 17px; }
+.highlight-swatch[aria-pressed='true'] { outline: 2px solid var(--ink); outline-offset: 3px; }
+.highlight-swatch:focus-visible, .reader-highlighter:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.highlight-hint, .highlight-feedback { font-size: 12px; line-height: 1.55; margin: 14px 0; color: var(--ink-2); }
+.highlight-feedback { color: var(--accent); }
+.highlight-edit { border-top: 1px solid var(--line); padding: 14px 0; }
+.highlight-quote { font-family: var(--font-serif); font-size: 14px; line-height: 1.6; margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 8em; overflow: auto; }
+.highlight-edit-actions { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.highlight-edit-actions .tool svg { width: 17px; height: 17px; }
+@media (max-width: 480px) { .reader-highlighter span { display: none; } }
+
+
+.highlight-status:not(:empty) { position: fixed; z-index: 4; top: calc(50px + env(safe-area-inset-top)); right: 12px; max-width: min(320px, calc(100vw - 24px)); padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--ink-2); font-size: 12px; line-height: 1.5; pointer-events: none; }
+
+.reader-body [data-focused-highlight]:focus { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 2px; }
+.reader-saved-passage { margin: 20px 0; padding: 14px 16px; border-left: 2px solid var(--line-strong); background: var(--surface-2); }
+.reader-saved-passage p { font-family: var(--font-sans); font-size: 12px; color: var(--ink-3); }
+.reader-saved-passage blockquote { margin-top: 8px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 16px; line-height: 1.6; }
+
+/* Keep native selection/handles, while showing the valid custom highlight underneath. */
+.reader-body[data-highlight-selection]::selection,
+.reader-body[data-highlight-selection] ::selection { background-color: transparent; color: inherit; }

@@ -118,7 +118,7 @@ describe('backup: notes and Current Affairs reading state', () => {
   it('replacing with a version 3 backup that has no notes clears the notes here', async () => {
     const empty = device()
     const backup = parseBackup(JSON.stringify(await createBackup(empty)))
-    expect(backup.extras).toEqual({})
+    expect(backup.extras).toEqual({ readerHighlights: [] })
     const here = device()
     here.storage.setItem(CA_NOTES_KEY, JSON.stringify(notes(note(A, 'Old device note', 1000))))
     await restoreBackup(backup, 'replace', here)
@@ -142,7 +142,7 @@ describe('backup: notes and Current Affairs reading state', () => {
     expect(here.storage.getItem(CA_NOTES_KEY)).toBe('{"version":9,"entries":{}}')
     expect(here.storage.getItem(CA_STATE_KEY)).toBe('not json')
     // A backup made on a device in that condition simply leaves those parts out.
-    expect((await createBackup(here)).extras).toEqual({})
+    expect((await createBackup(here)).extras).toEqual({ readerHighlights: [] })
   })
 
   it('cleans what a file brings: unknown fields, over-long text, other publishers and untracked articles are dropped', async () => {

@@ -23,6 +23,9 @@ try {
   check('vnext-learning.mjs',[base],{SCHEME:'dark'})
   check('news-check.mjs')
   check('reader-check.mjs')
+  check('highlights-check.mjs')
+  check('highlight-responsiveness-check.mjs')
+  check('highlights-library-check.mjs')
   await serve(['--port',String(devPort)],'http://'+host+':'+devPort+'/')
   check('atlas-recall-check.mjs',['http://'+host+':'+devPort+'/'])
 }finally{for(const child of processes)child.kill()}

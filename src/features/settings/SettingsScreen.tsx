@@ -212,14 +212,14 @@ function DataGroup() {
     await refresh()
     // Notes and reading state live outside the database: tell their open views, and say what came with the backup.
     window.dispatchEvent(new Event('tars:notes-changed'))
-    const extra = [report.extras.notes ? `${report.extras.notes} ${report.extras.notes === 1 ? 'note' : 'notes'}` : '', report.extras.articles ? `reading state for ${report.extras.articles} ${report.extras.articles === 1 ? 'article' : 'articles'}` : ''].filter(Boolean).join(' · ')
+    const extra = [report.extras.highlights ? `${report.extras.highlights} highlights` : '', report.extras.notes ? `${report.extras.notes} ${report.extras.notes === 1 ? 'note' : 'notes'}` : '', report.extras.articles ? `reading state for ${report.extras.articles} ${report.extras.articles === 1 ? 'article' : 'articles'}` : ''].filter(Boolean).join(' · ')
     const records = mode === 'merge' ? `${report.inserted} added · ${report.updated} updated · ${report.skipped} already up to date` : `${report.inserted} records loaded`
     toast({ title: 'Backup restored', body: extra ? `${records} · ${extra}` : records, tone: 'success' })
-    if (report.extras.preserved.length) toast({ title: 'Some of the backup was not merged', body: `${report.extras.preserved.includes('notes') ? 'Notes' : 'Current Affairs reading state'} on this device couldn’t be read, so nothing there was changed.`, tone: 'warning' })
+    if (report.extras.preserved.length) toast({ title: 'Some of the backup was not merged', body: `${report.extras.preserved.map(part => part === 'notes' ? 'Notes' : part === 'readerHighlights' ? 'Reader highlights' : 'Current Affairs reading state').join(' and ')} on this device couldn’t be read, so nothing there was changed.`, tone: 'warning' })
   }
 
   const erase = async () => {
-    if (!(await confirmDialog({ title: 'Erase all data?', body: useSyncStatus.getState().account ? 'All Atlas progress, News reading state, notes, settings and historical data on this device will be deleted. What has synced to your account stays there and returns when this device next syncs.' : 'All Atlas progress, News reading state, notes, settings and historical data on this device will be deleted. This can’t be undone.', confirmLabel: 'Erase everything', danger: true }))) return
+    if (!(await confirmDialog({ title: 'Erase all data?', body: useSyncStatus.getState().account ? 'All Atlas progress, News reading state, Reader highlights, notes, settings and historical data on this device will be deleted. What has synced to your account stays there and returns when this device next syncs.' : 'All Atlas progress, News reading state, Reader highlights, notes, settings and historical data on this device will be deleted. This can’t be undone.', confirmLabel: 'Erase everything', danger: true }))) return
     await eraseEverything()
     location.reload()
   }
