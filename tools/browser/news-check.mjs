@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { resolve, sep } from 'node:path'
 import { chromium } from 'playwright-core'
 import { prepare } from './lib.mjs'
+import { FEED_REGISTRY_GENERATION } from '../../src/current-affairs/shards.ts'
 const dist = resolve(process.env.CA_DIST ?? fileURLToPath(new URL('../../dist/', import.meta.url))), out = new URL('./out/current-affairs-direct/', import.meta.url)
 mkdirSync(out, { recursive: true })
 const fetchedAt = new Date().toISOString()
@@ -14,7 +15,7 @@ const publishedAt = new Date(Date.now() - 2 * 3600000).toISOString(), yesterday 
 const pastYear = `${Number(today.slice(0, 4)) - 1}-01-15`, pastMonth = `${today.slice(0, 4)}-01-15`
 const stateKey = 'tars.current-affairs.state.v1'
 const row = (title, sourceId, publisher, url) => ({ title, sourceId, publisher, url, section: 'Explained', description: '', publishedAt })
-const fixture = { version: 1, fetchedAt, sources: [{ sourceId: 'ie-explained', status: 'ok', count: 5 }, { sourceId: 'ht-india', status: 'failed', count: 0 }], items: [
+const fixture = { registryGeneration: FEED_REGISTRY_GENERATION, version: 1, fetchedAt, sources: [{ sourceId: 'ie-explained', status: 'ok', count: 5 }, { sourceId: 'ht-india', status: 'failed', count: 0 }], items: [
   { ...row('RBI revises banking liquidity regulation framework', 'ie-explained', 'Indian Express', 'https://indianexpress.com/article/fixture-rbi'), thumbnailUrl: 'https://images.example.org/fixture-thumbnail.jpg' },
   row('RBI revises banking liquidity regulation framework today', 'hindu-national', 'The Hindu', 'https://www.thehindu.com/fixture-rbi'),
   row('RBI master circular on credit facilities', 'rbi-notifications', 'RBI', 'https://www.rbi.org.in/fixture-old-circular'),

@@ -3,6 +3,8 @@
  * The 38 additions come only from the curated UPSC/UPPCS shortlist and were live-probed twice through
  * this gateway's own request shape and parser on 2026-10-05; empty, dormant, RSS 1.0/RDF and redundant
  * candidates are excluded. Keep the registry below 100 sources and run `npm run news:probe` before adding.
+ * Job B appended nine feeds from publisher RSS directories; two successful bounded probes per endpoint on
+ * 2026-10-07. See tools/news/evaluation/JOB_B_REPORT.md for incremental coverage, freshness and limitations.
  * Times of India feeds are personal-use only: never expose this gateway as a public syndication endpoint.
  */
 import type { NewsItem, NewsSource } from './types.ts'
@@ -91,7 +93,18 @@ export const NEWS_SOURCES: NewsSource[] = [
   letter('substack-india-politics-power-public-discourse', 'India: Politics, Power & Public Discourse', 'https://rgupta.substack.com/feed', ['Governance']),
   letter('substack-political-economy-stats-and-society', 'Political Economy, Stats, and Society', 'https://statsandsociety.substack.com/feed', ['Economy']),
   letter('substack-anticipating-the-unintended', 'Anticipating the Unintended', 'https://publicpolicy.substack.com/feed', ['Governance', 'International relations']),
+  source('ie-columns', 'Indian Express', 'https://indianexpress.com/section/opinion/columns/feed/', 'Columns'),
+  source('ie-upsc-essentials', 'Indian Express', 'https://indianexpress.com/section/upsc-current-affairs/upsc-essentials/feed/', 'UPSC Essentials', [], 1),
+  source('ie-explained-science', 'Indian Express', 'https://indianexpress.com/section/explained/explained-sci-tech/feed/', 'Explained Sci-Tech', ['Sci-Tech'], 1),
+  source('ie-explained-global', 'Indian Express', 'https://indianexpress.com/section/explained/explained-global/feed/', 'Explained Global', ['International relations'], 1),
+  source('ie-explained-economics', 'Indian Express', 'https://indianexpress.com/section/explained/explained-economics/feed/', 'Explained Economics', ['Economy'], 1),
+  source('hindu-opinion', 'The Hindu', 'https://www.thehindu.com/opinion/feeder/default.rss', 'Opinion'),
+  source('hindu-columns', 'The Hindu', 'https://www.thehindu.com/opinion/columns/feeder/default.rss', 'Columns'),
+  source('hindu-op-ed', 'The Hindu', 'https://www.thehindu.com/opinion/op-ed/feeder/default.rss', 'Op-ed'),
+  source('hindu-lead', 'The Hindu', 'https://www.thehindu.com/opinion/lead/feeder/default.rss', 'Lead analysis'),
 ]
+/** Immutable A1 source layout for clients without a generation parameter. Never reorder/edit these 77 entries. */
+export const LEGACY_NEWS_SOURCES = NEWS_SOURCES.slice(0, 77)
 const enabled = new Set(NEWS_SOURCES.filter(s => s.enabled).map(s => s.id))
 /** Old offline responses can contain removed official feeds; hide them without deleting personal URL state. */
 export const activeFeedItems = (items: NewsItem[]) => items.filter(item => enabled.has(item.sourceId))

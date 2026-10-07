@@ -11,8 +11,10 @@ export interface NewsSource {
   priority: number
   enabled: boolean
 }
-export interface NewsItem { title: string; url: string; publisher: string; sourceId: string; section: string; publishedAt: string | null; description: string; thumbnailUrl?: string }
-export interface FeedResponse { version: 1; fetchedAt: string; items: NewsItem[]; sources: { sourceId: string; status: 'ok' | 'empty' | 'failed'; count: number }[] }
+export interface FeedMembership { sourceId: string; feedUrl: string; section: string }
+export interface FeedByline { name: string; provenance: 'rss:dc:creator' | 'rss:author' | 'atom:author'; sourceId: string }
+export interface NewsItem { memberships?: FeedMembership[]; categories?: string[]; bylines?: FeedByline[]; updatedAt?: string | null; title: string; url: string; publisher: string; sourceId: string; section: string; publishedAt: string | null; description: string; thumbnailUrl?: string }
+export interface FeedResponse { registryGeneration?: string; version: 1; fetchedAt: string; items: NewsItem[]; sources: { sourceId: string; status: 'ok' | 'empty' | 'failed'; count: number }[] }
 /** One syllabus concept. Counts are lexical document frequencies over past papers, never question-to-topic mappings. */
 export interface RelevanceSignal {
   concept: string

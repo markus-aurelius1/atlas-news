@@ -2,7 +2,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useOnline } from '@/lib/useOnline'
 import { canonicalUrl } from '@/current-affairs/feed'
-import { FEED_SHARDS, mergeShards } from '@/current-affairs/shards'
+import { cleanFeedResponse } from '@/current-affairs/validator-v3/metadata'
+import { FEED_SHARDS, FEED_REGISTRY_GENERATION, mergeShards } from '@/current-affairs/shards'
 import type { FeedResponse, RelevanceIndex } from '@/current-affairs/types'
 
 const endpoint = '/api/current-affairs'
@@ -56,8 +57,8 @@ async function restoreFeed(): Promise<FeedResponse | null> {
     if (!saved) return null
     const next = await saved.json() as FeedResponse
     if (!validResponse(next)) return null
-    memoryFeed = next
-    return next
+    memoryFeed = cleanFeedResponse(next)
+    return memoryFeed
   } catch {
     return null
   }
@@ -76,10 +77,10 @@ async function persistFeed(data: FeedResponse) {
 /** One registry shard from the gateway; null when it cannot be fetched or is not a feed. */
 async function requestShard(shard: number, force: boolean, signal: AbortSignal): Promise<{ data: FeedResponse; cached: boolean } | null> {
   try {
-    const response = await fetch(`${endpoint}?shard=${shard}${force ? '&refresh=1' : ''}`, { signal, cache: force ? 'reload' : 'no-cache' })
+    const response = await fetch(`${endpoint}?shard=${shard}&generation=${FEED_REGISTRY_GENERATION}${force ? '&refresh=1' : ''}`, { signal, cache: force ? 'reload' : 'no-cache' })
     if (!response.ok) return null
     const data = await response.json() as FeedResponse
-    return validResponse(data) ? { data, cached: response.headers.get('X-Tars-News-Cache') === 'hit' } : null
+    return validResponse(data) ? { data: cleanFeedResponse(data), cached: response.headers.get('X-Tars-News-Cache') === 'hit' } : null
   } catch {
     return null
   }
@@ -96,7 +97,7 @@ function requestFeed(force = false): Promise<{ data: FeedResponse; cached: boole
   const timeout = setTimeout(() => controller.abort(), 18000)
   refreshPending = Promise.all(FEED_SHARDS.map((_, shard) => requestShard(shard, force, controller.signal)))
     .then(async parts => {
-      const next = mergeShards(parts.map(part => part?.data ?? null), memoryFeed ?? await restoreFeed())
+      const next = mergeShards(parts.map(part => part?.data ?? null), memoryFeed ?? await restoreFeed(), FEED_SHARDS, FEED_REGISTRY_GENERATION)
       if (!next) throw new Error('News unavailable')
       if (!validResponse(next)) throw new Error('Invalid feed response')
       await persistFeed(next)

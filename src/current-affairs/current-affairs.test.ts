@@ -15,7 +15,7 @@ const item = (title: string, overrides: Partial<NewsItem> = {}): NewsItem => ({ 
 const classified = (title: string, overrides: Partial<NewsItem> = {}): ClassifiedItem => { const row = item(title, overrides); return { ...row, relevance: classify(row, index) } }
 describe('RSS and Atom gateway', () => {
   it('fetches newspapers only and excludes removed official items from older caches', () => {
-    expect(NEWS_SOURCES).toHaveLength(77)
+    expect(NEWS_SOURCES).toHaveLength(86)
     expect(new Set(NEWS_SOURCES.map(s => s.publisher)).size).toBe(33)
     expect(NEWS_SOURCES.every(s => s.kind === 'newspaper' || s.kind === 'international' || s.kind === 'newsletter')).toBe(true)
     expect(NEWS_SOURCES.some(s => /^(?:rbi|sebi|pib)/.test(s.id) || /(?:^|.)(?:rbi.org.in|sebi.gov.in|pib.gov.in)$/.test(new URL(s.feedUrl).hostname))).toBe(false)

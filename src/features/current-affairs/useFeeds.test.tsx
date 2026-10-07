@@ -2,15 +2,15 @@
 // @vitest-environment happy-dom
 import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
-import { FEED_SHARDS } from '@/current-affairs/shards'
-import { NEWS_REFRESH_TTL_MS, resetFeedCacheForTests, useFeeds } from './useFeeds'
+import { FEED_SHARDS, FEED_REGISTRY_GENERATION } from '@/current-affairs/shards'
+import { NEWS_REFRESH_TTL_MS, feedRefreshDue, resetFeedCacheForTests, useFeeds } from './useFeeds'
 
 vi.mock('@/lib/useOnline', () => ({ useOnline: () => true }))
 
 const index = { version: 2, signals: [] }
 const SHARDS = FEED_SHARDS.length
-const refreshUrls = (suffix = '') => FEED_SHARDS.map((_, shard) => `/api/current-affairs?shard=${shard}${suffix}`)
-const feed = (fetchedAt = new Date().toISOString()) => ({ version: 1 as const, fetchedAt, items: [], sources: [] })
+const refreshUrls = (suffix = '') => FEED_SHARDS.map((_, shard) => `/api/current-affairs?shard=${shard}&generation=${FEED_REGISTRY_GENERATION}${suffix}`)
+const feed = (fetchedAt = new Date().toISOString()) => ({ registryGeneration: FEED_REGISTRY_GENERATION, version: 1 as const, fetchedAt, items: [], sources: [] })
 
 beforeEach(() => resetFeedCacheForTests())
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); resetFeedCacheForTests() })
@@ -99,7 +99,7 @@ it('keeps a failed shard’s articles from the last snapshot and fails only when
     const shard = Number(new URL(url, 'https://tars.test').searchParams.get('shard'))
     if (down.includes(shard)) return new Response(JSON.stringify({ error: 'down' }), { status: 503 })
     const source = FEED_SHARDS[shard][0].id
-    return new Response(JSON.stringify({ version: 1, fetchedAt: new Date(now).toISOString(), items: [article(source, round)], sources: [{ sourceId: source, status: 'ok', count: 1 }] }), { status: 200 })
+    return new Response(JSON.stringify({ registryGeneration: FEED_REGISTRY_GENERATION, version: 1, fetchedAt: new Date(now).toISOString(), items: [article(source, round)], sources: [{ sourceId: source, status: 'ok', count: 1 }] }), { status: 200 })
   }))
   const hook = renderHook(useFeeds)
   await waitFor(() => expect(hook.result.current.loading).toBe(false))
@@ -118,4 +118,20 @@ it('keeps a failed shard’s articles from the last snapshot and fails only when
   act(() => hook.result.current.reload())
   await waitFor(() => expect(hook.result.current.error).toBe('Refresh unavailable – showing the last successful feed.'))
   expect(hook.result.current.data!.items.map(i => i.title)).toEqual(titles)
+})
+
+it('restores a fresh legacy cache without optional fields or generation and preserves the two-hour boundary',async()=>{
+  const snapshot={version:1 as const,fetchedAt:new Date().toISOString(),items:[{title:'Legacy metadata',url:'https://indianexpress.com/article/legacy',description:'',publisher:'Indian Express',sourceId:'ie-explained',section:'Explained',publishedAt:null}],sources:[]}
+  vi.stubGlobal('caches',{open:async()=>({match:async()=>new Response(JSON.stringify(snapshot))})})
+  expect(feedRefreshDue(snapshot,Date.parse(snapshot.fetchedAt)+NEWS_REFRESH_TTL_MS-1)).toBe(false);expect(feedRefreshDue(snapshot,Date.parse(snapshot.fetchedAt)+NEWS_REFRESH_TTL_MS)).toBe(true)
+  const calls=installFetch([feed()]), hook=renderHook(useFeeds)
+  await waitFor(()=>expect(hook.result.current.loading).toBe(false));expect(hook.result.current.data?.items[0].title).toBe('Legacy metadata');expect(calls).toEqual([])
+})
+it('all wrong-generation shard responses keep the last usable cache during forced refresh',async()=>{
+  const snapshot={version:1 as const,fetchedAt:new Date().toISOString(),items:[{title:'Retained',url:'https://indianexpress.com/article/retained',description:'',publisher:'Indian Express',sourceId:'ie-explained',section:'Explained',publishedAt:null}],sources:[]}
+  vi.stubGlobal('caches',{open:async()=>({match:async()=>new Response(JSON.stringify(snapshot))})})
+  const calls=installFetch([{...feed(),registryGeneration:'older-generation'}]), hook=renderHook(useFeeds)
+  await waitFor(()=>expect(hook.result.current.loading).toBe(false));act(()=>hook.result.current.reload())
+  await waitFor(()=>expect(hook.result.current.error).toBe('Refresh unavailable – showing the last successful feed.'))
+  expect(calls).toHaveLength(SHARDS);expect(hook.result.current.data?.items[0].title).toBe('Retained')
 })

@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { Ajv } from 'ajv'
 import type { ValidateFunction } from 'ajv'
+import type { NewsSource } from '../../../src/current-affairs/types.ts'
 import { NEWS_SOURCES } from '../../../src/current-affairs/sources.ts'
 import { digest, instant, requireThat, stableJson, unique, urlIdentity } from './core.ts'
 import type { EvidenceSpan, GoldRecord, Labels, Observation, PredictionOutput, RawCapture } from './contracts.ts'
@@ -31,13 +32,14 @@ export function validateObservation(value: unknown): asserts value is Observatio
 export function observationId(o: Omit<Observation, 'id'> | Observation): string {
   return 'obs:' + digest([o.captureId, o.sourceId, o.ordinal, o.capturedAt, o.registryHash, o.parserVersion, o.metadataHash])
 }
-export function validateRaw(value: unknown): asserts value is RawCapture {
+export function validateRaw(value: unknown, pinnedRegistry: NewsSource[] = NEWS_SOURCES): asserts value is RawCapture {
   check(checkRaw, value)
   const raw = value as RawCapture
+  requireThat(raw.registryHash === digest(pinnedRegistry), 'Archived registry hash mismatch')
   unique(raw.sources, source => source.sourceId, 'source')
   unique(raw.sources.flatMap(s => s.observations), o => o.id, 'observation')
   for (const source of raw.sources) {
-    const registry = NEWS_SOURCES.find(s => s.id === source.sourceId && s.enabled)
+    const registry = pinnedRegistry.find(s => s.id === source.sourceId && s.enabled)
     requireThat(registry && registry.feedUrl === source.feedUrl, 'Source outside pinned allowlist')
     requireThat(source.countAfter === source.observations.length, 'Capture count mismatch')
     if (source.status !== 'failed') requireThat(source.countBefore === source.countAfter + source.invalidEntries! + source.truncatedEntries!, 'Parsing losses do not reconcile')

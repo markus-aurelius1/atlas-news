@@ -1,3 +1,4 @@
+import type { NewsSource } from '../../../src/current-affairs/types.ts'
 import { SUBJECTS } from './contracts.ts'
 import type { GoldRecord, Observation, Partition, RunArtifact, RawCapture } from './contracts.ts'
 import { binary, clustering, agreement, groupedBootstrap, ndcg, rate, distribution } from './metrics.ts'
@@ -13,7 +14,7 @@ export interface CoverageReference {
 export interface EvaluationContext {
   observations: Observation[]; history: Observation[]; partitions: PartitionManifest
   partition: Partition; bootstrapSeed: string; coverageInventory?: CoverageReference[]; access?: 'implementation' | 'custodian'
-  rawCaptures?: RawCapture[]
+  rawCaptures?: RawCapture[]; rawRegistries?: NewsSource[][]
 }
 const positive = (r: GoldRecord): boolean => r.gold.value === 'must_read' || r.gold.value === 'useful'
 const need = (r: GoldRecord): string => r.gold.angleId ? 'angle:' + r.gold.angleId : r.gold.storyId ? 'event:' + r.gold.storyId : 'article:' + r.metadata.url
@@ -23,7 +24,7 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
   requireThat(context.access === 'custodian' || !context.partition.startsWith('holdout_'), 'Holdout evaluation requires independent custodian')
   const observations = [...context.observations, ...context.history]
   const captures = context.rawCaptures ?? []
-  captures.forEach(validateRaw)
+  captures.forEach(capture => validateRaw(capture, context.rawRegistries?.find(registry => digest(registry) === capture.registryHash)))
   unique(captures, c => c.id + ':' + c.shardIndex, 'raw capture/shard')
   requireThat(captures.every(c => instant(c.capturedAt) <= instant(run.clock)), 'Future raw capture')
   requireThat(observations.every(o => instant(o.capturedAt) <= instant(run.clock)), 'Evaluation contains future observations')

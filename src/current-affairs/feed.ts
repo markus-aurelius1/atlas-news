@@ -1,5 +1,6 @@
 /** Bounded RSS/Atom metadata parser. DTDs/entities are never executed; full-content tags are ignored. */
 import type { NewsItem, NewsSource } from './types.ts'
+import { boundedDistinct, bylineCandidates, mergeMetadata } from './validator-v3/metadata.ts'
 const entities: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”', hellip: '…', copy: '©' }
 export function decodeEntities(text: string): string {
   return text.replace(/&(#x[\da-f]+|#\d+|[a-z]+);/gi, (all, key: string) => {
@@ -19,9 +20,9 @@ export function canonicalUrl(value: string, base?: string): string | null {
     return u.href
   } catch { return null }
 }
-interface XmlNode { name: string; attrs: Record<string, string>; text: string; children: XmlNode[] }
+export interface XmlNode { name: string; attrs: Record<string, string>; text: string; children: XmlNode[] }
 const local = (name: string) => name.split(':').pop()!.toLowerCase()
-function parseXml(xml: string): XmlNode {
+export function parseXml(xml: string): XmlNode {
   if (xml.length > 4 * 1024 * 1024 || /<!DOCTYPE|<!ENTITY/i.test(xml)) throw new Error('Unsupported feed XML')
   const root: XmlNode = { name: '', attrs: {}, text: '', children: [] }, stack = [root]
   // A token scanner preserves CDATA and quoted attributes; balanced tags are required.
@@ -48,7 +49,7 @@ function parseXml(xml: string): XmlNode {
   if (cursor !== xml.length || stack.length !== 1 || root.children.length !== 1 || root.text.trim()) throw new Error('Incomplete XML')
   return root.children[0]
 }
-const textOf = (node: XmlNode | undefined): string => node ? node.text + node.children.map(textOf).join(' ') : ''
+export const textOf = (node: XmlNode | undefined): string => node ? node.text + node.children.map(textOf).join(' ') : ''
 export function thumbnailUrl(value: string, base?: string): string | null {
   try {
     if (value.length > 2048) return null
@@ -78,14 +79,18 @@ export function parseFeed(xml: string, source: NewsSource): NewsItem[] {
     const get = (name: string) => node.children.find(n => local(n.name) === name)
     const link = atom ? node.children.find(n => local(n.name) === 'link' && (!n.attrs.rel || n.attrs.rel === 'alternate') && (!n.attrs.type || n.attrs.type === 'text/html'))?.attrs.href : textOf(get('link'))
     const url = canonicalUrl(link ?? '', source.siteUrl), title = cleanText(textOf(get('title'))).slice(0, 400)
-    if (!url || !link || !title) continue
+    if (!url || url.length > 2048 || !link || !title) continue
     const date = Date.parse(textOf(get(atom ? 'published' : 'pubdate')) || textOf(get('updated')) || textOf(get('date')))
     const description = textOf(get(atom ? 'summary' : 'description')), thumbnail = feedThumbnail(node, description, source)
-    items.push({ title, url, publisher: source.publisher, sourceId: source.id, section: source.section, publishedAt: Number.isFinite(date) ? new Date(date).toISOString() : null, description: cleanText(description).slice(0, 600), ...(thumbnail ? { thumbnailUrl: thumbnail } : {}) })
+    const bylines = bylineCandidates((atom && !node.children.some(n => local(n.name) === 'author') ? [...node.children, ...root.children.filter(n => local(n.name) === 'author')] : node.children).map(n => ({ name: atom ? local(n.name) : n.name, text: atom && local(n.name) === 'author' ? textOf(n.children.find(c => local(c.name) === 'name')) : textOf(n) })), atom, source.id)
+    const categories = boundedDistinct(node.children.filter(n => local(n.name) === 'category').map(n => cleanText(atom ? n.attrs.term ?? '' : textOf(n)).slice(0,160)).filter(Boolean), c => c, 30)
+    const updated = Date.parse(textOf(get('updated')))
+    items.push({ memberships: [{ sourceId: source.id, feedUrl: source.feedUrl, section: source.section }], categories, bylines, ...(Number.isFinite(updated) ? { updatedAt: new Date(updated).toISOString() } : {}), title, url, publisher: source.publisher, sourceId: source.id, section: source.section, publishedAt: Number.isFinite(date) ? new Date(date).toISOString() : null, description: cleanText(description).slice(0, 600), ...(thumbnail ? { thumbnailUrl: thumbnail } : {}) })
   }
   return items
 }
 export function dedupeUrls(items: NewsItem[]): NewsItem[] {
-  const seen = new Set<string>()
-  return items.filter(item => { const url = canonicalUrl(item.url); if (!url || seen.has(url)) return false; item.url = url; seen.add(url); return true })
+  const groups = new Map<string, NewsItem[]>()
+  for (const item of items) { const url = canonicalUrl(item.url); if (!url) continue; const rows = groups.get(url) ?? []; rows.push({ ...item, url }); groups.set(url, rows) }
+  return [...groups.values()].map(mergeMetadata)
 }

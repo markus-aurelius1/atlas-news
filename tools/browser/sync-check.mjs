@@ -15,6 +15,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright-core'
+import { FEED_REGISTRY_GENERATION } from '../../src/current-affairs/shards.ts'
 
 const root = fileURLToPath(new URL('../../', import.meta.url)), out = new URL('./out/sync/', import.meta.url)
 mkdirSync(out, { recursive: true })
@@ -57,7 +58,7 @@ const items = [
   row('Cabinet approves expansion of Ayushman Bharat scheme coverage', 'hindu-national', 'The Hindu', HEALTH, 'National'),
   row('New GDP series uses double deflation', 'ie-economy', 'Indian Express', GDP, 'Economy'),
 ]
-const feed = list => ({ version: 1, fetchedAt: new Date().toISOString(), sources: [...new Set(list.map(i => i.sourceId))].map(sourceId => ({ sourceId, status: 'ok', count: 1 })), items: list })
+const feed = list => ({ registryGeneration: FEED_REGISTRY_GENERATION, version: 1, fetchedAt: new Date().toISOString(), sources: [...new Set(list.map(i => i.sourceId))].map(sourceId => ({ sourceId, status: 'ok', count: 1 })), items: list })
 const STATE_KEY = 'tars.current-affairs.state.v1'
 
 let server

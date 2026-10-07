@@ -3,14 +3,14 @@ import assert from 'node:assert/strict'
 import { it as test, vi } from 'vitest'
 import { onRequest } from '../../functions/api/current-affairs.ts'
 import { FEED_CACHE_CONTROL, FEED_CONCURRENCY } from '../../src/current-affairs/gateway.ts'
-import { FEED_SHARD_SIZE, FEED_SHARDS, feedShards, mergeShards, shardIndex } from '../../src/current-affairs/shards.ts'
+import { FEED_SHARD_SIZE, FEED_SHARDS, FEED_REGISTRY_GENERATION, feedShards, mergeShards, shardIndex } from '../../src/current-affairs/shards.ts'
 import { NEWS_SOURCES } from '../../src/current-affairs/sources.ts'
 import type { FeedResponse } from '../../src/current-affairs/types.ts'
 
 /** Cloudflare Workers Free: subrequests per invocation and simultaneous outgoing connections. */
 const FREE_SUBREQUESTS = 50, FREE_CONNECTIONS = 6
 const empty = '<rss><channel></channel></rss>'
-const shardUrl = (shard: number | string, extra = '') => `https://example.test/api/current-affairs?shard=${shard}${extra}`
+const shardUrl = (shard: number | string, extra = '') => `https://example.test/api/current-affairs?shard=${shard}&generation=${FEED_REGISTRY_GENERATION}${extra}`
 
 test('every registry source belongs to exactly one shard, and no shard nears the free-plan limits', () => {
   const ids = FEED_SHARDS.flat().map(s => s.id)

@@ -1,6 +1,7 @@
 /** Local metadata archive, separate from learner Dexie and Workbox's latest response. No article bodies or stored counters. */
 import { canonicalUrl, thumbnailUrl } from './feed'
 import { isActiveSource } from './sources'
+import { optionalMetadata, mergeMetadata } from './validator-v3/metadata'
 import { editionLabel, shiftDay, UNDATED } from './workspace'
 import type { NewsItem } from './types'
 export const ARCHIVE_DB = 'tars-current-affairs-archive-v1'
@@ -11,9 +12,9 @@ export const archivePeriods: ArchivePeriod[] = ['Daily', 'Weekly', 'Monthly', 'Y
 /** Allowlisted, length-limited publisher metadata for one article, whatever has since become of its source. */
 export function articleMetadata(item: NewsItem, seenAt: number): ArchivedArticle | null {
   const url = canonicalUrl(item.url)
-  if (!url || !Number.isFinite(seenAt) || typeof item.title !== 'string' || typeof item.publisher !== 'string' || typeof item.sourceId !== 'string' || typeof item.section !== 'string' || typeof item.description !== 'string') return null
+  if (!url || url.length > 2048 || !Number.isFinite(seenAt) || typeof item.title !== 'string' || typeof item.publisher !== 'string' || typeof item.sourceId !== 'string' || typeof item.section !== 'string' || typeof item.description !== 'string') return null
   const image = item.thumbnailUrl && thumbnailUrl(item.thumbnailUrl)
-  return { url, title: item.title.slice(0, 400), publisher: item.publisher.slice(0, 100), sourceId: item.sourceId, section: item.section.slice(0, 100), description: item.description.slice(0, 600), publishedAt: item.publishedAt && Number.isFinite(Date.parse(item.publishedAt)) ? new Date(item.publishedAt).toISOString() : null, ...(image ? { thumbnailUrl: image } : {}), firstSeenAt: seenAt, lastSeenAt: seenAt }
+  return { ...optionalMetadata(item), url, title: item.title.slice(0, 400), publisher: item.publisher.slice(0, 100), sourceId: item.sourceId, section: item.section.slice(0, 100), description: item.description.slice(0, 600), publishedAt: item.publishedAt && Number.isFinite(Date.parse(item.publishedAt)) ? new Date(item.publishedAt).toISOString() : null, ...(image ? { thumbnailUrl: image } : {}), firstSeenAt: seenAt, lastSeenAt: seenAt }
 }
 export function archiveRecord(item: NewsItem, seenAt: number): ArchivedArticle | null {
   return isActiveSource(item.sourceId) ? articleMetadata(item, seenAt) : null
@@ -84,7 +85,7 @@ export async function restoreArticles(rows: ArchivedArticle[], factory: IDBFacto
         const prior = request.result as ArchivedArticle | undefined
         try {
           if (!prior) { store.put(next); written++ }
-          else if (prior.lastSeenAt < next.lastSeenAt) { store.put({ ...next, firstSeenAt: Math.min(prior.firstSeenAt, next.firstSeenAt) }); written++ }
+          else if (prior.lastSeenAt < next.lastSeenAt) { store.put({ ...next, ...optionalMetadata(mergeMetadata([prior,next])), firstSeenAt: Math.min(prior.firstSeenAt, next.firstSeenAt) }); written++ }
           else if (prior.firstSeenAt > next.firstSeenAt) store.put({ ...prior, firstSeenAt: next.firstSeenAt })
         } catch { tx.abort() }
       }
@@ -104,7 +105,7 @@ export async function retainArticles(items: NewsItem[], seenAt: number, factory:
       const request = store.get(next.url)
       request.onsuccess = () => {
         const prior = request.result as ArchivedArticle | undefined
-        try { if (!prior || prior.lastSeenAt <= next.lastSeenAt) store.put({ ...next, firstSeenAt: prior ? Math.min(prior.firstSeenAt, seenAt) : seenAt }) }
+        try { if (!prior || prior.lastSeenAt <= next.lastSeenAt) store.put({ ...next, ...(prior ? optionalMetadata(mergeMetadata([prior,next])) : {}), firstSeenAt: prior ? Math.min(prior.firstSeenAt, seenAt) : seenAt }) }
         catch { tx.abort() }
       }
     }
