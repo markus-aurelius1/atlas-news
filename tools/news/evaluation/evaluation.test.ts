@@ -141,12 +141,12 @@ test('subject abstention counts incorrect on positives including rejected/deferr
 })
 test('topic overlap cannot cover unique angles; primary versus expanded recall and duplicate exposure differ', () => {
   const os = ['angle-a','angle-b','duplicate'].map(id => observation(id))
-  const records = [gold(os[0],'must_read',{storyId:'same',themeId:'theme',angleId:'angle-one'}),gold(os[1],'must_read',{storyId:'same',themeId:'theme',angleId:'angle-two'}),gold(os[2],'useful',{storyId:'same',themeId:'theme',angleId:'angle-one'})]
+  const records = os.map((o,i)=>gold(o,i===2?'useful':'must_read',{storyId:'same',themeId:'theme',angleId:i===1?'angle-two':'angle-one',contentType:'column',novelty:{status:'distinct_analysis',relativeTo:[],cutoff:CLOCK},materialDelta:{description:'Synthetic independently judged analytical distinction.',evidence:[{observationId:o.id,field:'title',start:0,end:1}]}}))
   const units = [{id:'u1',primaryUrl:os[0].metadata.url,memberUrls:[os[0].metadata.url,os[1].metadata.url]},{id:'u2',primaryUrl:os[2].metadata.url,memberUrls:[os[2].metadata.url]}]
   const result = report(os,records,os.map(o=>prediction(o)),units)
   assert.equal(result.selection.mustReadTopLevel.value,0.5)
   assert.equal(result.selection.mustReadExpanded.value,1)
-  assert.equal(result.selection.analysisAngleRecall.value,1)
+  assert.equal(result.selection.analysisAngleRecall.value,0.5)
   assert.equal(result.selection.duplicateExposure.value,0.5)
 })
 test('pairwise and B-cubed clustering hand calculation; uncertain pairs excluded', () => {

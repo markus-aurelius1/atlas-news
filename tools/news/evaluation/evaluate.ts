@@ -3,8 +3,13 @@ import { SUBJECTS } from './contracts.ts'
 import type { GoldRecord, Observation, Partition, RunArtifact, RawCapture } from './contracts.ts'
 import { binary, clustering, agreement, groupedBootstrap, ndcg, rate, distribution } from './metrics.ts'
 import { digest, instant, requireThat, unique, urlIdentity } from './core.ts'
+import type { ReviewPolicy } from './validate.ts'
 import { validateCorpus, validateRun, validateRaw } from './validate.ts'
 import { validatePartitionManifest } from './split.ts'
+import { EDITORIAL_POLICY } from './editorial-policy.ts'
+import { editorialSelectionMetrics, readingNeedIdentity } from './editorial-metrics.ts'
+import type { EditorialJudgment } from './editorial-judgments.ts'
+import type { EditorialOutput } from './editorial-replay.ts'
 import type { PartitionManifest } from './split.ts'
 
 export interface CoverageReference {
@@ -14,12 +19,13 @@ export interface CoverageReference {
 export interface EvaluationContext {
   observations: Observation[]; history: Observation[]; partitions: PartitionManifest
   partition: Partition; bootstrapSeed: string; coverageInventory?: CoverageReference[]; access?: 'implementation' | 'custodian'
-  rawCaptures?: RawCapture[]; rawRegistries?: NewsSource[][]
+  editorialJudgments?:EditorialJudgment[]; editorialOutput?:EditorialOutput; editorialPriorSelections?:EditorialOutput[]; completeCandidatePoolJudged?:boolean; additionalCorePublishers?:string[];
+  reviewPolicy?: ReviewPolicy; rawCaptures?: RawCapture[]; rawRegistries?: NewsSource[][]
 }
 const positive = (r: GoldRecord): boolean => r.gold.value === 'must_read' || r.gold.value === 'useful'
-const need = (r: GoldRecord): string => r.gold.angleId ? 'angle:' + r.gold.angleId : r.gold.storyId ? 'event:' + r.gold.storyId : 'article:' + r.metadata.url
 const weight = (r: GoldRecord): number => r.sampling.inclusionProbability ? 1 / r.sampling.inclusionProbability : 1
 export function evaluate(records: GoldRecord[], run: RunArtifact, context: EvaluationContext) {
+  const need=(r:GoldRecord)=>readingNeedIdentity(r,run.clock)
   validateRun(run); validatePartitionManifest(context.partitions)
   requireThat(context.access === 'custodian' || !context.partition.startsWith('holdout_'), 'Holdout evaluation requires independent custodian')
   const observations = [...context.observations, ...context.history]
@@ -33,7 +39,7 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
   requireThat(run.inputHash===digest({observations:[...context.observations].sort((a,b)=>a.id.localeCompare(b.id,'en')),history:[...context.history].sort((a,b)=>a.id.localeCompare(b.id,'en')),clock:run.clock,versions:run.versions}),'Replay input commitment mismatch')
   const observedUrlSet=new Set(observations.map(o=>o.metadata.url))
   requireThat(run.articles.every(p=>observedUrlSet.has(p.url)),'Prediction contains an unseen article')
-  const gold = validateCorpus(records, observations, context.access).sort((a,b)=>a.id.localeCompare(b.id,'en'))
+  const gold = validateCorpus(records, observations, context.access, context.reviewPolicy).sort((a,b)=>a.id.localeCompare(b.id,'en'))
   const assignments = new Map(context.partitions.assignments.map(a => [a.url, a]))
   for (const r of gold) {
     const assignment = assignments.get(r.metadata.url)
@@ -94,7 +100,7 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
   const observed = expected.filter(i => observedUrls.has(urlIdentity(i.url)))
   const coverage = expected.length ? { inventoryHash: digest(inventory), expected: expected.length, unresolvedReferences: inventory.length - expected.length,
     acquisitionRecall: rate(observed.length, expected.length), acceptedGivenObserved: rate(observed.filter(i => predictions.get(urlIdentity(i.url))?.decision === 'accepted').length, observed.length),
-    representedGivenObserved: rate(observed.filter(i => expandedUrls.has(urlIdentity(i.url))).length, observed.length), absentUrls: expected.filter(i => !observedUrls.has(urlIdentity(i.url))).map(i => i.url), status: 'bounded_independent_listing_inventory' }
+    representedGivenObserved: rate(observed.filter(i => topUrls.has(urlIdentity(i.url))).length, observed.length), absentUrls: expected.filter(i => !observedUrls.has(urlIdentity(i.url))).map(i => i.url), status: 'bounded_independent_listing_inventory' }
     : { status: 'pending_independent_inventory', expected: 0, unresolvedReferences: inventory.length }
   const sourceIds = [...new Set(observations.flatMap(o => o.metadata.memberships.map(m => m.sourceId)))].sort()
   const sourceFunnel = sourceIds.map(sourceId => {
@@ -103,7 +109,7 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
       judgedPositive: positives.filter(r => urls.has(r.metadata.url)).length, metadataSufficient: natural.filter(r => urls.has(r.metadata.url) && r.gold.metadataSufficiency?.level === 'sufficient').length,
       accepted: run.articles.filter(p => urls.has(p.url) && p.decision === 'accepted').length, topLevel: [...topUrls].filter(u => urls.has(u)).length, expanded: [...expandedUrls].filter(u => urls.has(u)).length }
   })
-  const topK = [20, 50, 100].map(k => {
+  const topK = [...EDITORIAL_POLICY.precisionCutoffs].map(k => {
     const list = topLevel.slice(0, k), unknown = list.filter(r => !r).length, relevant = list.filter(r => r && positive(r)).length
     const seen = new Set<string>(), readingNeedGains = list.map(r => {
       if (!r) return null
@@ -119,13 +125,13 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
     const p = predictions.get(r.metadata.url), errors: string[] = []
     if (!accepted(r)) errors.push(r.gold.metadataSufficiency?.level === 'insufficient' ? 'insufficient_metadata' : p?.decision === 'deferred' ? 'acceptance_deferred' : 'acceptance_error')
     if (r.gold.primarySubject && !exact(r)) errors.push('subject_error')
-    if (accepted(r) && !expandedUrls.has(r.metadata.url) && !positives.some(other => need(other) === need(r) && expandedUrls.has(other.metadata.url))) errors.push('selection_error')
+    if (accepted(r) && !topUrls.has(r.metadata.url) && !positives.some(other => need(other) === need(r) && topUrls.has(other.metadata.url))) errors.push('selection_error')
     return errors.length ? [{ id: r.id, url: r.metadata.url, value: r.gold.value, errors }] : []
   })
   return {
     version: 'tars-news-evaluation/v1', qualityClaim: 'pending_release_holdout_and_owner_approved_gates', partition: context.partition,
     datasetHash: digest(gold), partitionManifestHash: context.partitions.hash, runHash: digest(run), clock: run.clock, versions: run.versions,
-    review: { counts: statusCounts, total: scope.length, resolved: resolved.length, excludedUnresolved: scope.length - resolved.length, completion: rate(resolved.length+scope.filter(r=>r.review.status==='unresolvable').length, scope.length), adjudicationCoverage:rate(resolved.length,scope.length), agreements },
+    review: { policy:context.reviewPolicy??'two_independent', counts: statusCounts, total: scope.length, resolved: resolved.length, excludedUnresolved: scope.length - resolved.length, completion: rate(resolved.length+scope.filter(r=>r.review.status==='unresolvable').length, scope.length), adjudicationCoverage:rate(resolved.length,scope.length), agreements },
     population: { naturalResolved: natural.length, stressResolved: resolved.length - natural.length, missingPredictions: natural.filter(r => !predictions.has(r.metadata.url)).length,
       acceptedUnjudged:run.articles.filter(p=>p.decision==='accepted'&&!natural.some(r=>r.metadata.url===p.url)).length,
       acceptedJudgementCoverage:rate(natural.filter(accepted).length,run.articles.filter(p=>p.decision==='accepted').length) },
@@ -145,14 +151,14 @@ export function evaluate(records: GoldRecord[], run: RunArtifact, context: Evalu
       sufficientPositiveShare: rate(positives.filter(r => r.gold.metadataSufficiency?.level === 'sufficient').length, positives.length), interpretation: 'Sufficiency is an observable ceiling diagnostic, not an achieved recall target. Unresolved annotation counts are provisional reviewer assessments, not final truth.' },
     representation: { subjects: { accuracy: rate(subjects.filter(exact).length, subjects.length), missingGoldPrimary: positives.length - subjects.length, abstention: rate(subjects.filter(r => !predictions.get(r.metadata.url)?.primarySubject).length, subjects.length), selectiveAccuracy: rate(subjects.filter(r => predictions.get(r.metadata.url)?.primarySubject && exact(r)).length, subjects.filter(r => predictions.get(r.metadata.url)?.primarySubject).length), conditionalOnAcceptance: rate(subjects.filter(r => accepted(r) && exact(r)).length, subjects.filter(accepted).length), macroF1: definedF1.length ? definedF1.reduce((s, v) => s + v, 0) / definedF1.length : null, macroDefinedSubjects: definedF1.length, perSubject, confusion }, events: eventMetrics },
     selection: {
-      acceptedNeedMisses: new Set(positives.filter(accepted).map(need)).size - new Set(positives.filter(r => accepted(r) && expandedUrls.has(r.metadata.url)).map(need)).size,
+      acceptedNeedMisses: new Set(positives.filter(accepted).map(need)).size - new Set(positives.filter(r => accepted(r) && topUrls.has(r.metadata.url)).map(need)).size,
       topLevelNeedRecall: uniqueRecall(positives, topUrls), expandedNeedRecall: uniqueRecall(positives, expandedUrls),
       mustReadTopLevel: uniqueRecall(positives.filter(r => r.gold.value === 'must_read'), topUrls), mustReadExpanded: uniqueRecall(positives.filter(r => r.gold.value === 'must_read'), expandedUrls),
-      analysisAngleRecall: uniqueRecall(positives.filter(r => r.gold.angleId !== null), expandedUrls),
-      materialNoveltyRecall: uniqueRecall(temporalPositive, expandedUrls), saturation: rate(knownRepeats.length, continuing.length), noveltyJudgementCoverage: rate(continuing.length, judgedTop.filter(r => r.gold.themeId).length),
+      analysisAngleRecall: uniqueRecall(positives.filter(r => r.gold.angleId !== null&&readingNeedIdentity(r,run.clock).startsWith('angle:')), topUrls),
+      materialNoveltyRecall: uniqueRecall(temporalPositive, topUrls), saturation: rate(knownRepeats.length, continuing.length), noveltyJudgementCoverage: rate(continuing.length, judgedTop.filter(r => r.gold.themeId).length),
       duplicateExposure: rate(duplicateCount, run.units.length), unjudgedTopLevel: run.units.length - judgedTop.length, duplicateExposureStatus: judgedTop.length === run.units.length ? 'measured' : 'lower_bound_pending_judgments',
-      topK, mustReadCapacity: { capacity: 100, knownNeeds: new Set(positives.filter(r => r.gold.value === 'must_read').map(need)).size, status: 'Conditional on corpus completeness; capacity does not waive misses.' },
-    }, sourceFunnel, selectionDistribution: {subjects:distribution(judgedTop.map(r=>r.gold.primarySubject??'Unresolved')),themes:distribution(judgedTop.map(r=>r.gold.themeId??'unrelated:'+r.metadata.url)),publishers:distribution(run.units.map(u=>observations.find(o=>o.metadata.url===u.primaryUrl)?.metadata.publisher??'Unknown'))},errors: mistakes,
+      expandedCoverageIsInternalEvidenceOnly:true, topK, mustReadCapacity: { capacity: 50, fillTarget:null, knownNeeds: new Set(positives.filter(r => r.gold.value === 'must_read').map(need)).size, status: 'Conditional on corpus completeness; capacity does not waive misses.' },
+    }, curatedSelection:editorialSelectionMetrics(scope,run,observations,{judgments:context.editorialJudgments,reviewPolicy:context.reviewPolicy,editorialOutput:context.editorialOutput,priorSelections:context.editorialPriorSelections,completeCandidatePoolJudged:context.completeCandidatePoolJudged,additionalCorePublishers:context.additionalCorePublishers}), sourceFunnel, selectionDistribution: {subjects:distribution(judgedTop.map(r=>r.gold.primarySubject??'Unresolved')),themes:distribution(judgedTop.map(r=>r.gold.themeId??'unrelated:'+r.metadata.url)),publishers:distribution(run.units.map(u=>observations.find(o=>o.metadata.url===u.primaryUrl)?.metadata.publisher??'Unknown'))},errors: mistakes,
     pending: ['owner_approved_gates', 'release_corpus_and_sealed_holdouts', 'acquisition_inventory_if_absent', 'pair_anchor_sequence_annotations_if_absent', 'complete_replay_candidate_judgments', 'physical_device_performance'],
   }
 }

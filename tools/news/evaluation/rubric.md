@@ -52,3 +52,18 @@ For sequence needs name permissible qualifying URLs, novelty and must-read statu
 ## Decisions still requiring the owner
 
 Assign two human reviewers and an independent holdout custodian. Approve this rubric/schema vocabulary, the proposed gates and release sample support before tuning; proposed values are in `gates.proposed.json`. Decide corrections/version procedure and the later seven-day/14-day temporal policy with labelled sequences. None is required to complete the A1 infrastructure or a smaller bootstrap development corpus. No holdout labels are available to implementation jobs.
+
+
+## A2a curated reading contract (owner amendment)
+
+Today is a curated UPSC reading list with a maximum of 50 visible reading units, never a fill target. Prioritize Precision@20/50, must-read and unique development/reading-need coverage, distinct-analysis preservation, near-zero equivalent/repeat exposure, and quality lost to capacity. Do not optimize P@100. A short high-quality list is valid.
+
+Equivalent reports of a material development contribute one representative reading unit. Compare substantive completeness, explanatory usefulness and direct relevance first. The Hindu and Indian Express have equal publisher preference when quality is comparable. Established verified core publishers are normal trusted candidates; secondary/specialist sources need unique coverage, high substantive confidence or material superiority. Tribune has no ban/quota; comparable core coverage normally wins, and repetition/volume adds no relevance. Publisher reputation never rescues weak material. Recency is a late tiebreaker.
+
+Distinguish same development, related material new development, equivalent report, distinct valuable analysis and redundant analysis. Separate analytical reading needs require materially distinct reasoning, explanation or policy value supported by observable evidence; publisher, author or opinion branding alone is insufficient. An issue-oriented, substantive, revision-worthy editorial standard guides interpretation, without keyword gold or author prestige. Owner positives are held separately by the custodian; no exemplar matches or expected answers are shown in this blind package.
+
+Assess repeated development against actual earlier observations. Approximately 14 days of metadata history and strongest comparison against 7 preceding days are configurable downstream assumptions, not a cooldown. Publisher, wording, headline, timestamp or elapsed time cannot by itself make a development fresh. A consequential new action/order/data/finding/implementation/consequence may be a material delta even inside a recently represented theme. A routine reaction, procedural update, recap or paraphrase is not automatically a material delta. If metadata cannot resolve this, mark limited/insufficient and specify the missing fields.
+
+Keep rejected, qualified duplicate internal-only, qualified unselected internal-only and editorially selected reading units distinct. Archive means the curated history of selected meaningful developments/analyses, not classifier positives or leftovers. A better representative may replace an earlier article for the same development/reading need while preserving both URLs; a new development requires a new identity. Pair and temporal judgments require authentic human evidence and may remain unresolved.
+
+One primary human can adjudicate this bootstrap development/validation corpus under the explicit bootstrap_primary_human policy. Independent second review is required later for the final holdout, protected/must-read slices, disagreements and random overlap. No agent is an independent human reviewer. All initial substantive labels remain blank.

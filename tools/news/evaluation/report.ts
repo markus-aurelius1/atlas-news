@@ -21,10 +21,11 @@ export function renderReport(report: EvaluationReport): string {
     `| Acceptance F1 | ${show(acceptance.f1)} |`,
     `| Primary subject accuracy | ${show(report.representation.subjects.accuracy)} |`,
     `| Selection top-level reading needs | ${show(report.selection.topLevelNeedRecall)} |`,
-    `| Selection expanded reading needs | ${show(report.selection.expandedNeedRecall)} |`, '',
+    `| Internal evidence coverage (no Today credit) | ${show(report.selection.expandedNeedRecall)} |`, '',
     'The JSON companion retains counts, descriptive Wilson intervals, seeded group bootstrap intervals, panel weights, confusion matrices, source funnels, metadata sufficiency, review agreement, errors and unresolved metrics.',
     'Precision-at-K is pending for unjudged output; absent gold does not become a negative. Natural metrics exclude synthetic and legacy suites.',
     'Slice support below 50 positives is not demonstrated. These diagnostics do not approve gates or establish release quality.', '',
+    'Today ceiling: 50 visible units, never a fill target. P@20/P@50 and unique top-level needs govern curated selection; Archive is selected history, not leftovers.',
     'Pending: ' + report.pending.join(', ') + '.', '',
   ].join('\n')
 }

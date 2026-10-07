@@ -12,6 +12,15 @@ ajv.addFormat('utc-instant', { type: 'string', validate: value => { try { instan
 ajv.addFormat('article-url', { type: 'string', validate: value => { try { return urlIdentity(value) === value } catch { return false } } })
 ajv.addSchema(schema)
 const checkGold = ajv.getSchema(schema.$id)!
+/** Owner-authorized bootstrap policy only. The A1 standalone schema/default still require two reviews. */
+export type ReviewPolicy = 'two_independent' | 'bootstrap_primary_human'
+const bootstrapSchema = structuredClone(schema)
+bootstrapSchema.$id += '/bootstrap-primary-human'
+for (const branch of bootstrapSchema.allOf) {
+  const annotations = branch.then?.properties?.review?.properties?.annotations
+  if (annotations) annotations.minItems = 1
+}
+const checkBootstrapGold = ajv.compile(bootstrapSchema)
 const checkRaw = ajv.compile({ $ref: schema.$id + '#/$defs/capture' })
 const checkObservation = ajv.compile({ $ref: schema.$id + '#/$defs/observation' })
 const checkOutput = ajv.compile({ $ref: schema.$id + '#/$defs/output' })
@@ -74,14 +83,17 @@ function checkSpan(span: EvidenceSpan, ids: string[], observations?: Map<string,
     requireThat(span.end <= text.length, 'Evidence beyond observed metadata')
   }
 }
-export function validateGold(value: unknown, access: 'implementation' | 'custodian' = 'implementation'): asserts value is GoldRecord {
+export function validateGold(value: unknown, access: 'implementation' | 'custodian' = 'implementation', reviewPolicy: ReviewPolicy = 'two_independent'): asserts value is GoldRecord {
   const partition = (value as { partition?: string } | null)?.partition
   requireThat(access === 'custodian' || !partition?.startsWith('holdout_'), 'Sealed holdout truth unavailable to implementation jobs')
-  check(checkGold, value)
+  requireThat(reviewPolicy === 'two_independent' || ['development','validation'].includes(partition ?? ''), 'Primary-human policy is bootstrap development/validation only')
+  check(reviewPolicy === 'bootstrap_primary_human' ? checkBootstrapGold : checkGold, value)
   const record = value as GoldRecord
   requireThat(instant(record.sampling.window.start) <= instant(record.sampling.window.end), 'Invalid sampling window')
   requireThat(record.sampling.synthetic === (record.partition === 'synthetic_adversarial'), 'Synthetic origin/partition mismatch')
   unique(record.review.annotations, a => a.reviewerId, 'independent reviewer')
+  requireThat(record.review.status !== 'disputed' || record.review.annotations.length >= 2, 'Disagreement requires independent second review')
+  if (reviewPolicy === 'bootstrap_primary_human' && record.review.status === 'adjudicated' && record.review.annotations.length === 1) requireThat(record.review.adjudication?.adjudicatorId === record.review.annotations[0].reviewerId, 'Primary human must adjudicate their bootstrap review')
   requireThat(record.review.status !== 'unreviewed' || record.review.annotations.length === 0, 'Unreviewed record has annotations')
   requireThat(record.review.status !== 'adjudicated' || stableJson(record.gold) === stableJson(record.review.adjudication!.labels), 'Adjudication and final truth disagree')
   if (record.review.adjudication) requireThat(record.review.annotations.every(a => instant(a.reviewedAt) <= instant(record.review.adjudication!.reviewedAt)), 'Adjudication predates review')
@@ -92,13 +104,13 @@ export function validateGold(value: unknown, access: 'implementation' | 'custodi
   }
 }
 /** Corpus validation adds referential integrity, safe metadata and temporal evidence checks. */
-export function validateCorpus(records: unknown[], observations: Observation[], access: 'implementation' | 'custodian' = 'implementation'): GoldRecord[] {
+export function validateCorpus(records: unknown[], observations: Observation[], access: 'implementation' | 'custodian' = 'implementation', reviewPolicy: ReviewPolicy = 'two_independent'): GoldRecord[] {
   observations.forEach(validateObservation)
   unique(observations, o => o.id, 'observation')
   const lookup = new Map(observations.map(o => [o.id, o]))
   const result: GoldRecord[] = []
   for (const value of records) {
-    validateGold(value, access)
+    validateGold(value, access, reviewPolicy)
     for (const id of value.observationIds) requireThat(lookup.has(id), 'Missing gold observation')
     const related = value.observationIds.map(id => lookup.get(id)!)
     requireThat(related.every(o => urlIdentity(o.metadata.url) === value.metadata.url), 'Gold references another article')

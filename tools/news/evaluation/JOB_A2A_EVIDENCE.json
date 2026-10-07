@@ -1,0 +1,3509 @@
+{
+  "version": "tars-job-a2a-evidence/v1",
+  "status": "awaiting_adjudication",
+  "baseCommit": "7b309a418e859a2f66b11b12dbf06d49759afd47",
+  "branch": "codex/validator-v3-a2a",
+  "head": "7b309a418e859a2f66b11b12dbf06d49759afd47",
+  "worktree": "C:\\Users\\hario\\.codex\\worktrees\\validator-v3-a2a\\Atlas-News",
+  "captureRoot": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07",
+  "activePackage": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\package-owner-final",
+  "raw": {
+    "archivedObservations": 9846,
+    "invalidEntries": 3,
+    "liveFailures": [
+      {
+        "capturedAt": "2026-10-07T13:40:39.449Z",
+        "failure": "parse",
+        "http": 200,
+        "sourceId": "ext-nasa-news-releases"
+      }
+    ],
+    "liveObservations": 5242,
+    "observations": 15088,
+    "truncatedEntries": 600,
+    "uniqueUrls": 4945
+  },
+  "sampled": {
+    "missingByline": 489,
+    "missingCategories": 200,
+    "missingDescription": 494,
+    "missingPublicationTime": 0,
+    "rates": {
+      "byline": 0.489,
+      "categories": 0.2,
+      "description": 0.494
+    },
+    "total": 1000
+  },
+  "panels": [
+    {
+      "missingByline": 306,
+      "missingCategories": 128,
+      "missingDescription": 270,
+      "missingPublicationTime": 0,
+      "panel": "representative",
+      "rates": {
+        "byline": 0.5275862068965518,
+        "categories": 0.2206896551724138,
+        "description": 0.46551724137931033
+      },
+      "total": 580
+    },
+    {
+      "missingByline": 183,
+      "missingCategories": 72,
+      "missingDescription": 224,
+      "missingPublicationTime": 0,
+      "panel": "coverage",
+      "rates": {
+        "byline": 0.4357142857142857,
+        "categories": 0.17142857142857143,
+        "description": 0.5333333333333333
+      },
+      "total": 420
+    }
+  ],
+  "partitions": [
+    {
+      "missingByline": 372,
+      "missingCategories": 152,
+      "missingDescription": 371,
+      "missingPublicationTime": 0,
+      "partition": "development",
+      "rates": {
+        "byline": 0.496,
+        "categories": 0.20266666666666666,
+        "description": 0.49466666666666664
+      },
+      "total": 750
+    },
+    {
+      "missingByline": 117,
+      "missingCategories": 48,
+      "missingDescription": 123,
+      "missingPublicationTime": 0,
+      "partition": "validation",
+      "rates": {
+        "byline": 0.468,
+        "categories": 0.192,
+        "description": 0.492
+      },
+      "total": 250
+    }
+  ],
+  "publishers": [
+    {
+      "coverage": 0,
+      "missingByline": 3,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Al Jazeera",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 3
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Anticipating the Unintended",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 8,
+      "missingByline": 21,
+      "missingCategories": 21,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "BBC",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 13,
+      "total": 21
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Bloomberg",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 8,
+      "missingByline": 20,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Business Standard",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 12,
+      "total": 20
+    },
+    {
+      "coverage": 10,
+      "missingByline": 44,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "BusinessLine",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 34,
+      "total": 44
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 1,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Economic Times",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 1
+    },
+    {
+      "coverage": 1,
+      "missingByline": 3,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Financial Times",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 2,
+      "missingByline": 9,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "Frontline",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.1111111111111111
+      },
+      "representative": 7,
+      "total": 9
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Future of India",
+      "rates": {
+        "byline": 0.5,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Gentle Leviathan",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 9,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Guardian",
+      "rates": {
+        "byline": 0,
+        "categories": 0.05,
+        "description": 0
+      },
+      "representative": 11,
+      "total": 20
+    },
+    {
+      "coverage": 9,
+      "missingByline": 37,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Hindustan Times",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 28,
+      "total": 37
+    },
+    {
+      "coverage": 1,
+      "missingByline": 4,
+      "missingCategories": 4,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "India Today",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 4
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "India: Politics, Power & Public Discourse",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 204,
+      "missingByline": 114,
+      "missingCategories": 0,
+      "missingDescription": 447,
+      "missingPublicationTime": 0,
+      "name": "Indian Express",
+      "rates": {
+        "byline": 0.2550335570469799,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 243,
+      "total": 447
+    },
+    {
+      "coverage": 11,
+      "missingByline": 27,
+      "missingCategories": 27,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Mint",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 16,
+      "total": 27
+    },
+    {
+      "coverage": 1,
+      "missingByline": 6,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "NDTV",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 5,
+      "total": 6
+    },
+    {
+      "coverage": 31,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 4,
+      "missingPublicationTime": 0,
+      "name": "New York Times",
+      "rates": {
+        "byline": 0,
+        "categories": 0.05357142857142857,
+        "description": 0.07142857142857142
+      },
+      "representative": 25,
+      "total": 56
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Northeast Now",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "People, Policies, Progress — PIB India",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Political Economy, Stats, and Society",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Politico Europe",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 2
+    },
+    {
+      "coverage": 6,
+      "missingByline": 0,
+      "missingCategories": 18,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Scroll.in",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 12,
+      "total": 18
+    },
+    {
+      "coverage": 5,
+      "missingByline": 0,
+      "missingCategories": 11,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "South China Morning Post",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 6,
+      "total": 11
+    },
+    {
+      "coverage": 18,
+      "missingByline": 64,
+      "missingCategories": 64,
+      "missingDescription": 17,
+      "missingPublicationTime": 0,
+      "name": "The Economist",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0.265625
+      },
+      "representative": 46,
+      "total": 64
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 5,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "The Economist: Off the Charts",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 5
+    },
+    {
+      "coverage": 65,
+      "missingByline": 131,
+      "missingCategories": 0,
+      "missingDescription": 10,
+      "missingPublicationTime": 0,
+      "name": "The Hindu",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.07633587786259542
+      },
+      "representative": 66,
+      "total": 131
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "The Quantified India",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 11,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "The Tribune",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 15,
+      "total": 26
+    },
+    {
+      "coverage": 12,
+      "missingByline": 4,
+      "missingCategories": 23,
+      "missingDescription": 15,
+      "missingPublicationTime": 0,
+      "name": "Times of India",
+      "rates": {
+        "byline": 0.17391304347826086,
+        "categories": 1,
+        "description": 0.6521739130434783
+      },
+      "representative": 11,
+      "total": 23
+    }
+  ],
+  "sources": [
+    {
+      "coverage": 1,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bl-agriculture",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 8
+    },
+    {
+      "coverage": 3,
+      "missingByline": 10,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bl-economy",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 10
+    },
+    {
+      "coverage": 1,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bl-editorial",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 8
+    },
+    {
+      "coverage": 3,
+      "missingByline": 10,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bl-national",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 10
+    },
+    {
+      "coverage": 2,
+      "missingByline": 9,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bl-science",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 9
+    },
+    {
+      "coverage": 1,
+      "missingByline": 5,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bs-economy",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 5
+    },
+    {
+      "coverage": 4,
+      "missingByline": 9,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bs-india",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 5,
+      "total": 9
+    },
+    {
+      "coverage": 4,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "bs-world",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 8
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 1,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "et-uttarpradesh",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 1
+    },
+    {
+      "coverage": 0,
+      "missingByline": 3,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-al-jazeera",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 3
+    },
+    {
+      "coverage": 3,
+      "missingByline": 9,
+      "missingCategories": 9,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-bbc-business",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 6,
+      "total": 9
+    },
+    {
+      "coverage": 5,
+      "missingByline": 10,
+      "missingCategories": 10,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-bbc-science-environment",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 5,
+      "total": 10
+    },
+    {
+      "coverage": 0,
+      "missingByline": 4,
+      "missingCategories": 4,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-bbc-world",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 4
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-bloomberg-markets",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 14,
+      "missingByline": 37,
+      "missingCategories": 37,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-economist-finance-economics",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 23,
+      "total": 37
+    },
+    {
+      "coverage": 4,
+      "missingByline": 27,
+      "missingCategories": 27,
+      "missingDescription": 17,
+      "missingPublicationTime": 0,
+      "name": "ext-economist-world-this-week",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0.6296296296296297
+      },
+      "representative": 23,
+      "total": 27
+    },
+    {
+      "coverage": 1,
+      "missingByline": 3,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-financial-times",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-politico-europe",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 2
+    },
+    {
+      "coverage": 5,
+      "missingByline": 0,
+      "missingCategories": 11,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ext-scmp",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 6,
+      "total": 11
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "guardian-environment",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 6
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "guardian-science",
+      "rates": {
+        "byline": 0,
+        "categories": 0.16666666666666666,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 6
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "guardian-world",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 6,
+      "total": 9
+    },
+    {
+      "coverage": 8,
+      "missingByline": 15,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-columns",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 15
+    },
+    {
+      "coverage": 3,
+      "missingByline": 10,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "hindu-economy",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.1
+      },
+      "representative": 7,
+      "total": 10
+    },
+    {
+      "coverage": 7,
+      "missingByline": 14,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-editorial",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 14
+    },
+    {
+      "coverage": 10,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-environment",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 17
+    },
+    {
+      "coverage": 7,
+      "missingByline": 14,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-lead",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 14
+    },
+    {
+      "coverage": 6,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 6,
+      "missingPublicationTime": 0,
+      "name": "hindu-national",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.35294117647058826
+      },
+      "representative": 11,
+      "total": 17
+    },
+    {
+      "coverage": 10,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "hindu-op-ed",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.058823529411764705
+      },
+      "representative": 7,
+      "total": 17
+    },
+    {
+      "coverage": 9,
+      "missingByline": 16,
+      "missingCategories": 0,
+      "missingDescription": 3,
+      "missingPublicationTime": 0,
+      "name": "hindu-opinion",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.1875
+      },
+      "representative": 7,
+      "total": 16
+    },
+    {
+      "coverage": 10,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-science",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 17
+    },
+    {
+      "coverage": 7,
+      "missingByline": 14,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "hindu-world",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 14
+    },
+    {
+      "coverage": 0,
+      "missingByline": 2,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ht-business",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ht-explained",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 1
+    },
+    {
+      "coverage": 5,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ht-india",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 12,
+      "total": 17
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ht-science",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 1
+    },
+    {
+      "coverage": 4,
+      "missingByline": 16,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "ht-world",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 12,
+      "total": 16
+    },
+    {
+      "coverage": 26,
+      "missingByline": 2,
+      "missingCategories": 0,
+      "missingDescription": 50,
+      "missingPublicationTime": 0,
+      "name": "ie-columns",
+      "rates": {
+        "byline": 0.04,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 50
+    },
+    {
+      "coverage": 12,
+      "missingByline": 5,
+      "missingCategories": 0,
+      "missingDescription": 36,
+      "missingPublicationTime": 0,
+      "name": "ie-economy",
+      "rates": {
+        "byline": 0.1388888888888889,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 36
+    },
+    {
+      "coverage": 22,
+      "missingByline": 46,
+      "missingCategories": 0,
+      "missingDescription": 46,
+      "missingPublicationTime": 0,
+      "name": "ie-editorial",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 46
+    },
+    {
+      "coverage": 24,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 48,
+      "missingPublicationTime": 0,
+      "name": "ie-explained",
+      "rates": {
+        "byline": 0.14583333333333334,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 48
+    },
+    {
+      "coverage": 23,
+      "missingByline": 1,
+      "missingCategories": 0,
+      "missingDescription": 47,
+      "missingPublicationTime": 0,
+      "name": "ie-explained-economics",
+      "rates": {
+        "byline": 0.02127659574468085,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 47
+    },
+    {
+      "coverage": 24,
+      "missingByline": 12,
+      "missingCategories": 0,
+      "missingDescription": 48,
+      "missingPublicationTime": 0,
+      "name": "ie-explained-global",
+      "rates": {
+        "byline": 0.25,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 48
+    },
+    {
+      "coverage": 20,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 44,
+      "missingPublicationTime": 0,
+      "name": "ie-explained-science",
+      "rates": {
+        "byline": 0.1590909090909091,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 44
+    },
+    {
+      "coverage": 8,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 18,
+      "missingPublicationTime": 0,
+      "name": "ie-governance",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 10,
+      "total": 18
+    },
+    {
+      "coverage": 12,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 36,
+      "missingPublicationTime": 0,
+      "name": "ie-india",
+      "rates": {
+        "byline": 0.2222222222222222,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 36
+    },
+    {
+      "coverage": 31,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 55,
+      "missingPublicationTime": 0,
+      "name": "ie-upsc",
+      "rates": {
+        "byline": 0.12727272727272726,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 55
+    },
+    {
+      "coverage": 28,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 52,
+      "missingPublicationTime": 0,
+      "name": "ie-upsc-essentials",
+      "rates": {
+        "byline": 0.1346153846153846,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 52
+    },
+    {
+      "coverage": 9,
+      "missingByline": 22,
+      "missingCategories": 0,
+      "missingDescription": 32,
+      "missingPublicationTime": 0,
+      "name": "ie-world",
+      "rates": {
+        "byline": 0.6875,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 23,
+      "total": 32
+    },
+    {
+      "coverage": 2,
+      "missingByline": 9,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "india-frontline-cover-story",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.1111111111111111
+      },
+      "representative": 7,
+      "total": 9
+    },
+    {
+      "coverage": 1,
+      "missingByline": 4,
+      "missingCategories": 4,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "india-india-today-india",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 4
+    },
+    {
+      "coverage": 1,
+      "missingByline": 6,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "india-ndtv-latest",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 5,
+      "total": 6
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "india-northeast-now",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 6,
+      "missingByline": 0,
+      "missingCategories": 18,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "india-scroll-in",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 12,
+      "total": 18
+    },
+    {
+      "coverage": 3,
+      "missingByline": 7,
+      "missingCategories": 7,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "mint-economy",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 7
+    },
+    {
+      "coverage": 3,
+      "missingByline": 7,
+      "missingCategories": 7,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "mint-opinion",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 7
+    },
+    {
+      "coverage": 2,
+      "missingByline": 6,
+      "missingCategories": 6,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "mint-politics",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 6
+    },
+    {
+      "coverage": 3,
+      "missingByline": 7,
+      "missingCategories": 7,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "mint-science",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 7
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "nyt-artificial-intelligence",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "nyt-asia-pacific",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 5
+    },
+    {
+      "coverage": 12,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "nyt-climate",
+      "rates": {
+        "byline": 0,
+        "categories": 0.058823529411764705,
+        "description": 0.058823529411764705
+      },
+      "representative": 5,
+      "total": 17
+    },
+    {
+      "coverage": 2,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "nyt-economy",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 4
+    },
+    {
+      "coverage": 7,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 2,
+      "missingPublicationTime": 0,
+      "name": "nyt-middle-east",
+      "rates": {
+        "byline": 0,
+        "categories": 0.07692307692307693,
+        "description": 0.15384615384615385
+      },
+      "representative": 6,
+      "total": 13
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "nyt-russia-ukraine-war",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 5,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "nyt-science",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 8
+    },
+    {
+      "coverage": 7,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "nyt-world",
+      "rates": {
+        "byline": 0,
+        "categories": 0.09090909090909091,
+        "description": 0.09090909090909091
+      },
+      "representative": 4,
+      "total": 11
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-anticipating-the-unintended",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-future-of-india",
+      "rates": {
+        "byline": 0.5,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-gentle-leviathan",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-india-politics-power-public-discourse",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-people-policies-progress-pib-india",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-political-economy-stats-and-society",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 5,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-the-economist-off-the-charts",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 5
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "substack-the-quantified-india",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 1,
+      "missingByline": 2,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "toi-business",
+      "rates": {
+        "byline": 0.6666666666666666,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 2,
+      "missingByline": 1,
+      "missingCategories": 4,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "toi-environment",
+      "rates": {
+        "byline": 0.25,
+        "categories": 1,
+        "description": 0.25
+      },
+      "representative": 2,
+      "total": 4
+    },
+    {
+      "coverage": 3,
+      "missingByline": 1,
+      "missingCategories": 6,
+      "missingDescription": 6,
+      "missingPublicationTime": 0,
+      "name": "toi-india",
+      "rates": {
+        "byline": 0.16666666666666666,
+        "categories": 1,
+        "description": 1
+      },
+      "representative": 3,
+      "total": 6
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 5,
+      "missingDescription": 5,
+      "missingPublicationTime": 0,
+      "name": "toi-science",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 1
+      },
+      "representative": 2,
+      "total": 5
+    },
+    {
+      "coverage": 4,
+      "missingByline": 0,
+      "missingCategories": 6,
+      "missingDescription": 4,
+      "missingPublicationTime": 0,
+      "name": "toi-world",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0.6666666666666666
+      },
+      "representative": 2,
+      "total": 6
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "tribune-business",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 5
+    },
+    {
+      "coverage": 2,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "tribune-editorial",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 6
+    },
+    {
+      "coverage": 2,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "tribune-india",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 3,
+      "total": 5
+    },
+    {
+      "coverage": 6,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "tribune-world",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 10
+    }
+  ],
+  "sections": [
+    {
+      "coverage": 1,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Agriculture",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 8
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Artificial intelligence",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 3,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Asia Pacific",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 5
+    },
+    {
+      "coverage": 5,
+      "missingByline": 13,
+      "missingCategories": 12,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Business",
+      "rates": {
+        "byline": 0.6842105263157895,
+        "categories": 0.631578947368421,
+        "description": 0
+      },
+      "representative": 14,
+      "total": 19
+    },
+    {
+      "coverage": 12,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "Climate",
+      "rates": {
+        "byline": 0,
+        "categories": 0.058823529411764705,
+        "description": 0.058823529411764705
+      },
+      "representative": 5,
+      "total": 17
+    },
+    {
+      "coverage": 34,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 50,
+      "missingPublicationTime": 0,
+      "name": "Columns",
+      "rates": {
+        "byline": 0.26153846153846155,
+        "categories": 0,
+        "description": 0.7692307692307693
+      },
+      "representative": 31,
+      "total": 65
+    },
+    {
+      "coverage": 2,
+      "missingByline": 9,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "Cover story",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.1111111111111111
+      },
+      "representative": 7,
+      "total": 9
+    },
+    {
+      "coverage": 24,
+      "missingByline": 37,
+      "missingCategories": 7,
+      "missingDescription": 37,
+      "missingPublicationTime": 0,
+      "name": "Economy",
+      "rates": {
+        "byline": 0.5138888888888888,
+        "categories": 0.09722222222222222,
+        "description": 0.5138888888888888
+      },
+      "representative": 48,
+      "total": 72
+    },
+    {
+      "coverage": 32,
+      "missingByline": 68,
+      "missingCategories": 0,
+      "missingDescription": 46,
+      "missingPublicationTime": 0,
+      "name": "Editorial",
+      "rates": {
+        "byline": 0.918918918918919,
+        "categories": 0,
+        "description": 0.6216216216216216
+      },
+      "representative": 42,
+      "total": 74
+    },
+    {
+      "coverage": 15,
+      "missingByline": 18,
+      "missingCategories": 4,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "Environment",
+      "rates": {
+        "byline": 0.6666666666666666,
+        "categories": 0.14814814814814814,
+        "description": 0.037037037037037035
+      },
+      "representative": 12,
+      "total": 27
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Europe",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 2
+    },
+    {
+      "coverage": 24,
+      "missingByline": 8,
+      "missingCategories": 0,
+      "missingDescription": 48,
+      "missingPublicationTime": 0,
+      "name": "Explained",
+      "rates": {
+        "byline": 0.16326530612244897,
+        "categories": 0,
+        "description": 0.9795918367346939
+      },
+      "representative": 25,
+      "total": 49
+    },
+    {
+      "coverage": 23,
+      "missingByline": 1,
+      "missingCategories": 0,
+      "missingDescription": 47,
+      "missingPublicationTime": 0,
+      "name": "Explained Economics",
+      "rates": {
+        "byline": 0.02127659574468085,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 47
+    },
+    {
+      "coverage": 24,
+      "missingByline": 12,
+      "missingCategories": 0,
+      "missingDescription": 48,
+      "missingPublicationTime": 0,
+      "name": "Explained Global",
+      "rates": {
+        "byline": 0.25,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 48
+    },
+    {
+      "coverage": 20,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 44,
+      "missingPublicationTime": 0,
+      "name": "Explained Sci-Tech",
+      "rates": {
+        "byline": 0.1590909090909091,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 44
+    },
+    {
+      "coverage": 14,
+      "missingByline": 37,
+      "missingCategories": 37,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Finance & economics",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 23,
+      "total": 37
+    },
+    {
+      "coverage": 8,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 18,
+      "missingPublicationTime": 0,
+      "name": "Governance",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 10,
+      "total": 18
+    },
+    {
+      "coverage": 27,
+      "missingByline": 39,
+      "missingCategories": 10,
+      "missingDescription": 42,
+      "missingPublicationTime": 0,
+      "name": "India",
+      "rates": {
+        "byline": 0.5064935064935064,
+        "categories": 0.12987012987012986,
+        "description": 0.5454545454545454
+      },
+      "representative": 50,
+      "total": 77
+    },
+    {
+      "coverage": 1,
+      "missingByline": 3,
+      "missingCategories": 3,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "International",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 7,
+      "missingByline": 6,
+      "missingCategories": 18,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Latest",
+      "rates": {
+        "byline": 0.25,
+        "categories": 0.75,
+        "description": 0
+      },
+      "representative": 17,
+      "total": 24
+    },
+    {
+      "coverage": 7,
+      "missingByline": 14,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Lead analysis",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 7,
+      "total": 14
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 2,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Markets",
+      "rates": {
+        "byline": 0,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 7,
+      "missingByline": 0,
+      "missingCategories": 1,
+      "missingDescription": 2,
+      "missingPublicationTime": 0,
+      "name": "Middle East",
+      "rates": {
+        "byline": 0,
+        "categories": 0.07692307692307693,
+        "description": 0.15384615384615385
+      },
+      "representative": 6,
+      "total": 13
+    },
+    {
+      "coverage": 9,
+      "missingByline": 27,
+      "missingCategories": 0,
+      "missingDescription": 6,
+      "missingPublicationTime": 0,
+      "name": "National",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.2222222222222222
+      },
+      "representative": 18,
+      "total": 27
+    },
+    {
+      "coverage": 6,
+      "missingByline": 1,
+      "missingCategories": 22,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Newsletter",
+      "rates": {
+        "byline": 0.045454545454545456,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 16,
+      "total": 22
+    },
+    {
+      "coverage": 1,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Northeast India",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 3
+    },
+    {
+      "coverage": 10,
+      "missingByline": 17,
+      "missingCategories": 0,
+      "missingDescription": 1,
+      "missingPublicationTime": 0,
+      "name": "Op-ed",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.058823529411764705
+      },
+      "representative": 7,
+      "total": 17
+    },
+    {
+      "coverage": 12,
+      "missingByline": 23,
+      "missingCategories": 7,
+      "missingDescription": 3,
+      "missingPublicationTime": 0,
+      "name": "Opinion",
+      "rates": {
+        "byline": 1,
+        "categories": 0.30434782608695654,
+        "description": 0.13043478260869565
+      },
+      "representative": 11,
+      "total": 23
+    },
+    {
+      "coverage": 2,
+      "missingByline": 6,
+      "missingCategories": 6,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Politics",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 4,
+      "total": 6
+    },
+    {
+      "coverage": 0,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Russia–Ukraine war",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 0
+      },
+      "representative": 2,
+      "total": 2
+    },
+    {
+      "coverage": 26,
+      "missingByline": 34,
+      "missingCategories": 13,
+      "missingDescription": 5,
+      "missingPublicationTime": 0,
+      "name": "Science",
+      "rates": {
+        "byline": 0.6415094339622641,
+        "categories": 0.24528301886792453,
+        "description": 0.09433962264150944
+      },
+      "representative": 27,
+      "total": 53
+    },
+    {
+      "coverage": 5,
+      "missingByline": 10,
+      "missingCategories": 10,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Science & environment",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 5,
+      "total": 10
+    },
+    {
+      "coverage": 4,
+      "missingByline": 27,
+      "missingCategories": 27,
+      "missingDescription": 17,
+      "missingPublicationTime": 0,
+      "name": "The world this week",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0.6296296296296297
+      },
+      "representative": 23,
+      "total": 27
+    },
+    {
+      "coverage": 31,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 55,
+      "missingPublicationTime": 0,
+      "name": "UPSC Current Affairs",
+      "rates": {
+        "byline": 0.12727272727272726,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 55
+    },
+    {
+      "coverage": 28,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 52,
+      "missingPublicationTime": 0,
+      "name": "UPSC Essentials",
+      "rates": {
+        "byline": 0.1346153846153846,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 24,
+      "total": 52
+    },
+    {
+      "coverage": 0,
+      "missingByline": 1,
+      "missingCategories": 1,
+      "missingDescription": 0,
+      "missingPublicationTime": 0,
+      "name": "Uttar Pradesh",
+      "rates": {
+        "byline": 1,
+        "categories": 1,
+        "description": 0
+      },
+      "representative": 1,
+      "total": 1
+    },
+    {
+      "coverage": 49,
+      "missingByline": 67,
+      "missingCategories": 22,
+      "missingDescription": 37,
+      "missingPublicationTime": 0,
+      "name": "World",
+      "rates": {
+        "byline": 0.5403225806451613,
+        "categories": 0.1774193548387097,
+        "description": 0.29838709677419356
+      },
+      "representative": 75,
+      "total": 124
+    }
+  ],
+  "contentTypeAndTopicProxies": [
+    {
+      "coverage": 80,
+      "missingByline": 89,
+      "missingCategories": 50,
+      "missingDescription": 94,
+      "missingPublicationTime": 0,
+      "name": "economy",
+      "rates": {
+        "byline": 0.46596858638743455,
+        "categories": 0.2617801047120419,
+        "description": 0.49214659685863876
+      },
+      "representative": 111,
+      "total": 191
+    },
+    {
+      "coverage": 40,
+      "missingByline": 30,
+      "missingCategories": 16,
+      "missingDescription": 8,
+      "missingPublicationTime": 0,
+      "name": "environment",
+      "rates": {
+        "byline": 0.46153846153846156,
+        "categories": 0.24615384615384617,
+        "description": 0.12307692307692308
+      },
+      "representative": 25,
+      "total": 65
+    },
+    {
+      "coverage": 56,
+      "missingByline": 41,
+      "missingCategories": 26,
+      "missingDescription": 45,
+      "missingPublicationTime": 0,
+      "name": "foreign_domestic_terms",
+      "rates": {
+        "byline": 0.38317757009345793,
+        "categories": 0.24299065420560748,
+        "description": 0.4205607476635514
+      },
+      "representative": 51,
+      "total": 107
+    },
+    {
+      "coverage": 80,
+      "missingByline": 24,
+      "missingCategories": 0,
+      "missingDescription": 165,
+      "missingPublicationTime": 0,
+      "name": "ie_explained",
+      "rates": {
+        "byline": 0.14545454545454545,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 85,
+      "total": 165
+    },
+    {
+      "coverage": 48,
+      "missingByline": 48,
+      "missingCategories": 0,
+      "missingDescription": 96,
+      "missingPublicationTime": 0,
+      "name": "ie_opinion",
+      "rates": {
+        "byline": 0.5,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 48,
+      "total": 96
+    },
+    {
+      "coverage": 35,
+      "missingByline": 7,
+      "missingCategories": 0,
+      "missingDescription": 64,
+      "missingPublicationTime": 0,
+      "name": "ie_upsc",
+      "rates": {
+        "byline": 0.109375,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 29,
+      "total": 64
+    },
+    {
+      "coverage": 53,
+      "missingByline": 36,
+      "missingCategories": 10,
+      "missingDescription": 46,
+      "missingPublicationTime": 0,
+      "name": "institution_terms",
+      "rates": {
+        "byline": 0.3564356435643564,
+        "categories": 0.09900990099009901,
+        "description": 0.45544554455445546
+      },
+      "representative": 48,
+      "total": 101
+    },
+    {
+      "coverage": 61,
+      "missingByline": 53,
+      "missingCategories": 22,
+      "missingDescription": 41,
+      "missingPublicationTime": 0,
+      "name": "ir_terms",
+      "rates": {
+        "byline": 0.4732142857142857,
+        "categories": 0.19642857142857142,
+        "description": 0.36607142857142855
+      },
+      "representative": 51,
+      "total": 112
+    },
+    {
+      "coverage": 224,
+      "missingByline": 143,
+      "missingCategories": 35,
+      "missingDescription": 494,
+      "missingPublicationTime": 0,
+      "name": "missing_description",
+      "rates": {
+        "byline": 0.2894736842105263,
+        "categories": 0.0708502024291498,
+        "description": 1
+      },
+      "representative": 270,
+      "total": 494
+    },
+    {
+      "coverage": 43,
+      "missingByline": 33,
+      "missingCategories": 18,
+      "missingDescription": 31,
+      "missingPublicationTime": 0,
+      "name": "party_terms",
+      "rates": {
+        "byline": 0.42857142857142855,
+        "categories": 0.23376623376623376,
+        "description": 0.4025974025974026
+      },
+      "representative": 34,
+      "total": 77
+    },
+    {
+      "coverage": 143,
+      "missingByline": 102,
+      "missingCategories": 51,
+      "missingDescription": 101,
+      "missingPublicationTime": 0,
+      "name": "recurring_metadata",
+      "rates": {
+        "byline": 0.4015748031496063,
+        "categories": 0.20078740157480315,
+        "description": 0.39763779527559057
+      },
+      "representative": 111,
+      "total": 254
+    },
+    {
+      "coverage": 7,
+      "missingByline": 0,
+      "missingCategories": 0,
+      "missingDescription": 8,
+      "missingPublicationTime": 0,
+      "name": "requested_authors",
+      "rates": {
+        "byline": 0,
+        "categories": 0,
+        "description": 1
+      },
+      "representative": 1,
+      "total": 8
+    },
+    {
+      "coverage": 54,
+      "missingByline": 55,
+      "missingCategories": 25,
+      "missingDescription": 50,
+      "missingPublicationTime": 0,
+      "name": "science",
+      "rates": {
+        "byline": 0.4824561403508772,
+        "categories": 0.21929824561403508,
+        "description": 0.43859649122807015
+      },
+      "representative": 60,
+      "total": 114
+    },
+    {
+      "coverage": 46,
+      "missingByline": 22,
+      "missingCategories": 11,
+      "missingDescription": 26,
+      "missingPublicationTime": 0,
+      "name": "security_terms",
+      "rates": {
+        "byline": 0.3142857142857143,
+        "categories": 0.15714285714285714,
+        "description": 0.37142857142857144
+      },
+      "representative": 24,
+      "total": 70
+    },
+    {
+      "coverage": 368,
+      "missingByline": 456,
+      "missingCategories": 197,
+      "missingDescription": 427,
+      "missingPublicationTime": 0,
+      "name": "single_source",
+      "rates": {
+        "byline": 0.504424778761062,
+        "categories": 0.2179203539823009,
+        "description": 0.4723451327433628
+      },
+      "representative": 536,
+      "total": 904
+    },
+    {
+      "coverage": 35,
+      "missingByline": 65,
+      "missingCategories": 0,
+      "missingDescription": 3,
+      "missingPublicationTime": 0,
+      "name": "th_opinion",
+      "rates": {
+        "byline": 1,
+        "categories": 0,
+        "description": 0.046153846153846156
+      },
+      "representative": 30,
+      "total": 65
+    }
+  ],
+  "authors": [
+    {
+      "authorId": "author:pratap-bhanu-mehta",
+      "observed": 3,
+      "sampled": [
+        {
+          "bylines": [
+            {
+              "name": "Pratap Bhanu Mehta",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/diplomacy-and-the-illusion-of-global-governance-10889207/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "Pratap Bhanu Mehta",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/election-commission-supreme-court-independent-institutions-sir-10900910/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "Pratap Bhanu Mehta",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/pratap-bhanu-mehta-writes-graham-bill-is-america-confusing-its-power-with-virtue-yet-again-10884290/"
+        }
+      ]
+    },
+    {
+      "authorId": "author:c-raja-mohan",
+      "observed": 5,
+      "sampled": [
+        {
+          "bylines": [
+            {
+              "name": "C. Raja Mohan",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:0c04c004cd3726044b588bf0b5bb8481b172d9c6173d05cfe09ea105149d984c",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/c-raja-mohan-in-iran-war-us-midterm-elections-are-the-new-front-10908850/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "C. Raja Mohan",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:2a7e4b2205db5a3c1e56f4f7ea539bd41971bb34b839ce02d1aa110016df9771",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/c-raja-mohan-ai-is-now-a-great-power-game-china-xi-trump-10888983/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "C. Raja Mohan",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:51c34183f3de4b44e94dcaba47db0f47c49c477b2ef7adb3c282a562b7c305fb",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/explained/explained-global/us-iran-mou-middle-east-geopolitics-10741229/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "C. Raja Mohan",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+          "partition": "development",
+          "url": "https://indianexpress.com/article/opinion/columns/c-raja-mohan-india-brics-us-russia-china-modi-xi-trump-10878833/"
+        },
+        {
+          "bylines": [
+            {
+              "name": "C. Raja Mohan",
+              "provenance": "rss:dc:creator"
+            }
+          ],
+          "descriptionPresent": false,
+          "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+          "partition": "validation",
+          "url": "https://indianexpress.com/article/opinion/columns/c-raja-mohan-1945-world-war-us-china-taiwan-japan-india-asia-10898990/"
+        }
+      ]
+    }
+  ],
+  "temporal": {
+    "candidateEquivalentGroups": 20,
+    "articlesInCandidateEquivalentGroups": 64,
+    "humanConfirmedEquivalentDevelopmentArticles": null,
+    "actualMultiDayCaptureSequences": 0,
+    "retrospectiveMultiPublicationDayThemeCandidates": 10,
+    "potentialDistinctAnalysisArticles": 326,
+    "humanConfirmedDistinctAnalysis": null,
+    "semanticSufficiency": {
+      "distinctAnalysis": null,
+      "equivalentRepeat": null,
+      "materialNewDevelopment": null,
+      "status": "awaiting_human_judgments; field availability alone cannot establish a fundamental semantic limit"
+    }
+  },
+  "leakage": {
+    "crossPartitionConstraintLeaks": 0,
+    "groups": 712,
+    "headlineOverlapEdges": 55,
+    "holdout": "none; prospective final holdout remains future and sealed",
+    "largestGroup": 236,
+    "lexicalLinks": 0,
+    "limitations": [
+      "Conservative metadata constraints can overgroup unrelated developments.",
+      "Unavailable metadata can hide semantic equivalence.",
+      "No independent human family review has occurred.",
+      "One capture day and archival backfill do not support temporal novelty quality claims."
+    ],
+    "method": "A1 trigram >=0.8; normalized exact titles including short titles; conservative >=3 significant headline tokens with overlap/min >=0.6; explicit running-theme constraints across capture dates",
+    "multiArticleGroups": 13,
+    "partitionHash": "675aa18a86e478d6a63b98f530edc326ee80336cd9091e67ef884c92e91de5ae",
+    "semanticAudit": "awaiting_primary_human_family_audit; lexical constraints cannot certify semantic separation",
+    "sharedConstraints": 69,
+    "splitStatus": "frozen_mechanical_bootstrap_split; semantic certification pending human family audit before tuning/evaluation",
+    "urlRevisionLeaks": 0,
+    "version": "tars-bootstrap-leakage/v1"
+  },
+  "baselineDecisionCounts": {
+    "accepted": 326,
+    "deferred": 0,
+    "rejected": 674
+  },
+  "versions": {
+    "authorRegistryHash": "f38404c3a4c562aad68baf17641e83b12821d14144ee72387f683bee294998e5",
+    "authorRegistryVersion": "tars-curated-authors/1",
+    "baseCommit": "7b309a418e859a2f66b11b12dbf06d49759afd47",
+    "branch": "codex/validator-v3-a2a",
+    "captureManifestHash": "e6220c3b4943eb2a3e383b0af97c60df3aed04a9877b686311a3bc0537819955",
+    "clock": "2026-10-07T13:40:55.600Z",
+    "editorialPolicyHash": "f96e893723ff428da81785b6cb5205a2aba3e377538c5a1640146bb36ce22882",
+    "files": [
+      {
+        "path": "tools/news/evaluation/JOB_B_EVIDENCE.json",
+        "sha256": "42e6f62956cc3d864ace43d49d6e570905e50e48d0e0fea54590ca94c4ce182f"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap-browser-check.mjs",
+        "sha256": "273e79c90e3de40711300557816d8141247d703b0735bd741a9a25920d1f6ae7"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap-capture.ts",
+        "sha256": "f84cd773db30c436147276499c80c664fbd0a49213815c1beaf11ff0ef65d0cc"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap-cli.ts",
+        "sha256": "8d381d2236b03c6209b07ef39d43644a25825d2fa123499b9ddc5399754c52e4"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap-review.ts",
+        "sha256": "4fd86171f85cf7ea73ffb245ca342bfcfa6f6fdb653f5cc088a10e4daf3b68a5"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap.test.ts",
+        "sha256": "e17cabce92a8705c913c8835139070616f65c8909c5184b599a7558ab73b9362"
+      },
+      {
+        "path": "tools/news/evaluation/bootstrap.ts",
+        "sha256": "9a92d6ed1a052f1d64e6b11a338ecbbdc0d59dd8260881d093296ebb43ec8273"
+      },
+      {
+        "path": "tools/news/evaluation/cli.ts",
+        "sha256": "98e24f720003f1e02efdd85e0b1c4b364bc829e522c2982e19e9ce2d34d01a99"
+      },
+      {
+        "path": "tools/news/evaluation/collect.ts",
+        "sha256": "1ab1bfbb1f75a90ebf6d046cac53810c21667ae3e50bf0e31a8cf3892baa8ab1"
+      },
+      {
+        "path": "tools/news/evaluation/contracts.ts",
+        "sha256": "f329e871317dd66b37b7e91ae96dfc652f748423bccf3a0bf0b76afaff3da952"
+      },
+      {
+        "path": "tools/news/evaluation/core.ts",
+        "sha256": "5ca9dd7a29530b65467a3e604cf4f71a9d9354947de8060d5a04759aecf8a0d7"
+      },
+      {
+        "path": "tools/news/evaluation/discovery.ts",
+        "sha256": "d24afa1b0582fdba2cbc3700fcd7f532ac9217b86d2197d8550ca09c4b5f7138"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-judgment-schema.json",
+        "sha256": "d9448e55af8579e3d33c6575e9d2ff79076b052627b7ded8c418a13114647323"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-judgments.ts",
+        "sha256": "9978eb7e4a669b95779fc87b3fa87189f5337889d307d1586e436e0552741444"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-metrics.ts",
+        "sha256": "1968cb3ee917d0dac27a892ecebd8c7161fc4b05ec3a5d1123bef54d619fa1bf"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-output-schema.json",
+        "sha256": "8c149ac40f8d55da3e498b6159ab2f1bb0a598223fe7596184d11c3fe9ff20f4"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-policy.ts",
+        "sha256": "04c483744d44676b65fe830c318f31ee8cc2a247232e9b309c21fd4578ebb012"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-replay.ts",
+        "sha256": "19b448c26c6b4045ac95146066eb9f44e69586dd0be8a420ad6f0715e04666c7"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-schema.ts",
+        "sha256": "ed70a8adca37e94478bbaaa77a520ebadb18a3dda4f2f6f6da3b8ef21db57183"
+      },
+      {
+        "path": "tools/news/evaluation/editorial-study.ts",
+        "sha256": "032e0927f003cdc7f8144629fda362d047747168919ce18e1cfa175e8c372282"
+      },
+      {
+        "path": "tools/news/evaluation/editorial.test.ts",
+        "sha256": "8a6a7d9adc105cc927ca11e03ffa028b5beedf866fec811079c2b4ab5b48be68"
+      },
+      {
+        "path": "tools/news/evaluation/evaluate.ts",
+        "sha256": "285d0522ce36bbc57b542997fc5be75947406217c3704518cec118739bb41914"
+      },
+      {
+        "path": "tools/news/evaluation/evaluation.test.ts",
+        "sha256": "b1a4337a8700077bfa7cee3d429b658eb68c87aac6205a197c5a2340a419c30b"
+      },
+      {
+        "path": "tools/news/evaluation/frozen-v2.ts",
+        "sha256": "5428d3d59c148d3b8657c17c9dca0f669aec10feb940c5a9995fd87c7ec31a3e"
+      },
+      {
+        "path": "tools/news/evaluation/gates.proposed.json",
+        "sha256": "f449f1708061d4cf817e78a321fc5b59fe125e501d5a9cdae7e637c2d25ed32d"
+      },
+      {
+        "path": "tools/news/evaluation/judgment-schema.json",
+        "sha256": "f82af073344d44e42d53308e051682003b8f1342f107da79612399cc62fa2a28"
+      },
+      {
+        "path": "tools/news/evaluation/judgments.ts",
+        "sha256": "ce5bc63476f487987e0021ae648b14329a45b8b8f45dbe07fdaaf40a006942f4"
+      },
+      {
+        "path": "tools/news/evaluation/metrics.ts",
+        "sha256": "b335c022c15844f99045caa133fb93fa0904536b4f7eab68d3353437f9a21dd0"
+      },
+      {
+        "path": "tools/news/evaluation/owner-exemplars.ts",
+        "sha256": "ff6c85e1278e27e0f20560810e432143a68c2a947c722179716264ce6757648e"
+      },
+      {
+        "path": "tools/news/evaluation/raw-schema.json",
+        "sha256": "55bc612c1939fa81513dd3caa26cc0f9e2a48f94b548aca96ce28e5076a25569"
+      },
+      {
+        "path": "tools/news/evaluation/replay.ts",
+        "sha256": "911a68c3c1a1393d6459891837971e4e697bf5491fe8d28bb62784fbd3de29dd"
+      },
+      {
+        "path": "tools/news/evaluation/report.ts",
+        "sha256": "3aedb979af80a997385921bb110845f5f27d96cb857c46abfc2b128d9c7bdd28"
+      },
+      {
+        "path": "tools/news/evaluation/reviewer-ui.ts",
+        "sha256": "74edfd79ad774b7389d27cf7bcc116f21da08a8615e8e1b4d503a93da0f4bad9"
+      },
+      {
+        "path": "tools/news/evaluation/rubric.md",
+        "sha256": "1cad71aaa2545203b666075384135f8589d56d694c89c07e548e820996559dae"
+      },
+      {
+        "path": "tools/news/evaluation/sample.ts",
+        "sha256": "77a4a399c1403d2e46642426ad0e4f52645ca458175d0f314f163527f0645b71"
+      },
+      {
+        "path": "tools/news/evaluation/schema.json",
+        "sha256": "5c258a144d83819ff81ce3f913915e6cbc739a3b74d153a1bd5fade1320edb27"
+      },
+      {
+        "path": "tools/news/evaluation/source-audit-cli.ts",
+        "sha256": "9b5e05d0ae56c2d6b0382c9fc7c5291d431baea67c4e3e9c97940a0eeb0b242c"
+      },
+      {
+        "path": "tools/news/evaluation/source-audit.test.ts",
+        "sha256": "af1da409dfda9b354d447be13a485d4733507d328142bde7e4216b1c874807ed"
+      },
+      {
+        "path": "tools/news/evaluation/source-audit.ts",
+        "sha256": "acfe1ab8a25f850d122f06a32dd2428eaaadd854f34246daab9b6456d93cc8b2"
+      },
+      {
+        "path": "tools/news/evaluation/split.ts",
+        "sha256": "4218680f6ef44a9411929fa19312ef999c6c0243c5ee77d25565a5aab2e1f9a0"
+      },
+      {
+        "path": "tools/news/evaluation/temporal-package.ts",
+        "sha256": "42e5a32c4ca698ce699d0f9703b70c1fbbd9ce32642a44164fe03d224df39e66"
+      },
+      {
+        "path": "tools/news/evaluation/validate.ts",
+        "sha256": "2ae09389b5007ac6eb32fadbb7a48bd7fba8a6706985935753eb972a4ca9b93d"
+      },
+      {
+        "path": "tools/news/evaluation/xml.ts",
+        "sha256": "ba27ed565e762fe388b12d646312f62756fd1441201ecc7a3b38c3cf6fd72590"
+      },
+      {
+        "path": "package.json",
+        "sha256": "bb46810aefd70184022f2f37e0e2dc3d6fc6408a2bede8a591e5514ac0acfae0"
+      }
+    ],
+    "frozenV2": {
+      "codeHash": "8d9c7067c93168bf22dd3d20014a65400afca1c9266495bd4effabc9979d2bac",
+      "indexHash": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348",
+      "policyHash": "2a6da6ad48be340f73863f6cd358132cf6b852f8dde768d07c6ab7694a9c4a56",
+      "policyId": "existing-v2/job-b",
+      "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21"
+    },
+    "ownerExemplarSourceHash": "c61a112f54243d7affb9e106d05d7d7f83ea31353a604d4d5124f6847db32d2e",
+    "parserVersion": "tars-eval-metadata/3",
+    "partitionHash": "675aa18a86e478d6a63b98f530edc326ee80336cd9091e67ef884c92e91de5ae",
+    "preregistrationHash": "6eae9672f4a6e5a6258ffe357451e3a9f8c121f90c3a7e613b0d56ba1c0d66be",
+    "qualityStatus": "awaiting_adjudication",
+    "registryGeneration": "rss-de1aebaa",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "samplingHash": "5c29b37d33f659ae60f78464b7361969e49084b3613eb747ef47fe268650ce8c",
+    "seed": "tars-upsc-a2a-2026-10-07/1"
+  },
+  "captureManifest": {
+    "archiveEvidenceHash": "42e6f62956cc3d864ace43d49d6e570905e50e48d0e0fea54590ca94c4ce182f",
+    "clock": "2026-10-07T13:40:55.600Z",
+    "files": [
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:1",
+        "clock": "2026-10-07T12:56:54.560Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-1.json",
+        "sha256": "60a1642c0158a6f83d05a20c430d80b16a35d92635647bba1934201a3e95d83c"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:10",
+        "clock": "2026-10-07T12:57:12.878Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-10.json",
+        "sha256": "12f4f07a1353653c4b1e2fba09afa075e9b2e2aaca43eb391a7ee997fca320db"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+        "clock": "2026-10-07T12:57:13.339Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-11.json",
+        "sha256": "917fba38efe8fe252d06d5dc4bc0eccce265ba912657403d6403a0f4d13d11ca"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:12",
+        "clock": "2026-10-07T12:57:13.817Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-12.json",
+        "sha256": "c741a0219a5e7a1e9af93f37e5f2eeb812e85294dde249b2962b04184cc571ad"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:13",
+        "clock": "2026-10-07T12:57:14.339Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-13.json",
+        "sha256": "4ec84b5b5c870849f16dd7df6ec06432a15f42af5301113264729726e3ca23de"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:2",
+        "clock": "2026-10-07T12:56:56.409Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-2.json",
+        "sha256": "8a888a115f03c12aab27cbbddeffcd124bf81e6b83552ba4658509c6fe81e6cf"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:3",
+        "clock": "2026-10-07T12:57:04.626Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-3.json",
+        "sha256": "85d89c2d4baf8f5869104b937fa19ba3a3f3ec64be62f1e4ff131ec9a2e77076"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+        "clock": "2026-10-07T12:57:06.286Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-4.json",
+        "sha256": "c0f98647e788da467576db4f2d06430b6d0818641fbd09377d83e5031165779d"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:5",
+        "clock": "2026-10-07T12:57:08.192Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-5.json",
+        "sha256": "2ccc330b6ea2892d306770c8eb5d7ba67243b625da3cbcee607014339275ff4b"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:6",
+        "clock": "2026-10-07T12:57:09.722Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-6.json",
+        "sha256": "ce1bdadf5c1bb70645b024d77588677fe598d2aed2b1d58a963f0b6c37dd4414"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:7",
+        "clock": "2026-10-07T12:57:11.709Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-7.json",
+        "sha256": "d09a42e05db117e5aad979a1b7a578085050316649c853165d4f06882049947c"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:8",
+        "clock": "2026-10-07T12:57:12.042Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-8.json",
+        "sha256": "604c990055d8978d0262e8daa75681a58262042f71853c5698dda1739b602f74"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:9",
+        "clock": "2026-10-07T12:57:12.421Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-1-9.json",
+        "sha256": "b800921225bb397eba1036b064cff4570404476f0e41dd85c2d741f8d4861394"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:1",
+        "clock": "2026-10-07T12:57:14.699Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-1.json",
+        "sha256": "f8af2bdd92cf41185dd570cdc55196a374e278444c75e99527810326c6550872"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:10",
+        "clock": "2026-10-07T12:57:21.075Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-10.json",
+        "sha256": "ef8cee94a5798f8775db636a7c11ac0b7d12cf8af2d441580d67a87ba761d665"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+        "clock": "2026-10-07T12:57:21.389Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-11.json",
+        "sha256": "53840945313d421bd5f22846697eb8c7070a1841649467ad9a787cd1bb15563b"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:12",
+        "clock": "2026-10-07T12:57:21.683Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-12.json",
+        "sha256": "a6a214eb45661babc12cb01a857805174dbe34b0d23dda86e4cd7f6542c0e1d1"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:13",
+        "clock": "2026-10-07T12:57:22.210Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-13.json",
+        "sha256": "467f48ece4972182e8c776b0b28d9af8aaa96956b3cb07ff3ae900da6bfe7a27"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:2",
+        "clock": "2026-10-07T12:57:16.047Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-2.json",
+        "sha256": "65511f8b12d2c535fc39852232ef0c59cd2cc0de0d79fa7715fe0d9315705c02"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:3",
+        "clock": "2026-10-07T12:57:17.701Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-3.json",
+        "sha256": "6e93ec88e62908be5d44d5ed019fd9ea181fe388535dd99ba6d08b0c75d9be0c"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+        "clock": "2026-10-07T12:57:18.722Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-4.json",
+        "sha256": "5438741312f92fba296258a9d5dd72559a7194c055c345b3ae30e45a7b6f6a0d"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:5",
+        "clock": "2026-10-07T12:57:19.184Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-5.json",
+        "sha256": "93e289a8c7977844d2119e0acd28b2719f1632a34b383effb24e870323b5c23b"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:6",
+        "clock": "2026-10-07T12:57:19.540Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-6.json",
+        "sha256": "9a500f5ecdc57ff1fffb5f2089bf5b5b749c43f8f4e6ba5a01b8d1312ad5c555"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:7",
+        "clock": "2026-10-07T12:57:20.085Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-7.json",
+        "sha256": "5316973cef039f5c339fb4f173ee45996f4581f61d1d07aaa2655137635d4c29"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:8",
+        "clock": "2026-10-07T12:57:20.356Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-8.json",
+        "sha256": "dcf91f2c0b98ab9083c07960df4dec7c95262e9d2e789f62475570ff8255dd8f"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:9",
+        "clock": "2026-10-07T12:57:20.780Z",
+        "origin": "verified_job_b_archive",
+        "path": "archive/raw-2-9.json",
+        "sha256": "69a8a6fa27632fc2955cc024c6b63de366d9f2663207e9da2aedd70de2336933"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:0",
+        "clock": "2026-10-07T13:40:39.491Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-0.json",
+        "sha256": "9418aa9dcdc08da3db3fde51cd71b7f28fe1f42728886c085786167068d683a3"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:1",
+        "clock": "2026-10-07T13:40:40.249Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-1.json",
+        "sha256": "3d259bc1aeb03d4536b92a6e82fd457811911998383a16ba8c1eee000960c51b"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:2",
+        "clock": "2026-10-07T13:40:41.312Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-2.json",
+        "sha256": "182a83c497fd06951d76f9ffa5cdb1f640617df250145d6a3b2eaa778da08c2c"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:3",
+        "clock": "2026-10-07T13:40:47.571Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-3.json",
+        "sha256": "89f1432d9fba14822d6c30fa83fbef18bc68793e2fe935809134e434b8dfac8c"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+        "clock": "2026-10-07T13:40:49.376Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-4.json",
+        "sha256": "8c1ca060a8ac94b636df8370d8a706f456e40551dc0c6901e2055c55814ac0c3"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:5",
+        "clock": "2026-10-07T13:40:50.127Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-5.json",
+        "sha256": "66067f0c2c6388ab76c853b3122d21fcc4142ae61e764a5b73488beab25e6126"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:6",
+        "clock": "2026-10-07T13:40:50.823Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-6.json",
+        "sha256": "39b9f2446bf0a7013dbe87de2096aa0d338a95cd3a9c6921eba8f35042c5c46d"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:7",
+        "clock": "2026-10-07T13:40:51.440Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-7.json",
+        "sha256": "3edf91969c77b071e8e972fe353021b7d8e6d4b449f32f908ac252d73d03db74"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:8",
+        "clock": "2026-10-07T13:40:51.906Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-8.json",
+        "sha256": "e1409e7f4e75799ca13f7a80aa27f0717cbdfc6f679e71a2082e12a8ca4d57fc"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:9",
+        "clock": "2026-10-07T13:40:52.508Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-9.json",
+        "sha256": "5d48912b217aa5adccd78d986c4abe7fbd48724c0ab0ed15889451e5acf8594e"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:10",
+        "clock": "2026-10-07T13:40:53.120Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-10.json",
+        "sha256": "9f8591601d4a983f1d3b81dfbf78a608821e20f80ae18398742a9ddfa745b25d"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+        "clock": "2026-10-07T13:40:53.569Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-11.json",
+        "sha256": "8436c3e69c4560879cdc981f16b510e40f2e83142877c821bc87441a00938971"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:12",
+        "clock": "2026-10-07T13:40:53.994Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-12.json",
+        "sha256": "37a07763bea2d859172e610e3f92a9a9b174e8970416d04a00ceb5a066bc8ce2"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:13",
+        "clock": "2026-10-07T13:40:54.650Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-13.json",
+        "sha256": "b64d0a3af1a3adc7fa37e4a53008c8ae9f949ba67dbfd480b8a59ca49aed9517"
+      },
+      {
+        "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:14",
+        "clock": "2026-10-07T13:40:55.532Z",
+        "origin": "a2a_live",
+        "path": "live/raw-1-14.json",
+        "sha256": "9ed5dcf547ec6a0716de0c0a4f464789142bab1c3386765f253f6dbde1ad8e91"
+      }
+    ],
+    "parserVersion": "tars-eval-metadata/3",
+    "planningDocuments": [
+      {
+        "path": "VALIDATOR_V3_SPEC.md",
+        "sha256": "2b87a8684d1cd89c18e37f146f9d2f0f3e77d0bf8ea0018ff31a031a81875e6c"
+      },
+      {
+        "path": "EVALUATION_SCHEMA.md",
+        "sha256": "7ab52caba607246d948e0dec9be1b78b2429299231930df1e0d91eb20df55d66"
+      },
+      {
+        "path": "WORK_PACKAGES.md",
+        "sha256": "c116c19682cf0d0c576653b6163f8c9776453784103419904584f6e564515820"
+      }
+    ],
+    "registryGeneration": "rss-de1aebaa",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "version": "tars-bootstrap-captures/v1"
+  },
+  "artifactInventory": {
+    "files": [
+      {
+        "path": "sampling-manifest.json",
+        "sha256": "828496b3eaca92c19f089cf5bb61db24f42a49f85d39a9ea7e8435ba3299fa04"
+      },
+      {
+        "path": "partitions.json",
+        "sha256": "300decc40e3acdf303acd35072a414f081f4d6c33eb97802b0ebab7ede3a4352"
+      },
+      {
+        "path": "observations.json",
+        "sha256": "76f957dac110f212e06b60aebb1335ef4ef556b3154235da0d42698a2fec396c"
+      },
+      {
+        "path": "corpus.json",
+        "sha256": "303f4fa0648201cf810ae2d789fad387d6e053bac6cd4f99c254c8e56ee9f1e6"
+      },
+      {
+        "path": "diagnostics.json",
+        "sha256": "9bc1435a928268d7f0394bc17ed8e55826aa1f581b16cca212a231cd63b05d85"
+      },
+      {
+        "path": "source-audit.json",
+        "sha256": "ce8eec3fa2e00adec25ca33b98e550900fbb12926005f48f9ab5bebafc15cb83"
+      },
+      {
+        "path": "metadata-sufficiency.json",
+        "sha256": "0028b1fb8080b9c1fd442c583d5345cab7263f64d8e69dbbcc5bde767b72c029"
+      },
+      {
+        "path": "leakage-report.json",
+        "sha256": "2e51a7409a1a5c9b26d96b8f1ccffd9e7b84dd77ca8f61c196914f8475cdfe0e"
+      },
+      {
+        "path": "leakage-constraints.json",
+        "sha256": "311f92cc5f7755b823773dbfce5e49f28ae8fa5598a8e91d5e068a676cad3a66"
+      },
+      {
+        "path": "frozen-v2/predictions.json",
+        "sha256": "454c79e8c7edfc097957be02ea345eb7ab3cbfbbcca7fb60fe564b44e61e4ac2"
+      },
+      {
+        "path": "editorial-metadata-sufficiency.json",
+        "sha256": "39dcfdb53fc85f2e8ac171d0fe50ff3fd2b92b7b7b055803a4da94036a658cc0"
+      },
+      {
+        "path": "editorial-evaluation-policy.json",
+        "sha256": "7ddb32c51dd47868d6851648b1b87aeebdd0ea2cd187fe40ae89c9bb80df99a2"
+      },
+      {
+        "path": "temporal-candidates.json",
+        "sha256": "89735c9a7d3c8917b965b39e81854e79116d66ad1ed25a8f0c27c6fe4498a54c"
+      },
+      {
+        "path": "editorial-judgment-templates.json",
+        "sha256": "db377817ba3652b67edaf3d2bf9cfa2161f43b33c740af1ea2ddac6030791b75"
+      },
+      {
+        "path": "owner-exemplars/corpus.json",
+        "sha256": "3c624bc90c43558950d608c57934a2fd3fba0c068abc662a287f7673c94ee98d"
+      },
+      {
+        "path": "owner-exemplars/source.md",
+        "sha256": "c61a112f54243d7affb9e106d05d7d7f83ea31353a604d4d5124f6847db32d2e"
+      },
+      {
+        "path": "owner-exemplar-diagnostics.json",
+        "sha256": "30dbb35222dbdcd69309b85da805f74906d7acbdbfe935c18a206a29f6d83861"
+      },
+      {
+        "path": "owner-exemplars/interpretation.md",
+        "sha256": "a853415fdd2cea65d59b2bb35c198c0feb695006d10c37e7ead3528cce64e4ad"
+      },
+      {
+        "path": "reviewer/editorial-judgments.json",
+        "sha256": "db377817ba3652b67edaf3d2bf9cfa2161f43b33c740af1ea2ddac6030791b75"
+      },
+      {
+        "path": "reviewer/annotations.json",
+        "sha256": "a08cb3e072cb2b95ca9398751e5838c607bb9fbadecc5d69448e466fb5adacfe"
+      },
+      {
+        "path": "reviewer/index.html",
+        "sha256": "304063a398dfaf53705e38250aa28177f4c3dd7bc017924b364459abf77e4cf4"
+      },
+      {
+        "path": "reviewer/rubric.md",
+        "sha256": "f918d0d4350ae7b0f29cd589d8a7ca51c5802584aa977b5fd4e21005250e894d"
+      },
+      {
+        "path": "adjudication-template.json",
+        "sha256": "f7e2fc998234642374b4e4e2e73d2bcc85332b58b495fa39cb1aa6dc09e55e7b"
+      },
+      {
+        "path": "family-audit-template.json",
+        "sha256": "6aa3bbe75a7f1021316daf170d9d32e0f7938e235456e8c3d5702f3364982b77"
+      },
+      {
+        "path": "workflow.md",
+        "sha256": "868944063276c102640a8765c858553814f1c5d93e87b0a785c2e89e69f0dc41"
+      },
+      {
+        "path": "versions.json",
+        "sha256": "004c7b930f9d0255ab3d5d6ec674d986fc4e13f3d21dcf05e7a88b9707538968"
+      },
+      {
+        "path": "verification.json",
+        "sha256": "ea9f768df0939d97e30d105c60fb46b2b7a8e0ee79b819c43d51cc20959a2bde"
+      }
+    ],
+    "note": "SHA-256 of UTF-8 file bytes; self excluded. Semantic digests separately identify manifest commitments.",
+    "version": "tars-bootstrap-artifacts/v1"
+  },
+  "additionalFileHashes": [
+    {
+      "path": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\package-owner-final\\artifact-hashes.json",
+      "sha256": "e82c5c1bbff8a6c0b433b4f4e118e14c21b52cf7ae5aae08fe1220cb87012f33"
+    },
+    {
+      "path": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\package-owner-final\\versions.json",
+      "sha256": "004c7b930f9d0255ab3d5d6ec674d986fc4e13f3d21dcf05e7a88b9707538968"
+    },
+    {
+      "path": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\capture-manifest.json",
+      "sha256": "e6220c3b4943eb2a3e383b0af97c60df3aed04a9877b686311a3bc0537819955"
+    }
+  ],
+  "verification": [
+    {
+      "command": "npm run test:evaluation",
+      "result": "30 passed",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\test-evaluation-owner.log",
+      "sha256": "273f7983a33d75464e99f1878f641cc1b3a66ea03b7bd6b74c02f9f92847a328"
+    },
+    {
+      "command": "npm run test:bootstrap",
+      "result": "18 passed",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\bootstrap-owner-final.log",
+      "sha256": "26e0e69cabaefff9a6e9f6a219220ff731661518d47ce99f4eda930ce90aee99"
+    },
+    {
+      "command": "npm run test:source-audit",
+      "result": "5 passed",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\source-audit-owner-final.log",
+      "sha256": "591d4fe65595af12f1c0cd67b7b10c5efb7929132977b89936827409f962482b"
+    },
+    {
+      "command": "npm run news:bootstrap -- verify ROOT package-owner-final",
+      "result": "passed: schema/corpus, deterministic resampling/permutation, split leakage, frozen-v2 replay, 27 artifact hashes and 44 versioned tooling files",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\verify-owner-final.log",
+      "sha256": "ac04a95b0f9be4eb16b58166ef5c1240afdf746121fecbe2fb622ccc0784edaa"
+    },
+    {
+      "command": "npm run typecheck",
+      "result": "passed",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\typecheck-owner-final.log",
+      "sha256": "d3be3763b2cda6f5cc927b93923044a350e4d6c929145960e551e8cc430dbbda"
+    },
+    {
+      "command": "npm run lint",
+      "result": "passed: 0 errors, 133 pre-existing warnings",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\lint-owner-final.log",
+      "sha256": "230df04857e250e7979b690bd252b33f0b2e67461966b4b68f3032f5a5e34ee3"
+    },
+    {
+      "command": "npm test",
+      "result": "604 passed in 41 files",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\root-test-owner-final.log",
+      "sha256": "74d5e4ad7a07c9eb296cec4c3957e4514841a36a813bb739e96617ba9a8a3271"
+    },
+    {
+      "command": "npm run test:pipeline",
+      "result": "39 passed, 6 skipped: canonical-pyq-v2-final.zip / CANONICAL_PYQ_PACKAGE unavailable",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\pipeline-owner-final.log",
+      "sha256": "e2a90782758c209adf6e6a3e93a87d7fc9fdf068d6e17a635508d3132c2a7c43"
+    },
+    {
+      "command": "npm run build",
+      "result": "passed; 165 precache entries, 8816.55 KiB",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\build-owner-final.log",
+      "sha256": "add116b4e01511c1d5b478f151158590de958a5d339687705e714382923a98d9"
+    },
+    {
+      "command": "offline annotation browser check",
+      "result": "26 checks, widths 375/1366; 0 network requests, 0 page errors, 0 substantive labels entered",
+      "log": "tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\browser-owner-final.log",
+      "sha256": "e207eb5dee6bf017996ff3b800ced2925db4ba61a120c03c708af16a7aa5c4e9"
+    }
+  ],
+  "changedFiles": [
+    "package.json",
+    "tools/news/evaluation/evaluate.ts",
+    "tools/news/evaluation/evaluation.test.ts",
+    "tools/news/evaluation/gates.proposed.json",
+    "tools/news/evaluation/report.ts",
+    "tools/news/evaluation/rubric.md",
+    "tools/news/evaluation/validate.ts",
+    "tools/news/evaluation/BOOTSTRAP.md",
+    "tools/news/evaluation/JOB_A2A_EVIDENCE.json",
+    "tools/news/evaluation/JOB_A2A_REPORT.md",
+    "tools/news/evaluation/bootstrap-browser-check.mjs",
+    "tools/news/evaluation/bootstrap-capture.ts",
+    "tools/news/evaluation/bootstrap-cli.ts",
+    "tools/news/evaluation/bootstrap-review.ts",
+    "tools/news/evaluation/bootstrap.test.ts",
+    "tools/news/evaluation/bootstrap.ts",
+    "tools/news/evaluation/editorial-judgment-schema.json",
+    "tools/news/evaluation/editorial-judgments.ts",
+    "tools/news/evaluation/editorial-metrics.ts",
+    "tools/news/evaluation/editorial-output-schema.json",
+    "tools/news/evaluation/editorial-policy.ts",
+    "tools/news/evaluation/editorial-replay.ts",
+    "tools/news/evaluation/editorial-schema.ts",
+    "tools/news/evaluation/editorial-study.ts",
+    "tools/news/evaluation/editorial.test.ts",
+    "tools/news/evaluation/frozen-v2.ts",
+    "tools/news/evaluation/owner-exemplars.ts",
+    "tools/news/evaluation/reviewer-ui.ts",
+    "tools/news/evaluation/temporal-package.ts"
+  ],
+  "gitDiffStat": "package.json                              |  5 +++-\n tools/news/evaluation/evaluate.ts         | 30 +++++++++++++---------\n tools/news/evaluation/evaluation.test.ts  |  4 +--\n tools/news/evaluation/gates.proposed.json | 41 +++++++++++++++++++++++--------\n tools/news/evaluation/report.ts           |  3 ++-\n tools/news/evaluation/rubric.md           | 15 +++++++++++\n tools/news/evaluation/validate.ts         | 20 ++++++++++++---\n 7 files changed, 88 insertions(+), 30 deletions(-)",
+  "gitStatusShort": "M package.json\n M tools/news/evaluation/evaluate.ts\n M tools/news/evaluation/evaluation.test.ts\n M tools/news/evaluation/gates.proposed.json\n M tools/news/evaluation/report.ts\n M tools/news/evaluation/rubric.md\n M tools/news/evaluation/validate.ts\n?? tools/news/evaluation/BOOTSTRAP.md\n?? tools/news/evaluation/JOB_A2A_EVIDENCE.json\n?? tools/news/evaluation/JOB_A2A_REPORT.md\n?? tools/news/evaluation/bootstrap-browser-check.mjs\n?? tools/news/evaluation/bootstrap-capture.ts\n?? tools/news/evaluation/bootstrap-cli.ts\n?? tools/news/evaluation/bootstrap-review.ts\n?? tools/news/evaluation/bootstrap.test.ts\n?? tools/news/evaluation/bootstrap.ts\n?? tools/news/evaluation/editorial-judgment-schema.json\n?? tools/news/evaluation/editorial-judgments.ts\n?? tools/news/evaluation/editorial-metrics.ts\n?? tools/news/evaluation/editorial-output-schema.json\n?? tools/news/evaluation/editorial-policy.ts\n?? tools/news/evaluation/editorial-replay.ts\n?? tools/news/evaluation/editorial-schema.ts\n?? tools/news/evaluation/editorial-study.ts\n?? tools/news/evaluation/editorial.test.ts\n?? tools/news/evaluation/frozen-v2.ts\n?? tools/news/evaluation/owner-exemplars.ts\n?? tools/news/evaluation/reviewer-ui.ts\n?? tools/news/evaluation/temporal-package.ts",
+  "goldClaim": null,
+  "holdoutCreatedOrInspected": false,
+  "productionStagesImplemented": [],
+  "limits": [
+    "No actual multi-day captures: publication backfill is retrospective only.",
+    "Semantic equivalence and metadata sufficiency await authentic human review.",
+    "Corpus is a mixed development bootstrap, not a complete daily candidate pool or untouched release holdout.",
+    "NASA parse failure, bounded-feed truncation and missing canonical ZIP remain explicit."
+  ],
+  "reviewEvents": [
+    "Automatic approval review rejected positive exemplars inside blind reviewer folder; safely retained outside reviewer/ only.",
+    "Optional source-audit command was initially not executed because approval review hit usage limit; after owner continuation its retry passed."
+  ]
+}

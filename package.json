@@ -33,7 +33,10 @@
     "atlas:soi": "node tools/atlas-build/import-soi-boundary.mjs",
     "test:source-intelligence": "vitest run src/current-affairs/validator-v3 tools/cloudflare/current-affairs.test.ts src/features/current-affairs/useFeeds.test.tsx",
     "test:source-audit": "node --test tools/news/evaluation/source-audit.test.ts",
-    "news:source-audit": "node tools/news/evaluation/source-audit-cli.ts"
+    "news:source-audit": "node tools/news/evaluation/source-audit-cli.ts",
+    "test:bootstrap": "node --test tools/news/evaluation/bootstrap.test.ts tools/news/evaluation/editorial.test.ts",
+    "news:bootstrap": "node tools/news/evaluation/bootstrap-cli.ts",
+    "news:bootstrap:capture": "node tools/news/evaluation/bootstrap-capture.ts"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",
