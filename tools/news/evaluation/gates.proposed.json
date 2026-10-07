@@ -1,0 +1,41 @@
+{
+  "version": "tars-news-proposed-gates/v1",
+  "status": "owner_approval_pending",
+  "exam": "UPSC",
+  "bootstrapMinimumWeeks": 0,
+  "releaseSupport": {
+    "naturalArticlesTarget": 4000,
+    "finalArticlesTarget": 1000,
+    "definitiveProtectedSlicePositiveMinimum": 50,
+    "protectedSlicePositiveTargets": {"editorialColumn": 100, "explained": 100, "science": 100, "security": 100, "mustRead": 150},
+    "partyPrimaryNegativeTarget": 200
+  },
+  "targets": {
+    "representativeArticlePrecision": 0.95,
+    "representativeArticleRecall": 0.90,
+    "mustReadAcceptanceRecall": 0.95,
+    "mustReadUniqueNeedRecall": 0.95,
+    "exactPrimaryAccuracy": 0.90,
+    "subjectMacroF1": 0.85,
+    "scienceSecurityCorrectPrimaryRecall": 0.85,
+    "protectedSliceAcceptanceRecall": 0.90,
+    "partyPrimaryFalsePositiveMaximum": 0.01,
+    "foreignDomesticFalsePositiveMaximum": 0.01,
+    "incidentalPartyGlobalKnowledgeRecall": 0.90,
+    "sameEventPairPrecision": 0.98,
+    "sameEventPairRecall": 0.90,
+    "unjustifiedRepeatExposureMaximum": 0.05,
+    "materialNoveltyRecall": 0.95,
+    "duplicateTopLevelExposureMaximum": 0.05,
+    "naturalComparablePublisherPreference": 0.95,
+    "precisionAt20_50_100": 0.95,
+    "protectedRecallDropVsQualityOnlyMaximum": 0.02
+  },
+  "notes": [
+    "Proposals, not achieved metrics or approved release gates; infrastructure never declares release pass.",
+    "No separate global_systemic numerical gate is invented; report its slice until targets are approved.",
+    "Global_systemic is allowed by the owner without a literal India mention.",
+    "Capacity, missing metadata, unresolved truth and small support remain explicit; do not waive misses.",
+    "Deterministic policy cases, critical cannot-links, materially inferior overrides and product boundaries require zero invariant failures."
+  ]
+}

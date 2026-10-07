@@ -1,0 +1,5 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tars.local/evaluation/raw-v1",
+  "$ref": "https://tars.local/evaluation/gold-v1#/$defs/capture"
+}

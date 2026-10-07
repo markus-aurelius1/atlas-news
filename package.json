@@ -23,6 +23,8 @@
     "news:probe": "node tools/news/probe.ts",
     "news:snapshot": "node tools/news/snapshot.ts",
     "news:audit": "node tools/news/audit.ts",
+    "news:evaluation": "node tools/news/evaluation/cli.ts",
+    "test:evaluation": "node --test tools/news/evaluation/evaluation.test.ts",
     "news:reader": "node tools/news/reader-probe.mjs",
     "news:relevance": "node tools/current-affairs/build-relevance.mjs",
     "test:browser": "node tools/browser/run.mjs",
