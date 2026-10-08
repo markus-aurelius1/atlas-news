@@ -1,0 +1,34 @@
+{
+  "version": "tars-calibration-artifacts/v1",
+  "files": [
+    {
+      "path": "calibration-manifest.json",
+      "sha256": "8c0768866185a7642f8605fa8e4b7695c9cfee92c1fe6e559ccff0afd33691e3"
+    },
+    {
+      "path": "calibration-manifest.sha256",
+      "sha256": "744394e47a085b8c8bc9162dae0c6b5e3b2078e4dc1230cf41fbe5f63d490f27"
+    },
+    {
+      "path": "reviewer/annotations.json",
+      "sha256": "19f7e263953be73a5f12a8677d627d1b4463b98cb65e1ad5c1c55d50b08af06e"
+    },
+    {
+      "path": "reviewer/index.html",
+      "sha256": "a095517f494dd48e515a5058162a610d0e83bc02985d6803b766f8008447fa24"
+    },
+    {
+      "path": "reviewer/README.md",
+      "sha256": "ebb2b6bcdd8fced357809e2fbf93eb5103759dd8816e8919c660a094cbb857dc"
+    },
+    {
+      "path": "reviewer/rubric.md",
+      "sha256": "f918d0d4350ae7b0f29cd589d8a7ca51c5802584aa977b5fd4e21005250e894d"
+    },
+    {
+      "path": "slice-coverage.md",
+      "sha256": "43154b7e041e0f6940cc35142630f2dbea71fe8b0331baeed73564b4ee7a1c61"
+    }
+  ],
+  "note": "Exact byte SHA-256; self excluded. No original input files rewritten."
+}
