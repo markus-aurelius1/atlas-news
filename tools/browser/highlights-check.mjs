@@ -134,7 +134,7 @@ try {
     await body.waitFor()
     const button = reader.getByRole('button', { name: 'Highlighter', exact: true })
     const rows = () => page.evaluate(() => new Promise((resolve, reject) => {
-      const request = indexedDB.open('tars-reader-highlights', 10)
+      const request = indexedDB.open('tars-reader-highlights')
       request.onerror = () => reject(request.error)
       request.onsuccess = () => {
         const db = request.result
@@ -250,7 +250,7 @@ try {
     await reader.getByRole('button', { name: 'Back to News', exact: true }).click()
     await reader.waitFor({ state: 'detached' })
     const size = await page.evaluate(async metadata => {
-      const request = indexedDB.open('tars-reader-highlights', 10)
+      const request = indexedDB.open('tars-reader-highlights')
       const db = await new Promise((resolve, reject) => { request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error) })
       const tx = db.transaction('records', 'readwrite')
       const now = Date.now()

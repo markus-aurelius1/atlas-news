@@ -134,7 +134,8 @@ try {
       const set=CSS.highlights.set.bind(CSS.highlights)
       CSS.highlights.set=(key,value)=>{if(value.size){const entry={key,at:performance.now()};timing.paint.push(entry);requestAnimationFrame(()=>entry.frame=performance.now())}return set(key,value)}
       const transaction=IDBDatabase.prototype.transaction
-      IDBDatabase.prototype.transaction=function(...args){const tx=transaction.apply(this,args);if(this.name==='tars-reader-highlights'&&args[1]==='readwrite'&&!window.profileBlocker){const entry={start:performance.now()};timing.transactions.push(entry);tx.addEventListener('complete',()=>entry.end=performance.now())}return tx}
+      // H3 has separate multi-store bookkeeping transactions. Measure H1's records-only durable save.
+      IDBDatabase.prototype.transaction=function(...args){const tx=transaction.apply(this,args);if(this.name==='tars-reader-highlights'&&args[1]==='readwrite'&&tx.objectStoreNames.length===1&&tx.objectStoreNames.contains('records')&&!window.profileBlocker){const entry={start:performance.now()};timing.transactions.push(entry);tx.addEventListener('complete',()=>entry.end=performance.now())}return tx}
     })
     await ctx.route('https://images.example.org/**',route=>route.fulfill({status:404}))
     await prepare(page,base,{route:'#/current-affairs'})

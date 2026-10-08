@@ -39,7 +39,7 @@ export default defineConfig({
     tailwindcss(),
     { name: 'current-affairs-gateway', configureServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) }, configurePreviewServer(server) { server.middlewares.use('/api/current-affairs', currentAffairs) } },
     { name: 'reader-gateway', configureServer(server) { server.middlewares.use('/api/article', article) }, configurePreviewServer(server) { server.middlewares.use('/api/article', article) } },
-    { name: 'sync-not-available', configureServer(server) { server.middlewares.use('/api/sync', noSync) }, configurePreviewServer(server) { server.middlewares.use('/api/sync', noSync) } },
+    { name: 'sync-not-available', configureServer(server) { server.middlewares.use('/api/sync', noSync); server.middlewares.use('/api/highlights-sync', noSync) }, configurePreviewServer(server) { server.middlewares.use('/api/sync', noSync); server.middlewares.use('/api/highlights-sync', noSync) } },
     { name: 'site-url', transformIndexHtml: (html) => html.replaceAll('%SITE_URL%', siteUrl) },
     {
       // The UI font is needed for the very first text: preload it, so nothing reflows when it arrives and the Atlas measures its names once.

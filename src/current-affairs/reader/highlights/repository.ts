@@ -1,14 +1,21 @@
 import Dexie, { liveQuery, type Table } from 'dexie'
 import { articleIdentity, parseHighlight, type HighlightArticle, type HighlightColor, type ReaderHighlight, type TextAnchor } from './model'
 import { resolveAnchor } from './anchors'
+import { authored, compareHighlights } from '@/sync/highlights-protocol'
 
 export const HIGHLIGHTS_DB = 'tars-reader-highlights'
-/** Separate local-only DB: lodestar v1/v2, feed cache, personal state and sync are untouched. */
+export interface HighlightSyncMeta { id: 'meta'; cursor: number; account?: string; lastSyncedAt?: number }
+export interface HighlightSyncRow { highlightId: string; value: string }
+/** Separate DB; v2 adds only private sync bookkeeping. Backups read records exclusively. */
 export class HighlightRepository extends Dexie {
   records!: Table<ReaderHighlight, string>
+  syncRows!: Table<HighlightSyncRow, string>
+  syncOutbox!: Table<HighlightSyncRow, string>
+  syncMeta!: Table<HighlightSyncMeta, 'meta'>
   constructor(name = HIGHLIGHTS_DB, factory?: IDBFactory) {
     super(name, factory ? { indexedDB: factory, IDBKeyRange: globalThis.IDBKeyRange } : undefined)
     this.version(1).stores({ records: 'highlightId, articleUrl, updatedAt' })
+    this.version(2).stores({ records: 'highlightId, articleUrl, updatedAt', syncRows: 'highlightId', syncOutbox: 'highlightId', syncMeta: 'id' })
   }
   /** Metadata/excerpts only, using H1's existing activity index; no feed/archive dependency. */
   async readAll() {
@@ -73,14 +80,26 @@ export class HighlightRepository extends Dexie {
   async backup(): Promise<unknown[]> { return this.records.toArray() }
   async restore(rows: unknown[], mode: 'merge' | 'replace') {
     const incoming = rows.map(parseHighlight)
-    await this.transaction('rw', this.records, async () => {
+    await this.transaction('rw', this.records, this.syncRows, this.syncOutbox, this.syncMeta, async () => {
+      const terminal = new Map((await this.records.toArray()).filter(r => r.version === 1 && r.deletedAt).map(r => [r.highlightId, r]))
       // Preserve unknown future schemas even in an explicitly requested Replace.
       if (mode === 'replace') await this.records.filter((r) => r.version === 1).delete()
+      // An explicit restore may replace the library, but cannot revive a deleted logical ID.
+      await this.records.bulkPut([...terminal.values()])
       for (const row of incoming) {
         const mine = await this.records.get(row.highlightId)
         if (mine && mine.version !== 1) continue
-        if (!mine || row.updatedAt > mine.updatedAt || (row.updatedAt === mine.updatedAt && row.deletedAt && !mine.deletedAt)) await this.records.put({ ...row, resolution: 'pending' })
+        if (!mine || compareHighlights(authored(row), authored(mine)) > 0) await this.records.put({ ...row, resolution: mine?.resolution ?? 'pending' })
       }
+      if (mode === 'replace') await this.resetHighlightSync()
+    })
+  }
+  /** Explicit Replace/Erase rereads cloud state. Retain the account guard even across legacy resets. */
+  async resetHighlightSync() {
+    await this.transaction('rw', this.syncRows, this.syncOutbox, this.syncMeta, async () => {
+      const meta = await this.syncMeta.get('meta')
+      await this.syncRows.clear(); await this.syncOutbox.clear()
+      await this.syncMeta.put({ id: 'meta', cursor: 0, ...(meta?.account ? { account: meta.account } : {}) })
     })
   }
 }

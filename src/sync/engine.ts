@@ -21,7 +21,7 @@ export type TransportResult =
 export type Transport = (request: SyncRequest) => Promise<TransportResult>
 
 export type SyncOutcome =
-  | { state: 'synced'; account: string; sent: number; received: number; pending: number; at: number }
+  | { state: 'synced'; account: string; sent: number; received: number; pending: number; at: number; more?: boolean }
   | { state: 'local'; pending: number }
   | { state: 'offline' | 'signin' | 'unavailable' | 'mismatch' | 'clock' | 'error'; pending: number; detail?: string }
 

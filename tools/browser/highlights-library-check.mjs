@@ -132,7 +132,7 @@ const makeRow = (id, url, subject, paragraph = 7, extra = {}) => {
 }
 const fixtures = [makeRow('orphan', orphan, 'Polity'), makeRow('early', orphan, 'Polity', 2, { color: 'green' }), makeRow('duplicate', URLS.health, 'Governance'), makeRow('economy', URLS.gdp, 'Economy', 3, { color: 'blue', updatedAt: 3000 }), makeRow('unavailable', URLS.ramsar, 'Environment', 5, { color: 'pink' }), makeRow('unresolved', URLS.space, null, 7, { color: 'orange', resolution: 'unresolved' }), makeRow('tombstone', orphan, 'Polity', 3, { deletedAt: 3000 })]
 const idb = async (page, operation, rows = []) => page.evaluate(({ operation, rows }) => new Promise((resolve, reject) => {
-  const request = indexedDB.open('tars-reader-highlights', 10)
+  const request = indexedDB.open('tars-reader-highlights')
   request.onerror = () => reject(request.error)
   request.onsuccess = () => {
     const db = request.result, tx = db.transaction('records', operation === 'read' ? 'readonly' : 'readwrite'), store = tx.objectStore('records')

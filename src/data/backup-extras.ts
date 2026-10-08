@@ -30,7 +30,7 @@ import { CA_NOTES_KEY, parseStickyNotes, type StickyNotes } from './compatibilit
 import { CA_STATE_KEY, parsePersonalState, type PersonalEntry, type PersonalState } from '@/current-affairs/personal-state'
 
 export interface BackupExtras {
-  /** v4: user excerpts only; independent of read/saved state and never sent to sync. */
+    /** v4: user excerpts only; private sync metadata is never exported. */
   readerHighlights?: ReaderHighlight[]
   notes?: StickyNotes
   currentAffairs?: {
@@ -232,7 +232,12 @@ export async function eraseExtras(e?: ExtrasEnv): Promise<void> {
   storage?.removeItem(CA_STATE_KEY)
   if (!factory) return
   const repository = new HighlightRepository(undefined, factory)
-  try { await repository.records.clear() } finally { repository.close() }
+  try {
+    await repository.transaction('rw', repository.records, repository.syncRows, repository.syncOutbox, repository.syncMeta, async () => {
+      await repository.records.clear()
+      await repository.resetHighlightSync()
+    })
+  } finally { repository.close() }
   await new Promise<void>((resolve) => {
     const request = factory.deleteDatabase(ARCHIVE_DB)
     request.onsuccess = request.onerror = request.onblocked = () => resolve()

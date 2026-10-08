@@ -48,7 +48,7 @@ describe('cross-article repository queries', () => {
     repo.close()
     const reopened = new HighlightRepository(undefined, factory); repos.push(reopened)
     expect(await reopened.readAll()).toHaveLength(2)
-    expect(reopened.verno).toBe(1)
+    expect(reopened.verno).toBe(2)
   })
   it('reacts to recolor/delete from a second repository and keeps tombstones in backup/restore', async () => {
     const { repo, factory } = device()
