@@ -1,0 +1,23 @@
+{
+  "parent": "b48d9d3e9ba93c722795b6107100768f32616827",
+  "status": "BLOCKED",
+  "defaultMode": "v2",
+  "files": [
+    {
+      "path": "docs/release/ORCHESTRATION.md",
+      "sha256": "e17a5b9b58c68291ab10fe3ae56493582d798769d696ceb8719681576b7b649a"
+    },
+    {
+      "path": "docs/release/RELEASE_REPORT.md",
+      "sha256": "87d605699b9686822b29782756d3aa7bc3cb450278d20df4e51206c895f283e1"
+    },
+    {
+      "path": "docs/release/verification.json",
+      "sha256": "f266fc69a4b3e2a17f843033ffe1e6be11bfc8f7f4ebdf8ad3cf4d8e69ea85cc"
+    },
+    {
+      "path": "tools/news/evaluation/release-summary.mjs",
+      "sha256": "4f2234ebcb8e5ce1c52993058f1431bc32ef626af9897875d97a94ee2c797277"
+    }
+  ]
+}
