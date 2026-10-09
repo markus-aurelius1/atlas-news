@@ -14,6 +14,11 @@ export function recentCoverage(event: WorkspaceEvent, now: number) {
 export function readingScopes(events: WorkspaceEvent[], now: number, limit = TODAY_STORY_LIMIT) {
   const today: WorkspaceEvent[] = [], archive: WorkspaceEvent[] = []
   for (const event of events) {
+    if (event.v3) {
+      if (event.v3.today && !event.v3.savedOnly && event.v3.selectedAt > now - RECENT_WINDOW_MS && event.v3.selectedAt <= now) today.push(event)
+      else archive.push(event)
+      continue
+    }
     const recent = recentCoverage(event, now)
     if (recent.length) {
       // Retain all member keys for personal state, but show a headline inside the rolling window.
@@ -26,7 +31,7 @@ export function readingScopes(events: WorkspaceEvent[], now: number, limit = TOD
   // The day's list is the highest-value stories; the rest are still valid and stay reachable in the Archive.
   today.sort(valueOrder)
   archive.push(...today.splice(limit))
-  archive.sort((a, b) => latestPublication(b) - latestPublication(a) || a.id.localeCompare(b.id))
+  archive.sort((a, b) => (b.v3?.selectedAt ?? latestPublication(b)) - (a.v3?.selectedAt ?? latestPublication(a)) || a.id.localeCompare(b.id))
   return { today, archive }
 }
 export function queueCounts(events: WorkspaceEvent[], state: PersonalState) {

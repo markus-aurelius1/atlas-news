@@ -13,6 +13,8 @@ import { buildWorkspace } from '@/current-affairs/workspace'
 import { useArchive } from './useArchive'
 import { usePinned } from './usePinned'
 import { useFeeds } from './useFeeds'
+import { useValidatorSelection } from './useValidatorSelection'
+import { displayArticle } from '@/current-affairs/validator-v3/adapter'
 
 const verdicts = new WeakMap<RelevanceIndex, Map<string, Relevance>>()
 
@@ -28,10 +30,12 @@ function classified(item: NewsItem, index: RelevanceIndex): ClassifiedItem {
 export function useNewsModel() {
   const feeds = useFeeds()
   const { data, index } = feeds
-  const current = useMemo(() => (data && index ? activeFeedItems(data.items).map((item) => classified(item, index)) : []), [data, index])
-  const { archived, archiveError } = useArchive(current, data?.fetchedAt)
+  const validator = useValidatorSelection(data, index, feeds.now)
+  const current = useMemo(() => (validator.mode !== 'v3' && data && index ? activeFeedItems(data.items).map((item) => classified(item, index)) : []), [data, index, validator.mode])
+  const { archived, archiveError } = useArchive(validator.mode === 'v3' ? [] : current, data?.fetchedAt)
   const all = useMemo(() => {
     if (!index) return []
+    if (validator.mode === 'v3') return validator.result?.output.articles.map(a => displayArticle(a.item, index, a.acceptance.accepted)) ?? []
     const items = new Map<string, NewsItem>(archived.map((item) => [item.url, item]))
     const retained = new Map(archived.map((item) => [item.url, item]))
     for (const item of activeFeedItems(data?.items ?? [])) {
@@ -39,10 +43,18 @@ export function useNewsModel() {
       if (!prior || prior.lastSeenAt <= Date.parse(data!.fetchedAt)) items.set(item.url, item)
     }
     return [...items.values()].map((item) => classified(item, index))
-  }, [data, index, archived])
+  }, [data, index, archived, validator.mode, validator.result])
   const pinned = usePinned()
   const events = useMemo(() => {
     if (!index) return []
+    if (validator.mode === 'v3') {
+      const selected = validator.result?.events ?? [], listed = new Set(selected.flatMap(e => [...e.members.map(m => m.url), ...(e.overflow ?? [])]))
+      const savedOnly = pinned.filter(article => !listed.has(article.url)).map(article => {
+        const primary = displayArticle(article, index, false), event = { id: article.url, primary, members: [primary] }
+        return { ...event, mustRead: false, priority: 0, priorityReasons: [], minutes: 3, day: 'undated', v3: { selectedAt: 0, today: false, rank: Number.MAX_SAFE_INTEGER, savedOnly: true } }
+      })
+      return [...selected, ...savedOnly]
+    }
     const stories = buildWorkspace(clusterItems(all), index)
     if (!pinned.length) return stories
     // A Saved article is never dropped: when its source has left the registry, its feed no longer carries it or it
@@ -50,6 +62,6 @@ export function useNewsModel() {
     const listed = new Set(stories.flatMap((event) => [...event.members.map((m) => m.url), ...(event.overflow ?? [])]))
     const kept = pinned.filter((article) => !listed.has(article.url)).map((article) => { const item = classified(article, index); return { id: item.url, primary: item, members: [item] } })
     return kept.length ? [...stories, ...buildWorkspace(kept, index)] : stories
-  }, [all, index, pinned])
-  return { ...feeds, archived, archiveError, classified: all, events }
+  }, [all, index, pinned, validator.mode, validator.result])
+  return { ...feeds, archived, archiveError: validator.error || archiveError, classified: all, events, validator }
 }

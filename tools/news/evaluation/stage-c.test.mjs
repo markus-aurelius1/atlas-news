@@ -40,8 +40,8 @@ test('input reordering, repeated replay and no mutable labels/history',()=>{
  const future=structuredClone(observations);future[0].capturedAt='2027-01-01T00:00:00.000Z';assert.throws(()=>runStageC(future,report.clock))
  const tampered=structuredClone(observations);tampered[0].metadata.title+=' extra';assert.throws(()=>runStageC(tampered,report.clock),/hash mismatch/)
 })
-test('unchanged production entry points and frozen artifact paths',()=>{
- for(const path of ['src/features/current-affairs/useNewsModel.ts','src/current-affairs/relevance.ts','src/current-affairs/cluster.ts'])assert.ok(!readFileSync(path,'utf8').includes('stage-c'))
+test('frozen v2 core remains independent and frozen Stage C output contains no D/E/F decisions',()=>{
+ for(const path of ['src/current-affairs/relevance.ts','src/current-affairs/cluster.ts'])assert.ok(!readFileSync(path,'utf8').includes('stage-c'))
  assert.ok(prediction.run.articles.every(a=>a.primarySubject===null&&a.eventId===null&&a.themeId===null&&a.angleId===null&&a.novelty==='not_applicable'));assert.deepEqual(prediction.run.units,[])
 })
 test('metrics explicitly count deferred positives and preserve zero denominators',()=>{

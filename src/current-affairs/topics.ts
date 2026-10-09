@@ -60,6 +60,10 @@ export const topicOf = (event: WorkspaceEvent): string | null => event.primary.r
  * `coverage` says which of a story's articles are in view (Today shows only the past 24 hours).
  */
 export function groupTopics(events: WorkspaceEvent[], coverage: (event: WorkspaceEvent) => ClassifiedItem[] = (event) => event.members): TopicGroup[] {
+  if (events.some(event => event.v3)) return events.map(event => {
+    const rest = event.members.filter(item => item.url !== event.primary.url).map(item => ({ event, item, lead: false }))
+    return { key: `reading:${event.id}`, topic: null, anchor: { event, item: event.primary, lead: true }, rest, count: rest.length + 1 }
+  })
   const buckets = new Map<string, { topic: string | null; events: WorkspaceEvent[] }>()
   // A group never holds more than MAX_STORY_ARTICLES articles: once a topic's group is full, its next story opens another.
   const open = new Map<string, { key: string; articles: number; part: number }>()

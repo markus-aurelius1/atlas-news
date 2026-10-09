@@ -76,7 +76,7 @@ export default function NewsScreen() {
   const unfiltered = useMemo(() => filterWorkspace(scope, state, { ...filters, subject: ALL, budget: null, days }), [scope, state, filters, days])
   const filtered = useMemo(() => {
     const rows = filters.budget ? filterWorkspace(scope, state, { ...filters, days }) : filters.subject === ALL ? unfiltered : unfiltered.filter((e) => e.primary.relevance.subjects.includes(filters.subject))
-    return view === 'Archive' ? [...rows].sort((a, b) => latestPublication(b) - latestPublication(a) || a.id.localeCompare(b.id)) : rows
+    return view === 'Archive' ? [...rows].sort((a, b) => (b.v3?.selectedAt ?? latestPublication(b)) - (a.v3?.selectedAt ?? latestPublication(a)) || a.id.localeCompare(b.id)) : rows
   }, [scope, state, filters, days, view, unfiltered])
   const subjectCounts = useMemo(() => {
     const counts = new Map<string, number>()
@@ -385,7 +385,7 @@ export default function NewsScreen() {
               </ul>
             </details>
           )}
-          <p className="news-foot">Headlines and excerpts come from publisher feeds. A headline opens its article in the reader, fetched from the publisher at that moment and not kept; the original is always one press away. Only stories that pass the PYQ-backed UPSC check are listed. Reading times are estimates.</p>
+          <p className="news-foot">Headlines and excerpts come from publisher feeds. A headline opens its article in the reader, fetched from the publisher at that moment and not kept; the original is always one press away. {import.meta.env.VITE_NEWS_VALIDATOR === 'v3' ? 'Today lists selected substantive UPSC reading; previously selected reading stays in the Archive.' : 'Only stories that pass the PYQ-backed UPSC check are listed.'} Reading times are estimates.</p>
         </div>
       </div>
 

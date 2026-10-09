@@ -6,7 +6,7 @@
   "description": "TARS Atlas, News and Settings foundation",
   "scripts": {
     "dev": "vite",
-    "build": "node tools/build-atlas-assets.mjs && tsc -b && vite build",
+    "build": "node tools/build-atlas-assets.mjs && node tools/news/build-validator-manifest.ts && tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "lint": "eslint src tools/news functions vite.config.ts",

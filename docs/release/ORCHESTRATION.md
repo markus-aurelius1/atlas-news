@@ -15,7 +15,7 @@ Original PYQ checkout: read-only status and SHA-256 fingerprints of all 127 dirt
 
 Milestones: C `ec125e3eb80b9eedc64804636955465d9580742d`; D `3f01fc386a29651ea1cf44866c4fd26f42484d19`; E commit is identified by `E_HANDOFF.md` history. Dependencies copied from an existing local worktree; no dependency download.
 
-Current stage: F verified engineering / A3 controlled adapter. E `bb6faf93f9b656d83becae91be75f8cae8ea814a`; F SHA resolved from `F_HANDOFF.md` history. C Reader gate passes 320 checks. D/E/F root totals 657/671/680. Subject calibration 29/31 exact-primary; cases 6/34 abstain.
+Current stage: controlled A3 adapter verified / Highlights import. E `bb6faf93f9b656d83becae91be75f8cae8ea814a`; F `99f5a357da4dc6e11250df2c84490008693faca5`; A3 SHA resolved from its handoff history. C Reader gate passes 320 checks; controlled v3 browser 52 checks pass. Latest root total 690. Subject calibration 29/31 exact-primary; cases 6/34 abstain.
 
 Wider 1000-article shadow: frozen v2 accepts 326, frozen C 36 and defers 940; four historical-clock Today units are 100% secondary sources. Coverage/source-quality gates are BLOCKED. V3 must remain disabled by default. Full report in `evaluation.json`; no C retuning or label edits.
 

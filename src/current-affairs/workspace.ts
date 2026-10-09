@@ -8,7 +8,7 @@ export const MUST_READ_THRESHOLD = 7
 export const EDITION_TIMEZONE = 'Asia/Kolkata'
 export const UNDATED = 'undated'
 export type ReadingTab = 'To be Read' | 'Read' | 'Saved'
-export interface WorkspaceEvent extends NewsEvent { mustRead: boolean; priority: number; priorityReasons: string[]; minutes: number; day: string; /** UPSC/UPPCS value used to rank stories and to choose the day's list. */ value?: number; valueReasons?: string[] }
+export interface WorkspaceEvent extends NewsEvent { mustRead: boolean; priority: number; priorityReasons: string[]; minutes: number; day: string; /** Derived v3 selection, never personal state or a body record. */ v3?: { selectedAt: number; today: boolean; rank: number; savedOnly?: boolean }; /** UPSC/UPPCS value used to rank stories and to choose the day's list. */ value?: number; valueReasons?: string[] }
 /** The rolling 24-hour list shows at most this many stories; lower-ranked ones stay in the Archive. */
 export const TODAY_STORY_LIMIT = 100
 export interface WorkspaceFilters { day: string; days?: string[]; tab: ReadingTab; exam: 'All' | 'Prelims' | 'Mains' | 'Both'; subject: string; publisher: string; query: string; budget: number | null }
@@ -85,7 +85,7 @@ export function editionProgress(events: WorkspaceEvent[], state: PersonalState) 
   const unread = events.filter(e => !eventPersonalState(e, state).readAt)
   return { total: events.length, read: events.length - unread.length, unread: unread.length, minutesLeft: unread.reduce((n, e) => n + e.minutes, 0), mustRead: events.filter(e => e.mustRead).length }
 }
-export const valueOrder = (a: WorkspaceEvent, b: WorkspaceEvent) => (b.value ?? 0) - (a.value ?? 0) || Number(b.mustRead) - Number(a.mustRead) || b.priority - a.priority || (Date.parse(b.primary.publishedAt ?? '') || 0) - (Date.parse(a.primary.publishedAt ?? '') || 0) || a.id.localeCompare(b.id)
+export const valueOrder = (a: WorkspaceEvent, b: WorkspaceEvent) => a.v3 && b.v3 ? a.v3.rank - b.v3.rank || b.v3.selectedAt - a.v3.selectedAt || a.id.localeCompare(b.id) : (b.value ?? 0) - (a.value ?? 0) || Number(b.mustRead) - Number(a.mustRead) || b.priority - a.priority || (Date.parse(b.primary.publishedAt ?? '') || 0) - (Date.parse(a.primary.publishedAt ?? '') || 0) || a.id.localeCompare(b.id)
 export function readingQueue(personal: import('./personal-state').PersonalEntry): ReadingTab {
   return personal.savedAt ? 'Saved' : personal.readAt ? 'Read' : 'To be Read'
 }
