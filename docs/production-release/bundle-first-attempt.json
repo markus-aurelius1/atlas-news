@@ -1,0 +1,18 @@
+{
+  "status": "STOP before workerd",
+  "reason": "Exact-byte assertion found differing random Wrangler route-source comments",
+  "left": [
+    {
+      "path": "_worker.js/index.js",
+      "sha256": "a62decb2853245da24c53df26a8e3beddc3188e166bdd1b06f1eb1fe7706905d"
+    }
+  ],
+  "right": [
+    {
+      "path": "_worker.js/index.js",
+      "sha256": "e8c02fbc7d66a96edbe8a114605ee1a9581f087d504e33808e0861b47c1f9368"
+    }
+  ],
+  "exactCommentOnlyComparisonPassed": true,
+  "resolution": "Share the already compiled v3 H3 Worker across both artifacts, then retain exact-byte assertion and exercise local workerd."
+}

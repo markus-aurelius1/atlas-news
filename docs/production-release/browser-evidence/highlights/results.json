@@ -1,0 +1,400 @@
+{
+  "checks": 92,
+  "errors": [],
+  "performance": [
+    {
+      "tag": "375-light",
+      "savedHighlights": 82,
+      "paragraphs": 188,
+      "reloadToPaintMs": 1042
+    },
+    {
+      "tag": "375-dark",
+      "savedHighlights": 82,
+      "paragraphs": 188,
+      "reloadToPaintMs": 1132
+    },
+    {
+      "tag": "1366-light",
+      "savedHighlights": 82,
+      "paragraphs": 188,
+      "reloadToPaintMs": 1044
+    },
+    {
+      "tag": "1366-dark",
+      "savedHighlights": 82,
+      "paragraphs": 188,
+      "reloadToPaintMs": 1033
+    }
+  ],
+  "evidence": [
+    {
+      "tag": "375-light",
+      "name": "CSS custom paint supported and Highlighter starts off"
+    },
+    {
+      "tag": "375-light",
+      "name": "mode OFF preserves native selection and writes nothing"
+    },
+    {
+      "tag": "375-light",
+      "name": "keyboard activation is visible and accessible"
+    },
+    {
+      "tag": "375-light",
+      "name": "native pointer drag commits automatically, mode stays enabled"
+    },
+    {
+      "tag": "375-light",
+      "name": "article DOM and sanitization remain unchanged"
+    },
+    {
+      "tag": "375-light",
+      "name": "record has stable identity, article/subject snapshots and bounded anchor"
+    },
+    {
+      "tag": "375-light",
+      "name": "palette has five fixed colors with a check and pressed state"
+    },
+    {
+      "tag": "375-light",
+      "name": "touch handle adjustment resets completion and does not save prematurely"
+    },
+    {
+      "tag": "375-light",
+      "name": "touch quiet completion preserves exact inline quote and future color"
+    },
+    {
+      "tag": "375-light",
+      "name": "pen selection is pending while handles can be adjusted"
+    },
+    {
+      "tag": "375-light",
+      "name": "multi-block pen selection paints one logical Range across paragraphs"
+    },
+    {
+      "tag": "375-light",
+      "name": "repeat selection creates no nested duplicates"
+    },
+    {
+      "tag": "375-light",
+      "name": "different-color overlap rejects without changing existing records"
+    },
+    {
+      "tag": "375-light",
+      "name": "existing highlight recolor preserves identity"
+    },
+    {
+      "tag": "375-light",
+      "name": "delete removes paint and retains tombstone"
+    },
+    {
+      "tag": "375-light",
+      "name": "page reload restores paints and persisted active color"
+    },
+    {
+      "tag": "375-light",
+      "name": "closing clears only paint and restores the mounted News list"
+    },
+    {
+      "tag": "375-light",
+      "name": "reopen restores local records without extra publisher fetch"
+    },
+    {
+      "tag": "375-light",
+      "name": "Save/Read state stays independent"
+    },
+    {
+      "tag": "375-light",
+      "name": "no full body, HTML or extraction result is persisted"
+    },
+    {
+      "tag": "375-light",
+      "name": "all five paint colors have readable 4.5:1 text contrast"
+    },
+    {
+      "tag": "375-light",
+      "name": "Reader and toolbar fit viewport without sideways scroll"
+    },
+    {
+      "tag": "375-light",
+      "name": "long article restores 82 saved excerpts and stays scrollable"
+    },
+    {
+      "tag": "375-dark",
+      "name": "CSS custom paint supported and Highlighter starts off"
+    },
+    {
+      "tag": "375-dark",
+      "name": "mode OFF preserves native selection and writes nothing"
+    },
+    {
+      "tag": "375-dark",
+      "name": "keyboard activation is visible and accessible"
+    },
+    {
+      "tag": "375-dark",
+      "name": "native pointer drag commits automatically, mode stays enabled"
+    },
+    {
+      "tag": "375-dark",
+      "name": "article DOM and sanitization remain unchanged"
+    },
+    {
+      "tag": "375-dark",
+      "name": "record has stable identity, article/subject snapshots and bounded anchor"
+    },
+    {
+      "tag": "375-dark",
+      "name": "palette has five fixed colors with a check and pressed state"
+    },
+    {
+      "tag": "375-dark",
+      "name": "touch handle adjustment resets completion and does not save prematurely"
+    },
+    {
+      "tag": "375-dark",
+      "name": "touch quiet completion preserves exact inline quote and future color"
+    },
+    {
+      "tag": "375-dark",
+      "name": "pen selection is pending while handles can be adjusted"
+    },
+    {
+      "tag": "375-dark",
+      "name": "multi-block pen selection paints one logical Range across paragraphs"
+    },
+    {
+      "tag": "375-dark",
+      "name": "repeat selection creates no nested duplicates"
+    },
+    {
+      "tag": "375-dark",
+      "name": "different-color overlap rejects without changing existing records"
+    },
+    {
+      "tag": "375-dark",
+      "name": "existing highlight recolor preserves identity"
+    },
+    {
+      "tag": "375-dark",
+      "name": "delete removes paint and retains tombstone"
+    },
+    {
+      "tag": "375-dark",
+      "name": "page reload restores paints and persisted active color"
+    },
+    {
+      "tag": "375-dark",
+      "name": "closing clears only paint and restores the mounted News list"
+    },
+    {
+      "tag": "375-dark",
+      "name": "reopen restores local records without extra publisher fetch"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Save/Read state stays independent"
+    },
+    {
+      "tag": "375-dark",
+      "name": "no full body, HTML or extraction result is persisted"
+    },
+    {
+      "tag": "375-dark",
+      "name": "all five paint colors have readable 4.5:1 text contrast"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Reader and toolbar fit viewport without sideways scroll"
+    },
+    {
+      "tag": "375-dark",
+      "name": "long article restores 82 saved excerpts and stays scrollable"
+    },
+    {
+      "tag": "1366-light",
+      "name": "CSS custom paint supported and Highlighter starts off"
+    },
+    {
+      "tag": "1366-light",
+      "name": "mode OFF preserves native selection and writes nothing"
+    },
+    {
+      "tag": "1366-light",
+      "name": "keyboard activation is visible and accessible"
+    },
+    {
+      "tag": "1366-light",
+      "name": "native pointer drag commits automatically, mode stays enabled"
+    },
+    {
+      "tag": "1366-light",
+      "name": "article DOM and sanitization remain unchanged"
+    },
+    {
+      "tag": "1366-light",
+      "name": "record has stable identity, article/subject snapshots and bounded anchor"
+    },
+    {
+      "tag": "1366-light",
+      "name": "palette has five fixed colors with a check and pressed state"
+    },
+    {
+      "tag": "1366-light",
+      "name": "touch handle adjustment resets completion and does not save prematurely"
+    },
+    {
+      "tag": "1366-light",
+      "name": "touch quiet completion preserves exact inline quote and future color"
+    },
+    {
+      "tag": "1366-light",
+      "name": "pen selection is pending while handles can be adjusted"
+    },
+    {
+      "tag": "1366-light",
+      "name": "multi-block pen selection paints one logical Range across paragraphs"
+    },
+    {
+      "tag": "1366-light",
+      "name": "repeat selection creates no nested duplicates"
+    },
+    {
+      "tag": "1366-light",
+      "name": "different-color overlap rejects without changing existing records"
+    },
+    {
+      "tag": "1366-light",
+      "name": "existing highlight recolor preserves identity"
+    },
+    {
+      "tag": "1366-light",
+      "name": "delete removes paint and retains tombstone"
+    },
+    {
+      "tag": "1366-light",
+      "name": "page reload restores paints and persisted active color"
+    },
+    {
+      "tag": "1366-light",
+      "name": "closing clears only paint and restores the mounted News list"
+    },
+    {
+      "tag": "1366-light",
+      "name": "reopen restores local records without extra publisher fetch"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Save/Read state stays independent"
+    },
+    {
+      "tag": "1366-light",
+      "name": "no full body, HTML or extraction result is persisted"
+    },
+    {
+      "tag": "1366-light",
+      "name": "all five paint colors have readable 4.5:1 text contrast"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Reader and toolbar fit viewport without sideways scroll"
+    },
+    {
+      "tag": "1366-light",
+      "name": "long article restores 82 saved excerpts and stays scrollable"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "CSS custom paint supported and Highlighter starts off"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "mode OFF preserves native selection and writes nothing"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "keyboard activation is visible and accessible"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "native pointer drag commits automatically, mode stays enabled"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "article DOM and sanitization remain unchanged"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "record has stable identity, article/subject snapshots and bounded anchor"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "palette has five fixed colors with a check and pressed state"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "touch handle adjustment resets completion and does not save prematurely"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "touch quiet completion preserves exact inline quote and future color"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "pen selection is pending while handles can be adjusted"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "multi-block pen selection paints one logical Range across paragraphs"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "repeat selection creates no nested duplicates"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "different-color overlap rejects without changing existing records"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "existing highlight recolor preserves identity"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "delete removes paint and retains tombstone"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "page reload restores paints and persisted active color"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "closing clears only paint and restores the mounted News list"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "reopen restores local records without extra publisher fetch"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Save/Read state stays independent"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "no full body, HTML or extraction result is persisted"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "all five paint colors have readable 4.5:1 text contrast"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Reader and toolbar fit viewport without sideways scroll"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "long article restores 82 saved excerpts and stays scrollable"
+    }
+  ]
+}

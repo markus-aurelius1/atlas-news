@@ -1,0 +1,24 @@
+{
+  "method": "GET without cookies or tokens",
+  "databaseWrites": false,
+  "rows": [
+    {
+      "url": "https://8675aa42.tars-atlas-news.pages.dev/api/session",
+      "status": 401,
+      "cacheControl": "no-store",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://8675aa42.tars-atlas-news.pages.dev/api/sync",
+      "status": 401,
+      "cacheControl": "no-store",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://8675aa42.tars-atlas-news.pages.dev/api/highlights-sync",
+      "status": 401,
+      "cacheControl": "no-store",
+      "contentType": "application/json; charset=utf-8"
+    }
+  ]
+}

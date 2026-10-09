@@ -1,0 +1,1365 @@
+{
+  "SITE_URL": "https://tars-atlas-news.pages.dev",
+  "BASE": "/",
+  "candidateMode": "v3",
+  "fallbackMode": "v2",
+  "H3Both": true,
+  "published": false,
+  "inventories": {
+    "v2": {
+      "destination": "tools/browser/out/production-release-builds/v2-h3-build",
+      "files": [
+        {
+          "path": "_headers",
+          "sha256": "bcde65f3e9a9cb57e5951372fb0ae0f4f0b162e033f47e5e9654265ddc770e1c"
+        },
+        {
+          "path": "_routes.json",
+          "sha256": "a67ad65b30bb0a543e2c4c14df34dabf0023a3ee1627af75a0aa6153d089a122"
+        },
+        {
+          "path": "_worker.js/index.js",
+          "sha256": "e8c02fbc7d66a96edbe8a114605ee1a9581f087d504e33808e0861b47c1f9368"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "sha256": "8c4a934434c80a1eec244cc91ac31e9c2522e0b7ee57ad1838eb579fc3d4b40b"
+        },
+        {
+          "path": "assets/AtlasScreen-4ewLBhuz.js",
+          "sha256": "8341c5bd8b95cfc2613eb3c53dfaa7cabb098ee0f7f59606afea72944ce0aeea"
+        },
+        {
+          "path": "assets/AtlasScreen-De9t_Y1_.css",
+          "sha256": "163ee0bc9e3022576860558b8a574f60acdee16bb0d14a4e4820daec03890856"
+        },
+        {
+          "path": "assets/CommandPalette-C0nzRhXy.js",
+          "sha256": "fcf518c0967c271b8863a988fc5a76ded3d8ff9239720f7720986b558b1460f5"
+        },
+        {
+          "path": "assets/NewsScreen-DMDaWy8j.css",
+          "sha256": "57dfc03f80c329ce02523820fc3a5671696108cb8ccec58df3164a9b0cd0b2cd"
+        },
+        {
+          "path": "assets/NewsScreen-sjyUSIEE.js",
+          "sha256": "a4e47fdaa37a63fc9f2f536edd61147bcf66583c82c51ed9a23a9ea032d61784"
+        },
+        {
+          "path": "assets/SettingsScreen-CklBQNpp.css",
+          "sha256": "807f5efdd0082b2bd6614a244a48cd03d762e45fa265c08846a7c7f11bb10fb1"
+        },
+        {
+          "path": "assets/SettingsScreen-Wx8de3P1.js",
+          "sha256": "1d148b5ccc150f087a7ef371acb446d03ec266fa03e952eef8def031ab813126"
+        },
+        {
+          "path": "assets/ShortcutsSheet-2Qh8dG1F.js",
+          "sha256": "96ae93a29762f5066f16600fc663f820d45f6a5f6f451b341308f2c7a81a531f"
+        },
+        {
+          "path": "assets/adapters-YN8XV46B.js",
+          "sha256": "9c76db0aa9feb7ba7deae12376339b30c48be2d03f05c81fc0b90ed26a38de41"
+        },
+        {
+          "path": "assets/catalog-JkJkrLL3.js",
+          "sha256": "49e13f7feae39757aabc619cdc4070b7b02144bbdef28b29d770b0eef9deff62"
+        },
+        {
+          "path": "assets/data-6g_P3WMx.js",
+          "sha256": "684fb257f1097f1be51c7e6828fc70c5df707bddf4ebbf74e3e13dd92ed354d9"
+        },
+        {
+          "path": "assets/data-Xzg_08KK.js",
+          "sha256": "9048cd121d773269bbf367584c93a53a4e48f720b90208298c9ff83642c82696"
+        },
+        {
+          "path": "assets/extract-CfApawDb.js",
+          "sha256": "0e75443ebefd916abc893a68bb7f6f04182e30d24f17247137caec17d4ad64d6"
+        },
+        {
+          "path": "assets/fraunces-latin-opsz-normal-DihXLNYH.woff2",
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        {
+          "path": "assets/index-CUdLhOxI.js",
+          "sha256": "e7ec385d30e66f40cf54ef5362a820910e77f190a77d4b13928bef9ce460615c"
+        },
+        {
+          "path": "assets/index-DrEtVxuq.css",
+          "sha256": "63b6be0a1add5c06f6d0bfc138b87c4725f1c78c771b543bb5e6b4c614821e4d"
+        },
+        {
+          "path": "assets/info-DHjvAqMB.js",
+          "sha256": "3a3b5f76fee9deda01d8d9ddef21f5107cbc3319ed7ada6d7022943432471337"
+        },
+        {
+          "path": "assets/labelWorker-BM1tfPLl.js",
+          "sha256": "dcb63603e9b3e92d78f2df19ef76afe39814f541d1d494f5d254943049fd1370"
+        },
+        {
+          "path": "assets/lifecycle-BkSHaKPH.js",
+          "sha256": "b646085e7eb51fe362935a3fe5b7f044188a4deb14133042f8aba6e2244f6a20"
+        },
+        {
+          "path": "assets/lock-Bg2NRR-5.js",
+          "sha256": "061fa254fc5ea2106d9b27aba663d7fded1aba52f52ee8ce15d88184fa0233cf"
+        },
+        {
+          "path": "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+          "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb"
+        },
+        {
+          "path": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+        },
+        {
+          "path": "assets/motion-DNEH_GKX.js",
+          "sha256": "cef047bcabfb9f119c1e2d2a15c729c66e49a6fb10845e697c662976f032605d"
+        },
+        {
+          "path": "assets/native-CZrayuTz.js",
+          "sha256": "2d0e987ad9915d6053fdf54f34d28f78ab258898b50ed7bb44eceb69d4b586c4"
+        },
+        {
+          "path": "assets/react-CR5VJ85Q.js",
+          "sha256": "b19a9fcdb691b2158d837ef44b93412f755c06ec395363af87850a92252826b4"
+        },
+        {
+          "path": "assets/rolldown-runtime-hePW80VL.js",
+          "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+        },
+        {
+          "path": "assets/runtime-C8xFJ2fY.js",
+          "sha256": "a614b3075d4108ec9ce6625ea35ef6d895384767dffafae89946b4ad0fe6ac96"
+        },
+        {
+          "path": "assets/status-8xh13eAU.js",
+          "sha256": "799f1d030fd078f7fb92409a884cc8449fbf916c23f1c99cacff2de7c69df5d0"
+        },
+        {
+          "path": "assets/store-DWrZwfyD.js",
+          "sha256": "1bae3009578d9ac3fefacc3f1a8eea156b410bdee23cac23fd0bd1b9607f3c46"
+        },
+        {
+          "path": "assets/tileWorker-BBpS9zCW.js",
+          "sha256": "10febd41d5bc904abb3663d4d949447dfaa0734fcf8c7784eb782df435952faf"
+        },
+        {
+          "path": "assets/trash-CrdxaTBP.js",
+          "sha256": "08267b8d73ca90081ea91f42b9823aefa74e437cae52513447887445664a5389"
+        },
+        {
+          "path": "assets/useExploration-g6M5wa0M.js",
+          "sha256": "4df1469082a78ab5fa2c39cafabba27ef12038ee82608450dbba7157384adab0"
+        },
+        {
+          "path": "assets/virtual_pwa-register-QGFKvKy9.js",
+          "sha256": "8d0e89823e462ac1ac1beb29975ee7638dd7e7833650ff9d9b4e63f65bfb3a0c"
+        },
+        {
+          "path": "assets/workbox-window.prod.es5-Bd17z0YL.js",
+          "sha256": "17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9"
+        },
+        {
+          "path": "atlas-assets/v1/india-boundary-source.json",
+          "sha256": "d34b79c99533189ea5e057a9e214f3aa90adad700e440bd4ecd1ef4b37446a9d"
+        },
+        {
+          "path": "atlas-assets/v1/india-controlled-border.geojson",
+          "sha256": "442d8ba8670c3d006d36f00df3af5422795f325a5f1a86d2a327a5d0092d0373"
+        },
+        {
+          "path": "atlas-assets/v1/manifest.json",
+          "sha256": "a3f1d739beffb0060f464644e190e09a643c4ddc55cd960298b7db30527c8824"
+        },
+        {
+          "path": "atlas-assets/v1/pyq-hotspots.json",
+          "sha256": "f59fa03c8c6b15dffc84d088378f2c4133319d9a60ddb00e5fa173fd41e54d87"
+        },
+        {
+          "path": "atlas/v1/ATTRIBUTION.txt",
+          "sha256": "580787adc3617f32d50407b942a463b56a47131af251fc1140120bcfc5964c40"
+        },
+        {
+          "path": "atlas/v1/india-overlay.json",
+          "sha256": "f8651ec206014644e6e8199cd3096e6b4e86ed44446275c8a56bca57ff470634"
+        },
+        {
+          "path": "atlas/v1/india-relief.webp",
+          "sha256": "c4c6f70dacfeaad2882e21ce5d461bb1d0da5f3fcdf6d64c595fd959a5b6e254"
+        },
+        {
+          "path": "atlas/v1/india-shade.webp",
+          "sha256": "fda83a33439eac94a388f323dac6341c1821ee666f030bfe5327abaaa7fc391c"
+        },
+        {
+          "path": "atlas/v1/india.json",
+          "sha256": "c75cdcf2d3b23dfe61d94fa5664ce278c4d558bed632fb6ed2f0da393724faa0"
+        },
+        {
+          "path": "atlas/v1/places.json",
+          "sha256": "5bb6ae472ebcc383c6316cca302c0ba2e2c75028677bb92959775b2c38ac7ddb"
+        },
+        {
+          "path": "atlas/v1/world-overlay.json",
+          "sha256": "865991bb3368be797f7f5bb09dc9ddf7d12b62f42433d3d9dbaf89315f177bde"
+        },
+        {
+          "path": "atlas/v1/world-relief.webp",
+          "sha256": "7c015d0697ebb3222410a82fdd86b2151bef88d33035ac4ad3aeb4a837788cfe"
+        },
+        {
+          "path": "atlas/v1/world-shade.webp",
+          "sha256": "a5f6a9340cf94c4a527038d53f211b40a6dbf26a53b94ed76a9982add9dbc8ba"
+        },
+        {
+          "path": "atlas/v1/world.json",
+          "sha256": "736a091ab3c837dfd408f0f8fcd87079f4c69ae3fd73f8699c6c6e19c33d4770"
+        },
+        {
+          "path": "current-affairs/v2/relevance-index.json",
+          "sha256": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348"
+        },
+        {
+          "path": "favicon.svg",
+          "sha256": "811c05d8a1ef94826061def217017e7dc9067d820e60d5161ec4a734ae79c36d"
+        },
+        {
+          "path": "fonts/Geist-OFL.txt",
+          "sha256": "f52b2dd3e8543035e79d44c100a69874017d0fb05342956fd2f600a426d0e991"
+        },
+        {
+          "path": "fonts/Newsreader-OFL.txt",
+          "sha256": "dca5a91eaf1d4a431e74801dfa745db53856bb92ec1f982506f837a00a5a94a7"
+        },
+        {
+          "path": "fonts/README.md",
+          "sha256": "7532a50b9ac197ea25239c46bdfb24598e68b90bdb34920e532e22931b64ef5a"
+        },
+        {
+          "path": "fonts/geist-latin.woff2",
+          "sha256": "19f9c92546aa300c312235e3125af1b81394d8db9a4bc4a425cd5b641d2d54e1"
+        },
+        {
+          "path": "fonts/newsreader-italic-latin.woff2",
+          "sha256": "5dfcd10d24af8c82927ba57f7983dd997f7b200594c09c35a1b1ed9fc4597506"
+        },
+        {
+          "path": "fonts/newsreader-latin.woff2",
+          "sha256": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101"
+        },
+        {
+          "path": "icons/icon-192.png",
+          "sha256": "3cb7100d48dd3727ed0c14473f8517415c73807a02546b59380151778cb7d658"
+        },
+        {
+          "path": "icons/icon-512.png",
+          "sha256": "1fccea82ea784d67eac33ee43439fbd4cb84708f0b0fd616ef58939820f0f0bf"
+        },
+        {
+          "path": "icons/icon-maskable-512.png",
+          "sha256": "37dd57856b0c1e0b955678efe68fdc658be7f38bb7d4a28187f232dae825f1ff"
+        },
+        {
+          "path": "index.html",
+          "sha256": "ad6fbc7a6a3a13f7898477b2bf64dad4e312197f9a299248f00c11f8bafe5f31"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "sha256": "75976bd0a5c1fd75f390247d02f41b51a8d9bf8d21c07671c19f662b548c18e0"
+        },
+        {
+          "path": "og-image.png",
+          "sha256": "5c09f11f8387f873ee971be54f618ca5dabc23811732e9366ad6ea8a29644161"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2018-I-GK.json",
+          "sha256": "859fa5f8a3020bad03c678ac12b837880feddc2cc48eeb4cf274a12212de0a31"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2018-II-GK.json",
+          "sha256": "41a33abe838f1c5638cd924b8372994b0e746e07cce3bf84e08158e976156142"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2019-I-GK.json",
+          "sha256": "a5e969f12fed253e637775b60d4131b3dcf3e72f77bb22153eb4d0033ae7154c"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2019-II-GK.json",
+          "sha256": "a19bb44bf7bc30082f82f32a44e009f5ca48b6a43e552e83fb5dcc9837037bbe"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2020-I-GK.json",
+          "sha256": "4b98bdc1f0c718a3048d41885f26f16e9ef6d3d3ceb7ed5b4642577ea8106060"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2020-II-GK.json",
+          "sha256": "586e72644b923ad1508a9e31821f6b79fc237f586abb44500127f70fb3dad401"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2021-I-GK.json",
+          "sha256": "839eb2fd6ebecf254e9a78183833ac6cecef952ef8a89eb4375226bf5324e39a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2021-II-GK.json",
+          "sha256": "1dd1957df5ff1e8b750c5545d0c955c1eeed706040228ef74ad738991169d84d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2022-I-GK.json",
+          "sha256": "ffd406843f5be14107db23a645c51ba4f9cf268330f0b025be3cb8db0d452203"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2022-II-GK.json",
+          "sha256": "d47955ef63fb4846d3a5e96e6433c471f0be8f72aaa0c8fe9d7b2a33e425aee0"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2023-I-GK.json",
+          "sha256": "c3574736a1965b0842f68e1eeef5964bc020818111a650ee00d08317fe06c64d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2023-II-GK.json",
+          "sha256": "91814799820daa0c3adf092f70836c0daa9932a54e4cb53d854538ba1119ad9b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2024-II-GK.json",
+          "sha256": "ff5a0b3817be995c53d4f3018cf9f1894090fadd76421d57852843998a34fa59"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2025-I-GK.json",
+          "sha256": "30a967f5c625b4786b90cce3ef5aa64f6eb67804af6364f19fce9c6bcd612372"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2026-II-GK.json",
+          "sha256": "e6bef8dc6fbb118a69b96f6687fbdc0bce604c2cd1b2c8cd26e428419c023162"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2018-GS1.json",
+          "sha256": "3794d87ec039a86cdfd4002f829f5a0bb7e3b2655c994b366b23aeb68edd6547"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2019-GS1.json",
+          "sha256": "7aea09188477bcc83387f87a635c6f70db18863b4e19ceb7a59115c5e99ab176"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2020-GS1.json",
+          "sha256": "0053f03a914ba69a8d2061cafdc00fbbd7e4e9be2acf22e627c92abc56467390"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2021-GS1.json",
+          "sha256": "7ec2b6bb6e8e957e1c3a127c2260c2b4bb99bb13eedf22d28e9f91a87b7cc44b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2022-GS1.json",
+          "sha256": "a8e8cfc774059dbe097ee86123e77fc5a409aeb47c66e119233ae72771cdb915"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2023-GS1.json",
+          "sha256": "707d5d1d6b3206fd54f018d6cf02e871b2047035b6332d3f7569a7e26f7fc5c0"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2024-GS1.json",
+          "sha256": "978f2bb0e4c6b4b490af9c402948d337509f0bbb361c752f5ce146e0a48dc319"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2025-GS1.json",
+          "sha256": "97d30b668c65d8898808ce193694a3511ccd5896d5b21e7e586d12419bcf2cc9"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-1996-GS1.json",
+          "sha256": "3d215ff47999c0c5dd5bc1f52f61542a1e8a4589f84fe28309b8e0225590db76"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-1999-GS1.json",
+          "sha256": "1103dc1b28a995d5a7ad42635337406877886f4e3073306da52deedb3e4e6218"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2000-GS1.json",
+          "sha256": "37346b4d4626f2f54462c464927058d506ec6a3cc37fe390b7d75e2f3101b24a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2001-GS1.json",
+          "sha256": "0bc3c79fc4e74064c78a984625c8c6c28c02e5db2d2e986cc43d65521e67454a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2002-GS1.json",
+          "sha256": "cf53756faa1b0def37ea4989417dc367e9ce5cef96873341eeb81cd18f87fae9"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2003-GS1.json",
+          "sha256": "ae48a675465931c90b583496985e9cf0e546fff5b7d98321a41b97cd470ee33b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2005-GS1.json",
+          "sha256": "7fa3f02d04368495a1777cd20740d9c9940dec2ba9e424b5e4cbfab7ee7f09f3"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2006-GS1.json",
+          "sha256": "378246ab1b99cc8f1151978af3bc1966b2b0a8e8d7a6805a3303a2b64e72665f"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2007-GS1.json",
+          "sha256": "6b96ba1ecfe2e5b1e4586769e719e8bd0c65f212d8b5c21e04ed101d10147f65"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2008-GS1.json",
+          "sha256": "9c6a2d4bbafdf222c6bcbd74d2ef9512dbaf618759330429bdf66f969c60f59c"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2009-GS1.json",
+          "sha256": "2b8f269f9a695395b92049fc318a5112e80b776140be55dc7cd3a63687fb40e3"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2010-GS1.json",
+          "sha256": "dc0bbcbe00fbc1765cb99be9f4605f2ff22add449bb99be5bfa2ed74be075aa1"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2011-GS1.json",
+          "sha256": "2c0de9d2e85224b0f5135e9445b59818ca42c3ce7257753cf1f9b4f8542f01f1"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2013-GS1.json",
+          "sha256": "3624266ea7c886b072fa3ac278b91dbb43d08201190d9715101e37c09d6c9063"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2014-GS1.json",
+          "sha256": "cd58ba860703d373f0b7490712fc09255aa12c317980d471f2b3022e8c60f4d4"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2015-GS1.json",
+          "sha256": "0f41464fe55623b6265839437d1363cfae890fe413a18825f1e4f1cd419fce97"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2016-GS1.json",
+          "sha256": "59beed6d04c7e30c72d5a5eb04b91f8eb99a13c31694e9f8edec87f5572d6524"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2017-GS1.json",
+          "sha256": "d596e5d00f5845dcfc8b09ee0eeb65df1e2dd4245426f98110f73a213fc811ec"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2018-GS1.json",
+          "sha256": "d47a10c5df02fab0af8799815202734454311c6f994f05cf806b3d1ed3936d88"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2019-GS1.json",
+          "sha256": "572213f89acade52ec3bb4715a35a37aaaa5c4d39b8f22b3c2f8bcb9dafba49e"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2020-GS1.json",
+          "sha256": "91ff366975d60959f248980f1daf839463c5f899d8339f3e1d743650ccf70892"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2021-GS1.json",
+          "sha256": "3a9e778255cf6d2683623ff8045f1bd898f8380f788456a00b2e65120273cf95"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2022-GS1.json",
+          "sha256": "b4df4b03ca4cb92e4e3d609e06ffab2a0ac8814a6527942c96db0490d8c875de"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2023-GS1.json",
+          "sha256": "f0404fd9de1b5e5c3bf43bd984eb3ef78ecc5d7f66d3e0e363db307990e64e01"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2024-GS1.json",
+          "sha256": "31da703c8fc030c0a9b50dc289922b1fe36244a3392a1a3778e000d12413911d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2026-GS1.json",
+          "sha256": "deaab9c486362f5fda73c729d081dab78f5dfb6719f868d042e37a75671443d7"
+        },
+        {
+          "path": "pyq-atlas/v1/manifest.json",
+          "sha256": "7760df6c9995256f856994762f0a13859e37b7d7b2edde833763ff9788ced58d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2018-I-GK.json",
+          "sha256": "c6c07bf3b4618d2ca01deb7095446ae55d58eec2766e7a7d004d1ca863d97606"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2018-II-GK.json",
+          "sha256": "6df47b68c08ffc2e08b4b8d02d62f88941473f94e59b7700acdc583cf5fce3ba"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2019-I-GK.json",
+          "sha256": "3d75c0ead9f0fb41d7681067d62553afcd9b6f67069573ef932c79074900d1af"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2019-II-GK.json",
+          "sha256": "22123919baee2759579d9e1085f42956c06efce8e76a4eb9ea5e07adc72d084a"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2020-I-GK.json",
+          "sha256": "f410935014834f53cfdb3ca4556c1bd9206d9fcdb24aa962936a342926a2ab04"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2020-II-GK.json",
+          "sha256": "79632913cd225b3b31f886bb352c66a4b63e72b873280bd6efc622d6feb7c56e"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2021-I-GK.json",
+          "sha256": "6580720d3273f737c7dcaa13b98031b70db62f0c6ba7405b01e1429e0714ae6c"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2021-II-GK.json",
+          "sha256": "2512c753d4a98e19439134ab0f3e61f2d30aea71cc8c919487cbf4560497f410"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2022-I-GK.json",
+          "sha256": "3863b190a0eb3f5df3ab47585034597b19c1bfeeaf4c06e405452760327bfdd4"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2022-II-GK.json",
+          "sha256": "30643d2b8a89efb3b89cca69454ed9129933ca372c3800baa2e8512d6bc840ed"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2023-I-GK.json",
+          "sha256": "277a5156a74d468bd8bc010145136db9cbfab8017bbf1c1440c54ef110219fda"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2023-II-GK.json",
+          "sha256": "662fdb9bd3668794c08f081970715e929807c5b1f36f167d7fbf2999fd8e155f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2024-II-GK.json",
+          "sha256": "766857acf9296eeb9700bcdce3d389ca3c19c3a423c74265ecd77a676fe43795"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2025-I-GK.json",
+          "sha256": "044a0673de73fda8203c3ddbaec2c92a132dd042b37e720201fdb6204cefcb1b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2026-II-GK.json",
+          "sha256": "be618f254b94c4f708e58fa2d9cfbf66cd39683ee2f2083164f6a9d80007ef45"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2018-GS1.json",
+          "sha256": "0c8a22b4f08e80e26f7c318c6a2459f68e9e1152138cc78724c9f7ba8dcbd1a1"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2019-GS1.json",
+          "sha256": "ebf94353cad9e91c46d00baed46f2f671671d2c540a3fead64fa681ac67cc016"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2020-GS1.json",
+          "sha256": "d5aaddb37e4f5b0e34a6e3a15e8d201dc864c19985dea353a73ab744121be282"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2021-GS1.json",
+          "sha256": "d9a4eaf2f8b5dc5f5fc2dc6fc90ddb6a725256502e93db0bdcf864c31829379e"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2022-GS1.json",
+          "sha256": "1dde47e555f3f36ce38430bd091087a391000f888e685693bbc5da6ff1fe313b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2023-GS1.json",
+          "sha256": "f6a8c2b532d6155455fa5e8cdcd09969817a4dac71a5da279e8db35a4120a13c"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2024-GS1.json",
+          "sha256": "1be6b19e0b854576bd3f90f6ee4fbb3be9efbb4c64f468d5d0aae73f6060c502"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2025-GS1.json",
+          "sha256": "4789264a04c3387445dadab4b93e5f7b525e39b302a1116d57b49a69176d1c4f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-1996-GS1.json",
+          "sha256": "a81771181793d0f0c3f282f75570c5da8a6425d12592745f6727831283ca5fad"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-1999-GS1.json",
+          "sha256": "5ec0effbcc7f935ac3fd8928b17680f74cf3465aaded43262df73ca64796f0ec"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2000-GS1.json",
+          "sha256": "04d3dd768ee4740ece4d0a65de94cae592e5c459760802bb59d687e6b21125b2"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2001-GS1.json",
+          "sha256": "5cabf63433f05465f02fcd0cd2eb5d32dc5fa746648ec82e8f5e015140d802f0"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2002-GS1.json",
+          "sha256": "a06bba7ffb33de9701d15f86c9a478cb48428c5020511abf7139d5b4d624ca7d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2003-GS1.json",
+          "sha256": "a165b7250e310cd6ea63af60ec9fd1fa5fd28a727cbf7a15b6ed78b006ad0165"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2005-GS1.json",
+          "sha256": "e67ffab0df03a3974eb80a8ec2dd6ed432b3947b7205ac61ddec6580859b6b12"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2006-GS1.json",
+          "sha256": "869a6df3118001daf52843470df7b416fa0a925ada951ba4ee079804ea39206a"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2007-GS1.json",
+          "sha256": "a9a629e9ebe0f04f4ddec3437385bb5a2796553f214a989342dce90b766e07a5"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2008-GS1.json",
+          "sha256": "5fe2474e2ca1255d12af723f1dff540fee2eeda6340e1775e2f4d1ec70649fa6"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2009-GS1.json",
+          "sha256": "44249341bc9fbe72844d0d8fe9126baea096bc6d352c9e43f0ff4acb80b97101"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2010-GS1.json",
+          "sha256": "74d2d06e3a1dc815c274e8f3e487def7b02bdf6367eb710a6ffdbeb626e18fce"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2011-GS1.json",
+          "sha256": "818f12cf9941f03e7f5fc50115f0d735888e935d29f4c34dfb980cbb57f12e5f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2013-GS1.json",
+          "sha256": "25301bbbe82043da69ac4faf89c77c531a948c0607c4c9c29619df5250ad25a8"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2014-GS1.json",
+          "sha256": "797c766b58b3155976c68d4a8abd723f0fb0052b6c9bc6c35717593779ddc5b5"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2015-GS1.json",
+          "sha256": "d72627a80d66a82301826205df261f464e4e8d76bccbe9fc140ecf8aeb620d6b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2016-GS1.json",
+          "sha256": "af374375bb13cf0b81638a9ac03163290867f05122a1b43bdf3d15d127287382"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2017-GS1.json",
+          "sha256": "57b0434f6ae24160b22553eb7f688a25bfba61d92141621f5bd8e5d9830436c8"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2018-GS1.json",
+          "sha256": "6ef6e782982c9879eb31f5464a3443037232e4196dfe8c44b31a04db3380372f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2019-GS1.json",
+          "sha256": "73c8121380419a1bc8cd69c2177bcfef1bc20ed5588a0e0c26558a1425df0852"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2020-GS1.json",
+          "sha256": "97667d34b4d7b82066b0131d32740faa55b802472c1548fc26a548724435d126"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2021-GS1.json",
+          "sha256": "11b5522430e03a7a997bf1dee7cdbe6847b11a81bfe81dc62b19851ae2dd7336"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2022-GS1.json",
+          "sha256": "20b5140899a77719a3124bb3862d3c5e9ba81cb03322d1d302619777c61a8839"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2023-GS1.json",
+          "sha256": "4d0daf918c7a00b1c4b407814c21f1d134101cad9fa997628fa4f88005741a9d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2024-GS1.json",
+          "sha256": "1ae3f019e4b8c05a98fe11d9e49757bd739df63035fbc344ad5539859b3a2f60"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2026-GS1.json",
+          "sha256": "3cafaec269edfff94847759d94ff86c58d9967b1c2afcf2a904be41a7c31a577"
+        },
+        {
+          "path": "pyq-atlas/v1/place-pyq-index.json",
+          "sha256": "a2f73837c6adba0c4ba7f704290a52dc51cd2ee03a40ffdb5118ac22d3a15fc2"
+        },
+        {
+          "path": "sw.js",
+          "sha256": "e45d49fed4c841ef5bc730baadd4df323c34c712589729bfd6da9029c845c7a5"
+        },
+        {
+          "path": "workbox-355bf58a.js",
+          "sha256": "65f65ca7c32e7b4f8f26757147c7ec70eae35b4df713312afa4a398e6e863303"
+        }
+      ]
+    },
+    "v3": {
+      "destination": "tools/browser/out/production-release-builds/v3-h3-build",
+      "files": [
+        {
+          "path": "_headers",
+          "sha256": "bcde65f3e9a9cb57e5951372fb0ae0f4f0b162e033f47e5e9654265ddc770e1c"
+        },
+        {
+          "path": "_routes.json",
+          "sha256": "a67ad65b30bb0a543e2c4c14df34dabf0023a3ee1627af75a0aa6153d089a122"
+        },
+        {
+          "path": "_worker.js/index.js",
+          "sha256": "e8c02fbc7d66a96edbe8a114605ee1a9581f087d504e33808e0861b47c1f9368"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "sha256": "8c4a934434c80a1eec244cc91ac31e9c2522e0b7ee57ad1838eb579fc3d4b40b"
+        },
+        {
+          "path": "assets/AtlasScreen-DCmMDPeD.js",
+          "sha256": "cf7be0f2f9f09ca0e91cf8520dafbe184edfa737c36fa5b240cb2a34dedb743c"
+        },
+        {
+          "path": "assets/AtlasScreen-De9t_Y1_.css",
+          "sha256": "163ee0bc9e3022576860558b8a574f60acdee16bb0d14a4e4820daec03890856"
+        },
+        {
+          "path": "assets/CommandPalette-CPSzQYa7.js",
+          "sha256": "5800310074244c33adb9cb6a3fb8a91a11bc9f1b7055175ac46c5d9ac2b6fda5"
+        },
+        {
+          "path": "assets/NewsScreen-C8WGWtnw.js",
+          "sha256": "eb1da02d86ebe8baafd276c7125536b77945cd00350eeea07c27e4093fc411ea"
+        },
+        {
+          "path": "assets/NewsScreen-DMDaWy8j.css",
+          "sha256": "57dfc03f80c329ce02523820fc3a5671696108cb8ccec58df3164a9b0cd0b2cd"
+        },
+        {
+          "path": "assets/SettingsScreen-CklBQNpp.css",
+          "sha256": "807f5efdd0082b2bd6614a244a48cd03d762e45fa265c08846a7c7f11bb10fb1"
+        },
+        {
+          "path": "assets/SettingsScreen-DaNYTW-m.js",
+          "sha256": "1e5e8fcbf0bf4f248b24f3a85569b3a3f2d909c43c7986076980b779a6b4c4ec"
+        },
+        {
+          "path": "assets/ShortcutsSheet-Cvib8u_K.js",
+          "sha256": "ecf3e16b12ddc44efcc091d9b7d0ae887f50b10f20a30e22f5b63a18464702c0"
+        },
+        {
+          "path": "assets/adapters-YN8XV46B.js",
+          "sha256": "9c76db0aa9feb7ba7deae12376339b30c48be2d03f05c81fc0b90ed26a38de41"
+        },
+        {
+          "path": "assets/catalog-JkJkrLL3.js",
+          "sha256": "49e13f7feae39757aabc619cdc4070b7b02144bbdef28b29d770b0eef9deff62"
+        },
+        {
+          "path": "assets/data-6g_P3WMx.js",
+          "sha256": "684fb257f1097f1be51c7e6828fc70c5df707bddf4ebbf74e3e13dd92ed354d9"
+        },
+        {
+          "path": "assets/data-Xzg_08KK.js",
+          "sha256": "9048cd121d773269bbf367584c93a53a4e48f720b90208298c9ff83642c82696"
+        },
+        {
+          "path": "assets/extract-CTJ61GpC.js",
+          "sha256": "b914bd77a8c9f763cc78d1e442dcee53550e95f1aa5d1b6b218d18f7028c7a76"
+        },
+        {
+          "path": "assets/fraunces-latin-opsz-normal-DihXLNYH.woff2",
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        {
+          "path": "assets/index-BitMth5N.js",
+          "sha256": "83b56eb46c749ce6d4d351e30b10182353bea7171d8c7adf889d6aa2704b0bbb"
+        },
+        {
+          "path": "assets/index-DrEtVxuq.css",
+          "sha256": "63b6be0a1add5c06f6d0bfc138b87c4725f1c78c771b543bb5e6b4c614821e4d"
+        },
+        {
+          "path": "assets/info-DHjvAqMB.js",
+          "sha256": "3a3b5f76fee9deda01d8d9ddef21f5107cbc3319ed7ada6d7022943432471337"
+        },
+        {
+          "path": "assets/labelWorker-BM1tfPLl.js",
+          "sha256": "dcb63603e9b3e92d78f2df19ef76afe39814f541d1d494f5d254943049fd1370"
+        },
+        {
+          "path": "assets/lifecycle-BkSHaKPH.js",
+          "sha256": "b646085e7eb51fe362935a3fe5b7f044188a4deb14133042f8aba6e2244f6a20"
+        },
+        {
+          "path": "assets/lock-Bg2NRR-5.js",
+          "sha256": "061fa254fc5ea2106d9b27aba663d7fded1aba52f52ee8ce15d88184fa0233cf"
+        },
+        {
+          "path": "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+          "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb"
+        },
+        {
+          "path": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+        },
+        {
+          "path": "assets/motion-DNEH_GKX.js",
+          "sha256": "cef047bcabfb9f119c1e2d2a15c729c66e49a6fb10845e697c662976f032605d"
+        },
+        {
+          "path": "assets/native-CZrayuTz.js",
+          "sha256": "2d0e987ad9915d6053fdf54f34d28f78ab258898b50ed7bb44eceb69d4b586c4"
+        },
+        {
+          "path": "assets/react-CR5VJ85Q.js",
+          "sha256": "b19a9fcdb691b2158d837ef44b93412f755c06ec395363af87850a92252826b4"
+        },
+        {
+          "path": "assets/rolldown-runtime-hePW80VL.js",
+          "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+        },
+        {
+          "path": "assets/runtime-C8xFJ2fY.js",
+          "sha256": "a614b3075d4108ec9ce6625ea35ef6d895384767dffafae89946b4ad0fe6ac96"
+        },
+        {
+          "path": "assets/status-8xh13eAU.js",
+          "sha256": "799f1d030fd078f7fb92409a884cc8449fbf916c23f1c99cacff2de7c69df5d0"
+        },
+        {
+          "path": "assets/store-DWrZwfyD.js",
+          "sha256": "1bae3009578d9ac3fefacc3f1a8eea156b410bdee23cac23fd0bd1b9607f3c46"
+        },
+        {
+          "path": "assets/tileWorker-BBpS9zCW.js",
+          "sha256": "10febd41d5bc904abb3663d4d949447dfaa0734fcf8c7784eb782df435952faf"
+        },
+        {
+          "path": "assets/trash-CrdxaTBP.js",
+          "sha256": "08267b8d73ca90081ea91f42b9823aefa74e437cae52513447887445664a5389"
+        },
+        {
+          "path": "assets/useExploration-g6M5wa0M.js",
+          "sha256": "4df1469082a78ab5fa2c39cafabba27ef12038ee82608450dbba7157384adab0"
+        },
+        {
+          "path": "assets/virtual_pwa-register-QGFKvKy9.js",
+          "sha256": "8d0e89823e462ac1ac1beb29975ee7638dd7e7833650ff9d9b4e63f65bfb3a0c"
+        },
+        {
+          "path": "assets/workbox-window.prod.es5-Bd17z0YL.js",
+          "sha256": "17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9"
+        },
+        {
+          "path": "atlas-assets/v1/india-boundary-source.json",
+          "sha256": "d34b79c99533189ea5e057a9e214f3aa90adad700e440bd4ecd1ef4b37446a9d"
+        },
+        {
+          "path": "atlas-assets/v1/india-controlled-border.geojson",
+          "sha256": "442d8ba8670c3d006d36f00df3af5422795f325a5f1a86d2a327a5d0092d0373"
+        },
+        {
+          "path": "atlas-assets/v1/manifest.json",
+          "sha256": "a3f1d739beffb0060f464644e190e09a643c4ddc55cd960298b7db30527c8824"
+        },
+        {
+          "path": "atlas-assets/v1/pyq-hotspots.json",
+          "sha256": "f59fa03c8c6b15dffc84d088378f2c4133319d9a60ddb00e5fa173fd41e54d87"
+        },
+        {
+          "path": "atlas/v1/ATTRIBUTION.txt",
+          "sha256": "580787adc3617f32d50407b942a463b56a47131af251fc1140120bcfc5964c40"
+        },
+        {
+          "path": "atlas/v1/india-overlay.json",
+          "sha256": "f8651ec206014644e6e8199cd3096e6b4e86ed44446275c8a56bca57ff470634"
+        },
+        {
+          "path": "atlas/v1/india-relief.webp",
+          "sha256": "c4c6f70dacfeaad2882e21ce5d461bb1d0da5f3fcdf6d64c595fd959a5b6e254"
+        },
+        {
+          "path": "atlas/v1/india-shade.webp",
+          "sha256": "fda83a33439eac94a388f323dac6341c1821ee666f030bfe5327abaaa7fc391c"
+        },
+        {
+          "path": "atlas/v1/india.json",
+          "sha256": "c75cdcf2d3b23dfe61d94fa5664ce278c4d558bed632fb6ed2f0da393724faa0"
+        },
+        {
+          "path": "atlas/v1/places.json",
+          "sha256": "5bb6ae472ebcc383c6316cca302c0ba2e2c75028677bb92959775b2c38ac7ddb"
+        },
+        {
+          "path": "atlas/v1/world-overlay.json",
+          "sha256": "865991bb3368be797f7f5bb09dc9ddf7d12b62f42433d3d9dbaf89315f177bde"
+        },
+        {
+          "path": "atlas/v1/world-relief.webp",
+          "sha256": "7c015d0697ebb3222410a82fdd86b2151bef88d33035ac4ad3aeb4a837788cfe"
+        },
+        {
+          "path": "atlas/v1/world-shade.webp",
+          "sha256": "a5f6a9340cf94c4a527038d53f211b40a6dbf26a53b94ed76a9982add9dbc8ba"
+        },
+        {
+          "path": "atlas/v1/world.json",
+          "sha256": "736a091ab3c837dfd408f0f8fcd87079f4c69ae3fd73f8699c6c6e19c33d4770"
+        },
+        {
+          "path": "current-affairs/v2/relevance-index.json",
+          "sha256": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348"
+        },
+        {
+          "path": "favicon.svg",
+          "sha256": "811c05d8a1ef94826061def217017e7dc9067d820e60d5161ec4a734ae79c36d"
+        },
+        {
+          "path": "fonts/Geist-OFL.txt",
+          "sha256": "f52b2dd3e8543035e79d44c100a69874017d0fb05342956fd2f600a426d0e991"
+        },
+        {
+          "path": "fonts/Newsreader-OFL.txt",
+          "sha256": "dca5a91eaf1d4a431e74801dfa745db53856bb92ec1f982506f837a00a5a94a7"
+        },
+        {
+          "path": "fonts/README.md",
+          "sha256": "7532a50b9ac197ea25239c46bdfb24598e68b90bdb34920e532e22931b64ef5a"
+        },
+        {
+          "path": "fonts/geist-latin.woff2",
+          "sha256": "19f9c92546aa300c312235e3125af1b81394d8db9a4bc4a425cd5b641d2d54e1"
+        },
+        {
+          "path": "fonts/newsreader-italic-latin.woff2",
+          "sha256": "5dfcd10d24af8c82927ba57f7983dd997f7b200594c09c35a1b1ed9fc4597506"
+        },
+        {
+          "path": "fonts/newsreader-latin.woff2",
+          "sha256": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101"
+        },
+        {
+          "path": "icons/icon-192.png",
+          "sha256": "3cb7100d48dd3727ed0c14473f8517415c73807a02546b59380151778cb7d658"
+        },
+        {
+          "path": "icons/icon-512.png",
+          "sha256": "1fccea82ea784d67eac33ee43439fbd4cb84708f0b0fd616ef58939820f0f0bf"
+        },
+        {
+          "path": "icons/icon-maskable-512.png",
+          "sha256": "37dd57856b0c1e0b955678efe68fdc658be7f38bb7d4a28187f232dae825f1ff"
+        },
+        {
+          "path": "index.html",
+          "sha256": "10fcb57ff147bc6606ecfb2d766c73128f4568e5148c5ef8a7163e7ea3bdfb87"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "sha256": "75976bd0a5c1fd75f390247d02f41b51a8d9bf8d21c07671c19f662b548c18e0"
+        },
+        {
+          "path": "og-image.png",
+          "sha256": "5c09f11f8387f873ee971be54f618ca5dabc23811732e9366ad6ea8a29644161"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2018-I-GK.json",
+          "sha256": "859fa5f8a3020bad03c678ac12b837880feddc2cc48eeb4cf274a12212de0a31"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2018-II-GK.json",
+          "sha256": "41a33abe838f1c5638cd924b8372994b0e746e07cce3bf84e08158e976156142"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2019-I-GK.json",
+          "sha256": "a5e969f12fed253e637775b60d4131b3dcf3e72f77bb22153eb4d0033ae7154c"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2019-II-GK.json",
+          "sha256": "a19bb44bf7bc30082f82f32a44e009f5ca48b6a43e552e83fb5dcc9837037bbe"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2020-I-GK.json",
+          "sha256": "4b98bdc1f0c718a3048d41885f26f16e9ef6d3d3ceb7ed5b4642577ea8106060"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2020-II-GK.json",
+          "sha256": "586e72644b923ad1508a9e31821f6b79fc237f586abb44500127f70fb3dad401"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2021-I-GK.json",
+          "sha256": "839eb2fd6ebecf254e9a78183833ac6cecef952ef8a89eb4375226bf5324e39a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2021-II-GK.json",
+          "sha256": "1dd1957df5ff1e8b750c5545d0c955c1eeed706040228ef74ad738991169d84d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2022-I-GK.json",
+          "sha256": "ffd406843f5be14107db23a645c51ba4f9cf268330f0b025be3cb8db0d452203"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2022-II-GK.json",
+          "sha256": "d47955ef63fb4846d3a5e96e6433c471f0be8f72aaa0c8fe9d7b2a33e425aee0"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2023-I-GK.json",
+          "sha256": "c3574736a1965b0842f68e1eeef5964bc020818111a650ee00d08317fe06c64d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2023-II-GK.json",
+          "sha256": "91814799820daa0c3adf092f70836c0daa9932a54e4cb53d854538ba1119ad9b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2024-II-GK.json",
+          "sha256": "ff5a0b3817be995c53d4f3018cf9f1894090fadd76421d57852843998a34fa59"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2025-I-GK.json",
+          "sha256": "30a967f5c625b4786b90cce3ef5aa64f6eb67804af6364f19fce9c6bcd612372"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/CDS-2026-II-GK.json",
+          "sha256": "e6bef8dc6fbb118a69b96f6687fbdc0bce604c2cd1b2c8cd26e428419c023162"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2018-GS1.json",
+          "sha256": "3794d87ec039a86cdfd4002f829f5a0bb7e3b2655c994b366b23aeb68edd6547"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2019-GS1.json",
+          "sha256": "7aea09188477bcc83387f87a635c6f70db18863b4e19ceb7a59115c5e99ab176"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2020-GS1.json",
+          "sha256": "0053f03a914ba69a8d2061cafdc00fbbd7e4e9be2acf22e627c92abc56467390"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2021-GS1.json",
+          "sha256": "7ec2b6bb6e8e957e1c3a127c2260c2b4bb99bb13eedf22d28e9f91a87b7cc44b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2022-GS1.json",
+          "sha256": "a8e8cfc774059dbe097ee86123e77fc5a409aeb47c66e119233ae72771cdb915"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2023-GS1.json",
+          "sha256": "707d5d1d6b3206fd54f018d6cf02e871b2047035b6332d3f7569a7e26f7fc5c0"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2024-GS1.json",
+          "sha256": "978f2bb0e4c6b4b490af9c402948d337509f0bbb361c752f5ce146e0a48dc319"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPPCS-2025-GS1.json",
+          "sha256": "97d30b668c65d8898808ce193694a3511ccd5896d5b21e7e586d12419bcf2cc9"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-1996-GS1.json",
+          "sha256": "3d215ff47999c0c5dd5bc1f52f61542a1e8a4589f84fe28309b8e0225590db76"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-1999-GS1.json",
+          "sha256": "1103dc1b28a995d5a7ad42635337406877886f4e3073306da52deedb3e4e6218"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2000-GS1.json",
+          "sha256": "37346b4d4626f2f54462c464927058d506ec6a3cc37fe390b7d75e2f3101b24a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2001-GS1.json",
+          "sha256": "0bc3c79fc4e74064c78a984625c8c6c28c02e5db2d2e986cc43d65521e67454a"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2002-GS1.json",
+          "sha256": "cf53756faa1b0def37ea4989417dc367e9ce5cef96873341eeb81cd18f87fae9"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2003-GS1.json",
+          "sha256": "ae48a675465931c90b583496985e9cf0e546fff5b7d98321a41b97cd470ee33b"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2005-GS1.json",
+          "sha256": "7fa3f02d04368495a1777cd20740d9c9940dec2ba9e424b5e4cbfab7ee7f09f3"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2006-GS1.json",
+          "sha256": "378246ab1b99cc8f1151978af3bc1966b2b0a8e8d7a6805a3303a2b64e72665f"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2007-GS1.json",
+          "sha256": "6b96ba1ecfe2e5b1e4586769e719e8bd0c65f212d8b5c21e04ed101d10147f65"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2008-GS1.json",
+          "sha256": "9c6a2d4bbafdf222c6bcbd74d2ef9512dbaf618759330429bdf66f969c60f59c"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2009-GS1.json",
+          "sha256": "2b8f269f9a695395b92049fc318a5112e80b776140be55dc7cd3a63687fb40e3"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2010-GS1.json",
+          "sha256": "dc0bbcbe00fbc1765cb99be9f4605f2ff22add449bb99be5bfa2ed74be075aa1"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2011-GS1.json",
+          "sha256": "2c0de9d2e85224b0f5135e9445b59818ca42c3ce7257753cf1f9b4f8542f01f1"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2013-GS1.json",
+          "sha256": "3624266ea7c886b072fa3ac278b91dbb43d08201190d9715101e37c09d6c9063"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2014-GS1.json",
+          "sha256": "cd58ba860703d373f0b7490712fc09255aa12c317980d471f2b3022e8c60f4d4"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2015-GS1.json",
+          "sha256": "0f41464fe55623b6265839437d1363cfae890fe413a18825f1e4f1cd419fce97"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2016-GS1.json",
+          "sha256": "59beed6d04c7e30c72d5a5eb04b91f8eb99a13c31694e9f8edec87f5572d6524"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2017-GS1.json",
+          "sha256": "d596e5d00f5845dcfc8b09ee0eeb65df1e2dd4245426f98110f73a213fc811ec"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2018-GS1.json",
+          "sha256": "d47a10c5df02fab0af8799815202734454311c6f994f05cf806b3d1ed3936d88"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2019-GS1.json",
+          "sha256": "572213f89acade52ec3bb4715a35a37aaaa5c4d39b8f22b3c2f8bcb9dafba49e"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2020-GS1.json",
+          "sha256": "91ff366975d60959f248980f1daf839463c5f899d8339f3e1d743650ccf70892"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2021-GS1.json",
+          "sha256": "3a9e778255cf6d2683623ff8045f1bd898f8380f788456a00b2e65120273cf95"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2022-GS1.json",
+          "sha256": "b4df4b03ca4cb92e4e3d609e06ffab2a0ac8814a6527942c96db0490d8c875de"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2023-GS1.json",
+          "sha256": "f0404fd9de1b5e5c3bf43bd984eb3ef78ecc5d7f66d3e0e363db307990e64e01"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2024-GS1.json",
+          "sha256": "31da703c8fc030c0a9b50dc289922b1fe36244a3392a1a3778e000d12413911d"
+        },
+        {
+          "path": "pyq-atlas/v1/answers/UPSC-CSE-2026-GS1.json",
+          "sha256": "deaab9c486362f5fda73c729d081dab78f5dfb6719f868d042e37a75671443d7"
+        },
+        {
+          "path": "pyq-atlas/v1/manifest.json",
+          "sha256": "7760df6c9995256f856994762f0a13859e37b7d7b2edde833763ff9788ced58d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2018-I-GK.json",
+          "sha256": "c6c07bf3b4618d2ca01deb7095446ae55d58eec2766e7a7d004d1ca863d97606"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2018-II-GK.json",
+          "sha256": "6df47b68c08ffc2e08b4b8d02d62f88941473f94e59b7700acdc583cf5fce3ba"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2019-I-GK.json",
+          "sha256": "3d75c0ead9f0fb41d7681067d62553afcd9b6f67069573ef932c79074900d1af"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2019-II-GK.json",
+          "sha256": "22123919baee2759579d9e1085f42956c06efce8e76a4eb9ea5e07adc72d084a"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2020-I-GK.json",
+          "sha256": "f410935014834f53cfdb3ca4556c1bd9206d9fcdb24aa962936a342926a2ab04"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2020-II-GK.json",
+          "sha256": "79632913cd225b3b31f886bb352c66a4b63e72b873280bd6efc622d6feb7c56e"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2021-I-GK.json",
+          "sha256": "6580720d3273f737c7dcaa13b98031b70db62f0c6ba7405b01e1429e0714ae6c"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2021-II-GK.json",
+          "sha256": "2512c753d4a98e19439134ab0f3e61f2d30aea71cc8c919487cbf4560497f410"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2022-I-GK.json",
+          "sha256": "3863b190a0eb3f5df3ab47585034597b19c1bfeeaf4c06e405452760327bfdd4"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2022-II-GK.json",
+          "sha256": "30643d2b8a89efb3b89cca69454ed9129933ca372c3800baa2e8512d6bc840ed"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2023-I-GK.json",
+          "sha256": "277a5156a74d468bd8bc010145136db9cbfab8017bbf1c1440c54ef110219fda"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2023-II-GK.json",
+          "sha256": "662fdb9bd3668794c08f081970715e929807c5b1f36f167d7fbf2999fd8e155f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2024-II-GK.json",
+          "sha256": "766857acf9296eeb9700bcdce3d389ca3c19c3a423c74265ecd77a676fe43795"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2025-I-GK.json",
+          "sha256": "044a0673de73fda8203c3ddbaec2c92a132dd042b37e720201fdb6204cefcb1b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/CDS-2026-II-GK.json",
+          "sha256": "be618f254b94c4f708e58fa2d9cfbf66cd39683ee2f2083164f6a9d80007ef45"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2018-GS1.json",
+          "sha256": "0c8a22b4f08e80e26f7c318c6a2459f68e9e1152138cc78724c9f7ba8dcbd1a1"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2019-GS1.json",
+          "sha256": "ebf94353cad9e91c46d00baed46f2f671671d2c540a3fead64fa681ac67cc016"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2020-GS1.json",
+          "sha256": "d5aaddb37e4f5b0e34a6e3a15e8d201dc864c19985dea353a73ab744121be282"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2021-GS1.json",
+          "sha256": "d9a4eaf2f8b5dc5f5fc2dc6fc90ddb6a725256502e93db0bdcf864c31829379e"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2022-GS1.json",
+          "sha256": "1dde47e555f3f36ce38430bd091087a391000f888e685693bbc5da6ff1fe313b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2023-GS1.json",
+          "sha256": "f6a8c2b532d6155455fa5e8cdcd09969817a4dac71a5da279e8db35a4120a13c"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2024-GS1.json",
+          "sha256": "1be6b19e0b854576bd3f90f6ee4fbb3be9efbb4c64f468d5d0aae73f6060c502"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPPCS-2025-GS1.json",
+          "sha256": "4789264a04c3387445dadab4b93e5f7b525e39b302a1116d57b49a69176d1c4f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-1996-GS1.json",
+          "sha256": "a81771181793d0f0c3f282f75570c5da8a6425d12592745f6727831283ca5fad"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-1999-GS1.json",
+          "sha256": "5ec0effbcc7f935ac3fd8928b17680f74cf3465aaded43262df73ca64796f0ec"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2000-GS1.json",
+          "sha256": "04d3dd768ee4740ece4d0a65de94cae592e5c459760802bb59d687e6b21125b2"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2001-GS1.json",
+          "sha256": "5cabf63433f05465f02fcd0cd2eb5d32dc5fa746648ec82e8f5e015140d802f0"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2002-GS1.json",
+          "sha256": "a06bba7ffb33de9701d15f86c9a478cb48428c5020511abf7139d5b4d624ca7d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2003-GS1.json",
+          "sha256": "a165b7250e310cd6ea63af60ec9fd1fa5fd28a727cbf7a15b6ed78b006ad0165"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2005-GS1.json",
+          "sha256": "e67ffab0df03a3974eb80a8ec2dd6ed432b3947b7205ac61ddec6580859b6b12"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2006-GS1.json",
+          "sha256": "869a6df3118001daf52843470df7b416fa0a925ada951ba4ee079804ea39206a"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2007-GS1.json",
+          "sha256": "a9a629e9ebe0f04f4ddec3437385bb5a2796553f214a989342dce90b766e07a5"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2008-GS1.json",
+          "sha256": "5fe2474e2ca1255d12af723f1dff540fee2eeda6340e1775e2f4d1ec70649fa6"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2009-GS1.json",
+          "sha256": "44249341bc9fbe72844d0d8fe9126baea096bc6d352c9e43f0ff4acb80b97101"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2010-GS1.json",
+          "sha256": "74d2d06e3a1dc815c274e8f3e487def7b02bdf6367eb710a6ffdbeb626e18fce"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2011-GS1.json",
+          "sha256": "818f12cf9941f03e7f5fc50115f0d735888e935d29f4c34dfb980cbb57f12e5f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2013-GS1.json",
+          "sha256": "25301bbbe82043da69ac4faf89c77c531a948c0607c4c9c29619df5250ad25a8"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2014-GS1.json",
+          "sha256": "797c766b58b3155976c68d4a8abd723f0fb0052b6c9bc6c35717593779ddc5b5"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2015-GS1.json",
+          "sha256": "d72627a80d66a82301826205df261f464e4e8d76bccbe9fc140ecf8aeb620d6b"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2016-GS1.json",
+          "sha256": "af374375bb13cf0b81638a9ac03163290867f05122a1b43bdf3d15d127287382"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2017-GS1.json",
+          "sha256": "57b0434f6ae24160b22553eb7f688a25bfba61d92141621f5bd8e5d9830436c8"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2018-GS1.json",
+          "sha256": "6ef6e782982c9879eb31f5464a3443037232e4196dfe8c44b31a04db3380372f"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2019-GS1.json",
+          "sha256": "73c8121380419a1bc8cd69c2177bcfef1bc20ed5588a0e0c26558a1425df0852"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2020-GS1.json",
+          "sha256": "97667d34b4d7b82066b0131d32740faa55b802472c1548fc26a548724435d126"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2021-GS1.json",
+          "sha256": "11b5522430e03a7a997bf1dee7cdbe6847b11a81bfe81dc62b19851ae2dd7336"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2022-GS1.json",
+          "sha256": "20b5140899a77719a3124bb3862d3c5e9ba81cb03322d1d302619777c61a8839"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2023-GS1.json",
+          "sha256": "4d0daf918c7a00b1c4b407814c21f1d134101cad9fa997628fa4f88005741a9d"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2024-GS1.json",
+          "sha256": "1ae3f019e4b8c05a98fe11d9e49757bd739df63035fbc344ad5539859b3a2f60"
+        },
+        {
+          "path": "pyq-atlas/v1/papers/UPSC-CSE-2026-GS1.json",
+          "sha256": "3cafaec269edfff94847759d94ff86c58d9967b1c2afcf2a904be41a7c31a577"
+        },
+        {
+          "path": "pyq-atlas/v1/place-pyq-index.json",
+          "sha256": "a2f73837c6adba0c4ba7f704290a52dc51cd2ee03a40ffdb5118ac22d3a15fc2"
+        },
+        {
+          "path": "sw.js",
+          "sha256": "fbd2e5a4434b8e0d59a6e8b8a68017f790f1365bd1d0df0e8bb118cb18faa803"
+        },
+        {
+          "path": "workbox-355bf58a.js",
+          "sha256": "65f65ca7c32e7b4f8f26757147c7ec70eae35b4df713312afa4a398e6e863303"
+        }
+      ]
+    }
+  },
+  "sharedWorkerCanonicalizedAfterExactCommentOnlyComparison": true
+}

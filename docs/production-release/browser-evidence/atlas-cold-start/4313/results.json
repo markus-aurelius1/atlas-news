@@ -1,0 +1,12 @@
+{
+  "base": "http://127.0.0.1:4313/",
+  "checks": [
+    "390: direct landing cold start with river lettering",
+    "390: Atlas reload",
+    "390: return from News",
+    "1366: direct landing cold start with river lettering",
+    "1366: Atlas reload",
+    "1366: return from News"
+  ],
+  "errors": []
+}

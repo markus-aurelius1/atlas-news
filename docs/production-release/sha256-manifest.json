@@ -1,0 +1,182 @@
+{
+  "algorithm": "SHA-256",
+  "scope": "Exact new review and release evidence; excludes this self-referential manifest",
+  "files": [
+    {
+      "path": "docs/production-release/CHANGED_FILES.txt",
+      "sha256": "e0a30539b283597a0ee550fda227d764f29efef13cd9034a3f553affb66a452d"
+    },
+    {
+      "path": "docs/production-release/D1_MIGRATION_CHECKPOINT.md",
+      "sha256": "21aedd9c36fea7592ac150166d1a3902515f557c5936c14a2f199f3e24e804cf"
+    },
+    {
+      "path": "docs/production-release/DEPLOYMENT_REPORT.md",
+      "sha256": "11e90f0fa2c95e04f7c62f5aec10a68b727a282d837a1dbd2938705e04e4e81a"
+    },
+    {
+      "path": "docs/production-release/FINAL_PRODUCTION_READINESS.md",
+      "sha256": "c598bb9bf43fd93883b9a984030553ec4db42af09c8c1a515037e5d520d51a0a"
+    },
+    {
+      "path": "docs/production-release/OWNER_REVIEW_RESULTS.md",
+      "sha256": "b4b148f67e39c2d8f13a258f1e3dc0d394b4ef742a30696c00671b0431fa8a56"
+    },
+    {
+      "path": "docs/production-release/POST_DEPLOYMENT_7_DAY_PLAN.md",
+      "sha256": "1af8aebc7bf43bee6328194d9bbf6a3a9b1ad694cdcc2c3537ce498a5b60c63a"
+    },
+    {
+      "path": "docs/production-release/backup-verification.json",
+      "sha256": "6a3e5d8ce7aff8906db4caf0957a222e06cb56dd39798c3594e4e27548d3c9bb"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/atlas-cold-start/4313/results.json",
+      "sha256": "1d814f96615a3ed9b0eb4ead100bdd3a1c373cd502885f352003aa153e9dd87f"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/current-affairs-direct/results.json",
+      "sha256": "835098d804df2633082a3a341c4c5f9c0ef9ce88450c4b8861443fa24a5aa05d"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/h21/after-timing.json",
+      "sha256": "54c11dffdc38c61fe84ff8e4db3fc9c4c090718dfa29ffd078178e98f50b8b9b"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/h3/performance-100.json",
+      "sha256": "e14b27abea9f109365795bf94760252e18f91da31e51fe228c8adf3ca5ef7613"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/h3/performance-1000.json",
+      "sha256": "8a3b934d11c5064c204991cf151bf77c38ccf584b0ea8668bf1d2a7f92c80873"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights-library/1366-light-library.png",
+      "sha256": "29cb64b5f12b1f2f4642e49c232bb15b99bf68ff0ace8660ee04d4b3118c8d3f"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights-library/375-dark-library.png",
+      "sha256": "32163cce88b88d2159825b3a4272ad476eb2810c0abed45f4e3df956460106bd"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights-library/results.json",
+      "sha256": "1ef3de68242912a277e425b07251db1e30210e294502e0a9a7aa2ba74d7e096e"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights/1366-light-palette.png",
+      "sha256": "69580a0eaa2517a8d5f2f8e786a48a0660a49da45a301d11f1c2d197027776cc"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights/375-dark-highlight.png",
+      "sha256": "01cdb5e89f9ef09a553ff306de17fba242c1790ca513875b13666eaa35e79930"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/highlights/results.json",
+      "sha256": "f0cdf0ff3ce97929c06ac6a999437c43b6c39a85408127deab2bc741df65dd60"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/label-visibility/results.json",
+      "sha256": "8ec88ef1f41eb8fe21a7c8dfeb51dbe8f57412578788b72f9f94ca1405a92465"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/reader/results.json",
+      "sha256": "2e6cc157e85c22769015bf4266121a32cacaccc0cc27d68d4cd0a9811867bde0"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/sync/highlights-results.json",
+      "sha256": "134f84923b972296db0a6651c0ba452cb75dfa96623189d1d8f7e455baed23f7"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/sync/results.json",
+      "sha256": "750756c59cc561f451775a9dea110142874c078a908951f03ab22a0902ef73bb"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/validator-v3/1366-dark-today.png",
+      "sha256": "a5ebdb78fe972a289a63f6f3e71c4bb0a559d0a0b430224fd1f451c902a8cafd"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/validator-v3/375-light-today.png",
+      "sha256": "759cff1f9419f500270e31335ed5298e561eef3ca3bbf55f96c7dc77fcfa77c2"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/validator-v3/results.json",
+      "sha256": "b56191964e94ac4fb52e81a43eafe1a804d0810e3500a3e72486ea0c814b4949"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/vnext/learning-results-dark.json",
+      "sha256": "ee4021eac23d627876648ee40f50ade01ed667f081d692532342d6ecf2076a8c"
+    },
+    {
+      "path": "docs/production-release/browser-evidence/vnext/learning-results-light.json",
+      "sha256": "ee4021eac23d627876648ee40f50ade01ed667f081d692532342d6ecf2076a8c"
+    },
+    {
+      "path": "docs/production-release/build-artifact-hashes.json",
+      "sha256": "b519e0fc2f107afa38c21323c31a48d11591aa7a11689074bafcd173b7eb490c"
+    },
+    {
+      "path": "docs/production-release/bundle-check.json",
+      "sha256": "f48a692de8f168d9451dfc4b735fc83f88a43edca3fa7e685261e11aa925c878"
+    },
+    {
+      "path": "docs/production-release/bundle-first-attempt.json",
+      "sha256": "f92ad26a91fb20346200b3fbef7036acc9ebe05daaefabc425e11a86f7d187d0"
+    },
+    {
+      "path": "docs/production-release/checks-browser.json",
+      "sha256": "9ef21a66d4cbe10737673aa1d78839a4b0fea1ed2cd70c619671367e2229acbb"
+    },
+    {
+      "path": "docs/production-release/checks-combined.json",
+      "sha256": "69f2716e3803b735378a6b3d3f98c7edc4287b5800c8a3ba8175351d87e997e8"
+    },
+    {
+      "path": "docs/production-release/checks-unit.json",
+      "sha256": "a1b2ba418f58007b4a9f0a573d8d0ee6d15001251de30351fb8ae85ff5719aae"
+    },
+    {
+      "path": "docs/production-release/dashboard-preflight.json",
+      "sha256": "a5357ede4f6d33f5d556a422c116141998539c5dea820ecc5c3b8c0ca5c417b9"
+    },
+    {
+      "path": "docs/production-release/final-verification.json",
+      "sha256": "48a7edefe9206dbb63393a18a7f994314feb9f5572f4dc8b371393ae520bc06d"
+    },
+    {
+      "path": "docs/production-release/frozen-candidate-predictions.json",
+      "sha256": "0e5bcbc13fe2c5d9f400e0739e1b886a8e90846758841eff6066a701f30e48bb"
+    },
+    {
+      "path": "docs/production-release/model-annotations.original.json",
+      "sha256": "401a83f4a6a48b36559c94579253825c852e5d7ccfffe5737e7a39eb88c65bf3"
+    },
+    {
+      "path": "docs/production-release/owner-attestation.json",
+      "sha256": "0eac2f747c27ef3b33c43fad835006dca630bd2c1650e678a37d883ff57ff953"
+    },
+    {
+      "path": "docs/production-release/owner-evaluation.json",
+      "sha256": "12ccf55d57fbd235fda46b8a2394388f5ec8db77527d102224bf5d0c6968c8c6"
+    },
+    {
+      "path": "docs/production-release/owner-review.original.json",
+      "sha256": "81aee61ca6d69333a70fd25f915863b94a0ded2446fe74cccc346152afbec475"
+    },
+    {
+      "path": "docs/production-release/preservation.json",
+      "sha256": "67a0c88c214ebfb97cb653a0ee3267b39fa44308afa1e138ffd8c77e123543c1"
+    },
+    {
+      "path": "docs/production-release/production-auth-readonly.json",
+      "sha256": "cf4d20d7edfc05359018ef1265a4c2d805799ba474ad70d749c8cd5adb22e39d"
+    },
+    {
+      "path": "docs/production-release/production-builds-first-attempt.json",
+      "sha256": "91ad9a901bc9c8cab0285cb9d1f7a325d3be841ce029aaa831265e1f907126e7"
+    },
+    {
+      "path": "docs/production-release/production-builds.json",
+      "sha256": "982bcf0db75bbe68926c6d4ddbb0aec84fa77fafa21a862398e76e0b37e44738"
+    }
+  ]
+}

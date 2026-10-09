@@ -1,0 +1,13 @@
+{
+  "name": "compiled-standalone-v3-H3-workerd",
+  "status": "PASS",
+  "exitCode": 0,
+  "elapsedMs": 69503,
+  "log": "tools/news/.cache/production-release/bundle-workerd.log",
+  "sha256": "f58f2d33023d1baed80c34f74069ac26e3367727bd4a56874be4045f9a2133c6",
+  "fallbackWorkerModulesByteIdentical": true,
+  "summary": [
+    "42 sync checks passed"
+  ],
+  "remote": false
+}

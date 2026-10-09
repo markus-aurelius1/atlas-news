@@ -7,3 +7,6 @@ public/** -text
 *.jar -text
 # Release evidence and blind samples retain exact committed hash bytes.
 docs/release-candidate/** -text
+
+# Preserve final owner-review and release evidence bytes.
+docs/production-release/** -text
