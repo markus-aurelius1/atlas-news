@@ -1,0 +1,1285 @@
+{
+  "checks": [
+    {
+      "tag": "375-light",
+      "name": "the list is unchanged before reading"
+    },
+    {
+      "tag": "375-light",
+      "name": "a headline is still a safe link to the publisher"
+    },
+    {
+      "tag": "375-light",
+      "name": "a headline opens the reader inside Tars, not the publisher"
+    },
+    {
+      "tag": "375-light",
+      "name": "the reader is a full-screen modal dialog"
+    },
+    {
+      "tag": "375-light",
+      "name": "the app behind is inert, not gone"
+    },
+    {
+      "tag": "375-light",
+      "name": "headline and excerpt come from the feed"
+    },
+    {
+      "tag": "375-light",
+      "name": "one gateway request for the opened article, none for any other"
+    },
+    {
+      "tag": "375-light",
+      "name": "paragraphs, headings, quotation, list and table are kept"
+    },
+    {
+      "tag": "375-light",
+      "name": "the picture keeps its caption and loads without a referrer"
+    },
+    {
+      "tag": "375-light",
+      "name": "a picture that fails disappears with its caption"
+    },
+    {
+      "tag": "375-light",
+      "name": "publisher furniture is removed"
+    },
+    {
+      "tag": "375-light",
+      "name": "no script, handler, form or unsafe link reaches the page"
+    },
+    {
+      "tag": "375-light",
+      "name": "article links are absolute and open outside the reader"
+    },
+    {
+      "tag": "375-light",
+      "name": "an infographic’s figures are one grid of number, unit and label, not loose lines"
+    },
+    {
+      "tag": "375-light",
+      "name": "the grid is a grid: cells side by side where there is room, the number larger than its label"
+    },
+    {
+      "tag": "375-light",
+      "name": "a comparison keeps each figure with its note, under its tab’s name"
+    },
+    {
+      "tag": "375-light",
+      "name": "a removed embed leaves one quiet pointer to it; an advertising frame leaves nothing"
+    },
+    {
+      "tag": "375-light",
+      "name": "byline, date and reading time"
+    },
+    {
+      "tag": "375-light",
+      "name": "the reader never scrolls sideways"
+    },
+    {
+      "tag": "375-light",
+      "name": "a readable measure and line height"
+    },
+    {
+      "tag": "375-light",
+      "name": "progress starts at the top"
+    },
+    {
+      "tag": "375-light",
+      "name": "reading down advances progress and hides the controls"
+    },
+    {
+      "tag": "375-light",
+      "name": "scrolling back returns the controls"
+    },
+    {
+      "tag": "375-light",
+      "name": "the end of the article is 100%"
+    },
+    {
+      "tag": "375-light",
+      "name": "a rendered article offers Read Original and no other way out"
+    },
+    {
+      "tag": "375-light",
+      "name": "the end credits the publisher and offers the original"
+    },
+    {
+      "tag": "375-light",
+      "name": "text size steps up"
+    },
+    {
+      "tag": "375-light",
+      "name": "typeface changes"
+    },
+    {
+      "tag": "375-light",
+      "name": "column and line spacing change"
+    },
+    {
+      "tag": "375-light",
+      "name": "the reading settings are kept on this device"
+    },
+    {
+      "tag": "375-light",
+      "name": "Escape closes the settings, not the reader"
+    },
+    {
+      "tag": "375-light",
+      "name": "a reload returns to the same article with the same settings"
+    },
+    {
+      "tag": "375-light",
+      "name": "closing a reader opened from its address lands on the list"
+    },
+    {
+      "tag": "375-light",
+      "name": "Escape closes the reader and the list is where it was"
+    },
+    {
+      "tag": "375-light",
+      "name": "focus returns to the headline that was opened"
+    },
+    {
+      "tag": "375-light",
+      "name": "a reopened article is not fetched twice"
+    },
+    {
+      "tag": "375-light",
+      "name": "the browser’s Back closes the reader"
+    },
+    {
+      "tag": "375-light",
+      "name": "a modified click still opens the publisher in another tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "Read and Saved start unset"
+    },
+    {
+      "tag": "375-light",
+      "name": "Read and Saved are recorded with the list’s own marks"
+    },
+    {
+      "tag": "375-light",
+      "name": "next is offered although the article just left To Read"
+    },
+    {
+      "tag": "375-light",
+      "name": "the controls are away while reading down"
+    },
+    {
+      "tag": "375-light",
+      "name": "next opens another article at its top with its controls in view, without adding history"
+    },
+    {
+      "tag": "375-light",
+      "name": "the position follows"
+    },
+    {
+      "tag": "375-light",
+      "name": "K returns to the previous article, still marked"
+    },
+    {
+      "tag": "375-light",
+      "name": "Back from a stepped article returns straight to the list"
+    },
+    {
+      "tag": "375-light",
+      "name": "the list shows what was marked in the reader"
+    },
+    {
+      "tag": "375-light",
+      "name": "the saved article is in Saved, read"
+    },
+    {
+      "tag": "375-light",
+      "name": "unmarking in the reader restores the queue"
+    },
+    {
+      "tag": "375-light",
+      "name": "related coverage opens in the reader too"
+    },
+    {
+      "tag": "375-light",
+      "name": "Open original leads to the publisher’s own page"
+    },
+    {
+      "tag": "375-light",
+      "name": "while the publisher answers, the headline is shown and the text is not invented"
+    },
+    {
+      "tag": "375-light",
+      "name": "For subscribers: explained, with no article text"
+    },
+    {
+      "tag": "375-light",
+      "name": "For subscribers: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "Guardian declined the request: explained, with no article text"
+    },
+    {
+      "tag": "375-light",
+      "name": "Guardian declined the request: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "No article text to show: explained, with no article text"
+    },
+    {
+      "tag": "375-light",
+      "name": "No article text to show: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "Read this on Financial Times: explained, with no article text"
+    },
+    {
+      "tag": "375-light",
+      "name": "Read this on Financial Times: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "a subscription publisher is never requested"
+    },
+    {
+      "tag": "375-light",
+      "name": "Couldn’t load this article: explained, with no article text"
+    },
+    {
+      "tag": "375-light",
+      "name": "Couldn’t load this article: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-light",
+      "name": "a failed fetch is not remembered: reopening the article loads it"
+    },
+    {
+      "tag": "375-light",
+      "name": "the count starts at nothing opened today"
+    },
+    {
+      "tag": "375-light",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "375-light",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "375-light",
+      "name": "a different article is the second of the day, on every notice"
+    },
+    {
+      "tag": "375-light",
+      "name": "past twenty the count goes on and the link still opens"
+    },
+    {
+      "tag": "375-light",
+      "name": "a new local day starts the count again"
+    },
+    {
+      "tag": "375-light",
+      "name": "a lapsed Access session is named as one, with no ways round it offered"
+    },
+    {
+      "tag": "375-light",
+      "name": "after signing in the same article opens, loaded"
+    },
+    {
+      "tag": "375-light",
+      "name": "and closing it lands on the list"
+    },
+    {
+      "tag": "375-light",
+      "name": "a short text is shown as possibly incomplete, never as the whole article"
+    },
+    {
+      "tag": "375-light",
+      "name": "offline: said plainly, with no request and no stale text"
+    },
+    {
+      "tag": "375-light",
+      "name": "back online, the article loads by itself"
+    },
+    {
+      "tag": "375-light",
+      "name": "an article read this visit is still there offline"
+    },
+    {
+      "tag": "375-light",
+      "name": "an unknown article is not fetched"
+    },
+    {
+      "tag": "375-light",
+      "name": "no article text is stored in localStorage, sessionStorage, Cache Storage or IndexedDB"
+    },
+    {
+      "tag": "375-light",
+      "name": "the list is intact after reading"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the list is unchanged before reading"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a headline is still a safe link to the publisher"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a headline opens the reader inside Tars, not the publisher"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the reader is a full-screen modal dialog"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the app behind is inert, not gone"
+    },
+    {
+      "tag": "375-dark",
+      "name": "headline and excerpt come from the feed"
+    },
+    {
+      "tag": "375-dark",
+      "name": "one gateway request for the opened article, none for any other"
+    },
+    {
+      "tag": "375-dark",
+      "name": "paragraphs, headings, quotation, list and table are kept"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the picture keeps its caption and loads without a referrer"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a picture that fails disappears with its caption"
+    },
+    {
+      "tag": "375-dark",
+      "name": "publisher furniture is removed"
+    },
+    {
+      "tag": "375-dark",
+      "name": "no script, handler, form or unsafe link reaches the page"
+    },
+    {
+      "tag": "375-dark",
+      "name": "article links are absolute and open outside the reader"
+    },
+    {
+      "tag": "375-dark",
+      "name": "an infographic’s figures are one grid of number, unit and label, not loose lines"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the grid is a grid: cells side by side where there is room, the number larger than its label"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a comparison keeps each figure with its note, under its tab’s name"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a removed embed leaves one quiet pointer to it; an advertising frame leaves nothing"
+    },
+    {
+      "tag": "375-dark",
+      "name": "byline, date and reading time"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the reader never scrolls sideways"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a readable measure and line height"
+    },
+    {
+      "tag": "375-dark",
+      "name": "progress starts at the top"
+    },
+    {
+      "tag": "375-dark",
+      "name": "reading down advances progress and hides the controls"
+    },
+    {
+      "tag": "375-dark",
+      "name": "scrolling back returns the controls"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the end of the article is 100%"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a rendered article offers Read Original and no other way out"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the end credits the publisher and offers the original"
+    },
+    {
+      "tag": "375-dark",
+      "name": "text size steps up"
+    },
+    {
+      "tag": "375-dark",
+      "name": "typeface changes"
+    },
+    {
+      "tag": "375-dark",
+      "name": "column and line spacing change"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the reading settings are kept on this device"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Escape closes the settings, not the reader"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a reload returns to the same article with the same settings"
+    },
+    {
+      "tag": "375-dark",
+      "name": "closing a reader opened from its address lands on the list"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Escape closes the reader and the list is where it was"
+    },
+    {
+      "tag": "375-dark",
+      "name": "focus returns to the headline that was opened"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a reopened article is not fetched twice"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the browser’s Back closes the reader"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a modified click still opens the publisher in another tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Read and Saved start unset"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Read and Saved are recorded with the list’s own marks"
+    },
+    {
+      "tag": "375-dark",
+      "name": "next is offered although the article just left To Read"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the controls are away while reading down"
+    },
+    {
+      "tag": "375-dark",
+      "name": "next opens another article at its top with its controls in view, without adding history"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the position follows"
+    },
+    {
+      "tag": "375-dark",
+      "name": "K returns to the previous article, still marked"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Back from a stepped article returns straight to the list"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the list shows what was marked in the reader"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the saved article is in Saved, read"
+    },
+    {
+      "tag": "375-dark",
+      "name": "unmarking in the reader restores the queue"
+    },
+    {
+      "tag": "375-dark",
+      "name": "related coverage opens in the reader too"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Open original leads to the publisher’s own page"
+    },
+    {
+      "tag": "375-dark",
+      "name": "while the publisher answers, the headline is shown and the text is not invented"
+    },
+    {
+      "tag": "375-dark",
+      "name": "For subscribers: explained, with no article text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "For subscribers: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Guardian declined the request: explained, with no article text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Guardian declined the request: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "No article text to show: explained, with no article text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "No article text to show: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Read this on Financial Times: explained, with no article text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Read this on Financial Times: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a subscription publisher is never requested"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Couldn’t load this article: explained, with no article text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "Couldn’t load this article: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a failed fetch is not remembered: reopening the article loads it"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the count starts at nothing opened today"
+    },
+    {
+      "tag": "375-dark",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "375-dark",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a different article is the second of the day, on every notice"
+    },
+    {
+      "tag": "375-dark",
+      "name": "past twenty the count goes on and the link still opens"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a new local day starts the count again"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a lapsed Access session is named as one, with no ways round it offered"
+    },
+    {
+      "tag": "375-dark",
+      "name": "after signing in the same article opens, loaded"
+    },
+    {
+      "tag": "375-dark",
+      "name": "and closing it lands on the list"
+    },
+    {
+      "tag": "375-dark",
+      "name": "a short text is shown as possibly incomplete, never as the whole article"
+    },
+    {
+      "tag": "375-dark",
+      "name": "offline: said plainly, with no request and no stale text"
+    },
+    {
+      "tag": "375-dark",
+      "name": "back online, the article loads by itself"
+    },
+    {
+      "tag": "375-dark",
+      "name": "an article read this visit is still there offline"
+    },
+    {
+      "tag": "375-dark",
+      "name": "an unknown article is not fetched"
+    },
+    {
+      "tag": "375-dark",
+      "name": "no article text is stored in localStorage, sessionStorage, Cache Storage or IndexedDB"
+    },
+    {
+      "tag": "375-dark",
+      "name": "the list is intact after reading"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the list is unchanged before reading"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a headline is still a safe link to the publisher"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a headline opens the reader inside Tars, not the publisher"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the reader is a full-screen modal dialog"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the app behind is inert, not gone"
+    },
+    {
+      "tag": "1366-light",
+      "name": "headline and excerpt come from the feed"
+    },
+    {
+      "tag": "1366-light",
+      "name": "one gateway request for the opened article, none for any other"
+    },
+    {
+      "tag": "1366-light",
+      "name": "paragraphs, headings, quotation, list and table are kept"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the picture keeps its caption and loads without a referrer"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a picture that fails disappears with its caption"
+    },
+    {
+      "tag": "1366-light",
+      "name": "publisher furniture is removed"
+    },
+    {
+      "tag": "1366-light",
+      "name": "no script, handler, form or unsafe link reaches the page"
+    },
+    {
+      "tag": "1366-light",
+      "name": "article links are absolute and open outside the reader"
+    },
+    {
+      "tag": "1366-light",
+      "name": "an infographic’s figures are one grid of number, unit and label, not loose lines"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the grid is a grid: cells side by side where there is room, the number larger than its label"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a comparison keeps each figure with its note, under its tab’s name"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a removed embed leaves one quiet pointer to it; an advertising frame leaves nothing"
+    },
+    {
+      "tag": "1366-light",
+      "name": "byline, date and reading time"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the reader never scrolls sideways"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a readable measure and line height"
+    },
+    {
+      "tag": "1366-light",
+      "name": "progress starts at the top"
+    },
+    {
+      "tag": "1366-light",
+      "name": "reading down advances progress and hides the controls"
+    },
+    {
+      "tag": "1366-light",
+      "name": "scrolling back returns the controls"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the end of the article is 100%"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a rendered article offers Read Original and no other way out"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the end credits the publisher and offers the original"
+    },
+    {
+      "tag": "1366-light",
+      "name": "text size steps up"
+    },
+    {
+      "tag": "1366-light",
+      "name": "typeface changes"
+    },
+    {
+      "tag": "1366-light",
+      "name": "column and line spacing change"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the reading settings are kept on this device"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Escape closes the settings, not the reader"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a reload returns to the same article with the same settings"
+    },
+    {
+      "tag": "1366-light",
+      "name": "closing a reader opened from its address lands on the list"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Escape closes the reader and the list is where it was"
+    },
+    {
+      "tag": "1366-light",
+      "name": "focus returns to the headline that was opened"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a reopened article is not fetched twice"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the browser’s Back closes the reader"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a modified click still opens the publisher in another tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Read and Saved start unset"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Read and Saved are recorded with the list’s own marks"
+    },
+    {
+      "tag": "1366-light",
+      "name": "next is offered although the article just left To Read"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the controls are away while reading down"
+    },
+    {
+      "tag": "1366-light",
+      "name": "next opens another article at its top with its controls in view, without adding history"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the position follows"
+    },
+    {
+      "tag": "1366-light",
+      "name": "K returns to the previous article, still marked"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Back from a stepped article returns straight to the list"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the list shows what was marked in the reader"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the saved article is in Saved, read"
+    },
+    {
+      "tag": "1366-light",
+      "name": "unmarking in the reader restores the queue"
+    },
+    {
+      "tag": "1366-light",
+      "name": "related coverage opens in the reader too"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Open original leads to the publisher’s own page"
+    },
+    {
+      "tag": "1366-light",
+      "name": "while the publisher answers, the headline is shown and the text is not invented"
+    },
+    {
+      "tag": "1366-light",
+      "name": "For subscribers: explained, with no article text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "For subscribers: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Guardian declined the request: explained, with no article text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Guardian declined the request: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "No article text to show: explained, with no article text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "No article text to show: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Read this on Financial Times: explained, with no article text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Read this on Financial Times: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a subscription publisher is never requested"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Couldn’t load this article: explained, with no article text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "Couldn’t load this article: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a failed fetch is not remembered: reopening the article loads it"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the count starts at nothing opened today"
+    },
+    {
+      "tag": "1366-light",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "1366-light",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a different article is the second of the day, on every notice"
+    },
+    {
+      "tag": "1366-light",
+      "name": "past twenty the count goes on and the link still opens"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a new local day starts the count again"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a lapsed Access session is named as one, with no ways round it offered"
+    },
+    {
+      "tag": "1366-light",
+      "name": "after signing in the same article opens, loaded"
+    },
+    {
+      "tag": "1366-light",
+      "name": "and closing it lands on the list"
+    },
+    {
+      "tag": "1366-light",
+      "name": "a short text is shown as possibly incomplete, never as the whole article"
+    },
+    {
+      "tag": "1366-light",
+      "name": "offline: said plainly, with no request and no stale text"
+    },
+    {
+      "tag": "1366-light",
+      "name": "back online, the article loads by itself"
+    },
+    {
+      "tag": "1366-light",
+      "name": "an article read this visit is still there offline"
+    },
+    {
+      "tag": "1366-light",
+      "name": "an unknown article is not fetched"
+    },
+    {
+      "tag": "1366-light",
+      "name": "no article text is stored in localStorage, sessionStorage, Cache Storage or IndexedDB"
+    },
+    {
+      "tag": "1366-light",
+      "name": "the list is intact after reading"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the list is unchanged before reading"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a headline is still a safe link to the publisher"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a headline opens the reader inside Tars, not the publisher"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the reader is a full-screen modal dialog"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the app behind is inert, not gone"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "headline and excerpt come from the feed"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "one gateway request for the opened article, none for any other"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "paragraphs, headings, quotation, list and table are kept"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the picture keeps its caption and loads without a referrer"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a picture that fails disappears with its caption"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "publisher furniture is removed"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "no script, handler, form or unsafe link reaches the page"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "article links are absolute and open outside the reader"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "an infographic’s figures are one grid of number, unit and label, not loose lines"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the grid is a grid: cells side by side where there is room, the number larger than its label"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a comparison keeps each figure with its note, under its tab’s name"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a removed embed leaves one quiet pointer to it; an advertising frame leaves nothing"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "byline, date and reading time"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the reader never scrolls sideways"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a readable measure and line height"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "progress starts at the top"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "reading down advances progress and hides the controls"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "scrolling back returns the controls"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the end of the article is 100%"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a rendered article offers Read Original and no other way out"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the end credits the publisher and offers the original"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "text size steps up"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "typeface changes"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "column and line spacing change"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the reading settings are kept on this device"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Escape closes the settings, not the reader"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a reload returns to the same article with the same settings"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "closing a reader opened from its address lands on the list"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Escape closes the reader and the list is where it was"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "focus returns to the headline that was opened"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a reopened article is not fetched twice"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the browser’s Back closes the reader"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a modified click still opens the publisher in another tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Read and Saved start unset"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Read and Saved are recorded with the list’s own marks"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "next is offered although the article just left To Read"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the controls are away while reading down"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "next opens another article at its top with its controls in view, without adding history"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the position follows"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "K returns to the previous article, still marked"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Back from a stepped article returns straight to the list"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the list shows what was marked in the reader"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the saved article is in Saved, read"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "unmarking in the reader restores the queue"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "related coverage opens in the reader too"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Open original leads to the publisher’s own page"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "while the publisher answers, the headline is shown and the text is not invented"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "For subscribers: explained, with no article text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "For subscribers: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Guardian declined the request: explained, with no article text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Guardian declined the request: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "No article text to show: explained, with no article text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "No article text to show: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Read this on Financial Times: explained, with no article text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Read this on Financial Times: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a subscription publisher is never requested"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Couldn’t load this article: explained, with no article text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "Couldn’t load this article: exactly Read Original and smry.ai, each in a new tab"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a failed fetch is not remembered: reopening the article loads it"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the count starts at nothing opened today"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "smry.ai opens in another tab at the article: (1/20 today)"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a different article is the second of the day, on every notice"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "past twenty the count goes on and the link still opens"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a new local day starts the count again"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a lapsed Access session is named as one, with no ways round it offered"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "after signing in the same article opens, loaded"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "and closing it lands on the list"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "a short text is shown as possibly incomplete, never as the whole article"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "offline: said plainly, with no request and no stale text"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "back online, the article loads by itself"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "an article read this visit is still there offline"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "an unknown article is not fetched"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "no article text is stored in localStorage, sessionStorage, Cache Storage or IndexedDB"
+    },
+    {
+      "tag": "1366-dark",
+      "name": "the list is intact after reading"
+    }
+  ],
+  "errors": []
+}

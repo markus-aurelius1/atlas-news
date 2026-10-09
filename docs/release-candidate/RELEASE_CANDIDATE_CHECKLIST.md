@@ -1,0 +1,38 @@
+# Combined release candidate checklist
+
+Status: **BLOCKED for publication/activation**. V3 stays off by default (`VITE_NEWS_VALIDATOR` unset/default v2). This task authorizes one local commit only; no push, main merge, remote CI, remote migration or deployment was performed.
+
+## Remaining consolidated actions
+
+1. Complete the single `blind-review-v2/index.html` editorial package and freeze the owner export. Independent article/subject/pair/importance metrics remain unavailable until actual review. Neither exposed owner set is a release holdout. A separate untouched future evaluation/custodian remains a frozen-spec quality requirement; this candidate does not claim to satisfy it.
+2. Preserve real consecutive-day metadata and evaluate temporal retention, material changes, repeats and replacement. Current evidence is the October 7 historical capture and one October 9 RSS wave, not consecutive production days or 14-day evidence. The procedure below already exists; no new architecture stage is needed.
+3. Physical-device preflight: Samsung Internet/phone/S-Pen/native selection handles; highlight anchoring, duplicate/ambiguous text, colors/deletion, library and cold reload; two separately authenticated physical devices with offline edits/reconnect, terminal deletion and account switching. Check Reader Back/Next and reading state, original paywall/smry behavior, Today ≤50 without filling, and selected-only Archive. Local Chromium profiles do not certify these devices.
+4. Separately authorize a hosted preflight within verified zero-additional-cost arrangements: production origin, existing Free-plan configuration, Access identity/expiry, publisher responses, H3 endpoint availability, D1 concurrency/latency and applicable CPU/read/storage/daily traffic bounds. No subscription/plan/credit/billing changes or chargeable tests are authorized. Confirm existing migration state before any future operation. Hosted publisher refusal must preserve the two fallback links.
+5. Obtain explicit owner approval for any later publication and for any remote migration. An approval does not substitute for the evidence gates above. Obtain the external canonical ZIP to execute the six guarded pipeline cases if required for final certification; do not alter their guards.
+
+## Reproducible temporal procedure — not scheduled
+
+After separately authorizing additional free direct feed observations, manually run one fixed daily capture window (for example 08:00 IST) with `node tools/news/evaluation/rc-acquisition.ts capture tools/news/.cache/release-candidate/temporal-YYYY-MM-DD.json`. Use a **new absent path** each day. The tool uses the six existing RSS endpoints, one bounded wave, real response timestamps, no redirects/retries/body fetching or cloud APIs. Preserve every successful, empty, failed and stale outcome; failures are unavailable source evidence, not zero relevant supply. Do not edit dates or substitute older feeds for missing captures. No polling, timers or automation are needed or created.
+
+Collect 14 actual consecutive calendar days for the documented history gate. Run `node tools/news/evaluation/rc-acquisition.ts temporal CAPTURE_1.json CAPTURE_2.json ... > tools/news/.cache/release-candidate/temporal-report.json` with the real paths. It verifies date continuity, pins capture hashes and runs the existing C/D/E/F engine chronologically with accumulated observed/selected history, using each actual capture cutoff. It emits Today identities, novelty, suppressed units and history counts for owner sequence judgments. Source failure/staleness and semantic errors must be assessed separately. The six-feed procedure tests the documented source slice; full-registry production coverage still needs real normal acquisition evidence. Use the existing evaluation CLI/collector for separately authorized broader metadata captures, not a new classifier or cloud job.
+
+Review a small useful set of actual repeats, changed policy effects, new analysis and replacements per day against the emitted metadata. Preserve the judgments, cutoff and hashes. Verify no timestamp-only re-entry, loss of material updates, false angle expansion, selected-history reset or forced filling. Fourteen files or a span of 14 days alone cannot certify continuously healthy acquisition or editorial temporal accuracy. Proposed RBI-forecast supersession remains unvalidated by real sequences; the original historical forecast's stale suppression is not evidence of correct supersession.
+
+## Local preflight and build
+
+Existing dependencies only. Set workspace-local TEMP/TMP and installed Chromium/Wrangler paths as recorded in `checks-*.json`. Run root typecheck, lint, tests and pipeline, evaluation tests, `rc-checks.mjs combined`, then `rc-checks.mjs browser` after the final default build. These are direct executions of the root scripts' existing local tools, with no installs/npx/downloads. Set `VALIDATOR_INVENTORY_PATH=docs/release-candidate/runtime-inventory.json` so build does not rewrite earlier evidence. Confirm v3 manifest/source hashes and `git diff --check`; verify the original dirty checkout and frozen packages with `release-candidate.mjs preserve`.
+
+The final local artifact uses v2/default. A later approved publication must rebuild with the confirmed HTTPS `SITE_URL`/`BASE`; the local canonical origin is not a production-origin assertion. `shadow` uses cached metadata without selection-storage mutation; `v3` uses the additive reading ledger. Activation requires an explicit reviewed build switch and rebuild. Do not run the install-bearing Cloudflare build helper in this zero-download workflow.
+
+## Additive D1 order — not executed remotely
+
+1. Read the existing binding/migration state and preserve the previous deployment artifact and user-chosen version-4 backups. Never reset an account or database to prepare an upgrade.
+2. Ensure existing `migrations/0001_sync.sql` is already applied to the general stream. For an explicitly approved empty setup only, apply it first; never reinitialize a live database.
+3. Under separate owner authorization, apply additive `migrations/0002_highlights.sql` to the existing binding if absent. It creates `highlight_sync_users` and `highlight_sync_records` with a separate account counter/cursor; it does not alter legacy tables or historical data.
+4. Publish the separately approved reviewed functions/build, then verify Access, identity isolation and cross-device behavior. Local ephemeral tests applied both actual SQL files; this is not evidence of a production migration.
+
+H3 stays `/api/highlights-sync` / `tars-highlight-sync/v1`, separate from legacy `/api/sync`. Browser Highlights DB v2 adds sync stores without rewriting version-1 authored rows. Existing IDs, authored timestamps, subject snapshots, account guards, outbox and terminal tombstones survive. No reader body is stored or synced. A missing H3 endpoint pauses only that protocol.
+
+## Non-destructive rollback
+
+Use the previously approved deployment artifact, or rebuild with v2/unset validator mode, only after publication approval. Preserve the v3 selected ledger, all legacy/archive/compatibility rows, Saved metadata, `lodestar`, both D1 streams, Highlights authored records/outbox/account guard, and terminal tombstones. Never reverse the additive migration, downgrade/reset browser databases, erase history, or infer deletion from missing records. Keep version-4 backups without sync cursors/bindings/outbox. Older clients can coexist with additive H3 tables; the new endpoint can be unavailable while local highlights and general personal sync continue.

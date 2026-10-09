@@ -1,0 +1,1549 @@
+{
+  "version": "tars-rc-blind-review/1",
+  "clock": "2026-10-07T13:40:55.600Z",
+  "seed": "tars-rc-blind-2026-10-09/1",
+  "records": [
+    {
+      "id": "article:d824deea5a33062d0c95b07f8769f0ef09bf3380a691285d7b3e3eb7d2ed9e8f",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Logistics"
+        ],
+        "description": "Airlines are citing cost and connectivity issues as they oppose Mumbai International Airport Limited’s move to temporarily reduce one third of their international flights from October 26",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindubusinessline.com/economy/feeder/default.rss",
+            "section": "Economy",
+            "sourceId": "bl-economy"
+          }
+        ],
+        "publishedAt": "2026-10-05T16:00:35.000Z",
+        "publisher": "BusinessLine",
+        "title": "Shifting flights in twenty days not possible, say airline execs on Mumbai airport flight cut proposal",
+        "updatedAt": null,
+        "url": "https://www.thehindubusinessline.com/economy/logistics/shifting-flights-in-twenty-days-not-possible-say-airline-execs-on-mumbai-airport-flight-cut-proposal/article71547943.ece"
+      },
+      "observations": [
+        "obs:a392ed4d48b26cc57d10ac08b6188c8124b8b600c38d0ae5095bbe5f87fe8d05",
+        "obs:bc58964d110714993f502cfe25a56979112d6bce22d1604c079e4a69650d5e96",
+        "obs:f3c8470857d89ca504a8433b25e8f63d3a85dca27283157ffe7a0fa60b75199b"
+      ]
+    },
+    {
+      "id": "article:d9e68a094cb663fec0c8160c336563a9e20dbf8e3d0abf81046afaae1f05e8c5",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Scroll Staff",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "Nelson Dilipkumar’s Tamil film also stars Vidya Balan, SJ Suryah, Suraj Venjaramoodu, Mithun Chakraborty and Ramya Krishnan. Out in cinemas on October 15.",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.feedburner.com/ScrollinArticles.rss",
+            "section": "Latest",
+            "sourceId": "india-scroll-in"
+          }
+        ],
+        "publishedAt": "2026-10-05T13:37:46.000Z",
+        "publisher": "Scroll.in",
+        "title": "‘Jailer 2’ trailer: New enemies for Rajinikanth’s Muthuvel Pandian",
+        "updatedAt": null,
+        "url": "https://scroll.in/reel/1096186/jailer-2-trailer-new-enemies-for-rajinikanths-muthuvel-pandian"
+      },
+      "observations": [
+        "obs:8c910c53c536048c87ea94132629cb134b745867da22ca39dfd852a10399ab7d",
+        "obs:bf57aa1b2aac670bcede0ee116c032ca1313cd62ee7c26ef24691194126236f9",
+        "obs:fb4fe507c0181946cfdf81c50549fb77ad52fba2c35a762940cb8254405f59be"
+      ]
+    },
+    {
+      "id": "article:987bb36b4ea2cf3a45e0610a28cc839e000dc4ff67b8073b933a30115ca247f6",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Editorials",
+          "Opinion"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/opinion/editorials/feed/",
+            "section": "Editorial",
+            "sourceId": "ie-editorial"
+          }
+        ],
+        "publishedAt": "2026-09-05T01:31:49.000Z",
+        "publisher": "Indian Express",
+        "title": "Ariana Grande is saying no to the circus",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/opinion/editorials/ariana-grande-is-saying-no-to-the-circus-10863769/"
+      },
+      "observations": [
+        "obs:40febb72621eadd94c5d1f9833bc7c953d5fcc9e73317d4865f78f19a22a833d",
+        "obs:db77e5e48bee4f79198996ca789b308b432dd13a3b65c722ab020ad0b8ae530b",
+        "obs:dc9376e48b77e8c87e3d2df48cbd5f7da0a3a632b9487d2f08c8d138adfed34f"
+      ]
+    },
+    {
+      "id": "article:4e218054dabc2fe095c726d6f1496f2105253b54835a573b7699c23054d24637",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Priyanka Jaiswal",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+            "section": "India",
+            "sourceId": "toi-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T08:00:00.000Z",
+        "publisher": "Times of India",
+        "title": "'You have failed Bengal': Mamata's TMC claims 2,400+ rape cases in 5 months under BJP",
+        "updatedAt": null,
+        "url": "https://timesofindia.indiatimes.com/india/you-have-failed-bengal-mamatas-tmc-claims-2400-rape-cases-in-5-months-under-bjp/articleshow/134759499.cms"
+      },
+      "observations": [
+        "obs:03d4165977f24c13d6df2430e901ab5f2b8ced416dc59e683d81dd76798d2529",
+        "obs:709ab7000271a3e8bcad92f9de1b52767600f39bedfacee3db0930b15c679c8c",
+        "obs:ba36def1536d6345bb155d038adb0870267220a2eb96efd36ad749a605a3de48"
+      ]
+    },
+    {
+      "id": "article:1b95c489c2f5ec6189c94c2fb26fd6e399a4511d5b86da48202f12e4c25a8ae0",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Manas Srivastava",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "UPSC Current Affairs",
+          "UPSC Essentials"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/upsc-current-affairs/upsc-essentials/feed/",
+            "section": "UPSC Essentials",
+            "sourceId": "ie-upsc-essentials"
+          }
+        ],
+        "publishedAt": "2026-08-19T03:14:42.000Z",
+        "publisher": "Indian Express",
+        "title": "UPSC Prelims 2027 Polity Quiz (Week 176): criminal procedure, live-in relationships, national parties, and more",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-prelims-polity-quiz-week-176-10838180/"
+      },
+      "observations": [
+        "obs:2dfa8a948674fb99d74047ec478ab9f68bf6fabbf587a30b994a734f30614285",
+        "obs:2e8f053cce3165c52e90951a43c065ac4a418cd8c0cadf7ae1649fd7fbbd1620",
+        "obs:a353664436d9a651017220be54df59868a9d6c4590c1f0f3d6728e37a6b49e7e"
+      ]
+    },
+    {
+      "id": "article:9115c220a2c1e01c931aca5c88b0723c11747cd51e799dcd0e557d2dcd73cc26",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Science"
+        ],
+        "description": "Dhruva Space’s LEAP-2, hosting multiple In-Orbit Demonstration (IOD) missions, which includes a star tracker by France-based Sodern ArianeGroup, and TAPAS-1 by India-based Satleo Labs, was part of the Transporter-18 mission",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+            "section": "Science",
+            "sourceId": "hindu-science"
+          }
+        ],
+        "publishedAt": "2026-10-05T03:18:49.000Z",
+        "publisher": "The Hindu",
+        "title": "Multiple Indian payloads launched by Space X’s Falcon 9",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/sci-tech/science/multiple-indian-payloads-launched-by-space-xs-falcon-9/article71535904.ece"
+      },
+      "observations": [
+        "obs:21693ddf4f3929fe8f049ae4bc3580f0ce411f0f6375a911abe3296ed9bc93dd",
+        "obs:640f197e6955d5f53c2f19c1ca7d2a3f58d4e87e62671f0c3fe993a7305240ab",
+        "obs:94806c7d54793d77499bfe05104baf43aef3851b578ab53e0d258d843cc623cd"
+      ]
+    },
+    {
+      "id": "article:7143c73db89ae1eeb08e5255e3ada7db6c3f62d6ebedf3b0697a637c0b3b5fec",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Explained",
+          "Explained Global"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/explained/explained-global/feed/",
+            "section": "Explained Global",
+            "sourceId": "ie-explained-global"
+          }
+        ],
+        "publishedAt": "2026-05-11T13:04:33.000Z",
+        "publisher": "Indian Express",
+        "title": "Could UK Prime Minister Keir Starmer be forced out after local election losses?",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/explained/explained-global/keir-starmer-leadership-challenge-labour-party-rules-10684119/"
+      },
+      "observations": [
+        "obs:1c8f9cbc0547f4799dbdd7dae8ae9fac24ec3cfc84d575945d6e63a73dc9b37d",
+        "obs:7c3236d840bf61beeb93e2007b705f7fa949431be3635c064dceb6cb8dd9d43f",
+        "obs:e694584356f7b9ee4ac3aa9c0f37d020f932e687db898b767075e245f4429d78"
+      ]
+    },
+    {
+      "id": "article:d9616b33e15290d9685dfbe9d068215db1fa1a7f9da281092ab7bcc940eb592a",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Vidheesha Kuntamalla",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "India"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/india/feed/",
+            "section": "India",
+            "sourceId": "ie-india"
+          }
+        ],
+        "publishedAt": "2026-10-01T01:30:05.000Z",
+        "publisher": "Indian Express",
+        "title": "Chamoli officials, Army lock horns after row over Uttarakhand music festival",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/india/exclusive-chamoli-army-badrinath-devbhoomi-cultural-festival-row-10901367/"
+      },
+      "observations": [
+        "obs:254f87372e7e136e556ff00c60e743634f455363465fdc4c5c6452e3f68886b7",
+        "obs:606d2187703a1e5d5561b4274f2f356b0758ab3bc2a70beedcd763f5f8daad5f",
+        "obs:dfaca24a8f71ea1eb872363756185e45de507732d5f96c52855acc207d37eac0"
+      ]
+    },
+    {
+      "id": "article:2d3e1c747f96a49d0db607b638b2e4eccfdb90b3179dd0a96d7d8e7cc1d588a6",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Presented by Lucy Hough with Madeleine Finlay ; produced by Angus Neale ; senior producer Ryan Ramgobin ; executive producer Zoe Hitch",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Bubonic plague",
+          "Epidemics",
+          "Europe",
+          "Infectious diseases",
+          "Russia",
+          "Science",
+          "World news"
+        ],
+        "description": "Quarantine measures have been in place in several hospitals in eastern Russia since a 28-year-old laboratory worker, Darya Shipilova, died after falling ill at work following a reported accident at a plague research centre in Siberia. Russia’s health watchdog has said she died of ‘pneumonia of unknown aetiology’, but there is speculation about a possible plague infection. Lucy Hough speaks to Science Weekly co-host Madeleine Finlay Continue reading...",
+        "memberships": [
+          {
+            "feedUrl": "https://www.theguardian.com/science/rss",
+            "section": "Science",
+            "sourceId": "guardian-science"
+          }
+        ],
+        "publishedAt": "2026-10-06T16:50:19.000Z",
+        "publisher": "Guardian",
+        "title": "Plague outbreak? Russian lab worker dies in Siberia - The Latest",
+        "updatedAt": null,
+        "url": "https://www.theguardian.com/news/video/2026/oct/06/plague-outbreak-russian-lab-worker-dies-in-siberia-the-latest"
+      },
+      "observations": [
+        "obs:6af00476deac0cc4974561f0b4c3079d7d28d082e2ebf0c36458740c44bb48dd",
+        "obs:738fb056d5f34e6ffa91bcfeaa062caf49e75db259af5b238388b4de5dc8cd41",
+        "obs:dfd52e34bd8ece1c129b44153b016bbff6748a721a150c5d9b1df993f60b7c6c"
+      ]
+    },
+    {
+      "id": "article:2b862b840b5d7bc843de9760d0f98e80475972f6705eab437f2337a65e8615f0",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Sheera Frenkel",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Anthropic AI LLC",
+          "Artificial Intelligence",
+          "Computer Security",
+          "Computers and the Internet",
+          "Cyberattacks and Hackers",
+          "Hugging Face Inc",
+          "Irregular (AI Co)",
+          "Lahav, Dan (Tech Executive)",
+          "Meta Platforms Inc",
+          "OpenAI Labs",
+          "Start-ups",
+          "Venture Capital"
+        ],
+        "description": "Irregular, an Israeli start-up, worked with OpenAI, Anthropic and Meta to assess the security of their A.I. models. It made a mistake. Then the tests went off the rails.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml",
+            "section": "Artificial intelligence",
+            "sourceId": "nyt-artificial-intelligence"
+          }
+        ],
+        "publishedAt": "2026-08-25T21:59:39.000Z",
+        "publisher": "New York Times",
+        "title": "Why Irregular’s A.I. Tests for Meta, Anthropic and OpenAI Went Off the Rails",
+        "updatedAt": null,
+        "url": "https://www.nytimes.com/2026/08/25/technology/irregular-ai-test-hacks.html"
+      },
+      "observations": [
+        "obs:49aab3c1a2d29409bbd79b8e1a4dd46fbf4fddf6d5edefb584ba501d01958feb",
+        "obs:e989cdd08cda513a612ee35981ddb2cf485399b6995965982e82bcff415b733b",
+        "obs:ffd59b997e8da453b28b8eee0dd0dbe6a6702935d8873618b1b91bb53804ddc4"
+      ]
+    },
+    {
+      "id": "article:49a23f9bd133796dcd4a5be8d94bbee246987051beb2d360ebc92bfd25038324",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Claudia Chiappa",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Global health",
+          "Health Care",
+          "Health security",
+          "Infectious diseases",
+          "Prevention",
+          "Public health"
+        ],
+        "description": "Donald Trump will speak with Vladimir Putin about the situation after the U.S. urged Russia to share more information following the death of a lab worker.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.politico.eu/feed/",
+            "section": "Europe",
+            "sourceId": "ext-politico-europe"
+          }
+        ],
+        "publishedAt": "2026-10-07T11:29:48.000Z",
+        "publisher": "Politico Europe",
+        "title": "WHO seeks clarity on second pneumonia case in Russia amid plague fears",
+        "updatedAt": null,
+        "url": "https://www.politico.eu/article/world-health-organization-who-information-pneumonia-russia-plague/"
+      },
+      "observations": [
+        "obs:516d3aeae055d982e94b97d4f6325c729f9631ca740eab1fc6ec3fe9be4cd111",
+        "obs:5f3fc4496ed43affad962c8734dd8ae625794b08476524445cb2eb84d6e741d4",
+        "obs:93ca435829c80c0e20883cdd183dab487145c241a8964de74c8a5501e76cafef"
+      ]
+    },
+    {
+      "id": "article:dee0bc437163e5460ba0be9d0b6058dccbadc05796325ea73d8b7d4494aca77d",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Editorial",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "#FutureTech",
+          "#HaryanaInnovation",
+          "#IntellectualProperty",
+          "#PatentPolicy",
+          "#ProblemSolvers",
+          "#StudentInnovation",
+          "#TechCommercialization",
+          "InnovationEcosystem",
+          "StartupIndia"
+        ],
+        "description": "HARYANA’s decision to reimburse patent registration fees of up to Rs 50,000 for students is a welcome attempt to encourage innovation. But a patent is only the beginning of the journey. The harder question is what happens after the certificate is obtained. India has no shortage of bright students, research papers or even patents. What […]",
+        "memberships": [
+          {
+            "feedUrl": "https://publish.tribuneindia.com/opinions/editorials/feed/",
+            "section": "Editorial",
+            "sourceId": "tribune-editorial"
+          }
+        ],
+        "publishedAt": "2026-09-28T15:52:00.000Z",
+        "publisher": "The Tribune",
+        "title": "Beyond the patent",
+        "updatedAt": null,
+        "url": "https://www.tribuneindia.com/news/editorials/beyond-the-patent"
+      },
+      "observations": [
+        "obs:0531139c08e4e4cc92f1b27b1a87ca2a777a259c86bf2bee218cff33a1b2f6ae",
+        "obs:548aa214839d9cb3dcdeb89d2a7bb0ec3487335334eb65877fb938b9f4203a6f",
+        "obs:a37805fbbfa13be0e07d15b3af032fc2ec2b9f2cc87813cff49c0e9f07aafbd3"
+      ]
+    },
+    {
+      "id": "article:745c481f1b07f398159ccb68ee826f7c874b1c292b67ae8abe6483833bc0b6d1",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "ANI",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Global Leaders Congratulate Modi",
+          "India Belgium Relations",
+          "India Global Partnerships",
+          "India-Bhutan relations",
+          "India-Japan relations",
+          "India-dominica relations",
+          "Indo-Pacific partnership",
+          "Modi Global Leadership",
+          "Modi Leadership Milestone",
+          "PM Narendra Modi 25 Years"
+        ],
+        "description": "Global leaders, including those from Belgium, Dominica, Nigeria, Bhutan, and Japan, along with the Union Cabinet, congratulated Prime Minister Narendra Modi on completing 25 years of continuous leadership in government, praising his dedication to India's development and strong international partnerships.",
+        "memberships": [
+          {
+            "feedUrl": "https://publish.tribuneindia.com/newscategory/world/feed/",
+            "section": "World",
+            "sourceId": "tribune-world"
+          }
+        ],
+        "publishedAt": "2026-10-07T07:20:56.000Z",
+        "publisher": "The Tribune",
+        "title": "Global leaders laud PM Modi on historic 25-year leadership milestone",
+        "updatedAt": null,
+        "url": "https://www.tribuneindia.com/news/global-leaders-congratulate-modi/global-leaders-laud-pm-modi-on-historic-25-year-leadership-milestone"
+      },
+      "observations": [
+        "obs:01305f5389b64bba74ffc4fb9acd99666258f2a2dc9aeadb8b3b80c3d9b8f9c0",
+        "obs:24e86ae59390fc9f3f2e004db9783a51564584f35e8de7010a3cfb4b0a6a7e14",
+        "obs:aaa72acdf7e25dc78100a3eb08d27852251e58c480249c9f33f4b1d1b15d46a4"
+      ]
+    },
+    {
+      "id": "article:6871163c7a1cea802d37df8cbec205fb2b0306b6a282eb86ffe83c017594f33f",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Lead Story"
+        ],
+        "description": "The CAA has added to the complexities of settling the question of who is an “illegal migrant” in the north-eastern region. Defining who is indigenous in each State there is expected to be a new political puzzle.",
+        "memberships": [
+          {
+            "feedUrl": "https://frontline.thehindu.com/cover-story/feeder/default.rss",
+            "section": "Cover story",
+            "sourceId": "india-frontline-cover-story"
+          }
+        ],
+        "publishedAt": "2024-03-12T10:05:01.000Z",
+        "publisher": "Frontline",
+        "title": "CAA: The north-eastern quagmire",
+        "updatedAt": null,
+        "url": "https://frontline.thehindu.com/cover-story/north-eastern-quagmire/article64757010.ece"
+      },
+      "observations": [
+        "obs:71d04130bc412ccf1c879ec29427e0b156722e38df4c7ee22d71185b6e9c6dba"
+      ]
+    },
+    {
+      "id": "article:2ff94af40c34bc93d35fdf292efeba1cb910a2ec67b05d6a8222e551b1f4d892",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Sui-Lee Wee",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "China",
+          "Electric and Hybrid Vehicles",
+          "Europe",
+          "European Union",
+          "Factories and Manufacturing",
+          "International Relations",
+          "International Trade and World Market",
+          "Luxury Goods and Services"
+        ],
+        "description": "China’s push to manufacture more at home has widened its trade imbalance with Europe, intensifying pressure on European industries and policymakers to take action.",
+        "memberships": [
+          {
+            "feedUrl": "https://rss.nytimes.com/services/xml/rss/nyt/AsiaPacific.xml",
+            "section": "Asia Pacific",
+            "sourceId": "nyt-asia-pacific"
+          }
+        ],
+        "publishedAt": "2026-10-07T09:02:42.000Z",
+        "publisher": "New York Times",
+        "title": "China’s ‘Self-Reliance’ Drive Is Upending Trade With Europe",
+        "updatedAt": null,
+        "url": "https://www.nytimes.com/2026/10/07/business/china-europe-trade-manufacturing.html"
+      },
+      "observations": [
+        "obs:0574f5cf73a0fb06e2c99e8fea0976d57e7bc315362dba5836e97d9f908215d3",
+        "obs:23d011930c56ba0c92d5ef7ad8d4a61cebe8aca76fdcadfb1e2ffd1e601071d6",
+        "obs:2bec87eb89cbd96a0f28be52444cb5d774cc81691ca38cfc9b020ce247b9eef9"
+      ]
+    },
+    {
+      "id": "article:0f0af2fe60a7640cb660279202f483007e143cac5ee30496c5d66a4295cddc65",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Siddharth Upasani",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Explained",
+          "Explained Economics"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+            "section": "Explained Economics",
+            "sourceId": "ie-explained-economics"
+          }
+        ],
+        "publishedAt": "2026-08-12T11:15:34.000Z",
+        "publisher": "Indian Express",
+        "title": "How UPI became India’s biggest digital payments system — and its next challenge",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/explained/explained-economics/upi-10-years-mdr-costs-next-phase-growth-10829840/"
+      },
+      "observations": [
+        "obs:6b67d99e786b84b5dc85bf3ddd1bce533785f3ca418d0c87e6c3b7a6ae6222b4",
+        "obs:7c9a062526ee49dfcd3aa00d3d32f28a8c929cfeddb2c899358fa0e77f24cbb0",
+        "obs:bac5bc9b537eaf6f6b6cc6c7d88e45a506848f4b88ef0da0d58886fc1e07f12b"
+      ]
+    },
+    {
+      "id": "article:1f8bfe05b01b26cd677881475a6d6f25367b95fcb71bc8173ae3957284057fe7",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "The Shropshire Astronomical Society plans to install the dome at Rodington village hall.",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+            "section": "Science & environment",
+            "sourceId": "ext-bbc-science-environment"
+          }
+        ],
+        "publishedAt": "2026-10-03T19:05:35.000Z",
+        "publisher": "BBC",
+        "title": "Astronomers get permission for mini-observatory",
+        "updatedAt": null,
+        "url": "https://www.bbc.co.uk/news/articles/ck5ynpzz4q28o?at_campaign=rss&at_medium=RSS"
+      },
+      "observations": [
+        "obs:06ad4026f0b9596db88c30367cc00cb53746400dd702742a4e2c936e30eb1945",
+        "obs:6ee50819add1262da5080120f1b56187bb5d40c523bafd782807ee9804a3f39b",
+        "obs:fa4b0c5cd608fa35e1d55a6e995e6429d2ee9ff1e6710dccf0400df28cb656dc"
+      ]
+    },
+    {
+      "id": "article:5b9891a00bdb5fb6185fb63683c8183aaaba8cc5fbed7b39b9c9eaaa2edd8831",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Anagha Jayakumar, Amitabh Sinha",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Explained",
+          "Explained Sci-Tech"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/explained/explained-sci-tech/feed/",
+            "section": "Explained Sci-Tech",
+            "sourceId": "ie-explained-science"
+          }
+        ],
+        "publishedAt": "2026-03-21T13:51:21.000Z",
+        "publisher": "Indian Express",
+        "title": "Natanz attack: How nuclear sites could pose radiation risks if damaged",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/explained/explained-sci-tech/natanz-nuclear-site-attack-us-israel-iran-explained-10594296/"
+      },
+      "observations": [
+        "obs:25ec28bc7f5622d5d2b18c7edff1beb9709969f9d17083ff1706df94d590e6c4",
+        "obs:29ccf7f4f275d4818e87bdd810c1085e59c99358e5cd55824ebae70f006c6d2c",
+        "obs:e16bb9f80a1d5e89b88ba092daa9f015b283796f7c88c866c5f814a6547cc057"
+      ]
+    },
+    {
+      "id": "article:b23faad75a3feb5d270e2eba15616abff2acb9d13932009b7dc3e51bfee8491b",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "A recent study reveals southern India is drying fastest, with persistent drought hotspots along its eastern coast. The northwest has become India's heat epicentre, showing strong trends in temperature and heatwave severity. Land area affected by temperature extremes expanded significantly across central and northwestern regions. These heat and drought extremes now cover larger, connected areas of the country.",
+        "memberships": [
+          {
+            "feedUrl": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms",
+            "section": "Environment",
+            "sourceId": "toi-environment"
+          }
+        ],
+        "publishedAt": "2026-09-18T17:59:33.000Z",
+        "publisher": "Times of India",
+        "title": "Southern India drying fastest, most persistent drought hotspots along eastern coast: Study",
+        "updatedAt": null,
+        "url": "https://timesofindia.indiatimes.com/home/environment/southern-india-drying-fastest-most-persistent-drought-hotspots-along-eastern-coast-study/articleshow/134341650.cms"
+      },
+      "observations": [
+        "obs:6082c53f394eb9dc8852bbf236271378491c107627372276027399821e16b964",
+        "obs:68552d7406f763afdc839f458930234ec945a9b988b81044e5f11e879c022754",
+        "obs:93ff148e2c375b0e5a7b8dcb6b15d4338a1a7549eba82378f8203bc9ce38a716"
+      ]
+    },
+    {
+      "id": "article:00393a3c518cde5a6593334153d0ec957037558366c0a5f2188a98a980ed998a",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "world-news"
+        ],
+        "description": "Carrie 2026 makes major changes to Stephen King’s story, including Ralph White’s role, Margaret’s powers, Carrie’s survival and a possible second season.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
+            "section": "World",
+            "sourceId": "ht-world"
+          }
+        ],
+        "publishedAt": "2026-10-07T11:45:24.000Z",
+        "publisher": "Hindustan Times",
+        "title": "Carrie 2026: 5 major changes Mike Flanagan made to Stephen King’s original story",
+        "updatedAt": null,
+        "url": "https://www.hindustantimes.com/world-news/us-news/carrie-2026-5-major-changes-mike-flanagan-made-to-stephen-king-s-original-story-101791371937132.html"
+      },
+      "observations": [
+        "obs:04c9c1ee19958d4fdcb7b2f2360e141cb8e41586656148260f0a89bfe460b22c",
+        "obs:b0bf92250d650d9ffbccb0274bc249ada724fdf4c7bc27dfd05f82cf51143119",
+        "obs:f274319acdc5fa377c45580e42ead8215820639e73cc5e920da472dc98ba3cf4"
+      ]
+    },
+    {
+      "id": "article:28c574d5f68d50fd9304b012490ad0f02ec4d2a31ddd30d4e70f563c564f04d6",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "And would you reveal it in a job interview?",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.bbci.co.uk/news/business/rss.xml",
+            "section": "Business",
+            "sourceId": "ext-bbc-business"
+          }
+        ],
+        "publishedAt": "2026-10-05T05:33:59.000Z",
+        "publisher": "BBC",
+        "title": "How much is your salary?",
+        "updatedAt": null,
+        "url": "https://www.bbc.co.uk/news/videos/cr4glg9p4188o?at_campaign=rss&at_medium=RSS"
+      },
+      "observations": [
+        "obs:2c3b86e2adc5067e2fbb77563aace115969da83ff0c2037ac45f46a928cb460e",
+        "obs:85106b614512c4f3f31184c39122e690e72791d6846bc5a62deaa20aa9f6c89f",
+        "obs:df3ff8c5e54d23194a37b7332c266a7972a9b7ec9b90b3f29ef5946422315ff6"
+      ]
+    },
+    {
+      "id": "article:56c42d903425903bb15889b609f486f8aa6696ee84c2be2633c9729ae0aded0c",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "National"
+        ],
+        "description": "The proposed revision follows an analysis of states’ fiscal parameters, with revenue receipts identified as a more appropriate basis for calculation",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindubusinessline.com/news/national/feeder/default.rss",
+            "section": "National",
+            "sourceId": "bl-national"
+          }
+        ],
+        "publishedAt": "2026-09-29T13:38:31.000Z",
+        "publisher": "BusinessLine",
+        "title": "RBI panel recommends 11.2% hike in WMA limit for states to ₹67,839 crore",
+        "updatedAt": null,
+        "url": "https://www.thehindubusinessline.com/news/national/rbi-panel-recommends-112-hike-in-wma-limit-for-states-to-67839-crore/article71524304.ece"
+      },
+      "observations": [
+        "obs:a45d4270ddb9a2eaf42e4e5b8b890660c2ff3a6a8909e748c89450c4a5d26b2d"
+      ]
+    },
+    {
+      "id": "article:1d9dc758c308e18f35fe2d439fbc75c65424474fdfad6a7c8ca6b790690b1770",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Science"
+        ],
+        "description": "A team of biologists, veterinarians, and park rangers have been searching the area for the dead calves from shore and with boats, planes, and drones",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+            "section": "Environment",
+            "sourceId": "hindu-environment"
+          }
+        ],
+        "publishedAt": "2026-10-04T12:28:27.000Z",
+        "publisher": "The Hindu",
+        "title": "Scientists puzzled as baby whales wash up dead in Argentina",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/sci-tech/science/scientists-puzzled-as-baby-whales-wash-up-dead-in-argentina/article71543684.ece"
+      },
+      "observations": [
+        "obs:8a466a080c3b3d77a5b564016a49507441bf42c125acbc75ff31f08523a2d5cd",
+        "obs:ad937856413749567bf6ecda7e2a706e6c8e66644009622ef111556fc43cddc3",
+        "obs:ddfcb8ffac320cc58dd9769578a519b96ab852a973df4550dfe38a4184849096",
+        "obs:eb0cceaed9b213eb0563bd17859441847d5e69a6e4ef535a9a65f964e71a5fc0",
+        "obs:fd24d04673dc93903e3c750a37cd9605415e178b48cc71291e33db43f712956a",
+        "obs:ff51a89c3e438b37f7ed0ed8caec0e286894babb139da006d851e3c1caf08347"
+      ]
+    },
+    {
+      "id": "article:1a90b77b5f67ca873d399ca487c42dd375870c6a96f298d029fc651ad352c3db",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Agri Business"
+        ],
+        "description": "IVPA seeks weekly price disclosures as duty cuts aim to ease consumer costs",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindubusinessline.com/economy/agri-business/feeder/default.rss",
+            "section": "Agriculture",
+            "sourceId": "bl-agriculture"
+          }
+        ],
+        "publishedAt": "2026-10-05T10:55:35.000Z",
+        "publisher": "BusinessLine",
+        "title": "IVPA asks members to reduce retail prices of edible oil",
+        "updatedAt": null,
+        "url": "https://www.thehindubusinessline.com/economy/agri-business/ivpa-asks-members-to-reduce-retail-prices-of-edible-oil/article71546740.ece"
+      },
+      "observations": [
+        "obs:bc884aa2394eba7ea71cbe8e2fd0eb9fca437919b9f1ea6226711df4ed341b54",
+        "obs:e2daab44a8697d3644a6001eae3d96314b721a9e3d7c0acd90de05ef6c355f36",
+        "obs:e9657a3293272b2ba399225bb71d98ffdc01ed67abeac6088a5e82fe3e7d9a5f"
+      ]
+    },
+    {
+      "id": "article:3b90bbe5c9e1854379424006a4e85c9aaa936134a369c272470e91d29085ff2b",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Future of India",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "Findings from the Rajasthan Handbook of Youth Opportunity, which scores all 41 districts of the state.",
+        "memberships": [
+          {
+            "feedUrl": "https://foifaction.substack.com/feed",
+            "section": "Newsletter",
+            "sourceId": "substack-future-of-india"
+          }
+        ],
+        "publishedAt": "2026-09-11T10:24:33.000Z",
+        "publisher": "Future of India",
+        "title": "Rajasthan youth eager to work, but 39% of working youth in unpaid work",
+        "updatedAt": null,
+        "url": "https://foifaction.substack.com/p/rajasthan-youth-eager-to-work-but"
+      },
+      "observations": [
+        "obs:091b641293c36bbe9767c1d49edc277247d6a655b103467b32fc164f480e2930",
+        "obs:ca27553e795fb606d59c9ef55cf6367cc277e0c4f743867a1c5f5f484c748989",
+        "obs:f6337de09eb23c821301e927059cb3ee6e55bad3d4fd8a679ca866d9576ca061"
+      ]
+    },
+    {
+      "id": "article:95f2f5156792f2781b3bcd4a1aec134dfc20cd2312ab356589d0bba6ee0ad9f6",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "The Economist",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "Also: What having a daughter does to a boss",
+        "memberships": [
+          {
+            "feedUrl": "https://theeconomistoffthecharts.substack.com/feed",
+            "section": "Newsletter",
+            "sourceId": "substack-the-economist-off-the-charts"
+          }
+        ],
+        "publishedAt": "2026-09-23T11:04:14.000Z",
+        "publisher": "The Economist: Off the Charts",
+        "title": "Welcome to the statistical dollhouse",
+        "updatedAt": null,
+        "url": "https://theeconomistoffthecharts.substack.com/p/welcome-to-the-statistical-dollhouse"
+      },
+      "observations": [
+        "obs:15da9d229e3c71f2ea1bf35190f795c9e7e25303cc3a4053231200eebb49e0f9",
+        "obs:a814a8710ed9279c86e42af6efdb4e0d87ecf92819050559ce6584cf91eb39e7",
+        "obs:e80b39331358b0144d387b38c0a7a90da24805315e864542a2b66c31965faf07"
+      ]
+    },
+    {
+      "id": "article:d5f083aca662dda377cf66e6c11378df9cd92e0c3c2da7b0fc13d4f0ae983d43",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "science"
+        ],
+        "description": "A 20-year comparison in central Spain found that soil under wild ground cover held more than twice the organic matter of nearby tilled vineyard soil.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.hindustantimes.com/feeds/rss/science/rssfeed.xml",
+            "section": "Science",
+            "sourceId": "ht-science"
+          }
+        ],
+        "publishedAt": "2026-10-06T04:14:54.000Z",
+        "publisher": "Hindustan Times",
+        "title": "In 2003, a Spanish vineyard began using ground cover; 20 years later, its soil had more than twice the organic matter of tilled land",
+        "updatedAt": null,
+        "url": "https://www.hindustantimes.com/science/in-2003-a-spanish-vineyard-began-using-ground-cover-20-years-later-its-soil-had-more-than-twice-the-organic-matter-of-tilled-land-101791190478130.html"
+      },
+      "observations": [
+        "obs:0b58544ad52b43e5d317bd5db528d9615dc4ae16f1e792ec34fb7de8fe167ad5",
+        "obs:ab4961be934adb108825d51c45d38e17d42d2346282c851d72a3cc5b9079ee2f",
+        "obs:f12ca2503a647a0bdcaa6e619056476c365a5bb276932292876ef1f1782b9af2"
+      ]
+    },
+    {
+      "id": "article:990068ff951e7cb6086bb0943061e4b0969ddb88aabd1ce94a39d5ee9a6970fa",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Moinuddin Ahmad",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Explained",
+          "Explained Global"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/explained/explained-global/feed/",
+            "section": "Explained Global",
+            "sourceId": "ie-explained-global"
+          }
+        ],
+        "publishedAt": "2026-10-03T06:17:03.000Z",
+        "publisher": "Indian Express",
+        "title": "Expert explains | As Israel heads to polls this month, will unpopular Netanyahu make a comeback?",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/explained/explained-global/israel-elections-2026-netanyahu-key-issues-explained-10904897/"
+      },
+      "observations": [
+        "obs:09214cc63442faf4d21e7770e1168ba472b0ee5f546e3f062bf8aa53675f8d1f",
+        "obs:2337cf92eb5a6c34d1ebecb8254a87f61180a2f72f0be339ade2099c8e64aac3",
+        "obs:300fe705611d7f437d3251cae081d7502533e93c29797ce6d96f062317f5122f",
+        "obs:85dcc2fdb0ec370dc594100eb1affe0d011626c67b465934292a2e021f30442f",
+        "obs:9c7c54eb9b94c6081801f916d6467dcbf5c0a589f0425541ef3859838106506d",
+        "obs:a3fed2efd569cee99347542846094d448f753696689bb275657a388a0db04559"
+      ]
+    },
+    {
+      "id": "article:6989f7bc2558a6b1e2504a2d0bfa1e6cc4ba0254cdf943418ce4da98d21f42cb",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Environment"
+        ],
+        "description": "One of Vavilov’s major contributions was a paper he published in 1926: even today, a century later, it remains the foundation of the study and use of crops and livestock",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+            "section": "Environment",
+            "sourceId": "hindu-environment"
+          }
+        ],
+        "publishedAt": "2026-09-27T11:20:15.000Z",
+        "publisher": "The Hindu",
+        "title": "How the science Nikolai Vavilov built changed how we save crops",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/sci-tech/energy-and-environment/how-the-science-nikolai-vavilov-built-changed-how-we-save-crops/article71512603.ece"
+      },
+      "observations": [
+        "obs:4480ef3963f495e03a816e6a34d93fb311ce607c9d301585df3ea0d5500a7a34",
+        "obs:575489d6b291d4eda60ec9fcb0636660344eaea57f51eeca2a6095ca9ae184f8",
+        "obs:6d0629e72e87700d11f61ab380a97cc9ee769ade8fb766762e459ab035743a82",
+        "obs:925bc3766f96f2964d782876dc2a3f3b552b4989daf1b002df0256fda44b8c7b",
+        "obs:bbc3e402a6ba356b49258d0f3a18962fe99b48eee30f992e0028dfc01627bb23",
+        "obs:ff1acd704b53ce793f0b76c83d1a95ee41e3df21cbb05b42441a6c4bd4a58a65"
+      ]
+    },
+    {
+      "id": "article:e5530105def9c6cdcbbc9f8cf871e3e13a5fb7065e30cceaeaaf6168a801fdc0",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "Lundy is in \"real jeopardy\" and could be evacuated if supplies run out, bosses say.",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+            "section": "Science & environment",
+            "sourceId": "ext-bbc-science-environment"
+          }
+        ],
+        "publishedAt": "2026-10-07T05:16:14.000Z",
+        "publisher": "BBC",
+        "title": "Puffin island on cusp of closure as it runs out of water",
+        "updatedAt": null,
+        "url": "https://www.bbc.co.uk/news/articles/c6jdv4vp3rl3o?at_campaign=rss&at_medium=RSS"
+      },
+      "observations": [
+        "obs:3603b16744ac211810b2bf93c02108e43e9ba29ef876f89c3cce2e3803d875a8",
+        "obs:634d77b402eb68fac309d6ae52fa21be281df3596aade3b648af063701960b21",
+        "obs:cffbc163e974c263d79672731c75b2d8fe33bd316fe1a7d2d0c288117345a831"
+      ]
+    },
+    {
+      "id": "article:e54bbf34d972f74db00b7fa0c96c004a4c5f83c89912eb94dad3548387b69308",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "The World Bank has raised its forecast for India's economic growth in FY27 to 7.1 per cent from 6.6 per cent earlier, citing stronger-than-expected growth supported by robust domestic demand and exports, while warning that global risks remain elevated.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.livemint.com/rss/economy",
+            "section": "Economy",
+            "sourceId": "mint-economy"
+          }
+        ],
+        "publishedAt": "2026-10-06T07:17:42.000Z",
+        "publisher": "Mint",
+        "title": "World Bank raises India FY27 growth forecast to 7.1% from 6.6% on stronger-than-expected activity",
+        "updatedAt": null,
+        "url": "https://www.livemint.com/economy/world-bank-raises-india-fy27-growth-forecast-to-7-1-from-6-6-on-stronger-than-expected-activity-11791270536568.html"
+      },
+      "observations": [
+        "obs:43061a27b1dde3cbebe210903c6d5782305289cefc6d02c27e21d915ca387b5a"
+      ]
+    },
+    {
+      "id": "article:543543d1b953f322223df9b75f283c875169e59bc1091129244be24784d82079",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Reuters",
+            "provenance": "rss:author"
+          },
+          {
+            "name": "Reuters",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "⁠Yemen’s Houthis attacked Aden’s international airport with ballistic missiles and explosive-laden drones on Wednesday, the country’s transport ministry said, as fighting between the Iran-aligned group and Saudi-backed government forces intensified. Fighting has been focused in recent days on areas around the Bab el-Mandeb Strait, a shipping route that has become more crucial for energy exports since the conflict between the US and Iran restricted trade through the Strait of Hormuz. This week,...",
+        "memberships": [
+          {
+            "feedUrl": "https://www.scmp.com/rss/91/feed/",
+            "section": "World",
+            "sourceId": "ext-scmp"
+          }
+        ],
+        "publishedAt": "2026-10-07T12:20:05.000Z",
+        "publisher": "South China Morning Post",
+        "title": "Yemen’s Houthis attack Aden airport as fighting intensifies",
+        "updatedAt": null,
+        "url": "https://www.scmp.com/news/world/middle-east/article/3370080/yemens-houthis-attack-aden-airport-fighting-intensifies"
+      },
+      "observations": [
+        "obs:1e79bd5d3f64a31e78e5b2315903596f3e6098d249982a65b0e80d599707627f",
+        "obs:3e9b481a8d32950d32228865a9452699f3735cffdf00d6213f09da042a267fb3",
+        "obs:a10dbc034278cbfa2748f0274fb9e135e2ac78a2fdd3f55ae99bea5474f717a9"
+      ]
+    },
+    {
+      "id": "article:a266156ac1ab5cebb906dbbbeacb39f67b7de0a9b9d3aec9cb90d97c4623ffcd",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://www.economist.com/the-world-this-week/rss.xml",
+            "section": "The world this week",
+            "sourceId": "ext-economist-world-this-week"
+          }
+        ],
+        "publishedAt": "2026-06-18T12:45:58.000Z",
+        "publisher": "The Economist",
+        "title": "Cartoon: Donald Trump’s Iran deal",
+        "updatedAt": null,
+        "url": "https://www.economist.com/the-world-this-week/2026/06/18/cartoon-donald-trumps-iran-deal"
+      },
+      "observations": [
+        "obs:3adb5e2cfcf5603a1fb2a0bf63f51e1469c15e6f872184caf528c29f0f2ce7e3",
+        "obs:64e73c3f637e1fe753aedc6067e87b4c24d1accc9fcf34d22a82b60d72c29cdf",
+        "obs:abe57052b835c144fa55b877728064070e075798683bcb300d2c306d34e4200f"
+      ]
+    },
+    {
+      "id": "article:4c8a6fe1344426822ef3d4ca4434c9747acc7f0c8dec8755ee2b1a13aabaa353",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "india-news"
+        ],
+        "description": "CEC Gyanesh Kumar row LIVE: The lunch hosted by Congress chief Mallikarjun Kharge comes a day after several Opposition MPs, including Rahul Gandhi and Priyanka Gandhi Vadra, were detained after staging a sit-in protest against CEC Gyanesh Kumar at Akashvani Bhawan.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+            "section": "India",
+            "sourceId": "ht-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T03:37:57.000Z",
+        "publisher": "Hindustan Times",
+        "title": "CEC Gyanesh Kumar row LIVE: Rahul, Priyanka Gandhi, other leaders detained on way to Jantar Mantar",
+        "updatedAt": null,
+        "url": "https://www.hindustantimes.com/india-news/cec-gyanesh-kumar-live-updates-india-bloc-protest-rahul-gandhi-congress-cjp-saurav-das-parliament-street-delhi-police-101791341181184.html"
+      },
+      "observations": [
+        "obs:1c0ddc31c57d192ad629dd04dfed39815c88f8e889ff22afe257d72d2b00d033",
+        "obs:3acfa49e4e9e26cfcd985d14422c192448649779b43271085473f29f21e9cffc",
+        "obs:f2aa70559c1971ec944bfc87a9b08e1c28b099a0210070dc4b2116731924061c"
+      ]
+    },
+    {
+      "id": "article:e6d4bb9f552c74398e2676c0173034316ee33de441ca31f6e84ee7d3e165339f",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Scroll Staff",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [],
+        "description": "The court directed the Union government to decide on the appeal within six months.",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.feedburner.com/ScrollinArticles.rss",
+            "section": "Latest",
+            "sourceId": "india-scroll-in"
+          }
+        ],
+        "publishedAt": "2026-10-07T12:00:55.000Z",
+        "publisher": "Scroll.in",
+        "title": "Delhi HC refuses to direct security personnel to wear body cameras during protests",
+        "updatedAt": null,
+        "url": "https://scroll.in/latest/1096236/delhi-hc-refuses-to-direct-security-personnel-to-wear-body-cameras-during-protests"
+      },
+      "observations": [
+        "obs:0787d41cfadad8589920d9a729a041db4f5f601b80cecb15d1f255d123940e17",
+        "obs:516b3bf6b871da2334e399ee7db722873089d154e3a37fe5a1047e579f702406",
+        "obs:e5f44320f650fa9e6524ad3478f6c675940b40b6ebb78293fc69d75aa2beb8bf"
+      ]
+    },
+    {
+      "id": "article:5fd324da5fb225c71f2afa2d985fb32777ae123f5805ce0a5758fdff3eb00b96",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "A lighter take on the news",
+        "memberships": [
+          {
+            "feedUrl": "https://www.economist.com/the-world-this-week/rss.xml",
+            "section": "The world this week",
+            "sourceId": "ext-economist-world-this-week"
+          }
+        ],
+        "publishedAt": "2026-07-09T13:03:07.000Z",
+        "publisher": "The Economist",
+        "title": "Cartoon: The real threat to global growth",
+        "updatedAt": null,
+        "url": "https://www.economist.com/the-world-this-week/2026/07/09/cartoon-the-real-threat-to-global-growth"
+      },
+      "observations": [
+        "obs:58af9947dce9fcc540afb612f6ad3018c56441809c3921ca7f09c22b77804657",
+        "obs:6faff01bee4cdbbebc886b96f18f4425910fb8b58ee3d24231a119717ab6b5f9",
+        "obs:d24731553dfbb2e7ee0f22f1dccd9a12431ec7e3f08298b192b5e9bfa765b37b"
+      ]
+    },
+    {
+      "id": "article:3caa6b5b3d4f4aec1fb2b72dd191783cdbee24fa7b355874cbf062235261a438",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Business",
+          "Economy"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/business/economy/feed/",
+            "section": "Economy",
+            "sourceId": "ie-economy"
+          }
+        ],
+        "publishedAt": "2026-02-28T23:13:43.000Z",
+        "publisher": "Indian Express",
+        "title": "India key driver of global growth: Shaktikanta Das",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/business/economy/india-key-driver-of-global-growth-shaktikanta-das-10558355/"
+      },
+      "observations": [
+        "obs:022cc5ee6c6cabd5515e2be45fbcc1d30e81feaeeaa0a257b8ee0cb8a225e8ae",
+        "obs:ba96658248ad7b1dceba0d29188d022fdc137dfe206d9c64102ccdf9fb7dfe0b",
+        "obs:c030be117e2373e1bc7262d8db12ccafe772f7837336b3643ac0e6fa80b793fb"
+      ]
+    },
+    {
+      "id": "article:7200d989d71a7561e91d0c46782d88f9cd259e7d45456521ff6a53eba7f55a43",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "Editorial"
+        ],
+        "description": "The BRICS framework is an alternative to a geopolitical view of AI development",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/opinion/editorial/feeder/default.rss",
+            "section": "Editorial",
+            "sourceId": "hindu-editorial"
+          }
+        ],
+        "publishedAt": "2026-09-16T03:27:13.000Z",
+        "publisher": "The Hindu",
+        "title": "AI cooperation: On Artificial Intelligence at a crossroads",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/opinion/editorial/ai-cooperation-on-artificial-intelligence-at-a-crossroads/article71468418.ece"
+      },
+      "observations": [
+        "obs:605111a8e5e05a2627b1b62fd3acf7ee825f92fdfec26cc4478e3e16e05506bb",
+        "obs:bfca9bceda6a80a4aa997a38aed28e8b5b0d3bec20506b1732e9f863b9cb38a1",
+        "obs:ff558e9bd1e99f09e2f1d32fe77570212e8a0379fc10ff34fe8db3bbaa556428"
+      ]
+    },
+    {
+      "id": "article:91ee5d57ad48dde60145ce6e698602522cbcdf303f3e84d743a62265cd4d3332",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "World"
+        ],
+        "description": "The Russian Transport Ministry said the vessel’s all Indian crew of 23 was saved and none was hurt according to preliminary data",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/news/international/feeder/default.rss",
+            "section": "World",
+            "sourceId": "hindu-world"
+          }
+        ],
+        "publishedAt": "2026-10-07T07:36:43.000Z",
+        "publisher": "The Hindu",
+        "title": "All 23 Indians aboard Liberian-flagged oil tanker rescued after attack off Russia’s Black Sea coast",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/news/international/ukraine-drone-attack-triggers-huge-tanker-fire-off-russias-sochi-23-indians-rescued/article71554355.ece"
+      },
+      "observations": [
+        "obs:0609c6c580d8e8730544b52684f5bd63f3d348ff30a5ef0b027293309902e821",
+        "obs:9cbc0c521df106d993bce16c938b5dbeb9bf677c1a5c09fcc2daceb0ee71c85a",
+        "obs:d46c66ba856e0ec26271be2c51028851173c4baebaa20568c9877d451d09bd70"
+      ]
+    },
+    {
+      "id": "article:078fd1e0891fc4fb71bb6bbd67f1bf4b287ed8e6302840580b271112a67f7ca8",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "World News"
+        ],
+        "description": "A Liberia-flagged vessel carrying oil, with a crew of 23 Indian nationals, came under attack by drone boats off Russia's Black Sea coast, Russian authorities said. \"The crew has been saved and evacuated to shore,\" a spokesman for the Russian transport ministry told state-run TASS news agency. The Aframax Rio tanker came under attack on Tuesday by unmanned surface vessels (USVs), and open fire is raging in the Black Sea waters, the Russian transport ministry said. The ministry said the vessel's all Indian crew of 23 was saved and none was hurt according to preliminary data. The incident took pl",
+        "memberships": [
+          {
+            "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+            "section": "World",
+            "sourceId": "bs-world"
+          }
+        ],
+        "publishedAt": "2026-10-07T06:17:16.000Z",
+        "publisher": "Business Standard",
+        "title": "23 Indians rescued after oil tanker attacked off Russia's Black Sea coast",
+        "updatedAt": null,
+        "url": "https://www.business-standard.com/world-news/23-indians-rescued-after-oil-tanker-attacked-off-russia-s-black-sea-coast-126100700322_1.html"
+      },
+      "observations": [
+        "obs:42ba3954f3d9bb929d1758c3ded12eed6cac09a14c6d98163667a6813009fe35",
+        "obs:6e540fae629797136071387747068bafafd65bf3f72fff6a9c7fcf01c518e712",
+        "obs:89752f5621e6ef02a81bf3cba86ca2c99eab946c23d68c8ebb8f8551cb6e35eb",
+        "obs:991a9a09e186c3f4dcf71e0038c586e125c9570b29fdfea438122f80d74e1ea3",
+        "obs:ae6a33ad2808fbcd139e7ae157223854cb7496e275fbc8ec2e741086eb6c0a8c",
+        "obs:c61f1cea54e7ba615088b3c9180e112acb61d751dee88c4b53c2d8585a09d5be"
+      ]
+    },
+    {
+      "id": "article:49a6f6aaa1f65fcafad5851b79ec806479b4e823bc6a94a224825c46c38da092",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "West Bengal"
+        ],
+        "description": "The AJUP chief’s remarks came a day after the high-voltage polling in Rejinagar, where he was arrested after a confrontation with the police outside his party office. He was released after spending nearly 12 hours in custody.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.thehindu.com/news/national/feeder/default.rss",
+            "section": "National",
+            "sourceId": "hindu-national"
+          }
+        ],
+        "publishedAt": "2026-10-07T09:23:53.000Z",
+        "publisher": "The Hindu",
+        "title": "Humayun Kabir hints at early retirement from politics, says BJP will win Bengal’s Rejinagar",
+        "updatedAt": null,
+        "url": "https://www.thehindu.com/news/national/west-bengal/humayun-kabir-hints-at-early-retirement-from-politics-says-bjp-will-win-bengals-rejinagar/article71554971.ece"
+      },
+      "observations": [
+        "obs:9c78bb3113fcb39977be01b181f4fc51ec2bc05a6fe7a3e42ac0019cecfe42fd",
+        "obs:a43ac55987a972a86415b556374df65c4929acaed1659dcfbc97e5bf719720d3"
+      ]
+    },
+    {
+      "id": "article:6f3bb9b696f559a66fe793d9564a9a5c507bef1b087a49ac09e5ff05dcbf61c8",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "Arrested on bypoll day, teary-eyed Humayun Kabir says he will quit politics",
+        "memberships": [
+          {
+            "feedUrl": "https://www.indiatoday.in/rss/1206578",
+            "section": "India",
+            "sourceId": "india-india-today-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T12:21:40.000Z",
+        "publisher": "India Today",
+        "title": "Arrested on bypoll day, teary-eyed Humayun Kabir says he will quit politics",
+        "updatedAt": null,
+        "url": "https://www.indiatoday.in/india/story/humayun-kabir-retirement-rejinagar-bypoll-police-arrest-suvendu-adhikari-3011746-2026-10-07"
+      },
+      "observations": [
+        "obs:8c5345526344cb44085ea67250a263a661437b30f88ac5f2cfedb38609cfa30e",
+        "obs:91b6e7bee30a843cd44b2d5984561fc5d3976b7d3263315c0ac2d1f7b948436c",
+        "obs:b7f2887bbc8817329af230d6f67c67920debb7ea182479a7c822dceb2e883f51"
+      ]
+    },
+    {
+      "id": "article:daef0f5bc258016da7397b50a3e407d120f7118132e31ea0f758fd906d7ce76a",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "India"
+        ],
+        "description": "Rahul Gandhi and INDIA bloc leaders were detained by Delhi Police near Jantar Mantar after being stopped from protesting over \"vote chori\" allegations and demanding CEC Gyanesh Kumar's removal.",
+        "memberships": [
+          {
+            "feedUrl": "https://feeds.feedburner.com/NDTV-LatestNews",
+            "section": "Latest",
+            "sourceId": "india-ndtv-latest"
+          }
+        ],
+        "publishedAt": "2026-10-07T13:03:06.000Z",
+        "publisher": "NDTV",
+        "title": "Rahul Gandhi Dragged Into Bus, Detained By Delhi Police Near Jantar Mantar | Watch",
+        "updatedAt": null,
+        "url": "https://www.ndtvprofit.com/india/rahul-gandhi-dragged-into-bus-detained-by-delhi-police-near-jantar-mantar-watch-12151730"
+      },
+      "observations": [
+        "obs:3398bd01a7097947ceaf913a16f63a4e6c03aa6553ca118f08be7af19e63f573"
+      ]
+    },
+    {
+      "id": "article:590dc09cbacc7cc1925c51301446946439183ad7095b2af6d554ae9361f45216",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "Euan Ward, Saeed Al-Batati and Shuaib Almosawa",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "Bab al-Mandab Strait",
+          "Defense and Military Forces",
+          "Houthis",
+          "Iran",
+          "Sanaa",
+          "Saudi Arabia",
+          "Taiz (Yemen)",
+          "War and Armed Conflicts",
+          "Yemen"
+        ],
+        "description": "Yemen’s capital, Sanaa, was bombarded overnight, after government forces reported some of the most intense clashes in years around Taiz, the country’s third largest city.",
+        "memberships": [
+          {
+            "feedUrl": "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
+            "section": "Middle East",
+            "sourceId": "nyt-middle-east"
+          }
+        ],
+        "publishedAt": "2026-10-02T18:06:54.000Z",
+        "publisher": "New York Times",
+        "title": "Fighting Intensifies in Yemen, Raising Fresh Fears of All-Out War",
+        "updatedAt": null,
+        "url": "https://www.nytimes.com/2026/10/02/world/middleeast/yemen-houthis-saudi-arabia-sanaa-taiz.html"
+      },
+      "observations": [
+        "obs:10106bcb5c13d229215cd5c7964e7831b8e18e7eb2c440716dc6cedeb3493fed",
+        "obs:21260f402d913c9fa2e482d55f48a819e917a1f061b784053d04540bddb51130",
+        "obs:cc01096742d3b1b7fa1d5c58fe5e5b4c9740aae78d916723876b5e44154449c4"
+      ]
+    },
+    {
+      "id": "article:d4db4de45434e357967a091524166ed4b531617d317b2717808861ac9e10f5cd",
+      "metadata": {
+        "bylines": [],
+        "categories": [],
+        "description": "Though the technology is making life still harder for many graduates",
+        "memberships": [
+          {
+            "feedUrl": "https://www.economist.com/finance-and-economics/rss.xml",
+            "section": "Finance & economics",
+            "sourceId": "ext-economist-finance-economics"
+          }
+        ],
+        "publishedAt": "2026-08-06T09:22:08.000Z",
+        "publisher": "The Economist",
+        "title": "India’s IT sector is surviving artificial intelligence",
+        "updatedAt": null,
+        "url": "https://www.economist.com/finance-and-economics/2026/08/06/indias-it-sector-is-surviving-artificial-intelligence"
+      },
+      "observations": [
+        "obs:7a3c99667e9ad1c650bd180f955d3ddcb32c355c592e51ff7702afc900f985dc",
+        "obs:7f9c54847b2347a3c5c0f32add243b69f6cda42ec3d59d1972a2b9dd6766a50e",
+        "obs:9bba82d628d0f71332912642c1f5e21b1d4490ffaf6ccc688d1ae92005d44446"
+      ]
+    },
+    {
+      "id": "article:cc226b86cf13ff04f0d3dee18ea67a351641db116930c49631655bd23a1cf44b",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "India News"
+        ],
+        "description": "The Supreme Court on Wednesday agreed to examine a plea seeking recall of its recent split verdict on whether challenges to the 2023 law governing the appointment of the Chief Election Commissioner and Election Commissioners should be referred to a larger Constitution bench. On September 23, a bench of Justices Dipankar Datta and Satish Chandra Sharma gave split opinions on whether a batch of pleas challenging the validity of a 2023 law that excludes the Chief Justice of India from the panel for selecting the Chief Election Commissioner (CEC) and Election Commissioners (ECs) should be referred",
+        "memberships": [
+          {
+            "feedUrl": "https://www.business-standard.com/rss/india-news-216.rss",
+            "section": "India",
+            "sourceId": "bs-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T07:09:23.000Z",
+        "publisher": "Business Standard",
+        "title": "SC to examine plea to recall split verdict on CEC, EC appointment law",
+        "updatedAt": null,
+        "url": "https://www.business-standard.com/india-news/sc-to-examine-plea-to-recall-split-verdict-on-cec-ec-appointment-law-126100700453_1.html"
+      },
+      "observations": [
+        "obs:00274c613cce4cf6ab9c2638a5a9f212f3e85a18f104731b637e67e8f416cac8",
+        "obs:8c3ba4ab56669f34b76f3fc956c31f899cc822897194590309571945a063772c",
+        "obs:e34f81a24b614ee70cc90286695590704a31151c950d683962cfa122b803245e"
+      ]
+    },
+    {
+      "id": "article:8aac5ab2e1fd7450c47701b762d0254bdc8237bd72a9d218580b435ed20fb160",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "india-news"
+        ],
+        "description": "Centre told the court that a Standard Operating Procedure (SOP) was already in place for protests at Jantar Mantar, including provisions for videography.",
+        "memberships": [
+          {
+            "feedUrl": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+            "section": "India",
+            "sourceId": "ht-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T09:21:30.000Z",
+        "publisher": "Hindustan Times",
+        "title": "High court refuses to direct Delhi cops to wear body cameras during stirs: ‘Cannot be said a grey area’",
+        "updatedAt": null,
+        "url": "https://www.hindustantimes.com/india-news/high-court-refuses-to-direct-delhi-cops-to-wear-body-cameras-during-stirs-cannot-be-said-a-grey-area-101791363015268.html"
+      },
+      "observations": [
+        "obs:9112b425ff4352081fe66739233d9adea4d73400959dcf80f1e50c7648e90b15",
+        "obs:d38e439cb4253d527a70f9d0bffa9631750ece037293879c3a42bc25a3d0080c",
+        "obs:dc4f668c4217c9cfe7db170b3cbbf99b9c255a1b09216c3f6fa9cd650bc3bedc"
+      ]
+    },
+    {
+      "id": "article:67f6c7e9466de9ca48026ecf969aaf7ed924eda54a37d02ef53bd65ed774110f",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "World"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/world/feed/",
+            "section": "World",
+            "sourceId": "ie-world"
+          }
+        ],
+        "publishedAt": "2026-10-03T04:33:30.000Z",
+        "publisher": "Indian Express",
+        "title": "Plague in Russia? Lab worker dies in Siberia, hospital quarantined",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/world/russia-plague-lab-worker-dies-nearly-200-under-observation-10904740/"
+      },
+      "observations": [
+        "obs:16cfa4e72f80af26e8561c66afd87135317489288ad06d7e8296c9fdbe7c343b",
+        "obs:4c05841a32273e5a2c00d06958fd79ae763fb277d3d0b921bc346861bd31b86c",
+        "obs:c1a476ead35f7a5ccf66f090946afc65aa7094796627003b6697da3507c7f28f"
+      ]
+    },
+    {
+      "id": "article:4bee025eaf8b717fa4b3cee64a486a7405e108345e655d9cc90726ce9b0cd4da",
+      "metadata": {
+        "bylines": [
+          {
+            "name": "PTI",
+            "provenance": "rss:dc:creator"
+          }
+        ],
+        "categories": [
+          "#ConstitutionBench",
+          "#JudicialReview",
+          "CEC",
+          "ChiefJusticeOfIndia",
+          "ElectionCommission",
+          "ElectionCommissioners",
+          "LegalProceedings",
+          "SupremeCourt"
+        ],
+        "description": "The Supreme Court on Wednesday agreed to examine a plea seeking recall of its recent split verdict on whether challenges to the 2023 law governing the appointment of the Chief Election Commissioner and Election Commissioners should be referred to a larger Constitution Bench. On September 23, a Bench of Justices Dipankar Datta and Satish Chandra […]",
+        "memberships": [
+          {
+            "feedUrl": "https://publish.tribuneindia.com/newscategory/india/feed/",
+            "section": "India",
+            "sourceId": "tribune-india"
+          }
+        ],
+        "publishedAt": "2026-10-07T07:03:15.000Z",
+        "publisher": "The Tribune",
+        "title": "SC to examine plea for recall of split verdict on law governing appointment of CEC, ECs",
+        "updatedAt": null,
+        "url": "https://www.tribuneindia.com/news/india/sc-to-examine-plea-for-recall-of-split-verdict-on-law-governing-appointment-of-cec-ecs"
+      },
+      "observations": [
+        "obs:0629deb3ae10f33f5ed3e4f5d4405939f78efa74f833a418dab2fd7bfe5a49d0",
+        "obs:1d8a0d9101f9658a994eed3dc4dd1b0b1c918489a3f47c2cb93d7b6b04c49632",
+        "obs:bc536d3a8bd8d95565174c0bc155efe1d9502d89b58ce61241c1a38c1cb4cf25"
+      ]
+    },
+    {
+      "id": "article:6e7d97981a8bd51187d5a0bf1773a0b94e8920a240d66fb2bc6b71665c9e83bf",
+      "metadata": {
+        "bylines": [],
+        "categories": [
+          "World"
+        ],
+        "description": "",
+        "memberships": [
+          {
+            "feedUrl": "https://indianexpress.com/section/world/feed/",
+            "section": "World",
+            "sourceId": "ie-world"
+          }
+        ],
+        "publishedAt": "2026-09-20T17:45:46.000Z",
+        "publisher": "Indian Express",
+        "title": "Trump warns Iran leaders of economic ruin, says ‘make a deal’",
+        "updatedAt": null,
+        "url": "https://indianexpress.com/article/world/iran-us-conflict-donald-trump-threatens-iran-tehran-retaliation-houthis-saudi-arabia-10886558/"
+      },
+      "observations": [
+        "obs:81a7a86b3f47e0dbe8489c9264dabe5f010730128ab5f4a9af2e692c0b87a1a2",
+        "obs:a8360710c3b7861b6921e04b18f33eadf0b33739c8cf68a5a94dae7cba9fc767",
+        "obs:d0ef5334a892fa2b205f9f4f59b34852f2c89bff368dcffab74e9abfa7e8bb40"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "id": "pair-01",
+      "left": "article:cc226b86cf13ff04f0d3dee18ea67a351641db116930c49631655bd23a1cf44b",
+      "right": "article:4bee025eaf8b717fa4b3cee64a486a7405e108345e655d9cc90726ce9b0cd4da"
+    },
+    {
+      "id": "pair-02",
+      "left": "article:91ee5d57ad48dde60145ce6e698602522cbcdf303f3e84d743a62265cd4d3332",
+      "right": "article:078fd1e0891fc4fb71bb6bbd67f1bf4b287ed8e6302840580b271112a67f7ca8"
+    },
+    {
+      "id": "pair-03",
+      "left": "article:2d3e1c747f96a49d0db607b638b2e4eccfdb90b3179dd0a96d7d8e7cc1d588a6",
+      "right": "article:67f6c7e9466de9ca48026ecf969aaf7ed924eda54a37d02ef53bd65ed774110f"
+    },
+    {
+      "id": "pair-04",
+      "left": "article:e6d4bb9f552c74398e2676c0173034316ee33de441ca31f6e84ee7d3e165339f",
+      "right": "article:8aac5ab2e1fd7450c47701b762d0254bdc8237bd72a9d218580b435ed20fb160"
+    },
+    {
+      "id": "pair-05",
+      "left": "article:4c8a6fe1344426822ef3d4ca4434c9747acc7f0c8dec8755ee2b1a13aabaa353",
+      "right": "article:daef0f5bc258016da7397b50a3e407d120f7118132e31ea0f758fd906d7ce76a"
+    },
+    {
+      "id": "pair-06",
+      "left": "article:7200d989d71a7561e91d0c46782d88f9cd259e7d45456521ff6a53eba7f55a43",
+      "right": "article:d4db4de45434e357967a091524166ed4b531617d317b2717808861ac9e10f5cd"
+    },
+    {
+      "id": "pair-07",
+      "left": "article:a266156ac1ab5cebb906dbbbeacb39f67b7de0a9b9d3aec9cb90d97c4623ffcd",
+      "right": "article:6e7d97981a8bd51187d5a0bf1773a0b94e8920a240d66fb2bc6b71665c9e83bf"
+    },
+    {
+      "id": "pair-08",
+      "left": "article:543543d1b953f322223df9b75f283c875169e59bc1091129244be24784d82079",
+      "right": "article:590dc09cbacc7cc1925c51301446946439183ad7095b2af6d554ae9361f45216"
+    },
+    {
+      "id": "pair-09",
+      "left": "article:5fd324da5fb225c71f2afa2d985fb32777ae123f5805ce0a5758fdff3eb00b96",
+      "right": "article:3caa6b5b3d4f4aec1fb2b72dd191783cdbee24fa7b355874cbf062235261a438"
+    },
+    {
+      "id": "pair-10",
+      "left": "article:49a6f6aaa1f65fcafad5851b79ec806479b4e823bc6a94a224825c46c38da092",
+      "right": "article:6f3bb9b696f559a66fe793d9564a9a5c507bef1b087a49ac09e5ff05dcbf61c8"
+    }
+  ]
+}

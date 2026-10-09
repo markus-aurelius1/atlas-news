@@ -1,0 +1,421 @@
+{
+  "checks": [
+    {
+      "name": "accessible place exposes facts and Test me",
+      "ok": true
+    },
+    {
+      "name": "desktop inspector overlays the full canvas",
+      "ok": true
+    },
+    {
+      "name": "closing the inspector returns the whole map and clears the selection",
+      "ok": true
+    },
+    {
+      "name": "a place link reopens the selected place",
+      "ok": true
+    },
+    {
+      "name": "recall opens a question",
+      "ok": true
+    },
+    {
+      "name": "place opens a canonical question",
+      "ok": true
+    },
+    {
+      "name": "375: statements has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: statements no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: statements answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: statements has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: statements dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: mcq has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: mcq no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: mcq answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: mcq has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: mcq dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: sequence has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: sequence no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: sequence answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: sequence has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: sequence dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: pairs has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: pairs no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: pairs answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: pairs has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: pairs dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: assertion-reason has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: assertion-reason no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: assertion-reason answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: assertion-reason has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: assertion-reason dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: matching has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: matching no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: matching answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: matching has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: matching dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: table has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: table no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: table answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: table has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: table dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "375: propositions has A–D",
+      "ok": true
+    },
+    {
+      "name": "375: propositions no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "375: propositions answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "375: propositions has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "375: propositions dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "375: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: statements has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: statements no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: statements answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: statements has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: statements dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: mcq has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: mcq no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: mcq answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: mcq has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: mcq dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: sequence has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: sequence no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: sequence answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: sequence has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: sequence dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: pairs has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: pairs no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: pairs answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: pairs has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: pairs dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: assertion-reason has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: assertion-reason no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: assertion-reason answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: assertion-reason has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: assertion-reason dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: matching has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: matching no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: matching answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: matching has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: matching dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: table has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: table no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: table answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: table has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: table dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "1366: propositions has A–D",
+      "ok": true
+    },
+    {
+      "name": "1366: propositions no horizontal page overflow",
+      "ok": true
+    },
+    {
+      "name": "1366: propositions answer is locked and revealed",
+      "ok": true
+    },
+    {
+      "name": "1366: propositions has no invented explanation",
+      "ok": true
+    },
+    {
+      "name": "1366: propositions dialog is opaque after responsive changes",
+      "ok": true
+    },
+    {
+      "name": "1366: PYQ returns to a meaningful place",
+      "ok": true
+    },
+    {
+      "name": "offline core includes an unvisited curated paper",
+      "ok": true
+    },
+    {
+      "name": "no browser errors",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,189 @@
+{
+  "days": [
+    "2026-10-07",
+    "2026-10-09"
+  ],
+  "consecutive": false,
+  "observedDays": 2,
+  "continuousHealthCertified": false,
+  "paths": [
+    {
+      "path": "C:\\Users\\hario\\.codex\\worktrees\\validator-v3-a2a\\Atlas-News\\tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\live\\raw-1-0.json",
+      "sha256": "9418aa9dcdc08da3db3fde51cd71b7f28fe1f42728886c085786167068d683a3",
+      "clock": "2026-10-07T13:40:39.491Z",
+      "sourceHealth": [
+        {
+          "id": "dte-news",
+          "status": "ok"
+        },
+        {
+          "id": "mint-politics",
+          "status": "ok"
+        },
+        {
+          "id": "bl-science",
+          "status": "ok"
+        },
+        {
+          "id": "india-frontline-cover-story",
+          "status": "ok"
+        },
+        {
+          "id": "ext-nasa-news-releases",
+          "status": "failed"
+        },
+        {
+          "id": "substack-political-economy-stats-and-society",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "path": "docs/release-candidate/rss-bounded-2026-10-09.json",
+      "sha256": "97c293c9bdf5853e91bebf2af82c2830b92e7093096419f631f9bcc48b4341d8",
+      "clock": "2026-10-09T09:57:15.477Z",
+      "sourceHealth": [
+        {
+          "id": "ie-governance",
+          "status": "ok"
+        },
+        {
+          "id": "ie-economy",
+          "status": "ok"
+        },
+        {
+          "id": "ie-columns",
+          "status": "ok"
+        },
+        {
+          "id": "ie-explained",
+          "status": "ok"
+        },
+        {
+          "id": "hindu-columns",
+          "status": "ok"
+        },
+        {
+          "id": "hindu-op-ed",
+          "status": "ok"
+        }
+      ]
+    }
+  ],
+  "replay": [
+    {
+      "path": "C:\\Users\\hario\\.codex\\worktrees\\validator-v3-a2a\\Atlas-News\\tools\\news\\evaluation\\data\\a2a-bootstrap-2026-10-07\\live\\raw-1-0.json",
+      "clock": "2026-10-07T13:40:39.491Z",
+      "accepted": 3,
+      "today": [
+        {
+          "id": "reading:https://www.downtoearth.org.in/science-technology/2026-chemistry-nobel-awarded-for-the-discovery-of-non-linear-effects-and-autocatalysis-in-asymmetric-organic-synthesis:[\"\",\"\",\"discovery\",[\"2026\"],null]",
+          "title": "2026 Chemistry Nobel awarded for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis",
+          "url": "https://www.downtoearth.org.in/science-technology/2026-chemistry-nobel-awarded-for-the-discovery-of-non-linear-effects-and-autocatalysis-in-asymmetric-organic-synthesis",
+          "novelty": "uncertain"
+        }
+      ],
+      "suppressed": [
+        {
+          "id": "reading:https://frontline.thehindu.com/cover-story/privilege-to-expel/article64917806.ece:[\"supreme-court\",\"\",\"\",[\"case is\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://www.livemint.com/politics/alito-says-recusal-in-climate-case-is-prudent-but-not-required-11790797214223.html:[\"supreme-court\",\"climate\",\"\",[\"case involving\",\"case is\",\"us\"],null]",
+          "reason": "undated_or_stale"
+        }
+      ],
+      "selectedHistoryCount": 1
+    },
+    {
+      "path": "docs/release-candidate/rss-bounded-2026-10-09.json",
+      "clock": "2026-10-09T09:57:15.477Z",
+      "accepted": 20,
+      "today": [],
+      "suppressed": [
+        {
+          "id": "reading:https://indianexpress.com/article/business/economy/rbi-holds-repo-rate-sees-gdp-growth-slowing-to-6-9-in-fy27-10626603/:[\"rbi\",\"\",\"\",[\"fy27\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/business/economy/rbi-mpc-august-5-interest-rates-unchanged-oil-inflation-risks-10814639/:[\"rbi\",\"inflation\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/election-commission-nine-new-decisions-what-changes-and-what-doesnt-10895475/:[\"eci\",\"\",\"changes\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-ai/anthropic-claude-ai-consciousness-religious-leaders-10909349/:[\"\",\"\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-economics/fed-rbi-repo-rate-hike-inflation-5-5-percent-10881466/:[\"rbi\",\"\",\"\",[\"us\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-economics/how-rbis-rate-hike-turns-homeownership-into-debt-burden-10911224/:[\"rbi\",\"\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-economics/mining-tax-law-2026-odisha-jharkhand-sc-ruling-10893772/:[\"\",\"mining\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/:[\"rbi\",\"\",\"\",[],\"future-tightening-outlook\"]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-law/police-detention-protests-arrest-bnss-rights-explained-10910751/:[\"\",\"\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/explained-sci-tech/nobel-medicine-prize-2026-brain-optogenetics-10907928/:[\"\",\"\",\"discovery\",[\"2026\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/explained/supreme-court-form-6-changes-cji-surya-kant-10907797/:[\"supreme-court\",\"\",\"approves\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/c-raja-mohan-ai-is-now-a-great-power-game-china-xi-trump-10888983/:[\"\",\"\",\"\",[\"india\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/c-raja-mohan-in-iran-war-us-midterm-elections-are-the-new-front-10908850/:[\"\",\"\",\"\",[\"iran\",\"us\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/c-raja-mohan-india-brics-us-russia-china-modi-xi-trump-10878833/:[\"\",\"\",\"\",[\"india\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/diplomacy-and-the-illusion-of-global-governance-10889207/:[\"\",\"climate\",\"changes\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/election-commission-supreme-court-independent-institutions-sir-10900910/:[\"eci\",\"\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/:[\"rbi\",\"\",\"\",[],\"price-stability-rationale\"]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://www.thehindu.com/opinion/op-ed/form-26-and-the-statutory-mandate/article71516242.ece:[\"\",\"\",\"\",[\"case involving\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://www.thehindu.com/opinion/op-ed/revisiting-indias-nuclear-doctrine-without-revising-it/article71509857.ece:[\"\",\"\",\"\",[\"india\"],null]",
+          "reason": "undated_or_stale"
+        },
+        {
+          "id": "reading:https://www.thehindu.com/opinion/op-ed/should-the-ec-take-action-against-those-filing-forms-for-mass-deletions/article71534476.ece:[\"\",\"\",\"\",[],null]",
+          "reason": "undated_or_stale"
+        }
+      ],
+      "selectedHistoryCount": 1
+    }
+  ],
+  "qualityGate": "Requires real source-health reconciliation and owner sequence judgments; no automatic release pass"
+}

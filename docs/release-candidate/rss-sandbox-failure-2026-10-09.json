@@ -1,0 +1,88 @@
+{
+  "version": "tars-news-raw/v1",
+  "id": "tars-rc-rss:2026-10-09T09:56:40.507Z",
+  "shardIndex": 0,
+  "capturedAt": "2026-10-09T09:56:40.594Z",
+  "registryHash": "09cd0138134f309428cf327bc2da4119aa7205903445a46512298d0171ea850f",
+  "parserVersion": "tars-eval-metadata/3",
+  "sources": [
+    {
+      "sourceId": "ie-governance",
+      "feedUrl": "https://indianexpress.com/section/governance/feed/",
+      "capturedAt": "2026-10-09T09:56:40.590Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    },
+    {
+      "sourceId": "ie-economy",
+      "feedUrl": "https://indianexpress.com/section/business/economy/feed/",
+      "capturedAt": "2026-10-09T09:56:40.591Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    },
+    {
+      "sourceId": "ie-columns",
+      "feedUrl": "https://indianexpress.com/section/opinion/columns/feed/",
+      "capturedAt": "2026-10-09T09:56:40.591Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    },
+    {
+      "sourceId": "ie-explained",
+      "feedUrl": "https://indianexpress.com/section/explained/feed/",
+      "capturedAt": "2026-10-09T09:56:40.593Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    },
+    {
+      "sourceId": "hindu-columns",
+      "feedUrl": "https://www.thehindu.com/opinion/columns/feeder/default.rss",
+      "capturedAt": "2026-10-09T09:56:40.594Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    },
+    {
+      "sourceId": "hindu-op-ed",
+      "feedUrl": "https://www.thehindu.com/opinion/op-ed/feeder/default.rss",
+      "capturedAt": "2026-10-09T09:56:40.594Z",
+      "status": "failed",
+      "httpStatus": null,
+      "failure": "network",
+      "countBefore": null,
+      "countAfter": 0,
+      "invalidEntries": null,
+      "truncatedEntries": null,
+      "observations": []
+    }
+  ]
+}

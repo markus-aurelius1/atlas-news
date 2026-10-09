@@ -1,0 +1,679 @@
+{
+  "environment": {
+    "TEMP": "C:\\Users\\hario\\.codex\\worktrees\\6fba\\Atlas-News\\tools\\news\\.cache\\release-candidate\\tmp",
+    "TMP": "C:\\Users\\hario\\.codex\\worktrees\\6fba\\Atlas-News\\tools\\news\\.cache\\release-candidate\\tmp",
+    "CHROMIUM_PATH": "C:/Users/hario/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe",
+    "PLAYWRIGHT_BROWSERS_PATH": "C:/Users/hario/AppData/Local/ms-playwright",
+    "WRANGLER_BIN": "C:/Users/hario/AppData/Local/npm-cache/_npx/32026684e21afda6/node_modules/wrangler/bin/wrangler.js",
+    "VALIDATOR_INVENTORY_PATH": "docs/release-candidate/runtime-inventory.json"
+  },
+  "results": [
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 1624,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-0.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 870,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-0.log",
+      "sha256": "bfe940dda68e4296bba86151d1d5edf9d0aecb0935dde0a7e7bb9bb18982c207",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 11017,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "v3-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 32221,
+      "log": "tools/news/.cache/release-candidate/v3-build-0.log",
+      "sha256": "af523456d232cc38d785adb3a51b914740c4823429475faeb3f7bdf0d124bf5e",
+      "summary": []
+    },
+    {
+      "name": "v3-browser",
+      "command": [
+        "node",
+        "tools/browser/validator-v3-check.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 43980,
+      "log": "tools/news/.cache/release-candidate/v3-browser-0.log",
+      "sha256": "a7f1bf91882154cb7ce1d298fbaa2f749a412ef69fc906d87e69fe6768bfb80f",
+      "summary": [
+        "68 controlled v3 browser checks passed"
+      ]
+    },
+    {
+      "name": "v3-h3-workerd",
+      "command": [
+        "node",
+        "tools/browser/sync-check.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "elapsedMs": 56045,
+      "log": "tools/news/.cache/release-candidate/v3-h3-workerd-0.log",
+      "sha256": "95365844f68a12c1b6da31d3d775f9f03aa05091591b4558a795fcad05d99586",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 378,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-1.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 152,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-1.log",
+      "sha256": "bfe940dda68e4296bba86151d1d5edf9d0aecb0935dde0a7e7bb9bb18982c207",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 2940,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "default-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 9647,
+      "log": "tools/news/.cache/release-candidate/default-build-0.log",
+      "sha256": "6bc4979689bf13f6d83c745a542b3bf3ccf590db7348db653d30961c125226d5",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 838,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-2.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 505,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-2.log",
+      "sha256": "bfe940dda68e4296bba86151d1d5edf9d0aecb0935dde0a7e7bb9bb18982c207",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 12000,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "v3-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 33562,
+      "log": "tools/news/.cache/release-candidate/v3-build-1.log",
+      "sha256": "ee50515db9a059510b059ab327261df4ad555e7906bb6eab86cdf2d0bc22aad8",
+      "summary": []
+    },
+    {
+      "name": "v3-browser",
+      "command": [
+        "node",
+        "tools/browser/validator-v3-check.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 42901,
+      "log": "tools/news/.cache/release-candidate/v3-browser-1.log",
+      "sha256": "a7f1bf91882154cb7ce1d298fbaa2f749a412ef69fc906d87e69fe6768bfb80f",
+      "summary": [
+        "68 controlled v3 browser checks passed"
+      ]
+    },
+    {
+      "name": "v3-h3-workerd",
+      "command": [
+        "node",
+        "tools/browser/sync-check.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "elapsedMs": 18156,
+      "log": "tools/news/.cache/release-candidate/v3-h3-workerd-1.log",
+      "sha256": "1b0d6d69f8e3b680889b0bcbc6546f8b4986cb311331dcd15d30955548d00c6c",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 282,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-3.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 156,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-3.log",
+      "sha256": "bfe940dda68e4296bba86151d1d5edf9d0aecb0935dde0a7e7bb9bb18982c207",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 2510,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-3.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "default-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 10959,
+      "log": "tools/news/.cache/release-candidate/default-build-1.log",
+      "sha256": "d9b7419ea7759b5efbb012ff902e8c7b49a149f6c48a972369c5be5996480205",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 509,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-4.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 264,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-4.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 4394,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-4.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "v3-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 62993,
+      "log": "tools/news/.cache/release-candidate/v3-build-2.log",
+      "sha256": "482cc91c9aad9db544a7f57e709cf1e07b21102b5228c6d2376353c41d504289",
+      "summary": []
+    },
+    {
+      "name": "v3-browser",
+      "command": [
+        "node",
+        "tools/browser/validator-v3-check.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 77486,
+      "log": "tools/news/.cache/release-candidate/v3-browser-2.log",
+      "sha256": "a7f1bf91882154cb7ce1d298fbaa2f749a412ef69fc906d87e69fe6768bfb80f",
+      "summary": [
+        "68 controlled v3 browser checks passed"
+      ]
+    },
+    {
+      "name": "v3-h3-workerd",
+      "command": [
+        "node",
+        "tools/browser/sync-check.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "elapsedMs": 50757,
+      "log": "tools/news/.cache/release-candidate/v3-h3-workerd-2.log",
+      "sha256": "a125435f1ae94e59bd76c25a0c6b1f37bc7b0154f771540dabb9d1d477097dd0",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 523,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-5.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 321,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-5.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 4663,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-5.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "default-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 17954,
+      "log": "tools/news/.cache/release-candidate/default-build-2.log",
+      "sha256": "c15713372d5d8d02aeadadd6bdf8114ce7862a5b7bda4676176626e065aab4be",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 269,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-6.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 207,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-6.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 3132,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-6.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "v3-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 10601,
+      "log": "tools/news/.cache/release-candidate/v3-build-3.log",
+      "sha256": "15cc49d88afc21b84ad7528cf3e1c95f251c0866976fc0c2c7e07eae0be5ed5d",
+      "summary": []
+    },
+    {
+      "name": "v3-browser",
+      "command": [
+        "node",
+        "tools/browser/validator-v3-check.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "elapsedMs": 128749,
+      "log": "tools/news/.cache/release-candidate/v3-browser-3.log",
+      "sha256": "0eaa242df30172b2542c420f9119b500062b0f1ce9689053b1e54729df34ebbf",
+      "summary": []
+    },
+    {
+      "name": "v3-h3-workerd",
+      "command": [
+        "node",
+        "tools/browser/sync-check.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 111109,
+      "log": "tools/news/.cache/release-candidate/v3-h3-workerd-3.log",
+      "sha256": "48e84d05df1427a311914ead871a844640abda43bac5dfad78a7aa7edbd82b20",
+      "summary": [
+        "42 sync checks passed"
+      ]
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 883,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-7.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 328,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-7.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 3679,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-7.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "default-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 15788,
+      "log": "tools/news/.cache/release-candidate/default-build-3.log",
+      "sha256": "c0d822ae3da7416ee004ef4a47ce956e627010f90c418384b6b36f43e54e18c2",
+      "summary": []
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 257,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-8.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 157,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-8.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 2596,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-8.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "v3-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 12000,
+      "log": "tools/news/.cache/release-candidate/v3-build-4.log",
+      "sha256": "540fcf1d8751019738e95b6ec2a0ede6abfdbc8541398f174388e2c40fe1f290",
+      "summary": []
+    },
+    {
+      "name": "v3-browser",
+      "command": [
+        "node",
+        "tools/browser/validator-v3-check.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 44473,
+      "log": "tools/news/.cache/release-candidate/v3-browser-4.log",
+      "sha256": "a7f1bf91882154cb7ce1d298fbaa2f749a412ef69fc906d87e69fe6768bfb80f",
+      "summary": [
+        "68 controlled v3 browser checks passed"
+      ]
+    },
+    {
+      "name": "atlas-assets",
+      "command": [
+        "node",
+        "tools/build-atlas-assets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 518,
+      "log": "tools/news/.cache/release-candidate/atlas-assets-9.log",
+      "sha256": "62fac986dea520734091132a3a539b509bf4b27085f2f17fc374e295cd0f8668",
+      "summary": []
+    },
+    {
+      "name": "validator-manifest",
+      "command": [
+        "node",
+        "tools/news/build-validator-manifest.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 289,
+      "log": "tools/news/.cache/release-candidate/validator-manifest-9.log",
+      "sha256": "cfe83728bf26f66e26ed98dddee4b2f3daca4a837e46e38162623b6ca59156de",
+      "summary": []
+    },
+    {
+      "name": "build-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 5556,
+      "log": "tools/news/.cache/release-candidate/build-typecheck-9.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "default-build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 19982,
+      "log": "tools/news/.cache/release-candidate/default-build-4.log",
+      "sha256": "a55f01dd3b77d180c0d06bec5d7ccc51ad090085825da16751182cae48d494ab",
+      "summary": []
+    }
+  ]
+}

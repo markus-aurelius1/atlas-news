@@ -53,15 +53,19 @@ async function token(email, claims = {}) {
 
 // News feed fixture: two publishers on one story, and separate stories to mark.
 const published = new Date(Date.now() - 2 * 3600000).toISOString()
-const row = (title, sourceId, publisher, url, section = 'Explained') => ({ title, sourceId, publisher, url, section, description: '', publishedAt: published })
+const v3Fixture = process.env.SYNC_CHECK_VALIDATOR === 'v3'
+// The original fixture remains byte-for-byte metadata-compatible in default
+// mode. V3 fixture summaries state explicit synthetic propositions so this
+// protocol/UI test does not depend on v2's broad entity acceptance.
+const row = (title, sourceId, publisher, url, section = 'Explained', description = '') => ({ title, sourceId, publisher, url, section, description: v3Fixture ? description : '', publishedAt: published })
 const RBI = 'https://indianexpress.com/article/fixture-rbi', RBI_HINDU = 'https://www.thehindu.com/fixture-rbi', SPACE = 'https://indianexpress.com/article/fixture-space', RIGHTS = 'https://www.thehindu.com/fixture-rights', GDP = 'https://indianexpress.com/article/fixture-gdp', HEALTH = 'https://www.thehindu.com/fixture-health'
 const items = [
-  row('RBI revises banking liquidity regulation framework', 'ie-explained', 'Indian Express', RBI),
-  row('RBI revises banking liquidity regulation framework today', 'hindu-national', 'The Hindu', RBI_HINDU),
-  row('ISRO launches important lunar space mission', 'ie-explained', 'Indian Express', SPACE),
+  row('RBI revises banking liquidity regulation framework', 'ie-explained', 'Indian Express', RBI, 'Explained', 'Banking regulation reform changes borrower protection and lending transparency in India.'),
+  row('RBI revises banking liquidity regulation framework today', 'hindu-national', 'The Hindu', RBI_HINDU, 'Explained', 'Banking regulation reform changes borrower protection and lending transparency in India.'),
+  row('ISRO launches important lunar space mission', 'ie-explained', 'Indian Express', SPACE, 'Explained', 'Quantum research discovers a new mechanism for space instrumentation.'),
   row('Supreme Court ruling on constitutional fundamental rights', 'hindu-national', 'The Hindu', RIGHTS, 'National'),
-  row('Cabinet approves expansion of Ayushman Bharat scheme coverage', 'hindu-national', 'The Hindu', HEALTH, 'National'),
-  row('New GDP series uses double deflation', 'ie-economy', 'Indian Express', GDP, 'Economy'),
+  row('Cabinet approves expansion of Ayushman Bharat scheme coverage', 'hindu-national', 'The Hindu', HEALTH, 'National', 'India public health system reform improves benefit delivery capacity.'),
+  row('New GDP series uses double deflation', 'ie-economy', 'Indian Express', GDP, 'Economy', 'India fiscal policy analysis explains the effects of revised GDP measurement.'),
 ]
 const feed = list => ({ registryGeneration: FEED_REGISTRY_GENERATION, version: 1, fetchedAt: new Date().toISOString(), sources: [...new Set(list.map(i => i.sourceId))].map(sourceId => ({ sourceId, status: 'ok', count: 1 })), items: list })
 const STATE_KEY = 'tars.current-affairs.state.v1'

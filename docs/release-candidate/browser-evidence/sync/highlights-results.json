@@ -1,0 +1,282 @@
+{
+  "highlightUsage": [
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 0,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=5;read=7;written=4",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 0,
+        "account": "reader@example.org",
+        "changes": [
+          {
+            "version": 1,
+            "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+            "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+            "title": "RBI revises banking liquidity regulation framework",
+            "publisher": "Indian Express",
+            "sourceId": "ie-explained",
+            "publishedAt": "2026-10-09T08:18:23.290Z",
+            "subjectSnapshot": "Economy",
+            "categorySnapshot": "Explained",
+            "quote": " how the committee reviewed the public policy and examined the evidence fro",
+            "anchor": {
+              "version": 1,
+              "quote": "how the committee reviewed the public policy and examined the evidence fro",
+              "prefix": "Paragraph 0 explains ",
+              "suffix": "m districts before publishing its report. Its recommendations co",
+              "start": 21,
+              "end": 95
+            },
+            "color": "yellow",
+            "createdAt": 1791541182472,
+            "updatedAt": 1791541182472
+          }
+        ]
+      }
+    },
+    {
+      "device": "two",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 0,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "two",
+      "usage": "queries=5;read=7;written=3",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 1,
+        "account": "reader@example.org",
+        "changes": [
+          {
+            "version": 1,
+            "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+            "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+            "title": "RBI revises banking liquidity regulation framework",
+            "publisher": "Indian Express",
+            "sourceId": "ie-explained",
+            "publishedAt": "2026-10-09T08:18:23.290Z",
+            "subjectSnapshot": "Economy",
+            "categorySnapshot": "Explained",
+            "quote": " how the committee reviewed the public policy and examined the evidence fro",
+            "anchor": {
+              "version": 1,
+              "quote": "how the committee reviewed the public policy and examined the evidence fro",
+              "prefix": "Paragraph 0 explains ",
+              "suffix": "m districts before publishing its report. Its recommendations co",
+              "start": 21,
+              "end": 95
+            },
+            "color": "blue",
+            "createdAt": 1791541182472,
+            "updatedAt": 1791541185789
+          }
+        ]
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 1,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "two",
+      "usage": "queries=5;read=7;written=3",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 2,
+        "account": "reader@example.org",
+        "changes": [
+          {
+            "version": 1,
+            "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+            "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+            "title": "RBI revises banking liquidity regulation framework",
+            "publisher": "Indian Express",
+            "sourceId": "ie-explained",
+            "publishedAt": "2026-10-09T08:18:23.290Z",
+            "subjectSnapshot": "Economy",
+            "categorySnapshot": "Explained",
+            "quote": " how the committee reviewed the public policy and examined the evidence fro",
+            "anchor": {
+              "version": 1,
+              "quote": "how the committee reviewed the public policy and examined the evidence fro",
+              "prefix": "Paragraph 0 explains ",
+              "suffix": "m districts before publishing its report. Its recommendations co",
+              "start": 21,
+              "end": 95
+            },
+            "color": "pink",
+            "createdAt": 1791541182472,
+            "updatedAt": 1791541190765
+          }
+        ]
+      }
+    },
+    {
+      "device": "two",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 3,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 2,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "two",
+      "usage": "queries=5;read=7;written=3",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 3,
+        "account": "reader@example.org",
+        "changes": [
+          {
+            "version": 1,
+            "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+            "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+            "title": "RBI revises banking liquidity regulation framework",
+            "publisher": "Indian Express",
+            "sourceId": "ie-explained",
+            "publishedAt": "2026-10-09T08:18:23.290Z",
+            "subjectSnapshot": "Economy",
+            "categorySnapshot": "Explained",
+            "quote": " how the committee reviewed the public policy and examined the evidence fro",
+            "anchor": {
+              "version": 1,
+              "quote": "how the committee reviewed the public policy and examined the evidence fro",
+              "prefix": "Paragraph 0 explains ",
+              "suffix": "m districts before publishing its report. Its recommendations co",
+              "start": 21,
+              "end": 95
+            },
+            "color": "pink",
+            "createdAt": 1791541182472,
+            "updatedAt": 1791541193458,
+            "deletedAt": 1791541193458
+          }
+        ]
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 3,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "other-account",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 0,
+        "account": "someone-else@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 4,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    },
+    {
+      "device": "one",
+      "usage": "queries=1;read=1;written=0",
+      "request": {
+        "protocol": "tars-highlight-sync/v1",
+        "cursor": 4,
+        "account": "reader@example.org",
+        "changes": []
+      }
+    }
+  ],
+  "created": {
+    "version": 1,
+    "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+    "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+    "title": "RBI revises banking liquidity regulation framework",
+    "publisher": "Indian Express",
+    "sourceId": "ie-explained",
+    "publishedAt": "2026-10-09T08:18:23.290Z",
+    "subjectSnapshot": "Economy",
+    "categorySnapshot": "Explained",
+    "quote": " how the committee reviewed the public policy and examined the evidence fro",
+    "anchor": {
+      "version": 1,
+      "quote": "how the committee reviewed the public policy and examined the evidence fro",
+      "prefix": "Paragraph 0 explains ",
+      "suffix": "m districts before publishing its report. Its recommendations co",
+      "start": 21,
+      "end": 95
+    },
+    "color": "yellow",
+    "createdAt": 1791541182472,
+    "updatedAt": 1791541182472,
+    "resolution": "resolved"
+  },
+  "received": {
+    "version": 1,
+    "highlightId": "deee3c9d-e279-4832-a097-2e408c3b430d",
+    "articleUrl": "https://indianexpress.com/article/fixture-rbi",
+    "title": "RBI revises banking liquidity regulation framework",
+    "publisher": "Indian Express",
+    "sourceId": "ie-explained",
+    "publishedAt": "2026-10-09T08:18:23.290Z",
+    "subjectSnapshot": "Economy",
+    "categorySnapshot": "Explained",
+    "quote": " how the committee reviewed the public policy and examined the evidence fro",
+    "anchor": {
+      "version": 1,
+      "quote": "how the committee reviewed the public policy and examined the evidence fro",
+      "prefix": "Paragraph 0 explains ",
+      "suffix": "m districts before publishing its report. Its recommendations co",
+      "start": 21,
+      "end": 95
+    },
+    "color": "yellow",
+    "createdAt": 1791541182472,
+    "updatedAt": 1791541182472,
+    "resolution": "pending"
+  },
+  "articleRequests": [
+    "http://127.0.0.1:8799/api/article?url=https%3A%2F%2Findianexpress.com%2Farticle%2Ffixture-rbi"
+  ]
+}

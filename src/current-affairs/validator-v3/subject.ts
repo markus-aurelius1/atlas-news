@@ -12,6 +12,9 @@ export interface SubjectDecision {
 // Compound issue/action/object frames outrank isolated entities. Places, publisher,
 // section, author, acceptance and PYQ frequency never vote for primary subject.
 const frames: readonly [Subject, string, string][] = [
+  ['Sci-Tech', 'ai-consciousness-values', String.raw`\b(?:AI|artificial intelligence)\b.{0,70}\b(?:conscious\w*|value alignment|ethical reasoning)\b|\b(?:consciousness|value alignment)\b.{0,50}\b(?:AI|artificial intelligence)\b`],
+  ['Polity', 'detention-rights', String.raw`\bdetention\b.{0,60}\barrest\b.{0,60}\b(?:rights|safeguards)\b`],
+  ['Security', 'security-incident', String.raw`\bnaval base\b.{0,70}\bsharing information\b|\bdrone.dropped\b.{0,35}\bseized\b`],
   ['Economy', 'central-bank-policy', String.raw`\b(?:RBI|Reserve Bank of India)\b.{0,90}\b(?:rates?|inflation|monetary policy|price stability)\b|\b(?:rate hike|price stability)\b`],
   ['Security', 'nuclear-doctrine', String.raw`\bnuclear (?:doctrine|deterrence)\b`],
   ['Sci-Tech', 'research-mechanism', String.raw`\b(?:(?:Physics|Chemistry|Medicine) Nobel|Nobel (?:Prize )?(?:202\d )?(?:in )?(?:Physiology/Medicine|Physics|Chemistry)|protein biosensors?|neutrinos?|quantum link)\b`],

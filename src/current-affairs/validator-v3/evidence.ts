@@ -34,7 +34,11 @@ export function extractEvidence(observations: StageCObservation[]): ArticleEvide
       if (!topic.length || !independentSupport.length) continue
       // A topic token cannot count again as its own substantive proposition. No URL/category/byline topics.
       const scope: Scope = rx(india).test(m.title + ' ' + m.description) ? 'india_domestic' : rule.scope === 'knowledge' ? 'global_knowledge' : rule.scope === 'systemic' ? 'global_systemic' : 'unknown'
-      routes.push({ id: rule.id, scope, evidence: [topic[0], independentSupport[0]], exceptional: !!rule.exceptional })
+      // Generic summary risk language in prospective policy coverage supplies
+      // usefulness, not maximum importance. A headline explanation or an
+      // explicit transmission mechanism can still confer the existing tier.
+      const exceptional = !!rule.exceptional && (rule.id !== 'C2.public-finance.v1' || independentSupport.some(s => s.field === 'title' || /transmission/i.test(s.text)))
+      routes.push({ id: rule.id, scope, evidence: [topic[0], independentSupport[0]], exceptional })
     }
     const primaryAction = span(o, 'title', String.raw`\b(?:Supreme Court|court|regulator|parliament|government|India and Japan)\b.{0,45}\b(?:rules?|invalidates?|enacts?|orders?|adopts?|signs?)\b.{0,60}\b(?:law|policy|regulation|rights|treaty|agreement|electoral rule)\b`, 'C1.dominant_institutional_action.v1')
     for (const rule of NOISE_RULES) {

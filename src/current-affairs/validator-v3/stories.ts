@@ -15,15 +15,21 @@ const norm = (s: string) => s.toLowerCase().normalize('NFKC').replace(/[^\p{L}\p
 const stop = new Set('the a an of to for in on at by as and or with from says said why how what is are was were new today latest has have will must it its this that about'.split(' '))
 const actors: readonly [string, RegExp][] = [['rbi', /\bRBI\b|central bank/i], ['eci', /election commission|\bECI\b/i], ['supreme-court', /supreme court|constitutional court/i], ['isro', /\bISRO\b/i], ['nasa', /\bNASA\b/i], ['government', /government|cabinet|parliament/i]]
 const objects: readonly [string, RegExp][] = [['liquidity', /liquidity|liquid assets/i], ['electoral-roll', /electoral roll|special intensive revision|\bSIR\b/i], ['nuclear-enrichment', /nuclear enrichment|uranium enrichment|Iran.{0,35}enrichment/i], ['dinosaur', /dinosaur/i], ['inflation', /inflation/i], ['climate', /climate|carbon emissions/i], ['tax', /tax devolution|fiscal federalism/i], ['data-protection', /data protection/i], ['trade', /trade agreement/i], ['quantum', /quantum computing|quantum research/i], ['mining', /mining law/i]]
-const actions: readonly [string, RegExp][] = [['draft', /draft|propos\w*/i], ['invalidates', /invalidat\w*|strikes down/i], ['stay', /\bstay(?:s|ed)?\b|suspend\w*/i], ['implements', /implement\w*|enact\w*|comes into force/i], ['approves', /approv\w*|adopt\w*|ratif\w*/i], ['changes', /revis\w*|changes?|rewrit\w*|reforms?/i], ['discovery', /discover\w*|finding|identified|\bfound\b|study.{0,25}(?:reveals|shows|finds)/i], ['report', /report|dataset|data point/i], ['negotiates', /negotiat\w*|talks|bargain\w*/i]]
+const actions: readonly [string, RegExp][] = [['draft', /draft|propos\w*/i], ['invalidates', /invalidat\w*|strikes down/i], ['stay', /\bstay(?:s|ed)?\b|suspend\w*/i], ['implements', /implement\w*|enact\w*|comes into force/i], ['approves', /approv\w*|adopt\w*|ratif\w*/i], ['changes', /\b(?:revis(?:e[sd]?|ing|ion)|changes?|rewrit\w*|reforms?)\b/i], ['discovery', /discover\w*|finding|identified|\bfound\b|study.{0,25}(?:reveals|shows|finds)/i], ['report', /report|dataset|data point/i], ['negotiates', /negotiat\w*|talks|bargain\w*/i]]
 const angles: readonly [string, RegExp][] = [['constitutional-reasoning', /constitutional (?:reasoning|implications|rights)|judicial independence/i], ['economic-transmission', /inflation transmission|economic transmission|distributional impact/i], ['implementation-impact', /implementation (?:impact|barriers)|service delivery/i], ['strategic-capability', /capability (?:gap|assessment)|strategic deterrence/i], ['scientific-mechanism', /scientific mechanism|how.{0,40}(?:mechanism|works)/i]]
 export function storyFrame(item: NewsItem): StoryFrame {
   const title = item.title, text = title + ' ' + item.description
   const actor = actors.find(([, rx]) => rx.test(text))?.[0] ?? ''
   const object = objects.find(([, rx]) => rx.test(text))?.[0] ?? ''
-  const action = actions.find(([, rx]) => rx.test(title))?.[0] ?? ''
+  const action = actions.find(([kind, rx]) => { const m = rx.exec(title); return m && !(kind === 'changes' && /\b(?:without|not|no)\s+(?:\w+\s+){0,2}$/i.test(title.slice(Math.max(0, m.index - 35), m.index))) })?.[0] ?? ''
   const analytical = /editorial|opinion|column|analysis|explained/i.test(item.section) || item.memberships?.some(m => boundSource(item.url, item.publisher, m) && /editorial|opinion|column|analysis|explained/i.test(m.section))
-  const angle = analytical ? angles.find(([, rx]) => rx.test(text))?.[0] ?? null : null
+  const monetaryAngle = actor === 'rbi' ? /inflation\b.{0,40}\b(?:fall on government|government.{0,15}(?:burden|responsibility))|government.{0,35}inflation/i.test(title) ? 'inflation-government-burden'
+    : /(?:need|why|reason).{0,35}(?:safeguard|protect).{0,15}price stability/i.test(title) ? 'price-stability-rationale'
+    : /(?:hints?|signals?).{0,45}(?:more.{0,15}coming|further.{0,15}(?:hikes?|tightening))|future tightening/i.test(title) ? 'future-tightening-outlook' : null : null
+  // A captured explanation of an instrument's operation supports a reading
+  // need regardless of whether it arrived via a science or podcast feed.
+  const explainedInstrument = /\bhow\b.{0,100}\b(?:sensors?|detectors?)\b.{0,70}\b(?:detect|observe|measure)\w*/i.test(text)
+  const angle = monetaryAngle ?? (explainedInstrument ? 'scientific-mechanism' : analytical ? angles.find(([, rx]) => rx.test(text))?.[0] ?? null : null)
   // Counterparts, case/report identifiers, periods and numeric changes are
   // cannot-link constraints. Publication/updated dates are never event dates.
   const qualifiers = [...new Set([...text.matchAll(/\b(?:India|Iran|US|EU|China|Japan|Antarctica|Ukraine|Russia|202\d|Q[1-4]|FY\s?\d{2,4}(?:[-/]\d{2,4})?|\d+(?:\.\d+)?\s?(?:%|basis points)|case\s+[A-Z0-9-]+)\b/gi)].map(m => norm(m[0])))].sort()
@@ -40,8 +46,18 @@ function awardIdentity(item: NewsItem): string | null {
   const years = [...new Set([...text.matchAll(/\b202\d\b/g)].map(m => m[0]))]
   return subject && years.length === 1 ? `nobel:${(subject[1] ?? subject[2]).toLowerCase()}:${years[0]}` : null
 }
+function namedAward(item: NewsItem) {
+  if (/\b(?:how|why|explained|analysis)\b/i.test(item.title) || !/\b(?:awarded|wins?|won|goes to)\b/i.test(item.title)) return null
+  const text = item.title + ' ' + item.description
+  const discipline = /\b(physics|chemistry|physiology\/medicine) Nobel\b|\bNobel (?:Prize )?(?:202\d )?(?:in )?(physics|chemistry|physiology\/medicine)\b/i.exec(text)
+  const years = [...new Set([...text.matchAll(/\b202\d\b/g)].map(m => m[0]))]
+  if (!discipline || years.length > 1) return null
+  const names = [...text.matchAll(/\b[A-Z][\p{L}]+(?:\s+[A-Z]\.)?\s+[A-Z][\p{L}]+\b/gu)].map(m => norm(m[0])).filter(n => !/nobel|prize|academy|observatory|science|committee|swedish|royal/.test(n))
+  const mechanism = norm(text).split(' ').filter(t => /^(?:neutrino\w*|icecube|autocatalysis|asymmetric|synthesis|tunnelling|biosensor\w*)$/.test(t))
+  return { discipline: (discipline[1] ?? discipline[2]).toLowerCase(), years, names, mechanism }
+}
 function similarity(a: StoryFrame, b: StoryFrame) { const aa = new Set(a.tokens), bb = new Set(b.tokens); return [...aa].filter(t => bb.has(t)).length / (new Set([...aa, ...bb]).size || 1) }
-const block = (item: NewsItem) => { const f = storyFrame(item); return !f.angle && awardIdentity(item) || (f.action && f.object ? f.signature : norm(item.title)) }
+const block = (item: NewsItem) => { const f = storyFrame(item); const award = namedAward(item); return !f.angle && award ? `award:${award.discipline}` : !f.angle && awardIdentity(item) || (f.action && f.object || f.angle && f.actor ? f.signature : norm(item.title)) }
 function buckets<T>(rows: T[], key: (row: T) => string): Map<string, T[]> { const result = new Map<string, T[]>(); for (const row of rows) { const k = key(row); const bucket = result.get(k); if (bucket) bucket.push(row); else result.set(k, [row]) } return result }
 const theme = (item: NewsItem) => { const f = storyFrame(item); return JSON.stringify([f.actor, f.object, f.qualifiers.filter(q => /^(?:case |india|iran|us|eu|china|japan|antarctica|ukraine|russia)/.test(q))]) }
 export function equivalentDevelopment(a: NewsItem, b: NewsItem): boolean {
@@ -50,11 +66,15 @@ export function equivalentDevelopment(a: NewsItem, b: NewsItem): boolean {
   if (left.digest || right.digest || left.angle !== right.angle) return false
   const award = awardIdentity(a)
   if (award && award === awardIdentity(b) && !left.angle && !right.angle) return true
+  const aa = namedAward(a), bb = namedAward(b)
+  // Missing year may be reconciled only by the same named recipient AND
+  // research mechanism. Explicit contradictory years never reconcile.
+  if (aa && bb && aa.discipline === bb.discipline && (!aa.years.length || !bb.years.length || aa.years[0] === bb.years[0]) && aa.names.some(n => bb.names.includes(n)) && aa.mechanism.some(m => bb.mechanism.includes(m)) && !left.angle && !right.angle) return true
   if (left.qualifiers.join('|') !== right.qualifiers.join('|')) return false
   if (left.action !== right.action || left.object !== right.object || left.actor !== right.actor) return false
   if (norm(a.title) === norm(b.title)) return true
   // No chaining: every comparison is with a fixed original representative.
-  return !!left.action && !!left.object && similarity(left, right) >= 0.7
+  return (!!left.action && !!left.object || !!left.angle && !!left.actor) && similarity(left, right) >= 0.7
 }
 export function materialDelta(prior: NewsItem, next: NewsItem): boolean {
   const a = storyFrame(prior), b = storyFrame(next)

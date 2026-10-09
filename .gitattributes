@@ -5,3 +5,5 @@ public/** -text
 *.webp -text
 *.woff2 -text
 *.jar -text
+# Release evidence and blind samples retain exact committed hash bytes.
+docs/release-candidate/** -text

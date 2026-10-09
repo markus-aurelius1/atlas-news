@@ -1,0 +1,27 @@
+{
+  "parent": "6d88835e275fd97d0f5ebd21908d75992630eb66",
+  "unchangedTrackedFiles": 783,
+  "authorizedExistingReplacements": [
+    ".gitattributes",
+    "src/current-affairs/validator-v3/policy.ts",
+    "src/current-affairs/validator-v3/evidence.ts",
+    "src/current-affairs/validator-v3/subject.ts",
+    "src/current-affairs/validator-v3/stories.ts",
+    "src/current-affairs/validator-v3/runtime-manifest.ts",
+    "src/features/current-affairs/usePersonalState.ts",
+    "src/features/current-affairs/useNewsModel.ts",
+    "tools/news/build-validator-manifest.ts",
+    "tools/news/evaluation/owner-validation.test.mjs",
+    "tools/browser/sync-check.mjs"
+  ],
+  "oldManifestFiles": 161,
+  "oldManifestPreserved": true,
+  "externalSourceCommitments": 28,
+  "originalHead": "d21798db6212553e63420a8efd6e1f71c87417d9",
+  "originalStatusRows": 127,
+  "originalFileHashes": 127,
+  "originalHeadStatusAndHashesMatch": true,
+  "H3CoreDiffEmpty": true,
+  "blindSampleHashesMatch": true,
+  "holdoutRead": false
+}

@@ -1,0 +1,155 @@
+{
+  "scope": "Historical figures use the enriched 1,000 sample, not full publisher supply. Captured RSS metadata only. Failed probes are unavailable source evidence, never zero relevant supply.",
+  "historicalClock": "2026-10-07T13:40:55.600Z",
+  "liveClock": "2026-10-09T09:57:15.477Z",
+  "liveCapture": "docs/release-candidate/rss-bounded-2026-10-09.json",
+  "sources": [
+    {
+      "id": "ie-governance",
+      "feedUrl": "https://indianexpress.com/section/governance/feed/",
+      "historical": {
+        "uniqueUrls": 18,
+        "newest": "2023-02-02T15:32:54.000Z",
+        "missingDescriptions": 18,
+        "recent24h": 0
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.376Z",
+        "countBefore": 86,
+        "countAfter": 86,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 86,
+        "newest": "2023-02-02T15:32:54.000Z",
+        "missingDescriptions": 86,
+        "recent24h": 0
+      }
+    },
+    {
+      "id": "ie-economy",
+      "feedUrl": "https://indianexpress.com/section/business/economy/feed/",
+      "historical": {
+        "uniqueUrls": 36,
+        "newest": "2026-08-23T15:28:27.000Z",
+        "missingDescriptions": 36,
+        "recent24h": 0
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.418Z",
+        "countBefore": 200,
+        "countAfter": 200,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 200,
+        "newest": "2026-10-07T22:50:10.000Z",
+        "missingDescriptions": 200,
+        "recent24h": 0
+      }
+    },
+    {
+      "id": "ie-columns",
+      "feedUrl": "https://indianexpress.com/section/opinion/columns/feed/",
+      "historical": {
+        "uniqueUrls": 50,
+        "newest": "2026-10-07T10:03:04.000Z",
+        "missingDescriptions": 50,
+        "recent24h": 5
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.467Z",
+        "countBefore": 200,
+        "countAfter": 200,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 200,
+        "newest": "2026-10-09T07:12:09.000Z",
+        "missingDescriptions": 200,
+        "recent24h": 11
+      }
+    },
+    {
+      "id": "ie-explained",
+      "feedUrl": "https://indianexpress.com/section/explained/feed/",
+      "historical": {
+        "uniqueUrls": 48,
+        "newest": "2026-10-07T10:24:16.000Z",
+        "missingDescriptions": 48,
+        "recent24h": 3
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.442Z",
+        "countBefore": 200,
+        "countAfter": 200,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 200,
+        "newest": "2026-10-09T09:21:59.000Z",
+        "missingDescriptions": 200,
+        "recent24h": 12
+      }
+    },
+    {
+      "id": "hindu-columns",
+      "feedUrl": "https://www.thehindu.com/opinion/columns/feeder/default.rss",
+      "historical": {
+        "uniqueUrls": 15,
+        "newest": "2026-09-23T01:41:28.000Z",
+        "missingDescriptions": 0,
+        "recent24h": 0
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.476Z",
+        "countBefore": 60,
+        "countAfter": 60,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 60,
+        "newest": "2026-10-08T19:39:54.000Z",
+        "missingDescriptions": 2,
+        "recent24h": 1
+      }
+    },
+    {
+      "id": "hindu-op-ed",
+      "feedUrl": "https://www.thehindu.com/opinion/op-ed/feeder/default.rss",
+      "historical": {
+        "uniqueUrls": 17,
+        "newest": "2026-10-06T09:14:34.000Z",
+        "missingDescriptions": 1,
+        "recent24h": 0
+      },
+      "live": {
+        "status": "ok",
+        "httpStatus": 200,
+        "failure": null,
+        "capturedAt": "2026-10-09T09:57:15.388Z",
+        "countBefore": 60,
+        "countAfter": 60,
+        "invalidEntries": 0,
+        "truncatedEntries": 0,
+        "uniqueUrls": 60,
+        "newest": "2026-10-08T18:56:46.000Z",
+        "missingDescriptions": 6,
+        "recent24h": 3
+      }
+    }
+  ],
+  "temporalGate": "BLOCKED: one historical day and one bounded wave do not establish consecutive-day editorial or production health",
+  "paidServices": false,
+  "remoteCloudOperations": false
+}

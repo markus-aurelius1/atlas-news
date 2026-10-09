@@ -9,6 +9,14 @@ export interface RouteRule { id: string; topic: string; support: string; scope: 
 // Both topic and substantive proposition must occur in the title or meaningful summary.
 // Title-only rules deliberately require compound mechanisms rather than broad entities.
 export const ROUTE_RULES: readonly RouteRule[] = [
+  { id: 'C2.central-bank-growth-forecast.v1', topic: String.raw`\b(?:RBI|Reserve Bank of India)\b`, support: String.raw`\b(?:raises?|cuts?|revises?)\b.{0,20}\bGDP growth forecast\b.{0,35}\b\d+(?:\.\d+)? (?:per cent|percent)\b.{0,15}\bFY\s?\d{2,4}\b`, scope: 'domestic' },
+  { id: 'C2.ai-consciousness-values.v1', topic: String.raw`\b(?:AI|artificial intelligence)\b`, support: String.raw`\b(?:can be conscious|consciousness|value alignment|aligning (?:human )?values|ethical reasoning)\b`, scope: 'knowledge' },
+  { id: 'C2.detention-rights.v1', topic: String.raw`\bdetention\b.{0,35}\b(?:differ\w*|versus|vs\.?|and)\b.{0,20}\barrest\b`, support: String.raw`\b(?:rights (?:do )?detainees|rights of detainees|constitutional safeguards|legal safeguards)\b`, scope: 'knowledge', exceptional: true },
+  { id: 'C2.policy-rate-stance.v1', topic: String.raw`\b(?:RBI|Reserve Bank of India)\b`, support: String.raw`\b(?:raises?|cuts?|hikes?)\b.{0,25}\brepo rate\b.{0,25}\b\d+ basis points\b.{0,45}\b(?:shifts?|changes?) stance\b`, scope: 'domestic', exceptional: true },
+  { id: 'C2.inflation-policy-analysis.v1', topic: String.raw`\b(?:RBI|monetary policy)\b`, support: String.raw`\b(?:safeguard price stability|controlling expectations of future inflation|inflation\b.{0,35}\bfall on government)\b`, scope: 'domestic', exceptional: true },
+  { id: 'C2.scientific-award-mechanism.v1', topic: String.raw`\b(?:Chemistry Nobel|Nobel (?:Prize in )?Chemistry)\b`, support: String.raw`\b(?:non.linear effects|autocatalysis)\b.{0,60}\b(?:synthesis|chemical reactions)\b`, scope: 'knowledge', exceptional: true },
+  { id: 'C2.climate-weather-process.v1', topic: String.raw`\bEl Ni[ñn]o\b`, support: String.raw`\bevaporation\b.{0,100}\bcyclonic circulations\b.{0,110}\b(?:heat|rainfall)\b`, scope: 'knowledge', exceptional: true },
+  { id: 'C2.doctrine-challenges.v1', topic: String.raw`\bnuclear doctrine\b`, support: String.raw`\b(?:strategic|technological)\b.{0,55}\b(?:geopolitical|technological)\b.{0,20}\b(?:challenges|risks)\b`, scope: 'systemic', exceptional: true },
   // Compound mechanisms added by the offline coverage audit. Context/author
   // cannot supply either span; these routes confer useful, never exceptional.
   { id: 'C2.central-bank-action.v1', topic: String.raw`\b(RBI|Reserve Bank of India|monetary policy)\b`, support: String.raw`\b(?:(?:raises?|cuts?|holds?|keeps?|hikes?|kept)\b.{0,35}\b(?:repo|interest|policy) rates?|rate hike|price stability|inflation transmission)\b`, scope: 'domestic' },
@@ -35,6 +43,8 @@ export const ROUTE_RULES: readonly RouteRule[] = [
   { id: 'C2.regulatory-action.v1', topic: String.raw`\b(mining law|sports governance law|personality.rights|recruitment reform|data protection|banking regulation|competition law|environmental regulation)\b`, support: String.raw`\b(law|judgment|reform|regulat\w*|ruling|rights|states|federal|policy)\b`, scope: 'domestic', exceptional: true },
 ]
 export const NOISE_RULES = [
+  { code: 'C1.city_commodity_price_list.v1', pattern: String.raw`\bgold (?:rate today|prices?)\b.{0,100}\b(?:carat|cities)\b` },
+  { code: 'C1.broad_live_digest.v1', pattern: String.raw`^\s*(?:India|World) News Live Updates\b` },
   { code: 'C1.ceremonial_low_value.v1', pattern: String.raw`\b(memorial ceremony|memorial corridor|memorial (?:opening|ceremony)|garland\w*|courtesy visit|ceremonial visit|birthday tribute|foundation.stone ceremony)\b` },
   { code: 'C1.promotion.v1', pattern: String.raw`\b(buy now|discount code|sponsored post|product launch|promotional livestream|recruitment advertisement|apply now|coupon|campus award)\b` },
   { code: 'C1.entertainment.v1', pattern: String.raw`\b(live streaming|live telecast|match result|China Open exit|Princess Diana|royal family|celebrity gossip|box office|horoscope)\b` },
@@ -45,6 +55,6 @@ export const NOISE_RULES = [
   { code: 'C1.routine_local.v1', pattern: String.raw`\b(local outage|traffic diversion|isolated robbery|high school students.{0,15}protest|staff.{0,15}(?:dispute|politics)|personnel dispute)\b` },
 ] as const
 export const PARTY_ACTORS = String.raw`\b(Congress|BJP|VCK|INDIA bloc|AfD|Farage|Bolsonaro|candidate|party|parties)\b`
-export const PARTY_PURPOSE = String.raw`\b(demands?|slams?|attacks?|criticises?|campaign(?:ing|s)?|candidate strategy|campaign strategy|seat.sharing|alliance arithmetic|sit.in|detained|donations sting|boost|(?:favorite|favourite) to win|election could give|reign of terror|resignation)\b`
+export const PARTY_PURPOSE = String.raw`\b(demands?|slams?|attacks?|criticises?|campaign(?:ing|s)?|candidate strategy|campaign strategy|seat.sharing|alliance arithmetic|sit.in|detained|donations sting|boost|(?:favorite|favourite) to win|election could give|reign of terror|resignation|learn from\b.{0,30}\bto win (?:people|voters))\b`
 export const FOREIGN_DOMESTIC = String.raw`\b(France|French|Chinese|China|Brazil|Brazilian|America|American|U\.S\.|UK|British|Germany|German|Medicare|Republican|Democratic senators|Japan|Japanese|Canada|Canadian|Australia|Australian|Italy|Spain|Russia|Russian|Ukraine|Ukrainian|Korea|Korean|Mexico|Israel|Israeli|Iran|Iranian|Iraq|Syria|Turkey|Egypt|Egyptian|Saudi|UAE|Qatar|Nigeria|Kenya|Sudan|Indonesia|Vietnam|Philippines|Singapore|Thailand|Argentina|Switzerland|Swiss|Denmark|Finland)\b`
 export const DOMESTIC_PURPOSE = String.raw`\b(high school|parking spaces|Medicare|Social Security|energy permitting|federal energy|supreme court|local court|domestic court|local climate lawsuit|climate lawsuit|domestic legislation|local election|presidency|staff dispute|personnel)\b`

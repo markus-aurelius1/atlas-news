@@ -4,7 +4,7 @@
  * background revalidation that changes a handful of items) does not re-run the
  * PYQ-backed validator over the whole feed.
  */
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { clusterItems } from '@/current-affairs/cluster'
 import { classify } from '@/current-affairs/relevance'
 import { activeFeedItems } from '@/current-affairs/sources'
@@ -15,6 +15,9 @@ import { usePinned } from './usePinned'
 import { useFeeds } from './useFeeds'
 import { useValidatorSelection } from './useValidatorSelection'
 import { displayArticle } from '@/current-affairs/validator-v3/adapter'
+import { retainArticles } from '@/current-affairs/archive'
+import { readPersonalState } from '@/current-affairs/personal-state'
+import { noteLocalChange } from '@/sync/signal'
 
 const verdicts = new WeakMap<RelevanceIndex, Map<string, Relevance>>()
 
@@ -31,6 +34,17 @@ export function useNewsModel() {
   const feeds = useFeeds()
   const { data, index } = feeds
   const validator = useValidatorSelection(data, index, feeds.now)
+  const [savedMetadataError, setSavedMetadataError] = useState('')
+  useEffect(() => {
+    if (validator.mode !== 'v3' || !data) return
+    // Existing/legacy Saved marks may predate this visit. Recover only their
+    // available feed metadata, independently of recommendation acceptance.
+    // This does not populate v3's selected-only curated Archive.
+    let saved: NewsItem[]
+    try { const state = readPersonalState(window.localStorage); saved = activeFeedItems(data.items).filter(m => state.entries[m.url]?.savedAt) }
+    catch { return } // Personal-state handling reports corrupt data without altering it.
+    if (saved.length) void retainArticles(saved, Date.parse(data.fetchedAt)).then(() => { setSavedMetadataError(''); noteLocalChange() }).catch(() => setSavedMetadataError('Saved marks are preserved, but their available metadata could not be retained for backup and sync.'))
+  }, [data, validator.mode])
   const current = useMemo(() => (validator.mode !== 'v3' && data && index ? activeFeedItems(data.items).map((item) => classified(item, index)) : []), [data, index, validator.mode])
   const { archived, archiveError } = useArchive(validator.mode === 'v3' ? [] : current, data?.fetchedAt)
   const all = useMemo(() => {
@@ -63,5 +77,5 @@ export function useNewsModel() {
     const kept = pinned.filter((article) => !listed.has(article.url)).map((article) => { const item = classified(article, index); return { id: item.url, primary: item, members: [item] } })
     return kept.length ? [...stories, ...buildWorkspace(kept, index)] : stories
   }, [all, index, pinned, validator.mode, validator.result])
-  return { ...feeds, archived, archiveError: validator.error || archiveError, classified: all, events, validator }
+  return { ...feeds, archived, archiveError: validator.error || savedMetadataError || archiveError, classified: all, events, validator }
 }

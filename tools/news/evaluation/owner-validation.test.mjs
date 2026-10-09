@@ -3,6 +3,10 @@ import assert from 'node:assert/strict'
 import { readFileSync, mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+import { execFileSync } from 'node:child_process'
+import { mkdirSync, rmSync } from 'node:fs'
 import { validateImport, outcome, metrics, ROOT, seal, verify, generate } from './owner-validation.mjs'
 import { evaluateReading } from '../../../src/current-affairs/validator-v3/orchestrator.ts'
 const read = p => JSON.parse(readFileSync(p,'utf8'))
@@ -30,10 +34,23 @@ test('abstentions never become negatives and zero denominators remain null',()=>
   assert.deepEqual(metrics(c.rows),c.metrics)
   assert.equal(c.metrics.TP+c.metrics.FP+c.metrics.FN+c.metrics.TN+c.metrics.deferredPositive+c.metrics.deferredNegative,25)
 })
-test('blind current replay and reverse order reproduce complete frozen predictions',()=>{
-  const replay=evaluateReading({observations:obs,clock:pred.run.clock,versions:pred.run.c.versions},[],[])
+test('blind frozen-parent replay and reverse order reproduce complete frozen predictions',async()=>{
+  // Immutable predictions must be tested against the committed runtime that
+  // produced them, even after separately authorized runtime corrections.
+  const dir=mkdtempSync(join(tmpdir(),'owner-frozen-runtime-'))
+  const archive=join(dir,'runtime.zip'),runtime=join(dir,'runtime')
+  mkdirSync(runtime)
+  execFileSync('git',['archive','--format=zip','-o',archive,'6d88835e275fd97d0f5ebd21908d75992630eb66','src','package.json'])
+  execFileSync('tar',['-xf',archive,'-C',runtime])
+  const {evaluateReading:frozenEvaluate}=await import(pathToFileURL(resolve(runtime,'src/current-affairs/validator-v3/orchestrator.ts')).href)
+  const replay=frozenEvaluate({observations:obs,clock:pred.run.clock,versions:pred.run.c.versions},[],[])
   assert.deepEqual(replay,pred.run)
-  assert.deepEqual(evaluateReading({observations:[...obs].reverse(),clock:pred.run.clock,versions:pred.run.c.versions},[],[]),pred.run)
+  assert.deepEqual(frozenEvaluate({observations:[...obs].reverse(),clock:pred.run.clock,versions:pred.run.c.versions},[],[]),pred.run)
+  const current=evaluateReading({observations:obs,clock:pred.run.clock,versions:pred.run.c.versions},[],[])
+  assert.deepEqual(evaluateReading({observations:[...obs].reverse(),clock:pred.run.clock,versions:pred.run.c.versions},[],[]),current)
+  assert.equal(resolve(dir,'..'),resolve(tmpdir()),'Cleanup stays under the explicit temporary root')
+  assert(dir.startsWith(join(tmpdir(),'owner-frozen-runtime-')))
+  rmSync(dir,{recursive:true,force:true})
 })
 test('missing or fabricated source observations cannot satisfy frozen captured evidence',()=>{
   assert.throws(()=>validateImport(input,frozen,obs.slice(1)))

@@ -1,0 +1,368 @@
+{
+  "environment": {
+    "TEMP": "C:\\Users\\hario\\.codex\\worktrees\\6fba\\Atlas-News\\tools\\news\\.cache\\release-candidate\\tmp",
+    "TMP": "C:\\Users\\hario\\.codex\\worktrees\\6fba\\Atlas-News\\tools\\news\\.cache\\release-candidate\\tmp",
+    "CHROMIUM_PATH": "C:/Users/hario/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe",
+    "PLAYWRIGHT_BROWSERS_PATH": "C:/Users/hario/AppData/Local/ms-playwright",
+    "WRANGLER_BIN": "C:/Users/hario/AppData/Local/npm-cache/_npx/32026684e21afda6/node_modules/wrangler/bin/wrangler.js",
+    "VALIDATOR_INVENTORY_PATH": "docs/release-candidate/runtime-inventory.json"
+  },
+  "results": [
+    {
+      "name": "pipeline",
+      "command": [
+        "node",
+        "--test",
+        "tools/atlas-build/test/canonical-pyq.test.mjs",
+        "tools/atlas-build/test/gazetteer.test.mjs",
+        "tools/atlas-build/test/pyq.test.mjs",
+        "tools/atlas-build/test/soi-boundary.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 3639,
+      "log": "tools/news/.cache/release-candidate/pipeline-0.log",
+      "sha256": "98823fea306865d40265d8aa90980faf8a4d6d2e2cdc99b926c07d44da436603",
+      "summary": []
+    },
+    {
+      "name": "evaluation",
+      "command": [
+        "node",
+        "--test",
+        "tools/news/evaluation/bootstrap.test.ts",
+        "tools/news/evaluation/calibration-gold.test.mjs",
+        "tools/news/evaluation/calibration.test.ts",
+        "tools/news/evaluation/editorial.test.ts",
+        "tools/news/evaluation/evaluation.test.ts",
+        "tools/news/evaluation/owner-validation.test.mjs",
+        "tools/news/evaluation/reviewer-ux.test.ts",
+        "tools/news/evaluation/source-audit.test.ts",
+        "tools/news/evaluation/stage-c.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 13418,
+      "log": "tools/news/.cache/release-candidate/evaluation-0.log",
+      "sha256": "f7a5f750eb4f7735747c76c5ecc75ae2a008498dd2fc42af7c448dd882c5e678",
+      "summary": []
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 24316,
+      "log": "tools/news/.cache/release-candidate/typecheck-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "root-tests",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 65296,
+      "log": "tools/news/.cache/release-candidate/root-tests-0.log",
+      "sha256": "b507e083e88e2bbb70ebd3d465af4c35b51cbfc36c398093c3df2b3d3ab9f5ca",
+      "summary": [
+        "Test Files  58 passed (58)",
+        "Tests  798 passed (798)"
+      ]
+    },
+    {
+      "name": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "tools/news",
+        "functions",
+        "vite.config.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 94354,
+      "log": "tools/news/.cache/release-candidate/lint-0.log",
+      "sha256": "16839eb30618e23da4c0f02049723841b851afc632f8a54ee812b2107b1318e1",
+      "summary": [
+        "136 problems (0 errors, 136 warnings)"
+      ]
+    },
+    {
+      "name": "pipeline",
+      "command": [
+        "node",
+        "--test",
+        "tools/atlas-build/test/canonical-pyq.test.mjs",
+        "tools/atlas-build/test/gazetteer.test.mjs",
+        "tools/atlas-build/test/pyq.test.mjs",
+        "tools/atlas-build/test/soi-boundary.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 3048,
+      "log": "tools/news/.cache/release-candidate/pipeline-1.log",
+      "sha256": "689d3e6ee62825b8479287bc3ee793b37ca3c7089bcadbdcb88aee0fb4b7553e",
+      "summary": []
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 17894,
+      "log": "tools/news/.cache/release-candidate/typecheck-1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "evaluation",
+      "command": [
+        "node",
+        "--test",
+        "tools/news/evaluation/bootstrap.test.ts",
+        "tools/news/evaluation/calibration-gold.test.mjs",
+        "tools/news/evaluation/calibration.test.ts",
+        "tools/news/evaluation/editorial.test.ts",
+        "tools/news/evaluation/evaluation.test.ts",
+        "tools/news/evaluation/owner-validation.test.mjs",
+        "tools/news/evaluation/reviewer-ux.test.ts",
+        "tools/news/evaluation/source-audit.test.ts",
+        "tools/news/evaluation/stage-c.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 19692,
+      "log": "tools/news/.cache/release-candidate/evaluation-1.log",
+      "sha256": "ea9bc9b89bb5f42c47ad230a26db998005a4ec943d8b9d07664c9e188042ae32",
+      "summary": []
+    },
+    {
+      "name": "root-tests",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 56517,
+      "log": "tools/news/.cache/release-candidate/root-tests-1.log",
+      "sha256": "16cd521333a3492fa44c538cb396f80c4fe704acba85c26be2862a78179d0bc5",
+      "summary": [
+        "Test Files  58 passed (58)",
+        "Tests  798 passed (798)"
+      ]
+    },
+    {
+      "name": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "tools/news",
+        "functions",
+        "vite.config.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 59138,
+      "log": "tools/news/.cache/release-candidate/lint-1.log",
+      "sha256": "8ac494668fd7cafa21c0276025e850b75777866862c0b277438417a62cce7bce",
+      "summary": [
+        "133 problems (0 errors, 133 warnings)"
+      ]
+    },
+    {
+      "name": "pipeline",
+      "command": [
+        "node",
+        "--test",
+        "tools/atlas-build/test/canonical-pyq.test.mjs",
+        "tools/atlas-build/test/gazetteer.test.mjs",
+        "tools/atlas-build/test/pyq.test.mjs",
+        "tools/atlas-build/test/soi-boundary.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 7042,
+      "log": "tools/news/.cache/release-candidate/pipeline-2.log",
+      "sha256": "f6570953ec90a5955dc8c24f9c55e12010f30564703bb961a1b4cea8c6d59bc9",
+      "summary": []
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 29981,
+      "log": "tools/news/.cache/release-candidate/typecheck-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "evaluation",
+      "command": [
+        "node",
+        "--test",
+        "tools/news/evaluation/bootstrap.test.ts",
+        "tools/news/evaluation/calibration-gold.test.mjs",
+        "tools/news/evaluation/calibration.test.ts",
+        "tools/news/evaluation/editorial.test.ts",
+        "tools/news/evaluation/evaluation.test.ts",
+        "tools/news/evaluation/owner-validation.test.mjs",
+        "tools/news/evaluation/reviewer-ux.test.ts",
+        "tools/news/evaluation/source-audit.test.ts",
+        "tools/news/evaluation/stage-c.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 30735,
+      "log": "tools/news/.cache/release-candidate/evaluation-2.log",
+      "sha256": "008418ba6438b0304ab477af77b05d97bb8a1005d82428b649ce0eb15453fca5",
+      "summary": []
+    },
+    {
+      "name": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "tools/news",
+        "functions",
+        "vite.config.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 98875,
+      "log": "tools/news/.cache/release-candidate/lint-2.log",
+      "sha256": "8ac494668fd7cafa21c0276025e850b75777866862c0b277438417a62cce7bce",
+      "summary": [
+        "133 problems (0 errors, 133 warnings)"
+      ]
+    },
+    {
+      "name": "root-tests",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 107976,
+      "log": "tools/news/.cache/release-candidate/root-tests-2.log",
+      "sha256": "c9cbb434a5892683d55b48153d49db830ddf356433be091a863614762534b3ca",
+      "summary": [
+        "Test Files  59 passed (59)",
+        "Tests  800 passed (800)"
+      ]
+    },
+    {
+      "name": "pipeline",
+      "command": [
+        "node",
+        "--test",
+        "tools/atlas-build/test/canonical-pyq.test.mjs",
+        "tools/atlas-build/test/gazetteer.test.mjs",
+        "tools/atlas-build/test/pyq.test.mjs",
+        "tools/atlas-build/test/soi-boundary.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 8092,
+      "log": "tools/news/.cache/release-candidate/pipeline-3.log",
+      "sha256": "dd48d380736852cbb3c14174161af6b01039600edfc105ee6d968b2463894dbf",
+      "summary": []
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 26788,
+      "log": "tools/news/.cache/release-candidate/typecheck-3.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": []
+    },
+    {
+      "name": "evaluation",
+      "command": [
+        "node",
+        "--test",
+        "tools/news/evaluation/bootstrap.test.ts",
+        "tools/news/evaluation/calibration-gold.test.mjs",
+        "tools/news/evaluation/calibration.test.ts",
+        "tools/news/evaluation/editorial.test.ts",
+        "tools/news/evaluation/evaluation.test.ts",
+        "tools/news/evaluation/owner-validation.test.mjs",
+        "tools/news/evaluation/reviewer-ux.test.ts",
+        "tools/news/evaluation/source-audit.test.ts",
+        "tools/news/evaluation/stage-c.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 27089,
+      "log": "tools/news/.cache/release-candidate/evaluation-3.log",
+      "sha256": "71b4d175847f0306efdff8e69969295480f7986fb44cb27d26205ca36783cf4a",
+      "summary": []
+    },
+    {
+      "name": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "tools/news",
+        "functions",
+        "vite.config.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 77285,
+      "log": "tools/news/.cache/release-candidate/lint-3.log",
+      "sha256": "8ac494668fd7cafa21c0276025e850b75777866862c0b277438417a62cce7bce",
+      "summary": [
+        "133 problems (0 errors, 133 warnings)"
+      ]
+    },
+    {
+      "name": "root-tests",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 79062,
+      "log": "tools/news/.cache/release-candidate/root-tests-3.log",
+      "sha256": "ae5c7e2adb5bf092676b71616766c6a846b5c9eb2451d326e72f997b7e17e062",
+      "summary": [
+        "Test Files  59 passed (59)",
+        "Tests  800 passed (800)"
+      ]
+    }
+  ]
+}
