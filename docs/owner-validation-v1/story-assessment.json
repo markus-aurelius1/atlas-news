@@ -1,0 +1,666 @@
+{
+  "clock": "2026-10-07T13:40:55.600Z",
+  "history": "cold_start",
+  "groups": [
+    {
+      "group": "nobel-chemistry-2026-asymmetric-synthesis",
+      "members": [
+        {
+          "number": 2,
+          "id": "article:081572f12a2f3c4d9d51fd02e788561b0bed3816a040f2f3acd5bc62b85a13c1",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html:[\"\",\"\",\"\",[\"2026\"],null]",
+          "representative": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026"
+            ],
+            "tokens": [
+              "2026",
+              "awarded",
+              "chemistry",
+              "henri",
+              "kagan",
+              "kenso",
+              "nobel",
+              "prize",
+              "soai"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Important chemistry discovery is specified, including non-linear effects and autocatalysis. Equivalent award coverage exists; select one strong report, not four Today units."
+        },
+        {
+          "number": 10,
+          "id": "article:721f0112e1d614155174c5526404e215cd43b249d0c239e6439e695338398e5e",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html:[\"\",\"\",\"\",[\"2026\"],null]",
+          "representative": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026"
+            ],
+            "tokens": [
+              "2026",
+              "awarded",
+              "chemistry",
+              "henri",
+              "kagan",
+              "kenso",
+              "nobel",
+              "prize",
+              "soai"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Adds accessible molecular-chirality explanation but covers the same chemistry award and discovery; more detail alone does not prove a separate reading need."
+        },
+        {
+          "number": 18,
+          "id": "article:a94dbf89a4cef63bd1ad74ff8f5e965ab94e262f63b994422d4783c4ee27c676",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html:[\"\",\"\",\"\",[\"2026\"],null]",
+          "representative": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026"
+            ],
+            "tokens": [
+              "2026",
+              "awarded",
+              "chemistry",
+              "henri",
+              "kagan",
+              "kenso",
+              "nobel",
+              "prize",
+              "soai"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Substantive scientific award topic, but captured description repeats the same asymmetric-synthesis discovery; not a new reading need."
+        },
+        {
+          "number": 23,
+          "id": "article:c272d8bf00a41d5816017e89c7c262f8d54db6057093b7ad885bf8ff8b9156b9",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html:[\"\",\"\",\"\",[\"2026\"],null]",
+          "representative": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026"
+            ],
+            "tokens": [
+              "2026",
+              "awarded",
+              "chemistry",
+              "henri",
+              "kagan",
+              "kenso",
+              "nobel",
+              "prize",
+              "soai"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Useful chemistry-award science, but same Kagan/Soai discovery already described by other sources; choose one representative."
+        }
+      ],
+      "expectedReadingNeeds": 1,
+      "actualUnits": 1,
+      "actualTodayUnits": 1,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 10,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 2,
+          "right": 18,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 2,
+          "right": 23,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 10,
+          "right": 18,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 10,
+          "right": 23,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 18,
+          "right": 23,
+          "expectedEquivalent": true,
+          "actualEquivalent": true,
+          "isolatedEquivalent": true,
+          "gatedByC": false,
+          "result": "pass"
+        }
+      ],
+      "isolatedUnits": [
+        [
+          23,
+          18,
+          10,
+          2
+        ]
+      ]
+    },
+    {
+      "group": "rbi-rate-action-2026-10-07",
+      "members": [
+        {
+          "number": 3,
+          "id": "article:0e33c4ae6817a163557c6d4c7a93c6041a10f3ac90bf0dbee0b6310b7d1673b2",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.thehindu.com/business/Economy/rbi-hikes-repo-rate-by-25-basis-points-to-55/article71554369.ece:[\"rbi\",\"\",\"\",[\"25 basis points\"],null]",
+          "representative": "https://www.thehindu.com/business/Economy/rbi-hikes-repo-rate-by-25-basis-points-to-55/article71554369.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "rbi",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "25 basis points"
+            ],
+            "tokens": [
+              "basis",
+              "calibrated",
+              "points",
+              "raises",
+              "rate",
+              "rbi",
+              "repo",
+              "shifts",
+              "stance",
+              "tightening"
+            ],
+            "signature": "[\"rbi\",\"\",\"\",[\"25 basis points\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Material RBI policy action: rate increase and shift to calibrated tightening. Prefer the official decision as the event representative."
+        },
+        {
+          "number": 5,
+          "id": "article:29faee63bfa0b82f15a59912a7bb20aa1f90e71a69df49838e51604448300f81",
+          "distinctAngle": "yes",
+          "decision": "accepted",
+          "unitId": "reading:https://www.thehindu.com/business/Economy/rbi-has-done-what-it-can-with-interest-rates-but-heavy-lifting-on-inflation-will-fall-on-government/article71555013.ece:[\"rbi\",\"inflation\",\"\",[],null]",
+          "representative": "https://www.thehindu.com/business/Economy/rbi-has-done-what-it-can-with-interest-rates-but-heavy-lifting-on-inflation-will-fall-on-government/article71555013.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "rbi",
+            "object": "inflation",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [],
+            "tokens": [
+              "but",
+              "can",
+              "done",
+              "fall",
+              "government",
+              "heavy",
+              "inflation",
+              "interest",
+              "lifting",
+              "now",
+              "rates",
+              "rbi"
+            ],
+            "signature": "[\"rbi\",\"inflation\",\"\",[],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Distinct analysis of inflation expectations versus government-side inflation control, beyond the bare RBI rate-change event."
+        },
+        {
+          "number": 14,
+          "id": "article:8fa427830e1512a85c04a42373d26c97078f872716474f6f78e4cea20e5de6e0",
+          "distinctAngle": "yes",
+          "decision": "accepted",
+          "unitId": "reading:https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/:[\"rbi\",\"\",\"\",[],null]",
+          "representative": "https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/",
+          "todayMember": true,
+          "frame": {
+            "actor": "rbi",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [],
+            "tokens": [
+              "behind",
+              "hike",
+              "need",
+              "pivot",
+              "price",
+              "rate",
+              "rbi",
+              "safeguard",
+              "stability"
+            ],
+            "signature": "[\"rbi\",\"\",\"\",[],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Analytical column on the RBI’s shift toward price stability; a distinct policy-interpretation need beyond the rate-hike report, although no description is captured."
+        },
+        {
+          "number": 16,
+          "id": "article:96551116dde7e088a9d84bf0f18b71ab985fbc658ef9a3f2189b5a5c4ab2e2d7",
+          "distinctAngle": "yes",
+          "decision": "accepted",
+          "unitId": "reading:https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/:[\"rbi\",\"\",\"\",[],null]",
+          "representative": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/",
+          "todayMember": true,
+          "frame": {
+            "actor": "rbi",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [],
+            "tokens": [
+              "but",
+              "coming",
+              "expected",
+              "hike",
+              "hints",
+              "more",
+              "rate",
+              "rbi",
+              "reinforces"
+            ],
+            "signature": "[\"rbi\",\"\",\"\",[],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Explainer on possible subsequent RBI tightening and forward guidance; distinguish that prospective analysis from the announcement, though the missing description limits detail."
+        }
+      ],
+      "expectedReadingNeeds": 4,
+      "actualUnits": 4,
+      "actualTodayUnits": 4,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 5,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 3,
+          "right": 14,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 3,
+          "right": 16,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 5,
+          "right": 14,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 5,
+          "right": 16,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 14,
+          "right": 16,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        }
+      ],
+      "isolatedUnits": [
+        [
+          16
+        ],
+        [
+          14
+        ],
+        [
+          5
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    {
+      "group": "nobel-physics-2026-icecube",
+      "members": [
+        {
+          "number": 4,
+          "id": "article:204728f44b97f7bc565da1daea0ebdca8a69f06075abfc05173957e2298011e5",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://scroll.in/latest/1096218/francis-halzen-awarded-physics-nobel-for-discovery-of-high-energy-neutrinos-of-astrophysical-origin:[\"\",\"\",\"discovery\",[\"antarctica\"],null]",
+          "representative": "https://scroll.in/latest/1096218/francis-halzen-awarded-physics-nobel-for-discovery-of-high-energy-neutrinos-of-astrophysical-origin",
+          "todayMember": false,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "discovery",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "antarctica"
+            ],
+            "tokens": [
+              "astrophysical",
+              "awarded",
+              "discovery",
+              "energy",
+              "francis",
+              "halzen",
+              "high",
+              "neutrinos",
+              "nobel",
+              "origin",
+              "physics"
+            ],
+            "signature": "[\"\",\"\",\"discovery\",[\"antarctica\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "A major astrophysical-neutrino discovery and instrument award. Equivalent award report; may lose to a more explanatory source."
+        },
+        {
+          "number": 13,
+          "id": "article:8e0e94a2ae04c300f1b3cf97042d07dbdbd6ced850824920214b2f87ad0236c6",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html:[\"\",\"\",\"discovery\",[],null]",
+          "representative": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html",
+          "todayMember": false,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "discovery",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [],
+            "tokens": [
+              "discovery",
+              "energy",
+              "francis",
+              "halzen",
+              "high",
+              "neutrino",
+              "nobel",
+              "physics",
+              "wins"
+            ],
+            "signature": "[\"\",\"\",\"discovery\",[],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Neutrino astrophysics and IceCube award have clear science value, but this is equivalent award reporting with little unique explanation."
+        },
+        {
+          "number": 15,
+          "id": "article:8faf828cd6a7a7f3d8a317b68fe44a8b3871eb6dd2bc76a80e0fc8f654926c1b",
+          "distinctAngle": "yes",
+          "decision": "accepted",
+          "unitId": "reading:https://www.theguardian.com/science/video/2026/oct/06/nobel-prize-in-physics-2026-high-energy-cosmic-neutrinos:[\"\",\"\",\"\",[\"2026\"],null]",
+          "representative": "https://www.theguardian.com/science/video/2026/oct/06/nobel-prize-in-physics-2026-high-energy-cosmic-neutrinos",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026"
+            ],
+            "tokens": [
+              "2026",
+              "cosmic",
+              "energy",
+              "high",
+              "neutrinos",
+              "nobel",
+              "physics",
+              "prize"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Podcast metadata promises a distinct explanation of how Antarctic ice sensors detect astrophysical neutrinos, beyond reporting the Nobel winner."
+        },
+        {
+          "number": 17,
+          "id": "article:a8df721c9fa3009bde5fd461ca07ee7907ab67947ceb318acf4ff2f3506b5808",
+          "distinctAngle": "no",
+          "decision": "accepted",
+          "unitId": "reading:https://www.thehindu.com/sci-tech/science/nobel-prize-in-physics-2026-winner-francis-halzen/article71550081.ece:[\"\",\"\",\"\",[\"2026\",\"us\"],null]",
+          "representative": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-physics-2026-winner-francis-halzen/article71550081.ece",
+          "todayMember": true,
+          "frame": {
+            "actor": "",
+            "object": "",
+            "action": "",
+            "angle": null,
+            "digest": false,
+            "qualifiers": [
+              "2026",
+              "us"
+            ],
+            "tokens": [
+              "2026",
+              "detector",
+              "icecube",
+              "neutrino",
+              "nobel",
+              "physics",
+              "pioneer",
+              "wins"
+            ],
+            "signature": "[\"\",\"\",\"\",[\"2026\",\"us\"],null]"
+          },
+          "novelty": "uncertain",
+          "rationale": "Credible report on Halzen/IceCube and the emergence of neutrino astronomy; shares the award development with other reports."
+        }
+      ],
+      "expectedReadingNeeds": 2,
+      "actualUnits": 4,
+      "actualTodayUnits": 2,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 13,
+          "expectedEquivalent": true,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "split_or_C_loss"
+        },
+        {
+          "left": 4,
+          "right": 15,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 4,
+          "right": 17,
+          "expectedEquivalent": true,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "split_or_C_loss"
+        },
+        {
+          "left": 13,
+          "right": 15,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        },
+        {
+          "left": 13,
+          "right": 17,
+          "expectedEquivalent": true,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "split_or_C_loss"
+        },
+        {
+          "left": 15,
+          "right": 17,
+          "expectedEquivalent": false,
+          "actualEquivalent": false,
+          "isolatedEquivalent": false,
+          "gatedByC": false,
+          "result": "pass"
+        }
+      ],
+      "isolatedUnits": [
+        [
+          4
+        ],
+        [
+          13
+        ],
+        [
+          15
+        ],
+        [
+          17
+        ]
+      ]
+    }
+  ],
+  "separateMonetaryPolicyCases": [
+    {
+      "number": 1,
+      "title": "Why has RBI kept interest rates unchanged despite mounting inflation risks?",
+      "decision": "accepted",
+      "unitId": "reading:https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/:[\"rbi\",\"inflation\",\"changes\",[],null]",
+      "todayMember": false,
+      "suppression": "undated_or_stale",
+      "rationale": "The RBI hold-versus-inflation policy trade-off is UPSC-relevant. The missing description prevents judging the explainer’s depth; this is a separate earlier policy decision."
+    },
+    {
+      "number": 7,
+      "title": "RBI repo rate news LIVE: RBI raises GDP growth forecast to 7.1 per cent for FY27",
+      "decision": "deferred",
+      "unitId": null,
+      "todayMember": false,
+      "suppression": null,
+      "rationale": "The RBI FY27 GDP-growth forecast is a substantive macroeconomic policy datum, but the live-update format and absent description limit standalone utility; separate from the rate decision."
+    },
+    {
+      "number": 24,
+      "title": "ExplainSpeaking: How RBI decides to do, or not do, anything in its monetary policy review",
+      "decision": "accepted",
+      "unitId": "reading:https://indianexpress.com/article/explained/explained-economics/rbi-monetary-policy-august-5-mpc-repo-rate-factors-explainspeaking-10817269/:[\"rbi\",\"\",\"\",[],null]",
+      "todayMember": false,
+      "suppression": "undated_or_stale",
+      "rationale": "Conceptual explainer of how the RBI makes monetary-policy decisions has direct Economy/Prelims-Mains value; descriptive metadata is missing."
+    },
+    {
+      "number": 25,
+      "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely",
+      "decision": "accepted",
+      "unitId": "reading:https://www.business-standard.com/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html:[\"rbi\",\"inflation\",\"\",[\"2025\",\"25 basis points\"],null]",
+      "todayMember": false,
+      "suppression": "undated_or_stale",
+      "rationale": "MPC deliberation and anticipated inflation-driven rate decision are relevant policy-process coverage; after the actual decision, this forecast should not re-enter Today as a new material development."
+    }
+  ],
+  "limitations": "No human timeline or selected-history attestation supplied. Forecast supersession is an owner-stated conditional expectation, not tested temporal truth. E-only diagnostics bypass C for localization only."
+}

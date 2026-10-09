@@ -1,0 +1,101 @@
+{
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "ARTICLE_ERRORS.md",
+      "sha256": "5908c98aae27d60e720a3f68d56bcc1ec4251c8c6d2a443eaa9a63d88c6ceae3"
+    },
+    {
+      "path": "CHANGED_FILES.txt",
+      "sha256": "f780598b1599ca42865f33b75ad36d61e967eb9b725a514664e8b5e1ea259d00"
+    },
+    {
+      "path": "COMPARISON.md",
+      "sha256": "bb765f2fe645e2d8e5d54f7676927bfc2d63f743607b49820755c1e80e467b45"
+    },
+    {
+      "path": "PRESERVATION.json",
+      "sha256": "ba35c77872e900001705ebddc41a98803a492a8313f26b1e305eb601262e4788"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fa5ae014ff4c6a15a5d013b75a62bd945ee7504db178e262b9f5f2c4ec0cf5b1"
+    },
+    {
+      "path": "RELEASE_GATES.md",
+      "sha256": "8a50281f7303b66e24a6469ccd4b3644a0d2efce11fd89bc83d1fe2a1b0dcfa6"
+    },
+    {
+      "path": "REMAINING_DEFECTS.md",
+      "sha256": "e718530ddcd3487ad56d760e302af5361415e634c45e0889daf8204872e20e3d"
+    },
+    {
+      "path": "STORY_ANGLES.md",
+      "sha256": "648839928849f86bf8b460b05502eb312ee34cc466453d3f1bfd8fa63e534d38"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "sha256": "ed4062c7e43c6a664e0ac2bb18cb8ee47ad6768073acadcf4ef8aeda16036224"
+    },
+    {
+      "path": "article-errors.json",
+      "sha256": "a8377cc716f91f8e86f3243b04364df440a827f261c0cd7e88e90c7924e5acba"
+    },
+    {
+      "path": "article-errors.tsv",
+      "sha256": "d51bb0f593aaac1886b5049a690212a827815dcee926aaf63091d0931c3fbe30"
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "419455fac718fe89b873930fe16f72dcba24ce1cd850daebc329bd718aa31c9d"
+    },
+    {
+      "path": "frozen-review.original.json",
+      "sha256": "60a634c32e53a0f0df0294c706002f1afb05c9b0ca56b78acbb248c859e521ca"
+    },
+    {
+      "path": "input-schema.json",
+      "sha256": "b68a584bca4998a88f3bf2cebc316b6fad9c3330fc72006fd655caa80f287331"
+    },
+    {
+      "path": "metadata-schema.json",
+      "sha256": "5c258a144d83819ff81ce3f913915e6cbc739a3b74d153a1bd5fade1320edb27"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "32301ec5894408e9850ec5f320315ca31fbd92ee97fb5ab2433052b4c1c756f9"
+    },
+    {
+      "path": "owner-attestation.json",
+      "sha256": "9ccd2e5dc1d84d5e83aad33c794f662b7ed3f5df21dc8aa199661a7765a74f62"
+    },
+    {
+      "path": "owner-review.original.json",
+      "sha256": "1ba1a37aca493550ea20dead6e16d64f7313f7c81672695deef14c9bec05b7a6"
+    },
+    {
+      "path": "predictions-before-recovery.json",
+      "sha256": "b2565108e3eabc029031da68e21f08f5ddab584d8c98af12e20667485f1566a8"
+    },
+    {
+      "path": "predictions.json",
+      "sha256": "2d0d6b5aaf034e14403357964b8e1ed9d823b9bc72ce5bbd72e74292e287c681"
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "394899269173a3013cd1abb47b928405025a42460210263a0251ba6e2b95c80b"
+    },
+    {
+      "path": "regression-requirements.json",
+      "sha256": "5116b463c951b85cac3742077c46a96764d97f018a3651cf02fe8371b8ae323e"
+    },
+    {
+      "path": "story-assessment.json",
+      "sha256": "334e4fcba9a6720cd139a140bdb646de394a1f07c5889302dbe4978eefd27ade"
+    },
+    {
+      "path": "value-tier-diagnostics.json",
+      "sha256": "a31fc397b5122067254c184e063896d178640e2b39f97896871c34f9c093a631"
+    }
+  ]
+}

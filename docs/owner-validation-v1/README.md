@@ -1,0 +1,9 @@
+# Frozen owner-validation v1
+
+Start with COMPARISON.md, then ARTICLE_ERRORS.md, STORY_ANGLES.md and RELEASE_GATES.md. All 25 original annotations retain the original model reviewer and null model review timestamps; owner-attestation.json separately binds Marcus's ratification to exact input bytes and IDs. The supplied source HTML hash matches the frozen blind HTML. Ratification does not transform these into independently human-authored labels.
+
+owner-review.original.json and frozen-review.original.json preserve source bytes; observations.json is a metadata-only derivative with complete original observation provenance. The input schema and pinned A1 metadata schema are included. SHA-256 manifest covers every package file except itself and its companion; the companion pins the exact manifest bytes. This is a content-addressed freeze, not filesystem WORM or a cryptographic owner signature.
+
+Verification: node tools/news/evaluation/owner-validation.mjs verify. Blind replay: node tools/news/evaluation/owner-validation-predict.mjs docs/owner-validation-v1/observations.json 2026-10-07T13:40:55.600Z tools/news/.cache/owner-validation/replay.json. Regression/integrity tests: node --test tools/news/evaluation/owner-validation.test.mjs. Use a writable local TEMP/TMP for tests. Import at the mandatory parent targets a new absent output directory and never overwrites this freeze. Baseline reconstruction uses a local Git archive of b30ef74; source package path/hash commitments are in provenance.json. No network or paid dependencies are needed.
+
+The paired baseline measures coverage recovery; the current run measures mandatory parent 68657d4 unchanged. Full committed shadows match article decisions, subjects and Today representative identities. All four blind runs also pass reverse-input checks. Rules and protected artifacts are unchanged. No later development stage is started.

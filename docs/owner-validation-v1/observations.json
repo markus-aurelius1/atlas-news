@@ -1,0 +1,2739 @@
+[
+  {
+    "capturedAt": "2026-10-07T12:57:08.483Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:6",
+    "id": "obs:0101f8482225cedce765552e17a1eee47ebdc3720bb84436faff56b5cea3b3b3",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Udit Misra",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-08-04T08:44:28.000Z",
+      "publisher": "Indian Express",
+      "title": "ExplainSpeaking: How RBI decides to do, or not do, anything in its monetary policy review",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-monetary-policy-august-5-mpc-repo-rate-factors-explainspeaking-10817269/"
+    },
+    "metadataHash": "bbcebabaf3d481dc8cc9cfa2ea3a9efe3a4af0966fe0ee73ac8618d206d56228",
+    "ordinal": 107,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.261Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:8",
+    "id": "obs:01a6726955e1662f01860c8d5c4b5ba0f1b79558450a1e9bfd490f08d7a50c45",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Presented by Madeleine Finlay with Ian Sample , produced by Madeleine Finlay and Jacob Liebenberg , graphics by Elliot Ellis, the executive producer was Ellie B",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "Second up for the 2026 Nobel Prizes was the award for physics. And this year it went to just one scientist, Francis Halzen. The Belgian physicist won the prize based on his work on the IceCube detector that observes ghostly particles called neutrinos. Science editor Ian Sample tells host Madeleine Finlay how Halzen came up with the brilliant idea to use sensors buried in the ice to detect these extraterrestrial particles. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T18:44:30.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in physics 2026: high energy cosmic neutrinos",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/video/2026/oct/06/nobel-prize-in-physics-2026-high-energy-cosmic-neutrinos"
+    },
+    "metadataHash": "b3f9583e669b45096f3c739264ac4b7d9b20141df277d3f9a1dc16eca5c6e292",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.464Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+    "id": "obs:0378a4b115d8e72eb10a636cfda7a5955f5f65f9c7f61555727ff79911f604bf",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Henri B Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry for discoveries that helped explain how chemical reactions can produce molecules with the same handedness",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:55:37.000Z",
+      "publisher": "Business Standard",
+      "title": "Nobel Prize 2026 in chemistry awarded to Henri B Kagan and Kenso Soai",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html"
+    },
+    "metadataHash": "9d751b12c05211cc8381f6d0c71bdedee27532b30c6a425dc91bb2e0da21077c",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:06.283Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:03f723ae3894e8bbbbc480bbae2bbf3684920870768a5bd9e2352727e425e94a",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Scroll Staff",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "His ‘vision and scientific leadership have been fundamental’ for the IceCube Neutrino Observatory in Antarctica, said the Royal Swedish Academy of Sciences.",
+      "memberships": [
+        {
+          "feedUrl": "https://feeds.feedburner.com/ScrollinArticles.rss",
+          "section": "Latest",
+          "sourceId": "india-scroll-in"
+        }
+      ],
+      "publishedAt": "2026-10-06T11:05:50.000Z",
+      "publisher": "Scroll.in",
+      "title": "Francis Halzen awarded physics Nobel for discovery of high-energy neutrinos of astrophysical origin",
+      "updatedAt": null,
+      "url": "https://scroll.in/latest/1096218/francis-halzen-awarded-physics-nobel-for-discovery-of-high-energy-neutrinos-of-astrophysical-origin"
+    },
+    "metadataHash": "407e7069c32a3393b2b41e276bf386fea1a10075f1806fbf20bf5c58187d14b2",
+    "ordinal": 25,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "india-scroll-in"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:0caae88c3814e7d67c7d1d11212ed91ce7124a1e01cbec09ee56418bfe382646",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Arun Sharma",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T01:00:41.000Z",
+      "publisher": "Indian Express",
+      "title": "Three with Bhatti links held in J&K, one in Punjab; items ‘drone-dropped from Pakistan’ seized",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/jammu-kashmirj-narco-terror-module-shahzad-bhatti-links-10909881/"
+    },
+    "metadataHash": "ce69a98eab31ea3f18d15adb63b35af99e9892b22ee853bdd1ec8346630fde60",
+    "ordinal": 10,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:14.664Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:1",
+    "id": "obs:0d7caa0d23370a2ee8a66161a1a5a7a6f8dcdf36f4978ad736ad09bcd7861732",
+    "metadata": {
+      "bylines": [],
+      "categories": [],
+      "description": "Henri B Kagan and Kenso Soai received the 2026 Nobel Prize in Chemistry for their groundbreaking discoveries in asymmetric organic synthesis.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.livemint.com/rss/science",
+          "section": "Science",
+          "sourceId": "mint-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:13:38.000Z",
+      "publisher": "Mint",
+      "title": "Nobel Prize in Chemistry 2026 goes to Henri B Kagan and Kenso Soai; check their discovery",
+      "updatedAt": null,
+      "url": "https://www.livemint.com/science/news/nobel-prize-in-chemistry-2026-goes-to-henri-b-kagan-and-kenso-soai-check-their-discovery-11791367077210.html"
+    },
+    "metadataHash": "abf7797fc45c5385f89a0f6149fefa08ed6d26a99c7e10249e3af3c25213be5a",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "mint-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.990Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:10",
+    "id": "obs:0e3083e2b82155109f889446c7ada05ef6d0cc17c21b52c97fa35a1434676393",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The RBI’s Monetary Policy Committee’s decision to hike interest rates seems aimed more at controlling expectations of future inflation levels than at bringing down inflation itself. That is a job for the government",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:49:31.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI has done what it can with interest rates for now, but heavy lifting on inflation will fall on government",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-has-done-what-it-can-with-interest-rates-but-heavy-lifting-on-inflation-will-fall-on-government/article71555013.ece"
+    },
+    "metadataHash": "21c442978724c64e74238204c98240362a37ae96cb73c1e352c53f91be2aff30",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.990Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:10",
+    "id": "obs:111ab62a6d41c96a00bb2afe4883a28fcd60d20fd38951b3a9ac6ddfbe778634",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The hike comes after nearly three-and-a half years; monetary policy stance was changed to ‘calibrated tightening’ from ‘neutral’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:32:16.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI raises repo rate by 25 basis points to 5.50%, shifts stance to ‘calibrated tightening’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-hikes-repo-rate-by-25-basis-points-to-55/article71554369.ece"
+    },
+    "metadataHash": "34bba29cb8be0fa49ea296945872918396d96884d8586fc5fab04b0c44824785",
+    "ordinal": 3,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:11.886Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:8",
+    "id": "obs:1ab5be4e3d27a28b2ad740f37373bbe360fb2b7e91434805bbcee73ff8e54961",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/news/national/feeder/default.rss",
+          "section": "National",
+          "sourceId": "hindu-national"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:35:24.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "15de4196567b6a7ff09cc71c7976cb35f15cc80d7c16cd15b3e0b79c87aefef3",
+    "ordinal": 41,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-national"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:1bd55b7cc6228578defa41e17eef0868ea6247cac65612b0a3586133238fd69f",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Sreenivas Janyala",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T13:41:44.000Z",
+      "publisher": "Indian Express",
+      "title": "Visakhapatnam naval base staffer, driver held for ‘sharing information with Pakistan’",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/operation-firewall-2026-andhra-pradesh-police-navy-espionage-pakistan-arrests-10909456/"
+    },
+    "metadataHash": "3a704a25659f16b18e5452998d8cf48f38b8352fd5e694e5a056dfedf38f3781",
+    "ordinal": 30,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:51.830Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:8",
+    "id": "obs:247b9cf709bf99e374b4a77b15336585c4ab35df588d38c3e05d74b7845cd36e",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Presented by Madeleine Finlay with Ian Sample , produced by Madeleine Finlay and Jacob Liebenberg , graphics by Elliot Ellis, the executive producer was Ellie B",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "Second up for the 2026 Nobel Prizes was the award for physics. And this year it went to just one scientist, Francis Halzen. The Belgian physicist won the prize based on his work on the IceCube detector that observes ghostly particles called neutrinos. Science editor Ian Sample tells host Madeleine Finlay how Halzen came up with the brilliant idea to use sensors buried in the ice to detect these extraterrestrial particles. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T18:44:30.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in physics 2026: high energy cosmic neutrinos",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/video/2026/oct/06/nobel-prize-in-physics-2026-high-energy-cosmic-neutrinos"
+    },
+    "metadataHash": "b3f9583e669b45096f3c739264ac4b7d9b20141df277d3f9a1dc16eca5c6e292",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:50.591Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:6",
+    "id": "obs:24c895b84ca16e7a479ba6bf7bd578cc92db240123f30764b1c2bd69d96dd010",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "22e1251c1db3f268d248575156b3e378158b598a1b4034622bce452ad1c900ca",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:26dda181a0bb630e3c47d36c53f13b3f4715dbc1729ddb11c2f8c54a60ea5659",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Abhishek Chakraborty",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:23:09.000Z",
+      "publisher": "Indian Express",
+      "title": "RBI repo rate news LIVE: RBI raises GDP growth forecast to 7.1 per cent for FY27",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/rbi-monetary-policy-meeting-october-2026-live-governor-sanjay-malhotra-repo-rate-policy-stance-10908895/"
+    },
+    "metadataHash": "8e7f75b0148a1246f640c2e253038139964d71cdddbe43dddcb40d600cafa59d",
+    "ordinal": 8,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.279Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:9",
+    "id": "obs:2d597aaa9ba1b15341a324d99670f5f66fbe1673f74adfca52f7fe828b340f5f",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy",
+        "News"
+      ],
+      "description": "The Reserve Bank's Monetary Policy Committee began its three-day meeting on Monday and is likely to raise rates by 25 basis points, aligning with the central banks' hawkish stance amid escalating conflicts in West Asia that pose risks for domestic inflation. An interest rate hike by the RBI in its upcoming monetary policy would mark a stance reversal, following rate cuts in 2025 and a prolonged pause thereafter, according to a PTI poll of 16 economists and bankers. \"Insights, assessments, and the way forward-set to unfold soon,\" the Reserve Bank said in a social media post while announcing tha",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/economy-102.rss",
+          "section": "Economy",
+          "sourceId": "bs-economy"
+        }
+      ],
+      "publishedAt": "2026-10-05T10:26:43.000Z",
+      "publisher": "Business Standard",
+      "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html"
+    },
+    "metadataHash": "c3800f4e87b07d420218b04605ff268762878aceda70c538eafc1ea57d590ceb",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:14.972Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:2",
+    "id": "obs:30899e41bc7a8cd0f4d6a825cfb1c02414a18b7165881df24adcd8bc37206fb9",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "c8120c5ae3d0fd818fe522e3bfa388e9395a967f3c16fb68d7d15909921dd5e6",
+    "ordinal": 4,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:32fe4777d553e36d0712478dfe9c98a9426e314a7376676320834598e4a95e41",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Aanya Mehta",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T05:06:22.000Z",
+      "publisher": "Indian Express",
+      "title": "Gold Rate Today, October 7: Check 18, 22 and 24 carat gold prices in Chennai, Mumbai, Delhi, Kolkata and other cities",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/gold-rate-today-october-7-check-18-22-and-24-carat-gold-prices-in-chennai-mumbai-delhi-kolkata-and-other-cities-10910164/"
+    },
+    "metadataHash": "90bcd8af30afc3791b5819eabd91d38d9b53fb69c0d141079dd3318758d3fb8e",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:52.830Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:10",
+    "id": "obs:3527a0949952f82349314104c621789ce279813438d39eddf34317a251a57a9a",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/india-news-216.rss",
+          "section": "India",
+          "sourceId": "bs-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "219b50bb0a18146a196fce354f7bbdf0e2bbb197507c338e1a1e2d7959aa55cf",
+    "ordinal": 23,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.041Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:8",
+    "id": "obs:367f451c2d90caec1e7e9f57800af24b3530c59b260e715c8f7de0e098c9b52f",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Linda Geddes",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Chemistry",
+        "Nobel prizes",
+        "People in science",
+        "Science",
+        "Science prizes"
+      ],
+      "description": "Henri B Kagan and Kensō Soai awarded prize for discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis The Nobel prize in chemistry 2026 has been awarded to two scientists for discoveries that showed how chemical reactions can produce one of two mirror image forms of a molecule. Henri B Kagan at Paris-Sud University in France and Kensō Soai at Tokyo University of Science in Japan have been awarded the prize “for the discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis”. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:14:02.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in chemistry awarded for work on mirror-image molecules",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules"
+    },
+    "metadataHash": "ad408a2ece570249f5712bf3275dc6ede7665ac0a5e4f5de29655b15486d0bd0",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:50.591Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:6",
+    "id": "obs:36cb8fae68ed79abd4c66e113027a871f7b0a677723192d02272b1ac3ca77f9b",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Udit Misra",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-08-04T08:44:28.000Z",
+      "publisher": "Indian Express",
+      "title": "ExplainSpeaking: How RBI decides to do, or not do, anything in its monetary policy review",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-monetary-policy-august-5-mpc-repo-rate-factors-explainspeaking-10817269/"
+    },
+    "metadataHash": "bbcebabaf3d481dc8cc9cfa2ea3a9efe3a4af0966fe0ee73ac8618d206d56228",
+    "ordinal": 108,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.617Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:9",
+    "id": "obs:38a9c641d22df6ee9cf14165e627e2b86e9bbd848fd881147e9cd40537d62366",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy",
+        "News"
+      ],
+      "description": "The Reserve Bank's Monetary Policy Committee began its three-day meeting on Monday and is likely to raise rates by 25 basis points, aligning with the central banks' hawkish stance amid escalating conflicts in West Asia that pose risks for domestic inflation. An interest rate hike by the RBI in its upcoming monetary policy would mark a stance reversal, following rate cuts in 2025 and a prolonged pause thereafter, according to a PTI poll of 16 economists and bankers. \"Insights, assessments, and the way forward-set to unfold soon,\" the Reserve Bank said in a social media post while announcing tha",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/economy-102.rss",
+          "section": "Economy",
+          "sourceId": "bs-economy"
+        }
+      ],
+      "publishedAt": "2026-10-05T10:26:43.000Z",
+      "publisher": "Business Standard",
+      "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html"
+    },
+    "metadataHash": "c3800f4e87b07d420218b04605ff268762878aceda70c538eafc1ea57d590ceb",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:56:54.519Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:1",
+    "id": "obs:3ccb132e167df0e9d3bbfffa24ef2648f8df520436d7a431d715247a39a0e00f",
+    "metadata": {
+      "bylines": [],
+      "categories": [],
+      "description": "Henri B Kagan and Kenso Soai received the 2026 Nobel Prize in Chemistry for their groundbreaking discoveries in asymmetric organic synthesis.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.livemint.com/rss/science",
+          "section": "Science",
+          "sourceId": "mint-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:13:38.000Z",
+      "publisher": "Mint",
+      "title": "Nobel Prize in Chemistry 2026 goes to Henri B Kagan and Kenso Soai; check their discovery",
+      "updatedAt": null,
+      "url": "https://www.livemint.com/science/news/nobel-prize-in-chemistry-2026-goes-to-henri-b-kagan-and-kenso-soai-check-their-discovery-11791367077210.html"
+    },
+    "metadataHash": "abf7797fc45c5385f89a0f6149fefa08ed6d26a99c7e10249e3af3c25213be5a",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "mint-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.261Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:8",
+    "id": "obs:4112016ba1fc96d3fd1417f6062b0b250025a56d67bc509d25df161e8cc35a7e",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Linda Geddes",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Chemistry",
+        "Nobel prizes",
+        "People in science",
+        "Science",
+        "Science prizes"
+      ],
+      "description": "Henri B Kagan and Kensō Soai awarded prize for discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis The Nobel prize in chemistry 2026 has been awarded to two scientists for discoveries that showed how chemical reactions can produce one of two mirror image forms of a molecule. Henri B Kagan at Paris-Sud University in France and Kensō Soai at Tokyo University of Science in Japan have been awarded the prize “for the discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis”. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:14:02.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in chemistry awarded for work on mirror-image molecules",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules"
+    },
+    "metadataHash": "ad408a2ece570249f5712bf3275dc6ede7665ac0a5e4f5de29655b15486d0bd0",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.268Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:8",
+    "id": "obs:427752ebee8f62c43e617c6011f7c6cad0658bee8254f8d050397ef8bac94008",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/news/national/feeder/default.rss",
+          "section": "National",
+          "sourceId": "hindu-national"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:35:24.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "15de4196567b6a7ff09cc71c7976cb35f15cc80d7c16cd15b3e0b79c87aefef3",
+    "ordinal": 41,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-national"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.174Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+    "id": "obs:4932e40bc7bad9e24378441f020afbd1155797e98a4e27d093e21ea9ab672d23",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Henri B Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry for discoveries that helped explain how chemical reactions can produce molecules with the same handedness",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:55:37.000Z",
+      "publisher": "Business Standard",
+      "title": "Nobel Prize 2026 in chemistry awarded to Henri B Kagan and Kenso Soai",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html"
+    },
+    "metadataHash": "9d751b12c05211cc8381f6d0c71bdedee27532b30c6a425dc91bb2e0da21077c",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.717Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:4ba24b359cc0d2fcfe1dd1e5ded84402c29902627d9aeeacea4677aa0e35c45d",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Scroll Staff",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "His ‘vision and scientific leadership have been fundamental’ for the IceCube Neutrino Observatory in Antarctica, said the Royal Swedish Academy of Sciences.",
+      "memberships": [
+        {
+          "feedUrl": "https://feeds.feedburner.com/ScrollinArticles.rss",
+          "section": "Latest",
+          "sourceId": "india-scroll-in"
+        }
+      ],
+      "publishedAt": "2026-10-06T11:05:50.000Z",
+      "publisher": "Scroll.in",
+      "title": "Francis Halzen awarded physics Nobel for discovery of high-energy neutrinos of astrophysical origin",
+      "updatedAt": null,
+      "url": "https://scroll.in/latest/1096218/francis-halzen-awarded-physics-nobel-for-discovery-of-high-energy-neutrinos-of-astrophysical-origin"
+    },
+    "metadataHash": "407e7069c32a3393b2b41e276bf386fea1a10075f1806fbf20bf5c58187d14b2",
+    "ordinal": 25,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "india-scroll-in"
+  },
+  {
+    "capturedAt": "2026-10-07T12:56:55.002Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:2",
+    "id": "obs:4f4061b63df47ec85ade27697f4d673ed9e682a52a534a910286ea96af8e4bf9",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Amaal Sheikh",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Law"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:24:16.000Z",
+      "publisher": "Indian Express",
+      "title": "Rahul Gandhi detained again: How does detention differ from arrest, what rights do detainees have?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-law/police-detention-protests-arrest-bnss-rights-explained-10910751/"
+    },
+    "metadataHash": "d2025e63d5cd8d134fd4cd58dcda398a2b87b244f933a32daf9736106d76e094",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:40.826Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:2",
+    "id": "obs:59b5d0bf5a2b0530a649ec5b327d8a1a87cc3e807f9cafff936dd2e5921a677c",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Amaal Sheikh",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Law"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:24:16.000Z",
+      "publisher": "Indian Express",
+      "title": "Rahul Gandhi detained again: How does detention differ from arrest, what rights do detainees have?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-law/police-detention-protests-arrest-bnss-rights-explained-10910751/"
+    },
+    "metadataHash": "d2025e63d5cd8d134fd4cd58dcda398a2b87b244f933a32daf9736106d76e094",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:5b0ff762fbdacfa5e35e612465ec08ca0ee6aebf3703b83542cfa3df4a7ca181",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Sreenivas Janyala",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T13:41:44.000Z",
+      "publisher": "Indian Express",
+      "title": "Visakhapatnam naval base staffer, driver held for ‘sharing information with Pakistan’",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/operation-firewall-2026-andhra-pradesh-police-navy-espionage-pakistan-arrests-10909456/"
+    },
+    "metadataHash": "3a704a25659f16b18e5452998d8cf48f38b8352fd5e694e5a056dfedf38f3781",
+    "ordinal": 29,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:08.483Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:6",
+    "id": "obs:5c9a41d57af98b6879854084718a2959141b57626e943130386f73246627d915",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "22e1251c1db3f268d248575156b3e378158b598a1b4034622bce452ad1c900ca",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.429Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+    "id": "obs:5f2ab35f88eec3e53e88815711d00edeb4f85ff960e6d7948785b94625cc34e9",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "“Francis Halzen has led an international team of researchers and engineers who have provided us with a fantastic instrument. His tenacity and scientific vision has paved the way for a new kind of astronomy,” Mark Pearce, Chair of the Nobel Committee for Physics, said.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T14:51:52.000Z",
+      "publisher": "The Hindu",
+      "title": "Pioneer of IceCube neutrino detector wins 2026 Physics Nobel",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-physics-2026-winner-francis-halzen/article71550081.ece"
+    },
+    "metadataHash": "8029a1e431bd0e69cfe3c5cc7a9d8b47814763116286acb989a9cda2cf6bc4dd",
+    "ordinal": 8,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:60ac72dab2385758ce2bfe4c7cd59be227fbd876e781b3bd2aa22d07474b0809",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Abhishek Chakraborty",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:23:09.000Z",
+      "publisher": "Indian Express",
+      "title": "RBI repo rate news LIVE: RBI raises GDP growth forecast to 7.1 per cent for FY27",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/rbi-monetary-policy-meeting-october-2026-live-governor-sanjay-malhotra-repo-rate-policy-stance-10908895/"
+    },
+    "metadataHash": "8e7f75b0148a1246f640c2e253038139964d71cdddbe43dddcb40d600cafa59d",
+    "ordinal": 7,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:19.498Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:6",
+    "id": "obs:679991095756f0e4a7434402f2bef76b404ec0eecb0bdaec75082431cb5f326d",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "22e1251c1db3f268d248575156b3e378158b598a1b4034622bce452ad1c900ca",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:6d4b803ecad0a2201f890974df2242a5ea8abfed151bd41afc77bb785419ed1a",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Sreenivas Janyala",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T13:41:44.000Z",
+      "publisher": "Indian Express",
+      "title": "Visakhapatnam naval base staffer, driver held for ‘sharing information with Pakistan’",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/operation-firewall-2026-andhra-pradesh-police-navy-espionage-pakistan-arrests-10909456/"
+    },
+    "metadataHash": "3a704a25659f16b18e5452998d8cf48f38b8352fd5e694e5a056dfedf38f3781",
+    "ordinal": 29,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.868Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:10",
+    "id": "obs:783916ecebb2c58cf606008c17ee65242de1a82880055f2293dffa47278a492a",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/india-news-216.rss",
+          "section": "India",
+          "sourceId": "bs-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "219b50bb0a18146a196fce354f7bbdf0e2bbb197507c338e1a1e2d7959aa55cf",
+    "ordinal": 22,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.004Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:10",
+    "id": "obs:7e33bc2a55dbf88df69bd055452c9f65ee42a5025b03e89779deeec7662a7b38",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/india-news-216.rss",
+          "section": "India",
+          "sourceId": "bs-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "219b50bb0a18146a196fce354f7bbdf0e2bbb197507c338e1a1e2d7959aa55cf",
+    "ordinal": 22,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:19.498Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:6",
+    "id": "obs:80d05f7b5cc6c9fe13b34ad4db13371dd74a0dc6bc4f49f9c542f46dbdaf326f",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Udit Misra",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-08-04T08:44:28.000Z",
+      "publisher": "Indian Express",
+      "title": "ExplainSpeaking: How RBI decides to do, or not do, anything in its monetary policy review",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-monetary-policy-august-5-mpc-repo-rate-factors-explainspeaking-10817269/"
+    },
+    "metadataHash": "bbcebabaf3d481dc8cc9cfa2ea3a9efe3a4af0966fe0ee73ac8618d206d56228",
+    "ordinal": 107,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.587Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:10",
+    "id": "obs:830e57152e9be9850680818517103dd48c702a07bac40b33188001edda6cfde7",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The hike comes after nearly three-and-a half years; monetary policy stance was changed to ‘calibrated tightening’ from ‘neutral’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:32:16.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI raises repo rate by 25 basis points to 5.50%, shifts stance to ‘calibrated tightening’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-hikes-repo-rate-by-25-basis-points-to-55/article71554369.ece"
+    },
+    "metadataHash": "34bba29cb8be0fa49ea296945872918396d96884d8586fc5fab04b0c44824785",
+    "ordinal": 3,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:15.083Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:2",
+    "id": "obs:843ce5b008e7046c1b51236acfce811747bf54b5f53d70af692ce2c80421a11e",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Dharmakirti Joshi",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Columns",
+        "Opinion"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/opinion/columns/feed/",
+          "section": "Columns",
+          "sourceId": "ie-columns"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:34:07.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike: Behind the RBI’s pivot, a need to safeguard price stability",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/"
+    },
+    "metadataHash": "5c0c7a66ec80691094ad7915b1331000cb47ed7a66077993714b0542163356b7",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-columns"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:40.826Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:2",
+    "id": "obs:85c49ac0d127d2e9d66457fe5580bd5fcc791a8ecf53660426c4cc94fc59281e",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "c8120c5ae3d0fd818fe522e3bfa388e9395a967f3c16fb68d7d15909921dd5e6",
+    "ordinal": 5,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:19.498Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:6",
+    "id": "obs:8c897d026ca4609a03c89d8cff0b3c8b6c38d53cc6031c0012d217bbc95df386",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "George Mathew",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-06-05T06:28:33.000Z",
+      "publisher": "Indian Express",
+      "title": "Why has RBI kept interest rates unchanged despite mounting inflation risks?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/"
+    },
+    "metadataHash": "1517c85fb563bdfff78d9b74f3b4b02992456ef7335d066abdc01075d221f491",
+    "ordinal": 194,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.429Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+    "id": "obs:8feca82f07a6ae4663eb5e4d118bea157e3b4ade73d7a6d4f72a9e5902d034d4",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "The duo was recognised for the discovery of ‘non-linear effects and autocatalysis in asymmetric organic synthesis’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T13:18:50.000Z",
+      "publisher": "The Hindu",
+      "title": "Chemistry Nobel 2026 awarded to French-Japanese duo Henri B. Kagan and Kenso Soai for solving molecular ‘mystery’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece"
+    },
+    "metadataHash": "4050cefc419b8b097ac83c4db25669a6614788eedff95c97af2b6398bceafd1f",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:9122a7e0d85110d2988fe66f9040469cd6ff4bb2fd9e68112986161350eb41ac",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Arun Sharma",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T01:00:41.000Z",
+      "publisher": "Indian Express",
+      "title": "Three with Bhatti links held in J&K, one in Punjab; items ‘drone-dropped from Pakistan’ seized",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/jammu-kashmirj-narco-terror-module-shahzad-bhatti-links-10909881/"
+    },
+    "metadataHash": "ce69a98eab31ea3f18d15adb63b35af99e9892b22ee853bdd1ec8346630fde60",
+    "ordinal": 9,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:9817167e71cb71af16b4622a1a702a57c1fd58f7f40e3ec40d4f87397ca785f3",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Jatin Anand",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T15:09:12.000Z",
+      "publisher": "Indian Express",
+      "title": "Stop daily drama, learn from Modi to win people’s support: BJP to Congress",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/election-commission-protest-congress-bjp-modi-gyanesh-kumar-10909566/"
+    },
+    "metadataHash": "0ce2a2a324d6106837a42fa4653c11a04a8a0617aad8329535be56ac8e1f70f0",
+    "ordinal": 24,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:9b9774c92e27f7867edfdb54ce65b24d9df95897fcda1b3afddf4af0cfe828bf",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Arun Sharma",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T01:00:41.000Z",
+      "publisher": "Indian Express",
+      "title": "Three with Bhatti links held in J&K, one in Punjab; items ‘drone-dropped from Pakistan’ seized",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/jammu-kashmirj-narco-terror-module-shahzad-bhatti-links-10909881/"
+    },
+    "metadataHash": "ce69a98eab31ea3f18d15adb63b35af99e9892b22ee853bdd1ec8346630fde60",
+    "ordinal": 9,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.059Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+    "id": "obs:9fc75be93a023eb797edcf5da48a3b844a37d4b7859212bf60fce91ba175b3c2",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "“Francis Halzen has led an international team of researchers and engineers who have provided us with a fantastic instrument. His tenacity and scientific vision has paved the way for a new kind of astronomy,” Mark Pearce, Chair of the Nobel Committee for Physics, said.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T14:51:52.000Z",
+      "publisher": "The Hindu",
+      "title": "Pioneer of IceCube neutrino detector wins 2026 Physics Nobel",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-physics-2026-winner-francis-halzen/article71550081.ece"
+    },
+    "metadataHash": "8029a1e431bd0e69cfe3c5cc7a9d8b47814763116286acb989a9cda2cf6bc4dd",
+    "ordinal": 8,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:a03e9184c5e6446e4f7b3ddca834f076c64fa18087adb356c300c2662dbb7923",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Jatin Anand",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T15:09:12.000Z",
+      "publisher": "Indian Express",
+      "title": "Stop daily drama, learn from Modi to win people’s support: BJP to Congress",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/election-commission-protest-congress-bjp-modi-gyanesh-kumar-10909566/"
+    },
+    "metadataHash": "0ce2a2a324d6106837a42fa4653c11a04a8a0617aad8329535be56ac8e1f70f0",
+    "ordinal": 25,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:a067269d44773c7a3aae6f814896d2b56e344679009365ce7359672f370a0373",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Aanya Mehta",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T05:06:22.000Z",
+      "publisher": "Indian Express",
+      "title": "Gold Rate Today, October 7: Check 18, 22 and 24 carat gold prices in Chennai, Mumbai, Delhi, Kolkata and other cities",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/gold-rate-today-october-7-check-18-22-and-24-carat-gold-prices-in-chennai-mumbai-delhi-kolkata-and-other-cities-10910164/"
+    },
+    "metadataHash": "90bcd8af30afc3791b5819eabd91d38d9b53fb69c0d141079dd3318758d3fb8e",
+    "ordinal": 3,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:48.108Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:a08d6ec6351fcc4817513cfded63f9d61fa247473dcb4e5b073975ba5ca6bc73",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:33:12.000Z",
+      "publisher": "Indian Express",
+      "title": "India News Live Updates, 7 October 2026: Maharashtra CM meets Amit Shah in Delhi to seek special assistance for drought",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/india-news-live-updates-7-october-2026-weather-delhi-mumbai-weather-rahul-priyanka-akashvani-bhavan-eci-protest-cec-gyanesh-kumar-sir-india-bloc-andhra-drought-bus-fire-10910022/"
+    },
+    "metadataHash": "9d78ad430a8eecaac69436f7fb7458218188cd5208a914524dbc1649538b87c7",
+    "ordinal": 7,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:52.879Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:10",
+    "id": "obs:a58702893c8dfcb35c2d425181d2e54cc09b092ca2cc41dab61024a721adba5a",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The hike comes after nearly three-and-a half years; monetary policy stance was changed to ‘calibrated tightening’ from ‘neutral’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:32:16.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI raises repo rate by 25 basis points to 5.50%, shifts stance to ‘calibrated tightening’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-hikes-repo-rate-by-25-basis-points-to-55/article71554369.ece"
+    },
+    "metadataHash": "34bba29cb8be0fa49ea296945872918396d96884d8586fc5fab04b0c44824785",
+    "ordinal": 3,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.327Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+    "id": "obs:a6985c9c786e1b5572a78c90df13cee6851accb55f760a8daa3e094dbe124f71",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "“Francis Halzen has led an international team of researchers and engineers who have provided us with a fantastic instrument. His tenacity and scientific vision has paved the way for a new kind of astronomy,” Mark Pearce, Chair of the Nobel Committee for Physics, said.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T14:51:52.000Z",
+      "publisher": "The Hindu",
+      "title": "Pioneer of IceCube neutrino detector wins 2026 Physics Nobel",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-physics-2026-winner-francis-halzen/article71550081.ece"
+    },
+    "metadataHash": "8029a1e431bd0e69cfe3c5cc7a9d8b47814763116286acb989a9cda2cf6bc4dd",
+    "ordinal": 8,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.301Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+    "id": "obs:a6eb24b46fd2778c270bcddd917d30e252e35bcd597b79d258c4ac026a05333e",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Henri B Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry for discoveries that helped explain how chemical reactions can produce molecules with the same handedness",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:55:37.000Z",
+      "publisher": "Business Standard",
+      "title": "Nobel Prize 2026 in chemistry awarded to Henri B Kagan and Kenso Soai",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/henri-b-kagan-kenso-soai-2026-nobel-prize-chemistry-non-linear-effects-126100700716_1.html"
+    },
+    "metadataHash": "9d751b12c05211cc8381f6d0c71bdedee27532b30c6a425dc91bb2e0da21077c",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.230Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:9",
+    "id": "obs:a91d61803642466b5adaa305c8872667ceea4a9d5b5196b2474a5d6e66c83145",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Comment"
+      ],
+      "description": "India’s nuclear doctrine faces new strategic, technological and geopolitical challenges",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/opinion/op-ed/feeder/default.rss",
+          "section": "Op-ed",
+          "sourceId": "hindu-op-ed"
+        }
+      ],
+      "publishedAt": "2026-09-26T04:31:17.000Z",
+      "publisher": "The Hindu",
+      "title": "Revisiting India’s nuclear doctrine without revising it",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/opinion/op-ed/revisiting-indias-nuclear-doctrine-without-revising-it/article71509857.ece"
+    },
+    "metadataHash": "3009f988a527c363b063a4233b337a028e3dcfc05c07eb38257a88374694a757",
+    "ordinal": 35,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-op-ed"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.301Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+    "id": "obs:a937d2d02bb83a5eabafe3b6b69573bf92e0860f53e076fd9762e93d1febe6f5",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "4aac398b100fdcdedd76ad2ec944024d12a24bc33c20d7a43a0e368acfb56d15",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.677Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:12",
+    "id": "obs:b06a4607f6aa06e87fab886115db60d454390ada5d8dee2e01c58a90b6cdb05f",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+          "section": "Environment",
+          "sourceId": "hindu-environment"
+        }
+      ],
+      "publishedAt": "2026-10-02T14:58:05.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "de0c15ffab217de1cac7b922fdf290a979c110b2d2ca3f580be111d9de5e1382",
+    "ordinal": 20,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-environment"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:b2a8e5311860ec6988564bfc434686181393f988f1048ca6c4d48adc2592bfd8",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:33:12.000Z",
+      "publisher": "Indian Express",
+      "title": "India News Live Updates, 7 October 2026: Russia welcomes India’s readiness to help resolve Ukraine conflict: Peskov",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/india-news-live-updates-7-october-2026-weather-delhi-mumbai-weather-rahul-priyanka-akashvani-bhavan-eci-protest-cec-gyanesh-kumar-sir-india-bloc-andhra-drought-bus-fire-10910022/"
+    },
+    "metadataHash": "a935cf1a264962c8f6ac061edf450acaec7616af345d90d9872f443ba5dff48d",
+    "ordinal": 6,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.174Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+    "id": "obs:b721c31234302d4358b5fefdacfea594971d10859937787d455ac927680205f8",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "4aac398b100fdcdedd76ad2ec944024d12a24bc33c20d7a43a0e368acfb56d15",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.877Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:12",
+    "id": "obs:b740fccda99be242f1b6f594a3793c593fce75feba739cc8fd60783680fee147",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+          "section": "Environment",
+          "sourceId": "hindu-environment"
+        }
+      ],
+      "publishedAt": "2026-10-02T14:58:05.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "de0c15ffab217de1cac7b922fdf290a979c110b2d2ca3f580be111d9de5e1382",
+    "ordinal": 20,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-environment"
+  },
+  {
+    "capturedAt": "2026-10-07T12:56:55.002Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:2",
+    "id": "obs:bd2233f525129db9654cd7ca6831708781551706a5aa3d2f91dabc40ffd7a1ac",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Anagha Jayakumar",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained AI"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T00:51:35.000Z",
+      "publisher": "Indian Express",
+      "title": "Why Anthropic is turning to religion to shape Claude’s values, and asking if AI can be conscious",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-ai/anthropic-claude-ai-consciousness-religious-leaders-10909349/"
+    },
+    "metadataHash": "dfc6c5bcec87b8b2471e801482dc6536ea0803bf8c94bae2cd9eb16673137eb8",
+    "ordinal": 7,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:be4253553fef49981450ac797f2b7da9319c1d439fe18a6639f9d036ebd1f76e",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Abhishek Chakraborty",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:23:09.000Z",
+      "publisher": "Indian Express",
+      "title": "RBI repo rate news LIVE: RBI raises GDP growth forecast to 7.1 per cent for FY27",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/rbi-monetary-policy-meeting-october-2026-live-governor-sanjay-malhotra-repo-rate-policy-stance-10908895/"
+    },
+    "metadataHash": "8e7f75b0148a1246f640c2e253038139964d71cdddbe43dddcb40d600cafa59d",
+    "ordinal": 7,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:49.370Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:4",
+    "id": "obs:bf935a25f8a5e4eff7bbbb64640718d5791da1212227442d2c8aa09a1d19de1a",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Scroll Staff",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "His ‘vision and scientific leadership have been fundamental’ for the IceCube Neutrino Observatory in Antarctica, said the Royal Swedish Academy of Sciences.",
+      "memberships": [
+        {
+          "feedUrl": "https://feeds.feedburner.com/ScrollinArticles.rss",
+          "section": "Latest",
+          "sourceId": "india-scroll-in"
+        }
+      ],
+      "publishedAt": "2026-10-06T11:05:50.000Z",
+      "publisher": "Scroll.in",
+      "title": "Francis Halzen awarded physics Nobel for discovery of high-energy neutrinos of astrophysical origin",
+      "updatedAt": null,
+      "url": "https://scroll.in/latest/1096218/francis-halzen-awarded-physics-nobel-for-discovery-of-high-energy-neutrinos-of-astrophysical-origin"
+    },
+    "metadataHash": "407e7069c32a3393b2b41e276bf386fea1a10075f1806fbf20bf5c58187d14b2",
+    "ordinal": 25,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "india-scroll-in"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.464Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+    "id": "obs:c1577c0ed04ce2a0fbbf93bdc444703060aea737d30daa680c12d82f9e30a925",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "World News"
+      ],
+      "description": "Francis Halzen won the Nobel Prize in physics on Tuesday for his contributions to the IceCube Neutrino Observatory and his discovery of high-energy neutrinos of astrophysical origin. The Royal Swedish Academy of Sciences announced the award in Stockholm. The prize money this year is 12 million Swedish kronor (about USD 1.2 million), whether for an individual, a small group of laureates or an organisation. Last year, three scientists won the Nobel Prize in physics for research on the strange behaviour of subatomic particles called quantum tunnelling that enabled the ultra-sensitive measurements",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/world-news-221.rss",
+          "section": "World",
+          "sourceId": "bs-world"
+        }
+      ],
+      "publishedAt": "2026-10-06T10:09:49.000Z",
+      "publisher": "Business Standard",
+      "title": "Francis Halzen wins Physics Nobel for high-energy neutrino discovery",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/world-news/francis-halzen-wins-physics-nobel-for-high-energy-neutrino-discovery-126100600715_1.html"
+    },
+    "metadataHash": "4aac398b100fdcdedd76ad2ec944024d12a24bc33c20d7a43a0e368acfb56d15",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-world"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:39.835Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:1",
+    "id": "obs:c1e5a6dbd24645f4a7304e142479c040f1609dd9e133beb0d74855ba9f08813f",
+    "metadata": {
+      "bylines": [],
+      "categories": [],
+      "description": "Henri B Kagan and Kenso Soai received the 2026 Nobel Prize in Chemistry for their groundbreaking discoveries in asymmetric organic synthesis.",
+      "memberships": [
+        {
+          "feedUrl": "https://www.livemint.com/rss/science",
+          "section": "Science",
+          "sourceId": "mint-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:13:38.000Z",
+      "publisher": "Mint",
+      "title": "Nobel Prize in Chemistry 2026 goes to Henri B Kagan and Kenso Soai; check their discovery",
+      "updatedAt": null,
+      "url": "https://www.livemint.com/science/news/nobel-prize-in-chemistry-2026-goes-to-henri-b-kagan-and-kenso-soai-check-their-discovery-11791367077210.html"
+    },
+    "metadataHash": "abf7797fc45c5385f89a0f6149fefa08ed6d26a99c7e10249e3af3c25213be5a",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "mint-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:18.022Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:4",
+    "id": "obs:c2349438c66e8201b8707e516dd7b338fb13ba7694077ed69bf7186b20a05437",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Aanya Mehta",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T05:06:22.000Z",
+      "publisher": "Indian Express",
+      "title": "Gold Rate Today, October 7: Check 18, 22 and 24 carat gold prices in Chennai, Mumbai, Delhi, Kolkata and other cities",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/gold-rate-today-october-7-check-18-22-and-24-carat-gold-prices-in-chennai-mumbai-delhi-kolkata-and-other-cities-10910164/"
+    },
+    "metadataHash": "90bcd8af30afc3791b5819eabd91d38d9b53fb69c0d141079dd3318758d3fb8e",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.327Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+    "id": "obs:c27c5b83f302a58775d2875d06de82e61a1d7989b88f79cf1f2af32311b97876",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "The duo was recognised for the discovery of ‘non-linear effects and autocatalysis in asymmetric organic synthesis’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T11:06:53.000Z",
+      "publisher": "The Hindu",
+      "title": "Chemistry Nobel 2026 awarded to French-Japanese duo Henri B. Kagan and Kenso Soai for solving molecular ‘mystery’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece"
+    },
+    "metadataHash": "99cd49619fc92f963773d1160acd945a40f954ea1458cd22bb9bb30394d98e95",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.607Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:12",
+    "id": "obs:c67237abd36cccf09d4683d42cb158f72ffd6f51dc48107fc4bfd92a76d4766c",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+          "section": "Environment",
+          "sourceId": "hindu-environment"
+        }
+      ],
+      "publishedAt": "2026-10-02T14:58:05.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "de0c15ffab217de1cac7b922fdf290a979c110b2d2ca3f580be111d9de5e1382",
+    "ordinal": 20,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-environment"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.059Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+    "id": "obs:cdb5df773bfb9b28ba59da9b8f8d57844d9be70e743930c344c09f1a87c89ef5",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Science"
+      ],
+      "description": "The duo was recognised for the discovery of ‘non-linear effects and autocatalysis in asymmetric organic synthesis’",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T11:06:53.000Z",
+      "publisher": "The Hindu",
+      "title": "Chemistry Nobel 2026 awarded to French-Japanese duo Henri B. Kagan and Kenso Soai for solving molecular ‘mystery’",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece"
+    },
+    "metadataHash": "99cd49619fc92f963773d1160acd945a40f954ea1458cd22bb9bb30394d98e95",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:52.294Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:9",
+    "id": "obs:cebbe411da42bc9cce52950ce9d62eb5c4a931305d41b5e9aab6e3c7120c6625",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy",
+        "News"
+      ],
+      "description": "The Reserve Bank's Monetary Policy Committee began its three-day meeting on Monday and is likely to raise rates by 25 basis points, aligning with the central banks' hawkish stance amid escalating conflicts in West Asia that pose risks for domestic inflation. An interest rate hike by the RBI in its upcoming monetary policy would mark a stance reversal, following rate cuts in 2025 and a prolonged pause thereafter, according to a PTI poll of 16 economists and bankers. \"Insights, assessments, and the way forward-set to unfold soon,\" the Reserve Bank said in a social media post while announcing tha",
+      "memberships": [
+        {
+          "feedUrl": "https://www.business-standard.com/rss/economy-102.rss",
+          "section": "Economy",
+          "sourceId": "bs-economy"
+        }
+      ],
+      "publishedAt": "2026-10-05T10:26:43.000Z",
+      "publisher": "Business Standard",
+      "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely",
+      "updatedAt": null,
+      "url": "https://www.business-standard.com/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html"
+    },
+    "metadataHash": "c3800f4e87b07d420218b04605ff268762878aceda70c538eafc1ea57d590ceb",
+    "ordinal": 27,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "bs-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:52.879Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:10",
+    "id": "obs:d10e056682d8d05c2691e82ffbec044c31e6e6a46d36a94929bb403ef0f3593d",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The RBI’s Monetary Policy Committee’s decision to hike interest rates seems aimed more at controlling expectations of future inflation levels than at bringing down inflation itself. That is a job for the government",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:49:31.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI has done what it can with interest rates for now, but heavy lifting on inflation will fall on government",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-has-done-what-it-can-with-interest-rates-but-heavy-lifting-on-inflation-will-fall-on-government/article71555013.ece"
+    },
+    "metadataHash": "21c442978724c64e74238204c98240362a37ae96cb73c1e352c53f91be2aff30",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:20.589Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:9",
+    "id": "obs:d4586d94d95ba03a0e26818b1b83936582b8f1b857bbfbe981558defee626308",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Comment"
+      ],
+      "description": "India’s nuclear doctrine faces new strategic, technological and geopolitical challenges",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/opinion/op-ed/feeder/default.rss",
+          "section": "Op-ed",
+          "sourceId": "hindu-op-ed"
+        }
+      ],
+      "publishedAt": "2026-09-26T04:31:17.000Z",
+      "publisher": "The Hindu",
+      "title": "Revisiting India’s nuclear doctrine without revising it",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/opinion/op-ed/revisiting-indias-nuclear-doctrine-without-revising-it/article71509857.ece"
+    },
+    "metadataHash": "3009f988a527c363b063a4233b337a028e3dcfc05c07eb38257a88374694a757",
+    "ordinal": 35,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-op-ed"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:08.483Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:6",
+    "id": "obs:d65fd3a4f032dba8aa8842d2c533ead0b156c1b2717282068ca314c9c712dd26",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "George Mathew",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-06-05T06:28:33.000Z",
+      "publisher": "Indian Express",
+      "title": "Why has RBI kept interest rates unchanged despite mounting inflation risks?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/"
+    },
+    "metadataHash": "1517c85fb563bdfff78d9b74f3b4b02992456ef7335d066abdc01075d221f491",
+    "ordinal": 194,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:52.205Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:9",
+    "id": "obs:d9adebfadde1c2696a3e7ee10c938e27010b72e4de8cc6f0cdc08dec46759370",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Comment"
+      ],
+      "description": "India’s nuclear doctrine faces new strategic, technological and geopolitical challenges",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/opinion/op-ed/feeder/default.rss",
+          "section": "Op-ed",
+          "sourceId": "hindu-op-ed"
+        }
+      ],
+      "publishedAt": "2026-09-26T04:31:17.000Z",
+      "publisher": "The Hindu",
+      "title": "Revisiting India’s nuclear doctrine without revising it",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/opinion/op-ed/revisiting-indias-nuclear-doctrine-without-revising-it/article71509857.ece"
+    },
+    "metadataHash": "3009f988a527c363b063a4233b337a028e3dcfc05c07eb38257a88374694a757",
+    "ordinal": 35,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-op-ed"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:14.972Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:2",
+    "id": "obs:db2ae1de4d1cef767328b2b8eb6a0aef440a5fe96041bfd3414a57a0824337e1",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Anagha Jayakumar",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained AI"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T00:51:35.000Z",
+      "publisher": "Indian Express",
+      "title": "Why Anthropic is turning to religion to shape Claude’s values, and asking if AI can be conscious",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-ai/anthropic-claude-ai-consciousness-religious-leaders-10909349/"
+    },
+    "metadataHash": "dfc6c5bcec87b8b2471e801482dc6536ea0803bf8c94bae2cd9eb16673137eb8",
+    "ordinal": 7,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:56:55.002Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:2",
+    "id": "obs:dbe966ca4f4324c25b4602c48071872d19b6801e86c38269991a6a26c9bca379",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Siddharth Upasani",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T08:46:02.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike was expected. But RBI reinforces hints that more are coming",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-mpc-rate-hike-hawkish-stance-calibrated-tightening-explained-10910588/"
+    },
+    "metadataHash": "c8120c5ae3d0fd818fe522e3bfa388e9395a967f3c16fb68d7d15909921dd5e6",
+    "ordinal": 4,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:40.826Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:2",
+    "id": "obs:dca83e016567cc9dca7d8eb21cc936a1546c9905d8e0e24b8d69072add04c7d1",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Anagha Jayakumar",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained AI"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T00:51:35.000Z",
+      "publisher": "Indian Express",
+      "title": "Why Anthropic is turning to religion to shape Claude’s values, and asking if AI can be conscious",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-ai/anthropic-claude-ai-consciousness-religious-leaders-10909349/"
+    },
+    "metadataHash": "dfc6c5bcec87b8b2471e801482dc6536ea0803bf8c94bae2cd9eb16673137eb8",
+    "ordinal": 8,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:51.830Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:8",
+    "id": "obs:e19b668d2180e57c085038b4d315f931f01e0acb83344ee6fe0f4146755a08f7",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Linda Geddes",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Chemistry",
+        "Nobel prizes",
+        "People in science",
+        "Science",
+        "Science prizes"
+      ],
+      "description": "Henri B Kagan and Kensō Soai awarded prize for discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis The Nobel prize in chemistry 2026 has been awarded to two scientists for discoveries that showed how chemical reactions can produce one of two mirror image forms of a molecule. Henri B Kagan at Paris-Sud University in France and Kensō Soai at Tokyo University of Science in Japan have been awarded the prize “for the discovery of nonlinear effects and autocatalysis in asymmetric organic synthesis”. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:14:02.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in chemistry awarded for work on mirror-image molecules",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules"
+    },
+    "metadataHash": "ad408a2ece570249f5712bf3275dc6ede7665ac0a5e4f5de29655b15486d0bd0",
+    "ordinal": 0,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:13.059Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:11",
+    "id": "obs:e1d37a29908f229bbf287c8f0d27598a5da2fdb4f5030b97a565f28b44e49984",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:35:24.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "b1aeb7337520159d40aec11f47945e2ac3a23651d3ff294805fca0e6c68ac11a",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:14.972Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:2",
+    "id": "obs:e3c17d99d92cc32a77c278af2c977398f52eee332e30050147083df0c11da0a5",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Amaal Sheikh",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Law"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/feed/",
+          "section": "Explained",
+          "sourceId": "ie-explained"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:24:16.000Z",
+      "publisher": "Indian Express",
+      "title": "Rahul Gandhi detained again: How does detention differ from arrest, what rights do detainees have?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-law/police-detention-protests-arrest-bnss-rights-explained-10910751/"
+    },
+    "metadataHash": "d2025e63d5cd8d134fd4cd58dcda398a2b87b244f933a32daf9736106d76e094",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.041Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:8",
+    "id": "obs:e56bbb62cbf3d7c0bd80597bfe7cdac39969ffddb1400bdf202c682406a32a74",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Presented by Madeleine Finlay with Ian Sample , produced by Madeleine Finlay and Jacob Liebenberg , graphics by Elliot Ellis, the executive producer was Ellie B",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [],
+      "description": "Second up for the 2026 Nobel Prizes was the award for physics. And this year it went to just one scientist, Francis Halzen. The Belgian physicist won the prize based on his work on the IceCube detector that observes ghostly particles called neutrinos. Science editor Ian Sample tells host Madeleine Finlay how Halzen came up with the brilliant idea to use sensors buried in the ice to detect these extraterrestrial particles. Continue reading...",
+      "memberships": [
+        {
+          "feedUrl": "https://www.theguardian.com/science/rss",
+          "section": "Science",
+          "sourceId": "guardian-science"
+        }
+      ],
+      "publishedAt": "2026-10-06T18:44:30.000Z",
+      "publisher": "Guardian",
+      "title": "Nobel prize in physics 2026: high energy cosmic neutrinos",
+      "updatedAt": null,
+      "url": "https://www.theguardian.com/science/video/2026/oct/06/nobel-prize-in-physics-2026-high-energy-cosmic-neutrinos"
+    },
+    "metadataHash": "b3f9583e669b45096f3c739264ac4b7d9b20141df277d3f9a1dc16eca5c6e292",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "guardian-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:ec701432f0b335213135f34705782e844f7c4beee026064e2e6a957c8dc27636",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-07T02:33:12.000Z",
+      "publisher": "Indian Express",
+      "title": "India News Live Updates, 7 October 2026: Russia welcomes India’s readiness to help resolve Ukraine conflict: Peskov",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/india-news-live-updates-7-october-2026-weather-delhi-mumbai-weather-rahul-priyanka-akashvani-bhavan-eci-protest-cec-gyanesh-kumar-sir-india-bloc-andhra-drought-bus-fire-10910022/"
+    },
+    "metadataHash": "a935cf1a264962c8f6ac061edf450acaec7616af345d90d9872f443ba5dff48d",
+    "ordinal": 6,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:21.327Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:2:11",
+    "id": "obs:ef87c6a876a0e9836989416f8013473a810ab56def31a666e3016a4997509ac2",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:35:24.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "b1aeb7337520159d40aec11f47945e2ac3a23651d3ff294805fca0e6c68ac11a",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:05.045Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:4",
+    "id": "obs:f007961d53965e740a15a4398b507da09f1bea46b6b7773cbf674d2adbb5ab6b",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Jatin Anand",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "India"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/india/feed/",
+          "section": "India",
+          "sourceId": "ie-india"
+        }
+      ],
+      "publishedAt": "2026-10-06T15:09:12.000Z",
+      "publisher": "Indian Express",
+      "title": "Stop daily drama, learn from Modi to win people’s support: BJP to Congress",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/india/election-commission-protest-congress-bjp-modi-gyanesh-kumar-10909566/"
+    },
+    "metadataHash": "0ce2a2a324d6106837a42fa4653c11a04a8a0617aad8329535be56ac8e1f70f0",
+    "ordinal": 24,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-india"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:53.429Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:11",
+    "id": "obs:f07c5b377c619bca668d69aaaf03482e5479ef8255d3ba495a0dfa2aad9d09fb",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Environment"
+      ],
+      "description": "In strong El Niño years, pressure differences between the Bay of Bengal and the Arabian Sea can drive moist air into coastal Tamil Nadu; when an El Niño coincides with warmer waters in the Bay, evaporation increases, and cyclonic circulations in November-December release this stored heat as intense, localised rainfall",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+          "section": "Science",
+          "sourceId": "hindu-science"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:35:24.000Z",
+      "publisher": "The Hindu",
+      "title": "Tamil Nadu may encounter El Niño differently from rest of India",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/tamil-nadu-may-encounter-el-nino-differently-from-rest-of-india/article71537825.ece"
+    },
+    "metadataHash": "b1aeb7337520159d40aec11f47945e2ac3a23651d3ff294805fca0e6c68ac11a",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-science"
+  },
+  {
+    "capturedAt": "2026-10-07T12:57:12.587Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:10",
+    "id": "obs:f1225106c96b7da62d66815fe2ad26f07fa40893314b2ea17ef47e0d2416adb2",
+    "metadata": {
+      "bylines": [],
+      "categories": [
+        "Economy"
+      ],
+      "description": "The RBI’s Monetary Policy Committee’s decision to hike interest rates seems aimed more at controlling expectations of future inflation levels than at bringing down inflation itself. That is a job for the government",
+      "memberships": [
+        {
+          "feedUrl": "https://www.thehindu.com/business/Economy/feeder/default.rss",
+          "section": "Economy",
+          "sourceId": "hindu-economy"
+        }
+      ],
+      "publishedAt": "2026-10-07T10:49:31.000Z",
+      "publisher": "The Hindu",
+      "title": "RBI has done what it can with interest rates for now, but heavy lifting on inflation will fall on government",
+      "updatedAt": null,
+      "url": "https://www.thehindu.com/business/Economy/rbi-has-done-what-it-can-with-interest-rates-but-heavy-lifting-on-inflation-will-fall-on-government/article71555013.ece"
+    },
+    "metadataHash": "21c442978724c64e74238204c98240362a37ae96cb73c1e352c53f91be2aff30",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "hindu-economy"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:40.941Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:2",
+    "id": "obs:f4c357a269ab0970aaf354514719056b641834d3eff2803d6d11459d1833e002",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Dharmakirti Joshi",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Columns",
+        "Opinion"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/opinion/columns/feed/",
+          "section": "Columns",
+          "sourceId": "ie-columns"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:34:07.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike: Behind the RBI’s pivot, a need to safeguard price stability",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/"
+    },
+    "metadataHash": "5c0c7a66ec80691094ad7915b1331000cb47ed7a66077993714b0542163356b7",
+    "ordinal": 2,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-columns"
+  },
+  {
+    "capturedAt": "2026-10-07T13:40:50.591Z",
+    "captureId": "tools/news/evaluation/data/a2a-bootstrap-2026-10-07:live:1:6",
+    "id": "obs:fa7974e161a4e5d3c612e4b98d9edf8f909d842dcdcd8521a20751f31d451317",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "George Mathew",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Explained",
+        "Explained Economics"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/explained/explained-economics/feed/",
+          "section": "Explained Economics",
+          "sourceId": "ie-explained-economics"
+        }
+      ],
+      "publishedAt": "2026-06-05T06:28:33.000Z",
+      "publisher": "Indian Express",
+      "title": "Why has RBI kept interest rates unchanged despite mounting inflation risks?",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/explained/explained-economics/rbi-repo-rate-unchanged-growth-forecast-cut-inflation-outlook-raised-10725059/"
+    },
+    "metadataHash": "1517c85fb563bdfff78d9b74f3b4b02992456ef7335d066abdc01075d221f491",
+    "ordinal": 195,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-explained-economics"
+  },
+  {
+    "capturedAt": "2026-10-07T12:56:55.155Z",
+    "captureId": "tools/news/evaluation/data/job-b-2026-10-07-verified:1:2",
+    "id": "obs:feb8fcad8b785ce57683fbdc3f803b058fcc6788f994e40696eccc42ebd8ea9d",
+    "metadata": {
+      "bylines": [
+        {
+          "name": "Dharmakirti Joshi",
+          "provenance": "rss:dc:creator"
+        }
+      ],
+      "categories": [
+        "Columns",
+        "Opinion"
+      ],
+      "description": "",
+      "memberships": [
+        {
+          "feedUrl": "https://indianexpress.com/section/opinion/columns/feed/",
+          "section": "Columns",
+          "sourceId": "ie-columns"
+        }
+      ],
+      "publishedAt": "2026-10-07T09:34:07.000Z",
+      "publisher": "Indian Express",
+      "title": "Rate hike: Behind the RBI’s pivot, a need to safeguard price stability",
+      "updatedAt": null,
+      "url": "https://indianexpress.com/article/opinion/columns/rate-hike-behind-rbi-pivot-need-to-safeguard-price-stability-10910739/"
+    },
+    "metadataHash": "5c0c7a66ec80691094ad7915b1331000cb47ed7a66077993714b0542163356b7",
+    "ordinal": 1,
+    "parserVersion": "tars-eval-metadata/3",
+    "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
+    "sourceId": "ie-columns"
+  }
+]

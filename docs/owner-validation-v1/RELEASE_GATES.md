@@ -1,0 +1,11 @@
+# Revised release-gate assessment
+
+**Production readiness: BLOCKED. Default Validator remains v2. This task authorizes no next development stage.**
+
+1. The targeted owner-review import gate is now satisfied: 25 exact IDs, 25 model-origin annotations preserved, all 25 separately ratified. Targeted recovered-admission truth is now known (17/17 positive), and natural Chemistry/RBI distinctions have evidence. This closes the earlier blank-review status only for this exposed targeted package.
+2. Editorial correctness remains open: three positive deferrals (including one Must read), five negative deferrals, four primary-subject mismatches across abstentions, Physics equivalent-report splits, incomplete angle identities and priority-tier disagreements. See REMAINING_DEFECTS.md; no rules were tuned.
+3. Independent broader and future sealed evaluation remains absent. The enriched/nonrandom model-origin owner-ratified sample cannot certify production precision/recall, acquisition recall, P@20/P@50, natural duplicate rates or ranking optimality. The original 50-item calibration, partitions and all protected evidence remain unchanged; no sealed holdout was opened.
+4. Acquisition limitations remain: all 12 targeted IE descriptions are absent. Broader supply/summary health requires separately authorized permitted feed investigation. No article-body acquisition, generated summaries, paywall workarounds or external services were used.
+5. Natural temporal truth remains absent. Cold-start replay does not certify forecast supersession, 7/14-day material-delta quality or production repeat handling. Publication/updated timestamps supply recency gates only.
+6. Engineering verification is recorded in VERIFICATION.json and PRESERVATION.json. Genuine canonical-ZIP pipeline skips remain guards, not failures to hide. Local fixtures do not certify physical devices/S-Pen, hosted Access/D1, real cross-device behavior, publisher response, free-plan production resource limits or canonical SITE_URL. These remain production blockers.
+7. No paid API, purchased credit, remote CI, cloud DB operation, deployment, upgrade, background poll, push or merge occurred. The local milestone commit does not change readiness.
