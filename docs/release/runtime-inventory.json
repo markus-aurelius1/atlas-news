@@ -5,12 +5,12 @@
     "indexHash": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348",
     "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
     "authorHash": "431a9da8003ae1566091cb698b45304a8079026e78162c6c4f1c610803f69900",
-    "codeHash": "4f61a4aa7bfc53b2df51fe08b09d547f8f244729cff3118749356dd87348b0fb"
+    "codeHash": "21531d90270ded6e063e057378ffcf768bb969ad70fdca815864970a06221faf"
   },
   "inventory": [
     {
       "path": "src/current-affairs/analytics.ts",
-      "sha256": "dd0f895ec9152d2ff09b9295835c8356d63d6b6e804eccfecb35b1587d05f52b"
+      "sha256": "35ffd9c80f3ecfafa2283b61adbe035d482afbdfc6311ad85e7ff7890360d75d"
     },
     {
       "path": "src/current-affairs/reader/policy.ts",
@@ -66,7 +66,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/selection.ts",
-      "sha256": "3de13ceeb9095ae849961fd860f18a00895f3dcb16071ea4124144cbb27d70e0"
+      "sha256": "51a95c33dc70f481dba0b74aca9a468840c5f6a1d9b5443988308a777a5e1944"
     },
     {
       "path": "src/current-affairs/validator-v3/source-intelligence.ts",
@@ -78,7 +78,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/stories.ts",
-      "sha256": "a6c1ddc9a9c0eca4e970ae36c69e249fa3c700a68133b30c8b7b36c43e383110"
+      "sha256": "d745d7c3bcbe24bd12d5de8fc721afcd79a8634e30c80444ab85da1cc98760de"
     },
     {
       "path": "src/current-affairs/validator-v3/subject.ts",
@@ -90,7 +90,7 @@
     },
     {
       "path": "src/features/current-affairs/NewsScreen.tsx",
-      "sha256": "e8ecf4709e1f9cb4da489154c586b40e13eb9696f712c7e2100540fffe83aaee"
+      "sha256": "c15f1eb92c5cce2ee232600548b92beb06079a54e23ea1bd6126d5831118f8a4"
     },
     {
       "path": "src/features/current-affairs/useNewsModel.ts",

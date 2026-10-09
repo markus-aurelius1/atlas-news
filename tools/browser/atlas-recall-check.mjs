@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright-core'
 const base = process.argv[2] ?? 'http://127.0.0.1:4182/'
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 const errors = []
 try {
   const page = await browser.newPage({ viewport: { width: 1366, height: 900 } })

@@ -12,9 +12,10 @@ export function recentCoverage(event: WorkspaceEvent, now: number) {
   })
 }
 export function readingScopes(events: WorkspaceEvent[], now: number, limit = TODAY_STORY_LIMIT) {
-  const today: WorkspaceEvent[] = [], archive: WorkspaceEvent[] = []
+  const today: WorkspaceEvent[] = [], archive: WorkspaceEvent[] = [], savedOnly: WorkspaceEvent[] = []
   for (const event of events) {
     if (event.v3) {
+      if (event.v3.savedOnly) { savedOnly.push(event); continue }
       if (event.v3.today && !event.v3.savedOnly && event.v3.selectedAt > now - RECENT_WINDOW_MS && event.v3.selectedAt <= now) today.push(event)
       else archive.push(event)
       continue
@@ -32,7 +33,7 @@ export function readingScopes(events: WorkspaceEvent[], now: number, limit = TOD
   today.sort(valueOrder)
   archive.push(...today.splice(limit))
   archive.sort((a, b) => (b.v3?.selectedAt ?? latestPublication(b)) - (a.v3?.selectedAt ?? latestPublication(a)) || a.id.localeCompare(b.id))
-  return { today, archive }
+  return { today, archive, savedOnly }
 }
 export function queueCounts(events: WorkspaceEvent[], state: PersonalState) {
   const counts = { 'To be Read': 0, Read: 0, Saved: 0 }

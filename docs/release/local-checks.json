@@ -1,0 +1,89 @@
+{
+  "label": "Local engineering checks; not production quality or hosted certification",
+  "results": [
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 2948,
+      "log": "tools/news/.cache/release/final-typecheck.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "tools/news",
+        "functions",
+        "vite.config.ts"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 13200,
+      "log": "tools/news/.cache/release/final-lint.log"
+    },
+    {
+      "name": "root-tests",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 33034,
+      "log": "tools/news/.cache/release/final-root-tests.log"
+    },
+    {
+      "name": "pipeline",
+      "command": [
+        "node",
+        "--test",
+        "tools/atlas-build/test/canonical-pyq.test.mjs",
+        "tools/atlas-build/test/gazetteer.test.mjs",
+        "tools/atlas-build/test/pyq.test.mjs",
+        "tools/atlas-build/test/soi-boundary.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 1370,
+      "log": "tools/news/.cache/release/final-pipeline.log"
+    },
+    {
+      "name": "evaluation",
+      "command": [
+        "node",
+        "--test",
+        "tools/news/evaluation/bootstrap.test.ts",
+        "tools/news/evaluation/calibration-gold.test.mjs",
+        "tools/news/evaluation/calibration.test.ts",
+        "tools/news/evaluation/editorial.test.ts",
+        "tools/news/evaluation/evaluation.test.ts",
+        "tools/news/evaluation/reviewer-ux.test.ts",
+        "tools/news/evaluation/source-audit.test.ts",
+        "tools/news/evaluation/stage-c.test.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 7450,
+      "log": "tools/news/.cache/release/final-evaluation.log"
+    },
+    {
+      "name": "protected-integrity",
+      "command": [
+        "node",
+        "tools/news/evaluation/release-integrity.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 346,
+      "log": "tools/news/.cache/release/final-protected-integrity.log"
+    }
+  ]
+}

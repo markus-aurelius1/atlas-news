@@ -5,5 +5,5 @@ export const RUNTIME_VERSIONS = {
   "indexHash": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348",
   "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
   "authorHash": "431a9da8003ae1566091cb698b45304a8079026e78162c6c4f1c610803f69900",
-  "codeHash": "4f61a4aa7bfc53b2df51fe08b09d547f8f244729cff3118749356dd87348b0fb"
+  "codeHash": "21531d90270ded6e063e057378ffcf768bb969ad70fdca815864970a06221faf"
 } as const

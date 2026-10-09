@@ -1,6 +1,6 @@
 import type { NewsItem } from '../types.ts'
 
-export const STORY_POLICY = { id: 'tars-stories/1', historyDays: 14, strongestDays: 7, todayHours: 24 } as const
+export const STORY_POLICY = { id: 'tars-stories/1', historyDays: 14, strongestDays: 7, todayHours: 24, maxComparisonBucket: 512 } as const
 const DAY = 86400000
 export interface StoryFrame {
   actor: string; object: string; action: string; qualifiers: string[]
@@ -65,19 +65,24 @@ export function buildStories(current: MetadataObservation[], previous: MetadataO
   const sorted = [...latest.values()].sort((a, b) => a.item.url.localeCompare(b.item.url))
   for (const observation of sorted) {
     const item = observation.item, frame = storyFrame(item)
-    const key = block(item), existing = (unitBuckets.get(key) ?? []).find(u => { comparisons++; return equivalentDevelopment(u.members[0], item) })
+    const key = block(item), currentBucket = unitBuckets.get(key) ?? [], selectedBucket = selectedBuckets.get(key) ?? []
+    const themeBucket = frame.object ? priorThemes.get(theme(item)) ?? [] : [], urlBucket = priorUrls.get(item.url) ?? []
+    // Never sample a crowded bucket and then claim its strongest comparison.
+    // Explicit abstention bounds work without accepting possible repeat exposure.
+    const exhausted = [currentBucket, selectedBucket, themeBucket, urlBucket].some(b => b.length > STORY_POLICY.maxComparisonBucket)
+    const existing = !exhausted && currentBucket.find(u => { comparisons++; return equivalentDevelopment(u.members[0], item) })
     if (existing) { if (!existing.members.some(m => m.url === item.url)) existing.members.push(item); continue }
-    const old = selectedUrls.get(item.url) ?? (selectedBuckets.get(key) ?? []).find(s => { comparisons++; return equivalentDevelopment(s.representative, item) })
+    const old = selectedUrls.get(item.url) ?? (!exhausted ? selectedBucket.find(s => { comparisons++; return equivalentDevelopment(s.representative, item) }) : undefined)
     // Highest similarity first, strongest recent comparison before older context.
-    const candidates = [...new Set([...(priorUrls.get(item.url) ?? []), ...(frame.object ? priorThemes.get(theme(item)) ?? [] : [])])]
+    const candidates = exhausted ? [] : [...new Set([...urlBucket, ...themeBucket])]
     const matches = candidates.filter(() => { comparisons++; return true })
       .sort((a, b) => Number(b.observedAt >= now - 7 * DAY) - Number(a.observedAt >= now - 7 * DAY) || similarity(frame, storyFrame(b.item)) - similarity(frame, storyFrame(a.item)) || b.observedAt - a.observedAt || a.item.url.localeCompare(b.item.url))
     const sameUrl = matches.find(o => o.item.url === item.url), compared = sameUrl ?? matches[0]
     const delta = compared ? materialDelta(compared.item, item) : old ? materialDelta(old.representative, item) : false
     const repeat = !delta && (!!old || matches.some(o => equivalentDevelopment(o.item, item)))
-    const novelty = repeat ? 'repeat' : frame.angle && (!compared || storyFrame(compared.item).angle !== frame.angle) ? 'distinct_analysis' : delta || frame.action && frame.object ? 'new_development' : 'uncertain'
+    const novelty = exhausted ? 'uncertain' : repeat ? 'repeat' : frame.angle && (!compared || storyFrame(compared.item).angle !== frame.angle) ? 'distinct_analysis' : delta || frame.action && frame.object ? 'new_development' : 'uncertain'
     const unit: ReadingUnit = { id: old && !delta ? old.id : `reading:${item.url}:${frame.signature}`, members: [item], frame, novelty, priorId: old?.id ?? null,
-      reason: repeat ? 'equivalent_selected_or_observed' : delta ? 'material_action_object_period_or_effect_delta' : frame.angle ? 'evidenced_analytical_frame' : novelty === 'uncertain' ? 'insufficient_development_identity' : 'evidenced_development', firstSeenAt: Math.min(observation.firstSeenAt, sameUrl?.firstSeenAt ?? observation.firstSeenAt), ...(old ? { selectedAt: old.selectedAt } : {}) }
+      reason: exhausted ? 'comparison_budget_exceeded' : repeat ? 'equivalent_selected_or_observed' : delta ? 'material_action_object_period_or_effect_delta' : frame.angle ? 'evidenced_analytical_frame' : novelty === 'uncertain' ? 'insufficient_development_identity' : 'evidenced_development', firstSeenAt: Math.min(observation.firstSeenAt, sameUrl?.firstSeenAt ?? observation.firstSeenAt), ...(old ? { selectedAt: old.selectedAt } : {}) }
     units.push(unit); const group = unitBuckets.get(key); if (group) group.push(unit); else unitBuckets.set(key, [unit])
   }
   const earliest = Math.min(...previous.map(o => o.observedAt).filter(t => t <= now))

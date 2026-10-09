@@ -1,0 +1,14 @@
+{
+  "original": {
+    "head": "d21798db6212553e63420a8efd6e1f71c87417d9",
+    "dirtyStatusRows": 127,
+    "filesHashed": 127,
+    "baselineFingerprint": "582f3cdc7f350ec8492a6d2c0a3660c0952e27d6111891d19da5ae3aa6acee3d",
+    "statusAndEveryFileMatch": true
+  },
+  "highlightsCore": {
+    "frozenCommit": "82926e114f1af10302d568ceb5ee2fa40cdfa632",
+    "exactSourceDiffEmpty": true
+  },
+  "observation": "Read-only original checkout verification; release-only writes"
+}

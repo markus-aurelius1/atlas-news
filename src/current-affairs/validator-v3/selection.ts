@@ -6,7 +6,7 @@ import type { ReadingUnit, SelectedReading } from './stories.ts'
 export const SELECTION_POLICY = { id: 'tars-selection/1', capacity: 50, comparableTolerance: 0, maxAlternatives: 5 } as const
 export interface QualifiedArticle { item: NewsItem; acceptance: StageCDecision; subject: SubjectDecision }
 export interface RankedReading { unit: ReadingUnit; primary: QualifiedArticle; alternatives: QualifiedArticle[]; quality: number; mustRead: boolean; reason: string }
-export interface SelectionResult { today: RankedReading[]; replacement: RankedReading[]; suppressed: { id: string; reason: 'repeat' | 'capacity' | 'undated_or_stale' }[]; retained: SelectedReading[]; diagnostics: { qualifiedUnits: number; capacityLoss: number; sourceCounts: Record<string, number>; subjectCounts: Record<string, number>; preferredComparable: number; strongerOther: number } }
+export interface SelectionResult { today: RankedReading[]; replacement: RankedReading[]; suppressed: { id: string; reason: 'repeat' | 'capacity' | 'undated_or_stale' | 'evidence_limit' }[]; retained: SelectedReading[]; diagnostics: { qualifiedUnits: number; capacityLoss: number; sourceCounts: Record<string, number>; subjectCounts: Record<string, number>; preferredComparable: number; strongerOther: number } }
 const preference = (a: QualifiedArticle) => ['The Hindu', 'Indian Express'].includes(a.item.publisher)
 function quality(article: QualifiedArticle) {
   const r = article.acceptance.relevance
@@ -34,6 +34,7 @@ export function selectReading(units: ReadingUnit[], articles: QualifiedArticle[]
   })
   const suppressed: SelectionResult['suppressed'] = [], replacements: RankedReading[] = []
   const candidates = qualified.filter(reading => {
+    if (reading.unit.reason === 'comparison_budget_exceeded') { suppressed.push({ id: reading.unit.id, reason: 'evidence_limit' }); return false }
     const old = previousById.get(reading.unit.id)
     if (reading.unit.novelty === 'repeat') {
       if (old) replacements.push(reading)

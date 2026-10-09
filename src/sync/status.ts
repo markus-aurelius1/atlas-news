@@ -53,7 +53,7 @@ export function describeSync(s: SyncStatus, now = Date.now()): { title: string; 
     case 'error':
       return { title: 'Sync couldn’t finish', body: `It will try again on its own.${waiting(s.pending)}${s.detail ? ` (${s.detail})` : ''}`, tone: 'warning', action: 'sync' }
     case 'unavailable':
-      return { title: 'Sync is not set up here', body: 'This copy of Tars has no sync service. Everything stays on this device; use a backup to move it.', tone: 'idle' }
+      return { title: 'Sync is not set up here', body: s.detail ?? 'This copy of Tars has no sync service. Everything stays on this device; use a backup to move it.', tone: 'idle' }
     case 'local':
       return { title: 'On this device only', body: 'The installed app keeps everything on this device; use a backup to move it.', tone: 'idle' }
     default:

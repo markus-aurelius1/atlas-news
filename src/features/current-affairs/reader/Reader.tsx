@@ -6,13 +6,15 @@
  */
 import { AnimatePresence, motion, useIsPresent } from 'motion/react'
 import { ArrowRight, ArrowUpRight, Bookmark, Check, ChevronDown, ChevronLeft, ChevronUp, Clock, CloudOff, FileText, Lock, LogIn, RotateCw, ShieldAlert } from 'lucide-react'
-import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { rememberPlace } from '@/app/resume'
 import { isTyping } from '@/app/shortcuts'
 import { useResolvedDark } from '@/app/theme'
 import type { PersonalEntry } from '@/current-affairs/personal-state'
 import { SMRY_DAILY, smryUrl } from '@/current-affairs/reader/elsewhere'
+import { highlights } from '@/current-affairs/reader/highlights/repository'
+import type { HighlightArticle } from '@/current-affairs/reader/highlights/model'
 import type { ClassifiedItem } from '@/current-affairs/types'
 import type { WorkspaceEvent } from '@/current-affairs/workspace'
 import { updateSettings, useSettings } from '@/data/hooks'
@@ -28,6 +30,8 @@ import { ArticleBody, ReaderFigure } from './ArticleBody'
 import { READER_SCALE, setReaderPrefs, useReaderPrefs, type ReaderFace, type ReaderLeading, type ReaderWidth } from './prefs'
 import { useArticle, type UnavailableReason } from './useArticle'
 import { useSmry } from './useSmry'
+import { useHighlights } from './useHighlights'
+import { HighlightControls } from './HighlightControls'
 import './reader.css'
 
 export interface ReaderEntry {
@@ -41,6 +45,10 @@ export interface ReaderProps {
   entry: ReaderEntry | null
   /** The reading list is still loading, so an unknown address may yet turn out to be known. */
   resolving: boolean
+  /** Personal metadata allows opening an excerpt's source after it leaves all feed views. */
+  snapshot?: HighlightArticle | null
+  highlightId?: string | null
+  onAvailability?: (url: string, available: boolean) => void
   personal: PersonalEntry
   prev: ReaderEntry | null
   next: ReaderEntry | null
@@ -90,9 +98,10 @@ function notice(reason: UnavailableReason, publisher: string): Notice {
   }
 }
 
-function ReaderSurface({ url, entry, resolving, personal, prev, next, position, onClose, onNavigate, onAct }: ReaderProps & { url: string }) {
+function ReaderSurface({ url, entry, resolving, snapshot, highlightId, onAvailability, personal, prev, next, position, onClose, onNavigate, onAct }: ReaderProps & { url: string }) {
   const id = useId()
   const panel = useRef<HTMLDivElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null)
   const bar = useRef<HTMLSpanElement>(null)
   const progress = useRef<HTMLDivElement>(null)
   const typeButton = useRef<HTMLButtonElement>(null)
@@ -104,7 +113,10 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
   // The route handles Back, so this surface adds no history entry of its own.
   useSurface({ open: present, onClose, id, panel, modal: true, history: false })
 
-  const item = entry?.item ?? null
+  const item = entry?.item ?? (snapshot && snapshot.articleUrl === url ? {
+    url: snapshot.articleUrl, title: snapshot.title, publisher: snapshot.publisher, sourceId: snapshot.sourceId,
+    section: snapshot.categorySnapshot ?? '', publishedAt: snapshot.publishedAt, description: '',
+  } : null)
   const smry = useSmry()
   // Leave to sign in, and come back to this article (app/resume.ts).
   const signInAgain = useCallback(() => {
@@ -113,18 +125,51 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
   }, [])
   const { state, retry } = useArticle(item, online)
   const article = state.status === 'ready' ? state.article : null
+  const highlight = useHighlights(bodyRef, article?.html, item ? {
+    articleUrl: item.url, title: item.title, publisher: item.publisher, sourceId: item.sourceId,
+    publishedAt: article?.publishedAt ?? item.publishedAt,
+    subjectSnapshot: entry?.item.relevance.subjects[0] ?? snapshot?.subjectSnapshot ?? null, categorySnapshot: item.section || null,
+  } : null, () => isTopLayer(id))
   const read = !!personal.readAt, saved = !!personal.savedAt
   const toggle = useCallback((action: 'read' | 'save') => entry && onAct(entry.event, action), [entry, onAct])
   const step = useCallback((to: ReaderEntry | null) => to && onNavigate(to.item.url), [onNavigate])
   const resize = (by: number) => setReaderPrefs({ size: Math.max(0, Math.min(READER_SCALE.length - 1, prefs.size + by)) })
 
-  // Each article starts at its top, with its controls in view.
-  useEffect(() => {
+  // Reset before paint so a stepped headline is never visible at the preceding article's scroll position.
+  useLayoutEffect(() => {
     const el = panel.current
     if (!el) return
     el.scrollTop = 0
     el.removeAttribute('data-quiet')
   }, [url])
+
+  const focusedPassage = useRef('')
+  const hasItem = !!item
+  const { records: highlightRecords, locate: locateHighlight } = highlight
+  useEffect(() => { focusedPassage.current = '' }, [url, highlightId])
+  useEffect(() => {
+    if (!hasItem || state.status === 'loading') return
+    onAvailability?.(url, state.status === 'ready')
+  }, [url, hasItem, state.status, onAvailability])
+  useEffect(() => {
+    if (!article || !highlightId || !highlightRecords.some((r) => r.highlightId === highlightId)) return
+    const key = url + ':' + highlightId
+    if (focusedPassage.current === key) return
+    const range = locateHighlight(highlightId)
+    void highlights.setResolution([{ highlightId, resolution: range ? 'resolved' : 'unresolved' }]).catch(() => {})
+    if (!range) { focusedPassage.current = key; return }
+    const frame = requestAnimationFrame(() => {
+      const element = range.startContainer.parentElement?.closest<HTMLElement>('p, li, h2, h3, h4, blockquote, td, th, dd, dt') ?? range.startContainer.parentElement
+      if (!element || !panel.current) return
+      focusedPassage.current = key
+      element.tabIndex = -1
+      element.dataset.focusedHighlight = highlightId
+      element.focus({ preventScroll: true })
+      panel.current.scrollTop += range.getBoundingClientRect().top - panel.current.getBoundingClientRect().top - 140
+      panel.current.removeAttribute('data-quiet')
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [url, article, highlightId, highlightRecords, locateHighlight])
 
   // The bar shows how far through the article the reader is; the controls step back while reading down.
   useEffect(() => {
@@ -261,6 +306,7 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
           </p>
           <div className="reader-tools">
             {wide && actions}
+            <HighlightControls key={url} value={highlight} available={!!article} />
             <Tooltip label="Text and appearance" side="bottom">
               <button ref={typeButton} type="button" className="tool reader-tool reader-type" onClick={() => setTypeOpen((open) => !open)} aria-expanded={typeOpen} aria-haspopup="dialog" aria-label="Text and appearance">
                 <span aria-hidden="true">Aa</span>
@@ -294,6 +340,12 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                 </p>
               </header>
 
+              {highlightId && snapshot && (state.status === 'unavailable' || highlight.records.some((r) => r.highlightId === highlightId && r.resolution === 'unresolved')) && (
+                <aside className="reader-saved-passage" aria-label="Saved passage">
+                  <p>{state.status === 'unavailable' ? 'Article unavailable' : 'Passage no longer locatable'} · saved excerpt kept</p>
+                  <blockquote>{'quote' in snapshot && typeof snapshot.quote === 'string' ? snapshot.quote : highlight.records.find((r) => r.highlightId === highlightId)?.quote}</blockquote>
+                </aside>
+              )}
               {state.status === 'loading' && (
                 <div className="reader-loading" role="status">
                   <span className="sr-only">Loading the article from {item.publisher}…</span>
@@ -352,7 +404,7 @@ function ReaderSurface({ url, entry, resolving, personal, prev, next, position, 
                     </p>
                   )}
                   {article.lead && <ReaderFigure lead src={article.lead.src} alt={article.lead.alt} caption={article.lead.caption ?? undefined} />}
-                  <ArticleBody html={article.html} />
+                  <ArticleBody html={article.html} bodyRef={bodyRef} />
                   <footer className="reader-end">
                     <span className="reader-endmark" aria-hidden="true" />
                     <p className="reader-credit">

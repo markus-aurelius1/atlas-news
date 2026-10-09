@@ -11,11 +11,12 @@ export const BACKUP_APP = 'tars'
 /** Backups made before the app was renamed from Lodestar to Tars. */
 const LEGACY_BACKUP_APPS = ['lodestar']
 /**
+ * v4: adds optional local Reader highlight excerpts. v1-v3 leave highlights untouched.
  * v3: adds `extras` – the short notes and the Current Affairs reading state, which live outside the database (backup-extras.ts).
  * v2: Atlas history and archived records. v1 and v2 backups still import; they have no extras and leave notes and reading state alone.
  * v1's sky-theme unlocks are ignored.
  */
-export const BACKUP_VERSION = 3
+export const BACKUP_VERSION = 4
 
 export interface BackupFile {
   app: string
@@ -82,6 +83,7 @@ export function parseBackup(text: string): BackupFile {
 
 export function backupCounts(b: BackupFile): Record<string, number> {
   const counts = Object.fromEntries(Object.entries(b.tables).map(([k, v]) => [k, v?.length ?? 0]))
+  if (b.extras?.readerHighlights) counts.highlights = b.extras.readerHighlights.filter((r) => !r.deletedAt).length
   if (b.extras?.notes) counts.notes = Object.values(b.extras.notes.entries).filter((n) => !n.deletedAt).length
   if (b.extras?.currentAffairs) counts.articles = Object.keys(b.extras.currentAffairs.state.entries).length
   return counts

@@ -11,6 +11,13 @@ function article(url: string, publisher = 'Indian Express', title = 'Quantum res
   return { item, acceptance, subject: classifySubject(item) }
 }
 const unit = (a: QualifiedArticle, id = a.item.url): ReadingUnit => ({ id, members: [a.item], frame: storyFrame(a.item), novelty: 'new_development', priorId: null, reason: 'synthetic labelled need', firstSeenAt: now })
+it('comparison-budget abstentions cannot appear as new Today units or erase earlier selected history', () => {
+  const a = article('https://indianexpress.com/budget'), before = selectReading([unit(a, 'stable')], [a], [], now)
+  const uncertain = { ...unit(a, 'stable'), novelty: 'uncertain' as const, reason: 'comparison_budget_exceeded' }
+  const next = selectReading([uncertain], [a], before.retained, now + 1)
+  expect(next.today).toHaveLength(0); expect(next.suppressed).toEqual([{ id: 'stable', reason: 'evidence_limit' }])
+  expect(next.retained).toEqual(before.retained)
+})
 
 it('comparable TH/IE representative wins; materially stronger other source wins; permutation stable', () => {
   const ie = article('https://indianexpress.com/a'), th = article('https://www.thehindu.com/a'), other = article('https://example.org/a', 'Other')

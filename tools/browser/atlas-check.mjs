@@ -16,7 +16,7 @@ const ok = (name, cond, extra = '') => {
   if (!cond) failed++
   console.log(`${cond ? 'PASS' : 'FAIL'} ${name}${extra ? ` (${extra})` : ''}`)
 }
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 const scaleOf = (page) => page.evaluate(() => (document.querySelector('.atlas-base')?.atlasView?.k ?? Number(document.querySelector('.atlas-layer svg > g')?.getAttribute('transform')?.match(/scale\(([\d.]+)\)/)?.[1] ?? 0)))
 const sheetRect = (page) => page.evaluate(() => {
   const map = document.querySelector('[role=application]')?.getBoundingClientRect()

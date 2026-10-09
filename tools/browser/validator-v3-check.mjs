@@ -60,8 +60,22 @@ try {
     const science = rows.filter({ hasText: 'Quantum computing' }).first()
     await science.locator('[data-news-original]').first().click(); const reader = page.locator('[data-reader]'); await reader.locator('.reader-body').waitFor()
     check(tag, 'selected article opens the preserved Reader with one request', articles === 1 && (await reader.locator('.reader-body').innerText()).includes('BODY_PRIVATE_MARKER'))
+    await reader.getByRole('button', { name: 'Highlighter', exact: true }).click()
+    const quote = await page.evaluate(() => {
+      const body = document.querySelector('.reader-body'), text = body.querySelector('p').firstChild, range = document.createRange()
+      range.setStart(text, 13); range.setEnd(text, 70)
+      body.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerType: 'mouse' }))
+      getSelection().removeAllRanges(); getSelection().addRange(range); document.dispatchEvent(new Event('selectionchange'))
+      body.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerType: 'mouse' })); return getSelection().toString()
+    })
+    const excerpts = () => page.evaluate(() => new Promise((resolve, reject) => { const q = indexedDB.open('tars-reader-highlights'); q.onerror = () => reject(q.error); q.onsuccess = () => { const db = q.result, r = db.transaction('records').objectStore('records').getAll(); r.onsuccess = () => { db.close(); resolve(r.result.filter(r => !r.deletedAt)) } } }))
+    for (let attempt = 0; attempt < 50 && !(await excerpts()).length; attempt++) await page.waitForTimeout(100)
+    const highlighted = (await excerpts())[0]
+    check(tag, 'combined v3 Reader stores one native excerpt with classified subject', highlighted?.quote === quote && highlighted.subjectSnapshot === 'Sci-Tech' && highlighted.highlightId.length > 0)
     await page.keyboard.press('Escape'); await reader.waitFor({ state: 'detached' })
     check(tag, 'Back retains selected list and focus', await rows.count() === 3 && await page.evaluate(() => document.activeElement?.hasAttribute('data-news-original')))
+    await page.reload(); await rows.first().waitFor()
+    check(tag, 'combined reload preserves highlight UUID, authored quote and subject snapshot', (await excerpts()).some(r => r.highlightId === highlighted.highlightId && r.quote === quote && r.subjectSnapshot === highlighted.subjectSnapshot))
     slow = true
     await page.getByRole('button', { name: 'Refresh news' }).click()
     check(tag, 'background refresh keeps selected feed visible', await rows.count() === 3)
@@ -69,10 +83,23 @@ try {
     await page.getByRole('button', { name: 'Refresh news' }).click(); await page.waitForTimeout(800)
     check(tag, 'failed refresh preserves selected units', await rows.count() === 3)
     check(tag, 'no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    await page.screenshot({ path: `${out}/${tag}-today.png` })
+    await page.evaluate(async ({ now }) => {
+      const url = 'https://indianexpress.com/personal-only', at = now - 30 * 86400000
+      const metadata = { url, title: 'Personal Saved constitutional commentary', publisher: 'Indian Express', sourceId: 'ie-explained', section: 'Explained', description: '', publishedAt: new Date(at).toISOString(), firstSeenAt: at, lastSeenAt: at }
+      await new Promise((resolve, reject) => { const q = indexedDB.open('tars-sync-v1'); q.onerror = () => reject(q.error); q.onsuccess = () => { const db = q.result, tx = db.transaction('rows', 'readwrite'); tx.objectStore('rows').put({ c: 'article', k: url, v: JSON.stringify(metadata), t: at, d: 0 }); tx.oncomplete = () => { db.close(); resolve() }; tx.onabort = () => reject(tx.error) } })
+      const state = JSON.parse(localStorage.getItem('tars.current-affairs.state.v1') ?? '{"version":1,"entries":{}}'); state.entries[url] = { savedAt: at }
+      localStorage.setItem('tars.current-affairs.state.v1', JSON.stringify(state)); window.dispatchEvent(new Event('tars:personal-state')); window.dispatchEvent(new Event('tars:pinned-articles'))
+    }, { now })
+    await page.getByRole('group', { name: 'Edition' }).getByRole('button', { name: 'Archive', exact: true }).click(); await page.waitForTimeout(100)
+    check(tag, 'unselected personal Saved rows stay outside curated Archive', await rows.count() === 0)
+    await page.getByRole('group', { name: 'Reading filter' }).getByRole('button', { name: /Saved/ }).click()
+    await rows.filter({ hasText: 'Personal Saved constitutional commentary' }).waitFor()
+    check(tag, 'personal Saved fallback remains explicitly reachable and preserves authored state', await rows.count() === 1)
     const retained = await page.evaluate(async () => {
       const values = [JSON.stringify(localStorage), JSON.stringify(sessionStorage)]
       for (const name of await caches.keys()) { const cache = await caches.open(name); for (const req of await cache.keys()) values.push(await (await cache.match(req)).text()) }
-      for (const name of ['tars-validator-v3-reading-v1', 'tars-current-affairs-archive-v1']) values.push(await new Promise(resolve => { const req = indexedDB.open(name); req.onsuccess = () => { const db = req.result, stores = [...db.objectStoreNames]; if (!stores.length) { db.close(); resolve(''); return } const tx = db.transaction(stores), found = []; for (const s of stores) { const r = tx.objectStore(s).getAll(); r.onsuccess = () => found.push(JSON.stringify(r.result)) } tx.oncomplete = () => { db.close(); resolve(found.join('')) } } }))
+      for (const name of ['tars-validator-v3-reading-v1', 'tars-current-affairs-archive-v1', 'tars-reader-highlights']) values.push(await new Promise(resolve => { const req = indexedDB.open(name); req.onsuccess = () => { const db = req.result, stores = [...db.objectStoreNames]; if (!stores.length) { db.close(); resolve(''); return } const tx = db.transaction(stores), found = []; for (const s of stores) { const r = tx.objectStore(s).getAll(); r.onsuccess = () => found.push(JSON.stringify(r.result)) } tx.oncomplete = () => { db.close(); resolve(found.join('')) } } }))
       return values.join('')
     })
     check(tag, 'article text absent from feed/selection/archive/browser storage', !retained.includes('BODY_PRIVATE_MARKER'))

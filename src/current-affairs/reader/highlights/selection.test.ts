@@ -1,0 +1,40 @@
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { HANDLE_IDLE_MS, MOUSE_IDLE_MS, selectionCompletion } from './selection'
+afterEach(() => vi.useRealTimers())
+describe('native selection completion', () => {
+  it('commits mouse only after release and the final selectionchange', () => {
+    vi.useFakeTimers()
+    const commit = vi.fn(), lifecycle = selectionCompletion(commit)
+    lifecycle.pointerDown('mouse'); lifecycle.changed()
+    vi.advanceTimersByTime(2000); expect(commit).not.toHaveBeenCalled()
+    lifecycle.pointerUp('mouse'); vi.advanceTimersByTime(MOUSE_IDLE_MS - 1)
+    lifecycle.changed(); vi.advanceTimersByTime(MOUSE_IDLE_MS - 1)
+    expect(commit).not.toHaveBeenCalled()
+    vi.advanceTimersByTime(1); expect(commit).toHaveBeenCalledTimes(1)
+    lifecycle.destroy()
+  })
+  for (const type of ['touch', 'pen']) it(type + ' keeps native handle changes pending until quiet', () => {
+    vi.useFakeTimers()
+    const commit = vi.fn(), lifecycle = selectionCompletion(commit)
+    lifecycle.pointerDown(type); lifecycle.changed(); vi.advanceTimersByTime(4000)
+    expect(commit).not.toHaveBeenCalled()
+    lifecycle.pointerUp(type)
+    vi.advanceTimersByTime(HANDLE_IDLE_MS - 1); lifecycle.changed()
+    vi.advanceTimersByTime(HANDLE_IDLE_MS - 1); expect(commit).not.toHaveBeenCalled()
+    vi.advanceTimersByTime(1); expect(commit).toHaveBeenCalledTimes(1)
+    lifecycle.destroy()
+  })
+  it('supports keyboard/native selectionchange without pointer events', () => {
+    vi.useFakeTimers()
+    const commit = vi.fn(), lifecycle = selectionCompletion(commit)
+    lifecycle.changed(); vi.advanceTimersByTime(HANDLE_IDLE_MS)
+    expect(commit).toHaveBeenCalledOnce()
+  })
+  it('cancels on pointercancel, disable/unmount or blur', () => {
+    vi.useFakeTimers()
+    const commit = vi.fn(), lifecycle = selectionCompletion(commit)
+    lifecycle.pointerUp('pen'); lifecycle.cancel(); vi.advanceTimersByTime(4000)
+    lifecycle.changed(); lifecycle.destroy(); vi.advanceTimersByTime(4000)
+    expect(commit).not.toHaveBeenCalled()
+  })
+})

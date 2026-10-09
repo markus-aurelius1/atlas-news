@@ -9,10 +9,10 @@
 import assert from 'node:assert/strict'
 import { spawn, spawnSync } from 'node:child_process'
 import { webcrypto } from 'node:crypto'
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { createServer } from 'node:http'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { join, resolve, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright-core'
 import { FEED_REGISTRY_GENERATION } from '../../src/current-affairs/shards.ts'
@@ -27,7 +27,12 @@ const checks = [], errors = [], usage = []
 const check = (name, evidence = true) => { assert(evidence, name); checks.push(name); console.log('PASS ' + name) }
 /** Records compared field by field, whatever order a store returns the fields in. */
 const sameRecords = (a, b) => { const flat = list => JSON.stringify(list.map(r => Object.entries(r).sort(([x], [y]) => x.localeCompare(y))).sort((x, y) => JSON.stringify(x).localeCompare(JSON.stringify(y)))); return flat(a) === flat(b) }
-const wrangler = (args, options = {}) => spawnSync('npx', ['wrangler', ...args], { cwd: root, shell: true, encoding: 'utf8', ...options })
+const wranglerBin = process.env.WRANGLER_BIN
+if (!wranglerBin || !existsSync(wranglerBin)) throw new Error('Set WRANGLER_BIN to an existing local Wrangler script; automatic downloads are disabled')
+const wrangler = (args, options = {}) => {
+  if (args[0] === 'd1' && (!args.includes('--local') || args.includes('--remote') || args[args.indexOf('--persist-to') + 1] !== state)) throw new Error('Only ephemeral local D1 operations are allowed by this harness')
+  return spawnSync(process.execPath, [wranglerBin, ...args.map((arg, i) => args[i - 1] === '--command' && arg.startsWith('"') && arg.endsWith('"') ? arg.slice(1, -1) : arg)], { cwd: root, encoding: 'utf8', env: { ...process.env, WRANGLER_SEND_METRICS: 'false', WRANGLER_DISABLE_UPDATE_CHECK: 'true' }, ...options })
+}
 
 // A stand-in for the Access team: publishes its keys where Access does, and signs tokens with them.
 const pair = await webcrypto.subtle.generateKey({ name: 'RSASSA-PKCS1-v1_5', modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: 'SHA-256' }, true, ['sign', 'verify'])
@@ -65,15 +70,20 @@ let server
 function stop() {
   if (server?.pid) process.platform === 'win32' ? spawnSync('taskkill', ['/pid', String(server.pid), '/T', '/F']) : server.kill('SIGKILL')
   issuerServer.close()
+  assert.equal(dirname(resolve(state)), resolve(tmpdir()))
+  assert(basename(state).startsWith('tars-sync-check-'))
   try { rmSync(state, { recursive: true, force: true }) } catch { /* the runtime may still hold the files for a moment */ }
 }
 
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 try {
   const migrated = wrangler(['d1', 'execute', 'tars-sync', '--local', '--persist-to', state, '--file', 'migrations/0001_sync.sql'])
   assert.equal(migrated.status, 0, migrated.stderr || migrated.stdout)
+  const migratedHighlights = wrangler(['d1', 'execute', 'tars-sync', '--local', '--persist-to', state, '--file', 'migrations/0002_highlights.sql'])
+  assert.equal(migratedHighlights.status, 0, migratedHighlights.stderr || migratedHighlights.stdout)
   let log = ''
-  server = spawn('npx', ['wrangler', 'pages', 'dev', 'dist', '--port', String(port), '--ip', '127.0.0.1', '--persist-to', state, '--binding', `ACCESS_TEAM_DOMAIN=${issuer}`, '--binding', `ACCESS_AUD=${AUD}`, '--show-interactive-dev-session=false'], { cwd: root, shell: true })
+  const serverArgs = ['pages', 'dev', 'dist', '--port', String(port), '--ip', '127.0.0.1', '--persist-to', state, '--binding', `ACCESS_TEAM_DOMAIN=${issuer}`, '--binding', `ACCESS_AUD=${AUD}`, '--show-interactive-dev-session=false']
+  server = spawn(process.execPath, [wranglerBin, ...serverArgs], { cwd: root, windowsHide: true, env: { ...process.env, WRANGLER_SEND_METRICS: 'false', WRANGLER_DISABLE_UPDATE_CHECK: 'true' } })
   server.stdout.on('data', d => { log += d }); server.stderr.on('data', d => { log += d })
   for (let attempt = 0; ; attempt++) {
     if (server.exitCode !== null || attempt > 120) throw new Error('wrangler pages dev did not start:\n' + log)
@@ -88,6 +98,7 @@ try {
     await ctx.route('**/api/current-affairs*', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify(feed(link.list)) }))
     // "No route to the sync service" without cutting the rest of the page off.
     await ctx.route('**/api/sync', route => (link.sync ? route.continue() : route.abort('internetdisconnected')))
+    await ctx.route('**/api/highlights-sync', route => (link.sync ? route.continue() : route.abort('internetdisconnected')))
     if (seed) await ctx.addInitScript(([key, value]) => { if (localStorage.getItem(key) === null && !sessionStorage.getItem('seeded')) { localStorage.setItem(key, value); sessionStorage.setItem('seeded', '1') } }, [STATE_KEY, JSON.stringify(seed)])
     const page = await ctx.newPage()
     page.on('pageerror', e => errors.push(`${name}: ${e.message}`))
@@ -105,7 +116,7 @@ try {
     const recalls = () => page.evaluate(() => new Promise((resolve, reject) => { const open = indexedDB.open('lodestar'); open.onerror = () => reject(open.error); open.onsuccess = () => { const get = open.result.transaction('recalls').objectStore('recalls').getAll(); get.onsuccess = () => { open.result.close(); resolve(get.result) } } }))
     const settings = () => page.evaluate(() => new Promise(resolve => { const open = indexedDB.open('lodestar'); open.onsuccess = () => { const get = open.result.transaction('settings').objectStore('settings').get('settings'); get.onsuccess = () => { open.result.close(); resolve(get.result) } } }))
     /** A change made in the app goes out by itself about a second and a half later: wait for that request, not for a button. */
-    const sent = async () => { const from = usage.length; for (let i = 0; i < 100 && !usage.slice(from).some(u => u.device === name && u.sent > 0); i++) await page.waitForTimeout(100); assert(usage.slice(from).some(u => u.device === name && u.sent > 0), name + ' did not send its change on its own'); await settled() }
+    const sent = async (from = usage.length) => { for (let i = 0; i < 100 && !usage.slice(from).some(u => u.device === name && u.sent > 0); i++) await page.waitForTimeout(100); assert(usage.slice(from).some(u => u.device === name && u.sent > 0), name + ' did not send its change on its own'); await settled() }
     return { name, ctx, page, link, rows, open, news, titles, stored, status, settled, sent, syncNow, recalls, settings }
   }
   const act = (d, title, button) => d.rows.filter({ hasText: title }).first().getByRole('button', { name: button }).click()
@@ -200,6 +211,7 @@ try {
   const anonymous = await device('signed-out', { email: null })
   await anonymous.open('#/current-affairs'); await anonymous.rows.first().waitFor()
   await act(anonymous, 'ISRO launches', READ)
+  await anonymous.settled('signin')
   const signedOut = await anonymous.status()
   check('without an Access token the app works locally and asks for sign-in: ' + signedOut.text, signedOut.phase === 'signin' && Object.keys(await anonymous.stored()).length === 1 && (await anonymous.recalls()).length === 0)
   const claimed = await anonymous.page.evaluate(async user => { const r = await fetch('/api/sync', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ v: 1, cursor: 0, account: user, user, email: user, changes: [] }) }); return { status: r.status, body: await r.json() } }, USER)
@@ -225,12 +237,92 @@ try {
   const unreadable = async (d, url) => { await d.open('#/current-affairs?read=' + encodeURIComponent(url)); await smry(d).waitFor(); return (await smry(d).innerText()).replace(/\s+/g, ' ') }
   const viaSmry = async (d, url) => { await unreadable(d, url); const tab = d.ctx.waitForEvent('page'); await smry(d).click(); await (await tab).close() }
   check('the smry.ai count starts at nothing: ' + await unreadable(one, RIGHTS), (await smry(one).innerText()).includes('(0/20 today)'))
-  await viaSmry(one, RIGHTS); await viaSmry(one, RIGHTS); await one.sent()
+  const beforeOneSmry = usage.length; await viaSmry(one, RIGHTS); await viaSmry(one, RIGHTS); await one.sent(beforeOneSmry)
   await two.syncNow()
   check('an article opened at smry.ai on device one is counted on device two, once: ' + await unreadable(two, RBI), (await smry(two).innerText()).includes('(1/20 today)'))
-  await viaSmry(two, RBI); await two.sent()
+  const beforeTwoSmry = usage.length; await viaSmry(two, RBI); await two.sent(beforeTwoSmry)
   await one.syncNow()
   check('and device two’s article is counted on device one: ' + await unreadable(one, RBI), (await smry(one).innerText()).includes('(2/20 today)') && (await smry(one).getAttribute('href')) === 'https://smry.ai/' + RBI)
+  // H3: real production UI, independent browser databases, verified Access and real local D1.
+  const highlightUsage = [], articleRequests = []
+  for (const d of [one, two, stranger]) {
+    d.page.on('response', response => {
+      const u = response.headers()['x-tars-highlight-sync-usage']
+      if (u) highlightUsage.push({ device: d.name, usage: u, request: JSON.parse(response.request().postData() ?? '{}') })
+    })
+    d.page.on('request', request => { if (new URL(request.url()).pathname === '/api/article') articleRequests.push(request.url()) })
+  }
+  const highlightRows = d => d.page.evaluate(() => new Promise((resolve, reject) => {
+    const q = indexedDB.open('tars-reader-highlights')
+    q.onerror = () => reject(q.error)
+    q.onsuccess = () => { const db = q.result, r = db.transaction('records').objectStore('records').getAll(); r.onsuccess = () => { db.close(); resolve(r.result) }; r.onerror = () => reject(r.error) }
+  }))
+  const eventually = async (d, predicate) => { for (let i = 0; i < 100; i++) { const rows = await highlightRows(d); if (predicate(rows)) return rows; await d.page.waitForTimeout(100) } throw new Error('Highlights did not settle on ' + d.name) }
+  const prose = Array.from({ length: 12 }, (_, i) => `<p>Paragraph ${i} explains how the committee reviewed the public policy and examined the evidence from districts before publishing its report. Its recommendations cover institutions, implementation, safeguards and the way outcomes should be assessed over the next five years.</p>`).join('')
+  await one.ctx.route('**/api/article*', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ v: 1, url: RBI, html: `<html><head><title>Policy report</title></head><body><article>${prose}</article></body></html>` }) }))
+  // Earlier refusal results are intentionally memory-cached for that Reader visit. Start a new visit.
+  await one.page.reload()
+  await one.open('#/current-affairs?read=' + encodeURIComponent(RBI))
+  await one.page.locator('.reader-body p').first().waitFor()
+  await one.page.getByRole('button', { name: 'Highlighter', exact: true }).click()
+  const quote = await one.page.evaluate(() => {
+    const body = document.querySelector('.reader-body'), node = body.querySelector('p').firstChild, r = document.createRange()
+    body.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerType: 'mouse' }))
+    r.setStart(node, 20); r.setEnd(node, 95)
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r)
+    document.dispatchEvent(new Event('selectionchange'))
+    body.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerType: 'mouse' }))
+    return s.toString()
+  })
+  const created = (await eventually(one, rows => rows.some(r => r.quote === quote)))[0]
+  await eventually(one, () => highlightUsage.some(u => u.device === 'one' && u.request.changes.some(r => r.highlightId === created.highlightId)))
+  await two.syncNow()
+  const received = (await eventually(two, rows => rows.some(r => r.highlightId === created.highlightId)))[0]
+  check('H3 native selection creates locally and uploads automatically; device two receives the same ID, quote, anchor and snapshots', created.highlightId === received.highlightId && created.quote === received.quote && JSON.stringify(created.anchor) === JSON.stringify(received.anchor) && created.createdAt === received.createdAt && created.subjectSnapshot === received.subjectSnapshot)
+  const beforeLibrary = articleRequests.length
+  await two.open('#/current-affairs?view=highlights')
+  await two.page.locator('[data-library-highlight]').waitFor()
+  check('H3 downloaded Highlights library opens without any article-body request', articleRequests.length === beforeLibrary)
+  const edit = () => two.page.locator('[data-library-highlight]').getByRole('button', { name: /^Edit highlight:/ })
+  await edit().click()
+  await two.page.getByRole('button', { name: 'Blue', exact: true }).click()
+  await eventually(two, rows => rows[0]?.color === 'blue')
+  await eventually(two, () => highlightUsage.some(u => u.device === 'two' && u.request.changes.some(r => r.color === 'blue')))
+  await one.syncNow()
+  check('H3 library recolor automatically syncs back to device one', (await highlightRows(one))[0].color === 'blue')
+  await two.ctx.setOffline(true)
+  await two.page.getByRole('button', { name: 'Pink', exact: true }).click()
+  await eventually(two, rows => rows[0]?.color === 'pink')
+  await two.page.waitForTimeout(1800)
+  await two.ctx.setOffline(false)
+  await eventually(two, () => highlightUsage.some(u => u.device === 'two' && u.request.changes.some(r => r.color === 'pink')))
+  await one.syncNow()
+  check('H3 offline recolor stays usable locally and reconnect uploads its authored version', (await highlightRows(one))[0].color === 'pink')
+  await two.page.getByRole('button', { name: /^Delete highlight:/ }).click()
+  await eventually(two, rows => rows[0]?.deletedAt)
+  await eventually(two, () => highlightUsage.some(u => u.device === 'two' && u.request.changes.some(r => r.deletedAt)))
+  await one.syncNow()
+  check('H3 delete propagates as a terminal tombstone', !!(await highlightRows(one))[0].deletedAt)
+  await one.ctx.setExtraHTTPHeaders({ 'Cf-Access-Jwt-Assertion': await token(OTHER) })
+  await one.open('#/settings'); await one.page.locator('[data-sync]').getByRole('button', { name: 'Sync now' }).click()
+  await one.page.locator('[data-sync="mismatch"]').waitFor()
+  check('H3 account switch pauses existing sync UX and keeps local tombstone', !!(await highlightRows(one))[0].deletedAt && (await one.page.locator('[data-sync]').innerText()).includes(USER))
+  await stranger.syncNow()
+  check('H3 other account has no highlights from the first account', (await highlightRows(stranger)).length === 0)
+  await one.ctx.setExtraHTTPHeaders({ 'Cf-Access-Jwt-Assertion': await token(USER) })
+  await one.page.evaluate(() => window.dispatchEvent(new Event('online'))); await one.settled()
+  check('H3 network payload never includes article body, preview Range, resolution or availability', highlightUsage.every(u => !/"(?:html|body|range|resolution|availability)"/.test(JSON.stringify(u.request))))
+  let highlightsAvailable = false
+  await one.ctx.route('**/api/highlights-sync', route => highlightsAvailable ? route.continue() : route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ error: 'storage_unavailable' }) }))
+  await one.open('#/settings'); await one.page.locator('[data-sync]').getByRole('button', { name: 'Sync now' }).click()
+  await one.page.locator('[data-sync="unavailable"]').waitFor()
+  const beforeIndependent = usage.length
+  await one.news('To be Read'); await act(one, 'ISRO launches', READ)
+  for (let i = 0; i < 100 && !usage.slice(beforeIndependent).some(u => u.device === 'one' && u.sent > 0); i++) await one.page.waitForTimeout(100)
+  check('H3 endpoint unavailable does not pause automatic general personal-state sync', usage.slice(beforeIndependent).some(u => u.device === 'one' && u.sent > 0))
+  highlightsAvailable = true
+  await one.page.evaluate(() => window.dispatchEvent(new Event('online'))); await one.settled()
+  writeFileSync(new URL('highlights-results.json', out), JSON.stringify({ highlightUsage, created, received, articleRequests }, null, 2) + '\n')
   // Optional, and the only step here that reaches a publisher: READER_LIVE_URL=<a listed article> fetches it through workerd.
   if (process.env.READER_LIVE_URL) {
     const live = await stranger.page.evaluate(async url => { const started = performance.now(); const r = await fetch('/api/article?url=' + encodeURIComponent(url)); const body = await r.json(); return { status: r.status, error: body.error, chars: body.html?.length ?? 0, scripts: /<script(?![^>]*ld\+json)/i.test(body.html ?? ''), ms: Math.round(performance.now() - started) } }, process.env.READER_LIVE_URL)
@@ -243,12 +335,17 @@ try {
   // D1 bills the index seek itself as one row read, also when it finds nothing.
   check('a sync with nothing new is one indexed query and no write: ' + idle.usage, idle.usage === 'queries=1;read=1;written=0')
   const totals = wrangler(['d1', 'execute', 'tars-sync', '--local', '--persist-to', state, '--json', '--command', '"SELECT user_id, collection, sum(deleted) AS tombstones, count(*) AS n FROM sync_records GROUP BY user_id, collection ORDER BY user_id, collection"'])
+  assert.equal(totals.status, 0, totals.stderr || totals.stdout)
   const stored = JSON.parse(totals.stdout.slice(totals.stdout.indexOf('[')))[0].results
   console.log('D1 contents', JSON.stringify(stored))
+  const highlightTotals = wrangler(['d1', 'execute', 'tars-sync', '--local', '--persist-to', state, '--json', '--command', '"SELECT user_id, highlight_id, value, deleted FROM highlight_sync_records"'])
+  assert.equal(highlightTotals.status, 0, highlightTotals.stderr || highlightTotals.stdout)
+  const storedHighlights = JSON.parse(highlightTotals.stdout.slice(highlightTotals.stdout.indexOf('[')))[0].results
+  check('H3 local D1 stores one terminal excerpt, with no article body or local derived fields', storedHighlights.length === 1 && storedHighlights[0].deleted === 1 && storedHighlights[0].user_id === USER && JSON.parse(storedHighlights[0].value).quote === quote && !/"(?:html|body|range|resolution|availability)"/.test(storedHighlights[0].value))
   check('D1 holds one row per key for this account only (one for the day’s smry.ai count), and no feed or unsaved-article data', stored.every(r => r.user_id === USER) && stored.find(r => r.collection === 'recall').n === HISTORY && stored.find(r => r.collection === 'article').n <= 4 && stored.find(r => r.collection === 'reader').n === 1 && !stored.some(r => !['news', 'article', 'note', 'recall', 'claim', 'settings', 'reader'].includes(r.collection)))
   check('the signing keys were fetched once per runtime, not per request (' + certRequests + ')', certRequests >= 1 && certRequests <= 4)
   assert.deepEqual(errors, [])
-  const summary = { checks, migration, usage: { requests: usage.length, byDevice: Object.fromEntries([...new Set(usage.map(u => u.device))].map(d => [d, usage.filter(u => u.device === d).map(u => `${u.sent}→${u.usage}`)])) }, stored }
+  const summary = { checks, migration, usage: { requests: usage.length, byDevice: Object.fromEntries([...new Set(usage.map(u => u.device))].map(d => [d, usage.filter(u => u.device === d).map(u => `${u.sent}→${u.usage}`)])) }, stored, storedHighlights }
   writeFileSync(new URL('results.json', out), JSON.stringify(summary, null, 2) + '\n')
   console.log(`${checks.length} sync checks passed; no page errors`)
 } catch (error) {

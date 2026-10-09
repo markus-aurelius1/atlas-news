@@ -6,6 +6,7 @@ import { readFileSync } from 'node:fs'
 import { DatabaseSync } from 'node:sqlite'
 import { onRequest as guard } from '../../functions/api/_middleware.ts'
 import { onRequest as sync } from '../../functions/api/sync.ts'
+import { onRequest as highlightSync } from '../../functions/api/highlights-sync.ts'
 import type { D1Like, D1Statement } from '../../src/sync/d1.ts'
 
 export const ISSUER = 'https://tars-team.cloudflareaccess.test'
@@ -18,6 +19,7 @@ interface Statement extends D1Statement { sql: string; params: unknown[] }
 export function sqliteD1() {
   const sqlite = new DatabaseSync(':memory:')
   sqlite.exec(readFileSync(new URL('../../migrations/0001_sync.sql', import.meta.url), 'utf8'))
+  sqlite.exec(readFileSync(new URL('../../migrations/0002_highlights.sql', import.meta.url), 'utf8'))
   const totals = { batches: 0, queries: 0, rowsRead: 0, rowsWritten: 0 }
   const statement = (sql: string, params: unknown[] = []): Statement => ({ sql, params, bind: (...values: unknown[]) => statement(sql, values) })
   const d1: D1Like = {
@@ -74,6 +76,6 @@ export function service(d1: D1Like, env: Record<string, unknown> = ENV) {
   return (request: Request) => {
     const data = {}
     const bindings = { ...env, SYNC_DB: d1 }
-    return guard({ request, env: bindings, data, next: () => sync({ request, env: bindings, data }) })
+    return guard({ request, env: bindings, data, next: () => (new URL(request.url).pathname === '/api/highlights-sync' ? highlightSync : sync)({ request, env: bindings, data }) })
   }
 }

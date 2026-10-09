@@ -15,6 +15,11 @@ const feed = (items = [item]): FeedResponse => ({ version: 1, fetchedAt: now, it
 it('safe rollback defaults to v2; shadow/v3 require explicit build switch', () => {
   expect(validatorMode('')).toBe('v2'); expect(validatorMode('arbitrary')).toBe('v2'); expect(validatorMode('shadow')).toBe('shadow'); expect(validatorMode('v3')).toBe('v3')
 })
+it('personal Saved fallback never enters selected reading Archive or Today', async () => {
+  const result = await evaluateProduction(feed(), index, { history: [], selected: [] }, now), personal = { ...result.events[0], id: 'personal-only', v3: { selectedAt: 0, today: false, rank: Number.MAX_SAFE_INTEGER, savedOnly: true } }
+  const scopes = readingScopes([personal, ...result.events], at + 30 * 86400000)
+  expect(scopes.today).toHaveLength(0); expect(scopes.archive).toHaveLength(1); expect(scopes.savedOnly).toEqual([personal])
+})
 it('production adapter hashes real bounded metadata and excludes body and future fields', async () => {
   const input = await productionInput([{ ...item, body: 'PRIVATE', html: '<article>PRIVATE</article>' } as NewsItem], now)
   expect(JSON.stringify(input)).not.toContain('PRIVATE'); expect(input.versions).toEqual(RUNTIME_VERSIONS)

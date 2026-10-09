@@ -2,9 +2,9 @@
  * The parts of a backup that live outside the main database: the short notes
  * and the Current Affairs reading state (both in localStorage), and the
  * publisher metadata of the articles that state refers to (a small IndexedDB
- * store of its own).
+ * store of its own), plus H1 user highlight excerpts in a separate local database.
  *
- * They are carried in a backup's optional `extras` (backup version 3). A backup
+ * They are carried in a backup's optional `extras` (version 3; highlights added in version 4). A backup
  * without `extras` – every backup made before – restores exactly as it always
  * did and leaves these untouched, in either mode: it never covered them, so it
  * must not erase them.
@@ -23,11 +23,15 @@
  *                  the backup's fills a blank.
  *   articles       added where missing or newer; never removed.
  */
+import { HighlightRepository } from '@/current-affairs/reader/highlights/repository'
+import { parseHighlight, type ReaderHighlight } from '@/current-affairs/reader/highlights/model'
 import { ARCHIVE_DB, readArchive, restoreArticles, type ArchivedArticle } from '@/current-affairs/archive'
 import { CA_NOTES_KEY, parseStickyNotes, type StickyNotes } from './compatibility/notes'
 import { CA_STATE_KEY, parsePersonalState, type PersonalEntry, type PersonalState } from '@/current-affairs/personal-state'
 
 export interface BackupExtras {
+    /** v4: user excerpts only; private sync metadata is never exported. */
+  readerHighlights?: ReaderHighlight[]
   notes?: StickyNotes
   currentAffairs?: {
     state: PersonalState
@@ -52,8 +56,10 @@ export interface ExtrasReport {
   notes: number
   /** Articles whose reading state was added or changed (or, replacing, loaded). */
   articles: number
-  /** Parts left alone because what is stored on this device could not be read; nothing was overwritten. */
-  preserved: Array<'notes' | 'currentAffairs'>
+  /** Live H1 excerpts carried by a supplied highlight backup. */
+  highlights?: number
+  /** Parts left alone because storage could not be read; nothing there was overwritten. */
+  preserved: Array<'notes' | 'currentAffairs' | 'readerHighlights'>
 }
 
 const env = (e: ExtrasEnv = {}) => ({
@@ -63,10 +69,17 @@ const env = (e: ExtrasEnv = {}) => ({
 
 const live = (notes: StickyNotes) => Object.values(notes.entries).filter((n) => !n.deletedAt).length
 
-/** Everything outside the main database, as it is now. A part that cannot be read is left out rather than failing the backup. */
+/** Existing optional extras remain best-effort. H1 excerpts fail export explicitly rather than silently lose user data. */
 export async function collectExtras(e?: ExtrasEnv): Promise<BackupExtras> {
   const { storage, factory } = env(e)
   const extras: BackupExtras = {}
+  if (factory) {
+    const repository = new HighlightRepository(undefined, factory)
+    try {
+      const rows = await repository.backup()
+      extras.readerHighlights = rows.map(parseHighlight)
+    } finally { repository.close() }
+  }
   if (!storage) return extras
   try {
     const notes = parseStickyNotes(storage.getItem(CA_NOTES_KEY))
@@ -96,8 +109,12 @@ export async function collectExtras(e?: ExtrasEnv): Promise<BackupExtras> {
 export function parseExtras(raw: unknown): BackupExtras | undefined {
   if (raw === undefined || raw === null) return undefined
   if (typeof raw !== 'object' || Array.isArray(raw)) throw new Error('The notes and reading state in this backup are malformed.')
-  const r = raw as { notes?: unknown; currentAffairs?: { state?: unknown; articles?: unknown } }
+  const r = raw as { readerHighlights?: unknown; notes?: unknown; currentAffairs?: { state?: unknown; articles?: unknown } }
   const out: BackupExtras = {}
+  if (r.readerHighlights !== undefined) {
+    if (!Array.isArray(r.readerHighlights)) throw new Error('The highlights in this backup are malformed.')
+    out.readerHighlights = r.readerHighlights.map(parseHighlight)
+  }
   if (r.notes !== undefined) {
     try {
       out.notes = parseStickyNotes(JSON.stringify(r.notes))
@@ -152,6 +169,13 @@ export function mergePersonalState(local: PersonalState, incoming: PersonalState
 export async function restoreExtras(extras: BackupExtras | undefined, mode: 'merge' | 'replace', e?: ExtrasEnv): Promise<ExtrasReport> {
   const report: ExtrasReport = { notes: 0, articles: 0, preserved: [] }
   const { storage, factory } = env(e)
+  if (extras?.readerHighlights !== undefined && factory) {
+    const repository = new HighlightRepository(undefined, factory)
+    try { await repository.restore(extras.readerHighlights, mode); if (extras.readerHighlights.length) report.highlights = extras.readerHighlights.filter((r) => !r.deletedAt).length }
+    catch { report.preserved.push('readerHighlights') }
+    finally { repository.close() }
+  }
+  // Absent highlight extras (v1-v3) never erase highlights, including Replace.
   if (!extras || !storage) return report
 
   if (extras.notes || mode === 'replace') {
@@ -207,6 +231,13 @@ export async function eraseExtras(e?: ExtrasEnv): Promise<void> {
   storage?.removeItem(CA_NOTES_KEY)
   storage?.removeItem(CA_STATE_KEY)
   if (!factory) return
+  const repository = new HighlightRepository(undefined, factory)
+  try {
+    await repository.transaction('rw', repository.records, repository.syncRows, repository.syncOutbox, repository.syncMeta, async () => {
+      await repository.records.clear()
+      await repository.resetHighlightSync()
+    })
+  } finally { repository.close() }
   await new Promise<void>((resolve) => {
     const request = factory.deleteDatabase(ARCHIVE_DB)
     request.onsuccess = request.onerror = request.onblocked = () => resolve()

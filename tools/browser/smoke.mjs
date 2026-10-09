@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { chromium } from 'playwright-core'
 import { prepare } from './lib.mjs'
 const base=process.argv[2]??'http://127.0.0.1:4173/'
-const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined})
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost']})
 let checks=0
 try {
   for(const width of [390,1366])for(const theme of ['light','dark']) {

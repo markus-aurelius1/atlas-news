@@ -3,10 +3,18 @@
   "current": 4000,
   "history": 12000,
   "repetitions": 5,
-  "p50Ms": 314.2008000000001,
-  "p95Ms": 379.8727,
+  "p50Ms": 965.9583999999998,
+  "p95Ms": 1210.9002,
   "comparisons": 12000,
   "units": 4000,
-  "heapSampleBytes": 71971128,
-  "budget": "Phone responsiveness pending physical-device profiling; no production budget pass claimed"
+  "heapSampleBytes": 80615752,
+  "budget": "Phone responsiveness pending physical-device profiling; no production budget pass claimed",
+  "broadTheme": {
+    "label": "Synthetic crowded-theme abstention stress; no truncation-based novelty claim",
+    "current": 4000,
+    "history": 12000,
+    "elapsedMs": 437.15480000000025,
+    "comparisons": 0,
+    "abstentions": 4000
+  }
 }

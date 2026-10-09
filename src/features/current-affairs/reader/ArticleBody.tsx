@@ -4,7 +4,7 @@
  * ever inserted as HTML: an element this file does not name cannot reach the page.
  */
 import { ArrowUpRight } from 'lucide-react'
-import { createElement, memo, useMemo, useState, type ReactNode } from 'react'
+import { createElement, memo, useMemo, useState, type ReactNode, type RefObject } from 'react'
 import { READER_ELEMENTS } from '@/current-affairs/reader/sanitize'
 
 const VOID = new Set(['br', 'hr'])
@@ -120,7 +120,7 @@ function build(node: Node, key: number, structural: boolean): ReactNode {
   return createElement(tag, props, ...children(el, STRUCTURAL.has(tag)))
 }
 
-export const ArticleBody = memo(function ArticleBody({ html }: { html: string }) {
+export const ArticleBody = memo(function ArticleBody({ html, bodyRef }: { html: string; bodyRef?: RefObject<HTMLDivElement | null> }) {
   const content = useMemo(() => children(new DOMParser().parseFromString(`<!doctype html><body>${html}</body>`, 'text/html').body, false), [html])
-  return <div className="reader-body">{content}</div>
+  return <div ref={bodyRef} className="reader-body">{content}</div>
 })

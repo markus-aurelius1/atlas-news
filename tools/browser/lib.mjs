@@ -4,7 +4,7 @@
 import { chromium } from 'playwright-core'
 
 export async function launch({ touch = false, dpr = 3 } = {}) {
-  const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+  const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: dpr, hasTouch: touch, isMobile: touch })
   const page = await ctx.newPage()
   return { browser, ctx, page }

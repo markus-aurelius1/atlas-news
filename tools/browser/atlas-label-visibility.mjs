@@ -6,7 +6,7 @@ import { inspectLabelSurface } from './label-surface.mjs'
 
 const base = process.argv[2] ?? 'http://127.0.0.1:4180/'
 const names = new Map(JSON.parse(readFileSync(new URL('../../public/atlas/v1/places.json', import.meta.url), 'utf8')).places.map(place => [place.id, place.name]))
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 const checks = [], snapshots = [], errors = []
 const out = 'tools/browser/out/label-visibility'
 mkdirSync(out, { recursive: true })

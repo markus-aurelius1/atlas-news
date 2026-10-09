@@ -7,6 +7,10 @@ import { isTyping } from '@/app/shortcuts'
 import { latestPublication, queueCounts, readingScopes, recentCoverage } from '@/current-affairs/analytics'
 import { archiveDays, archivePeriods, periodKey, periodLabel, type ArchivePeriod } from '@/current-affairs/archive'
 import { eventPersonalState } from '@/current-affairs/personal-state'
+import { NEWS_SUBJECTS } from '@/current-affairs/subjects'
+import type { ReaderHighlight } from '@/current-affairs/reader/highlights/model'
+import { HighlightsLibrary } from './HighlightsLibrary'
+import { useHighlightLibrary } from './useHighlightLibrary'
 import { NEWS_SOURCES, isActiveSource } from '@/current-affairs/sources'
 import { groupTopics, type TopicGroup } from '@/current-affairs/topics'
 import { editionProgress, filterWorkspace, publicationDay, UNDATED, type ReadingTab, type WorkspaceEvent, type WorkspaceFilters } from '@/current-affairs/workspace'
@@ -27,7 +31,7 @@ const TABS: Array<{ id: ReadingTab; label: string }> = [
 ]
 const ALL = 'All subjects'
 /** Syllabus order: how a paper is read, not how loud a story is. */
-const SUBJECTS = ['Polity', 'Governance', 'Economy', 'International relations', 'Environment', 'Geography', 'Sci-Tech', 'Security', 'History & Culture', 'General studies']
+const SUBJECTS: readonly string[] = NEWS_SUBJECTS
 const GENERAL = 'General studies'
 const PAGE = 60
 const NO_MARKS = {}
@@ -53,7 +57,18 @@ export default function NewsScreen() {
     const day = publicationDay(Date.now())
     setFilters((f) => (f.day === day ? f : { ...f, day }))
   }, [setFilters])
-  const [view, setView] = useRouteState<'Today' | 'Archive'>('current-affairs:view', 'Today')
+  const [edition, setView] = useRouteState<'Today' | 'Archive'>('current-affairs:view', 'Today')
+  const view = route.params.get('view') === 'highlights' ? 'Highlights' : edition
+  const library = useHighlightLibrary()
+  const [unavailableArticles, setUnavailableArticles] = useState<ReadonlySet<string>>(new Set())
+  const articleAvailability = useCallback((url: string, available: boolean) => {
+    setUnavailableArticles((prior) => {
+      if (prior.has(url) === !available) return prior
+      const next = new Set(prior)
+      if (available) next.delete(url); else next.add(url)
+      return next
+    })
+  }, [])
   const [period, setPeriod] = useRouteState<ArchivePeriod>('current-affairs:period', 'Daily')
   const [archiveKey, setArchiveKey] = useRouteState('current-affairs:archive', 'all')
   const [filtersOpen, setFiltersOpen] = useState(false)
@@ -64,8 +79,10 @@ export default function NewsScreen() {
   useEffect(() => setVisibleCount(PAGE), [filters, view, period, archiveKey])
 
   const scopes = useMemo(() => readingScopes(events, now), [events, now])
-  const base = view === 'Today' ? scopes.today : scopes.archive
-  const periods = useMemo(() => [...new Set(scopes.archive.map((e) => periodKey(e.day, period)))].sort((a, b) => (a === UNDATED ? 1 : b === UNDATED ? -1 : b.localeCompare(a))), [scopes.archive, period])
+  // Personal Saved fallback is reachable explicitly, never added to the curated
+  // Today stream or selected-only reading Archive.
+  const base = useMemo(() => [...(view === 'Today' ? scopes.today : scopes.archive), ...(filters.tab === 'Saved' ? scopes.savedOnly : [])], [view, scopes, filters.tab])
+  const periods = useMemo(() => [...new Set([...scopes.archive, ...(filters.tab === 'Saved' ? scopes.savedOnly : [])].map((e) => periodKey(e.day, period)))].sort((a, b) => (a === UNDATED ? 1 : b === UNDATED ? -1 : b.localeCompare(a))), [scopes, filters.tab, period])
   const scope = useMemo(() => {
     if (view !== 'Archive' || archiveKey === 'all') return base
     const included = new Set(archiveDays(base, period, archiveKey))
@@ -125,8 +142,12 @@ export default function NewsScreen() {
     setArchiveKey('all')
     updateFilters({ day: today, subject: ALL, publisher: 'All sources', exam: 'All', budget: null })
   }
-  const changeView = (next: 'Today' | 'Archive') => {
+  const changeView = (next: 'Today' | 'Archive' | 'Highlights') => {
     if (next === view) return
+    const params = new URLSearchParams(currentRoute().params)
+    if (next === 'Highlights') params.set('view', 'highlights'); else params.delete('view')
+    navigate(`#/current-affairs${params.size ? '?' + params : ''}`, { replace: true })
+    if (next === 'Highlights') return
     setView(next)
     setArchiveKey('all')
     updateFilters({ subject: ALL, budget: null })
@@ -154,7 +175,7 @@ export default function NewsScreen() {
     return map
   }, [events])
   // One article per story, in the order the list shows them.
-  const order = useMemo(() => sections.flatMap((s) => s.groups.flatMap((g) => [g.anchor, ...g.rest])).filter((e) => e.lead).map((e) => e.item.url), [sections])
+  const order = useMemo(() => view === 'Highlights' ? [] : sections.flatMap((s) => s.groups.flatMap((g) => [g.anchor, ...g.rest])).filter((e) => e.lead).map((e) => e.item.url), [sections, view])
   /**
    * Previous and next follow the list as it stood when the reader opened: marking an article read moves it out
    * of To Read underneath, and must not change where "next" leads.
@@ -177,13 +198,22 @@ export default function NewsScreen() {
   const openReader = useCallback((url: string, replace = false) => {
     const params = new URLSearchParams(currentRoute().params)
     params.set('read', url)
+    params.delete('highlight')
     navigate(`#/current-affairs?${params}`, { replace })
   }, [])
-  const closeReader = useCallback(() => goBack('#/current-affairs'), [])
+  const openHighlight = useCallback((row: ReaderHighlight, passage = false) => {
+    const params = new URLSearchParams(currentRoute().params)
+    params.set('view', 'highlights'); params.set('read', row.articleUrl)
+    if (passage) params.set('highlight', row.highlightId); else params.delete('highlight')
+    navigate(`#/current-affairs?${params}`)
+  }, [])
+  const closeReader = useCallback(() => goBack(currentRoute().params.get('view') === 'highlights' ? '#/current-affairs?view=highlights' : '#/current-affairs'), [])
   // Stepping replaces the address, so Back always returns to the list.
   const stepReader = useCallback((url: string) => openReader(url, true), [openReader])
   const actInReader = useCallback((event: WorkspaceEvent, action: 'read' | 'save') => act(event, action), [act])
   const reading = readUrl ? (byUrl.get(readUrl) ?? null) : null
+  const targetId = route.params.get('highlight')
+  const savedArticle = readUrl ? library.records.find((r) => r.articleUrl === readUrl && r.highlightId === targetId) ?? library.records.find((r) => r.articleUrl === readUrl) ?? null : null
   const at = readUrl ? sequence.indexOf(readUrl) : -1
 
   const closeSearch = () => {
@@ -193,6 +223,7 @@ export default function NewsScreen() {
   }
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (currentRoute().params.get('view') === 'highlights') return
       if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || isTyping(e.target) || anyLayerOpen()) return
       e.preventDefault()
       setSearchOpen(true)
@@ -224,7 +255,7 @@ export default function NewsScreen() {
               </span>
             </p>
           </div>
-          <div className="news-actions">
+          {view !== 'Highlights' && <div className="news-actions">
             <button ref={searchTrigger} type="button" className="tool" aria-label="Search news" title="Search (/)" aria-expanded={searching} aria-controls="news-search" onClick={() => { setSearchOpen(true); requestAnimationFrame(() => searchInput.current?.focus()) }}>
               <Search />
             </button>
@@ -235,10 +266,10 @@ export default function NewsScreen() {
             <button type="button" className="tool" aria-label="Refresh news" title="Refresh now" onClick={reload} disabled={refreshing} data-busy={refreshing || undefined}>
               <RefreshCw className={cn(refreshing && 'news-spin')} />
             </button>
-          </div>
+          </div>}
         </div>
 
-        {searching && (
+        {view !== 'Highlights' && searching && (
           <div id="news-search" className="news-search">
             <Search aria-hidden="true" />
             <input
@@ -261,29 +292,29 @@ export default function NewsScreen() {
           </div>
         )}
 
-        <div className="news-bar">
-          <div role="group" aria-label="Reading filter" className="news-tabs">
+        <div className="news-bar" data-library={view === 'Highlights' || undefined}>
+          {view !== 'Highlights' && <div role="group" aria-label="Reading filter" className="news-tabs">
             {TABS.map(({ id, label }) => (
               <button key={id} type="button" aria-label={id} aria-pressed={filters.tab === id} onClick={() => updateFilters({ tab: id })}>
                 {label}
                 <span className="type-numeric">{counts[id]}</span>
               </button>
             ))}
-          </div>
+          </div>}
           <div role="group" aria-label="Edition" className="news-scope">
-            {(['Today', 'Archive'] as const).map((v) => (
+            {(['Today', 'Archive', 'Highlights'] as const).map((v) => (
               <button key={v} type="button" aria-pressed={view === v} aria-label={v} onClick={() => changeView(v)}>
                 {v}
               </button>
             ))}
           </div>
         </div>
-        <div className="news-progress" role="progressbar" aria-label="Daily reading progress" aria-valuemin={0} aria-valuemax={Math.max(progress.total, 1)} aria-valuenow={progress.read}>
+        {view !== 'Highlights' && <div className="news-progress" role="progressbar" aria-label="Daily reading progress" aria-valuemin={0} aria-valuemax={Math.max(progress.total, 1)} aria-valuenow={progress.read}>
           <span style={{ transform: `scaleX(${progress.total ? progress.read / progress.total : 0})` }} />
-        </div>
+        </div>}
       </header>
 
-      <div className="news-body">
+      {view === 'Highlights' ? <HighlightsLibrary {...library} unavailable={unavailableArticles} open={openHighlight} /> : <div className="news-body">
         <nav className="news-index" aria-label="Subjects">
           <p className="eyebrow">{scopeLabel}</p>
           <p data-edition-progress className="news-index-progress">
@@ -387,9 +418,9 @@ export default function NewsScreen() {
           )}
           <p className="news-foot">Headlines and excerpts come from publisher feeds. A headline opens its article in the reader, fetched from the publisher at that moment and not kept; the original is always one press away. {import.meta.env.VITE_NEWS_VALIDATOR === 'v3' ? 'Today lists selected substantive UPSC reading; previously selected reading stays in the Archive.' : 'Only stories that pass the PYQ-backed UPSC check are listed.'} Reading times are estimates.</p>
         </div>
-      </div>
+      </div>}
 
-      <Sheet open={filtersOpen} onClose={() => setFiltersOpen(false)} title="News filters" size="md">
+      <Sheet open={filtersOpen && view !== 'Highlights'} onClose={() => setFiltersOpen(false)} title="News filters" size="md">
         <div id="ca-filters" className="news-filters">
           <fieldset>
             <legend className="eyebrow">Exam</legend>
@@ -471,7 +502,10 @@ export default function NewsScreen() {
       <Reader
         url={readUrl}
         entry={reading}
-        resolving={!reading && (loading || !index)}
+        snapshot={savedArticle}
+        highlightId={targetId}
+        onAvailability={savedArticle ? articleAvailability : undefined}
+        resolving={!reading && !savedArticle && (loading || !index || library.loading)}
         personal={reading ? eventPersonalState(reading.event, state) : NO_MARKS}
         prev={at > 0 ? (byUrl.get(sequence[at - 1]) ?? null) : null}
         next={at >= 0 && at < sequence.length - 1 ? (byUrl.get(sequence[at + 1]) ?? null) : null}

@@ -127,7 +127,7 @@ try {
     requests.clear(); healthFailures = 1; session = 'ok'; sessionVisits = 0
     const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: theme, timezoneId: 'Asia/Kolkata', serviceWorkers: 'block' }), page = await ctx.newPage()
     page.on('pageerror', e => errors.push(`${tag}: ${e.message}`))
-    await ctx.route('https://**/*fixture*', route => route.fulfill({ contentType: 'text/html', body: '<h1>Original publisher fixture</h1>' }))
+    await ctx.route(url => ['indianexpress.com', 'www.thehindu.com', 'www.theguardian.com', 'www.hindustantimes.com', 'www.ft.com'].includes(url.hostname), route => route.fulfill({ contentType: 'text/html', body: '<h1>Original publisher fixture</h1>' }))
     // smry.ai is stood in for: the check is about where Tars sends the reader, not about that service.
     await ctx.route(url => url.hostname === 'smry.ai', route => route.fulfill({ contentType: 'text/html', body: '<h1>Outside Tars</h1>' }))
     await ctx.route('https://images.example.org/**', route => route.request().url().includes('broken') ? route.fulfill({ status: 404 }) : route.fulfill({ contentType: 'image/svg+xml', body: picture }))

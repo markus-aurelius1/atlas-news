@@ -5,7 +5,7 @@ import { chromium } from 'playwright-core'
 import { inspectLabelSurface } from './label-surface.mjs'
 
 const base = process.argv[2] ?? 'http://127.0.0.1:4182/'
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 const checks = [], errors = [], consoleReads = []
 const out = `tools/browser/out/atlas-cold-start/${new URL(base).port || 'default'}`
 mkdirSync(out, { recursive: true })

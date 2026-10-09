@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { NewsItem } from '../types'
-import { buildStories, equivalentDevelopment, materialDelta, storyFrame, type MetadataObservation, type SelectedReading } from './stories'
+import { buildStories, equivalentDevelopment, materialDelta, storyFrame, STORY_POLICY, type MetadataObservation, type SelectedReading } from './stories'
 
 const day = 86400000, start = Date.parse('2026-10-01T12:00:00.000Z')
 const item = (title: string, url = 'https://indianexpress.com/fixture', extra: Partial<NewsItem> = {}): NewsItem => ({ title, url, publisher: 'Indian Express', sourceId: 'ie-explained', section: 'National', description: '', publishedAt: new Date(start).toISOString(), ...extra })
@@ -66,5 +66,13 @@ describe('labelled SYNTHETIC temporal replay; never natural production gold', ()
   it('a shared institution or number cannot chain distinct developments', () => {
     expect(equivalentDevelopment(original, item('Election Commission approves data protection framework in India', 'https://example.org/other'))).toBe(false)
     expect(equivalentDevelopment(item('UPSC Key: quantum research and inflation'), item('UPSC Key: quantum research and inflation', 'https://example.org/digest'))).toBe(false)
+  })
+  it('crowded history abstains explicitly instead of sampling or performing an unbounded strongest search', () => {
+    const history = Array.from({ length: STORY_POLICY.maxComparisonBucket + 1 }, (_, i) => observe(item('RBI changes liquidity framework ' + i, 'https://example.org/' + i)))
+    const next = observe(item('RBI changes liquidity framework', 'https://example.org/next'), start + day)
+    const result = buildStories([next], history, [], start + day)
+    expect(result.units[0]).toMatchObject({ novelty: 'uncertain', reason: 'comparison_budget_exceeded' })
+    expect(result.comparisons).toBe(0)
+    expect(buildStories([next], [...history].reverse(), [], start + day)).toEqual(result)
   })
 })
