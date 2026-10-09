@@ -1,5 +1,0 @@
-# Preserve exact frozen bytes and recognize their original CRLF line endings.
-calibration-gold-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-calibration-gold.mjs -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-calibration-gold-requirements.mjs -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-calibration-gold.test.mjs -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

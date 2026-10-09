@@ -24,20 +24,12 @@
     "news:snapshot": "node tools/news/snapshot.ts",
     "news:audit": "node tools/news/audit.ts",
     "news:today": "node tools/news/today.mjs",
-    "news:evaluation": "node tools/news/evaluation/cli.ts",
-    "test:evaluation": "node --test tools/news/evaluation/evaluation.test.ts",
     "news:reader": "node tools/news/reader-probe.mjs",
     "news:relevance": "node tools/current-affairs/build-relevance.mjs",
     "test:browser": "node tools/browser/run.mjs",
     "build:cloudflare": "node tools/cloudflare/build.mjs",
     "atlas:places": "npm run places --prefix tools/atlas-build",
-    "atlas:soi": "node tools/atlas-build/import-soi-boundary.mjs",
-    "test:source-intelligence": "vitest run src/current-affairs/validator-v3 tools/cloudflare/current-affairs.test.ts src/features/current-affairs/useFeeds.test.tsx",
-    "test:source-audit": "node --test tools/news/evaluation/source-audit.test.ts",
-    "news:source-audit": "node tools/news/evaluation/source-audit-cli.ts",
-    "test:bootstrap": "node --test tools/news/evaluation/bootstrap.test.ts tools/news/evaluation/editorial.test.ts",
-    "news:bootstrap": "node tools/news/evaluation/bootstrap-cli.ts",
-    "news:bootstrap:capture": "node tools/news/evaluation/bootstrap-capture.ts"
+    "atlas:soi": "node tools/atlas-build/import-soi-boundary.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",

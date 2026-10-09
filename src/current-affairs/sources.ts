@@ -4,7 +4,7 @@
  * this gateway's own request shape and parser on 2026-10-05; empty, dormant, RSS 1.0/RDF and redundant
  * candidates are excluded. Keep the registry below 100 sources and run `npm run news:probe` before adding.
  * Job B appended nine feeds from publisher RSS directories; two successful bounded probes per endpoint on
- * 2026-10-07. See tools/news/evaluation/JOB_B_REPORT.md for incremental coverage, freshness and limitations.
+ * 2026-10-07.
  * Times of India feeds are personal-use only: never expose this gateway as a public syndication endpoint.
  */
 import type { NewsItem, NewsSource } from './types.ts'

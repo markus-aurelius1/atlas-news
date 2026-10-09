@@ -5,7 +5,7 @@ import { buildStories, equivalentDevelopment } from './stories'
 import type { StageCObservation } from './contracts'
 import type { NewsItem } from '../types'
 
-// Mechanism regressions for the defects recorded in docs/production-release/OWNER_REVIEW_RESULTS.md.
+// Mechanism regressions for defects the owner recorded when reviewing the first v3 release candidate.
 // Natural rows quote captured feed metadata from that review; every other row is a
 // synthetic adjacent control. Neither is a production quality estimate.
 const versions = { policyId: 'tars-validator-stage-c/1', policyHash: 'a'.repeat(64), indexHash: 'a'.repeat(64), registryHash: 'a'.repeat(64), authorHash: 'a'.repeat(64), codeHash: 'a'.repeat(64) }

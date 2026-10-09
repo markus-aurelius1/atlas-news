@@ -1,8 +1,0 @@
-{
-  "count": 100,
-  "uploadMs": 257,
-  "downloadMs": 121,
-  "incrementalBothMs": 69,
-  "uploadRequests": 2,
-  "downloadRequests": 1
-}

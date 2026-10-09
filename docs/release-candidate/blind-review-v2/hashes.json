@@ -1,8 +1,0 @@
-{
-  "sampleSha256": "853a8bc657b4a78faeda25a95219dd95248ae7cb0d5f2a6f2651deaa1118b547",
-  "htmlSha256": "241b6c96a69b92c44ae6da9f7029911929278040aebdc1cf73d0c0567492db27",
-  "frozenBeforeCandidateEvaluation": true,
-  "articles": 50,
-  "pairs": 10,
-  "labels": null
-}

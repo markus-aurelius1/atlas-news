@@ -47,7 +47,7 @@ describe('final corrections: exposed natural regressions and labelled synthetic 
     expect(storyFrame(item('RBI revises liquidity rules', 'https://example.org/a')).action).toBe('changes')
   })
   it('natural Physics reports reconcile by observed scientist and mechanism, preserving the explanation', () => {
-    const rows = JSON.parse(readFileSync('docs/owner-validation-v1/owner-review.original.json', 'utf8')).records
+    const rows = JSON.parse(readFileSync('src/current-affairs/fixtures/owner-review-v1.json', 'utf8')).records
     const natural = (n: number) => ({ ...rows[n - 1].metadata, sourceId: 'natural', section: rows[n - 1].metadata.memberships[0].section }) as NewsItem
     for (const [a, b] of [[4, 13], [4, 17], [13, 17]]) expect(equivalentDevelopment(natural(a), natural(b))).toBe(true)
     for (const n of [4, 13, 17]) expect(equivalentDevelopment(natural(n), natural(15))).toBe(false)
