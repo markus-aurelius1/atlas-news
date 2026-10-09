@@ -1,0 +1,59 @@
+Parent: 349c86c4a57eaeb8f0d7f1928fdac61505e7479f
+Branch: codex/validator-v3-stage-c
+Snapshot: real staged index before the owner-authorized single local commit.
+Final commit SHA and postcommit status are supplied in the handoff response.
+
+git diff --stat (unstaged):
+[empty]
+
+git diff --cached --stat (real staged index):
+ src/current-affairs/validator-v3/contracts.ts      |   36 +
+ src/current-affairs/validator-v3/eligibility.ts    |    9 +
+ src/current-affairs/validator-v3/evidence.ts       |   64 +
+ src/current-affairs/validator-v3/policy.ts         |   42 +
+ src/current-affairs/validator-v3/relevance.ts      |   11 +
+ src/current-affairs/validator-v3/stage-c.test.ts   |  116 +
+ src/current-affairs/validator-v3/stage-c.ts        |   31 +
+ tools/news/evaluation/stage-c-report.mjs           |   70 +
+ tools/news/evaluation/stage-c-runner.ts            |   28 +
+ tools/news/evaluation/stage-c-v1/CASE_ANALYSIS.md  |   66 +
+ tools/news/evaluation/stage-c-v1/CHANGED_FILES.txt |   20 +
+ tools/news/evaluation/stage-c-v1/COMPARISON.md     |  182 +
+ tools/news/evaluation/stage-c-v1/GIT.txt           |   59 +
+ tools/news/evaluation/stage-c-v1/RULES.md          |   65 +
+ tools/news/evaluation/stage-c-v1/VERIFICATION.json |  277 +
+ tools/news/evaluation/stage-c-v1/VERIFICATION.md   |   52 +
+ tools/news/evaluation/stage-c-v1/comparison.json   | 8927 ++++++++++++++++++++
+ tools/news/evaluation/stage-c-v1/predictions.json  | 8656 +++++++++++++++++++
+ .../evaluation/stage-c-v1/reproducibility.json     |  202 +
+ tools/news/evaluation/stage-c.test.mjs             |   51 +
+ 20 files changed, 18964 insertions(+)
+
+git status --short -uall (real staged index):
+A  src/current-affairs/validator-v3/contracts.ts
+A  src/current-affairs/validator-v3/eligibility.ts
+A  src/current-affairs/validator-v3/evidence.ts
+A  src/current-affairs/validator-v3/policy.ts
+A  src/current-affairs/validator-v3/relevance.ts
+A  src/current-affairs/validator-v3/stage-c.test.ts
+A  src/current-affairs/validator-v3/stage-c.ts
+A  tools/news/evaluation/stage-c-report.mjs
+A  tools/news/evaluation/stage-c-runner.ts
+A  tools/news/evaluation/stage-c-v1/CASE_ANALYSIS.md
+A  tools/news/evaluation/stage-c-v1/CHANGED_FILES.txt
+A  tools/news/evaluation/stage-c-v1/COMPARISON.md
+A  tools/news/evaluation/stage-c-v1/GIT.txt
+A  tools/news/evaluation/stage-c-v1/RULES.md
+A  tools/news/evaluation/stage-c-v1/VERIFICATION.json
+A  tools/news/evaluation/stage-c-v1/VERIFICATION.md
+A  tools/news/evaluation/stage-c-v1/comparison.json
+A  tools/news/evaluation/stage-c-v1/predictions.json
+A  tools/news/evaluation/stage-c-v1/reproducibility.json
+A  tools/news/evaluation/stage-c.test.mjs
+
+git diff --check: passed
+git diff --cached --check: passed
+Original PYQ checkout: unchanged status and all 127 dirty-file byte hashes.
+Frozen gold: 15 inventory entries plus manifest companion verified.
+Frozen source package: 28 protected artifacts and full 27-entry inventory verified.
+No production edits, D/E/F, push, merge or deploy.
