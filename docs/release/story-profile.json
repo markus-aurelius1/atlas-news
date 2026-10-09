@@ -1,0 +1,12 @@
+{
+  "label": "Synthetic local Node scale profiling only; not phone or production performance",
+  "current": 4000,
+  "history": 12000,
+  "repetitions": 5,
+  "p50Ms": 314.2008000000001,
+  "p95Ms": 379.8727,
+  "comparisons": 12000,
+  "units": 4000,
+  "heapSampleBytes": 71971128,
+  "budget": "Phone responsiveness pending physical-device profiling; no production budget pass claimed"
+}

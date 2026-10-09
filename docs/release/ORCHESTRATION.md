@@ -13,16 +13,18 @@ The three copied planning specifications retain their original bytes. Current ow
 
 Original PYQ checkout: read-only status and SHA-256 fingerprints of all 127 dirty/untracked files captured in ignored `tools/news/.cache/release/original-before.json`. Compare at completion. No sibling checkout may be written.
 
-Current stage: C verification / D implementation. Dependencies copied from an existing local worktree; no dependency download.
+Milestones: C `ec125e3eb80b9eedc64804636955465d9580742d`; D `3f01fc386a29651ea1cf44866c4fd26f42484d19`; E commit is identified by `E_HANDOFF.md` history. Dependencies copied from an existing local worktree; no dependency download.
+
+Current stage: E verified / F implementation. C Reader gate now passes 320 checks, phone/desktop and both themes. D root 657 tests; E root 671 tests. Subject calibration 29/31 exact-primary; cases 6/34 abstain. See stage handoffs and reports for scope/denominators.
 
 Stage C calibration: TP 28 / FP 0 / FN 3 / TN 16; 28/28 precision, 28/31 recall; must-read 16/17. Three unresolvable abstentions excluded from binary truth; three resolved deferred positives remain misses. This enriched exposed calibration is not production evaluation.
 
 Open gates:
-- Reader fixture popup timeout: investigate and verify locally.
+- Reader fixture popup timeout: RESOLVED by loopback external-page simulation; production Reader unchanged.
 - Independent broader development/validation labels, pair/anchor/temporal judgments and sealed future holdout are absent. Do not manufacture labels or execute a purported A3 holdout run.
 - Real multi-day temporal evidence is limited; synthetic replay must be identified separately.
 - Physical touch/stylus, hosted Access/D1 and production publisher behavior cannot be certified by local emulation.
 
-Next: accept C reproducibility and Reader fixture gate, finish independent subject rules/tests, commit D once its local engineering gate passes; then E, F, A3 controlled adapter, Highlights and combined checks. Quality evidence gates remain independent from code/test completion.
+Next: F selection/diagnostics and wider captured-metadata shadow, then A3 controlled adapter, Highlights and combined checks. Quality evidence gates remain independent from code/test completion.
 
 Required combined checks: root typecheck/lint/tests/pipeline/build; evaluation and replay; full desktop/mobile browser suite; Highlights library/responsiveness/sync; ephemeral local migrations/workerd/Access; historical data/backup/account isolation; protected hashes and whitespace; static Free-plan limits; deployment and rollback runbook; clean committed release.
