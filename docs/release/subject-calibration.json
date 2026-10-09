@@ -1,0 +1,1288 @@
+{
+  "label": "Exposed enriched owner calibration; not statistical release evaluation",
+  "independentOfAcceptance": true,
+  "correct": 29,
+  "denominator": 31,
+  "accuracy": 0.9354838709677419,
+  "macroF1": 0.9761904761904763,
+  "classes": [
+    {
+      "subject": "Polity",
+      "support": 5,
+      "tp": 5,
+      "predicted": 5,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "Governance",
+      "support": 1,
+      "tp": 1,
+      "predicted": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "Economy",
+      "support": 8,
+      "tp": 8,
+      "predicted": 8,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "International relations",
+      "support": 7,
+      "tp": 5,
+      "predicted": 5,
+      "recall": 0.7142857142857143,
+      "f1": 0.8333333333333334
+    },
+    {
+      "subject": "Security",
+      "support": 3,
+      "tp": 3,
+      "predicted": 3,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "Sci-Tech",
+      "support": 6,
+      "tp": 6,
+      "predicted": 6,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "Environment",
+      "support": 1,
+      "tp": 1,
+      "predicted": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "subject": "Geography",
+      "support": 0,
+      "tp": 0,
+      "predicted": 0,
+      "recall": null,
+      "f1": null
+    },
+    {
+      "subject": "History & Culture",
+      "support": 0,
+      "tp": 0,
+      "predicted": 0,
+      "recall": null,
+      "f1": null
+    }
+  ],
+  "confusion": {
+    "Economy": {
+      "Economy": 8
+    },
+    "Environment": {
+      "Environment": 1
+    },
+    "International relations": {
+      "Unresolved": 2,
+      "International relations": 5
+    },
+    "Polity": {
+      "Polity": 5
+    },
+    "Security": {
+      "Security": 3
+    },
+    "Sci-Tech": {
+      "Sci-Tech": 6
+    },
+    "Governance": {
+      "Governance": 1
+    }
+  },
+  "rows": [
+    {
+      "number": 1,
+      "id": "article:67729524d8604d12d8b27c29aec592a06c66cc8d51602b610b8b537d14166b33",
+      "title": "Chinese woman snaps up nearly 200 parking spaces to flip to neighbours for profit",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 2,
+      "id": "article:37fd09ca96e65969d4f8be60a3a33a91cc06e1d691d71e852eb1734e640a252d",
+      "title": "How to measure the success of India’s capex strategy",
+      "gold": "Economy",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 38,
+            "end": 52,
+            "text": "capex strategy",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "id": "article:246466ea2264fa5c8c70e989a1518c2f1138bdcadcc22f929252256f8db8067c",
+      "title": "#354 When Faced Against a Cannon...",
+      "gold": null,
+      "value": null,
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 4,
+      "id": "article:c1004b4ac9e392fc111e2c032c98c4eeb4ea8cf7dfbda1dea2a35f9bd3810b09",
+      "title": "France high school students’ protest: What sparked violence, what’s next",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 5,
+      "id": "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+      "title": "Why small rivers need distinct rejuvenation strategy",
+      "gold": "Environment",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Environment",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Environment",
+            "field": "title",
+            "start": 31,
+            "end": 52,
+            "text": "rejuvenation strategy",
+            "rule": "D.ecology.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+      "title": "C Raja Mohan writes: The ghosts of 1945 are being recruited for today’s contest over Asia",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 7,
+      "id": "article:33d5b0549f3559861c849e79813802d78c569827c9295f5385d4a015bd4e813c",
+      "title": "CJI says Supreme Court did not approve Form 6 changes: What the form is, why it matters",
+      "gold": "Polity",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Polity",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 9,
+            "end": 68,
+            "text": "Supreme Court did not approve Form 6 changes: What the form",
+            "rule": "D.judgment.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "id": "article:28794f3817d2487b0e37aebf13e3018768c34a32a62a43ccfad521d9668037e2",
+      "title": "Oil Is Flowing From the Persian Gulf, but Prices Remain High. Why?",
+      "gold": "Economy",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 0,
+            "end": 48,
+            "text": "Oil Is Flowing From the Persian Gulf, but Prices",
+            "rule": "D.economic.v1"
+          },
+          {
+            "subject": "Economy",
+            "field": "description",
+            "start": 0,
+            "end": 15,
+            "text": "Crude oil costs",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "id": "article:719fd93a89507b4cc28bc768d46945a5352eb8cbec635a1dd4d0efc0ced3c18e",
+      "title": "Dispatch #125: The floor is rising; the people aren't",
+      "gold": "Economy",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "moderate",
+        "margin": 3,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "description",
+            "start": 47,
+            "end": 57,
+            "text": "inequality",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 10,
+      "id": "article:4920532edd87001e20787b7b219945a84e22fa4bacdf335648402e16a75a941f",
+      "title": "“Not going to trade words for actions”: US VP Vance says Iran must cut nuclear enrichment to end war",
+      "gold": "Security",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Security",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Security",
+            "field": "title",
+            "start": 57,
+            "end": 89,
+            "text": "Iran must cut nuclear enrichment",
+            "rule": "D.capability.v1"
+          },
+          {
+            "subject": "Security",
+            "field": "description",
+            "start": 67,
+            "end": 85,
+            "text": "nuclear enrichment",
+            "rule": "D.capability.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "id": "article:e3654d2c0394df097207dbbd7fd255ec577fa8fc5164eb4bfefbfd99a4c84ac8",
+      "title": "Kaliningrad: Why Russia’s Baltic exclave is a new flashpoint",
+      "gold": "Security",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Security",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Security",
+            "field": "title",
+            "start": 26,
+            "end": 40,
+            "text": "Baltic exclave",
+            "rule": "D.capability.v1"
+          },
+          {
+            "subject": "Security",
+            "field": "description",
+            "start": 75,
+            "end": 92,
+            "text": "strategic exclave",
+            "rule": "D.capability.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 12,
+      "id": "article:7dcdd8ae8a7dc204e60dc831989be86b32ab5f543226953eb2e5f344b55a316c",
+      "title": "Knowledge Nugget | Quantum Computing: What is the new research and why does it matter?",
+      "gold": "Sci-Tech",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 19,
+            "end": 36,
+            "text": "Quantum Computing",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 13,
+      "id": "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+      "title": "Editorial. Lending transparency",
+      "gold": "Economy",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 11,
+            "end": 31,
+            "text": "Lending transparency",
+            "rule": "D.economic.v1"
+          },
+          {
+            "subject": "Economy",
+            "field": "description",
+            "start": 15,
+            "end": 25,
+            "text": "loan rates",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 14,
+      "id": "article:47d949972797b03508dbf3dff8a4022f6f58526f0ec2f71331433cc2703ae267",
+      "title": "Migration worries, not economic concerns, boost the AfD",
+      "gold": "Polity",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 15,
+      "id": "article:cccba3a86fc6951173edf03df00cf86a5210b8d8bc72abc0443a7850a35c3388",
+      "title": "'Inflation man Modi's reign of terror continues': Congress on repo rate hike",
+      "gold": "Economy",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 1,
+            "end": 10,
+            "text": "Inflation",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 16,
+      "id": "article:7ca565f8bde1920fdcb7be3409f420e4049e9f126e4dd8337622a72ea5125704",
+      "title": "INDIA bloc MPs detained en route to Jantar Mantar sit-in against Gyanesh Kumar",
+      "gold": "Polity",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 17,
+      "id": "article:6b5b8d60cdcc36505a51e97736e83f5964c67ce53c6f20669fdde191620166b0",
+      "title": "Oil prices remain highly flammable",
+      "gold": "Economy",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 0,
+            "end": 10,
+            "text": "Oil prices",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 18,
+      "id": "article:b727ab8903ee41c0e4f33401e3af74085f10c0f7de8ccc3d48e83e5ffcbd36d9",
+      "title": "Coco Gauff says online racist abuse was ‘draining’ after China Open exit",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 19,
+      "id": "article:2a7e4b2205db5a3c1e56f4f7ea539bd41971bb34b839ce02d1aa110016df9771",
+      "title": "C Raja Mohan: AI is now a great-power game. That poses a test for India",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "International relations",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 26,
+            "end": 37,
+            "text": "great-power",
+            "rule": "D.diplomatic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 20,
+      "id": "article:b1bd64eb0bda7d872e67046cceebe03746cbd81df0466b6250fa028e7b775a77",
+      "title": "The week in wildlife: a rescued orangutan, the chonkiest bear and a barn owl’s triumph",
+      "gold": "Environment",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 21,
+      "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+      "title": "Pratap Bhanu Mehta: Election Commission and Court make it harder, not easier, to believe in independent institutions",
+      "gold": "Polity",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Polity",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 20,
+            "end": 39,
+            "text": "Election Commission",
+            "rule": "D.constitutional.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 22,
+      "id": "article:182892b88a2917d3a894595f8ecfe9ffe87965bb78dd2a99ecf61605af638b88",
+      "title": "Abe Memorial Corridor honouring Shinzo Abe, India-Japan ties opened in Varanasi",
+      "gold": "International relations",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 23,
+      "id": "article:b21a5eb4eb72333acaeb1fa37ccade7c6c0ddb16180db360f6b120128d27babb",
+      "title": "Singing, for unity or division",
+      "gold": null,
+      "value": null,
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 24,
+      "id": "article:8b285d394ac1f427c9a58dc8067ab223ff9eefe739f6d9b0ecdeda844e522f55",
+      "title": "Iran must cut enrichment to end war, says US Vice President JD Vance",
+      "gold": "Security",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Security",
+        "secondary": [
+          "International relations"
+        ],
+        "confidence": "moderate",
+        "margin": 6,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "description",
+            "start": 157,
+            "end": 167,
+            "text": "peace deal",
+            "rule": "D.diplomatic.v1"
+          },
+          {
+            "subject": "Security",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "text": "Iran must cut enrichment",
+            "rule": "D.capability.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 25,
+      "id": "article:791958a237c8bcf882288b16dd7a3e2174cab2e9a169b6030a77d6e3b793ba9d",
+      "title": "VCK demands basic amenities for SC/ST residents in the Nilgiris",
+      "gold": "Governance",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 26,
+      "id": "article:0c04c004cd3726044b588bf0b5bb8481b172d9c6173d05cfe09ea105149d984c",
+      "title": "C Raja Mohan: In Iran war, US midterm elections are the new front",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "International relations",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 17,
+            "end": 65,
+            "text": "Iran war, US midterm elections are the new front",
+            "rule": "D.strategic-argument.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 27,
+      "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+      "title": "Fiscal federalism, efficiency versus equity concerns",
+      "gold": "Economy",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [
+          "Polity"
+        ],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 7,
+            "end": 17,
+            "text": "federalism",
+            "rule": "D.constitutional.v1"
+          },
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 0,
+            "end": 17,
+            "text": "Fiscal federalism",
+            "rule": "D.economic.v1"
+          },
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 0,
+            "end": 43,
+            "text": "Fiscal federalism, efficiency versus equity",
+            "rule": "D.fiscal-mechanism.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 28,
+      "id": "article:d56637e7a2261e9750afbff5fcee612d6bf9b5558cba5ca03c6d875155ba9dc5",
+      "title": "‘Most expensive election ever, anywhere’",
+      "gold": "Polity",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Polity",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 6,
+            "end": 24,
+            "text": "expensive election",
+            "rule": "D.judgment.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 29,
+      "id": "article:c1b98242d09dab4890b77f34fcac894f34b67a192d25046e1c51f2e5dc3a0ac0",
+      "title": "As India’s law enforcement agencies turn to AI, the potential benefits, risks",
+      "gold": "Governance",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Governance",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Governance",
+            "field": "title",
+            "start": 11,
+            "end": 26,
+            "text": "law enforcement",
+            "rule": "D.service.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 30,
+      "id": "article:b739ea0b16cf7282b6b58d1727ca7be568837a2135ede77be1ee4dbdb8dc4f63",
+      "title": "Who is middle class in India, and why do they feel squeezed?",
+      "gold": "Economy",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 7,
+            "end": 19,
+            "text": "middle class",
+            "rule": "D.economic.v1"
+          },
+          {
+            "subject": "Economy",
+            "field": "description",
+            "start": 35,
+            "end": 47,
+            "text": "middle-class",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 31,
+      "id": "article:6333476321db18307af585b39c0f2fd75c09b2c661b6e356f63e6e2a3a925294",
+      "title": "How India’s R&D ecosystem shapes its goal of becoming a knowledge-driven economy",
+      "gold": "Sci-Tech",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 12,
+            "end": 25,
+            "text": "R&D ecosystem",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 32,
+      "id": "article:21f1930422dc81410883f77baf589fc9d81ef88292d6bb7aeda22cdb274b0c25",
+      "title": "Karl Deisseroth, Peter Hegemann Georg Nagel awarded Nobel Medicine Prize: Who are they? Know their research fields",
+      "gold": "Sci-Tech",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 52,
+            "end": 66,
+            "text": "Nobel Medicine",
+            "rule": "D.research.v1"
+          },
+          {
+            "subject": "Sci-Tech",
+            "field": "description",
+            "start": 146,
+            "end": 158,
+            "text": "ion channels",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 33,
+      "id": "article:ab75fe8c3296c19a75027d9dc4b42bec0ba3a0c0df895110c2895f383f7e87c7",
+      "title": "Robust AI spending sets investors up for another bumper US earnings season",
+      "gold": "Economy",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 34,
+      "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+      "title": "Pratap Bhanu Mehta writes | Graham Bill is America confusing its power with virtue — yet again",
+      "gold": "International relations",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 35,
+      "id": "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+      "title": "First dinosaur bone from Antarctica found in a drawer",
+      "gold": "Sci-Tech",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 6,
+            "end": 14,
+            "text": "dinosaur",
+            "rule": "D.research.v1"
+          },
+          {
+            "subject": "Sci-Tech",
+            "field": "description",
+            "start": 4,
+            "end": 10,
+            "text": "fossil",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 36,
+      "id": "article:b42895b9df14f042be8d24a11f88149870b8817d3260fefd5b608a135b9492b1",
+      "title": "The Writer’s House",
+      "gold": null,
+      "value": null,
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 37,
+      "id": "article:6badb8d260bf1939f0345d330f8326c8ecc91cc5d1600acda0dc8183241613c6",
+      "title": "MeitY IndiaAI Centre of Excellence in Artificial Intelligence to be launched on Wednesday",
+      "gold": "Sci-Tech",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 0,
+            "end": 5,
+            "text": "MeitY",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 38,
+      "id": "article:92fe47cc2442a4eecf25a6873a3bebfe399cb5debeca64e18d906fd793ec641d",
+      "title": "Reform probe clears Farage aides caught in donations sting",
+      "gold": "Polity",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 39,
+      "id": "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+      "title": "Fossil identified as first dinosaur ever found in Antarctica",
+      "gold": "Sci-Tech",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Sci-Tech",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 12,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Sci-Tech",
+            "field": "title",
+            "start": 0,
+            "end": 6,
+            "text": "Fossil",
+            "rule": "D.research.v1"
+          },
+          {
+            "subject": "Sci-Tech",
+            "field": "description",
+            "start": 90,
+            "end": 98,
+            "text": "dinosaur",
+            "rule": "D.research.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 40,
+      "id": "article:101932b8f57d3dd0be2c41ad3fa46136b40890212813b0498bbb05bcf00f3176",
+      "title": "SA20 2026 Live Streaming: When And Where To Watch Live Telecast",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 41,
+      "id": "article:b354065f73cf7af0858db45dff4e95fd19b3ae09cb4d9c7ef3944ebc98782e88",
+      "title": "‘Swan Song’: Princess Diana’s brother’s book is icy in its contempt for the British royal family",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 42,
+      "id": "article:f1c0f0f7abc23e41960ae527fde67deb43c3eb15c41bee0cdbafc641221cde61",
+      "title": "Should the EC take action against those filing forms for mass deletions?",
+      "gold": "Polity",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Polity",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 11,
+            "end": 71,
+            "text": "EC take action against those filing forms for mass deletions",
+            "rule": "D.judgment.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 43,
+      "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+      "title": "Bridging economics and psychology",
+      "gold": "Economy",
+      "value": "useful",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Economy",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Economy",
+            "field": "title",
+            "start": 9,
+            "end": 18,
+            "text": "economics",
+            "rule": "D.economic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 44,
+      "id": "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+      "title": "Pratap Bhanu Mehta writes | Amid AI, wars and climate change catastrophes, diplomacy is acting ‘normal’",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "International relations",
+        "secondary": [
+          "Environment"
+        ],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 75,
+            "end": 84,
+            "text": "diplomacy",
+            "rule": "D.diplomatic.v1"
+          },
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 75,
+            "end": 94,
+            "text": "diplomacy is acting",
+            "rule": "D.strategic-argument.v1"
+          },
+          {
+            "subject": "Environment",
+            "field": "title",
+            "start": 46,
+            "end": 60,
+            "text": "climate change",
+            "rule": "D.ecology.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 45,
+      "id": "article:b60dd37fb0f8e3478e19c8699349804f6ff818bee733746df45085cc6cd82a5f",
+      "title": "Exasperated by Delays, Congress Tries to Speed Up Energy Permitting",
+      "gold": "Environment",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 46,
+      "id": "article:51c34183f3de4b44e94dcaba47db0f47c49c477b2ef7adb3c282a562b7c305fb",
+      "title": "Could US-Iran deal end the elusive quest for ‘New Middle East’?",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "International relations",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 6,
+            "end": 18,
+            "text": "US-Iran deal",
+            "rule": "D.diplomatic.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 47,
+      "id": "article:dd0c98e7e6e33647608ba8968e6d51e1021a4cece3598baf8ad88f9df273eedb",
+      "title": "What does the Centre’s new mining law say and why are states opposing it?",
+      "gold": "Polity",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Polity",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "Polity",
+            "field": "title",
+            "start": 27,
+            "end": 37,
+            "text": "mining law",
+            "rule": "D.constitutional.v1"
+          }
+        ]
+      }
+    },
+    {
+      "number": 48,
+      "id": "article:ca792f481c3f3406c1dac5f2bdcccf5a6a6acc2f0352d607180bc88150c41412",
+      "title": "Brazil Election Could Give Bolsonaro a Key Role in Trump’s Latin America Map",
+      "gold": "International relations",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 49,
+      "id": "article:1df710e8b89a536a9ed4e4954fedf9fc06a57f7bb64cfac48f222c5a7d06e0da",
+      "title": "Why did I get $90 from Social Security? Trump Medicare payment explained",
+      "gold": "not_applicable",
+      "value": "reject",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "Unresolved",
+        "secondary": [],
+        "confidence": "unresolved",
+        "margin": 0,
+        "reason": "insufficient_subject_evidence",
+        "evidence": []
+      }
+    },
+    {
+      "number": 50,
+      "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+      "title": "C Raja Mohan: The multipolar world India wants may be a distant reality",
+      "gold": "International relations",
+      "value": "must_read",
+      "prediction": {
+        "policy": "tars-subject/1",
+        "primary": "International relations",
+        "secondary": [],
+        "confidence": "high",
+        "margin": 9,
+        "reason": "dominant_frame",
+        "evidence": [
+          {
+            "subject": "International relations",
+            "field": "title",
+            "start": 18,
+            "end": 34,
+            "text": "multipolar world",
+            "rule": "D.diplomatic.v1"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -94,6 +94,7 @@ let healthFailures = 1, session = 'ok', sessionVisits = 0
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.html': 'text/html', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.webp': 'image/webp', '.woff2': 'font/woff2' }
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost'), path = url.pathname
+  if (path === '/__publisher-fixture') { res.setHeader('Content-Type', 'text/html'); res.end('<h1>Outside Tars fixture</h1>'); return }
   const send = (status, body) => { res.setHeader('Content-Type', 'application/json'); res.setHeader('Cache-Control', 'private, no-store'); res.writeHead(status); res.end(JSON.stringify(body)) }
   if (path === '/api/current-affairs') return send(200, feed)
   // Signing in: Access would ask for the login here; the fixture simply grants it and sends the browser back to the front door.
@@ -115,7 +116,7 @@ const server = createServer(async (req, res) => {
 })
 await new Promise(r => server.listen(0, '127.0.0.1', r))
 const base = `http://127.0.0.1:${server.address().port}/`
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost'] })
 const checks = [], errors = []
 const check = (tag, name, evidence = true) => { assert(evidence, `${tag}: ${name}`); checks.push({ tag, name }); console.log(`PASS ${tag}: ${name}`) }
 const picture = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675"><rect width="1200" height="675" fill="#b9c8c4"/><path d="M0 675L420 210L760 520L940 380L1200 675Z" fill="#5f7a70"/><circle cx="930" cy="170" r="64" fill="#e9dfc6"/></svg>'
@@ -131,6 +132,21 @@ try {
     await ctx.route(url => url.hostname === 'smry.ai', route => route.fulfill({ contentType: 'text/html', body: '<h1>Outside Tars</h1>' }))
     await ctx.route('https://images.example.org/**', route => route.request().url().includes('broken') ? route.fulfill({ status: 404 }) : route.fulfill({ contentType: 'image/svg+xml', body: picture }))
     const shot = name => page.screenshot({ path: fileURLToPath(new URL(`${tag}-${name}.png`, out)) })
+    // Chromium's routed initial background popup can stall before committing a
+    // URL. Assert the real destination, then simulate only the external page on
+    // loopback. Keep native click/modifiers/target/rel and require its actual DOM.
+    const externalPopup = async (anchor, expected, options = {}) => {
+      assert.equal(await anchor.getAttribute('href'), expected)
+      const fixture = base + '__publisher-fixture?target=' + encodeURIComponent(expected)
+      await anchor.evaluate((el, href) => el.setAttribute('href', href), fixture)
+      const pending = ctx.waitForEvent('page')
+      await anchor.click(options)
+      const tab = await pending
+      await anchor.evaluate((el, href) => el.setAttribute('href', href), expected)
+      await tab.waitForURL(fixture, { waitUntil: 'domcontentloaded' })
+      assert.equal(await tab.locator('h1').innerText(), 'Outside Tars fixture')
+      return tab
+    }
     const rows = page.locator('[data-news-event]'), reader = page.locator('[data-reader]')
     const story = text => rows.filter({ hasText: text }).first()
     const headline = text => story(text).locator('[data-news-original]').first()
@@ -228,8 +244,8 @@ try {
     check(tag, 'a reopened article is not fetched twice', requests.get(URLS.rbi) === 3)
     await link.click(); await reader.waitFor(); await page.goBack(); await reader.waitFor({ state: 'detached' })
     check(tag, 'the browser’s Back closes the reader', Math.abs(await listTop() - position) <= 2 && await rows.count() === total)
-    const publisherTab = ctx.waitForEvent('page'); await link.click({ modifiers: ['ControlOrMeta'] }); const tab = await publisherTab; await tab.waitForLoadState()
-    check(tag, 'a modified click still opens the publisher in another tab', tab.url() === URLS.rbi && await reader.count() === 0); await tab.close()
+    const tab = await externalPopup(link, URLS.rbi, { modifiers: ['ControlOrMeta'] })
+    check(tag, 'a modified click still opens the publisher in another tab', await reader.count() === 0); await tab.close()
 
     // ── Read, Saved, previous and next ──
     await open('RBI revises'); await reader.locator('.reader-body').waitFor()
@@ -265,8 +281,8 @@ try {
     await story('RBI revises').locator('.story-cluster').click()
     await story('RBI revises').locator('[data-related-coverage] a').click(); await reader.waitFor(); await reader.locator('.reader-body').waitFor()
     check(tag, 'related coverage opens in the reader too', (await reader.locator('.reader-kicker').innerText()).toUpperCase().includes('THE HINDU') && await reader.locator('[data-reader-original]').getAttribute('href') === URLS.rbiHindu)
-    const originalTab = ctx.waitForEvent('page'); await reader.locator('[data-reader-original]').click(); const original = await originalTab; await original.waitForLoadState()
-    check(tag, 'Open original leads to the publisher’s own page', original.url() === URLS.rbiHindu && await reader.count() === 1); await original.close(); await close()
+    const original = await externalPopup(reader.locator('[data-reader-original]'), URLS.rbiHindu)
+    check(tag, 'Open original leads to the publisher’s own page', await reader.count() === 1); await original.close(); await close()
 
     // ── Loading ──
     await headline('New GDP series').click(); await reader.getByRole('status').waitFor()
@@ -294,12 +310,12 @@ try {
     await open('Supreme Court ruling'); await notice().waitFor()
     check(tag, 'the count starts at nothing opened today', (await smry().innerText()).includes('(0/20 today)'))
     for (const expected of ['(1/20 today)', '(1/20 today)']) {
-      const tabOpened = ctx.waitForEvent('page'); await smry().click(); const tab = await tabOpened; await tab.waitForLoadState()
-      check(tag, 'smry.ai opens in another tab at the article: ' + expected, tab.url() === 'https://smry.ai/' + URLS.rights && (await smry().innerText()).includes(expected) && await reader.count() === 1); await tab.close()
+      const tab = await externalPopup(smry(), 'https://smry.ai/' + URLS.rights)
+      check(tag, 'smry.ai opens in another tab at the article: ' + expected, (await smry().innerText()).includes(expected) && await reader.count() === 1); await tab.close()
     }
     await close()
     await open('Ramsar protected area'); await notice().waitFor()
-    const second = ctx.waitForEvent('page'); await smry().click(); await (await second).close()
+    const second = await externalPopup(smry(), 'https://smry.ai/' + URLS.ramsar); await second.close()
     check(tag, 'a different article is the second of the day, on every notice', (await smry().innerText()).includes('(2/20 today)') && JSON.stringify(await today()) === JSON.stringify([URLS.ramsar, URLS.rights].sort()))
     await page.evaluate(() => { const key = 'tars.reader.smry.v1', s = JSON.parse(localStorage.getItem(key)), day = Object.keys(s.days)[0]; s.days[day] = [...s.days[day], ...Array.from({ length: 19 }, (_, i) => 'https://example.org/' + i)]; localStorage.setItem(key, JSON.stringify(s)); dispatchEvent(new Event('tars:reader-smry')) })
     await page.waitForFunction(() => document.querySelector('[data-reader-elsewhere]')?.textContent.includes('(21/20 today)'))
