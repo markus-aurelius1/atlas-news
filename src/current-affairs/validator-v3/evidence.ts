@@ -2,6 +2,7 @@ import type { ArticleEvidence, Evidence, Route, StageCObservation, Scope } from 
 import { ROUTE_RULES, NOISE_RULES, PARTY_ACTORS, PARTY_PURPOSE, FOREIGN_DOMESTIC, DOMESTIC_PURPOSE } from './policy.ts'
 import { curatedAuthorEvidence } from './author-registry.ts'
 import { boundSource } from './metadata.ts'
+import { DOMAINS, PROPOSITIONS, INDIA_ANCHOR_TERMS, INDIA_ANCHOR_ACRONYMS, domainTerms, domainAcronyms, domainSupport } from './lexicon.ts'
 
 const rx = (pattern: string) => new RegExp(pattern, 'i')
 function span(o: StageCObservation, field: 'title' | 'description', pattern: string, rule: string, flags = 'i'): Evidence[] {
@@ -12,7 +13,15 @@ function textual(o: StageCObservation, pattern: string, rule: string) {
   return [...span(o, 'title', pattern, rule), ...(meaningful(o.metadata.description) ? span(o, 'description', pattern, rule) : [])]
 }
 const meaningful = (s: string) => s.trim().split(/\s+/).filter(Boolean).length >= 5 && !/^(read more|continue reading|click here|latest news|protests and education)[.!\s]*$/i.test(s.trim())
-const india = String.raw`\b(India(?:n)?|MeitY|IndiaAI|CJI|Centre[’']s|fiscal federalism|RBI|Reserve Bank of India)\b`
+// Sentence-case prose only: a capitalised word that continues a capitalised name
+// ("Sambhali Trust") is part of that name, not a substantive proposition.
+function properName(text: string, start: number, end: number) {
+  if (!/^\p{Lu}/u.test(text.slice(start)) || /\s/.test(text.slice(start, end))) return false
+  const words = text.match(/\p{L}{4,}/gu) ?? []
+  if (words.length < 6 || words.filter(w => /^\p{Lu}/u.test(w)).length > words.length * 0.6) return false
+  return /\p{Lu}[\p{L}.’'-]*\s+$/u.test(text.slice(0, start))
+}
+const anchored = (text: string) => rx(INDIA_ANCHOR_TERMS).test(text) || new RegExp(INDIA_ANCHOR_ACRONYMS).test(text)
 export function extractEvidence(observations: StageCObservation[]): ArticleEvidence {
   const rows = [...observations].sort((a, b) => a.id.localeCompare(b.id, 'en'))
   const routes: Route[] = [], exclusions: ArticleEvidence['exclusions'] = [], context: Evidence[] = [], authors: string[] = []
@@ -29,16 +38,36 @@ export function extractEvidence(observations: StageCObservation[]): ArticleEvide
       }
     }
     for (const rule of ROUTE_RULES) {
-      const topic = textual(o, rule.topic, rule.id), support = textual(o, rule.support, rule.id)
+      const topic = textual(o, rule.topic, rule.id), support = textual(o, rule.support, rule.id).filter(s => !properName(m[s.field as 'title' | 'description'], s.start, s.end))
       const independentSupport = support.filter(s => !topic.some(t => s.field === t.field && s.start < t.end && t.start < s.end))
       if (!topic.length || !independentSupport.length) continue
       // A topic token cannot count again as its own substantive proposition. No URL/category/byline topics.
-      const scope: Scope = rx(india).test(m.title + ' ' + m.description) ? 'india_domestic' : rule.scope === 'knowledge' ? 'global_knowledge' : rule.scope === 'systemic' ? 'global_systemic' : 'unknown'
+      const scope: Scope = anchored(m.title + ' ' + m.description) ? 'india_domestic' : rule.scope === 'knowledge' ? 'global_knowledge' : rule.scope === 'systemic' ? 'global_systemic' : 'unknown'
       // Generic summary risk language in prospective policy coverage supplies
       // usefulness, not maximum importance. A headline explanation or an
       // explicit transmission mechanism can still confer the existing tier.
       const exceptional = !!rule.exceptional && (rule.id !== 'C2.public-finance.v1' || independentSupport.some(s => s.field === 'title' || /transmission/i.test(s.text)))
       routes.push({ id: rule.id, scope, evidence: [topic[0], independentSupport[0]], exceptional })
+    }
+    // Syllabus-domain routes: object and proposition must share a field, so a
+    // headline entity cannot borrow an unrelated sentence from the summary.
+    for (const domain of DOMAINS) {
+      const id = `C2.domain.${domain.id}.v1`, acronyms = domainAcronyms(domain)
+      for (const field of ['title', 'description'] as const) {
+        if (field === 'description' && !meaningful(m.description)) continue
+        const topic = [...span(o, field, domainTerms(domain), id), ...(acronyms ? span(o, field, acronyms, id, '') : [])].sort((a, b) => a.start - b.start)
+        if (!topic.length) continue
+        const independent = (pattern: string) => span(o, field, pattern, id).filter(s => !properName(m[field], s.start, s.end) && !topic.some(t => s.start < t.end && t.start < s.end))
+        const explained = field === 'title' && domain.supports.includes('explain') ? independent(PROPOSITIONS.explain) : []
+        const support = [...independent(domainSupport(domain)), ...explained].sort((a, b) => a.start - b.start)
+        if (!support.length) continue
+        const scope: Scope = anchored(m.title + ' ' + m.description) ? 'india_domestic' : domain.scope === 'knowledge' ? 'global_knowledge' : domain.scope === 'systemic' ? 'global_systemic' : 'unknown'
+        // Maximum importance needs a constitutional or systemic mechanism, or an
+        // explanatory or prescriptive treatment of an Indian policy object in the headline.
+        const exceptional = !!domain.exceptional || scope === 'india_domestic' && field === 'title' && (explained.length > 0 || independent(PROPOSITIONS.prescriptive).length > 0)
+        routes.push({ id, scope, evidence: [topic[0], support[0]], exceptional })
+        break
+      }
     }
     const primaryAction = span(o, 'title', String.raw`\b(?:Supreme Court|court|regulator|parliament|government|India and Japan)\b.{0,45}\b(?:rules?|invalidates?|enacts?|orders?|adopts?|signs?)\b.{0,60}\b(?:law|policy|regulation|rights|treaty|agreement|electoral rule)\b`, 'C1.dominant_institutional_action.v1')
     for (const rule of NOISE_RULES) {

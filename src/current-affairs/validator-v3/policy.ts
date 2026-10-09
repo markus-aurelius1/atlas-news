@@ -51,10 +51,12 @@ export const NOISE_RULES = [
   { code: 'C1.roundup.v1', pattern: String.raw`\b(week in wildlife|best.{0,25}photographs|photo roundup|photo gallery)\b` },
   { code: 'C1.mixed_news_digest.v1', pattern: String.raw`\b(?:news roundup|news digest|news highlights|Rush Hour)\b|& more\s*$` },
   { code: 'C1.market_reaction.v1', pattern: String.raw`\b(?:Sensex|Nifty)\b.{0,25}\b(?:falls?|rises?|gains?|drops?|slides?)\b` },
-  { code: 'C1.routine_business.v1', pattern: String.raw`\b(earnings season|quarterly earnings|stock tips|parking spaces.{0,30}flip|routine product recall)\b` },
+  { code: 'C1.routine_business.v1', pattern: String.raw`\b(earnings season|quarterly earnings|stock tips|parking spaces.{0,30}flip|routine product recall|S&P 500|Nasdaq|Dow Jones|expiry day|Q[1-4] (?:results|earnings|preview)|stocks? to (?:buy|watch)|share price)\b|\bQ[1-4]:` },
+  { code: 'C1.practice_material.v1', pattern: String.raw`\b(?:Quiz|MCQs?|Answer Practice|Current Affairs Pointers|crossword)\b` },
+  { code: 'C1.non_reading_format.v1', pattern: String.raw`^\s*(?:Cartoon|Satire|Watch|Video|Photos?|In pictures)\s*[:|]|\|\s*Watch\s*$|\bwhen and where to watch\b` },
   { code: 'C1.routine_local.v1', pattern: String.raw`\b(local outage|traffic diversion|isolated robbery|high school students.{0,15}protest|staff.{0,15}(?:dispute|politics)|personnel dispute)\b` },
 ] as const
-export const PARTY_ACTORS = String.raw`\b(Congress|BJP|VCK|INDIA bloc|AfD|Farage|Bolsonaro|candidate|party|parties)\b`
+export const PARTY_ACTORS = String.raw`\b(Congress|BJP|VCK|DMK|AIADMK|Trinamool|TMC|RJD|Shiv Sena|TDP|YSRCP|BRS|Samajwadi|BSP|INDIA bloc|AfD|Farage|Bolsonaro|candidate|party|parties)\b`
 export const PARTY_PURPOSE = String.raw`\b(demands?|slams?|attacks?|criticises?|campaign(?:ing|s)?|candidate strategy|campaign strategy|seat.sharing|alliance arithmetic|sit.in|detained|donations sting|boost|(?:favorite|favourite) to win|election could give|reign of terror|resignation|learn from\b.{0,30}\bto win (?:people|voters))\b`
 export const FOREIGN_DOMESTIC = String.raw`\b(France|French|Chinese|China|Brazil|Brazilian|America|American|U\.S\.|UK|British|Germany|German|Medicare|Republican|Democratic senators|Japan|Japanese|Canada|Canadian|Australia|Australian|Italy|Spain|Russia|Russian|Ukraine|Ukrainian|Korea|Korean|Mexico|Israel|Israeli|Iran|Iranian|Iraq|Syria|Turkey|Egypt|Egyptian|Saudi|UAE|Qatar|Nigeria|Kenya|Sudan|Indonesia|Vietnam|Philippines|Singapore|Thailand|Argentina|Switzerland|Swiss|Denmark|Finland)\b`
 export const DOMESTIC_PURPOSE = String.raw`\b(high school|parking spaces|Medicare|Social Security|energy permitting|federal energy|supreme court|local court|domestic court|local climate lawsuit|climate lawsuit|domestic legislation|local election|presidency|staff dispute|personnel)\b`

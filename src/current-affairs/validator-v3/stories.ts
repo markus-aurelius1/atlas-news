@@ -1,7 +1,7 @@
 import type { NewsItem } from '../types.ts'
 import { boundSource } from './metadata.ts'
 
-export const STORY_POLICY = { id: 'tars-stories/1', historyDays: 14, strongestDays: 7, todayHours: 24, maxComparisonBucket: 512 } as const
+export const STORY_POLICY = { id: 'tars-stories/1', historyDays: 14, strongestDays: 7, todayHours: 24, maxComparisonBucket: 512, lexicalDays: 3, lexicalShared: 5, lexicalOverlap: 0.75 } as const
 const DAY = 86400000
 export interface StoryFrame {
   actor: string; object: string; action: string; qualifiers: string[]
@@ -56,6 +56,43 @@ function namedAward(item: NewsItem) {
   const mechanism = norm(text).split(' ').filter(t => /^(?:neutrino\w*|icecube|autocatalysis|asymmetric|synthesis|tunnelling|biosensor\w*)$/.test(t))
   return { discipline: (discipline[1] ?? discipline[2]).toLowerCase(), years, names, mechanism }
 }
+/** Headline wording differs across publishers ("attack"/"attacked", "Russian"/"Russia's"). */
+const stem = (token: string) => { let t = token; for (let next = t; t.length > 4 && (next = t.replace(/(?:ing|ed|es|s|n)$/, '')) !== t;) t = next; return t }
+const expand = (title: string) => title.replace(/\bSC\b(?!\/ST)/g, 'Supreme Court').replace(/\bHC\b/g, 'High Court').replace(/\b[Gg]ovt\b/g, 'government')
+const stems = (title: string) => [...new Set(norm(expand(title)).split(' ').filter(t => !stop.has(t) && t.length > 2).map(stem))]
+const refusal = /\b(?:refus\w+|reject\w*|den(?:y|ies|ied)|dismiss\w*|declin\w+|not|no)\b/i
+const explanatory = /\b(?:how|why|explained|explains|analysis|what)\b/i
+const figures = (title: string) => [...new Set([...title.matchAll(/\d+(?:\.\d+)?/g)].map(m => m[0]))].sort().join('|')
+// Counterparts are cannot-link evidence in any grammatical form.
+const places: readonly [string, RegExp][] = [['india', /\bIndia(?:ns?)?\b/], ['us', /\bUS\b|\bU\.S\.|\bAmerican?\b/], ['eu', /\bEU\b|\bEuropean?\b/], ['uk', /\bUK\b|\bBritain\b|\bBritish\b/], ['china', /\bChin(?:a|ese)\b/], ['japan', /\bJapan(?:ese)?\b/], ['russia', /\bRussian?\b/], ['ukraine', /\bUkrain(?:e|ian)\b/], ['iran', /\bIran(?:ian)?\b/], ['israel', /\bIsraeli?\b/], ['pakistan', /\bPakistani?\b/], ['bangladesh', /\bBangladeshi?\b/], ['sri-lanka', /\bSri Lankan?\b/], ['nepal', /\bNepal(?:i|ese)?\b/], ['afghanistan', /\bAfghan(?:istan)?\b/], ['saudi', /\bSaudi\b/], ['france', /\bFrance\b|\bFrench\b/], ['germany', /\bGerman[y]?\b/], ['australia', /\bAustralian?\b/], ['canada', /\bCanad(?:a|ian)\b/], ['korea', /\bKorean?\b/], ['taiwan', /\bTaiwan(?:ese)?\b/], ['turkey', /\bTurk(?:ey|ish)\b|\bTürkiye\b/], ['antarctica', /\bAntarctic(?:a)?\b/]]
+const counterparts = (title: string) => places.filter(([, rx]) => rx.test(title)).map(([id]) => id).join('|')
+const named = (title: string) => new Set(expand(title).split(/\s+/).slice(1).filter(w => /^[^\p{L}]*\p{Lu}/u.test(w)).flatMap(w => stems(w)))
+const analytical = (item: NewsItem) => /editorial|opinion|column|analysis|explained/i.test(item.section) || !!item.memberships?.some(m => boundSource(item.url, item.publisher, m) && /editorial|opinion|column|analysis|explained/i.test(m.section))
+/** Same development reported under different wording: most of the shorter
+ * headline's distinctive words recur, published within three days, with no
+ * differing figure, counterpart, outcome or treatment. Typed frames and angles
+ * are compared by the caller. */
+function lexicalDevelopment(a: NewsItem, b: NewsItem): boolean {
+  const at = Date.parse(a.publishedAt ?? ''), bt = Date.parse(b.publishedAt ?? '')
+  if (!Number.isFinite(at) || !Number.isFinite(bt) || Math.abs(at - bt) > STORY_POLICY.lexicalDays * DAY) return false
+  if (refusal.test(a.title) !== refusal.test(b.title) || explanatory.test(a.title) !== explanatory.test(b.title) || analytical(a) !== analytical(b)) return false
+  if (figures(a.title) !== figures(b.title) || counterparts(a.title) !== counterparts(b.title)) return false
+  const left = stems(a.title), right = new Set(stems(b.title)), shared = left.filter(t => right.has(t)).length
+  // Two headlines that each name something the other does not are different subjects.
+  const mine = new Set(left), an = named(a.title), bn = named(b.title)
+  if (left.some(t => !right.has(t) && an.has(t)) && [...right].some(t => !mine.has(t) && bn.has(t))) return false
+  return shared >=STORY_POLICY.lexicalShared && shared / Math.min(left.length, right.size) >= STORY_POLICY.lexicalOverlap
+}
+function lexicalIndex<T>(rows: T[], item: (row: T) => NewsItem) {
+  const index = new Map<string, T[]>()
+  for (const row of rows) for (const token of stems(item(row).title)) { const list = index.get(token); if (list) list.push(row); else index.set(token, [row]) }
+  return index
+}
+function lexicalCandidates<T>(index: Map<string, T[]>, item: NewsItem): T[] {
+  const counts = new Map<T, number>()
+  for (const token of stems(item.title)) for (const row of index.get(token) ?? []) counts.set(row, (counts.get(row) ?? 0) + 1)
+  return [...counts].filter(([, n]) => n >= STORY_POLICY.lexicalShared).map(([row]) => row)
+}
 function similarity(a: StoryFrame, b: StoryFrame) { const aa = new Set(a.tokens), bb = new Set(b.tokens); return [...aa].filter(t => bb.has(t)).length / (new Set([...aa, ...bb]).size || 1) }
 const block = (item: NewsItem) => { const f = storyFrame(item); const award = namedAward(item); return !f.angle && award ? `award:${award.discipline}` : !f.angle && awardIdentity(item) || (f.action && f.object || f.angle && f.actor ? f.signature : norm(item.title)) }
 function buckets<T>(rows: T[], key: (row: T) => string): Map<string, T[]> { const result = new Map<string, T[]>(); for (const row of rows) { const k = key(row); const bucket = result.get(k); if (bucket) bucket.push(row); else result.set(k, [row]) } return result }
@@ -70,6 +107,9 @@ export function equivalentDevelopment(a: NewsItem, b: NewsItem): boolean {
   // Missing year may be reconciled only by the same named recipient AND
   // research mechanism. Explicit contradictory years never reconcile.
   if (aa && bb && aa.discipline === bb.discipline && (!aa.years.length || !bb.years.length || aa.years[0] === bb.years[0]) && aa.names.some(n => bb.names.includes(n)) && aa.mechanism.some(m => bb.mechanism.includes(m)) && !left.angle && !right.angle) return true
+  // Summaries of unequal length must not split one report: the lexical path
+  // reads headlines only and still honours a typed action that differs.
+  if ((!left.action || !right.action || left.action === right.action) && lexicalDevelopment(a, b)) return true
   if (left.qualifiers.join('|') !== right.qualifiers.join('|')) return false
   if (left.action !== right.action || left.object !== right.object || left.actor !== right.actor) return false
   if (norm(a.title) === norm(b.title)) return true
@@ -92,6 +132,8 @@ export function buildStories(current: MetadataObservation[], previous: MetadataO
   const units: ReadingUnit[] = []; let comparisons = 0
   const unitBuckets = new Map<string, ReadingUnit[]>(), selectedBuckets = buckets(selected.filter(s => s.selectedAt <= now), s => block(s.representative)), selectedUrls = new Map(selected.filter(s => s.selectedAt <= now).map(s => [s.representative.url, s]))
   const priorThemes = buckets(prior, o => theme(o.item)), priorUrls = buckets(prior, o => o.item.url)
+  // Differently worded headlines never share a block key; shared distinctive words nominate them for comparison.
+  const unitIndex = new Map<string, ReadingUnit[]>(), selectedIndex = lexicalIndex(selected.filter(s => s.selectedAt <= now), s => s.representative), priorIndex = lexicalIndex(prior, o => o.item)
   // Latest available revision per URL, with a deterministic metadata tie-break.
   const latest = new Map<string, MetadataObservation>()
   for (const o of current.filter(o => availableSet.has(o)).sort((a, b) => a.observedAt - b.observedAt || JSON.stringify(a.item).localeCompare(JSON.stringify(b.item)))) latest.set(o.item.url, o)
@@ -102,21 +144,23 @@ export function buildStories(current: MetadataObservation[], previous: MetadataO
     const themeBucket = frame.object ? priorThemes.get(theme(item)) ?? [] : [], urlBucket = priorUrls.get(item.url) ?? []
     // Never sample a crowded bucket and then claim its strongest comparison.
     // Explicit abstention bounds work without accepting possible repeat exposure.
-    const exhausted = [currentBucket, selectedBucket, themeBucket, urlBucket].some(b => b.length > STORY_POLICY.maxComparisonBucket)
-    const existing = !exhausted && currentBucket.find(u => { comparisons++; return equivalentDevelopment(u.members[0], item) })
+    const nearUnits = lexicalCandidates(unitIndex, item).filter(u => !currentBucket.includes(u)), nearSelected = lexicalCandidates(selectedIndex, item).filter(s => !selectedBucket.includes(s)), nearPrior = lexicalCandidates(priorIndex, item)
+    const exhausted = [currentBucket, selectedBucket, themeBucket, urlBucket, nearUnits, nearSelected, nearPrior].some(b => b.length > STORY_POLICY.maxComparisonBucket)
+    const existing = !exhausted && [...currentBucket, ...nearUnits].find(u => { comparisons++; return equivalentDevelopment(u.members[0], item) })
     if (existing) { if (!existing.members.some(m => m.url === item.url)) existing.members.push(item); continue }
-    const old = selectedUrls.get(item.url) ?? (!exhausted ? selectedBucket.find(s => { comparisons++; return equivalentDevelopment(s.representative, item) }) : undefined)
+    const old = selectedUrls.get(item.url) ?? (!exhausted ? [...selectedBucket, ...nearSelected].find(s => { comparisons++; return equivalentDevelopment(s.representative, item) }) : undefined)
     // Highest similarity first, strongest recent comparison before older context.
     const candidates = exhausted ? [] : [...new Set([...urlBucket, ...themeBucket])]
     const matches = candidates.filter(() => { comparisons++; return true })
       .sort((a, b) => Number(b.observedAt >= now - 7 * DAY) - Number(a.observedAt >= now - 7 * DAY) || similarity(frame, storyFrame(b.item)) - similarity(frame, storyFrame(a.item)) || b.observedAt - a.observedAt || a.item.url.localeCompare(b.item.url))
     const sameUrl = matches.find(o => o.item.url === item.url), compared = sameUrl ?? matches[0]
     const delta = compared ? materialDelta(compared.item, item) : old ? materialDelta(old.representative, item) : false
-    const repeat = !delta && (!!old || matches.some(o => equivalentDevelopment(o.item, item)))
+    const repeat = !delta && (!!old || matches.some(o => equivalentDevelopment(o.item, item)) || !exhausted && nearPrior.some(o => { comparisons++; return o.item.url !== item.url && equivalentDevelopment(o.item, item) }))
     const novelty = exhausted ? 'uncertain' : repeat ? 'repeat' : frame.angle && (!compared || storyFrame(compared.item).angle !== frame.angle) ? 'distinct_analysis' : delta || frame.action && frame.object ? 'new_development' : 'uncertain'
     const unit: ReadingUnit = { id: old && !delta ? old.id : `reading:${item.url}:${frame.signature}`, members: [item], frame, novelty, priorId: old?.id ?? null,
       reason: exhausted ? 'comparison_budget_exceeded' : repeat ? 'equivalent_selected_or_observed' : delta ? 'material_action_object_period_or_effect_delta' : frame.angle ? 'evidenced_analytical_frame' : novelty === 'uncertain' ? 'insufficient_development_identity' : 'evidenced_development', firstSeenAt: Math.min(observation.firstSeenAt, sameUrl?.firstSeenAt ?? observation.firstSeenAt), ...(old ? { selectedAt: old.selectedAt } : {}) }
     units.push(unit); const group = unitBuckets.get(key); if (group) group.push(unit); else unitBuckets.set(key, [unit])
+    for (const token of stems(item.title)) { const near = unitIndex.get(token); if (near) near.push(unit); else unitIndex.set(token, [unit]) }
   }
   const earliest = Math.min(...previous.map(o => o.observedAt).filter(t => t <= now))
   return { units, history, coverage: !previous.length ? 'cold_start' : now - earliest >= 7 * DAY ? 'seven_days' : 'limited', comparisons }

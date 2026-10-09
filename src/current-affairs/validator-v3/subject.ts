@@ -1,4 +1,5 @@
 import type { StageCMetadata } from './contracts.ts'
+import { DOMAINS, domainTerms, domainAcronyms } from './lexicon.ts'
 
 export const SUBJECT_POLICY = 'tars-subject/1'
 export const SUBJECTS = ['Polity', 'Governance', 'Economy', 'International relations', 'Security', 'Sci-Tech', 'Environment', 'Geography', 'History & Culture'] as const
@@ -27,10 +28,21 @@ const frames: readonly [Subject, string, string][] = [
   ['International relations', 'diplomatic', String.raw`\b(diplomac\w*|diplomatic (?:talks|negotiations?|treaty)|bilateral (?:talks|relations|agreement)|trade agreement|multipolar (?:world|order)|great.power|international order|global governance|sanctions bargaining|peace deal|ceasefire|US.Iran deal)\b`],
   ['International relations', 'strategic-argument', String.raw`\bdiplomacy\b.{0,45}\b(?:acting|fails?|reforms?|constraints?)\b|\b(?:Iran|Ukraine|Russia|Gaza)\b.{0,15}\bwar\b.{0,70}\b(?:elections?|front|regional order)\b`],
   ['Security', 'capability', String.raw`\b(defen[cs]e (?:readiness|doctrine|capability)|naval (?:blockade|capability|protection)|military (?:blockade|readiness|doctrine)|border (?:security|management)|cyber (?:infrastructure|security|attack)|terror financ\w*|nuclear (?:enrichment|arsenal|proliferation|security)|uranium enrichment|arms control|non.proliferation|strategic (?:exclave|deterrence)|Baltic exclave|maritime (?:security|chokepoint)|deterrence)\b|\bIran\b.{0,35}\benrichment\b`],
-  ['Sci-Tech', 'research', String.raw`\b(quantum (?:computing|research)|optogenetics|gene editing|gravitational waves|ion channels|Nobel (?:Medicine|Physics|Chemistry)|fossils?|dinosaur|exoplanet|space (?:mission|instrumentation)|telescope (?:findings?|discover\w*)|R&D ecosystem|research and development|science policy|innovation system|IndiaAI|MeitY|artificial intelligence|AI governance)\b`],
+  ['Sci-Tech', 'research', String.raw`\b(quantum (?:computing|research)|optogenetics|gene editing|gravitational waves|ion channels|Nobel (?:Medicine|Physics|Chemistry)|fossils?(?![ -]fuel)|dinosaur|exoplanet|space (?:mission|instrumentation)|telescope (?:findings?|discover\w*)|R&D ecosystem|research and development|science policy|innovation system|IndiaAI|MeitY|artificial intelligence|AI governance)\b`],
   ['Environment', 'ecology', String.raw`\b(climate change|global warming|biodiversity|ocean warming|carbon cycle|ecological restoration|restoration methods?|conservation strategy|rejuvenation strategy|wetland conservation|Ramsar|IUCN|tipping point|habitat loss|species extinction|carbon emissions)\b`],
   ['Geography', 'physical', String.raw`\b(bathymetry|plate tectonics|geomorphology|strait formation|how (?:a )?strait forms|monsoon mechanism|ocean currents|river formation|physical geography|volcanic formation|glacial landforms)\b`],
   ['History & Culture', 'heritage', String.raw`\b(archaeolog\w*|ancient (?:civilisation|civilization|inscription)|cultural heritage|historical (?:monument|inscription)|medieval architecture|Buddhist art|Indus Valley)\b`],
+]
+
+// Cross-domain issue frames: what the article is about, when two vocabularies
+// meet. They outweigh either entity alone and never read acceptance or source.
+const compounds: readonly [Subject, string, string][] = [
+  ['International relations', 'technology-geopolitics', String.raw`\b(?:AI|artificial intelligence|technology|semiconductors?)\b.{0,60}\b(?:cooperation|geopolitic\w+|great.power|rivalry|diplomacy|BRICS|arms race)\b|\b(?:geopolitic\w+|great.power|BRICS|rivalry)\b.{0,60}\b(?:AI|artificial intelligence|technology|semiconductors?)\b`],
+  ['Economy', 'technology-labour', String.raw`\b(?:AI|artificial intelligence|automation)\b.{0,70}\b(?:jobs?|employment|graduates|workers|IT sector|labou?r|hiring|layoffs?|consumers|prices)\b|\b(?:IT sector|jobs?|employment|labou?r market|hiring|layoffs?)\b.{0,70}\b(?:AI|artificial intelligence|automation)\b`],
+  ['Governance', 'technology-administration', String.raw`\b(?:law enforcement|police|public services?|welfare|government deploys|governance)\b.{0,70}\b(?:AI|artificial intelligence|blockchain)\b|\b(?:AI|artificial intelligence|blockchain)\b.{0,70}\b(?:law enforcement|public services?|welfare|government deploys|certificates)\b`],
+  ['Environment', 'climate-accountability', String.raw`\b(?:coal|fossil.fuels?|emissions|climate|global warming)\b.{0,90}\b(?:approvals?|ruling|court|lawsuit|liability|phase.?out|agenda)\b|\b(?:court|lawsuit|ruling)\b.{0,90}\b(?:climate change|global warming|coal|emissions)\b`],
+  ['International relations', 'regional-order', String.raw`\b(?:Gulf|West Asia|Middle East|Indo.Pacific|neighbou?rhood)\b.{0,80}\b(?:security strateg\w+|energy trade|regional order|diplomac\w+|realign\w+)\b|\b(?:war|conflict)\b.{0,60}\b(?:Gulf states|regional order|rethink)\b`],
+  ['Security', 'armed-attack', String.raw`\b(?:Houthis?|militants?|insurgents?|rebels)\b.{0,60}\b(?:attack\w*|missiles?|drones?|strikes?)\b|\b(?:ballistic missiles|explosive.laden drones|missile strikes?)\b`],
 ]
 
 export function classifySubject(metadata: Pick<StageCMetadata, 'title' | 'description'>): SubjectDecision {
@@ -42,6 +54,27 @@ export function classifySubject(metadata: Pick<StageCMetadata, 'title' | 'descri
       evidence.push({ subject, field, start: match.index, end: match.index + match[0].length, text: match[0], rule: `D.${rule}.v1` })
       // Independent matched families support dominance; repeating a word does not.
       scores.set(subject, (scores.get(subject) ?? 0) + (field === 'title' ? 9 : 3))
+    }
+  }
+  for (const [subject, rule, pattern] of compounds) {
+    for (const field of ['title', 'description'] as const) {
+      const match = new RegExp(pattern, 'i').exec(metadata[field])
+      if (!match) continue
+      evidence.push({ subject, field, start: match.index, end: match.index + match[0].length, text: match[0], rule: `D.${rule}.v1` })
+      scores.set(subject, (scores.get(subject) ?? 0) + (field === 'title' ? 12 : 4))
+    }
+  }
+  // Shared syllabus objects widen coverage. A subject already evidenced in a
+  // field by a frame above does not count the same vocabulary twice.
+  const framed = new Set(evidence.map(e => e.subject + ':' + e.field))
+  for (const domain of DOMAINS) {
+    const acronyms = domainAcronyms(domain)
+    for (const field of ['title', 'description'] as const) {
+      const match = new RegExp(domainTerms(domain), 'i').exec(metadata[field]) ?? (acronyms ? new RegExp(acronyms).exec(metadata[field]) : null)
+      if (!match || framed.has(domain.subject + ':' + field)) continue
+      framed.add(domain.subject + ':' + field)
+      evidence.push({ subject: domain.subject, field, start: match.index, end: match.index + match[0].length, text: match[0], rule: `D.lexicon.${domain.id}.v1` })
+      scores.set(domain.subject, (scores.get(domain.subject) ?? 0) + (field === 'title' ? 9 : 3))
     }
   }
   const ranked = [...scores].sort((a, b) => b[1] - a[1] || SUBJECTS.indexOf(a[0]) - SUBJECTS.indexOf(b[0]))
