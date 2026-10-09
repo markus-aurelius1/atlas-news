@@ -1,5 +1,6 @@
 /** Derived reading metrics and disjoint rolling-window scopes. Cluster members count as one reading item. */
 import { eventPersonalState, type PersonalState } from './personal-state.ts'
+import { readingSubject } from './validator-v3/editorial.ts'
 import { TODAY_STORY_LIMIT, publicationDay, readingMinutes, readingQueue, shiftDay, valueOrder, type WorkspaceEvent } from './workspace.ts'
 export const RECENT_WINDOW_MS = 24 * 60 * 60 * 1000
 export function latestPublication(event: WorkspaceEvent): number {
@@ -42,7 +43,7 @@ export function queueCounts(events: WorkspaceEvent[], state: PersonalState) {
 }
 export function readingAnalytics(events: WorkspaceEvent[], state: PersonalState, now: number) {
   const known = new Set(events.flatMap(e => e.members.map(m => m.url)))
-  const rows = events.map(e => ({ ...eventPersonalState(e, state), subject: e.primary.relevance.subjects[0] ?? 'General studies', minutes: e.minutes, hasMetadata: true }))
+  const rows = events.map(e => ({ ...eventPersonalState(e, state), subject: e.primary.relevance.subjects[0] ?? readingSubject(e.primary), minutes: e.minutes, hasMetadata: true }))
   // Keep previously marked URLs in totals even if their feed metadata was never retained by this version.
   for (const [url, p] of Object.entries(state.entries)) if (!known.has(url) && (p.readAt || p.savedAt || p.ignoredAt)) rows.push({ ...p, subject: 'Metadata unavailable', minutes: 0, hasMetadata: false })
   const read = rows.filter(r => r.readAt), saved = rows.filter(r => r.savedAt)

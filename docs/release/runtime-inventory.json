@@ -5,12 +5,12 @@
     "indexHash": "2c2f551660477a40f5c22bf94c543259e057be33d5966d210fc24c23c407b348",
     "registryHash": "de31011cab4b5ca22e130016aaaecd5d41e867ea7bea0a21b101dc9ba9bc9d21",
     "authorHash": "431a9da8003ae1566091cb698b45304a8079026e78162c6c4f1c610803f69900",
-    "codeHash": "4d315b75ce44df75c73797cf659a353f22ab01bb2df592c4c19794d323a298b7"
+    "codeHash": "f9478775f3dd5b35d6fc4484ca5f9a1584c83622867f187b3e566b766781f8b6"
   },
   "inventory": [
     {
       "path": "src/current-affairs/analytics.ts",
-      "sha256": "35ffd9c80f3ecfafa2283b61adbe035d482afbdfc6311ad85e7ff7890360d75d"
+      "sha256": "6a908dbec46d4c8852d3c669e01a98181e59d060a7094ad06307b7f0975429b0"
     },
     {
       "path": "src/current-affairs/reader/policy.ts",
@@ -26,7 +26,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/adapter.ts",
-      "sha256": "81002685008c5b9cb4dede564a35ec50865557bc1b4570430f92610519b007c9"
+      "sha256": "d64120e43847448f4e3e9a2f54c0678554310043a08d4c39a6a82560a2ea01b4"
     },
     {
       "path": "src/current-affairs/validator-v3/author-registry.ts",
@@ -35,6 +35,10 @@
     {
       "path": "src/current-affairs/validator-v3/contracts.ts",
       "sha256": "d2e29d3dd0a64c893571286485c1a28c62a158659cda49452f02327e05413778"
+    },
+    {
+      "path": "src/current-affairs/validator-v3/editorial.ts",
+      "sha256": "9b80e41ab9cc3cecd71851d5779731a94850018e7fab5a2660b93712c1f98d41"
     },
     {
       "path": "src/current-affairs/validator-v3/eligibility.ts",
@@ -46,7 +50,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/history.ts",
-      "sha256": "75c46aac28fd84d789ea7f5aaeaee8672937458e8245db34e4dd7e62ab0a5565"
+      "sha256": "226370ca5adab90f84da9ac3579733ef3738c6922e2a429536171581cbed0dc2"
     },
     {
       "path": "src/current-affairs/validator-v3/lexicon.ts",
@@ -58,7 +62,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/orchestrator.ts",
-      "sha256": "8f5cbc6d06428d1d7348fba5e11faaad7849b0840d647c8b4b40eeae4f5a376c"
+      "sha256": "b383d65da0362760c4f0645d5f0e191f18dcabd922362d50672cf3dda45c7511"
     },
     {
       "path": "src/current-affairs/validator-v3/policy.ts",
@@ -70,7 +74,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/selection.ts",
-      "sha256": "51a95c33dc70f481dba0b74aca9a468840c5f6a1d9b5443988308a777a5e1944"
+      "sha256": "aafdb675d5974e691f66ab7f49512d6d21040b03b90e6c0c6bef85643ecd9b5e"
     },
     {
       "path": "src/current-affairs/validator-v3/source-intelligence.ts",
@@ -82,7 +86,7 @@
     },
     {
       "path": "src/current-affairs/validator-v3/stories.ts",
-      "sha256": "846fce57182c6526f8acceff727a5c77254141fbf3f55258c52d59dd91eb8ee6"
+      "sha256": "7a2da1e921c0ecbd4633530fd634258be80615f47142148aa0531d4bf2e443d2"
     },
     {
       "path": "src/current-affairs/validator-v3/subject.ts",
@@ -94,11 +98,11 @@
     },
     {
       "path": "src/features/current-affairs/NewsScreen.tsx",
-      "sha256": "c15f1eb92c5cce2ee232600548b92beb06079a54e23ea1bd6126d5831118f8a4"
+      "sha256": "325f8ee0636307c613281264b4e0db7505bbc97d8ee93a89951a824f18264c7a"
     },
     {
       "path": "src/features/current-affairs/useNewsModel.ts",
-      "sha256": "1223ef6ab3bf1d242ce5ffad14a31d9c7bc3165c267f6f04d49f2bae5e11644d"
+      "sha256": "ef07c91ba3ce791ebb869f7ce32f11e7ba273e6481ba8a43d11bea97393bc816"
     },
     {
       "path": "src/features/current-affairs/usePersonalState.ts",

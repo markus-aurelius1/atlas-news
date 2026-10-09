@@ -105,7 +105,10 @@ export const NEWS_SOURCES: NewsSource[] = [
 ]
 /** Immutable A1 source layout for clients without a generation parameter. Never reorder/edit these 77 entries. */
 export const LEGACY_NEWS_SOURCES = NEWS_SOURCES.slice(0, 77)
-const enabled = new Set(NEWS_SOURCES.filter(s => s.enabled).map(s => s.id))
+/** Feeds the owner has withdrawn. Their entries stay, so the immutable A1 layout and articles saved from them keep resolving. */
+export const RETIRED_SOURCES: ReadonlySet<string> = new Set(['ext-scmp'])
+export const CURRENT_NEWS_SOURCES = NEWS_SOURCES.filter(s => !RETIRED_SOURCES.has(s.id))
+const enabled = new Set(CURRENT_NEWS_SOURCES.filter(s => s.enabled).map(s => s.id))
 /** Old offline responses can contain removed official feeds; hide them without deleting personal URL state. */
 export const activeFeedItems = (items: NewsItem[]) => items.filter(item => enabled.has(item.sourceId))
 export const isActiveSource = (id: string) => enabled.has(id)

@@ -2,9 +2,20 @@ import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { captureSelection, previewSelection, indexArticle, rangeAt, resolveAnchor, type TextIndex, type Located } from '@/current-affairs/reader/highlights/anchors'
 import { HIGHLIGHT_COLORS, articleIdentity, type HighlightArticle, type HighlightColor, type ReaderHighlight } from '@/current-affairs/reader/highlights/model'
 import { highlights } from '@/current-affairs/reader/highlights/repository'
-import { selectionCompletion } from '@/current-affairs/reader/highlights/selection'
+import { selectionCompletion, STROKE, STROKE_SLOP_PX } from '@/current-affairs/reader/highlights/selection'
 
 interface PreviewEntry { range: Range; color: HighlightColor; id?: string }
+interface Caret { node: Node; offset: number }
+const WORD = /[\p{L}\p{N}’'-]/u
+/** The end of the word a caret falls in, within its own text node. */
+function wordEdge(caret: Caret, forward: boolean): Caret {
+  if (caret.node.nodeType !== Node.TEXT_NODE) return caret
+  const text = (caret.node as Text).data
+  let offset = caret.offset
+  if (forward) while (offset < text.length && WORD.test(text[offset])) offset++
+  else while (offset > 0 && WORD.test(text[offset - 1])) offset--
+  return { node: caret.node, offset }
+}
 
 export const COLOR_KEY = 'tars.reader.highlight-color.v1'
 export const highlightSupport = () => typeof CSS !== 'undefined' && 'highlights' in CSS && typeof Highlight !== 'undefined'
@@ -122,7 +133,7 @@ export function useHighlights(body: RefObject<HTMLDivElement | null>, html: stri
       for (const [key, entry] of pending) if (entry.id && known.has(entry.id)) pending.delete(key)
       paintPreview()
     }
-    const complete = selectionCompletion(() => {
+    const commit = () => {
       const state = live.current
       if (!state.enabled || !state.article || !state.activeSurface() || !index.current) return
       const selected = captureSelection(root, index.current, window.getSelection())
@@ -155,15 +166,69 @@ export function useHighlights(body: RefObject<HTMLDivElement | null>, html: stri
           setMessage(e instanceof Error ? e.message : 'Highlight could not be saved. Select it again to retry.')
         })
       // Native selection and handles remain intact, including after automatic persistence.
+    }
+    // A pen drawn across the text highlights it as a highlighter does on paper: no long press and no handles. The stroke
+    // drives the native selection, so preview, anchoring and saving are those of any other selection; once saved, the
+    // stroke's selection is dropped. A finger still scrolls and selects natively, and a pen tap still follows a link.
+    let stroke: { pointer: number; x: number; y: number; from: Caret | null; drawing: boolean } | null = null, strokeEnded = 0, strokeDrawn = false
+    const complete = selectionCompletion(() => {
+      const drawn = strokeDrawn
+      strokeDrawn = false
+      commit()
+      if (drawn) window.getSelection()?.removeAllRanges()
     })
+    const caretAt = (x: number, y: number): Caret | null => {
+      const doc = document as Document & { caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null; caretRangeFromPoint?: (x: number, y: number) => Range | null }
+      const position = doc.caretPositionFromPoint?.(x, y), range = position ? null : doc.caretRangeFromPoint?.(x, y)
+      const caret = position ? { node: position.offsetNode, offset: position.offset } : range ? { node: range.startContainer, offset: range.startOffset } : null
+      return caret && root.contains(caret.node) ? caret : null
+    }
+    const draw = (x: number, y: number) => {
+      const to = caretAt(x, y)
+      if (!stroke?.from || !to) return
+      const forward = stroke.from.node === to.node ? stroke.from.offset <= to.offset : !!(stroke.from.node.compareDocumentPosition(to.node) & Node.DOCUMENT_POSITION_FOLLOWING)
+      // A stroke rarely starts and ends exactly between words; it takes the words it touches whole.
+      const start = wordEdge(forward ? stroke.from : to, false), end = wordEdge(forward ? to : stroke.from, true)
+      window.getSelection()?.setBaseAndExtent(start.node, start.offset, end.node, end.offset)
+      preview()
+    }
+    const penMove = (e: PointerEvent) => {
+      if (!stroke || e.pointerId !== stroke.pointer) return
+      if (!stroke.drawing) {
+        if (Math.hypot(e.clientX - stroke.x, e.clientY - stroke.y) < STROKE_SLOP_PX) return
+        stroke.drawing = true
+        stroke.from ??= caretAt(e.clientX, e.clientY)
+        complete.pointerDown(STROKE)
+      }
+      draw(e.clientX, e.clientY)
+    }
+    // Cancelling the pen's first movement keeps the page still under it; a finger's movement is never cancelled.
+    const penTouchMove = (e: TouchEvent) => { if (stroke && e.cancelable) e.preventDefault() }
+    const swallowClick = (e: Event) => { e.preventDefault(); e.stopPropagation() }
     const down = (e: PointerEvent) => {
       if (e.pointerType === 'touch' || e.pointerType === 'pen') lastContact = Date.now()
+      // A palm resting on the glass is a touch of its own and must not end or complete the pen's stroke.
+      if (stroke?.drawing && e.pointerType !== 'pen') return
+      if (e.pointerType === 'pen') stroke = e.isPrimary && e.button === 0 && root.contains(e.target as Node) && live.current.activeSurface() ? { pointer: e.pointerId, x: e.clientX, y: e.clientY, from: caretAt(e.clientX, e.clientY), drawing: false } : null
       if (root.contains(e.target as Node)) complete.pointerDown(e.pointerType || 'mouse')
       else complete.cancel()
     }
     let lastContact = 0
     const up = (e: PointerEvent) => {
       if (e.pointerType === 'touch' || e.pointerType === 'pen') lastContact = Date.now()
+      if (stroke?.drawing && e.pointerId !== stroke.pointer) return
+      if (stroke && e.pointerId === stroke.pointer) {
+        const drew = stroke.drawing
+        stroke = null
+        if (drew) {
+          // The lift ends the stroke: it is saved at once, and the click the lift would send is not a tap on the text.
+          strokeEnded = Date.now(); strokeDrawn = true
+          root.addEventListener('click', swallowClick, { capture: true, once: true })
+          setTimeout(() => root.removeEventListener('click', swallowClick, true), 400)
+          preview(); complete.pointerUp(STROKE)
+          return
+        }
+      }
       preview()
       complete.pointerUp(e.pointerType || 'mouse')
     }
@@ -173,13 +238,15 @@ export function useHighlights(body: RefObject<HTMLDivElement | null>, html: stri
       const capability = (e as MouseEvent & { sourceCapabilities?: { firesTouchEvents: boolean } }).sourceCapabilities
       if (!capability?.firesTouchEvents && Date.now() - lastContact > 1500) { preview(); complete.pointerUp('mouse') }
     }
-    const touchEnd = () => { lastContact = Date.now(); preview(); complete.pointerUp('touch') }
-    const nativeTakeover = () => { complete.cancel(); complete.changed() }
+    const touchEnd = () => { lastContact = Date.now(); if (stroke?.drawing || Date.now() - strokeEnded < 800) return; preview(); complete.pointerUp('touch') }
+    const nativeTakeover = () => { stroke = null; complete.cancel(); complete.changed() }
     const changed = () => { failed = ''; preview(); complete.changed() }
     const cancel = () => complete.cancel()
     const scroll = () => complete.cancel()
     document.addEventListener('pointerdown', down, { passive: true })
     document.addEventListener('pointerup', up, { passive: true })
+    document.addEventListener('pointermove', penMove, { passive: true })
+    root.addEventListener('touchmove', penTouchMove, { passive: false })
     document.addEventListener('pointercancel', nativeTakeover, { passive: true })
     document.addEventListener('mouseup', mouseUp, { passive: true })
     document.addEventListener('touchend', touchEnd, { passive: true })
@@ -195,6 +262,9 @@ export function useHighlights(body: RefObject<HTMLDivElement | null>, html: stri
       complete.destroy()
       document.removeEventListener('pointerdown', down)
       document.removeEventListener('pointerup', up)
+      document.removeEventListener('pointermove', penMove)
+      root.removeEventListener('touchmove', penTouchMove)
+      root.removeEventListener('click', swallowClick, true)
       document.removeEventListener('pointercancel', nativeTakeover)
       document.removeEventListener('mouseup', mouseUp)
       document.removeEventListener('touchend', touchEnd)

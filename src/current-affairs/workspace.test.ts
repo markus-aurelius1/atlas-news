@@ -12,7 +12,7 @@ const index: RelevanceIndex = { version: 2, provenance: {}, signals: [{ concept:
 const workspace = (id = 'one', overrides: Partial<WorkspaceEvent> = {}): WorkspaceEvent => ({ ...buildWorkspace([event(id)], index)[0], ...overrides })
 const filters: WorkspaceFilters = { day: '2026-10-01', tab: 'To be Read', exam: 'All', subject: 'All subjects', publisher: 'All sources', query: '', budget: null }
 it('publisher-curated general coverage does not imply Prelims/Mains demand or Must Read', () => {
-  const e = event('curated', { sourceId: 'ie-upsc', relevance: { accepted: true, score: 2, exam: 'general', subjects: ['General studies'], topics: [], staticAnchors: [], signals: [] } })
+  const e = event('curated', { sourceId: 'ie-upsc', relevance: { accepted: true, score: 2, exam: 'general', subjects: ['Governance'], topics: [], staticAnchors: [], signals: [] } })
   const rows = buildWorkspace([e], index)
   expect(rows[0].mustRead).toBe(false)
   expect(filterWorkspace(rows, empty(), filters)).toHaveLength(1)

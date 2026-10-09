@@ -1,9 +1,9 @@
 /** Local metadata archive, separate from learner Dexie and Workbox's latest response. No article bodies or stored counters. */
-import { canonicalUrl, thumbnailUrl } from './feed'
-import { isActiveSource } from './sources'
-import { optionalMetadata, mergeMetadata } from './validator-v3/metadata'
-import { editionLabel, shiftDay, UNDATED } from './workspace'
-import type { NewsItem } from './types'
+import { canonicalUrl, thumbnailUrl } from './feed.ts'
+import { isActiveSource } from './sources.ts'
+import { optionalMetadata, mergeMetadata } from './validator-v3/metadata.ts'
+import { editionLabel, shiftDay, UNDATED } from './workspace.ts'
+import type { NewsItem } from './types.ts'
 export const ARCHIVE_DB = 'tars-current-affairs-archive-v1'
 export const ARCHIVE_STORE = 'articles'
 export interface ArchivedArticle extends NewsItem { firstSeenAt: number; lastSeenAt: number }

@@ -49,7 +49,7 @@ export function useNewsModel() {
   const { archived, archiveError } = useArchive(validator.mode === 'v3' ? [] : current, data?.fetchedAt)
   const all = useMemo(() => {
     if (!index) return []
-    if (validator.mode === 'v3') return validator.result?.output.articles.map(a => displayArticle(a.item, index, a.acceptance.accepted)) ?? []
+    if (validator.mode === 'v3') return validator.result?.output.articles.map(a => displayArticle(a.item, index, a.acceptance.accepted, a.editorial)) ?? []
     const items = new Map<string, NewsItem>(archived.map((item) => [item.url, item]))
     const retained = new Map(archived.map((item) => [item.url, item]))
     for (const item of activeFeedItems(data?.items ?? [])) {

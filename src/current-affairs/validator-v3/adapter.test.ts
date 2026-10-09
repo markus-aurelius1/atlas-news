@@ -46,6 +46,8 @@ it('static anchors cannot fold distinct v3 reading needs or override selected re
 it('only selected units become chronological Archive; undated/old accepted metadata stays out', async () => {
   const result = await evaluateProduction(feed([item, { ...item, url: 'https://indianexpress.com/old', publishedAt: '2026-10-01T12:00:00.000Z', title: 'Quantum computing research discovers a different mechanism' }]), index, { history: [], selected: [] }, now)
   expect(result.events).toHaveLength(1); expect(result.snapshot.history).toHaveLength(2)
-  expect(result.events[0].primary.relevance.score).toBe(0)
+  // The card carries the editorial value and every point behind it for the debug view.
+  expect(result.events[0].primary.relevance.score).toBeGreaterThanOrEqual(result.events[0].primary.relevance.threshold!)
+  expect(result.events[0].primary.relevance.evidence!.reduce((n, e) => n + e.points, 0)).toBeCloseTo(result.events[0].primary.relevance.score, 1)
   expect(result.events[0].primary.relevance.subjects).toEqual(['Sci-Tech'])
 })

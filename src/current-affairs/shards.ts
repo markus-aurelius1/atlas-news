@@ -4,7 +4,7 @@
  * 77 feeds cannot fit. The client requests every shard (each cached at the edge for two hours) and merges them.
  */
 import { dedupeUrls } from './feed.ts'
-import { NEWS_SOURCES, LEGACY_NEWS_SOURCES } from './sources.ts'
+import { CURRENT_NEWS_SOURCES, NEWS_SOURCES, LEGACY_NEWS_SOURCES } from './sources.ts'
 import type { FeedResponse, NewsSource } from './types.ts'
 
 /** Upstream feeds per invocation: one wave of the gateway's six concurrent connections. */
@@ -14,7 +14,7 @@ export function feedShards(sources: NewsSource[] = NEWS_SOURCES): NewsSource[][]
   const enabled = sources.filter(s => s.enabled), count = Math.ceil(enabled.length / FEED_SHARD_SIZE)
   return Array.from({ length: count }, (_, k) => enabled.filter((_, i) => i % count === k))
 }
-export const FEED_SHARDS = feedShards()
+export const FEED_SHARDS = feedShards(CURRENT_NEWS_SOURCES)
 export const LEGACY_FEED_SHARDS = feedShards(LEGACY_NEWS_SOURCES)
 /** Hash the exact ordered layout, including endpoint identity. Changes must use a new edge key. */
 export function registryGeneration(shards: NewsSource[][]): string {

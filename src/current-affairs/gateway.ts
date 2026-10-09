@@ -1,6 +1,6 @@
 /** Same-origin gateway: registry-only requests, bounded concurrency, response sizes and time, isolated publisher failures. */
 import { parseFeed, dedupeUrls } from './feed.ts'
-import { NEWS_SOURCES } from './sources.ts'
+import { CURRENT_NEWS_SOURCES } from './sources.ts'
 import type { FeedResponse, NewsItem, NewsSource } from './types.ts'
 export const FEED_CACHE_CONTROL = 'public, max-age=0, s-maxage=7200, stale-while-revalidate=21600'
 /** Upstream requests in flight at once; matches the edge runtime's own simultaneous-connection ceiling. */
@@ -9,7 +9,7 @@ const FEED_TIMEOUT_MS = 10000
 /** Whole-collection budget, kept inside the client's 18 s request timeout; sources not reached by then fail in isolation. */
 export const COLLECT_BUDGET_MS = 15000
 type SourceResult = { items: NewsItem[]; status: FeedResponse['sources'][number] }
-export async function collectFeeds(fetcher: typeof fetch = fetch, sources: NewsSource[] = NEWS_SOURCES, now = Date.now()): Promise<FeedResponse> {
+export async function collectFeeds(fetcher: typeof fetch = fetch, sources: NewsSource[] = CURRENT_NEWS_SOURCES, now = Date.now()): Promise<FeedResponse> {
   const active = sources.filter(s => s.enabled), deadline = Date.now() + COLLECT_BUDGET_MS
   const failed = (source: NewsSource): SourceResult => ({ items: [], status: { sourceId: source.id, status: 'failed', count: 0 } })
   const collect = async (source: NewsSource): Promise<SourceResult> => {

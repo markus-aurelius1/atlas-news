@@ -9,6 +9,8 @@ export interface StoryFrame {
 }
 export interface MetadataObservation { item: NewsItem; observedAt: number; firstSeenAt: number }
 export interface SelectedReading { id: string; selectedAt: number; lastSelectedAt: number; representative: NewsItem; members: string[]; frame: StoryFrame }
+/** What a device remembers between refreshes: what it has seen and what it has offered. */
+export interface SelectionSnapshot { history: MetadataObservation[]; selected: SelectedReading[] }
 export interface ReadingUnit { id: string; members: NewsItem[]; frame: StoryFrame; novelty: 'new_development' | 'distinct_analysis' | 'repeat' | 'uncertain'; priorId: string | null; reason: string; firstSeenAt: number; selectedAt?: number }
 export interface StoryResult { units: ReadingUnit[]; history: MetadataObservation[]; coverage: 'cold_start' | 'limited' | 'seven_days'; comparisons: number }
 const norm = (s: string) => s.toLowerCase().normalize('NFKC').replace(/[^\p{L}\p{N}]+/gu, ' ').trim()

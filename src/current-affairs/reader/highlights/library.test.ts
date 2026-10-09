@@ -15,9 +15,9 @@ afterEach(() => { repos.forEach((repo) => repo.close()); repos.length = 0 })
 describe('Highlights library grouping', () => {
   it('groups by snapshot subject then article, using News order and Other for null/unknown', () => {
     const groups = groupHighlights([row('economy', 'https://www.thehindu.com/e', 'Economy'), row('null', 'https://www.thehindu.com/n', null), row('unknown', 'https://www.thehindu.com/u', 'Unresolved'), row('p1'), row('p2')])
-    expect(groups.map((g) => [g.subject, g.count])).toEqual([['Polity', 2], ['Economy', 1], ['Other', 2]])
-    expect(groups[0].articles).toHaveLength(1)
-    expect(groups[0].articles[0].passages.map((r) => r.highlightId)).toEqual(['p1', 'p2'])
+    expect(groups.map((g) => [g.subject, g.count])).toEqual([['Economy', 1], ['Polity', 2], ['Other', 2]])
+    expect(groups[1].articles).toHaveLength(1)
+    expect(groups[1].articles[0].passages.map((r) => r.highlightId)).toEqual(['p1', 'p2'])
   })
   it('orders articles by latest edit activity and passages by anchor then creation/ID', () => {
     const early = row('early'), later = row('later')

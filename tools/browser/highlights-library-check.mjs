@@ -163,7 +163,7 @@ try {
     performanceEvidence.push({ tag, sixExcerptsVisibleMs: Date.now() - start })
     check(tag, 'multiple articles, duplicate excerpts and stable independent IDs', await library.locator('[data-library-highlight]').count() === 6)
     check(tag, 'tombstone hidden', await library.locator('[data-library-highlight="tombstone"]').count() === 0)
-    check(tag, 'snapshot subjects in News order with null in Other', JSON.stringify(await library.locator('.library-subject > h2').allTextContents()) === JSON.stringify(['Polity2', 'Governance1', 'Economy1', 'Environment1', 'Other1']))
+    check(tag, 'snapshot subjects in News order with null in Other', JSON.stringify(await library.locator('.library-subject > h2').allTextContents()) === JSON.stringify(['Environment1', 'Economy1', 'Polity2', 'Governance1', 'Other1']))
     check(tag, 'passages follow original anchor order', (await library.locator('[data-library-article="' + orphan + '"] [data-library-highlight]').first().getAttribute('data-library-highlight')) === 'early')
     check(tag, 'unresolved excerpt remains displayed', await library.getByText('Passage no longer locatable').count() === 1)
     check(tag, 'library metadata shown', await library.locator('time').count() === 5 && (await library.textContent()).includes('2 highlights'))

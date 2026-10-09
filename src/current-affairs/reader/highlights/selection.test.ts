@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { HANDLE_IDLE_MS, MOUSE_IDLE_MS, selectionCompletion } from './selection'
+import { HANDLE_IDLE_MS, MOUSE_IDLE_MS, STROKE, selectionCompletion } from './selection'
 afterEach(() => vi.useRealTimers())
 describe('native selection completion', () => {
   it('commits mouse only after release and the final selectionchange', () => {
@@ -11,6 +11,15 @@ describe('native selection completion', () => {
     lifecycle.changed(); vi.advanceTimersByTime(MOUSE_IDLE_MS - 1)
     expect(commit).not.toHaveBeenCalled()
     vi.advanceTimersByTime(1); expect(commit).toHaveBeenCalledTimes(1)
+    lifecycle.destroy()
+  })
+  it('commits a pen stroke as soon as the pen lifts, not after the handle pause', () => {
+    vi.useFakeTimers()
+    const commit = vi.fn(), lifecycle = selectionCompletion(commit)
+    lifecycle.pointerDown(STROKE); lifecycle.changed(); lifecycle.changed()
+    vi.advanceTimersByTime(4000); expect(commit).not.toHaveBeenCalled()
+    lifecycle.pointerUp(STROKE); vi.advanceTimersByTime(MOUSE_IDLE_MS)
+    expect(commit).toHaveBeenCalledTimes(1)
     lifecycle.destroy()
   })
   for (const type of ['touch', 'pen']) it(type + ' keeps native handle changes pending until quiet', () => {

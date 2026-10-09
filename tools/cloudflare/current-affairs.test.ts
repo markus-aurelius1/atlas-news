@@ -4,7 +4,7 @@ import { it as test, vi } from 'vitest'
 import { onRequest } from '../../functions/api/current-affairs.ts'
 import { FEED_CACHE_CONTROL, FEED_CONCURRENCY } from '../../src/current-affairs/gateway.ts'
 import { FEED_SHARD_SIZE, FEED_SHARDS, FEED_REGISTRY_GENERATION, feedShards, mergeShards, shardIndex } from '../../src/current-affairs/shards.ts'
-import { NEWS_SOURCES } from '../../src/current-affairs/sources.ts'
+import { CURRENT_NEWS_SOURCES, NEWS_SOURCES, RETIRED_SOURCES, isActiveSource } from '../../src/current-affairs/sources.ts'
 import type { FeedResponse } from '../../src/current-affairs/types.ts'
 
 /** Cloudflare Workers Free: subrequests per invocation and simultaneous outgoing connections. */
@@ -14,9 +14,12 @@ const shardUrl = (shard: number | string, extra = '') => `https://example.test/a
 
 test('every registry source belongs to exactly one shard, and no shard nears the free-plan limits', () => {
   const ids = FEED_SHARDS.flat().map(s => s.id)
-  assert.deepEqual([...ids].sort(), NEWS_SOURCES.filter(s => s.enabled).map(s => s.id).sort())
+  assert.deepEqual([...ids].sort(), CURRENT_NEWS_SOURCES.filter(s => s.enabled).map(s => s.id).sort())
   assert.equal(new Set(ids).size, ids.length)
-  assert.equal(FEED_SHARDS.length, Math.ceil(NEWS_SOURCES.length / FEED_SHARD_SIZE))
+  assert.equal(FEED_SHARDS.length, Math.ceil(CURRENT_NEWS_SOURCES.length / FEED_SHARD_SIZE))
+  // A withdrawn feed is no longer collected, but stays in the registry and in the immutable layout of old clients.
+  for (const id of RETIRED_SOURCES) { assert.ok(!ids.includes(id)); assert.ok(NEWS_SOURCES.some(s => s.id === id)); assert.ok(!isActiveSource(id)) }
+  assert.ok(RETIRED_SOURCES.has('ext-scmp'))
   for (const shard of FEED_SHARDS) {
     assert.ok(shard.length >= 1 && shard.length <= FEED_SHARD_SIZE)
     // Upstream fetches plus the invocation's own cache read and write, with a wide margin.

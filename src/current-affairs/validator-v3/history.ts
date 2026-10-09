@@ -1,9 +1,9 @@
 /** Additive local metadata ledger. No learner stores, synced cursor or body data. */
 import { articleMetadata } from '../archive'
-import { storyFrame, STORY_POLICY, type MetadataObservation, type SelectedReading } from './stories'
+import { storyFrame, STORY_POLICY, type MetadataObservation, type SelectedReading, type SelectionSnapshot } from './stories'
 
 export const SELECTION_DB = 'tars-validator-v3-reading-v1'
-export interface SelectionSnapshot { history: MetadataObservation[]; selected: SelectedReading[] }
+export type { SelectionSnapshot }
 function open(factory: IDBFactory): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const request = factory.open(SELECTION_DB, 1)

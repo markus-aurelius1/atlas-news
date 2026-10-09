@@ -61,6 +61,82 @@ describe('Reader highlight integration', () => {
     await new Promise((r) => setTimeout(r, 100))
     expect(await highlights.readByArticle(article.articleUrl)).toHaveLength(1)
   })
+  describe('pen strokes', () => {
+    /** The caret under a point: x is the character offset inside the emphasised phrase "chosen passage". */
+    const caret = () => vi.spyOn(document as Document & { caretRangeFromPoint: (x: number, y: number) => Range | null }, 'caretRangeFromPoint').mockImplementation((x: number) => {
+      const node = document.querySelector('.reader-body em')!.firstChild!, range = document.createRange()
+      range.setStart(node, Math.max(0, Math.min(14, Math.round(x)))); range.collapse(true)
+      return range
+    })
+    const pen = { pointerType: 'pen', pointerId: 7, isPrimary: true, button: 0, clientY: 10 }
+    beforeEach(() => { (document as Document & { caretRangeFromPoint?: unknown }).caretRangeFromPoint ??= () => null })
+    it('highlights the words a pen is drawn across, at once and without a long press', async () => {
+      render(<Harness />)
+      fireEvent.click(screen.getByRole('button', { name: 'Highlighter' }))
+      caret()
+      const root = document.querySelector('.reader-body')!, before = root.innerHTML
+      fireEvent.pointerDown(root, { ...pen, clientX: 2 })
+      // The page must not scroll under the pen: its movement is claimed from the first touchmove.
+      const move = new Event('touchmove', { bubbles: true, cancelable: true }); root.dispatchEvent(move)
+      expect(move.defaultPrevented).toBe(true)
+      fireEvent.pointerMove(root, { ...pen, clientX: 4 })
+      expect(window.getSelection()?.toString()).toBe('')
+      fireEvent.pointerMove(root, { ...pen, clientX: 9 })
+      // From inside "chosen" to inside "passage": both words are taken whole.
+      expect(window.getSelection()?.toString()).toBe('chosen passage')
+      fireEvent.pointerUp(root, { ...pen, clientX: 9 })
+      fireEvent.touchEnd(root)
+      await waitFor(async () => expect(await highlights.readByArticle(article.articleUrl)).toHaveLength(1), { timeout: 600 })
+      expect((await highlights.readByArticle(article.articleUrl))[0].quote).toBe('chosen passage')
+      await waitFor(() => expect(paints.get('tars-yellow')?.size).toBe(1))
+      // No selection or handles are left behind, and the article markup is untouched.
+      expect(window.getSelection()?.toString()).toBe(''); expect(root.innerHTML).toBe(before)
+    })
+    it('a palm resting on the glass does not end or complete the stroke', async () => {
+      render(<Harness />)
+      fireEvent.click(screen.getByRole('button', { name: 'Highlighter' }))
+      caret()
+      const root = document.querySelector('.reader-body')!, palm = { pointerType: 'touch', pointerId: 9, isPrimary: false, button: 0, clientX: 300, clientY: 400 }
+      fireEvent.pointerDown(root, { ...pen, clientX: 2 }); fireEvent.pointerMove(root, { ...pen, clientX: 4 })
+      fireEvent.pointerMove(root, { ...pen, clientX: 5 }); fireEvent.pointerMove(root, { ...pen, clientX: 8 })
+      fireEvent.pointerDown(root, palm); fireEvent.pointerUp(root, palm); fireEvent.touchEnd(root)
+      fireEvent.pointerMove(root, { ...pen, clientX: 12 })
+      expect(window.getSelection()?.toString()).toBe('chosen passage')
+      await new Promise((r) => setTimeout(r, 150))
+      expect(await highlights.readByArticle(article.articleUrl)).toHaveLength(0)
+      fireEvent.pointerUp(root, { ...pen, clientX: 12 })
+      await waitFor(async () => expect(await highlights.readByArticle(article.articleUrl)).toHaveLength(1), { timeout: 600 })
+    })
+    it('a stroke drawn backwards highlights the same words', async () => {
+      render(<Harness />)
+      fireEvent.click(screen.getByRole('button', { name: 'Highlighter' }))
+      caret()
+      const root = document.querySelector('.reader-body')!
+      fireEvent.pointerDown(root, { ...pen, clientX: 12 }); fireEvent.pointerMove(root, { ...pen, clientX: 1 }); fireEvent.pointerUp(root, { ...pen, clientX: 1 })
+      await waitFor(async () => expect((await highlights.readByArticle(article.articleUrl))[0]?.quote).toBe('chosen passage'), { timeout: 600 })
+    })
+    it('a pen tap highlights nothing, and a finger still scrolls', async () => {
+      render(<Harness />)
+      fireEvent.click(screen.getByRole('button', { name: 'Highlighter' }))
+      caret()
+      const root = document.querySelector('.reader-body')!
+      fireEvent.pointerDown(root, { ...pen, clientX: 3 }); fireEvent.pointerMove(root, { ...pen, clientX: 5 }); fireEvent.pointerUp(root, { ...pen, clientX: 5 })
+      fireEvent.pointerDown(root, { ...pen, pointerType: 'touch', clientX: 2 }); fireEvent.pointerMove(root, { ...pen, pointerType: 'touch', clientX: 12 })
+      const move = new Event('touchmove', { bubbles: true, cancelable: true }); root.dispatchEvent(move)
+      expect(move.defaultPrevented).toBe(false); expect(window.getSelection()?.toString()).toBe('')
+      fireEvent.pointerUp(root, { ...pen, pointerType: 'touch', clientX: 12 })
+      await new Promise((r) => setTimeout(r, 150))
+      expect(await highlights.readByArticle(article.articleUrl)).toHaveLength(0)
+    })
+    it('does nothing while the Highlighter is off', async () => {
+      render(<Harness />)
+      caret()
+      const root = document.querySelector('.reader-body')!
+      fireEvent.pointerDown(root, { ...pen, clientX: 2 }); fireEvent.pointerMove(root, { ...pen, clientX: 12 })
+      const move = new Event('touchmove', { bubbles: true, cancelable: true }); root.dispatchEvent(move)
+      expect(move.defaultPrevented).toBe(false); expect(window.getSelection()?.toString()).toBe('')
+    })
+  })
   it('completes native mouse takeover when mouseup arrives without pointerup', async () => {
     render(<Harness />)
     fireEvent.click(screen.getByRole('button', { name: 'Highlighter' }))

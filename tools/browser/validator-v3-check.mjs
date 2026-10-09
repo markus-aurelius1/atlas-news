@@ -14,8 +14,11 @@ const scienceUrl = 'https://indianexpress.com/fixture-quantum'
 const items = [
   row('Quantum computing research reveals a new mechanism', scienceUrl, { description: 'New research discovers an experimentally evidenced mechanism with broad scientific consequences.' }),
   row('Quantum computing research reveals a new mechanism', 'https://www.thehindu.com/fixture-quantum', { publisher: 'The Hindu', sourceId: 'hindu-science', section: 'Science', description: 'New research discovers an experimentally evidenced mechanism with broad scientific consequences.' }),
-  row('India defence readiness: capability assessment and doctrine risks', 'https://indianexpress.com/fixture-defence'),
-  row('India monetary policy: inflation transmission effects', 'https://indianexpress.com/fixture-monetary'),
+  row('Navy commissions indigenous anti-submarine warfare craft under defence indigenisation push', 'https://indianexpress.com/fixture-defence'),
+  row('RBI raises repo rate by 25 basis points to curb inflation', 'https://indianexpress.com/fixture-monetary'),
+  // Party politics and case-level litigation on a syllabus topic are not offered.
+  row('Opposition slams Centre over electoral roll revision, demands CEC resign', 'https://indianexpress.com/fixture-politics'),
+  row('SC junks plea seeking probe into FIRs filed during electoral roll protests', 'https://indianexpress.com/fixture-litigation'),
   row('Quantum computing research reveals a mechanism in case HISTORIC', 'https://indianexpress.com/fixture-old', { publishedAt: new Date(now - 5 * 86400000).toISOString() }),
   row('NASA staff personnel dispute', 'https://indianexpress.com/fixture-reject'),
 ]

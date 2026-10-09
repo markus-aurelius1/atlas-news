@@ -17,7 +17,7 @@ export function HighlightControls({ value, available }: { value: ReturnType<type
   const [open, setOpen] = useState(false)
   if (!available) return null
   return <>
-    <Pressable plain haptic="none" type="button" className="tool reader-tool reader-highlighter" aria-label="Highlighter" aria-pressed={value.enabled} disabled={!value.supported} title={value.supported ? 'Highlighter: select article text to highlight' : 'Highlighting requires a browser with CSS Custom Highlights'} onClick={() => value.setEnabled(!value.enabled)}>
+    <Pressable plain haptic="none" type="button" className="tool reader-tool reader-highlighter" aria-label="Highlighter" aria-pressed={value.enabled} disabled={!value.supported} title={value.supported ? 'Highlighter: draw across the text with a pen, or select it, to highlight' : 'Highlighting requires a browser with CSS Custom Highlights'} onClick={() => value.setEnabled(!value.enabled)}>
       <Highlighter aria-hidden="true" /><span>{value.enabled ? 'On' : 'Highlight'}</span>
     </Pressable>
     <Pressable plain haptic="none" ref={anchor} type="button" className="tool reader-tool" aria-label="Highlight colors and edits" aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(!open)}><Palette aria-hidden="true" /><span className="highlight-color-dot" data-color={value.color} /></Pressable>
@@ -26,7 +26,7 @@ export function HighlightControls({ value, available }: { value: ReturnType<type
       <div className="highlight-panel" data-highlight-ui>
         <p className="highlight-panel-title">Next highlight</p>
         <PaletteChoices color={value.color} onChoose={value.choose} />
-        <p className="highlight-hint">{!value.supported ? 'Update your browser to show highlights.' : value.enabled ? 'Select text naturally. Touch and pen selections save after a brief pause.' : 'Turn on Highlighter, then select article text.'}</p>
+        <p className="highlight-hint">{!value.supported ? 'Update your browser to show highlights.' : value.enabled ? 'With a pen, draw across the text: it is highlighted as you go and saved when you lift. With a finger or mouse, select text as usual; a finger selection saves after a brief pause.' : 'Turn on Highlighter, then draw across the text with a pen, or select it.'}</p>
         {value.message && <p className="highlight-feedback" role="status">{value.message}</p>}
         {value.records.length > 0 && <p className="highlight-panel-title">In this article · {value.records.length}</p>}
         {value.records.map((r) => <div className="highlight-edit" key={r.highlightId}>
