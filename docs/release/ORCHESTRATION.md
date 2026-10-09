@@ -15,7 +15,9 @@ Original PYQ checkout: read-only status and SHA-256 fingerprints of all 127 dirt
 
 Milestones: C `ec125e3eb80b9eedc64804636955465d9580742d`; D `3f01fc386a29651ea1cf44866c4fd26f42484d19`; E commit is identified by `E_HANDOFF.md` history. Dependencies copied from an existing local worktree; no dependency download.
 
-Current stage: E verified / F implementation. C Reader gate now passes 320 checks, phone/desktop and both themes. D root 657 tests; E root 671 tests. Subject calibration 29/31 exact-primary; cases 6/34 abstain. See stage handoffs and reports for scope/denominators.
+Current stage: F verified engineering / A3 controlled adapter. E `bb6faf93f9b656d83becae91be75f8cae8ea814a`; F SHA resolved from `F_HANDOFF.md` history. C Reader gate passes 320 checks. D/E/F root totals 657/671/680. Subject calibration 29/31 exact-primary; cases 6/34 abstain.
+
+Wider 1000-article shadow: frozen v2 accepts 326, frozen C 36 and defers 940; four historical-clock Today units are 100% secondary sources. Coverage/source-quality gates are BLOCKED. V3 must remain disabled by default. Full report in `evaluation.json`; no C retuning or label edits.
 
 Stage C calibration: TP 28 / FP 0 / FN 3 / TN 16; 28/28 precision, 28/31 recall; must-read 16/17. Three unresolvable abstentions excluded from binary truth; three resolved deferred positives remain misses. This enriched exposed calibration is not production evaluation.
 
@@ -25,6 +27,6 @@ Open gates:
 - Real multi-day temporal evidence is limited; synthetic replay must be identified separately.
 - Physical touch/stylus, hosted Access/D1 and production publisher behavior cannot be certified by local emulation.
 
-Next: F selection/diagnostics and wider captured-metadata shadow, then A3 controlled adapter, Highlights and combined checks. Quality evidence gates remain independent from code/test completion.
+Next: A3 controlled adapter, Highlights and combined checks. Independent A3 holdout unavailable and not invoked. Quality evidence gates remain independent from code/test completion.
 
 Required combined checks: root typecheck/lint/tests/pipeline/build; evaluation and replay; full desktop/mobile browser suite; Highlights library/responsiveness/sync; ephemeral local migrations/workerd/Access; historical data/backup/account isolation; protected hashes and whitespace; static Free-plan limits; deployment and rollback runbook; clean committed release.
