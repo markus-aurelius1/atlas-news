@@ -1,0 +1,234 @@
+{
+  "version": "tars-calibration-provenance/v1",
+  "parentCommit": "cac3ea02db968aa7f5701022766cd20e50ea815d",
+  "branch": "codex/validator-v3-calibration-gold",
+  "recordedAt": "2026-10-08T01:36:25.968Z",
+  "annotationInput": {
+    "sha256": "e39eaf54baae84873267819889048158500ef81e6c9e32279cee60e165985f3e",
+    "ownerIdRecords": 47,
+    "modelOriginRecords": 3
+  },
+  "calibrationManifestSha256": "8c0768866185a7642f8605fa8e4b7695c9cfee92c1fe6e559ccff0afd33691e3",
+  "sourcePackage": "C:/Users/hario/.codex/worktrees/validator-v3-a2a/Atlas-News/tools/news/evaluation/data/a2a-bootstrap-2026-10-07/package-owner-final",
+  "protectedFiles": [
+    {
+      "path": "sampling-manifest.json",
+      "sha256": "828496b3eaca92c19f089cf5bb61db24f42a49f85d39a9ea7e8435ba3299fa04"
+    },
+    {
+      "path": "partitions.json",
+      "sha256": "300decc40e3acdf303acd35072a414f081f4d6c33eb97802b0ebab7ede3a4352"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "76f957dac110f212e06b60aebb1335ef4ef556b3154235da0d42698a2fec396c"
+    },
+    {
+      "path": "corpus.json",
+      "sha256": "303f4fa0648201cf810ae2d789fad387d6e053bac6cd4f99c254c8e56ee9f1e6"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "9bc1435a928268d7f0394bc17ed8e55826aa1f581b16cca212a231cd63b05d85"
+    },
+    {
+      "path": "source-audit.json",
+      "sha256": "ce8eec3fa2e00adec25ca33b98e550900fbb12926005f48f9ab5bebafc15cb83"
+    },
+    {
+      "path": "metadata-sufficiency.json",
+      "sha256": "0028b1fb8080b9c1fd442c583d5345cab7263f64d8e69dbbcc5bde767b72c029"
+    },
+    {
+      "path": "leakage-report.json",
+      "sha256": "2e51a7409a1a5c9b26d96b8f1ccffd9e7b84dd77ca8f61c196914f8475cdfe0e"
+    },
+    {
+      "path": "leakage-constraints.json",
+      "sha256": "311f92cc5f7755b823773dbfce5e49f28ae8fa5598a8e91d5e068a676cad3a66"
+    },
+    {
+      "path": "frozen-v2/predictions.json",
+      "sha256": "454c79e8c7edfc097957be02ea345eb7ab3cbfbbcca7fb60fe564b44e61e4ac2"
+    },
+    {
+      "path": "editorial-metadata-sufficiency.json",
+      "sha256": "39dcfdb53fc85f2e8ac171d0fe50ff3fd2b92b7b7b055803a4da94036a658cc0"
+    },
+    {
+      "path": "editorial-evaluation-policy.json",
+      "sha256": "7ddb32c51dd47868d6851648b1b87aeebdd0ea2cd187fe40ae89c9bb80df99a2"
+    },
+    {
+      "path": "temporal-candidates.json",
+      "sha256": "89735c9a7d3c8917b965b39e81854e79116d66ad1ed25a8f0c27c6fe4498a54c"
+    },
+    {
+      "path": "editorial-judgment-templates.json",
+      "sha256": "db377817ba3652b67edaf3d2bf9cfa2161f43b33c740af1ea2ddac6030791b75"
+    },
+    {
+      "path": "owner-exemplars/corpus.json",
+      "sha256": "3c624bc90c43558950d608c57934a2fd3fba0c068abc662a287f7673c94ee98d"
+    },
+    {
+      "path": "owner-exemplars/source.md",
+      "sha256": "c61a112f54243d7affb9e106d05d7d7f83ea31353a604d4d5124f6847db32d2e"
+    },
+    {
+      "path": "owner-exemplar-diagnostics.json",
+      "sha256": "30dbb35222dbdcd69309b85da805f74906d7acbdbfe935c18a206a29f6d83861"
+    },
+    {
+      "path": "owner-exemplars/interpretation.md",
+      "sha256": "a853415fdd2cea65d59b2bb35c198c0feb695006d10c37e7ead3528cce64e4ad"
+    },
+    {
+      "path": "reviewer/editorial-judgments.json",
+      "sha256": "db377817ba3652b67edaf3d2bf9cfa2161f43b33c740af1ea2ddac6030791b75"
+    },
+    {
+      "path": "reviewer/annotations.json",
+      "sha256": "a08cb3e072cb2b95ca9398751e5838c607bb9fbadecc5d69448e466fb5adacfe"
+    },
+    {
+      "path": "reviewer/index.html",
+      "sha256": "304063a398dfaf53705e38250aa28177f4c3dd7bc017924b364459abf77e4cf4"
+    },
+    {
+      "path": "reviewer/rubric.md",
+      "sha256": "f918d0d4350ae7b0f29cd589d8a7ca51c5802584aa977b5fd4e21005250e894d"
+    },
+    {
+      "path": "adjudication-template.json",
+      "sha256": "f7e2fc998234642374b4e4e2e73d2bcc85332b58b495fa39cb1aa6dc09e55e7b"
+    },
+    {
+      "path": "family-audit-template.json",
+      "sha256": "6aa3bbe75a7f1021316daf170d9d32e0f7938e235456e8c3d5702f3364982b77"
+    },
+    {
+      "path": "workflow.md",
+      "sha256": "868944063276c102640a8765c858553814f1c5d93e87b0a785c2e89e69f0dc41"
+    },
+    {
+      "path": "versions.json",
+      "sha256": "004c7b930f9d0255ab3d5d6ec674d986fc4e13f3d21dcf05e7a88b9707538968"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "ea9f768df0939d97e30d105c60fb46b2b7a8e0ee79b819c43d51cc20959a2bde"
+    },
+    {
+      "path": "artifact-hashes.json",
+      "sha256": "e82c5c1bbff8a6c0b433b4f4e118e14c21b52cf7ae5aae08fe1220cb87012f33"
+    }
+  ],
+  "sourceInventoryVerified": 27,
+  "codeVerification": [
+    {
+      "path": "src/current-affairs/relevance.ts",
+      "sha256": "4c15cf51250f1e248bbcb34a97bd223bef18091560559fd8c8b23a92c37d770f",
+      "currentSha256": "4c15cf51250f1e248bbcb34a97bd223bef18091560559fd8c8b23a92c37d770f",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "src/current-affairs/evidence-lexicon.ts",
+      "sha256": "ca47812bf720d278cb373034440f73124d2cf41b3fbc9ff113efcdd6e88adc06",
+      "currentSha256": "ca47812bf720d278cb373034440f73124d2cf41b3fbc9ff113efcdd6e88adc06",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "src/current-affairs/match.ts",
+      "sha256": "d422612357e1f706d5a758a87c57b16a39780d0b69dbb0e4de5fb21f1c250f25",
+      "currentSha256": "d422612357e1f706d5a758a87c57b16a39780d0b69dbb0e4de5fb21f1c250f25",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "src/current-affairs/sources.ts",
+      "sha256": "a042631b380c81aa0a31d4e81d237d244b5f80345c5ddbc1cd19d1f8a366dd57",
+      "currentSha256": "a042631b380c81aa0a31d4e81d237d244b5f80345c5ddbc1cd19d1f8a366dd57",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "src/current-affairs/types.ts",
+      "sha256": "fc7ac242c76c61e0e55f551f17c0e09e7ae79575b0da651cd94ebb342062fe29",
+      "currentSha256": "fc7ac242c76c61e0e55f551f17c0e09e7ae79575b0da651cd94ebb342062fe29",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "tools/news/evaluation/source-audit.ts",
+      "sha256": "acfe1ab8a25f850d122f06a32dd2428eaaadd854f34246daab9b6456d93cc8b2",
+      "currentSha256": "acfe1ab8a25f850d122f06a32dd2428eaaadd854f34246daab9b6456d93cc8b2",
+      "status": "exact_bytes"
+    },
+    {
+      "path": "tools/news/evaluation/frozen-v2.ts",
+      "sha256": "5428d3d59c148d3b8657c17c9dca0f669aec10feb940c5a9995fd87c7ec31a3e",
+      "currentSha256": "7d901c40db1577a7af7c23918291bfe45dcf99a9dcce35a4dfa488cb082a5ee0",
+      "status": "archived_exact_bytes_current_CRLF_equivalent",
+      "archived": "C:\\Users\\hario\\.codex\\worktrees\\validator-v3-a2a\\Atlas-News\\tools\\news\\evaluation\\frozen-v2.ts"
+    },
+    {
+      "path": "tools/news/evaluation/replay.ts",
+      "sha256": "911a68c3c1a1393d6459891837971e4e697bf5491fe8d28bb62784fbd3de29dd",
+      "currentSha256": "911a68c3c1a1393d6459891837971e4e697bf5491fe8d28bb62784fbd3de29dd",
+      "status": "exact_bytes"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "tools/news/evaluation/calibration-gold.mjs",
+      "sha256": "e1eec8d0b6f9bc19cfcdee0c3c82308725e5a71ee07e7bb509d1ed7ed14ed530"
+    },
+    {
+      "path": "tools/news/evaluation/calibration-gold-requirements.mjs",
+      "sha256": "351af06ff5d6bc0b1c60956a040537887a60fef5491cd4e307ac35c9595b6f87"
+    },
+    {
+      "path": "tools/news/evaluation/calibration-gold.test.mjs",
+      "sha256": "0e002bb8800354f59b4ac751f642bddc8879612fdb87f8450d74aba518119df4"
+    },
+    {
+      "path": "tools/news/evaluation/schema.json",
+      "sha256": "5c258a144d83819ff81ce3f913915e6cbc739a3b74d153a1bd5fade1320edb27"
+    },
+    {
+      "path": "tools/news/evaluation/validate.ts",
+      "sha256": "f99d91eb6bdc8dfb4b95b862112476dacfa23d7bf5c1b4662b6eb67e0134c889"
+    },
+    {
+      "path": "tools/news/evaluation/bootstrap-review.ts",
+      "sha256": "e8329d3bc30b657041a81745586121c13820190927aea32bd6ea6ee4a11f97d8"
+    }
+  ],
+  "replay": {
+    "baselineSha256": "454c79e8c7edfc097957be02ea345eb7ab3cbfbbcca7fb60fe564b44e61e4ac2",
+    "clock": "2026-10-07T13:40:55.600Z",
+    "outputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "reconstructedOutputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "exactPredictions": true,
+    "exactTraces": true,
+    "reverseOrderOutputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "codeByteNote": "One CRLF in archived frozen-v2.ts becomes LF in Git checkout; exact archived hash and normalized text equality verified. Current runner code hash therefore differs; prediction and trace digests match."
+  },
+  "counts": {
+    "corpus": 1000,
+    "selected": 50,
+    "resolved": 47,
+    "unresolvable": 3,
+    "selectedObservations": 159,
+    "originalPartitions": {
+      "development": 42,
+      "validation": 8
+    }
+  },
+  "boundaries": {
+    "parentCorpusUnchanged": true,
+    "ownerExemplarsUnchanged": true,
+    "futureHoldoutOpened": false,
+    "productionChanged": false,
+    "laterStagesImplemented": false
+  },
+  "immutability": "Content-addressed freeze with SHA-256 verification and no-overwrite generator; local files are not filesystem WORM or a cryptographic owner signature."
+}

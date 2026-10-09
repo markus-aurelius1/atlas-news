@@ -1,0 +1,407 @@
+{
+  "version": "tars-calibration-gold-verification/v1",
+  "completedAt": "2026-10-08T01:38:43.673Z",
+  "parentCommit": "cac3ea02db968aa7f5701022766cd20e50ea815d",
+  "branch": "codex/validator-v3-calibration-gold",
+  "worktree": "C:\\Users\\hario\\.codex\\worktrees\\validator-v3-calibration-gold\\Atlas-News",
+  "packageManifestSha256": "a425c2eaa1a77b1c3cb7085d35f61688add269b6ca05dda8ab8475c95091221e",
+  "annotationInputSha256": "e39eaf54baae84873267819889048158500ef81e6c9e32279cee60e165985f3e",
+  "commands": [
+    {
+      "command": "npm run typecheck",
+      "result": "passed",
+      "log": "calibration-typecheck.log"
+    },
+    {
+      "command": "npm run lint",
+      "result": "passed",
+      "errors": 0,
+      "warnings": 133,
+      "note": "Existing warnings in untouched production files",
+      "log": "calibration-lint.log"
+    },
+    {
+      "command": "npx eslint tools/news/evaluation/calibration-gold.mjs tools/news/evaluation/calibration-gold-requirements.mjs tools/news/evaluation/calibration-gold.test.mjs",
+      "result": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "command": "npm test",
+      "result": "passed",
+      "tests": 604,
+      "files": 41,
+      "log": "calibration-root-tests.log"
+    },
+    {
+      "command": "node --test tools/news/evaluation/*.test.ts tools/news/evaluation/calibration-gold.test.mjs",
+      "result": "passed",
+      "tests": 69,
+      "failures": 0,
+      "log": "calibration-tooling.log"
+    },
+    {
+      "command": "npm run test:pipeline",
+      "result": "passed_with_guarded_skips",
+      "passed": 39,
+      "skipped": 6,
+      "skipReason": "canonical-pyq-v2-final.zip or CANONICAL_PYQ_PACKAGE unavailable",
+      "log": "calibration-pipeline.log"
+    },
+    {
+      "command": "npm run build",
+      "result": "passed",
+      "log": "calibration-build.log"
+    },
+    {
+      "command": "REVIEWER_CHECK_NAME=calibration-gold-browser node tools/news/evaluation/bootstrap-browser-check.mjs tools/news/evaluation/data/calibration-gold-browser",
+      "result": "passed",
+      "checks": 100,
+      "widths": [
+        375,
+        768,
+        1366
+      ],
+      "networkRequests": 0,
+      "naturalLabelsEntered": 0,
+      "note": "Copied blank 50-card reviewer; all natural labels untouched; synthetic QA validates import/export/autosave and schema. Legacy evidence string says 1000 but check asserts records.length=50.",
+      "log": "calibration-browser.log"
+    },
+    {
+      "command": "node tools/news/evaluation/calibration-gold.mjs verify tools/news/evaluation/calibration-gold-v1",
+      "result": "passed",
+      "files": 15
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "logHashes": [
+    {
+      "path": "tools/news/evaluation/.runs/calibration-typecheck.log",
+      "sha256": "d3be3763b2cda6f5cc927b93923044a350e4d6c929145960e551e8cc430dbbda"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-lint.log",
+      "sha256": "3b2ee363e5d4ec3bf2a734cf937c7c6f37706938dc72c0eb55dbe73775baf6ab"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-root-tests.log",
+      "sha256": "f7105002e3d0da21ccab37681483a6988f56938ad6fa1418c3cb617bbbff373b"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-tooling.log",
+      "sha256": "e72d3c302e5286572faba1b4e11fd309970d410d52285c06717da9152ca4ef95"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-pipeline.log",
+      "sha256": "5dec7d0bcd743062dedf5d4df9145e0d5ab8ad3e535538ab38ed6dacb3105c12"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-build.log",
+      "sha256": "9c345ea3f7a05130dc21be93f27cd1cfaddc3b898c067ecd6977a7cf751a570c"
+    },
+    {
+      "path": "tools/news/evaluation/.runs/calibration-browser.log",
+      "sha256": "f8b239bff23d729366ea50d6b90d555d1c79994cd408254a201315d732a0b8e6"
+    }
+  ],
+  "import": {
+    "responses": 50,
+    "ownerIdRecords": 47,
+    "modelOriginOwnerValidated": 3,
+    "unresolvable": 3,
+    "allOriginalAnnotationObjectsUnchanged": true,
+    "exactManifestIds": true,
+    "originalPartitionsPreserved": true,
+    "selectedDevelopment": 42,
+    "selectedValidation": 8,
+    "selectedObservations": 159,
+    "schemaAndEvidence": "A1 annotation vocabulary/closed schema, complete resolved labels, observation hash/ID, span bounds/references, temporal novelty, source metadata and sampling equality, owner attestation and ID binding"
+  },
+  "freeze": {
+    "packageFilesVerified": 15,
+    "sourceToolHashesVerified": 6,
+    "protectedOriginalFilesVerified": 28,
+    "sourceInventoryFilesVerified": 27,
+    "annotationOriginalBytesVerified": true,
+    "noOverwrite": true
+  },
+  "replay": {
+    "baselineSha256": "454c79e8c7edfc097957be02ea345eb7ab3cbfbbcca7fb60fe564b44e61e4ac2",
+    "clock": "2026-10-07T13:40:55.600Z",
+    "outputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "reconstructedOutputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "exactPredictions": true,
+    "exactTraces": true,
+    "reverseOrderOutputHash": "c3036711b088fa08392ade8198e561070a9c6ae262f1a464015133a6a156f287",
+    "codeByteNote": "One CRLF in archived frozen-v2.ts becomes LF in Git checkout; exact archived hash and normalized text equality verified. Current runner code hash therefore differs; prediction and trace digests match."
+  },
+  "results": {
+    "binary": {
+      "n": 47,
+      "tp": 14,
+      "fp": 1,
+      "fn": 17,
+      "tn": 15,
+      "precision": 0.9333333333333333,
+      "recall": 0.45161290322580644,
+      "f1": 0.6086956521739131
+    },
+    "mustRead": {
+      "n": 17,
+      "retained": 11,
+      "misses": [
+        "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+        "article:28794f3817d2487b0e37aebf13e3018768c34a32a62a43ccfad521d9668037e2",
+        "article:7dcdd8ae8a7dc204e60dc831989be86b32ab5f543226953eb2e5f344b55a316c",
+        "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+        "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+        "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32"
+      ],
+      "recall": 0.6470588235294118
+    },
+    "exactPrimary": {
+      "n": 31,
+      "correct": 13,
+      "accuracy": 0.41935483870967744,
+      "confusion": {
+        "Economy": {
+          "Economy": 3,
+          "Governance": 2,
+          "Polity": 1,
+          "null": 2
+        },
+        "Environment": {
+          "Geography": 1
+        },
+        "Governance": {
+          "Sci-Tech": 1
+        },
+        "International relations": {
+          "Environment": 1,
+          "International relations": 4,
+          "null": 2
+        },
+        "Polity": {
+          "Geography": 1,
+          "Polity": 3,
+          "null": 1
+        },
+        "Sci-Tech": {
+          "Economy": 1,
+          "Environment": 2,
+          "Sci-Tech": 3
+        },
+        "Security": {
+          "International relations": 3
+        }
+      }
+    },
+    "requestedAuthors": {
+      "n": 8,
+      "retained": 4,
+      "misses": [
+        "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+        "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+        "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+        "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32"
+      ],
+      "allMissingDescriptions": true
+    }
+  },
+  "browserVisualReview": {
+    "inspected": [
+      "natural-375.png",
+      "judgments-1366.png"
+    ],
+    "result": "Readable phone and desktop layouts; natural labels blank; no new UI introduced"
+  },
+  "scope": {
+    "trackedFilesModified": [],
+    "productionBehaviorModified": false,
+    "corpus1000Modified": false,
+    "frozenV2Modified": false,
+    "ownerExemplarsModified": false,
+    "originalPartitionsModified": false,
+    "futureHoldoutRead": false,
+    "stageCDEFImplemented": false,
+    "commitCreated": false,
+    "remoteActions": false
+  },
+  "changedFiles": [
+    "tools/news/evaluation/.gitattributes",
+    "tools/news/evaluation/CALIBRATION_GOLD_REPORT.md",
+    "tools/news/evaluation/CALIBRATION_GOLD_VERIFICATION.json",
+    "tools/news/evaluation/calibration-gold-requirements.mjs",
+    "tools/news/evaluation/calibration-gold-v1/COMPARISON.md",
+    "tools/news/evaluation/calibration-gold-v1/ERROR_CASES.md",
+    "tools/news/evaluation/calibration-gold-v1/README.md",
+    "tools/news/evaluation/calibration-gold-v1/STAGE_C_REQUIREMENTS.md",
+    "tools/news/evaluation/calibration-gold-v1/a1-schema.json",
+    "tools/news/evaluation/calibration-gold-v1/calibration-manifest.json",
+    "tools/news/evaluation/calibration-gold-v1/comparison.json",
+    "tools/news/evaluation/calibration-gold-v1/error-cases.tsv",
+    "tools/news/evaluation/calibration-gold-v1/gold.json",
+    "tools/news/evaluation/calibration-gold-v1/human-annotations.original.json",
+    "tools/news/evaluation/calibration-gold-v1/observations.json",
+    "tools/news/evaluation/calibration-gold-v1/owner-attestation.json",
+    "tools/news/evaluation/calibration-gold-v1/provenance.json",
+    "tools/news/evaluation/calibration-gold-v1/response-schema.json",
+    "tools/news/evaluation/calibration-gold-v1/sha256-manifest.json",
+    "tools/news/evaluation/calibration-gold-v1/sha256-manifest.sha256",
+    "tools/news/evaluation/calibration-gold-v1/stage-c-requirements.json",
+    "tools/news/evaluation/calibration-gold.mjs",
+    "tools/news/evaluation/calibration-gold.test.mjs"
+  ],
+  "notes": [
+    "Original dirty checkout was not written to. No initial full dirty-file byte snapshot was collected, so no claim is made that unrelated concurrent activity could not change it.",
+    "Local gold files are SHA-256 content-frozen, not filesystem WORM or independently signed.",
+    "Model authorship remains original; owner validation is separately attested from the direct task request.",
+    "No release-quality inference or Stage C quality certification."
+  ],
+  "preCommitReview": {
+    "reviewedAt": "2026-10-09T03:38:04.352Z",
+    "annotationsValidated": 50,
+    "evidenceSpansValidated": 139,
+    "ownerIdRecords": 47,
+    "modelOriginOwnerValidatedRecords": 3,
+    "ownerValidationSeparate": true,
+    "unresolvableExcluded": 3,
+    "resolvedDenominator": 47,
+    "binary": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 17,
+      "tn": 15
+    },
+    "fullBaselineReplayArticles": 1000,
+    "reverseReplayExact": true,
+    "protectedFilesVerified": 28,
+    "sourceInventoryFilesVerified": 27,
+    "sourceToolHashesVerified": 6,
+    "packageManifestSha256": "a425c2eaa1a77b1c3cb7085d35f61688add269b6ca05dda8ab8475c95091221e",
+    "secretScan": {
+      "files": 23,
+      "highSignalPatterns": 5,
+      "findings": []
+    },
+    "changedFiles": [
+      "tools/news/evaluation/.gitattributes",
+      "tools/news/evaluation/CALIBRATION_GOLD_REPORT.md",
+      "tools/news/evaluation/CALIBRATION_GOLD_VERIFICATION.json",
+      "tools/news/evaluation/calibration-gold-requirements.mjs",
+      "tools/news/evaluation/calibration-gold-v1/COMPARISON.md",
+      "tools/news/evaluation/calibration-gold-v1/ERROR_CASES.md",
+      "tools/news/evaluation/calibration-gold-v1/README.md",
+      "tools/news/evaluation/calibration-gold-v1/STAGE_C_REQUIREMENTS.md",
+      "tools/news/evaluation/calibration-gold-v1/a1-schema.json",
+      "tools/news/evaluation/calibration-gold-v1/calibration-manifest.json",
+      "tools/news/evaluation/calibration-gold-v1/comparison.json",
+      "tools/news/evaluation/calibration-gold-v1/error-cases.tsv",
+      "tools/news/evaluation/calibration-gold-v1/gold.json",
+      "tools/news/evaluation/calibration-gold-v1/human-annotations.original.json",
+      "tools/news/evaluation/calibration-gold-v1/observations.json",
+      "tools/news/evaluation/calibration-gold-v1/owner-attestation.json",
+      "tools/news/evaluation/calibration-gold-v1/provenance.json",
+      "tools/news/evaluation/calibration-gold-v1/response-schema.json",
+      "tools/news/evaluation/calibration-gold-v1/sha256-manifest.json",
+      "tools/news/evaluation/calibration-gold-v1/sha256-manifest.sha256",
+      "tools/news/evaluation/calibration-gold-v1/stage-c-requirements.json",
+      "tools/news/evaluation/calibration-gold.mjs",
+      "tools/news/evaluation/calibration-gold.test.mjs"
+    ],
+    "scope": "Only calibration import/gold/analysis/specification and byte-preservation attributes. No production changes or holdout access.",
+    "checks": [
+      {
+        "command": "npm run typecheck",
+        "result": "passed",
+        "log": "precommit-typecheck.log"
+      },
+      {
+        "command": "npm run lint",
+        "result": "passed",
+        "errors": 0,
+        "warnings": 133,
+        "log": "precommit-lint.log"
+      },
+      {
+        "command": "npm test",
+        "result": "passed",
+        "tests": 604,
+        "files": 41,
+        "log": "precommit-root-tests.log"
+      },
+      {
+        "command": "node --test tools/news/evaluation/*.test.ts tools/news/evaluation/calibration-gold.test.mjs",
+        "result": "passed",
+        "tests": 69,
+        "log": "precommit-tooling.log"
+      },
+      {
+        "command": "npm run test:pipeline",
+        "result": "passed_with_guarded_skips",
+        "passed": 39,
+        "skipped": 6,
+        "reason": "Canonical ZIP unavailable; guards preserved",
+        "log": "precommit-pipeline.log"
+      },
+      {
+        "command": "npm run build",
+        "result": "passed",
+        "log": "precommit-build.log"
+      },
+      {
+        "command": "REVIEWER_CHECK_NAME=precommit-calibration-browser node tools/news/evaluation/bootstrap-browser-check.mjs tools/news/evaluation/data/calibration-gold-browser",
+        "result": "passed",
+        "checks": 100,
+        "widths": [
+          375,
+          768,
+          1366
+        ],
+        "networkRequests": 0,
+        "naturalLabelsEntered": 0,
+        "log": "precommit-browser.log"
+      }
+    ],
+    "logHashes": [
+      {
+        "path": "tools/news/evaluation/.runs/precommit-typecheck.log",
+        "sha256": "d3be3763b2cda6f5cc927b93923044a350e4d6c929145960e551e8cc430dbbda"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-lint.log",
+        "sha256": "3b2ee363e5d4ec3bf2a734cf937c7c6f37706938dc72c0eb55dbe73775baf6ab"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-root-tests.log",
+        "sha256": "b23ef56baa810940be1e88935701d31df95b5b8ddf68df33071012aca1214e0b"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-tooling.log",
+        "sha256": "0ba931ebc87fa1d414987931c0bab7dbf8a7b8ed968ed8a31f0237e9fffc921b"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-pipeline.log",
+        "sha256": "d6eb0e740a9986db67426490c6494596541296c28507884d4e976b4369fdc1ae"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-build.log",
+        "sha256": "2e6aa37d01bfb87cba8c8615e34e978a8c88e5b9369abf144f36a5ae91749fe1"
+      },
+      {
+        "path": "tools/news/evaluation/.runs/precommit-browser.log",
+        "sha256": "017c5fc46a272cba1edeea15f001c59b79319ce09a212695f955ebf95c4804ac"
+      }
+    ],
+    "gitBytePreservation": {
+      "attributesFile": "tools/news/evaluation/.gitattributes",
+      "reason": "Prevent eol normalization of frozen package and tool bytes pinned in provenance; only these explicit paths are covered.",
+      "whitespace": "Original CRLF recognized; blank-at-eol, blank-at-eof and space-before-tab still checked"
+    },
+    "authorization": "Direct owner request 2026-10-09: exactly one local commit, message Freeze Validator v3 owner calibration gold; no remote actions.",
+    "priorScopeNote": "Top-level scope and earlier completedAt describe the original pre-authorization handoff; the local commit is now explicitly authorized."
+  }
+}

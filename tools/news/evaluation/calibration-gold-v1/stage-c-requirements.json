@@ -1,0 +1,642 @@
+{
+  "version": "tars-stage-c-calibration-requirements/v1",
+  "status": "specification_only",
+  "source": "Frozen owner-validated 50-case calibration; hypotheses must be validated on broader reviewed data",
+  "requirements": [
+    {
+      "id": "C-01",
+      "priority": "P0",
+      "title": "Separate hard scope/low-value eligibility from relevance evidence",
+      "evidence": [
+        {
+          "number": 22,
+          "id": "article:182892b88a2917d3a894595f8ecfe9ffe87965bb78dd2a99ecf61605af638b88",
+          "result": "FP",
+          "value": "reject",
+          "title": "Abe Memorial Corridor honouring Shinzo Abe, India-Japan ties opened in Varanasi"
+        },
+        {
+          "number": 1,
+          "id": "article:67729524d8604d12d8b27c29aec592a06c66cc8d51602b610b8b537d14166b33",
+          "result": "TN",
+          "value": "reject",
+          "title": "Chinese woman snaps up nearly 200 parking spaces to flip to neighbours for profit"
+        },
+        {
+          "number": 4,
+          "id": "article:c1004b4ac9e392fc111e2c032c98c4eeb4ea8cf7dfbda1dea2a35f9bd3810b09",
+          "result": "TN",
+          "value": "reject",
+          "title": "France high school students’ protest: What sparked violence, what’s next"
+        },
+        {
+          "number": 14,
+          "id": "article:47d949972797b03508dbf3dff8a4022f6f58526f0ec2f71331433cc2703ae267",
+          "result": "TN",
+          "value": "reject",
+          "title": "Migration worries, not economic concerns, boost the AfD"
+        },
+        {
+          "number": 15,
+          "id": "article:cccba3a86fc6951173edf03df00cf86a5210b8d8bc72abc0443a7850a35c3388",
+          "result": "TN",
+          "value": "reject",
+          "title": "'Inflation man Modi's reign of terror continues': Congress on repo rate hike"
+        },
+        {
+          "number": 16,
+          "id": "article:7ca565f8bde1920fdcb7be3409f420e4049e9f126e4dd8337622a72ea5125704",
+          "result": "TN",
+          "value": "reject",
+          "title": "INDIA bloc MPs detained en route to Jantar Mantar sit-in against Gyanesh Kumar"
+        },
+        {
+          "number": 18,
+          "id": "article:b727ab8903ee41c0e4f33401e3af74085f10c0f7de8ccc3d48e83e5ffcbd36d9",
+          "result": "TN",
+          "value": "reject",
+          "title": "Coco Gauff says online racist abuse was ‘draining’ after China Open exit"
+        },
+        {
+          "number": 20,
+          "id": "article:b1bd64eb0bda7d872e67046cceebe03746cbd81df0466b6250fa028e7b775a77",
+          "result": "TN",
+          "value": "reject",
+          "title": "The week in wildlife: a rescued orangutan, the chonkiest bear and a barn owl’s triumph"
+        },
+        {
+          "number": 25,
+          "id": "article:791958a237c8bcf882288b16dd7a3e2174cab2e9a169b6030a77d6e3b793ba9d",
+          "result": "TN",
+          "value": "reject",
+          "title": "VCK demands basic amenities for SC/ST residents in the Nilgiris"
+        },
+        {
+          "number": 33,
+          "id": "article:ab75fe8c3296c19a75027d9dc4b42bec0ba3a0c0df895110c2895f383f7e87c7",
+          "result": "TN",
+          "value": "reject",
+          "title": "Robust AI spending sets investors up for another bumper US earnings season"
+        },
+        {
+          "number": 38,
+          "id": "article:92fe47cc2442a4eecf25a6873a3bebfe399cb5debeca64e18d906fd793ec641d",
+          "result": "TN",
+          "value": "reject",
+          "title": "Reform probe clears Farage aides caught in donations sting"
+        },
+        {
+          "number": 40,
+          "id": "article:101932b8f57d3dd0be2c41ad3fa46136b40890212813b0498bbb05bcf00f3176",
+          "result": "TN",
+          "value": "reject",
+          "title": "SA20 2026 Live Streaming: When And Where To Watch Live Telecast"
+        },
+        {
+          "number": 41,
+          "id": "article:b354065f73cf7af0858db45dff4e95fd19b3ae09cb4d9c7ef3944ebc98782e88",
+          "result": "TN",
+          "value": "reject",
+          "title": "‘Swan Song’: Princess Diana’s brother’s book is icy in its contempt for the British royal family"
+        },
+        {
+          "number": 45,
+          "id": "article:b60dd37fb0f8e3478e19c8699349804f6ff818bee733746df45085cc6cd82a5f",
+          "result": "TN",
+          "value": "reject",
+          "title": "Exasperated by Delays, Congress Tries to Speed Up Energy Permitting"
+        },
+        {
+          "number": 48,
+          "id": "article:ca792f481c3f3406c1dac5f2bdcccf5a6a6acc2f0352d607180bc88150c41412",
+          "result": "TN",
+          "value": "reject",
+          "title": "Brazil Election Could Give Bolsonaro a Key Role in Trump’s Latin America Map"
+        },
+        {
+          "number": 49,
+          "id": "article:1df710e8b89a536a9ed4e4954fedf9fc06a57f7bb64cfac48f222c5a7d06e0da",
+          "result": "TN",
+          "value": "reject",
+          "title": "Why did I get $90 from Social Security? Trump Medicare payment explained"
+        }
+      ],
+      "requirement": "Gate ceremonial, routine, foreign-domestic and party-primary units before value scoring. Country names, syllabus entities, explanatory formatting and publisher preference cannot override an evidenced hard exclusion. Party mention alone is not an exclusion.",
+      "regressions": [
+        "#22 must reject despite the v2 12.1 score, India-Japan terms and a nominal substance signal; record ceremonial_low_value and observed evidence.",
+        "#1/#4/#45/#48/#49 foreign-domestic controls stay rejected; #14/#15/#16/#25/#38 party-led controls stay rejected; #18/#20/#33/#40/#41 stay rejected.",
+        "Retain systemic/knowledge positives #8/#10/#11/#17/#19/#24/#26/#32/#35/#39/#44/#46; do not require the word India for universal knowledge.",
+        "Synthetic paired ceremony versus substantive agreement, and party criticism versus enacted policy, must differ on captured substance rather than names."
+      ],
+      "boundary": "Stage C only; no country keyword blanket rejection, publisher boost, body fetch or subject shortcut."
+    },
+    {
+      "id": "C-02",
+      "priority": "P0",
+      "title": "Recognize substantive editorial argument without requiring a factual-action verb",
+      "evidence": [
+        {
+          "number": 6,
+          "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan writes: The ghosts of 1945 are being recruited for today’s contest over Asia"
+        },
+        {
+          "number": 21,
+          "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Pratap Bhanu Mehta: Election Commission and Court make it harder, not easier, to believe in independent institutions"
+        },
+        {
+          "number": 34,
+          "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Pratap Bhanu Mehta writes | Graham Bill is America confusing its power with virtue — yet again"
+        },
+        {
+          "number": 50,
+          "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan: The multipolar world India wants may be a distant reality"
+        },
+        {
+          "number": 13,
+          "id": "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+          "result": "FN",
+          "value": "useful",
+          "title": "Editorial. Lending transparency"
+        },
+        {
+          "number": 17,
+          "id": "article:6b5b8d60cdcc36505a51e97736e83f5964c67ce53c6f20669fdde191620166b0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Oil prices remain highly flammable"
+        },
+        {
+          "number": 27,
+          "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Fiscal federalism, efficiency versus equity concerns"
+        },
+        {
+          "number": 44,
+          "id": "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+          "result": "TP",
+          "value": "must_read",
+          "title": "Pratap Bhanu Mehta writes | Amid AI, wars and climate change catastrophes, diplomacy is acting ‘normal’"
+        }
+      ],
+      "requirement": "Provide a deterministic, evidence-carrying value path for institutional criticism and strategic/economic analysis. A factual law/report/action is one substance path, not the only path. Verified byline and section may support context but cannot automatically accept the article.",
+      "regressions": [
+        "#21 must_read must survive the current substance veto even though score 7.5 clears the threshold.",
+        "#6/#50 must_read and #34 useful must be diagnosed separately as opaque lexical framing or missing-summary risk; evaluate bounded title, section and legitimate byline evidence without inventing arguments.",
+        "#13 lending transparency, #17 oil-price analysis and #27 fiscal federalism must remain eligible analytical reading needs.",
+        "All 8 requested-author records are tested individually: #6/#19/#21/#26/#34/#44/#46/#50. Report retention 4/8 at baseline and target each lost positive; do not use an unconditional author allowlist.",
+        "Synthetic paired same-author irrelevant/ceremonial item must reject; spoofed title-only author name must not gain verified-byline privileges."
+      ],
+      "boundary": "C acceptance only. Distinct angle/novelty belongs to E; opaque arguments may require acquisition evidence, with explicit abstention counted as a miss."
+    },
+    {
+      "id": "C-03",
+      "priority": "P0",
+      "title": "Recover well-evidenced positives lost to blended threshold and lexical gaps",
+      "evidence": [
+        {
+          "number": 5,
+          "id": "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+          "result": "FN",
+          "value": "useful",
+          "title": "Why small rivers need distinct rejuvenation strategy"
+        },
+        {
+          "number": 8,
+          "id": "article:28794f3817d2487b0e37aebf13e3018768c34a32a62a43ccfad521d9668037e2",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Oil Is Flowing From the Persian Gulf, but Prices Remain High. Why?"
+        },
+        {
+          "number": 9,
+          "id": "article:719fd93a89507b4cc28bc768d46945a5352eb8cbec635a1dd4d0efc0ced3c18e",
+          "result": "FN",
+          "value": "useful",
+          "title": "Dispatch #125: The floor is rising; the people aren't"
+        },
+        {
+          "number": 11,
+          "id": "article:e3654d2c0394df097207dbbd7fd255ec577fa8fc5164eb4bfefbfd99a4c84ac8",
+          "result": "FN",
+          "value": "useful",
+          "title": "Kaliningrad: Why Russia’s Baltic exclave is a new flashpoint"
+        },
+        {
+          "number": 12,
+          "id": "article:7dcdd8ae8a7dc204e60dc831989be86b32ab5f543226953eb2e5f344b55a316c",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Knowledge Nugget | Quantum Computing: What is the new research and why does it matter?"
+        },
+        {
+          "number": 13,
+          "id": "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+          "result": "FN",
+          "value": "useful",
+          "title": "Editorial. Lending transparency"
+        },
+        {
+          "number": 17,
+          "id": "article:6b5b8d60cdcc36505a51e97736e83f5964c67ce53c6f20669fdde191620166b0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Oil prices remain highly flammable"
+        },
+        {
+          "number": 27,
+          "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Fiscal federalism, efficiency versus equity concerns"
+        },
+        {
+          "number": 28,
+          "id": "article:d56637e7a2261e9750afbff5fcee612d6bf9b5558cba5ca03c6d875155ba9dc5",
+          "result": "FN",
+          "value": "useful",
+          "title": "‘Most expensive election ever, anywhere’"
+        },
+        {
+          "number": 30,
+          "id": "article:b739ea0b16cf7282b6b58d1727ca7be568837a2135ede77be1ee4dbdb8dc4f63",
+          "result": "FN",
+          "value": "useful",
+          "title": "Who is middle class in India, and why do they feel squeezed?"
+        },
+        {
+          "number": 35,
+          "id": "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+          "result": "FN",
+          "value": "useful",
+          "title": "First dinosaur bone from Antarctica found in a drawer"
+        },
+        {
+          "number": 39,
+          "id": "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+          "result": "FN",
+          "value": "useful",
+          "title": "Fossil identified as first dinosaur ever found in Antarctica"
+        },
+        {
+          "number": 43,
+          "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+          "result": "FN",
+          "value": "useful",
+          "title": "Bridging economics and psychology"
+        },
+        {
+          "number": 50,
+          "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan: The multipolar world India wants may be a distant reality"
+        }
+      ],
+      "requirement": "Define separate value and substance evidence routes for environmental methods, global energy economics, strategic security, quantum research, distributional economics, election finance, palaeontology and behavioural economics. Avoid a global threshold reduction or accumulation of unrelated exam-frequency terms.",
+      "regressions": [
+        "#12 quantum research, #8 oil-market mechanism, #27 fiscal federalism and #50 multipolar order are named must-read regression targets.",
+        "#5/#9/#11/#13/#17/#28/#30/#35/#39/#43 are useful-positive targets; each decision needs observed evidence and a versioned reason code.",
+        "#35/#39 universal science findings remain eligible without an India anchor; #5 environmental intervention is distinct from routine local river mentions.",
+        "Preserve #2/#7/#19/#26/#29/#31/#32/#37/#42/#44/#46/#47 accepted positives and the C-01 negatives.",
+        "Synthetic paraphrases, irrelevant keyword stuffing and title/description permutations must test meaning-supported evidence rather than memorized natural IDs."
+      ],
+      "boundary": "C does not rewrite canonical syllabus/PYQ facts, weights or source text; subject inference is evaluated independently in D."
+    },
+    {
+      "id": "C-04",
+      "priority": "P0",
+      "title": "Make semantic metadata insufficiency explicit",
+      "evidence": [
+        {
+          "number": 3,
+          "id": "article:246466ea2264fa5c8c70e989a1518c2f1138bdcadcc22f929252256f8db8067c",
+          "result": "excluded_unresolvable",
+          "value": null,
+          "title": "#354 When Faced Against a Cannon..."
+        },
+        {
+          "number": 23,
+          "id": "article:b21a5eb4eb72333acaeb1fa37ccade7c6c0ddb16180db360f6b120128d27babb",
+          "result": "excluded_unresolvable",
+          "value": null,
+          "title": "Singing, for unity or division"
+        },
+        {
+          "number": 36,
+          "id": "article:b42895b9df14f042be8d24a11f88149870b8817d3260fefd5b608a135b9492b1",
+          "result": "excluded_unresolvable",
+          "value": null,
+          "title": "The Writer’s House"
+        },
+        {
+          "number": 6,
+          "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan writes: The ghosts of 1945 are being recruited for today’s contest over Asia"
+        },
+        {
+          "number": 21,
+          "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Pratap Bhanu Mehta: Election Commission and Court make it harder, not easier, to believe in independent institutions"
+        },
+        {
+          "number": 34,
+          "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Pratap Bhanu Mehta writes | Graham Bill is America confusing its power with virtue — yet again"
+        },
+        {
+          "number": 43,
+          "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+          "result": "FN",
+          "value": "useful",
+          "title": "Bridging economics and psychology"
+        },
+        {
+          "number": 50,
+          "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan: The multipolar world India wants may be a distant reality"
+        }
+      ],
+      "requirement": "Treat missing or placeholder summaries as evidence limitations. Distinguish resolvable title-led cases from unresolvable rhetoric. Output insufficient_metadata with missing evidence fields; never infer labels from prestige or silently fetch an article body.",
+      "regressions": [
+        "#3/#23/#36 remain excluded from binary gold metrics; regression expects explicit insufficiency/abstention, not invented acceptance or rejection truth.",
+        "#3 has a nonempty two-word description, so a nonempty-string check cannot establish sufficient metadata.",
+        "Resolved sparse-title cases retain their owner labels in evaluation; any abstention on them is still a miss, never removed from the denominator.",
+        "Synthetic missing-description/byline/section variants emit evidence-coverage diagnostics and never trigger article or third-party-service requests."
+      ],
+      "boundary": "Acquisition work is a separate handoff. C can diagnose and abstain but cannot recover absent arguments. No body acquisition, inferred summary or relabeling."
+    },
+    {
+      "id": "C-05",
+      "priority": "P1",
+      "title": "Expose decision traces and preserve stage independence",
+      "evidence": [
+        {
+          "number": 10,
+          "id": "article:4920532edd87001e20787b7b219945a84e22fa4bacdf335648402e16a75a941f",
+          "result": "TP",
+          "value": "useful",
+          "title": "“Not going to trade words for actions”: US VP Vance says Iran must cut nuclear enrichment to end war"
+        },
+        {
+          "number": 24,
+          "id": "article:8b285d394ac1f427c9a58dc8067ab223ff9eefe739f6d9b0ecdeda844e522f55",
+          "result": "TP",
+          "value": "useful",
+          "title": "Iran must cut enrichment to end war, says US Vice President JD Vance"
+        },
+        {
+          "number": 29,
+          "id": "article:c1b98242d09dab4890b77f34fcac894f34b67a192d25046e1c51f2e5dc3a0ac0",
+          "result": "TP",
+          "value": "must_read",
+          "title": "As India’s law enforcement agencies turn to AI, the potential benefits, risks"
+        },
+        {
+          "number": 31,
+          "id": "article:6333476321db18307af585b39c0f2fd75c09b2c661b6e356f63e6e2a3a925294",
+          "result": "TP",
+          "value": "must_read",
+          "title": "How India’s R&D ecosystem shapes its goal of becoming a knowledge-driven economy"
+        },
+        {
+          "number": 44,
+          "id": "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+          "result": "TP",
+          "value": "must_read",
+          "title": "Pratap Bhanu Mehta writes | Amid AI, wars and climate change catastrophes, diplomacy is acting ‘normal’"
+        },
+        {
+          "number": 47,
+          "id": "article:dd0c98e7e6e33647608ba8968e6d51e1021a4cece3598baf8ad88f9df273eedb",
+          "result": "TP",
+          "value": "must_read",
+          "title": "What does the Centre’s new mining law say and why are states opposing it?"
+        },
+        {
+          "number": 5,
+          "id": "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+          "result": "FN",
+          "value": "useful",
+          "title": "Why small rivers need distinct rejuvenation strategy"
+        },
+        {
+          "number": 11,
+          "id": "article:e3654d2c0394df097207dbbd7fd255ec577fa8fc5164eb4bfefbfd99a4c84ac8",
+          "result": "FN",
+          "value": "useful",
+          "title": "Kaliningrad: Why Russia’s Baltic exclave is a new flashpoint"
+        },
+        {
+          "number": 27,
+          "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Fiscal federalism, efficiency versus equity concerns"
+        },
+        {
+          "number": 35,
+          "id": "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+          "result": "FN",
+          "value": "useful",
+          "title": "First dinosaur bone from Antarctica found in a drawer"
+        },
+        {
+          "number": 39,
+          "id": "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+          "result": "FN",
+          "value": "useful",
+          "title": "Fossil identified as first dinosaur ever found in Antarctica"
+        },
+        {
+          "number": 43,
+          "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+          "result": "FN",
+          "value": "useful",
+          "title": "Bridging economics and psychology"
+        }
+      ],
+      "requirement": "Return hard eligibility, relevance/value, substantive evidence and insufficiency independently, with stable reason codes and UTF-16 spans bound to observation IDs. Subject, novelty and ranking must not decide acceptance or be inferred from it.",
+      "regressions": [
+        "#10/#24 nuclear-security positives stay accepted although the existing primary is International relations; D repairs routing.",
+        "#29 AI law enforcement, #31 R&D ecosystem, #44 diplomacy and #47 mining-law federalism remain accepted while D routes dominant framing.",
+        "D regression set includes every positive primary mismatch, including rejected positives; secondary tags never satisfy exact-primary accuracy.",
+        "Reordered input and repeated replay give identical output digests; labels, owner exemplars, personal state and future observations cannot enter the runner."
+      ],
+      "boundary": "No D/E/F implementation. V2 has no content-type output; report owner-type acceptance patterns without claiming content-type prediction accuracy."
+    },
+    {
+      "id": "C-06",
+      "priority": "P1",
+      "title": "Evaluate support and bias without calibration overclaim",
+      "evidence": [
+        {
+          "number": 6,
+          "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan writes: The ghosts of 1945 are being recruited for today’s contest over Asia"
+        },
+        {
+          "number": 8,
+          "id": "article:28794f3817d2487b0e37aebf13e3018768c34a32a62a43ccfad521d9668037e2",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Oil Is Flowing From the Persian Gulf, but Prices Remain High. Why?"
+        },
+        {
+          "number": 13,
+          "id": "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+          "result": "FN",
+          "value": "useful",
+          "title": "Editorial. Lending transparency"
+        },
+        {
+          "number": 17,
+          "id": "article:6b5b8d60cdcc36505a51e97736e83f5964c67ce53c6f20669fdde191620166b0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Oil prices remain highly flammable"
+        },
+        {
+          "number": 21,
+          "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Pratap Bhanu Mehta: Election Commission and Court make it harder, not easier, to believe in independent institutions"
+        },
+        {
+          "number": 27,
+          "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+          "result": "FN",
+          "value": "must_read",
+          "title": "Fiscal federalism, efficiency versus equity concerns"
+        },
+        {
+          "number": 34,
+          "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+          "result": "FN",
+          "value": "useful",
+          "title": "Pratap Bhanu Mehta writes | Graham Bill is America confusing its power with virtue — yet again"
+        },
+        {
+          "number": 35,
+          "id": "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+          "result": "FN",
+          "value": "useful",
+          "title": "First dinosaur bone from Antarctica found in a drawer"
+        },
+        {
+          "number": 39,
+          "id": "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+          "result": "FN",
+          "value": "useful",
+          "title": "Fossil identified as first dinosaur ever found in Antarctica"
+        },
+        {
+          "number": 43,
+          "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+          "result": "FN",
+          "value": "useful",
+          "title": "Bridging economics and psychology"
+        },
+        {
+          "number": 50,
+          "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+          "result": "FN",
+          "value": "must_read",
+          "title": "C Raja Mohan: The multipolar world India wants may be a distant reality"
+        },
+        {
+          "number": 22,
+          "id": "article:182892b88a2917d3a894595f8ecfe9ffe87965bb78dd2a99ecf61605af638b88",
+          "result": "FP",
+          "value": "reject",
+          "title": "Abe Memorial Corridor honouring Shinzo Abe, India-Japan ties opened in Varanasi"
+        }
+      ],
+      "requirement": "Report FP/FN/must-read retention, abstentions, publisher/content-type/metadata/author slices with counts and explicit denominators. Compare owner-ID-only and owner-validated-all sensitivity, keeping authorship intact.",
+      "regressions": [
+        "Regression runs all 47 resolved cases and reports 3 unresolvable separately; never remove a difficult resolved case.",
+        "Run schema/import/adversarial integrity checks, exact frozen-v2 replay, repeat and reversed-order replay.",
+        "Publisher and missing-description slices describe selected support only; no statistical release inference, causal publisher ranking or quotas.",
+        "Keep all original corpus/partition/v2/exemplar hashes unchanged. The 42 development and 8 validation calibration IDs stay exposed calibration; future holdout remains sealed."
+      ],
+      "boundary": "Requirements are development targets, not implemented behavior or measured v3 quality. Broader independent reviewed gold is required before release gates."
+    }
+  ],
+  "handoffs": {
+    "acquisition": [
+      "article:37fd09ca96e65969d4f8be60a3a33a91cc06e1d691d71e852eb1734e640a252d",
+      "article:246466ea2264fa5c8c70e989a1518c2f1138bdcadcc22f929252256f8db8067c",
+      "article:c1004b4ac9e392fc111e2c032c98c4eeb4ea8cf7dfbda1dea2a35f9bd3810b09",
+      "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+      "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+      "article:33d5b0549f3559861c849e79813802d78c569827c9295f5385d4a015bd4e813c",
+      "article:7dcdd8ae8a7dc204e60dc831989be86b32ab5f543226953eb2e5f344b55a316c",
+      "article:cccba3a86fc6951173edf03df00cf86a5210b8d8bc72abc0443a7850a35c3388",
+      "article:2a7e4b2205db5a3c1e56f4f7ea539bd41971bb34b839ce02d1aa110016df9771",
+      "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+      "article:b21a5eb4eb72333acaeb1fa37ccade7c6c0ddb16180db360f6b120128d27babb",
+      "article:791958a237c8bcf882288b16dd7a3e2174cab2e9a169b6030a77d6e3b793ba9d",
+      "article:0c04c004cd3726044b588bf0b5bb8481b172d9c6173d05cfe09ea105149d984c",
+      "article:c1b98242d09dab4890b77f34fcac894f34b67a192d25046e1c51f2e5dc3a0ac0",
+      "article:6333476321db18307af585b39c0f2fd75c09b2c661b6e356f63e6e2a3a925294",
+      "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+      "article:b42895b9df14f042be8d24a11f88149870b8817d3260fefd5b608a135b9492b1",
+      "article:f1c0f0f7abc23e41960ae527fde67deb43c3eb15c41bee0cdbafc641221cde61",
+      "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+      "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+      "article:51c34183f3de4b44e94dcaba47db0f47c49c477b2ef7adb3c282a562b7c305fb",
+      "article:dd0c98e7e6e33647608ba8968e6d51e1021a4cece3598baf8ad88f9df273eedb",
+      "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32"
+    ],
+    "stageD": [
+      "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+      "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+      "article:719fd93a89507b4cc28bc768d46945a5352eb8cbec635a1dd4d0efc0ced3c18e",
+      "article:4920532edd87001e20787b7b219945a84e22fa4bacdf335648402e16a75a941f",
+      "article:e3654d2c0394df097207dbbd7fd255ec577fa8fc5164eb4bfefbfd99a4c84ac8",
+      "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+      "article:8b285d394ac1f427c9a58dc8067ab223ff9eefe739f6d9b0ecdeda844e522f55",
+      "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+      "article:d56637e7a2261e9750afbff5fcee612d6bf9b5558cba5ca03c6d875155ba9dc5",
+      "article:c1b98242d09dab4890b77f34fcac894f34b67a192d25046e1c51f2e5dc3a0ac0",
+      "article:b739ea0b16cf7282b6b58d1727ca7be568837a2135ede77be1ee4dbdb8dc4f63",
+      "article:6333476321db18307af585b39c0f2fd75c09b2c661b6e356f63e6e2a3a925294",
+      "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+      "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+      "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+      "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+      "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+      "article:dd0c98e7e6e33647608ba8968e6d51e1021a4cece3598baf8ad88f9df273eedb"
+    ],
+    "unresolvable": [
+      "article:246466ea2264fa5c8c70e989a1518c2f1138bdcadcc22f929252256f8db8067c",
+      "article:b21a5eb4eb72333acaeb1fa37ccade7c6c0ddb16180db360f6b120128d27babb",
+      "article:b42895b9df14f042be8d24a11f88149870b8817d3260fefd5b608a135b9492b1"
+    ],
+    "stageEandF": "No novelty, equivalence, ranking or saturation ground truth supplied; remain out of scope."
+  }
+}

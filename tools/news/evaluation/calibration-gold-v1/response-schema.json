@@ -1,0 +1,64 @@
+{
+  "$id": "https://tars.local/evaluation/calibration-responses/v1",
+  "type": "array",
+  "minItems": 50,
+  "maxItems": 50,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "annotation"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "annotation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reviewerId",
+          "reviewedAt",
+          "rubricVersion",
+          "labels",
+          "evidence",
+          "disposition"
+        ],
+        "properties": {
+          "reviewerId": {
+            "enum": [
+              "Marcus",
+              "GPT-5.6 Sol — provisional model pre-review"
+            ]
+          },
+          "reviewedAt": {
+            "type": "string",
+            "format": "utc-instant"
+          },
+          "rubricVersion": {
+            "const": "tars-upsc-rubric/v1+a2a-primary-human/2"
+          },
+          "labels": {
+            "$ref": "https://tars.local/evaluation/gold-v1#/$defs/labels"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "https://tars.local/evaluation/gold-v1#/$defs/span"
+            },
+            "minItems": 1,
+            "maxItems": 30,
+            "uniqueItems": true
+          },
+          "disposition": {
+            "enum": [
+              "resolved",
+              "unresolvable"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

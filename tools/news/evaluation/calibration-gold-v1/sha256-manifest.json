@@ -1,0 +1,67 @@
+{
+  "version": "tars-calibration-sha256/v1",
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "a1-schema.json",
+      "sha256": "5c258a144d83819ff81ce3f913915e6cbc739a3b74d153a1bd5fade1320edb27"
+    },
+    {
+      "path": "calibration-manifest.json",
+      "sha256": "8c0768866185a7642f8605fa8e4b7695c9cfee92c1fe6e559ccff0afd33691e3"
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "b576c2dcaf99cf0c3067b981b092faa816062a2526809a20470a901283e680b6"
+    },
+    {
+      "path": "COMPARISON.md",
+      "sha256": "79182d558748aefc9f2ffcbc92612b50b286e20d5ca13e94bfe4e545bc9f2e84"
+    },
+    {
+      "path": "ERROR_CASES.md",
+      "sha256": "c0916ba81ae3cf7973f1af3dc04f15c472014cd3741f7c616a2faed29c1fcd07"
+    },
+    {
+      "path": "error-cases.tsv",
+      "sha256": "298546f868a9519013a49fb6bfbf7661d626ad68f97be93dd0cad47d623ec292"
+    },
+    {
+      "path": "gold.json",
+      "sha256": "f69ed55f55e9118571918b5c634f68ae6706285ad7a74999a51bcc8afda98f59"
+    },
+    {
+      "path": "human-annotations.original.json",
+      "sha256": "e39eaf54baae84873267819889048158500ef81e6c9e32279cee60e165985f3e"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "3f1c804c991e25ce02f91729642097bccbaf8dc3ed345a724a2b5f62e18159cd"
+    },
+    {
+      "path": "owner-attestation.json",
+      "sha256": "64d52619fabbe789e507503f7c25e33c395de9718c473e2b60b740ba5641d8b8"
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "561008ef244f032c7e33638f27d51a5391a4962d491489df42620633c5447015"
+    },
+    {
+      "path": "README.md",
+      "sha256": "bf58a2f3ef9e1bd3316ddf7f2d9985938fdb666982b17201278fab66e55b8676"
+    },
+    {
+      "path": "response-schema.json",
+      "sha256": "629732d8a9b8cad1b4a183ca313ea09cae703a3de93e75f7f54327964bff3cc7"
+    },
+    {
+      "path": "STAGE_C_REQUIREMENTS.md",
+      "sha256": "9c71a51b01f5c9d7db387f56ae65bd26f81495ec9324f180c13c85721ad228a4"
+    },
+    {
+      "path": "stage-c-requirements.json",
+      "sha256": "8a49c2dd5f5ff2ef2e630106e08ce6b065aa308660bad34ae968830b1dfa752e"
+    }
+  ],
+  "note": "Self and sha256 companion excluded; companion pins exact manifest bytes."
+}

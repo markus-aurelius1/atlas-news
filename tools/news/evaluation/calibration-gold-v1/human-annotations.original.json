@@ -1,0 +1,2837 @@
+[
+  {
+    "id": "article:67729524d8604d12d8b27c29aec592a06c66cc8d51602b610b8b537d14166b33",
+    "annotation": {
+      "reviewerId": "GPT-5.6 Sol — provisional model pre-review",
+      "reviewedAt": "2026-10-07T17:10:08.410Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A local Chinese residential-property dispute with no India-facing or systemic significance in the captured metadata.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "foreign_domestic_no_impact",
+          "routine_local",
+          "no_substantive_value"
+        ],
+        "rationale": "Foreign local-interest property story; not a worthwhile UPSC reading unit.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:75a49ee14b431d214cd11878be40c839474b9a567a66a70244218962007813f3",
+          "field": "title",
+          "start": 0,
+          "end": 81
+        },
+        {
+          "observationId": "obs:75a49ee14b431d214cd11878be40c839474b9a567a66a70244218962007813f3",
+          "field": "description",
+          "start": 0,
+          "end": 499
+        },
+        {
+          "observationId": "obs:75a49ee14b431d214cd11878be40c839474b9a567a66a70244218962007813f3",
+          "field": "bylines",
+          "start": 0,
+          "end": 19
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:37fd09ca96e65969d4f8be60a3a33a91cc06e1d691d71e852eb1734e640a252d",
+    "annotation": {
+      "reviewerId": "GPT-5.6 Sol — provisional model pre-review",
+      "reviewedAt": "2026-10-07T17:10:26.169Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Directly concerns evaluation of India's public-capex strategy.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Core macro-fiscal policy issue with direct UPSC economy utility; section/title are strong despite the missing description.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:cdc90d34eb592c6fc141deddb4b9398943fceb7919f871d1d3b4730abb7b91d0",
+          "field": "title",
+          "start": 0,
+          "end": 52
+        },
+        {
+          "observationId": "obs:cdc90d34eb592c6fc141deddb4b9398943fceb7919f871d1d3b4730abb7b91d0",
+          "field": "categories",
+          "start": 0,
+          "end": 36
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:246466ea2264fa5c8c70e989a1518c2f1138bdcadcc22f929252256f8db8067c",
+    "annotation": {
+      "reviewerId": "GPT-5.6 Sol — provisional model pre-review",
+      "reviewedAt": "2026-10-07T17:10:42.201Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "unresolvable",
+      "labels": {
+        "value": null,
+        "primarySubject": null,
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": null,
+        "partyMention": null,
+        "scope": "unknown",
+        "scopeReason": "The captured metadata does not establish the geographic or policy scope.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": null,
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "The title and two-word description do not reveal enough of the argument to judge UPSC value reliably.",
+        "metadataSufficiency": {
+          "level": "insufficient",
+          "missingFields": [
+            "description",
+            "scope",
+            "angle"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:ac42160f7659fe15d4e4557d2cbfeb62487cc72d1e09f0774627065bc54082f7",
+          "field": "title",
+          "start": 0,
+          "end": 35
+        },
+        {
+          "observationId": "obs:ac42160f7659fe15d4e4557d2cbfeb62487cc72d1e09f0774627065bc54082f7",
+          "field": "description",
+          "start": 0,
+          "end": 22
+        },
+        {
+          "observationId": "obs:ac42160f7659fe15d4e4557d2cbfeb62487cc72d1e09f0774627065bc54082f7",
+          "field": "bylines",
+          "start": 0,
+          "end": 17
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:c1004b4ac9e392fc111e2c032c98c4eeb4ea8cf7dfbda1dea2a35f9bd3810b09",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:10:55.613Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A French domestic student protest with no captured India-facing or wider systemic consequence.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Explained format alone does not make a foreign domestic protest UPSC-worthy.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:0b5944c661f7e9c250f79fa213f73b173957bbc2467f39585a50490a830f9bd1",
+          "field": "title",
+          "start": 0,
+          "end": 72
+        },
+        {
+          "observationId": "obs:0b5944c661f7e9c250f79fa213f73b173957bbc2467f39585a50490a830f9bd1",
+          "field": "categories",
+          "start": 0,
+          "end": 26
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:87efbea8eec4589429691933cc1210af1687d1f22ff1105cf9f768e78c7a8386",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:05.018Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Environment",
+        "secondarySubjects": [
+          "Geography"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "India-focused river-rejuvenation policy/environment issue.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Relevant environment and water-governance issue; useful, though the missing description limits confidence about depth.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:1a3ffb4f508385f8e29c087eaf7952b8fc6497d71562c393dc91d0b7c3bc0ca3",
+          "field": "title",
+          "start": 0,
+          "end": 52
+        },
+        {
+          "observationId": "obs:1a3ffb4f508385f8e29c087eaf7952b8fc6497d71562c393dc91d0b7c3bc0ca3",
+          "field": "categories",
+          "start": 0,
+          "end": 36
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:f5dfcbc64d88dc4bca5bccecccc12d368b84c752b9e05617faaf012fd6216c6c",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:11.032Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [
+          "Security"
+        ],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "The title frames the post-1945 order as part of the contemporary strategic contest over Asia.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value strategic analysis of the Asian order from a verified C. Raja Mohan column.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:a6fa069ccb91b40474a553f17f076ba332e018710690adbe91b21793c974c968",
+          "field": "title",
+          "start": 0,
+          "end": 89
+        },
+        {
+          "observationId": "obs:a6fa069ccb91b40474a553f17f076ba332e018710690adbe91b21793c974c968",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:a6fa069ccb91b40474a553f17f076ba332e018710690adbe91b21793c974c968",
+          "field": "bylines",
+          "start": 0,
+          "end": 13
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:33d5b0549f3559861c849e79813802d78c569827c9295f5385d4a015bd4e813c",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:16.221Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Supreme Court and Form 6 concern an Indian electoral/institutional process.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Direct constitutional/electoral-institution explainer with strong UPSC polity value.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:003ca6a011b2f3dfeac196cb24a18a94a61981124f44a19e3ac2bcce4a200d74",
+          "field": "title",
+          "start": 0,
+          "end": 87
+        },
+        {
+          "observationId": "obs:003ca6a011b2f3dfeac196cb24a18a94a61981124f44a19e3ac2bcce4a200d74",
+          "field": "categories",
+          "start": 0,
+          "end": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:28794f3817d2487b0e37aebf13e3018768c34a32a62a43ccfad521d9668037e2",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:23.869Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Economy",
+        "secondarySubjects": [
+          "Security",
+          "International relations"
+        ],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "Persian Gulf conflict risk and emergency oil stocks have global energy-price and security consequences.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Systemic energy-security and oil-price transmission story with clear economic and strategic relevance.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:7906778e0957fc801a28796cca46a5627b6efc9efe8c839688f5851a81832ccd",
+          "field": "title",
+          "start": 0,
+          "end": 66
+        },
+        {
+          "observationId": "obs:7906778e0957fc801a28796cca46a5627b6efc9efe8c839688f5851a81832ccd",
+          "field": "description",
+          "start": 0,
+          "end": 156
+        },
+        {
+          "observationId": "obs:7906778e0957fc801a28796cca46a5627b6efc9efe8c839688f5851a81832ccd",
+          "field": "categories",
+          "start": 0,
+          "end": 293
+        },
+        {
+          "observationId": "obs:7906778e0957fc801a28796cca46a5627b6efc9efe8c839688f5851a81832ccd",
+          "field": "bylines",
+          "start": 0,
+          "end": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:719fd93a89507b4cc28bc768d46945a5352eb8cbec635a1dd4d0efc0ced3c18e",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:30.566Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The description explicitly analyzes India's inequality and economic mobility.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Substantive inequality/mobility analysis with direct Indian economy relevance.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:eb995bcd79c21e22c892c3e6dd421be577fbed72d16a9deb4ed080eab5163a5b",
+          "field": "title",
+          "start": 0,
+          "end": 53
+        },
+        {
+          "observationId": "obs:eb995bcd79c21e22c892c3e6dd421be577fbed72d16a9deb4ed080eab5163a5b",
+          "field": "description",
+          "start": 0,
+          "end": 117
+        },
+        {
+          "observationId": "obs:eb995bcd79c21e22c892c3e6dd421be577fbed72d16a9deb4ed080eab5163a5b",
+          "field": "bylines",
+          "start": 0,
+          "end": 12
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:4920532edd87001e20787b7b219945a84e22fa4bacdf335648402e16a75a941f",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:42.490Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Security",
+        "secondarySubjects": [
+          "International relations"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "US-Iran nuclear terms relate to an ongoing war and a major strategic conflict.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Substantive update in a major security/IR story; potentially redundant with stronger coverage but relevant at article level.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:705fd52591e118203347999f3b86d7a121adad6c50675ea4bbf7ead21715be18",
+          "field": "title",
+          "start": 0,
+          "end": 100
+        },
+        {
+          "observationId": "obs:705fd52591e118203347999f3b86d7a121adad6c50675ea4bbf7ead21715be18",
+          "field": "description",
+          "start": 0,
+          "end": 201
+        },
+        {
+          "observationId": "obs:705fd52591e118203347999f3b86d7a121adad6c50675ea4bbf7ead21715be18",
+          "field": "categories",
+          "start": 0,
+          "end": 206
+        },
+        {
+          "observationId": "obs:705fd52591e118203347999f3b86d7a121adad6c50675ea4bbf7ead21715be18",
+          "field": "bylines",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:e3654d2c0394df097207dbbd7fd255ec577fa8fc5164eb4bfefbfd99a4c84ac8",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:47.456Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Security",
+        "secondarySubjects": [
+          "International relations",
+          "Geography"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "Kaliningrad and NATO pressure concern a strategic European security flashpoint.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Useful geopolitical/security explainer with clear strategic significance.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:07d6e91e171323e94916a202a05b07ced3b6590e1d0e6fa2e6668146b467ee02",
+          "field": "title",
+          "start": 0,
+          "end": 60
+        },
+        {
+          "observationId": "obs:07d6e91e171323e94916a202a05b07ced3b6590e1d0e6fa2e6668146b467ee02",
+          "field": "description",
+          "start": 0,
+          "end": 294
+        },
+        {
+          "observationId": "obs:07d6e91e171323e94916a202a05b07ced3b6590e1d0e6fa2e6668146b467ee02",
+          "field": "categories",
+          "start": 0,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:7dcdd8ae8a7dc204e60dc831989be86b32ab5f543226953eb2e5f344b55a316c",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:11:52.244Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "Quantum-computing research is a globally relevant science-and-technology topic.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value science explainer in a UPSC-focused feed; description absence limits detail, not topic identification.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:b132871e7e70cdc48716ef96c02cc6771587c24648bce9ebcde5643edbff7c4e",
+          "field": "title",
+          "start": 0,
+          "end": 86
+        },
+        {
+          "observationId": "obs:b132871e7e70cdc48716ef96c02cc6771587c24648bce9ebcde5643edbff7c4e",
+          "field": "categories",
+          "start": 0,
+          "end": 36
+        },
+        {
+          "observationId": "obs:b132871e7e70cdc48716ef96c02cc6771587c24648bce9ebcde5643edbff7c4e",
+          "field": "bylines",
+          "start": 0,
+          "end": 14
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:c219404c1e7cf553c55ac2655a4210446b0aad856a5c35ea187fda81947ca8f5",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:03.599Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Economy",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "editorial",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Loan-rate disclosure and small-borrower protection are Indian financial-regulation issues.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Focused editorial on lending transparency and borrower protection; relevant but not necessarily essential.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:a5eeac877ac9e6f6cbe589566c076e948f4b3b68c5fa2fbc6d30c323f0026b04",
+          "field": "title",
+          "start": 0,
+          "end": 31
+        },
+        {
+          "observationId": "obs:a5eeac877ac9e6f6cbe589566c076e948f4b3b68c5fa2fbc6d30c323f0026b04",
+          "field": "description",
+          "start": 0,
+          "end": 52
+        },
+        {
+          "observationId": "obs:a5eeac877ac9e6f6cbe589566c076e948f4b3b68c5fa2fbc6d30c323f0026b04",
+          "field": "categories",
+          "start": 0,
+          "end": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:47d949972797b03508dbf3dff8a4022f6f58526f0ec2f71331433cc2703ae267",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:11.319Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Polity",
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": true,
+        "partyMention": true,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "The captured description centers the electoral success of Germany's AfD without an India-facing/systemic consequence.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary",
+          "foreign_domestic_no_impact"
+        ],
+        "rationale": "Foreign party/electoral-politics analysis; outside the curated UPSC reading pool under the agreed politics gate.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:69e49e75b3e56758201af7aedcd03979e31a291550a663155b9ed221b654e56e",
+          "field": "title",
+          "start": 0,
+          "end": 55
+        },
+        {
+          "observationId": "obs:69e49e75b3e56758201af7aedcd03979e31a291550a663155b9ed221b654e56e",
+          "field": "description",
+          "start": 0,
+          "end": 211
+        },
+        {
+          "observationId": "obs:69e49e75b3e56758201af7aedcd03979e31a291550a663155b9ed221b654e56e",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:cccba3a86fc6951173edf03df00cf86a5210b8d8bc72abc0443a7850a35c3388",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:19.639Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": true,
+        "partyMention": true,
+        "scope": "india_domestic",
+        "scopeReason": "Indian context, but the item is framed as a Congress attack on the government over a repo-rate move.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary",
+          "no_substantive_value"
+        ],
+        "rationale": "Party reaction is the primary substance; it adds little policy explanation of the repo-rate decision.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:9bc2033a6e09ffdbb6c0562a58ab4cdec6123950dbaa04e6085a071ff016205a",
+          "field": "title",
+          "start": 0,
+          "end": 76
+        },
+        {
+          "observationId": "obs:9bc2033a6e09ffdbb6c0562a58ab4cdec6123950dbaa04e6085a071ff016205a",
+          "field": "bylines",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:7ca565f8bde1920fdcb7be3409f420e4049e9f126e4dd8337622a72ea5125704",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:24.107Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": true,
+        "partyMention": true,
+        "scope": "india_domestic",
+        "scopeReason": "Indian electoral-institution context, but the captured story is chiefly about INDIA-bloc MPs' protest and detention.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary"
+        ],
+        "rationale": "Party protest/reaction dominates the article rather than substantive institutional analysis.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:3cdf2a0260caf607757afd9a8ff891d51b36c0b02f6870358c5223027eba92ab",
+          "field": "title",
+          "start": 0,
+          "end": 78
+        },
+        {
+          "observationId": "obs:3cdf2a0260caf607757afd9a8ff891d51b36c0b02f6870358c5223027eba92ab",
+          "field": "description",
+          "start": 0,
+          "end": 460
+        },
+        {
+          "observationId": "obs:3cdf2a0260caf607757afd9a8ff891d51b36c0b02f6870358c5223027eba92ab",
+          "field": "categories",
+          "start": 0,
+          "end": 17
+        },
+        {
+          "observationId": "obs:3cdf2a0260caf607757afd9a8ff891d51b36c0b02f6870358c5223027eba92ab",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:6b5b8d60cdcc36505a51e97736e83f5964c67ce53c6f20669fdde191620166b0",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:26.979Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Economy",
+        "secondarySubjects": [
+          "Security",
+          "International relations"
+        ],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "Gulf tensions and triple-digit oil risk have global macroeconomic and energy-security consequences.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-quality systemic oil-market analysis; useful even if another article becomes the final representative.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:661926d10a9b8413a820af40f1d4b386a5aa08fc0633a721e77a9ff0fe1674ab",
+          "field": "title",
+          "start": 0,
+          "end": 34
+        },
+        {
+          "observationId": "obs:661926d10a9b8413a820af40f1d4b386a5aa08fc0633a721e77a9ff0fe1674ab",
+          "field": "description",
+          "start": 0,
+          "end": 68
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b727ab8903ee41c0e4f33401e3af74085f10c0f7de8ccc3d48e83e5ffcbd36d9",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:31.470Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A sports-personality story with no India-facing or systemic UPSC significance.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "entertainment_primary",
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Sports/personality coverage rather than UPSC current affairs.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:d73275fff0d5b29caa4082bee17191b2730cb3154dc4b511b22ef58038ae88fb",
+          "field": "title",
+          "start": 0,
+          "end": 72
+        },
+        {
+          "observationId": "obs:d73275fff0d5b29caa4082bee17191b2730cb3154dc4b511b22ef58038ae88fb",
+          "field": "description",
+          "start": 0,
+          "end": 118
+        },
+        {
+          "observationId": "obs:d73275fff0d5b29caa4082bee17191b2730cb3154dc4b511b22ef58038ae88fb",
+          "field": "categories",
+          "start": 0,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:2a7e4b2205db5a3c1e56f4f7ea539bd41971bb34b839ce02d1aa110016df9771",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:35.499Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [
+          "Sci-Tech",
+          "Security"
+        ],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_impact",
+        "scopeReason": "The title explicitly connects the global AI great-power contest to a strategic test for India.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value technology-geopolitics analysis with direct implications for India.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:867f0c7602fadb1924ec1308821a4c1c81857cb95915e2856d6f483e6d9a8afc",
+          "field": "title",
+          "start": 0,
+          "end": 71
+        },
+        {
+          "observationId": "obs:867f0c7602fadb1924ec1308821a4c1c81857cb95915e2856d6f483e6d9a8afc",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:867f0c7602fadb1924ec1308821a4c1c81857cb95915e2856d6f483e6d9a8afc",
+          "field": "bylines",
+          "start": 0,
+          "end": 13
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b1bd64eb0bda7d872e67046cceebe03746cbd81df0466b6250fa028e7b775a77",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:46.834Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Environment",
+        "secondarySubjects": [],
+        "contentType": "digest",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "Wildlife is a relevant domain, but this item is a photographic weekly roundup rather than a substantive development.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "no_substantive_value"
+        ],
+        "rationale": "Environment-themed but primarily a photo roundup; little revision-worthy policy/science value.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:d94f877d4fff1f30b67f2700825f9dd1cc96b00b0d7368a6ab397aaf88fc8010",
+          "field": "title",
+          "start": 0,
+          "end": 86
+        },
+        {
+          "observationId": "obs:d94f877d4fff1f30b67f2700825f9dd1cc96b00b0d7368a6ab397aaf88fc8010",
+          "field": "description",
+          "start": 0,
+          "end": 79
+        },
+        {
+          "observationId": "obs:d94f877d4fff1f30b67f2700825f9dd1cc96b00b0d7368a6ab397aaf88fc8010",
+          "field": "categories",
+          "start": 0,
+          "end": 82
+        },
+        {
+          "observationId": "obs:d94f877d4fff1f30b67f2700825f9dd1cc96b00b0d7368a6ab397aaf88fc8010",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:76a8f8e5d65c34896e600d4547d624219b8170eef60b3b32d33053ebf54a79ac",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:12:50.094Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The title directly concerns the Election Commission, Court and institutional independence in India.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value constitutional/institutional analysis from Pratap Bhanu Mehta.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:8281f369cce61a4170172cccc54b574cd85658e9c0d8bec4b1cb712cbfb8ac17",
+          "field": "title",
+          "start": 0,
+          "end": 116
+        },
+        {
+          "observationId": "obs:8281f369cce61a4170172cccc54b574cd85658e9c0d8bec4b1cb712cbfb8ac17",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:8281f369cce61a4170172cccc54b574cd85658e9c0d8bec4b1cb712cbfb8ac17",
+          "field": "bylines",
+          "start": 0,
+          "end": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:182892b88a2917d3a894595f8ecfe9ffe87965bb78dd2a99ecf61605af638b88",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:10.350Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "International relations",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "An India-Japan commemorative corridor opening in Varanasi; metadata shows symbolism but no substantive policy development.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "no_substantive_value"
+        ],
+        "rationale": "Ceremonial bilateral symbolism is too thin to justify a scarce Today slot.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:ac7580e1878e4f71896320e6a1c628729ee832789a2be204e6f1e0756bc1a862",
+          "field": "title",
+          "start": 0,
+          "end": 79
+        },
+        {
+          "observationId": "obs:ac7580e1878e4f71896320e6a1c628729ee832789a2be204e6f1e0756bc1a862",
+          "field": "description",
+          "start": 0,
+          "end": 79
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b21a5eb4eb72333acaeb1fa37ccade7c6c0ddb16180db360f6b120128d27babb",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:18.232Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "unresolvable",
+      "labels": {
+        "value": null,
+        "primarySubject": null,
+        "secondarySubjects": [],
+        "contentType": "editorial",
+        "partyPoliticsPrimary": null,
+        "partyMention": null,
+        "scope": "unknown",
+        "scopeReason": "The title and section do not establish the specific issue or scope.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": null,
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "The opinion headline is too abstract to determine subject, argument or UPSC value from metadata alone.",
+        "metadataSufficiency": {
+          "level": "insufficient",
+          "missingFields": [
+            "description",
+            "scope",
+            "angle"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:f5f077e2927cbd9068ff5e9ae57357e111003ac6b91bc38aaab361b6f3573990",
+          "field": "title",
+          "start": 0,
+          "end": 30
+        },
+        {
+          "observationId": "obs:f5f077e2927cbd9068ff5e9ae57357e111003ac6b91bc38aaab361b6f3573990",
+          "field": "categories",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:8b285d394ac1f427c9a58dc8067ab223ff9eefe739f6d9b0ecdeda844e522f55",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:22.338Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Security",
+        "secondarySubjects": [
+          "International relations"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "US-Iran nuclear terms concern a major ongoing conflict and regional security.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Relevant strategic update; likely equivalent to other US-Iran coverage, so representative selection should happen later.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:096a173841ef2aaae3a0cffeb32fef86fbf5b0df7e3d6c1ae55aa7234405e0c6",
+          "field": "title",
+          "start": 0,
+          "end": 68
+        },
+        {
+          "observationId": "obs:096a173841ef2aaae3a0cffeb32fef86fbf5b0df7e3d6c1ae55aa7234405e0c6",
+          "field": "description",
+          "start": 0,
+          "end": 199
+        },
+        {
+          "observationId": "obs:096a173841ef2aaae3a0cffeb32fef86fbf5b0df7e3d6c1ae55aa7234405e0c6",
+          "field": "categories",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:791958a237c8bcf882288b16dd7a3e2174cab2e9a169b6030a77d6e3b793ba9d",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:27.130Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Governance",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": true,
+        "partyMention": true,
+        "scope": "india_domestic",
+        "scopeReason": "A local Nilgiris amenities demand led by VCK; the captured item is local party advocacy rather than a material policy change.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary",
+          "routine_local",
+          "no_substantive_value"
+        ],
+        "rationale": "Local party-demand story without evidence of a consequential institutional or policy development.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:269f4bdae615c7dd7cc96dd3e7c7f97fd90178cb920f46c62b0ce2162fb29acd",
+          "field": "title",
+          "start": 0,
+          "end": 63
+        },
+        {
+          "observationId": "obs:269f4bdae615c7dd7cc96dd3e7c7f97fd90178cb920f46c62b0ce2162fb29acd",
+          "field": "categories",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:0c04c004cd3726044b588bf0b5bb8481b172d9c6173d05cfe09ea105149d984c",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:30.126Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [
+          "Security"
+        ],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "The title links the Iran war to U.S. midterm politics as part of the conflict's strategic dynamics.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Distinct high-value analysis of how domestic U.S. politics affects an ongoing major war; matches the desired editorial standard.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:b06f90b0a282a9865fdd43a83a9fe9db1180da0d816bd4d714507978c4210a49",
+          "field": "title",
+          "start": 0,
+          "end": 65
+        },
+        {
+          "observationId": "obs:b06f90b0a282a9865fdd43a83a9fe9db1180da0d816bd4d714507978c4210a49",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:b06f90b0a282a9865fdd43a83a9fe9db1180da0d816bd4d714507978c4210a49",
+          "field": "bylines",
+          "start": 0,
+          "end": 13
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:75ec55f166c8ef7c9233b2de4cc1e615d3090ea42d05f2286c2655cbeadf8a63",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:33.119Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Economy",
+        "secondarySubjects": [
+          "Polity",
+          "Governance"
+        ],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The description explicitly concerns the Sixteenth Finance Commission and equalisation within India's federation.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Core fiscal-federalism analysis with direct constitutional and public-finance relevance.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:2cf6ea3012a62ecb0ff2249bd5d539263422977cb027c2b50f35b97fe25787b1",
+          "field": "title",
+          "start": 0,
+          "end": 52
+        },
+        {
+          "observationId": "obs:2cf6ea3012a62ecb0ff2249bd5d539263422977cb027c2b50f35b97fe25787b1",
+          "field": "description",
+          "start": 0,
+          "end": 127
+        },
+        {
+          "observationId": "obs:2cf6ea3012a62ecb0ff2249bd5d539263422977cb027c2b50f35b97fe25787b1",
+          "field": "categories",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:d56637e7a2261e9750afbff5fcee612d6bf9b5558cba5ca03c6d875155ba9dc5",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:38.023Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Economy"
+        ],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The description says it analyzes the demographics of election expenditure across India.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Useful data-driven electoral-finance analysis; relevant but below must-read priority without more evidence.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:9dfa51a365cbb3381dfcfebffb5bdd7fdd8d9035dd6ea8be88ee92e2b6639e29",
+          "field": "title",
+          "start": 0,
+          "end": 40
+        },
+        {
+          "observationId": "obs:9dfa51a365cbb3381dfcfebffb5bdd7fdd8d9035dd6ea8be88ee92e2b6639e29",
+          "field": "description",
+          "start": 0,
+          "end": 64
+        },
+        {
+          "observationId": "obs:9dfa51a365cbb3381dfcfebffb5bdd7fdd8d9035dd6ea8be88ee92e2b6639e29",
+          "field": "bylines",
+          "start": 0,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:c1b98242d09dab4890b77f34fcac894f34b67a192d25046e1c51f2e5dc3a0ac0",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:42.178Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Governance",
+        "secondarySubjects": [
+          "Sci-Tech",
+          "Security"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Directly examines Indian law-enforcement adoption of AI and associated benefits and risks.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Strong governance, technology and security explainer with direct Indian policy relevance.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:d58159fb3e998c9455e10e9a6bf50beb673d98c5dd5c0213a786eb5f675903f3",
+          "field": "title",
+          "start": 0,
+          "end": 77
+        },
+        {
+          "observationId": "obs:d58159fb3e998c9455e10e9a6bf50beb673d98c5dd5c0213a786eb5f675903f3",
+          "field": "categories",
+          "start": 0,
+          "end": 28
+        },
+        {
+          "observationId": "obs:d58159fb3e998c9455e10e9a6bf50beb673d98c5dd5c0213a786eb5f675903f3",
+          "field": "bylines",
+          "start": 0,
+          "end": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b739ea0b16cf7282b6b58d1727ca7be568837a2135ede77be1ee4dbdb8dc4f63",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:45.522Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The description quantifies Indian middle-class earnings and purchasing-power pressure.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Substantive Indian income/labour-market analysis with useful economy context.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:c8a681156ea2654ec5c05a779e2794d98b6e6c4f42c7236f2b5748d090b96a73",
+          "field": "title",
+          "start": 0,
+          "end": 60
+        },
+        {
+          "observationId": "obs:c8a681156ea2654ec5c05a779e2794d98b6e6c4f42c7236f2b5748d090b96a73",
+          "field": "description",
+          "start": 0,
+          "end": 99
+        },
+        {
+          "observationId": "obs:c8a681156ea2654ec5c05a779e2794d98b6e6c4f42c7236f2b5748d090b96a73",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:6333476321db18307af585b39c0f2fd75c09b2c661b6e356f63e6e2a3a925294",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:48.374Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [
+          "Economy"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Directly concerns India's R&D ecosystem and transition toward a knowledge-driven economy.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Core science-policy and innovation-system issue with strong UPSC relevance.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:ecc904046707257e3549eba928a5a7e876ca30d8ca9442ca18ccf228638be010",
+          "field": "title",
+          "start": 0,
+          "end": 80
+        },
+        {
+          "observationId": "obs:ecc904046707257e3549eba928a5a7e876ca30d8ca9442ca18ccf228638be010",
+          "field": "categories",
+          "start": 0,
+          "end": 36
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:21f1930422dc81410883f77baf589fc9d81ef88292d6bb7aeda22cdb274b0c25",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:51.267Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "The captured description identifies the 2026 Nobel Medicine award and optogenetics research.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Major scientific award tied to a transformative research area; high-value science current affairs.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:ecac75eb806983c9b75de1ebc0bdd003465aec178b7ee1b346337014fd4dbcde",
+          "field": "title",
+          "start": 0,
+          "end": 114
+        },
+        {
+          "observationId": "obs:ecac75eb806983c9b75de1ebc0bdd003465aec178b7ee1b346337014fd4dbcde",
+          "field": "description",
+          "start": 0,
+          "end": 228
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:ab75fe8c3296c19a75027d9dc4b42bec0ba3a0c0df895110c2895f383f7e87c7",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:13:59.090Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "The captured item is about U.S. corporate earnings and investor expectations, with no India-facing/systemic consequence stated.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Foreign market/earnings-season coverage without sufficient UPSC policy or systemic value.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:3544003cf6aff988958fa37cba18a35fe523eae91227fd77b361836fd53747a6",
+          "field": "title",
+          "start": 0,
+          "end": 74
+        },
+        {
+          "observationId": "obs:3544003cf6aff988958fa37cba18a35fe523eae91227fd77b361836fd53747a6",
+          "field": "description",
+          "start": 0,
+          "end": 123
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:e94bf5fd238bcf74cc214a1746a968abdb72b54a7baaa6d5dd524e3c8f811ad0",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:02.823Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "International relations",
+        "secondarySubjects": [],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "The title frames U.S. power and virtue as a foreign-policy question; the exact Graham Bill context is not described.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Potentially valuable Pratap Bhanu Mehta foreign-policy analysis; useful rather than must-read because metadata does not establish the full argument.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description",
+            "angle"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:6da323152671c901a74babca9a73bfa40660aba0f0e3b169a1d5db86595c48b3",
+          "field": "title",
+          "start": 0,
+          "end": 94
+        },
+        {
+          "observationId": "obs:6da323152671c901a74babca9a73bfa40660aba0f0e3b169a1d5db86595c48b3",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:6da323152671c901a74babca9a73bfa40660aba0f0e3b169a1d5db86595c48b3",
+          "field": "bylines",
+          "start": 0,
+          "end": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:505b38e1992c06c1c4439cbbdc65375de3a284eace651a9eb6f64b37183e49ce",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:05.910Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [
+          "Geography"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "A first dinosaur fossil record from Antarctica is a meaningful paleontological/geographical finding.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Potentially useful science/geography development; should later collapse with equivalent coverage rather than appear twice.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:d44228fd8417dfbd8f74afa48bef5d036a54a1c77c04b391bf1b7aa54ee2923e",
+          "field": "title",
+          "start": 0,
+          "end": 53
+        },
+        {
+          "observationId": "obs:d44228fd8417dfbd8f74afa48bef5d036a54a1c77c04b391bf1b7aa54ee2923e",
+          "field": "description",
+          "start": 0,
+          "end": 96
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b42895b9df14f042be8d24a11f88149870b8817d3260fefd5b608a135b9492b1",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:08.678Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "unresolvable",
+      "labels": {
+        "value": null,
+        "primarySubject": null,
+        "secondarySubjects": [],
+        "contentType": "column",
+        "partyPoliticsPrimary": null,
+        "partyMention": null,
+        "scope": "unknown",
+        "scopeReason": "The title and opinion section do not establish the topic or scope.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": null,
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "The metadata is too vague to infer subject or UPSC value reliably.",
+        "metadataSufficiency": {
+          "level": "insufficient",
+          "missingFields": [
+            "description",
+            "scope",
+            "angle"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:c883e588eca00d6efbf4a1be385808cb8d5b16a120e7f2e9506e0fe046cc53d1",
+          "field": "title",
+          "start": 0,
+          "end": 18
+        },
+        {
+          "observationId": "obs:c883e588eca00d6efbf4a1be385808cb8d5b16a120e7f2e9506e0fe046cc53d1",
+          "field": "categories",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:6badb8d260bf1939f0345d330f8326c8ecc91cc5d1600acda0dc8183241613c6",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:20.799Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "MeitY and IndiaAI Centre of Excellence are Indian public technology-policy institutions.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Relevant national AI-capacity initiative; useful, though the captured description is mainly a launch/start-up announcement.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:97bc853705b7ab7ba52f560cf0305d7395156cc663896484e81c1c98dd223e53",
+          "field": "title",
+          "start": 0,
+          "end": 89
+        },
+        {
+          "observationId": "obs:97bc853705b7ab7ba52f560cf0305d7395156cc663896484e81c1c98dd223e53",
+          "field": "description",
+          "start": 0,
+          "end": 101
+        },
+        {
+          "observationId": "obs:97bc853705b7ab7ba52f560cf0305d7395156cc663896484e81c1c98dd223e53",
+          "field": "categories",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:92fe47cc2442a4eecf25a6873a3bebfe399cb5debeca64e18d906fd793ec641d",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:25.783Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Polity",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": true,
+        "partyMention": true,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "UK Reform/Farage donations investigation is foreign domestic party politics.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary",
+          "foreign_domestic_no_impact"
+        ],
+        "rationale": "Foreign party scandal/investigation with no India-facing or systemic relevance.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:879d48b3b26bd58e7c35e3223fc5e289df70c5c1cc88edc9fe4ee70bf10ff070",
+          "field": "title",
+          "start": 0,
+          "end": 58
+        },
+        {
+          "observationId": "obs:879d48b3b26bd58e7c35e3223fc5e289df70c5c1cc88edc9fe4ee70bf10ff070",
+          "field": "description",
+          "start": 0,
+          "end": 82
+        },
+        {
+          "observationId": "obs:879d48b3b26bd58e7c35e3223fc5e289df70c5c1cc88edc9fe4ee70bf10ff070",
+          "field": "categories",
+          "start": 0,
+          "end": 8
+        },
+        {
+          "observationId": "obs:879d48b3b26bd58e7c35e3223fc5e289df70c5c1cc88edc9fe4ee70bf10ff070",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b7be6a6113831efbda08239a188538f1acd8e1a148960c64ae1a8726787edbae",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:28.614Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Sci-Tech",
+        "secondarySubjects": [
+          "Geography"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "The identification of the first dinosaur remains from Antarctica is a scientific/geographical finding.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Useful science/geography item, but evidently equivalent to another sampled report and should later have one representative.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:a7ce7278de7680d84ae7c2697a6556b8f5f5534911dc7144ae4ff122a6db0082",
+          "field": "title",
+          "start": 0,
+          "end": 60
+        },
+        {
+          "observationId": "obs:a7ce7278de7680d84ae7c2697a6556b8f5f5534911dc7144ae4ff122a6db0082",
+          "field": "description",
+          "start": 0,
+          "end": 121
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:101932b8f57d3dd0be2c41ad3fa46136b40890212813b0498bbb05bcf00f3176",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:32.110Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "other",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A sports streaming/auction guide with no UPSC relevance.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "promotion",
+          "entertainment_primary",
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Pure sports viewing/auction content.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:191c5793752a5133db13d350220b016992e02fbd8dbbb580ddbd26470baeee54",
+          "field": "title",
+          "start": 0,
+          "end": 63
+        },
+        {
+          "observationId": "obs:191c5793752a5133db13d350220b016992e02fbd8dbbb580ddbd26470baeee54",
+          "field": "description",
+          "start": 0,
+          "end": 166
+        },
+        {
+          "observationId": "obs:191c5793752a5133db13d350220b016992e02fbd8dbbb580ddbd26470baeee54",
+          "field": "categories",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b354065f73cf7af0858db45dff4e95fd19b3ae09cb4d9c7ef3944ebc98782e88",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:34.878Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "other",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A royal-family book story with no India-facing or systemic policy relevance.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "entertainment_primary",
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Celebrity/royal-family book coverage rather than UPSC current affairs.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:8f4e02b2cc1df90743d9a83bc2e7d58466e95c69b4dba7e5975de62d1352f775",
+          "field": "title",
+          "start": 0,
+          "end": 96
+        },
+        {
+          "observationId": "obs:8f4e02b2cc1df90743d9a83bc2e7d58466e95c69b4dba7e5975de62d1352f775",
+          "field": "description",
+          "start": 0,
+          "end": 136
+        },
+        {
+          "observationId": "obs:8f4e02b2cc1df90743d9a83bc2e7d58466e95c69b4dba7e5975de62d1352f775",
+          "field": "bylines",
+          "start": 0,
+          "end": 31
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:f1c0f0f7abc23e41960ae527fde67deb43c3eb15c41bee0cdbafc641221cde61",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:39.167Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "editorial",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "The title concerns Election Commission action on mass-deletion forms, an electoral-process and institutional issue.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Strong electoral-governance issue with direct constitutional/institutional relevance.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:7a2249bf7305c4cd40625f4d0d7988955c344ba43b7f720c10fcde0ba2203dbf",
+          "field": "title",
+          "start": 0,
+          "end": 72
+        },
+        {
+          "observationId": "obs:7a2249bf7305c4cd40625f4d0d7988955c344ba43b7f720c10fcde0ba2203dbf",
+          "field": "categories",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:bee230105ec80e2aff8926a7cabacf5da722e511e63d3216be2edf1ca1ccd7a6",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:42.350Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "useful",
+        "primarySubject": "Economy",
+        "secondarySubjects": [],
+        "contentType": "analysis",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_knowledge",
+        "scopeReason": "The title indicates an analytical treatment connecting economics and psychology.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Potentially useful behavioural-economics analysis, but metadata does not reveal the specific argument or application.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description",
+            "angle"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:00c4aeab864dcc1e7340b72e403861fb151a8803f4412de5123117cb6edb3956",
+          "field": "title",
+          "start": 0,
+          "end": 33
+        },
+        {
+          "observationId": "obs:00c4aeab864dcc1e7340b72e403861fb151a8803f4412de5123117cb6edb3956",
+          "field": "categories",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:47e806dd57ee6a7252cb37a5906d7be498abc20b7c9b523a2ed822a126f7a422",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:45.366Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [
+          "Security",
+          "Sci-Tech",
+          "Environment"
+        ],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "The title explicitly links diplomacy to AI, wars and climate catastrophes as systemic global challenges.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value systemic foreign-policy analysis from Pratap Bhanu Mehta.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:b5f4334c2b50e66a32f46880e33925cd488c02392eb5d2ecfc17185f71f25345",
+          "field": "title",
+          "start": 0,
+          "end": 103
+        },
+        {
+          "observationId": "obs:b5f4334c2b50e66a32f46880e33925cd488c02392eb5d2ecfc17185f71f25345",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:b5f4334c2b50e66a32f46880e33925cd488c02392eb5d2ecfc17185f71f25345",
+          "field": "bylines",
+          "start": 0,
+          "end": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:b60dd37fb0f8e3478e19c8699349804f6ff818bee733746df45085cc6cd82a5f",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:49.070Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "Environment",
+        "secondarySubjects": [
+          "Governance"
+        ],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": false,
+        "partyMention": true,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A U.S. congressional permitting overhaul; captured metadata does not establish an India-facing or sufficiently global-systemic consequence.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "foreign_domestic_no_impact"
+        ],
+        "rationale": "Substantive U.S. policy, but primarily foreign domestic legislation under the agreed scope gate.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:dcd23ff50074a5f4729428de775df9f4a446ec8306aa69ac4f9a6fd24d33c273",
+          "field": "title",
+          "start": 0,
+          "end": 67
+        },
+        {
+          "observationId": "obs:dcd23ff50074a5f4729428de775df9f4a446ec8306aa69ac4f9a6fd24d33c273",
+          "field": "description",
+          "start": 0,
+          "end": 134
+        },
+        {
+          "observationId": "obs:dcd23ff50074a5f4729428de775df9f4a446ec8306aa69ac4f9a6fd24d33c273",
+          "field": "categories",
+          "start": 0,
+          "end": 397
+        },
+        {
+          "observationId": "obs:dcd23ff50074a5f4729428de775df9f4a446ec8306aa69ac4f9a6fd24d33c273",
+          "field": "bylines",
+          "start": 0,
+          "end": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:51c34183f3de4b44e94dcaba47db0f47c49c477b2ef7adb3c282a562b7c305fb",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:54.802Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [
+          "Security"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "global_systemic",
+        "scopeReason": "A possible U.S.-Iran settlement and a 'New Middle East' directly concern regional order and security.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value strategic explainer/analysis of a major regional conflict and possible settlement.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:6ac0d679cc1b9053c815d604aaa9eaba70f4480a5852bde5ef8ccb6631dc66d4",
+          "field": "title",
+          "start": 0,
+          "end": 63
+        },
+        {
+          "observationId": "obs:6ac0d679cc1b9053c815d604aaa9eaba70f4480a5852bde5ef8ccb6631dc66d4",
+          "field": "categories",
+          "start": 0,
+          "end": 26
+        },
+        {
+          "observationId": "obs:6ac0d679cc1b9053c815d604aaa9eaba70f4480a5852bde5ef8ccb6631dc66d4",
+          "field": "bylines",
+          "start": 0,
+          "end": 13
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:dd0c98e7e6e33647608ba8968e6d51e1021a4cece3598baf8ad88f9df273eedb",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:14:58.054Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "Polity",
+        "secondarySubjects": [
+          "Economy",
+          "Governance"
+        ],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_domestic",
+        "scopeReason": "Centre-state disagreement over a new mining law directly raises federal, regulatory and economic questions in India.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "Major Centre-State regulatory/fiscal-federalism issue; exactly the kind of substantive institutional development TARS should retain.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:dd337aea66a7758ce6789df872383c47b2bd493b58e8f0a76cd7ec16e31ccd9e",
+          "field": "title",
+          "start": 0,
+          "end": 73
+        },
+        {
+          "observationId": "obs:dd337aea66a7758ce6789df872383c47b2bd493b58e8f0a76cd7ec16e31ccd9e",
+          "field": "categories",
+          "start": 0,
+          "end": 29
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:ca792f481c3f3406c1dac5f2bdcccf5a6a6acc2f0352d607180bc88150c41412",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:15:01.318Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "International relations",
+        "secondarySubjects": [],
+        "contentType": "news_report",
+        "partyPoliticsPrimary": true,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "Brazilian presidential politics framed around alignment with Trump; no captured India-facing/systemic consequence.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "party_primary",
+          "foreign_domestic_no_impact"
+        ],
+        "rationale": "Foreign electoral horse-race/personality politics rather than a substantive UPSC development.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:deb1530497cbf708e745ff0b1bd3998e99b36e49efa31d27f824034c735518c9",
+          "field": "title",
+          "start": 0,
+          "end": 76
+        },
+        {
+          "observationId": "obs:deb1530497cbf708e745ff0b1bd3998e99b36e49efa31d27f824034c735518c9",
+          "field": "description",
+          "start": 0,
+          "end": 153
+        },
+        {
+          "observationId": "obs:deb1530497cbf708e745ff0b1bd3998e99b36e49efa31d27f824034c735518c9",
+          "field": "categories",
+          "start": 0,
+          "end": 183
+        },
+        {
+          "observationId": "obs:deb1530497cbf708e745ff0b1bd3998e99b36e49efa31d27f824034c735518c9",
+          "field": "bylines",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:1df710e8b89a536a9ed4e4954fedf9fc06a57f7bb64cfac48f222c5a7d06e0da",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:15:04.426Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "reject",
+        "primarySubject": "not_applicable",
+        "secondarySubjects": [],
+        "contentType": "explainer",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "foreign_domestic_no_impact",
+        "scopeReason": "A U.S. Social Security/Medicare payment explainer with no India-facing or systemic relevance.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [
+          "foreign_domestic_no_impact",
+          "no_substantive_value"
+        ],
+        "rationale": "Foreign domestic benefits/payment explainer; outside the curated UPSC reading pool.",
+        "metadataSufficiency": {
+          "level": "sufficient",
+          "missingFields": []
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:706d8aa2ea7fbefdc84a42a99fda9f81cb20febe8de4933c6edea7b8a950da01",
+          "field": "title",
+          "start": 0,
+          "end": 72
+        },
+        {
+          "observationId": "obs:706d8aa2ea7fbefdc84a42a99fda9f81cb20febe8de4933c6edea7b8a950da01",
+          "field": "description",
+          "start": 0,
+          "end": 138
+        },
+        {
+          "observationId": "obs:706d8aa2ea7fbefdc84a42a99fda9f81cb20febe8de4933c6edea7b8a950da01",
+          "field": "categories",
+          "start": 0,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "article:db6f6b89567fa28eb6875f7cdd13baaa0ac8c0481558cd67a79e2b0571c3da32",
+    "annotation": {
+      "reviewerId": "Marcus",
+      "reviewedAt": "2026-10-07T17:15:07.782Z",
+      "rubricVersion": "tars-upsc-rubric/v1+a2a-primary-human/2",
+      "disposition": "resolved",
+      "labels": {
+        "value": "must_read",
+        "primarySubject": "International relations",
+        "secondarySubjects": [],
+        "contentType": "column",
+        "partyPoliticsPrimary": false,
+        "partyMention": false,
+        "scope": "india_impact",
+        "scopeReason": "The title directly evaluates India's multipolar-world strategy and the international system it operates in.",
+        "storyId": null,
+        "themeId": null,
+        "angleId": null,
+        "novelty": {
+          "status": "uncertain",
+          "relativeTo": [],
+          "cutoff": "2026-10-07T13:40:55.600Z"
+        },
+        "materialDelta": null,
+        "rejectReasons": [],
+        "rationale": "High-value strategic analysis of India's foreign-policy worldview and constraints.",
+        "metadataSufficiency": {
+          "level": "limited",
+          "missingFields": [
+            "description"
+          ]
+        },
+        "reviewBasis": "feed_metadata"
+      },
+      "evidence": [
+        {
+          "observationId": "obs:50706a391aac2fa3c0b2302985723d6999427e6a0ee6561d04e301defcc5d4e9",
+          "field": "title",
+          "start": 0,
+          "end": 71
+        },
+        {
+          "observationId": "obs:50706a391aac2fa3c0b2302985723d6999427e6a0ee6561d04e301defcc5d4e9",
+          "field": "categories",
+          "start": 0,
+          "end": 15
+        },
+        {
+          "observationId": "obs:50706a391aac2fa3c0b2302985723d6999427e6a0ee6561d04e301defcc5d4e9",
+          "field": "bylines",
+          "start": 0,
+          "end": 13
+        }
+      ]
+    }
+  }
+]
