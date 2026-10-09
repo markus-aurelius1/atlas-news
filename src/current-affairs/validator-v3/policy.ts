@@ -9,6 +9,12 @@ export interface RouteRule { id: string; topic: string; support: string; scope: 
 // Both topic and substantive proposition must occur in the title or meaningful summary.
 // Title-only rules deliberately require compound mechanisms rather than broad entities.
 export const ROUTE_RULES: readonly RouteRule[] = [
+  // Compound mechanisms added by the offline coverage audit. Context/author
+  // cannot supply either span; these routes confer useful, never exceptional.
+  { id: 'C2.central-bank-action.v1', topic: String.raw`\b(RBI|Reserve Bank of India|monetary policy)\b`, support: String.raw`\b(?:(?:raises?|cuts?|holds?|keeps?|hikes?|kept)\b.{0,35}\b(?:repo|interest|policy) rates?|rate hike|price stability|inflation transmission)\b`, scope: 'domestic' },
+  { id: 'C2.nuclear-doctrine.v1', topic: String.raw`\bnuclear (?:doctrine|deterrence)\b`, support: String.raw`\b(strategic|revisiting|revis\w*|capability|risks?|challenges|assessment)\b`, scope: 'systemic' },
+  { id: 'C2.research-mechanism.v1', topic: String.raw`\b(?:(?:Physics|Chemistry|Medicine) Nobel|Nobel (?:Prize in )?(?:Physiology/Medicine|Physics|Chemistry)|protein biosensors?|neutrinos?|quantum link)\b`, support: String.raw`\b(discover\w*|findings?|mechanism|detector|non.linear effects|autocatalysis|experiment\w*|demonstrat\w*)\b`, scope: 'knowledge' },
+  { id: 'C2.physical-mechanism.v1', topic: String.raw`\b(plate tectonics|monsoon|El Ni[ñn]o|ocean currents|glacial landforms)\b`, support: String.raw`\b(pressure differences|evaporation|moist air|cyclonic circulations|formation|mechanism|heat transfer|tectonic movement)\b`, scope: 'knowledge' },
   { id: 'C2.institution.v1', topic: String.raw`\b(supreme court|election commission|judicial independence|independent institutions|constitutional|electoral roll|anti-defection|fiscal federalism|finance commission)\b`, support: String.raw`\b(judgment|rul(?:e|es|ing)|invalidat\w*|approv\w*|changes?|independen\w*|mandate|equity|efficiency|reform\w*|federalism|trust|believe|legitimacy|autonomy|accountability|erosion)\b`, scope: 'knowledge', exceptional: true },
   { id: 'C2.electoral-rights.v1', topic: String.raw`\b(?:EC|election commission|electoral roll)\b`, support: String.raw`\b(mass deletions|voter rights|disenfranchis\w*|voting rights)\b`, scope: 'knowledge', exceptional: true },
   { id: 'C2.public-finance.v1', topic: String.raw`\b(capex strategy|fiscal policy|public debt|tax devolution|fiscal federalism|monetary policy|inflation transmission)\b`, support: String.raw`\b(how|why|measure|success|equity|efficiency|effects?|risks?|reforms?|transmission)\b`, scope: 'domestic', exceptional: true },
@@ -33,6 +39,8 @@ export const NOISE_RULES = [
   { code: 'C1.promotion.v1', pattern: String.raw`\b(buy now|discount code|sponsored post|product launch|promotional livestream|recruitment advertisement|apply now|coupon|campus award)\b` },
   { code: 'C1.entertainment.v1', pattern: String.raw`\b(live streaming|live telecast|match result|China Open exit|Princess Diana|royal family|celebrity gossip|box office|horoscope)\b` },
   { code: 'C1.roundup.v1', pattern: String.raw`\b(week in wildlife|best.{0,25}photographs|photo roundup|photo gallery)\b` },
+  { code: 'C1.mixed_news_digest.v1', pattern: String.raw`\b(?:news roundup|news digest|news highlights|Rush Hour)\b|& more\s*$` },
+  { code: 'C1.market_reaction.v1', pattern: String.raw`\b(?:Sensex|Nifty)\b.{0,25}\b(?:falls?|rises?|gains?|drops?|slides?)\b` },
   { code: 'C1.routine_business.v1', pattern: String.raw`\b(earnings season|quarterly earnings|stock tips|parking spaces.{0,30}flip|routine product recall)\b` },
   { code: 'C1.routine_local.v1', pattern: String.raw`\b(local outage|traffic diversion|isolated robbery|high school students.{0,15}protest|staff.{0,15}(?:dispute|politics)|personnel dispute)\b` },
 ] as const

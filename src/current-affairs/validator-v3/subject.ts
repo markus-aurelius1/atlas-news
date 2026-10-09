@@ -12,6 +12,10 @@ export interface SubjectDecision {
 // Compound issue/action/object frames outrank isolated entities. Places, publisher,
 // section, author, acceptance and PYQ frequency never vote for primary subject.
 const frames: readonly [Subject, string, string][] = [
+  ['Economy', 'central-bank-policy', String.raw`\b(?:RBI|Reserve Bank of India)\b.{0,90}\b(?:rates?|inflation|monetary policy|price stability)\b|\b(?:rate hike|price stability)\b`],
+  ['Security', 'nuclear-doctrine', String.raw`\bnuclear (?:doctrine|deterrence)\b`],
+  ['Sci-Tech', 'research-mechanism', String.raw`\b(?:(?:Physics|Chemistry|Medicine) Nobel|Nobel (?:Prize )?(?:202\d )?(?:in )?(?:Physiology/Medicine|Physics|Chemistry)|protein biosensors?|neutrinos?|quantum link)\b`],
+  ['Geography', 'weather-mechanism', String.raw`\bEl Ni[ñn]o\b.{0,100}\b(?:pressure|monsoon|rainfall)\b|\b(?:pressure differences|evaporation|cyclonic circulations)\b`],
   ['Polity', 'constitutional', String.raw`\b(constitutional (?:powers?|rights?|institutions?|court|federalism)|fundamental rights|judicial independence|electoral (?:law|roll|rights)|election commission|anti.defection|federalism|voter rights|judicial autonomy|parliamentary privileges|separation of powers|institutional (?:independence|accountability)|mining law)\b`],
   ['Polity', 'judgment', String.raw`\b(?:supreme court|constitutional court)\b.{0,55}\b(?:rul\w*|judgment|invalidat\w*|rights|powers?|law|approve|form)\b|\bEC\b.{0,70}\bmass deletions\b|\b(?:election|electoral)\b.{0,50}\b(?:financ\w*|spending|expen\w*)\b|\b(?:expen\w*|funding)\b.{0,30}\belection\b`],
   ['Governance', 'service', String.raw`\b(public service delivery|service delivery|implementation (?:of|impact)|welfare (?:delivery|scheme)|public health system|law enforcement|administrative reform|digital public services|benefit delivery|Ayushman Bharat)\b`],

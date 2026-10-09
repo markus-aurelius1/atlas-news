@@ -1,0 +1,16 @@
+{
+  "originalHead": "d21798db6212553e63420a8efd6e1f71c87417d9",
+  "originalStatusRows": 127,
+  "originalDirtyFiles": 127,
+  "originalMatchesPriorReadOnlyCapture": true,
+  "frozenPackageHashesVerified": {
+    "observations": "76f957dac110f212e06b60aebb1335ef4ef556b3154235da0d42698a2fec396c",
+    "corpus": "303f4fa0648201cf810ae2d789fad387d6e053bac6cd4f99c254c8e56ee9f1e6",
+    "calibration": "3f1c804c991e25ce02f91729642097bccbaf8dc3ed345a724a2b5f62e18159cd",
+    "gold": "f69ed55f55e9118571918b5c634f68ae6706285ad7a74999a51bcc8afda98f59"
+  },
+  "protectedManifestSha256": "130f72a4b8667b49405e790a5b8aa1c34238c6de16f40c2b9a04026ea99112eb",
+  "ownerReviewRecords": 25,
+  "frozenGoldExcludedFromReview": true,
+  "readerHighlightsCoreDiff": ""
+}

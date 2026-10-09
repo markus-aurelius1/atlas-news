@@ -12,7 +12,7 @@ function textual(o: StageCObservation, pattern: string, rule: string) {
   return [...span(o, 'title', pattern, rule), ...(meaningful(o.metadata.description) ? span(o, 'description', pattern, rule) : [])]
 }
 const meaningful = (s: string) => s.trim().split(/\s+/).filter(Boolean).length >= 5 && !/^(read more|continue reading|click here|latest news|protests and education)[.!\s]*$/i.test(s.trim())
-const india = String.raw`\b(India(?:n)?|MeitY|IndiaAI|CJI|Centre[’']s|fiscal federalism)\b`
+const india = String.raw`\b(India(?:n)?|MeitY|IndiaAI|CJI|Centre[’']s|fiscal federalism|RBI|Reserve Bank of India)\b`
 export function extractEvidence(observations: StageCObservation[]): ArticleEvidence {
   const rows = [...observations].sort((a, b) => a.id.localeCompare(b.id, 'en'))
   const routes: Route[] = [], exclusions: ArticleEvidence['exclusions'] = [], context: Evidence[] = [], authors: string[] = []

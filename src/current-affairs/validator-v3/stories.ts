@@ -1,4 +1,5 @@
 import type { NewsItem } from '../types.ts'
+import { boundSource } from './metadata.ts'
 
 export const STORY_POLICY = { id: 'tars-stories/1', historyDays: 14, strongestDays: 7, todayHours: 24, maxComparisonBucket: 512 } as const
 const DAY = 86400000
@@ -21,7 +22,8 @@ export function storyFrame(item: NewsItem): StoryFrame {
   const actor = actors.find(([, rx]) => rx.test(text))?.[0] ?? ''
   const object = objects.find(([, rx]) => rx.test(text))?.[0] ?? ''
   const action = actions.find(([, rx]) => rx.test(title))?.[0] ?? ''
-  const angle = /editorial|opinion|column|analysis|explained/i.test(item.section) ? angles.find(([, rx]) => rx.test(text))?.[0] ?? null : null
+  const analytical = /editorial|opinion|column|analysis|explained/i.test(item.section) || item.memberships?.some(m => boundSource(item.url, item.publisher, m) && /editorial|opinion|column|analysis|explained/i.test(m.section))
+  const angle = analytical ? angles.find(([, rx]) => rx.test(text))?.[0] ?? null : null
   // Counterparts, case/report identifiers, periods and numeric changes are
   // cannot-link constraints. Publication/updated dates are never event dates.
   const qualifiers = [...new Set([...text.matchAll(/\b(?:India|Iran|US|EU|China|Japan|Antarctica|Ukraine|Russia|202\d|Q[1-4]|FY\s?\d{2,4}(?:[-/]\d{2,4})?|\d+(?:\.\d+)?\s?(?:%|basis points)|case\s+[A-Z0-9-]+)\b/gi)].map(m => norm(m[0])))].sort()
@@ -29,14 +31,25 @@ export function storyFrame(item: NewsItem): StoryFrame {
   const digest = /roundup|digest|UPSC (?:Key|Essentials)|week in/i.test(title)
   return { actor, object, action, angle, digest, qualifiers, tokens, signature: JSON.stringify([actor, object, action, qualifiers, angle]) }
 }
+/** One named scientific award per explicit discipline/year. Publication dates
+ * never supply award years. Explanatory headlines need independent angle review. */
+function awardIdentity(item: NewsItem): string | null {
+  if (/\b(?:how|why|explained|analysis)\b/i.test(item.title) || !/\b(?:awarded|wins?|won|goes to)\b/i.test(item.title)) return null
+  const text = item.title + ' ' + item.description
+  const subject = /\b(physics|chemistry|physiology\/medicine) Nobel\b|\bNobel (?:Prize )?(?:202\d )?(?:in )?(physics|chemistry|physiology\/medicine)\b/i.exec(text)
+  const years = [...new Set([...text.matchAll(/\b202\d\b/g)].map(m => m[0]))]
+  return subject && years.length === 1 ? `nobel:${(subject[1] ?? subject[2]).toLowerCase()}:${years[0]}` : null
+}
 function similarity(a: StoryFrame, b: StoryFrame) { const aa = new Set(a.tokens), bb = new Set(b.tokens); return [...aa].filter(t => bb.has(t)).length / (new Set([...aa, ...bb]).size || 1) }
-const block = (item: NewsItem) => { const f = storyFrame(item); return f.action && f.object ? f.signature : norm(item.title) }
+const block = (item: NewsItem) => { const f = storyFrame(item); return !f.angle && awardIdentity(item) || (f.action && f.object ? f.signature : norm(item.title)) }
 function buckets<T>(rows: T[], key: (row: T) => string): Map<string, T[]> { const result = new Map<string, T[]>(); for (const row of rows) { const k = key(row); const bucket = result.get(k); if (bucket) bucket.push(row); else result.set(k, [row]) } return result }
 const theme = (item: NewsItem) => { const f = storyFrame(item); return JSON.stringify([f.actor, f.object, f.qualifiers.filter(q => /^(?:case |india|iran|us|eu|china|japan|antarctica|ukraine|russia)/.test(q))]) }
 export function equivalentDevelopment(a: NewsItem, b: NewsItem): boolean {
   if (a.url === b.url) return true
   const left = storyFrame(a), right = storyFrame(b)
   if (left.digest || right.digest || left.angle !== right.angle) return false
+  const award = awardIdentity(a)
+  if (award && award === awardIdentity(b) && !left.angle && !right.angle) return true
   if (left.qualifiers.join('|') !== right.qualifiers.join('|')) return false
   if (left.action !== right.action || left.object !== right.object || left.actor !== right.actor) return false
   if (norm(a.title) === norm(b.title)) return true
